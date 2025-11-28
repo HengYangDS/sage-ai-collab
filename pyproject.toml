@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "ai-collab-kb"
+name = "sage-kb"
 version = "2.0.0"
 description = "AI Collaboration Knowledge Base - Production-grade knowledge management with timeout protection"
 readme = "README.md"
@@ -57,14 +57,14 @@ dev = [
     "mypy>=1.0",
 ]
 all = [
-    "ai-collab-kb[mcp,dev]",
+    "sage-kb[mcp,dev]",
 ]
 
 [project.urls]
-Homepage = "https://github.com/ai-collab-kb/ai-collab-kb"
-Documentation = "https://github.com/ai-collab-kb/ai-collab-kb#readme"
-Repository = "https://github.com/ai-collab-kb/ai-collab-kb"
-Issues = "https://github.com/ai-collab-kb/ai-collab-kb/issues"
+Homepage = "https://github.com/HengYangDS/sage-kb"
+Documentation = "https://github.com/HengYangDS/sage-kb#readme"
+Repository = "https://github.com/HengYangDS/sage-kb"
+Issues = "https://github.com/HengYangDS/sage-kb/issues"
 
 [project.scripts]
 aikb = "ai_collab_kb.cli:main"
