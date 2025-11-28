@@ -1262,36 +1262,30 @@ pip install -e ".[dev]"
 
 ### Basic Usage
 
-```python
+```bash
 # 1. Using the CLI
-sage
-get - -layer
-core  # Get core principles
-sage
-search
-"autonomy"  # Search knowledge base
-sage
-info  # Get KB information
+sage get --layer core       # Get core principles
+sage search "autonomy"      # Search knowledge base
+sage info                   # Get KB information
 
-# 2. Using Python API
+# 2. Start MCP server (for AI Agents)
+python -m sage serve
+```
+
+```python
+# 3. Using Python API
 from sage.core.loader import KnowledgeLoader
 
 loader = KnowledgeLoader()
 result = await loader.load_core(timeout_ms=2000)
 print(result.content)
-
-# 3. Using MCP (for AI Agents)
-# Start MCP server
-python - m
-sage
-serve
-
-# Available MCP tools:
-# - get_knowledge(layer, task, timeout_ms)
-# - search_kb(query, max_results)
-# - analyze_quality(path)
-# - check_health()
 ```
+
+**Available MCP tools:**
+- `get_knowledge(layer, task, timeout_ms)`
+- `search_knowledge(query, max_results)`
+- `analyze_quality(path)`
+- `check_health()`
 
 ### Configuration
 
@@ -1453,7 +1447,7 @@ result = await get_knowledge(task="implement authentication API")
 **Recommended Flow**:
 
 ```
-1. search_kb(query="<topic>", max_results=5)
+1. search_knowledge(query="<topic>", max_results=5)
    → Find relevant content
    
 2. get_knowledge(layer=<relevant_layer>)
@@ -1475,11 +1469,11 @@ result = await get_knowledge(task="implement authentication API")
 
 > **Reference**: See `content/frameworks/autonomy/levels.md` for full 6-level autonomy framework
 
-| Autonomy Level                           | Tool Usage Pattern                                            |
-|------------------------------------------|---------------------------------------------------------------|
-| **L1-L2** (Minimal/Low, 0-40%)           | Use `search_kb()` to find guidance, ask user for confirmation |
-| **L3-L4** (Medium/Medium-High, 40-80%) ⭐ | Use `get_knowledge()` directly, report actions after          |
-| **L5-L6** (High/Full, 80-100%)           | Use tools autonomously, only report on completion             |
+| Autonomy Level                           | Tool Usage Pattern                                                   |
+|------------------------------------------|----------------------------------------------------------------------|
+| **L1-L2** (Minimal/Low, 0-40%)           | Use `search_knowledge()` to find guidance, ask user for confirmation |
+| **L3-L4** (Medium/Medium-High, 40-80%) ⭐ | Use `get_knowledge()` directly, report actions after                 |
+| **L5-L6** (High/Full, 80-100%)           | Use tools autonomously, only report on completion                    |
 
 **Default**: L4 (Medium-High) for mature collaboration.
 
@@ -1514,6 +1508,10 @@ Decision Factors:
   • Precedent: Established pattern (↑) vs Novel approach (↓)
   • User Trust: Mature collaboration (↑) vs New relationship (↓)
 ```
+
+> **Calibration Examples**: For practical scenarios demonstrating autonomy level selection
+> (database migrations, unit tests, refactoring, production config), see Section 10 of
+> `content/frameworks/autonomy/levels.md`.
 
 ---
 
