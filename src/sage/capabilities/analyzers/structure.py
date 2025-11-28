@@ -5,7 +5,7 @@ This module provides:
 - StructureReport: Validation report with issues and suggestions
 - StructureChecker: Validator for knowledge base structure
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

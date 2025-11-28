@@ -8,7 +8,7 @@ This module provides:
 - Template retrieval
 - Health monitoring
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 
@@ -27,7 +27,7 @@ except ImportError:
     FastMCP = None
 
 # Local imports
-from .loader import (
+from sage.core.loader import (
     KnowledgeLoader,
     Layer,
 )
@@ -266,7 +266,7 @@ if MCP_AVAILABLE and app is not None:
             }
 
     @app.tool()
-    async def search_kb(
+    async def search_knowledge(
         query: str,
         max_results: int = 5,
         timeout_ms: int = 3000,
@@ -308,7 +308,7 @@ if MCP_AVAILABLE and app is not None:
             }
 
         except Exception as e:
-            logger.error(f"Error in search_kb: {e}")
+            logger.error(f"Error in search_knowledge: {e}")
             return {
                 "results": [],
                 "count": 0,
@@ -439,7 +439,7 @@ if MCP_AVAILABLE and app is not None:
 # ============================================================================
 
 # Import capabilities directly (Plan D architecture)
-from .capabilities import (
+from sage.capabilities import (
     ContentAnalyzer,
     HealthMonitor,
     LinkChecker,
@@ -470,7 +470,7 @@ if MCP_AVAILABLE and app is not None:
             - metrics: Detailed quality metrics
 
         Examples:
-            - analyze_quality(path="src/ai_collab_kb/loader.py")
+            - analyze_quality(path="src/sage/core/loader.py")
             - analyze_quality(path="content", extensions=".md")
         """
         try:

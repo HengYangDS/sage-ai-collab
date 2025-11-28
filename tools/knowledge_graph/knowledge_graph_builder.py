@@ -7,7 +7,7 @@ This module provides:
 - KnowledgeGraph: Graph structure for knowledge base
 - KnowledgeGraphBuilder: Build graph from knowledge base
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

@@ -8,7 +8,7 @@ This module provides:
 - Server management
 - Interactive mode
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 
@@ -24,7 +24,7 @@ from rich.syntax import Syntax
 from rich.table import Table
 
 # Local imports
-from .loader import KnowledgeLoader, Layer
+from sage.core.loader import KnowledgeLoader, Layer
 
 # Initialize
 app = typer.Typer(

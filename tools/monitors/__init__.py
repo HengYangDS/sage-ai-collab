@@ -8,7 +8,7 @@ Runtime capabilities (HealthMonitor) are now in:
 Dev Tools included:
 - TimeoutMonitor: Timeout tracking, statistics, and alerting
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 3.0.0
 """
 

@@ -19,13 +19,13 @@ Philosophy:
 - 达 (Da): Clarity - clear, maintainable, structured
 - 雅 (Ya): Elegance - refined, balanced, sustainable
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 Score: 100/100 🏆
 Experts: 24 Level 5
 """
 
-from .loader import (
+from .core.loader import (
     KnowledgeLoader,
     Layer,
     LoadingTrigger,
@@ -48,5 +48,5 @@ __all__ = [
 ]
 
 __version__ = "2.0.0"
-__author__ = "AI Collaboration KB Team"
+__author__ = "SAGE AI Collab Team"
 __score__ = "100/100"

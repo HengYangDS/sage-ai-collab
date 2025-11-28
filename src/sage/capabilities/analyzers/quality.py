@@ -5,7 +5,7 @@ This module provides:
 - QualityScore: Structured quality score with multiple dimensions
 - QualityAnalyzer: Analyzer for code and documentation quality
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

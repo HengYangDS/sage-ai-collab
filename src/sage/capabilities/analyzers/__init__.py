@@ -7,9 +7,9 @@ Provides analysis capabilities that can be exposed via MCP/API:
 - StructureChecker: Analyze directory and file structure (MCP: check_structure)
 """
 
-from ai_collab_kb.capabilities.analyzers.content import ContentAnalyzer, ContentMetrics
-from ai_collab_kb.capabilities.analyzers.quality import QualityAnalyzer, QualityScore
-from ai_collab_kb.capabilities.analyzers.structure import (
+from sage.capabilities.analyzers.content import ContentAnalyzer, ContentMetrics
+from sage.capabilities.analyzers.quality import QualityAnalyzer, QualityScore
+from sage.capabilities.analyzers.structure import (
     StructureChecker,
     StructureReport,
 )

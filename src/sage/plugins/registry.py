@@ -7,7 +7,7 @@ This module provides:
 - Hot-reload support
 - Hook execution pipeline
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

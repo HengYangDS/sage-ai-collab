@@ -20,7 +20,7 @@ Extension Points (8 hooks):
 - analyze: Custom content analysis
 
 Example:
-    from ai_collab_kb.plugins import PluginBase, PluginMetadata, get_plugin_registry
+    from sage.plugins import PluginBase, PluginMetadata, get_plugin_registry
 
     class MyPlugin(PluginBase):
         @property
@@ -38,7 +38,7 @@ Example:
     registry = get_plugin_registry()
     registry.register(MyPlugin())
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

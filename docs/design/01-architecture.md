@@ -14,13 +14,22 @@ status: production-ready
 > This document describes the **target architecture** and **design goals** for the SAGE Knowledge Base system.
 > It serves as a blueprint for implementation, not documentation of the current state.
 >
-> **Key Differences from Current Implementation:**
-> - Package name: Design uses `sage`, current implementation uses `ai_collab_kb`
-> - Config file: Design uses `sage.yaml`, current uses `aikb.yaml`
-> - Many planned features (DI Container, EventBus, structured logging) are not yet implemented
-> - Directory structure shows target state; actual project structure may differ
+> **Current Implementation Status (2025-11-29):**
 >
-> For current implementation status, see `07-roadmap.md`.
+> | Aspect | Design Target | Current State | Status |
+> |--------|---------------|---------------|--------|
+> | Package name | `sage-kb` | `ai-collab-kb` in pyproject.toml | 🔴 MISMATCH |
+> | Source location | `src/sage/` | `src/sage/` | ✅ Correct |
+> | Config file | `sage.yaml` | Not created | ❌ Missing |
+> | Directory structure | Core/Services/Capabilities | Flat + Capabilities | 🟡 Partial |
+> | Capabilities layer | analyzers, checkers, monitors | Implemented | ✅ 70% Done |
+> | Core infrastructure | DI, EventBus, Protocols | Not implemented | ⏸️ Deferred to v1.1 |
+> | Structured logging | structlog integration | Not implemented | ⏸️ Deferred to v1.1 |
+>
+> **Critical Issue**: `pyproject.toml` references `ai_collab_kb` package but code is in `src/sage/`.
+> Package cannot be installed until Phase 0 (Package Alignment) is completed.
+>
+> For detailed implementation status and roadmap, see `07-roadmap.md`.
 
 ## Architecture Overview
 

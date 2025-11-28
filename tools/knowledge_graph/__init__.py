@@ -6,7 +6,7 @@ This package provides development-only knowledge graph building tools.
 Dev Tools included:
 - KnowledgeGraphBuilder: Build knowledge graphs from content
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 3.0.0
 """
 

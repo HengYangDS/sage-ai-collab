@@ -5,7 +5,7 @@ This module provides:
 - ContentMetrics: Structured metrics for document content
 - ContentAnalyzer: Analyzer for token efficiency and structure
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

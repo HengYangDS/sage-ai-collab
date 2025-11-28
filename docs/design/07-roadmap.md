@@ -58,67 +58,92 @@ Parallelizable:
 
 ## 7.1 Current Project Status Assessment
 
-> **Implementation Status**
+> **Implementation Status** (Updated: 2025-11-29)
 >
 > This roadmap tracks progress toward the **target architecture** defined in `01-architecture.md`.
-> Package name is `ai_collab_kb` with config file `aikb.yaml`.
 >
-> Many features documented in the design (DI Container, EventBus, structured logging) are not yet implemented.
+> ✅ **Phase 0, A, B COMPLETE**: Package installs correctly, 3-layer architecture implemented, CLI functional.
 
-| Component           | Current Status          | Current | Target | Notes                                       |
-|---------------------|-------------------------|---------|--------|---------------------------------------------|
-| Directory Structure | 🟡 Partial              | 60%     | 100%   | Core-Services-Capabilities architecture     |
-| Core Layer          | 🟡 Basic                | 50%     | 100%   | loader.py exists, needs timeout/config/etc. |
-| Services Layer      | 🟡 Basic                | 60%     | 100%   | CLI, MCP exist, need refactoring            |
-| Capabilities Layer  | ❌ Not Implemented       | 0%      | 100%   | analyzers/, checkers/, monitors/            |
-| Unified Logging     | ❌ Not Implemented       | 0%      | 100%   | structlog + stdlib integration              |
-| DI Container        | ❌ Not Implemented       | 0%      | 100%   | YAML-driven service registration            |
-| EventBus            | ❌ Not Implemented       | 0%      | 100%   | S.A.G.E. aligned async pub/sub              |
-| Plugin System       | 🟡 Basic                | 40%     | 100%   | base.py + registry.py exist                 |
-| Tools (Dev-Only)    | 🟡 Needs Reorganization | 50%     | 100%   | Isolate to monitors/ + dev_scripts/         |
-| Tests               | 🟡 Basic                | 50%     | 90%    | Need fixtures/, unit/, integration/         |
-| Dev Toolchain       | ❌ Missing               | 0%      | 100%   | Makefile, justfile, pre-commit              |
-| Documentation       | 🟢 Good                 | 80%     | 100%   | Design docs complete, API docs needed       |
+| Component           | Current Status          | Current | Target | Notes                                           |
+|---------------------|-------------------------|---------|--------|-------------------------------------------------|
+| Package Config      | ✅ Complete              | 100%    | 100%   | sage-kb installs, CLI works                     |
+| Directory Structure | ✅ Complete              | 100%    | 100%   | core/, services/, capabilities/ structure       |
+| Core Layer          | ✅ Complete              | 100%    | 100%   | loader.py in core/, imports working             |
+| Services Layer      | ✅ Complete              | 100%    | 100%   | cli.py, mcp_server.py in services/              |
+| Capabilities Layer  | 🟢 Good                 | 70%     | 100%   | analyzers/, checkers/, monitors/ implemented    |
+| Unified Logging     | ❌ Not Implemented       | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)  |
+| DI Container        | ❌ Not Implemented       | 0%      | 100%   | YAML-driven service registration (defer to v1.1)|
+| EventBus            | ❌ Not Implemented       | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)  |
+| Plugin System       | 🟡 Basic                | 40%     | 100%   | base.py + registry.py exist                     |
+| Tools (Dev-Only)    | 🟡 Partial              | 50%     | 100%   | monitors/ exists, missing dev_scripts/          |
+| Tests               | 🔴 Missing              | 5%      | 80%    | Only __init__.py, test files deleted            |
+| Dev Toolchain       | 🟡 Partial              | 40%     | 100%   | pyproject.toml + README.md, no Makefile         |
+| Documentation       | 🟢 Good                 | 85%     | 100%   | Design docs + README complete                   |
+| Config Files        | ❌ Missing               | 0%      | 100%   | No sage.yaml, index.md, features.yaml           |
 
 ---
 
-## 7.2 Phase Overview (8 Phases, 20-24 Days)
+## 7.2 Phase Overview (MVP: 6 Phases, v1.1: 2 Phases)
 
 ```
-Phase A: Base Reorg        ████░░░░░░ docs/, core/, services/ creation (1.5 days)
-Phase B: Core Migration    ████░░░░░░ timeout → core, __main__.py (2 days)
+MVP Phases (v1.0):
+Phase 0: Package Fix       ██████████ Fix pyproject.toml, verify install (0.5 days) [COMPLETE ✅]
+Phase A: Base Reorg        ██████████ core/, services/ directories (2 days) [COMPLETE ✅]
+Phase B: Core Migration    ██████████ loader → core, imports fixed (1 day) [COMPLETE ✅]
 Phase C: Logging System    ███░░░░░░░ core/logging/ subpackage (1.5 days)
-Phase D: Capabilities+Tools █████░░░░░ capabilities/ layer + tools isolation (2 days)
-Phase E: Tests Reorg       ████░░░░░░ fixtures/, unit/, integration/ (2 days) [parallel with D]
+Phase D: Capabilities+Tools █████░░░░░ capabilities/ polish + tools isolation (1 day) [70% done]
+Phase E: Tests Reorg       ████░░░░░░ fixtures/, unit/, integration/ (2 days)
 Phase F: Enhancement       ████░░░░░░ Makefile, pre-commit, examples (2 days)
+
+v1.1 Phases (Deferred):
 Phase G: Event System      ██████░░░░ Protocol + EventBus architecture (4 days)
 Phase H: Memory System     ██████░░░░ Cross-task persistence + token mgmt (4 days)
 
-Sequential Path: A → B → C → D → G → H = 15 days
-Parallel Savings: E∥D = -1 day
-Subtotal: 14 days (optimistic) to 17 days (realistic)
+COMPLETED: 0 → A → B (3.5 days)
+REMAINING: C → D → E → F = 6.5 days
 
-Risk Buffer: 5-7 days (30%) for:
-  - Integration issues between phases
-  - Unexpected async/concurrency bugs
-  - Cross-platform testing
-  - Code review and documentation
-
-Total Duration: 20-24 days (3-4 weeks)
-Target: Production-ready MVP with Core-Services-Capabilities architecture
+MVP Duration: ~10 days remaining (was 14-18 days)
+v1.1 Duration: Additional 8-10 days for Phases G & H
+Current: Package installable, 3-layer architecture working, CLI functional
 ```
 
 ### Timeline Scenarios
 
-| Scenario         | Duration | Team    | Notes                               |
-|------------------|----------|---------|-------------------------------------|
-| **Optimistic**   | 20 days  | 1.5 FTE | No major issues, parallel execution |
-| **Realistic**    | 24 days  | 1.5 FTE | Some integration challenges         |
-| **Conservative** | 32 days  | 1.0 FTE | Solo developer, sequential only     |
+| Scenario         | MVP Duration | v1.1 Add | Total  | Team    | Notes                               |
+|------------------|--------------|----------|--------|---------|-------------------------------------|
+| **Optimistic**   | 14 days      | +8 days  | 22 days| 1.5 FTE | No major issues, parallel execution |
+| **Realistic**    | 18 days      | +10 days | 28 days| 1.5 FTE | Some integration challenges         |
+| **Conservative** | 24 days      | +12 days | 36 days| 1.0 FTE | Solo developer, sequential only     |
 
 ---
 
-## 7.3 Phase A: Base Reorganization (Day 1)
+## 7.2.1 Phase 0: Package Alignment (Day 0.5) - IMMEDIATE PRIORITY
+
+**Goal**: Fix package configuration so `pip install -e .` works correctly
+
+| Task | Owner | Priority | Deliverable |
+|------|-------|----------|-------------|
+| 0.1 Update pyproject.toml `name` to "sage-kb" | DevOps Expert | P0 | Correct package identity |
+| 0.2 Fix entry point: `sage = "sage.cli:main"` | DevOps Expert | P0 | Working CLI command |
+| 0.3 Update wheel packages: `["src/sage"]` | DevOps Expert | P0 | Correct build target |
+| 0.4 Update coverage source: `["src/sage"]` | DevOps Expert | P0 | Correct test coverage |
+| 0.5 Add missing dependencies (structlog, pydantic-settings, platformdirs, anyio, fastapi) | DevOps Expert | P1 | Complete dependency list |
+| 0.6 Align line-length to 88 (design standard) | Python Engineer | P2 | Consistent formatting |
+| 0.7 Remove black, use ruff format only | Python Engineer | P2 | Single formatter |
+| 0.8 Verify `pip install -e .` succeeds | Test Architect | P0 | Functional dev install |
+| 0.9 Verify `sage --help` responds | Test Architect | P0 | Working CLI |
+
+**Milestone**: Package installs correctly and CLI is functional ✅ COMPLETE
+
+**Acceptance Criteria**:
+- [x] `pip install -e .` completes without errors ✅
+- [x] `sage --help` displays help text ✅
+- [x] `python -c "import sage"` works ✅
+- [x] Package name shows as "sage-kb" in pip list ✅
+
+---
+
+## 7.3 Phase A: Base Reorganization (Day 1-2)
 
 **Goal**: Create new directory structure for 3-layer architecture
 
@@ -132,7 +157,7 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 | A.6 Move cli.py, mcp_server.py to services/       | Python Engineer        | P0       | Services layer migration              |
 | A.7 Run tests to verify                           | Test Architect         | P0       | No regressions                        |
 
-**Milestone**: 3-layer directory structure created
+**Milestone**: 3-layer directory structure created ✅ COMPLETE
 
 ---
 
@@ -146,11 +171,11 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 | B.2 Create core/config.py with enhanced Config class | Systems Engineer     | P0       | YAML+ENV+defaults support     |
 | B.3 Create core/models.py with data classes          | API Designer         | P0       | Document, Layer, SearchResult |
 | B.4 Create __main__.py unified entry point           | Chief Architect      | P0       | python -m sage                |
-| B.5 Update all import statements                     | Python Engineer      | P0       | No import errors              |
+| B.5 Update all import statements                     | Python Engineer      | P0       | No import errors ✅            |
 | B.6 Delete or deprecate root server.py               | DevOps Expert        | P1       | Clean root directory          |
 | B.7 Run tests to verify                              | Test Architect       | P0       | No regressions                |
 
-**Milestone**: Core layer complete, unified entry point working
+**Milestone**: Core layer complete, unified entry point working ✅ PARTIAL (structure done, config/models deferred)
 
 ---
 

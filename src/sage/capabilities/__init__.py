@@ -10,9 +10,9 @@ Capabilities include:
 - monitors: Health monitoring
 
 Usage:
-    from ai_collab_kb.capabilities.analyzers import QualityAnalyzer
-    from ai_collab_kb.capabilities.checkers import LinkChecker
-    from ai_collab_kb.capabilities.monitors import HealthMonitor
+    from sage.capabilities.analyzers import QualityAnalyzer
+    from sage.capabilities.checkers import LinkChecker
+    from sage.capabilities.monitors import HealthMonitor
 
 MCP Tools exposed:
     - analyze_quality: QualityAnalyzer.analyze_file()
@@ -22,7 +22,7 @@ MCP Tools exposed:
     - get_health: HealthMonitor.get_status()
 """
 
-from ai_collab_kb.capabilities.analyzers import (
+from sage.capabilities.analyzers import (
     ContentAnalyzer,
     ContentMetrics,
     QualityAnalyzer,
@@ -30,10 +30,10 @@ from ai_collab_kb.capabilities.analyzers import (
     StructureChecker,
     StructureReport,
 )
-from ai_collab_kb.capabilities.checkers import (
+from sage.capabilities.checkers import (
     LinkChecker,
 )
-from ai_collab_kb.capabilities.monitors import (
+from sage.capabilities.monitors import (
     HealthMonitor,
 )
 

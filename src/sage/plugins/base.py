@@ -17,7 +17,7 @@ Extension Points (7 hooks):
 - pre_format: Before output formatting
 - post_format: After output formatting
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

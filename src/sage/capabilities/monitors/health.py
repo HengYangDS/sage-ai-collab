@@ -6,7 +6,7 @@ This module provides:
 - HealthCheck: Individual health check result
 - HealthMonitor: Comprehensive health monitoring
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 
@@ -247,7 +247,7 @@ class HealthMonitor:
             if str(src_path) not in sys.path:
                 sys.path.insert(0, str(src_path))
 
-            from ai_collab_kb.loader import KnowledgeLoader
+            from sage.core.loader import KnowledgeLoader
 
             loader = KnowledgeLoader(kb_path=self.kb_path)
             result = await loader.load_core(timeout_ms=2000)

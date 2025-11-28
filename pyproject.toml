@@ -5,12 +5,12 @@ build-backend = "hatchling.build"
 [project]
 name = "sage-kb"
 version = "2.0.0"
-description = "AI Collaboration Knowledge Base - Production-grade knowledge management with timeout protection"
+description = "SAGE: AI Collaboration Knowledge Base"
 readme = "README.md"
 license = "MIT"
 requires-python = ">=3.12"
 authors = [
-    { name = "AI Collaboration KB Team" }
+    { name = "SAGE AI Collab Team" }
 ]
 keywords = [
     "ai",
@@ -52,7 +52,6 @@ dev = [
     "pytest>=7.0",
     "pytest-asyncio>=0.21",
     "pytest-cov>=4.0",
-    "black>=23.0",
     "ruff>=0.1",
     "mypy>=1.0",
 ]
@@ -67,10 +66,10 @@ Repository = "https://github.com/HengYangDS/sage-kb"
 Issues = "https://github.com/HengYangDS/sage-kb/issues"
 
 [project.scripts]
-aikb = "ai_collab_kb.cli:main"
+sage = "sage.services.cli:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/ai_collab_kb"]
+packages = ["src/sage"]
 
 [tool.hatch.build.targets.sdist]
 include = [
@@ -78,7 +77,7 @@ include = [
     "/content",
     "/tools",
     "/index.md",
-    "/aikb.yaml",
+    "/sage.yaml",
     "/README.md",
     "/LICENSE",
 ]
@@ -86,14 +85,10 @@ include = [
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 asyncio_mode = "auto"
-addopts = "-v --cov=ai_collab_kb --cov-report=term-missing"
-
-[tool.black]
-line-length = 120
-target-version = ["py312", "py313", "py314"]
+addopts = "-v --cov=sage --cov-report=term-missing"
 
 [tool.ruff]
-line-length = 120
+line-length = 88
 target-version = "py312"
 select = [
     "E", # pycodestyle errors
@@ -105,7 +100,7 @@ select = [
     "UP", # pyupgrade
 ]
 ignore = [
-    "E501", # line too long (handled by black)
+    "E501", # line too long (handled by ruff format)
     "B008", # don't perform function calls in argument defaults
 ]
 
@@ -117,7 +112,7 @@ disallow_untyped_defs = true
 ignore_missing_imports = true
 
 [tool.coverage.run]
-source = ["src/ai_collab_kb"]
+source = ["src/sage"]
 branch = true
 
 [tool.coverage.report]

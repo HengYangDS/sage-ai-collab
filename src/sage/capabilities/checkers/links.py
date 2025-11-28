@@ -7,7 +7,7 @@ This module provides:
 - LinkResult: Individual link check result
 - LinkChecker: Comprehensive link validation
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 

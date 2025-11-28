@@ -8,7 +8,7 @@ This module provides:
 - Caching and fallback strategies
 - Differential and compressed loading
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 
@@ -25,7 +25,7 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any
 
-_project_root = Path(__file__).parent.parent.parent
+_project_root = Path(__file__).parent.parent.parent.parent  # core -> sage -> src -> project_root
 _tools_path = _project_root / "tools"
 
 # Add paths if not present

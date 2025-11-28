@@ -14,7 +14,7 @@ Architecture (Plan D):
 - Runtime Capabilities → src/ai_collab_kb/capabilities/ (exposed via MCP)
 - Dev Tools → tools/ (this package, for development/CI only)
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 3.0.0
 """
 

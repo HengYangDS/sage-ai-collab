@@ -7,7 +7,7 @@ This module provides:
 - MigrationResult: Result of a migration
 - MigrationToolkit: Execute migrations safely.
 
-Author: AI Collaboration KB Team
+Author: SAGE AI Collab Team
 Version: 2.0.0
 """
 
