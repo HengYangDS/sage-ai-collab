@@ -140,7 +140,8 @@ def _get_always_load_from_config() -> list[str]:
     """
     config = _load_config()
     loading_config = config.get("loading", {})
-    return loading_config.get("always", [])
+    always_load: list[str] = loading_config.get("always", [])
+    return always_load
 
 
 def _parse_timeout_str(timeout_str: str | int) -> int:
@@ -492,8 +493,7 @@ class KnowledgeLoader:
 
         try:
 
-            async def do_search():
-                nonlocal results
+            async def do_search():  # type: ignore[no-untyped-def]
                 for md_file in self.kb_path.rglob("*.md"):
                     # Skip archive
                     if "content/archive" in str(md_file).replace("\\", "/"):

@@ -663,7 +663,7 @@ if MCP_AVAILABLE and app is not None:
             tools_path = Path(__file__).parent.parent.parent.parent / "tools"
             if str(tools_path) not in sys.path:
                 sys.path.insert(0, str(tools_path))
-            from tools.knowledge_graph.knowledge_graph_builder import (
+            from tools.knowledge_graph.knowledge_graph_builder import (  # type: ignore[import-not-found]
                 KnowledgeGraphBuilder,
             )
 
@@ -809,7 +809,9 @@ if MCP_AVAILABLE and app is not None:
             tools_path = Path(__file__).parent.parent.parent.parent / "tools"
             if str(tools_path) not in sys.path:
                 sys.path.insert(0, str(tools_path))
-            from tools.monitors.timeout_monitor import get_timeout_monitor  # type: ignore[import-not-found]
+            from tools.monitors.timeout_monitor import (
+                get_timeout_monitor,  # type: ignore[import-not-found]
+            )
 
             monitor = get_timeout_monitor()
             stats = monitor.get_stats(minutes=minutes)
@@ -853,7 +855,9 @@ if MCP_AVAILABLE and app is not None:
             tools_path = Path(__file__).parent.parent.parent.parent / "tools"
             if str(tools_path) not in sys.path:
                 sys.path.insert(0, str(tools_path))
-            from tools.migration_toolkit import MigrationToolkit  # type: ignore[import-not-found]
+            from tools.migration_toolkit import (
+                MigrationToolkit,  # type: ignore[import-not-found]
+            )
 
             toolkit = MigrationToolkit(kb_path=Path(path))
             backup_path = toolkit.create_backup(name=name)
