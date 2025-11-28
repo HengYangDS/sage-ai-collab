@@ -92,14 +92,14 @@ sage-kb/
 
 ## 📄 Important Files
 
-| File                    | Purpose                                          |
-|-------------------------|--------------------------------------------------|
-| `sage.yaml`             | Main configuration (timeouts, triggers, loading) |
-| `docs/design/`          | Design documents (architecture, services, etc.)  |
-| `src/sage/core/`        | Core layer (loader, timeout, config)             |
-| `src/sage/services/`    | Service layer (CLI, MCP, API)                    |
-| `pyproject.toml`        | Python project configuration                     |
-| `index.md`              | Knowledge base navigation entry                  |
+| File                 | Purpose                                          |
+|----------------------|--------------------------------------------------|
+| `sage.yaml`          | Main configuration (timeouts, triggers, loading) |
+| `docs/design/`       | Design documents (architecture, services, etc.)  |
+| `src/sage/core/`     | Core layer (loader, timeout, config)             |
+| `src/sage/services/` | Service layer (CLI, MCP, API)                    |
+| `pyproject.toml`     | Python project configuration                     |
+| `index.md`           | Knowledge base navigation entry                  |
 
 ---
 

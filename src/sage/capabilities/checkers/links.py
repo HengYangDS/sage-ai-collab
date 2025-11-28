@@ -1,5 +1,5 @@
 """
-Link Checker - Validate internal and external links in knowledge base.
+Link Checker - Validate internal and external links in a knowledge base.
 
 This module provides:
 - LinkType: Types of links (internal, external, anchor)
@@ -28,7 +28,7 @@ class LinkType(Enum):
 
     INTERNAL = "internal"  # Links to other files in KB
     EXTERNAL = "external"  # Links to external URLs
-    ANCHOR = "anchor"  # Links to anchors within same file
+    ANCHOR = "anchor"  # Links to anchors within the same file
     IMAGE = "image"  # Image references
     UNKNOWN = "unknown"
 
@@ -72,7 +72,7 @@ class LinkResult:
 
 @dataclass
 class LinkReport:
-    """Comprehensive link check report."""
+    """A comprehensive link check report."""
 
     total_links: int
     valid_count: int
@@ -133,7 +133,7 @@ class LinkChecker:
         timeout_s: float = 10.0,
     ):
         """
-        Initialize link checker.
+        Initialize a link checker.
 
         Args:
             kb_path: Path to knowledge base root
@@ -147,7 +147,8 @@ class LinkChecker:
         self._heading_cache: dict[str, set[str]] = {}
         self._file_cache: set[str] = set()
 
-    def _normalize_anchor(self, heading: str) -> str:
+    @staticmethod
+    def _normalize_anchor(heading: str) -> str:
         """Convert heading text to anchor format."""
         # GitHub-style anchor normalization
         anchor = heading.lower()
@@ -156,7 +157,7 @@ class LinkChecker:
         return anchor
 
     def _get_file_headings(self, file_path: Path) -> set[str]:
-        """Extract all headings from a markdown file."""
+        """Extract all headings from a Markdown file."""
         if str(file_path) in self._heading_cache:
             return self._heading_cache[str(file_path)]
 
@@ -174,14 +175,15 @@ class LinkChecker:
         return headings
 
     def _build_file_cache(self) -> None:
-        """Build cache of all files in KB."""
+        """Build a cache of all files in KB."""
         self._file_cache.clear()
         for file_path in self.kb_path.rglob("*"):
             if file_path.is_file():
                 rel_path = file_path.relative_to(self.kb_path)
                 self._file_cache.add(str(rel_path).replace("\\", "/"))
 
-    def _classify_link(self, link: str) -> LinkType:
+    @staticmethod
+    def _classify_link(link: str) -> LinkType:
         """Classify a link by type."""
         if link.startswith("#"):
             return LinkType.ANCHOR
@@ -190,7 +192,7 @@ class LinkChecker:
         if parsed.scheme in ("http", "https"):
             return LinkType.EXTERNAL
 
-        # Check if it's an image
+        # Check if it is an image
         lower_link = link.lower()
         if any(
             lower_link.endswith(ext)
@@ -201,7 +203,7 @@ class LinkChecker:
         return LinkType.INTERNAL
 
     def _resolve_relative_path(self, source_file: Path, target: str) -> str:
-        """Resolve a relative path from source file."""
+        """Resolve a relative path from a source file."""
         # Remove anchor if present
         target_path = target.split("#")[0]
         if not target_path:
@@ -210,7 +212,7 @@ class LinkChecker:
         # Decode URL encoding
         target_path = unquote(target_path)
 
-        # Resolve relative to source file's directory
+        # Resolve relative to the source file's directory
         source_dir = source_file.parent
         resolved = (source_dir / target_path).resolve()
 
@@ -243,7 +245,7 @@ class LinkChecker:
                 "\\", "/"
             )
 
-        # Check if file exists
+        # Check if a file exists
         if file_part and not target_file.exists():
             return LinkResult(
                 source_file=str(source_file.relative_to(self.kb_path)),
@@ -372,7 +374,7 @@ class LinkChecker:
         Check all links in a single file.
 
         Args:
-            file_path: Path to the markdown file
+            file_path: Path to the Markdown file
 
         Returns:
             List of LinkResult for each link found

@@ -25,7 +25,6 @@ from unittest.mock import AsyncMock, MagicMock
 
 import pytest
 
-
 # ============================================================================
 # Configuration Fixtures
 # ============================================================================
@@ -62,7 +61,7 @@ def timeout_config() -> dict[str, Any]:
 @pytest.fixture
 def mock_loader() -> AsyncMock:
     """Mock loader that returns predictable content."""
-    from sage.core.loader import LoadResult, Layer
+    from sage.core.loader import Layer, LoadResult
 
     loader = AsyncMock()
     loader.load.return_value = LoadResult(

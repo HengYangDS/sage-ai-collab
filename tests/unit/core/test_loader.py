@@ -20,8 +20,8 @@ import pytest
 from sage.core.loader import (
     KnowledgeLoader,
     Layer,
-    LoadResult,
     LoadingTrigger,
+    LoadResult,
 )
 
 

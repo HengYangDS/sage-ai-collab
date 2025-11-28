@@ -61,23 +61,28 @@ Examples:
 ## API Reference: [Function/Class]
 
 ### Signature
+
 \`\`\`python
 def function_name(param1: Type, param2: Type = default) -> ReturnType:
 \`\`\`
 
 ### Parameters
+
 | Name | Type | Required | Description |
 |------|------|----------|-------------|
 | param1 | Type | Yes | Description |
 | param2 | Type | No | Description (default: X) |
 
 ### Returns
+
 Description of return value.
 
 ### Raises
+
 - `ExceptionType`: When condition occurs
 
 ### Example
+
 \`\`\`python
 result = function_name("value", param2=True)
 \`\`\`
@@ -89,12 +94,14 @@ result = function_name("value", param2=True)
 ## Guide: [Topic]
 
 ### Prerequisites
+
 - Prerequisite 1
 - Prerequisite 2
 
 ### Steps
 
 #### Step 1: [Action]
+
 Description of what to do.
 
 \`\`\`bash
@@ -104,12 +111,15 @@ command to run
 Expected result: [what should happen]
 
 #### Step 2: [Action]
+
 ...
 
 ### Verification
+
 How to verify success.
 
 ### Troubleshooting
+
 Common issues and solutions.
 ```
 
@@ -119,25 +129,31 @@ Common issues and solutions.
 # ADR-[NNN]: [Title]
 
 ## Status
+
 [Proposed | Accepted | Deprecated | Superseded]
 
 ## Context
+
 What is the issue that we're seeing that is motivating this decision?
 
 ## Decision
+
 What is the change that we're proposing and/or doing?
 
 ## Consequences
 
 ### Positive
+
 - Benefit 1
 - Benefit 2
 
 ### Negative
+
 - Tradeoff 1
 - Tradeoff 2
 
 ### Neutral
+
 - Observation 1
 ```
 
@@ -158,6 +174,7 @@ What is the change that we're proposing and/or doing?
 
 ```markdown
 Good code example characteristics:
+
 - Complete and runnable
 - Minimal but sufficient
 - Well-commented for non-obvious parts
@@ -187,12 +204,14 @@ Good code example characteristics:
 
 ```markdown
 # High Token Efficiency
+
 - Use tables for structured data
 - Concise headers
 - Code blocks for examples
 - Bullet points for lists
 
 # Low Token Efficiency (Avoid)
+
 - Long paragraphs
 - Repeated information
 - Excessive formatting
@@ -207,10 +226,12 @@ Good code example characteristics:
 **Key Point**: Brief summary of this section.
 
 ### Details
+
 - Detail 1
 - Detail 2
 
 ### Example
+
 \`\`\`
 code
 \`\`\`
@@ -220,9 +241,11 @@ code
 
 ```markdown
 # Good Cross-References
+
 See [Autonomy Levels](../03_frameworks/autonomy/levels.md) for details.
 
 # For AI Context
+
 Related: `03_frameworks/autonomy/levels.md` (autonomy definitions)
 ```
 
@@ -282,23 +305,28 @@ Related: `03_frameworks/autonomy/levels.md` (autonomy definitions)
 Brief description (1-2 sentences).
 
 ## Features
+
 - Feature 1
 - Feature 2
 
 ## Quick Start
+
 \`\`\`bash
 installation command
 usage command
 \`\`\`
 
 ## Documentation
+
 - [Guide](link)
 - [API Reference](link)
 
 ## Contributing
+
 See [CONTRIBUTING.md](link).
 
 ## License
+
 [License type]
 ```
 
@@ -308,15 +336,19 @@ See [CONTRIBUTING.md](link).
 ## [Version] - YYYY-MM-DD
 
 ### Added
+
 - New feature description
 
 ### Changed
+
 - Change description
 
 ### Fixed
+
 - Bug fix description
 
 ### Removed
+
 - Removed feature description
 ```
 

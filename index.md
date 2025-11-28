@@ -4,14 +4,14 @@
 
 ## Quick Navigation
 
-| Layer | Path | Purpose |
-|-------|------|---------|
-| **Core** | `content/core/` | Principles, defaults, quick reference |
+| Layer          | Path                  | Purpose                                   |
+|----------------|-----------------------|-------------------------------------------|
+| **Core**       | `content/core/`       | Principles, defaults, quick reference     |
 | **Guidelines** | `content/guidelines/` | Code style, engineering, AI collaboration |
-| **Frameworks** | `content/frameworks/` | Autonomy, timeout, cognitive patterns |
-| **Practices** | `content/practices/` | Documentation, engineering patterns |
-| **Scenarios** | `content/scenarios/` | Context-specific guides |
-| **Templates** | `content/templates/` | Project setup templates |
+| **Frameworks** | `content/frameworks/` | Autonomy, timeout, cognitive patterns     |
+| **Practices**  | `content/practices/`  | Documentation, engineering patterns       |
+| **Scenarios**  | `content/scenarios/`  | Context-specific guides                   |
+| **Templates**  | `content/templates/`  | Project setup templates                   |
 
 ## Key Files
 

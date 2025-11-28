@@ -40,11 +40,13 @@ details.
 
 ```markdown
 ## Problem Analysis
+
 - What: [Problem description]
 - Why: [Root cause]
 - Impact: [Consequences if unaddressed]
 
 ## Approach Exploration
+
 | Option | Pros | Cons | Risk |
 |--------|------|------|------|
 | A | ... | ... | Low |
@@ -52,12 +54,14 @@ details.
 | C | ... | ... | High |
 
 ## Decision Rationale
+
 - Selected: [Option]
 - Why: [Reasoning]
 - Trade-offs: [What we're accepting]
 - Risks: [Mitigation plan]
 
 ## Implementation Steps
+
 1. Step 1 → Expected outcome
 2. Step 2 → Validation criteria
 3. Step 3 → Success metrics
@@ -114,18 +118,23 @@ details.
 ## Iteration [N]
 
 ### Thinking
+
 [Analysis and reasoning]
 
 ### Decision
+
 [What was decided and why]
 
 ### Action
+
 [What was implemented]
 
 ### Observation
+
 [Results and measurements]
 
 ### Learning
+
 [Insights for next iteration]
 ```
 
@@ -185,6 +194,7 @@ Activate for specific scenarios:
 ## Quality Critique: [Feature/Component]
 
 ### Core Angles Assessment
+
 | Angle | Status | Notes |
 |-------|--------|-------|
 | Correctness | ✅/⚠️/❌ | ... |
@@ -193,9 +203,11 @@ Activate for specific scenarios:
 | ... | ... | ... |
 
 ### Issues Found
+
 1. [Issue] - Priority: P0/P1/P2/P3
 
 ### Recommendations
+
 1. [Action] - Effort: Low/Medium/High
 ```
 
@@ -317,15 +329,18 @@ Principles (Permanent)
 
 ```markdown
 ## Lightweight (Level 1-2)
+
 [EXPERT: Architect, Security]
 Question: <decision question>
 
 ## Standard (Level 3)
+
 [EXPERT COMMITTEE: Level 3]
 Context: <background>
 Question: <decision>
 
 ## Full Committee (Level 4-5)
+
 [EXPERT COMMITTEE: Level 5]
 Context: <comprehensive background>
 Question: <strategic decision>
@@ -355,14 +370,16 @@ Question: <strategic decision>
 ## Task: [Parent Task]
 
 ### Subtasks
+
 1. [ ] Subtask 1 (Est: 30min)
-   - Acceptance: [criteria]
+    - Acceptance: [criteria]
 2. [ ] Subtask 2 (Est: 1hr)
-   - Acceptance: [criteria]
+    - Acceptance: [criteria]
 3. [ ] Subtask 3 (Est: 30min)
-   - Acceptance: [criteria]
+    - Acceptance: [criteria]
 
 ### Dependencies
+
 - Subtask 2 depends on Subtask 1
 - Subtask 3 can run in parallel
 
@@ -400,20 +417,25 @@ Question: <strategic decision>
 ## Experience: [Title]
 
 ### Context
+
 What was the task/situation?
 
 ### What Worked
+
 - [Success pattern 1]
 - [Success pattern 2]
 
 ### What Didn't Work
+
 - [Failure pattern 1]
 - [Failure pattern 2]
 
 ### Lessons Learned
+
 1. [Lesson] → Apply to: [future scenarios]
 
 ### Proposed Updates
+
 - [ ] Update guideline section X
 - [ ] Add to practices/Y
 ```

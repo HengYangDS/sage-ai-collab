@@ -66,16 +66,16 @@ print(result.content)
 SAGE uses a 3-layer architecture:
 
 ```
-┌─────────────────────────────────────────────┐
-│              Services Layer                  │
-│   CLI (Typer) | MCP (FastMCP) | API (FastAPI)│
-├─────────────────────────────────────────────┤
-│            Capabilities Layer                │
-│   Analyzers | Checkers | Monitors            │
-├─────────────────────────────────────────────┤
-│               Core Layer                     │
-│   Loader | Timeout | Config | EventBus       │
-└─────────────────────────────────────────────┘
+┌────────────────────────────────────────────────┐
+│              Services Layer                    │
+│   CLI (Typer) | MCP (FastMCP) | API (FastAPI)  │
+├────────────────────────────────────────────────┤
+│            Capabilities Layer                  │
+│   Analyzers | Checkers | Monitors              │
+├────────────────────────────────────────────────┤
+│               Core Layer                       │
+│   Loader | Timeout | Config | EventBus         │
+└────────────────────────────────────────────────┘
 ```
 
 ## Documentation

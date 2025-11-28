@@ -11,13 +11,9 @@ Author: SAGE AI Collab Team
 Version: 0.1.0
 """
 
-from unittest.mock import patch, MagicMock
-
-import pytest
 from typer.testing import CliRunner
 
 from sage.services.cli import app
-
 
 runner = CliRunner()
 
@@ -203,11 +199,23 @@ class TestCLIOutputFormat:
         # Rich tables use box characters or structured output
         assert result.exit_code == 0
         # Output should be structured (contains property names)
-        assert "Version" in result.output or "Status" in result.output or "Property" in result.output
+        assert (
+            "Version" in result.output
+            or "Status" in result.output
+            or "Property" in result.output
+        )
 
     def test_help_shows_all_commands(self):
         """Test help shows all registered commands."""
         result = runner.invoke(app, ["--help"])
-        expected_commands = ["get", "search", "info", "validate", "serve", "cache", "version"]
+        expected_commands = [
+            "get",
+            "search",
+            "info",
+            "validate",
+            "serve",
+            "cache",
+            "version",
+        ]
         for cmd in expected_commands:
             assert cmd in result.output.lower()

@@ -135,6 +135,7 @@ All Things (∞):       Dynamic composition by scenario
 ## Quality Evaluation: [Component/Feature]
 
 ### Core Angles (Always Evaluate)
+
 | Angle | Score (1-5) | Notes |
 |-------|-------------|-------|
 | Correctness | | |
@@ -149,12 +150,14 @@ All Things (∞):       Dynamic composition by scenario
 | Effectiveness | | |
 
 ### Extended Angles (If Applicable)
+
 [Select relevant angles based on scenario]
 
 ### Summary
-- **Strengths**: 
-- **Concerns**: 
-- **Recommendations**: 
+
+- **Strengths**:
+- **Concerns**:
+- **Recommendations**:
 - **Overall Score**: /50
 ```
 

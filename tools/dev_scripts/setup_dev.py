@@ -146,7 +146,7 @@ def verify_imports() -> bool:
 
         print("  ✅ sage.services.cli.app")
 
-        from sage.capabilities import QualityAnalyzer, HealthMonitor
+        from sage.capabilities import HealthMonitor, QualityAnalyzer
 
         print("  ✅ sage.capabilities")
 

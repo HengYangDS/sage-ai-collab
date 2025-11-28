@@ -64,22 +64,22 @@ Parallelizable:
 >
 > ✅ **Phase 0, A, B, C (deferred), D, E, F COMPLETE**: MVP structure ready, tests organized, dev toolchain in place.
 
-| Component           | Current Status    | Current | Target | Notes                                            |
-|---------------------|-------------------|---------|--------|--------------------------------------------------|
-| Package Config      | ✅ Complete        | 100%    | 100%   | sage-kb installs, CLI works                      |
-| Directory Structure | ✅ Complete        | 100%    | 100%   | core/, services/, capabilities/ structure        |
-| Core Layer          | ✅ Complete        | 100%    | 100%   | loader.py in core/, imports working              |
-| Services Layer      | ✅ Complete        | 100%    | 100%   | cli.py, mcp_server.py in services/               |
-| Capabilities Layer  | ✅ Complete        | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented     |
-| Unified Logging     | ⏸️ Deferred       | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)   |
-| DI Container        | ⏸️ Deferred       | 0%      | 100%   | YAML-driven service registration (defer to v1.1) |
-| EventBus            | ⏸️ Deferred       | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)   |
-| Plugin System       | 🟡 Basic          | 40%     | 100%   | base.py + registry.py exist                      |
-| Tools (Dev-Only)    | ✅ Complete        | 100%    | 100%   | monitors/, dev_scripts/, lazy imports            |
-| Tests               | ✅ Implemented     | 80%     | 80%    | 56 tests, 81% core coverage, 48% CLI coverage    |
-| Dev Toolchain       | ✅ Complete        | 100%    | 100%   | Makefile, py.typed, pyproject.toml               |
-| Documentation       | 🟢 Good           | 90%     | 100%   | Design docs + README complete                    |
-| Config Files        | ✅ Complete        | 100%    | 100%   | sage.yaml, index.md created                      |
+| Component           | Current Status | Current | Target | Notes                                             |
+|---------------------|----------------|---------|--------|---------------------------------------------------|
+| Package Config      | ✅ Complete     | 100%    | 100%   | sage-kb installs, CLI works                       |
+| Directory Structure | ✅ Complete     | 100%    | 100%   | core/, services/, capabilities/ structure         |
+| Core Layer          | ✅ Complete     | 100%    | 100%   | loader.py in core/, imports working               |
+| Services Layer      | ✅ Complete     | 100%    | 100%   | cli.py, mcp_server.py in services/                |
+| Capabilities Layer  | ✅ Complete     | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented      |
+| Unified Logging     | ⏸️ Deferred    | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)    |
+| DI Container        | ⏸️ Deferred    | 0%      | 100%   | YAML-driven service registration (defer to v1.1)  |
+| EventBus            | ⏸️ Deferred    | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)    |
+| Plugin System       | 🟡 Basic       | 40%     | 100%   | base.py + registry.py exist                       |
+| Tools (Dev-Only)    | ✅ Complete     | 100%    | 100%   | monitors/, dev_scripts/, lazy imports             |
+| Tests               | ✅ Implemented  | 80%     | 80%    | 82 tests, 81% core coverage, 48% MCP/CLI coverage |
+| Dev Toolchain       | ✅ Complete     | 100%    | 100%   | Makefile, py.typed, pyproject.toml                |
+| Documentation       | 🟢 Good        | 90%     | 100%   | Design docs + README complete                     |
+| Config Files        | ✅ Complete     | 100%    | 100%   | sage.yaml, index.md created                       |
 
 ---
 
@@ -100,10 +100,10 @@ Phase C: Logging System    ██████░░░░ core/logging/ subpacka
 Phase G: Event System      ██████░░░░ Protocol + EventBus architecture (4 days)
 Phase H: Memory System     ██████░░░░ Cross-task persistence + token mgmt (4 days)
 
-COMPLETED: 0 → A → B → D → E → F + Config Files + Tests (MVP Complete ✅)
-REMAINING: Capabilities/plugins tests (optional), MCP server tests (optional)
+COMPLETED: 0 → A → B → D → E → F + Config Files + Tests + MCP Tests (MVP Complete ✅)
+REMAINING: Capabilities/plugins tests (optional)
 
-MVP Duration: Structure complete, 56 tests passing, config files ready ✅
+MVP Duration: Structure complete, 82 tests passing, config files ready ✅
 v1.1 Duration: Additional 9-12 days for Phases C, G & H
 Current: Package installable, 3-layer architecture, dev toolchain, config files, MVP ready
 ```
