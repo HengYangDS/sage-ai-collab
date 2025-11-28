@@ -236,16 +236,18 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 | F.2 Create .pre-commit-config.yaml          | DevOps Expert          | P0       | ruff, mypy hooks             |
 | F.3 Create .env.example                     | DevOps Expert          | P1       | Environment template         |
 | F.4 Add py.typed marker                     | Python Engineer        | P1       | PEP 561 compliance           |
+| F.4.1 Generate type stubs (.pyi files)      | Python Engineer        | P2       | stubgen for public API       |
 | F.5 Create examples/ directory with samples | Documentation Engineer | P1       | Usage examples               |
 
 ### Day 8: Documentation & Release Prep
 
-| Task                                      | Owner                  | Priority | Deliverable        |
-|-------------------------------------------|------------------------|----------|--------------------|
-| F.6 Complete README.md user documentation | Documentation Engineer | P0       | Comprehensive docs |
-| F.7 Add CHANGELOG.md                      | Documentation Engineer | P1       | Version history    |
-| F.8 Prepare PyPI release                  | DevOps Expert          | P1       | Package on PyPI    |
-| F.9 Final integration testing             | Test Architect         | P0       | Release validation |
+| Task                                      | Owner                  | Priority | Deliverable           |
+|-------------------------------------------|------------------------|----------|-----------------------|
+| F.6 Complete README.md user documentation | Documentation Engineer | P0       | Comprehensive docs    |
+| F.7 Add CHANGELOG.md                      | Documentation Engineer | P1       | Version history       |
+| F.8 Prepare PyPI release                  | DevOps Expert          | P1       | Package on PyPI       |
+| F.9 Final integration testing             | Test Architect         | P0       | Release validation    |
+| F.10 Add user feedback mechanism          | Product Manager        | P2       | Feedback collection   |
 
 **Milestone**: Ready for release, excellent user experience
 
@@ -365,7 +367,7 @@ C:\Users\<user>\AppData\Local\sage\memory\    # Windows
 
 - [ ] All operations support timeout protection (5-level)
 - [ ] Token efficiency improvement 95%+
-- [ ] Test coverage 90%+
+- [ ] Test coverage 80%+ (MVP), 90%+ (v1.1)
 - [ ] No blocking operations
 
 ### Developer Experience Standards

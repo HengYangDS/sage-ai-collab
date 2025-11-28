@@ -186,6 +186,55 @@ if __name__ == "__main__":
 | `sage info`           | Show KB information      | `sage info`                |
 | `sage serve`          | Start MCP/API server     | `sage serve --service mcp` |
 
+### Interactive Mode (REPL)
+
+The CLI supports an interactive REPL mode for exploration:
+
+```bash
+# Start interactive mode
+sage repl
+```
+
+**REPL Commands:**
+
+| Command           | Description                         | Example              |
+|-------------------|-------------------------------------|----------------------|
+| `help`            | Show available commands             | `help`               |
+| `get <layer>`     | Load knowledge layer                | `get core`           |
+| `search <query>`  | Search knowledge base               | `search timeout`     |
+| `layers`          | List available layers               | `layers`             |
+| `history`         | Show command history                | `history`            |
+| `clear`           | Clear screen                        | `clear`              |
+| `exit` / `quit`   | Exit REPL                           | `exit`               |
+
+**REPL Session Example:**
+
+```
+sage> layers
+Available layers: core, guidelines, frameworks, practices, scenarios
+
+sage> get core
+[Loading core layer...]
+# Core Principles
+...
+
+sage> search "autonomy level"
+Found 3 results:
+  1. frameworks/autonomy/levels.md (score: 0.95)
+  2. guidelines/ai_collaboration.md (score: 0.72)
+  3. content/core/quick_reference.md (score: 0.65)
+
+sage> exit
+Goodbye!
+```
+
+**Features:**
+
+- **Tab completion**: Auto-complete commands and layer names
+- **Command history**: Arrow keys navigate previous commands
+- **Syntax highlighting**: Rich output with colors
+- **Persistent session**: Maintains context between commands
+
 ---
 
 ## MCP Service (FastMCP)
@@ -371,6 +420,42 @@ async def run_mcp_server(host: str = "localhost", port: int = 8000):
 | `search_knowledge` | Search knowledge base  | `query`, `max_results`, `timeout_ms` |
 | `get_framework`    | Get framework docs     | `name`, `timeout_ms`                 |
 | `kb_info`          | Get KB information     | (none)                               |
+
+### MCP Prompt Templates
+
+Recommended prompts for effective tool usage:
+
+| Tool               | Recommended Prompt                                                   |
+|--------------------|----------------------------------------------------------------------|
+| `get_knowledge`    | "Load [layer] knowledge for [task description]"                      |
+| `search_knowledge` | "Search KB for [specific topic] to find [what you need]"             |
+| `get_framework`    | "Get the [autonomy/cognitive/timeout] framework for [decision type]" |
+| `kb_info`          | "Show KB structure and available layers"                             |
+
+**Example Prompts by Use Case:**
+
+```
+# Starting a new coding task
+→ get_knowledge(layer=1, task="implement user authentication")
+
+# Need guidance on decision-making
+→ get_framework(name="autonomy")
+→ "What autonomy level should I use for database migrations?"
+
+# Looking for specific information
+→ search_knowledge(query="timeout configuration", max_results=5)
+
+# Understanding available resources
+→ kb_info()
+→ "What knowledge layers are available?"
+```
+
+**Best Practices:**
+
+1. **Be specific**: Include task context in the `task` parameter
+2. **Layer selection**: Start with `layer=0` (core) for general guidance
+3. **Search first**: Use `search_knowledge` when unsure which layer to load
+4. **Combine tools**: Use `kb_info` → `search_knowledge` → `get_knowledge` workflow
 
 ---
 
@@ -1043,6 +1128,46 @@ jobs:
         if: github.event_name == 'schedule'
         run: pytest tests/performance/ -v --benchmark-json=benchmark.json
 ```
+
+### Mutation Testing (Future Enhancement)
+
+Mutation testing validates test quality by introducing small code changes (mutants) and verifying tests catch them.
+
+**Recommended Tool**: `mutmut` (Python mutation testing)
+
+```bash
+# Install
+pip install mutmut
+
+# Run mutation testing on core module
+mutmut run --paths-to-mutate=src/sage/core/
+
+# View results
+mutmut results
+mutmut html  # Generate HTML report
+```
+
+**Configuration** (pyproject.toml):
+
+```toml
+[tool.mutmut]
+paths_to_mutate = "src/sage/core/"
+tests_dir = "tests/unit/"
+runner = "pytest -x -q"
+```
+
+**Target Metrics**:
+
+| Metric              | Target | Description                        |
+|---------------------|--------|------------------------------------|
+| Mutation Score      | > 80%  | Percentage of mutants killed       |
+| Surviving Mutants   | < 20%  | Mutants not caught by tests        |
+| Equivalent Mutants  | < 5%   | Mutants that don't change behavior |
+
+**When to Use**:
+- Before major releases to validate test suite quality
+- After significant refactoring to ensure tests are still effective
+- Periodically (monthly) as part of quality assurance
 
 ---
 

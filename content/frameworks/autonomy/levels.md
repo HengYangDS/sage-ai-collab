@@ -400,6 +400,52 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 
 ---
 
+## 10. Calibration Examples
+
+Practical scenarios demonstrating autonomy level selection:
+
+### Scenario A: Database Schema Migration
+
+| Factor | Assessment | Impact |
+|--------|------------|--------|
+| Risk | High (data loss possible) | ↓ Level |
+| Reversibility | Difficult (requires backup restore) | ↓ Level |
+| Precedent | First time for this project | ↓ Level |
+
+**Recommended**: L2 (Low) - Present migration plan, wait for explicit approval before executing.
+
+### Scenario B: Adding Unit Tests
+
+| Factor | Assessment | Impact |
+|--------|------------|--------|
+| Risk | Low (no production impact) | ↑ Level |
+| Reversibility | Easy (can delete tests) | ↑ Level |
+| Precedent | Done many times | ↑ Level |
+
+**Recommended**: L5 (High) - Proceed autonomously, report on completion.
+
+### Scenario C: Refactoring Module Structure
+
+| Factor | Assessment | Impact |
+|--------|------------|--------|
+| Risk | Medium (may break imports) | → Level |
+| Reversibility | Medium (git revert available) | → Level |
+| Precedent | Similar refactors done before | ↑ Level |
+
+**Recommended**: L4 (Medium-High) - Proceed with refactoring, run tests, report results.
+
+### Scenario D: Updating Production Config
+
+| Factor | Assessment | Impact |
+|--------|------------|--------|
+| Risk | High (service disruption) | ↓ Level |
+| Reversibility | Easy (config rollback) | ↑ Level |
+| Precedent | New configuration type | ↓ Level |
+
+**Recommended**: L3 (Medium) - Propose changes, explain impact, await approval.
+
+---
+
 ## Summary
 
 | Level  | Name          | Authority | Report Frequency | Use Case                     |

@@ -682,6 +682,11 @@ class HandoffPackage:
 
     def to_prompt(self) -> str:
         """Generate continuation prompt for new task."""
+        # Build list sections separately for cleaner code
+        completed = "\n".join(f"- ✓ {step}" for step in self.session_state.completed_steps)
+        pending = "\n".join(f"- {step}" for step in self.session_state.pending_steps)
+        decisions = "\n".join(f"- {d.content[:200]}..." for d in self.decisions)
+        
         return f"""## Session Continuation
 
 ### Previous Session Summary
@@ -691,13 +696,13 @@ class HandoffPackage:
 {self.session_state.current_objective}
 
 ### Completed Steps
-{chr(10).join(f"- ✓ {step}" for step in self.session_state.completed_steps)}
+{completed}
 
 ### Pending Steps
-{chr(10).join(f"- {step}" for step in self.session_state.pending_steps)}
+{pending}
 
 ### Key Decisions Made
-{chr(10).join(f"- {d.content[:200]}..." for d in self.decisions)}
+{decisions}
 
 ---
 Progress: {self.session_state.progress_percentage:.0f}% complete
