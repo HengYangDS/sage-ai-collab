@@ -89,11 +89,11 @@ asyncio_mode = "auto"
 addopts = "-v --cov=ai_collab_kb --cov-report=term-missing"
 
 [tool.black]
-line-length = 88
+line-length = 120
 target-version = ["py312", "py313", "py314"]
 
 [tool.ruff]
-line-length = 88
+line-length = 120
 target-version = "py312"
 select = [
     "E", # pycodestyle errors

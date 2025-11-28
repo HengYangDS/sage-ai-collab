@@ -779,11 +779,11 @@ clean:
 from pathlib import Path
 
 # ✅ CORRECT: Use pathlib (cross-platform)
-config_file = Path("../content") / "core" / "principles.md"
+config_file = Path("../../content") / "core" / "principles.md"
 
 # ❌ WRONG: Hardcoded separators
-config_file = "../content/core/principles.md"  # Fails on Windows
-config_file = "../content/core/principles.md"  # Fails on Unix
+config_file = "../../content/core/principles.md"  # Fails on Windows
+config_file = "../../content/core/principles.md"  # Fails on Unix
 ```
 
 ### 2.7 Configuration Hierarchy (Zero Coupling)

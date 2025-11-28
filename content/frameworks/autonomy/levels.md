@@ -18,6 +18,7 @@
 7. [Self-Iterating Feedback Loop](#7-self-iterating-feedback-loop)
 8. [Quick Level Selector](#8-quick-level-selector)
 9. [Practical Recommendations](#9-practical-recommendations)
+10. [Calibration Examples](#10-calibration-examples)
 
 ---
 

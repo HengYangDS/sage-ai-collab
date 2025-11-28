@@ -872,8 +872,8 @@ class TestLoaderPerformance:
         duration = (time.monotonic() - start) * 1000
         expected_range = (timeout_ms * 0.9, timeout_ms * 1.1)
 
-        assert expected_range[0] <= duration <= expected_range[1],
-        f"Timeout of {duration}ms outside expected range {expected_range}"
+        assert expected_range[0] <= duration <= expected_range[1], \
+            f"Timeout of {duration}ms outside expected range {expected_range}"
 ```
 
 ---
@@ -886,6 +886,5 @@ class TestLoaderPerformance:
 
 ---
 
-**Document Status**: Level 5 Expert Committee Approved  
-**Approval Date**: 2025-11-28  
-**Lines**: ~500
+**Document Status**: Pending Level 5 Expert Committee Evaluation  
+**Last Updated**: 2025-11-29

@@ -134,15 +134,15 @@ This design is organized into 9 independent documents:
 
 | Document                    | Description                                                 | Lines |
 |-----------------------------|-------------------------------------------------------------|-------|
-| **00-overview.md**          | Project overview, philosophy, terminology (this file)       | ~230  |
-| **01-architecture.md**      | Three-layer architecture, directory structure, toolchain    | ~1530 |
-| **02-sage-protocol.md**     | SAGE Protocol, DI Container, EventBus, Bootstrap            | ~1060 |
-| **03-services.md**          | API/MCP/CLI services, error handling, testing               | ~1185 |
-| **04-timeout-loading.md**   | Timeout mechanism, token efficiency, smart loading          | ~890  |
-| **05-plugin-memory.md**     | Plugin architecture, Memory persistence, Session continuity | ~805  |
-| **06-content-structure.md** | Content organization, knowledge taxonomy, versioning        | ~430  |
-| **07-roadmap.md**           | Implementation roadmap, phases, KPIs, deployment            | ~500  |
-| **08-evaluation.md**        | Expert committee structure, pending evaluation              | ~115  |
+| **00-overview.md**          | Project overview, philosophy, terminology (this file)       | ~170  |
+| **01-architecture.md**      | Three-layer architecture, directory structure, toolchain    | ~1290 |
+| **02-sage-protocol.md**     | SAGE Protocol, DI Container, EventBus, Bootstrap            | ~830  |
+| **03-services.md**          | API/MCP/CLI services, error handling, testing               | ~930  |
+| **04-timeout-loading.md**   | Timeout mechanism, token efficiency, smart loading          | ~730  |
+| **05-plugin-memory.md**     | Plugin architecture, Memory persistence, Session continuity | ~630  |
+| **06-content-structure.md** | Content organization, knowledge taxonomy, versioning        | ~350  |
+| **07-roadmap.md**           | Implementation roadmap, phases, KPIs, deployment            | ~370  |
+| **08-evaluation.md**        | Expert committee structure, pending evaluation              | ~85   |
 
 ### Reading Order
 
