@@ -12,7 +12,6 @@ Author: SAGE AI Collab Team
 Version: 0.1.0
 """
 
-import logging
 import time
 from pathlib import Path
 from typing import Any
@@ -31,8 +30,9 @@ from sage.core.loader import (
     KnowledgeLoader,
     Layer,
 )
+from sage.core.logging import get_logger, logging_context
 
-logger = logging.getLogger(__name__)
+logger = get_logger(__name__)
 
 # Initialize MCP app
 if MCP_AVAILABLE:
@@ -41,17 +41,19 @@ if MCP_AVAILABLE:
             "sage-kb",
             description="SAGE Knowledge Base - Production-grade knowledge management with timeout protection",
         )
+        logger.debug("mcp_app_initialized", app_name="sage-kb")
     except TypeError:
         # Fallback for older MCP versions without description parameter
         try:
             app = FastMCP("sage-kb")
+            logger.debug("mcp_app_initialized", app_name="sage-kb", fallback=True)
         except Exception as e:
-            logger.warning(f"Failed to initialize MCP app: {e}")
+            logger.warning("mcp_init_failed", error=str(e))
             app = None
             MCP_AVAILABLE = False
 else:
     app = None
-    logger.warning("MCP not available. Install with: pip install mcp")
+    logger.warning("mcp_not_available", hint="Install with: pip install mcp")
 
 
 # Global loader instance
@@ -923,7 +925,7 @@ def run_server(host: str = "localhost", port: int = 8000) -> None:
     if not MCP_AVAILABLE:
         raise ImportError("MCP not available. Install with: pip install mcp")
 
-    logger.info(f"Starting AI Collaboration KB MCP server on {host}:{port}")
+    logger.info("mcp_server_starting", host=host, port=port)
     # Note: Actual server startup depends on MCP framework version
     # This is a placeholder for the actual implementation
     print(f"MCP Server ready at {host}:{port}")
@@ -948,6 +950,8 @@ def run_server(host: str = "localhost", port: int = 8000) -> None:
 if __name__ == "__main__":
     import argparse
 
+    from sage.core.logging import configure_logging, LogLevel
+
     parser = argparse.ArgumentParser(description="AI Collaboration KB MCP Server")
     parser.add_argument("--host", default="localhost", help="Host to bind to")
     parser.add_argument("--port", type=int, default=8000, help="Port to bind to")
@@ -956,8 +960,8 @@ if __name__ == "__main__":
     args = parser.parse_args()
 
     if args.debug:
-        logging.basicConfig(level=logging.DEBUG)
+        configure_logging(level=LogLevel.DEBUG)
     else:
-        logging.basicConfig(level=logging.INFO)
+        configure_logging(level=LogLevel.INFO)
 
     run_server(args.host, args.port)

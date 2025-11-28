@@ -62,24 +62,24 @@ Parallelizable:
 >
 > This roadmap tracks progress toward the **target architecture** defined in `01-architecture.md`.
 >
-> ✅ **Phase 0, A, B, C (deferred), D, E, F COMPLETE**: MVP structure ready, tests organized, dev toolchain in place.
+> ✅ **Phase 0, A, B, C, D, E, F COMPLETE**: MVP structure ready, logging operational, tests organized, dev toolchain in place.
 
-| Component           | Current Status | Current | Target | Notes                                             |
-|---------------------|----------------|---------|--------|---------------------------------------------------|
-| Package Config      | ✅ Complete     | 100%    | 100%   | sage-kb installs, CLI works                       |
-| Directory Structure | ✅ Complete     | 100%    | 100%   | core/, services/, capabilities/ structure         |
-| Core Layer          | ✅ Complete     | 100%    | 100%   | loader.py in core/, imports working               |
-| Services Layer      | ✅ Complete     | 100%    | 100%   | cli.py, mcp_server.py in services/                |
-| Capabilities Layer  | ✅ Complete     | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented      |
-| Unified Logging     | ⏸️ Deferred    | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)    |
-| DI Container        | ⏸️ Deferred    | 0%      | 100%   | YAML-driven service registration (defer to v1.1)  |
-| EventBus            | ⏸️ Deferred    | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)    |
-| Plugin System       | 🟡 Basic       | 40%     | 100%   | base.py + registry.py exist                       |
-| Tools (Dev-Only)    | ✅ Complete     | 100%    | 100%   | monitors/, dev_scripts/, lazy imports             |
-| Tests               | ✅ Implemented  | 80%     | 80%    | 82 tests, 81% core coverage, 48% MCP/CLI coverage |
-| Dev Toolchain       | ✅ Complete     | 100%    | 100%   | Makefile, py.typed, pyproject.toml                |
-| Documentation       | 🟢 Good        | 90%     | 100%   | Design docs + README complete                     |
-| Config Files        | ✅ Complete     | 100%    | 100%   | sage.yaml, index.md created                       |
+| Component           | Current Status | Current | Target | Notes                                            |
+|---------------------|----------------|---------|--------|--------------------------------------------------|
+| Package Config      | ✅ Complete     | 100%    | 100%   | sage-kb installs, CLI works                      |
+| Directory Structure | ✅ Complete     | 100%    | 100%   | core/, services/, capabilities/ structure        |
+| Core Layer          | ✅ Complete     | 100%    | 100%   | loader.py in core/, imports working              |
+| Services Layer      | ✅ Complete     | 100%    | 100%   | cli.py, mcp_server.py in services/               |
+| Capabilities Layer  | ✅ Complete     | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented     |
+| Unified Logging     | ✅ Complete     | 100%    | 100%   | structlog + context management in core/logging/  |
+| DI Container        | ⏸️ Deferred    | 0%      | 100%   | YAML-driven service registration (defer to v1.1) |
+| EventBus            | ✅ Complete     | 100%    | 100%   | Async pub/sub with priority & timeout protection |
+| Plugin System       | 🟡 Basic       | 40%     | 100%   | base.py + registry.py exist                      |
+| Tools (Dev-Only)    | ✅ Complete     | 100%    | 100%   | monitors/, dev_scripts/, lazy imports            |
+| Tests               | ✅ Implemented  | 80%     | 80%    | 238 tests, 66% overall coverage                  |
+| Dev Toolchain       | ✅ Complete     | 100%    | 100%   | Makefile, py.typed, pyproject.toml               |
+| Documentation       | 🟢 Good        | 90%     | 100%   | Design docs + README complete                    |
+| Config Files        | ✅ Complete     | 100%    | 100%   | sage.yaml, index.md created                      |
 
 ---
 
@@ -87,25 +87,24 @@ Parallelizable:
 
 ```
 MVP Phases (v1.0):
-Phase 0: Package Fix       ██████████ Fix pyproject.toml, verify install (0.5 days) [COMPLETE ✅]
-Phase A: Base Reorg        ██████████ core/, services/ directories (2 days) [COMPLETE ✅]
-Phase B: Core Migration    ██████████ loader → core, imports fixed (1 day) [COMPLETE ✅]
-Phase C: Logging System    ░░░░░░░░░░ Deferred to v1.1 [DEFERRED ⏸️]
+Phase 0: Package Fix        ██████████ Fix pyproject.toml, verify install (0.5 days) [COMPLETE ✅]
+Phase A: Base Reorg         ██████████ core/, services/ directories (2 days) [COMPLETE ✅]
+Phase B: Core Migration     ██████████ loader → core, imports fixed (1 day) [COMPLETE ✅]
+Phase C: Logging System     ██████████ core/logging/ + structlog integration (1 day) [COMPLETE ✅]
 Phase D: Capabilities+Tools ██████████ capabilities/ + tools/dev_scripts/ (1 day) [COMPLETE ✅]
-Phase E: Tests Reorg       ██████████ fixtures/, unit/, integration/, conftest.py (1 day) [COMPLETE ✅]
-Phase F: Enhancement       ██████████ Makefile, py.typed (1 day) [COMPLETE ✅]
+Phase E: Tests Reorg        ██████████ fixtures/, unit/, integration/, conftest.py (1 day) [COMPLETE ✅]
+Phase F: Enhancement        ██████████ Makefile, py.typed (1 day) [COMPLETE ✅]
 
-v1.1 Phases (Deferred):
-Phase C: Logging System    ██████░░░░ core/logging/ subpackage (1.5 days)
-Phase G: Event System      ██████░░░░ Protocol + EventBus architecture (4 days)
-Phase H: Memory System     ██████░░░░ Cross-task persistence + token mgmt (4 days)
+v1.1 Phases:
+Phase G: Event System       ██████████ Protocol + EventBus architecture (4 days) [COMPLETE ✅]
+Phase H: Memory System      ██████░░░░ Cross-task persistence + token mgmt (4 days)
 
-COMPLETED: 0 → A → B → D → E → F + Config Files + Tests + MCP Tests (MVP Complete ✅)
-REMAINING: Capabilities/plugins tests (optional)
+COMPLETED: 0 → A → B → C → D → E → F → G + Config Files + Tests + Logging + Events
+REMAINING: Plugin system enhancement, Memory System (Phase H)
 
-MVP Duration: Structure complete, 82 tests passing, config files ready ✅
-v1.1 Duration: Additional 9-12 days for Phases C, G & H
-Current: Package installable, 3-layer architecture, dev toolchain, config files, MVP ready
+MVP Duration: Structure complete, 238 tests passing (66% coverage), logging + events operational ✅
+v1.1 Duration: Additional 4 days for Phase H
+Current: Package installable, 3-layer architecture, structured logging, event system, dev toolchain
 ```
 
 ### Timeline Scenarios
@@ -185,17 +184,25 @@ Current: Package installable, 3-layer architecture, dev toolchain, config files,
 
 **Goal**: Implement unified structured logging
 
-| Task                                      | Owner           | Priority | Deliverable              |
-|-------------------------------------------|-----------------|----------|--------------------------|
-| C.1 Create core/logging/ subpackage       | Python Engineer | P0       | Logging directory        |
-| C.2 Implement logging/__init__.py exports | Python Engineer | P0       | get_logger, bind_context |
-| C.3 Implement logging/config.py           | Python Engineer | P0       | configure_logging()      |
-| C.4 Implement logging/context.py          | Python Engineer | P0       | Context management       |
-| C.5 Add structlog to requirements.txt     | DevOps Expert   | P0       | Dependency added         |
-| C.6 Integrate logging in loader.py        | Python Engineer | P1       | Structured log output    |
-| C.7 Integrate logging in mcp_server.py    | Python Engineer | P1       | Request tracing          |
+| Task                                      | Owner           | Priority | Deliverable              | Status |
+|-------------------------------------------|-----------------|----------|--------------------------|--------|
+| C.1 Create core/logging/ subpackage       | Python Engineer | P0       | Logging directory        | ✅      |
+| C.2 Implement logging/__init__.py exports | Python Engineer | P0       | get_logger, bind_context | ✅      |
+| C.3 Implement logging/config.py           | Python Engineer | P0       | configure_logging()      | ✅      |
+| C.4 Implement logging/context.py          | Python Engineer | P0       | Context management       | ✅      |
+| C.5 Add structlog to pyproject.toml       | DevOps Expert   | P0       | Dependency added         | ✅      |
+| C.6 Integrate logging in loader.py        | Python Engineer | P1       | Structured log output    | ✅      |
+| C.7 Integrate logging in mcp_server.py    | Python Engineer | P1       | Request tracing          | ✅      |
+| C.8 Add logging unit tests                | Test Architect  | P1       | 22 tests, 98% coverage   | ✅      |
 
-**Milestone**: Unified logging operational
+**Milestone**: Unified logging operational ✅ COMPLETE
+
+**Acceptance Criteria**:
+
+- [x] `from sage.core.logging import get_logger, configure_logging` works ✅
+- [x] Structured logs with context binding operational ✅
+- [x] JSON and console output formats supported ✅
+- [x] 22 logging tests passing ✅
 
 ---
 
@@ -293,20 +300,31 @@ Current: Package installable, 3-layer architecture, dev toolchain, config files,
 
 **Goal**: Implement Protocol + EventBus async decoupling for plugin system
 
-| Task                                         | Owner                | Priority | Deliverable                                         |
-|----------------------------------------------|----------------------|----------|-----------------------------------------------------|
-| G.1 Create core/events/ module structure     | Chief Architect      | P0       | events/__init__.py, bus.py, events.py, protocols.py |
-| G.2 Implement Event base class and types     | Python Engineer      | P0       | Event, LoadEvent, TimeoutEvent, SearchEvent         |
-| G.3 Implement EventType enum                 | Python Engineer      | P0       | Standard event types with namespacing               |
-| G.4 Implement Protocol interfaces            | Python Engineer      | P0       | LoaderHandler, TimeoutHandler, SearchHandler        |
-| G.5 Implement EventBus with async support    | Python Engineer      | P0       | subscribe, publish, wildcard matching               |
-| G.6 Add priority-based subscription ordering | Python Engineer      | P0       | Lower priority = earlier execution                  |
-| G.7 Add per-handler timeout protection       | Reliability Engineer | P0       | Error isolation between handlers                    |
-| G.8 Implement PluginAdapter for migration    | Python Engineer      | P1       | Backward compatibility with old plugins             |
-| G.9 Add unit tests for EventBus              | Test Architect       | P0       | 90%+ coverage                                       |
-| G.10 Integration with existing loader        | Python Engineer      | P1       | Events published during loading                     |
+| Task                                         | Owner                | Priority | Deliverable                                         | Status |
+|----------------------------------------------|----------------------|----------|-----------------------------------------------------|--------|
+| G.1 Create core/events/ module structure     | Chief Architect      | P0       | events/__init__.py, bus.py, events.py, protocols.py | ✅      |
+| G.2 Implement Event base class and types     | Python Engineer      | P0       | Event, LoadEvent, TimeoutEvent, SearchEvent         | ✅      |
+| G.3 Implement EventType enum                 | Python Engineer      | P0       | Standard event types with namespacing               | ✅      |
+| G.4 Implement Protocol interfaces            | Python Engineer      | P0       | LoaderHandler, TimeoutHandler, SearchHandler        | ✅      |
+| G.5 Implement EventBus with async support    | Python Engineer      | P0       | subscribe, publish, wildcard matching               | ✅      |
+| G.6 Add priority-based subscription ordering | Python Engineer      | P0       | Lower priority = earlier execution                  | ✅      |
+| G.7 Add per-handler timeout protection       | Reliability Engineer | P0       | Error isolation between handlers                    | ✅      |
+| G.8 Implement PluginAdapter for migration    | Python Engineer      | P1       | Backward compatibility with old plugins             | ✅      |
+| G.9 Add unit tests for EventBus              | Test Architect       | P0       | 39 tests, 89% coverage                              | ✅      |
+| G.10 Integration with existing loader        | Python Engineer      | P1       | Events published during loading/search              | ✅      |
 
-**Milestone**: Event-driven plugin system operational with backward compatibility
+**Milestone**: Event-driven plugin system operational with backward compatibility ✅ COMPLETE
+
+**Acceptance Criteria**:
+
+- [x] `from sage.core.events import EventBus, Event, get_event_bus` works ✅
+- [x] Subscribe/publish pattern with wildcard matching ✅
+- [x] Priority-based handler ordering (lower = earlier) ✅
+- [x] Per-handler timeout protection with error isolation ✅
+- [x] PluginAdapter for legacy plugin compatibility ✅
+- [x] Loader publishes LOADER_START/LOADER_COMPLETE events ✅
+- [x] Search publishes SEARCH_START/SEARCH_COMPLETE events ✅
+- [x] 39 event system tests passing ✅
 
 **Directory Structure Created**:
 

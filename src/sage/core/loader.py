@@ -14,9 +14,8 @@ Version: 0.1.0
 
 import asyncio
 import importlib.util
-import logging
 
-# Add project root to path for imports
+# Add a project root to a path for imports
 import sys
 import time
 from dataclasses import dataclass, field
@@ -34,7 +33,7 @@ for p in [str(_project_root), str(_tools_path)]:
         sys.path.insert(0, p)
 
 
-# Load timeout_manager module directly from file
+# Load timeout_manager module directly from a file
 def _load_timeout_manager() -> ModuleType:
     """Load timeout_manager module from 05_tools directory."""
     module_path = _tools_path / "timeout_manager.py"
@@ -54,7 +53,12 @@ TimeoutResult = _tm.TimeoutResult
 get_timeout_manager = _tm.get_timeout_manager
 EMBEDDED_CORE = _tm.EMBEDDED_CORE
 
-logger = logging.getLogger(__name__)
+# Structured logging
+# Event system for async decoupling
+from sage.core.events import EventType, LoadEvent, SearchEvent, get_event_bus
+from sage.core.logging import get_logger
+
+logger = get_logger(__name__)
 
 
 class Layer(Enum):
@@ -297,6 +301,20 @@ class KnowledgeLoader:
         self._cache_hashes: dict[str, str] = {}
         self._last_load: dict[str, str] = {}
 
+        # Event bus for async event publishing
+        self._event_bus = get_event_bus()
+
+    async def _publish_event(self, event: LoadEvent | SearchEvent) -> None:
+        """Publish an event to the event bus (fire-and-forget).
+
+        This method publishes events without blocking the main operation.
+        Errors in event handlers are logged but don't affect the loader.
+        """
+        try:
+            await self._event_bus.publish(event)
+        except Exception as e:
+            logger.warning("event_publish_failed", error=str(e), event_type=str(event.event_type))
+
     async def load(
         self,
         layer: Layer | None = None,
@@ -308,7 +326,7 @@ class KnowledgeLoader:
         Load knowledge with smart selection and timeout protection.
 
         Args:
-            layer: Specific layer to load (None = auto-select based on task)
+            layer: Specific layer to load (None = auto select based on a task)
             task: Task description for smart loading
             files: Specific files to load (overrides layer/task)
             timeout_ms: Override timeout in milliseconds
@@ -318,6 +336,22 @@ class KnowledgeLoader:
         """
         start_time = time.monotonic()
         timeout_ms = timeout_ms or 5000
+
+        logger.debug(
+            "load_started",
+            layer=layer.name if layer else None,
+            task=task or None,
+            files_specified=len(files) if files else 0,
+            timeout_ms=timeout_ms,
+        )
+
+        # Publish LOADER_START event
+        await self._publish_event(LoadEvent(
+            event_type=EventType.LOADER_START,
+            source="KnowledgeLoader",
+            layer=layer.name if layer else "auto",
+            file_count=len(files) if files else 0,
+        ))
 
         # Determine files to load
         if files:
@@ -338,6 +372,24 @@ class KnowledgeLoader:
         result = await self._load_files_with_timeout(files_to_load, timeout_ms)
 
         result.duration_ms = int((time.monotonic() - start_time) * 1000)
+
+        logger.info(
+            "load_completed",
+            status=result.status,
+            files_loaded=len(result.files_loaded),
+            tokens_estimate=result.tokens_estimate,
+            duration_ms=result.duration_ms,
+        )
+
+        # Publish LOADER_COMPLETE event
+        await self._publish_event(LoadEvent(
+            event_type=EventType.LOADER_COMPLETE,
+            source="KnowledgeLoader",
+            layer=layer.name if layer else "auto",
+            file_count=len(result.files_loaded),
+            duration_ms=float(result.duration_ms),
+        ))
+
         return result
 
     async def load_core(self, timeout_ms: int = 2000) -> LoadResult:
@@ -363,7 +415,7 @@ class KnowledgeLoader:
         """Load a specific guidelines chapter."""
         file_path = f"content/guidelines/{chapter}.md"
         if not chapter.endswith(".md"):
-            # Try to find matching file
+            # Try to find a matching file
             guidelines_dir = self.kb_path / "knowledge" / "guidelines"
             if guidelines_dir.exists():
                 for f in guidelines_dir.glob("*.md"):
@@ -418,11 +470,25 @@ class KnowledgeLoader:
             timeout_ms: Search timeout
 
         Returns:
-            List of search results with path, score, and preview
+            List of search results with a path, score, and preview
         """
         start_time = time.monotonic()
         results = []
         query_lower = query.lower()
+
+        logger.debug(
+            "search_started",
+            query=query,
+            max_results=max_results,
+            timeout_ms=timeout_ms,
+        )
+
+        # Publish SEARCH_START event
+        await self._publish_event(SearchEvent(
+            event_type=EventType.SEARCH_START,
+            source="KnowledgeLoader",
+            query=query,
+        ))
 
         try:
 
@@ -457,8 +523,8 @@ class KnowledgeLoader:
                                     "preview": preview,
                                 }
                             )
-                    except Exception as e:
-                        logger.warning(f"Error reading {md_file}: {e}")
+                    except Exception as _:
+                        logger.warning("file_read_error", file=str(md_file), error=str(_))
 
                 # Sort by score descending
                 results.sort(key=lambda x: x["score"], reverse=True)
@@ -470,18 +536,40 @@ class KnowledgeLoader:
                 timeout_ms=timeout_ms,
             )
 
+            duration_ms = int((time.monotonic() - start_time) * 1000)
+
             if timeout_result.success:
-                return timeout_result.value or []
+                final_results = timeout_result.value or []
+                logger.info(
+                    "search_completed",
+                    query=query,
+                    results_count=len(final_results),
+                    duration_ms=duration_ms,
+                )
+                # Publish SEARCH_COMPLETE event
+                await self._publish_event(SearchEvent(
+                    event_type=EventType.SEARCH_COMPLETE,
+                    source="KnowledgeLoader",
+                    query=query,
+                    results_count=len(final_results),
+                    duration_ms=float(duration_ms),
+                ))
+                return final_results
             else:
-                logger.warning(f"Search timeout: {timeout_result.error}")
+                logger.warning(
+                    "search_timeout",
+                    query=query,
+                    partial_results=len(results),
+                    error=str(timeout_result.error),
+                )
                 return results[:max_results] if results else []
 
         except Exception as e:
-            logger.error(f"Search error: {e}")
+            logger.error("search_error", query=query, error=str(e))
             return []
 
     def _get_files_for_task(self, task: str) -> list[str]:
-        """Determine files to load based on task description."""
+        """Determine files to load based on the task description."""
         task_lower = task.lower()
         files: set[str] = set()
 
@@ -596,15 +684,16 @@ class KnowledgeLoader:
         if not full_path.exists():
             raise FileNotFoundError(f"File not found: {file_path}")
 
-        # Use asyncio to read file
+        # Use asyncio to read a file
         loop = asyncio.get_event_loop()
         content = await loop.run_in_executor(
             None, lambda: full_path.read_text(encoding="utf-8")
         )
         return content
 
-    def _get_layer_for_file(self, file_path: str) -> Layer:
-        """Determine layer for a file path."""
+    @staticmethod
+    def _get_layer_for_file(file_path: str) -> Layer:
+        """Determine a layer for a file path."""
         if file_path == "index.md":
             return Layer.L0_INDEX
         elif "content/core" in file_path or file_path.startswith("content/core"):
@@ -624,7 +713,8 @@ class KnowledgeLoader:
         else:
             return Layer.L1_CORE
 
-    def _get_preview(self, content: str, query: str, max_len: int = 100) -> str:
+    @staticmethod
+    def _get_preview(content: str, query: str, max_len: int = 100) -> str:
         """Get a preview snippet containing the query."""
         content_lower = content.lower()
         idx = content_lower.find(query)
