@@ -6,6 +6,7 @@ This package provides:
 - MCP Server: Model Context Protocol service for AI tools
 - CLI: Rich command-line interface
 - Plugin System: Extensible architecture with 7 hooks
+- DI Container: Dependency injection with lifetime management
 
 Core Features:
 - 5-level timeout hierarchy (100ms - 10s)
@@ -34,6 +35,14 @@ from .core.loader import (
     load_knowledge,
     search_knowledge,
 )
+from .core.di import (
+    DIContainer,
+    DIScope,
+    Lifetime,
+    get_container,
+    TypeRegistry,
+    get_registry,
+)
 
 __all__ = [
     # Main classes
@@ -41,6 +50,13 @@ __all__ = [
     "LoadResult",
     "Layer",
     "LoadingTrigger",
+    # DI Container
+    "DIContainer",
+    "DIScope",
+    "Lifetime",
+    "get_container",
+    "TypeRegistry",
+    "get_registry",
     # Convenience functions
     "load_knowledge",
     "load_core",

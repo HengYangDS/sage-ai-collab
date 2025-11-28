@@ -16,6 +16,8 @@ import time
 from pathlib import Path
 from typing import Any
 
+import yaml
+
 # MCP imports
 try:
     from mcp.server.fastmcp import FastMCP
@@ -31,6 +33,39 @@ from sage.core.loader import (
     Layer,
 )
 from sage.core.logging import get_logger, logging_context
+
+
+# Configuration cache
+_config_cache: dict[str, Any] | None = None
+
+
+def _load_config() -> dict[str, Any]:
+    """Load configuration from sage.yaml with caching."""
+    global _config_cache
+    if _config_cache is not None:
+        return _config_cache
+
+    config_path = Path(__file__).parent.parent.parent.parent / "sage.yaml"
+    if config_path.exists():
+        try:
+            with open(config_path, "r", encoding="utf-8") as f:
+                _config_cache = yaml.safe_load(f) or {}
+        except Exception:
+            _config_cache = {}
+    else:
+        _config_cache = {}
+
+    return _config_cache
+
+
+def _get_guidelines_section_map() -> dict[str, str]:
+    """Get guidelines section mapping from configuration."""
+    config = _load_config()
+    guidelines_config = config.get("guidelines", {})
+    sections = guidelines_config.get("sections", {})
+
+    # Convert all keys to lowercase strings for case-insensitive lookup
+    return {str(k).lower(): str(v) for k, v in sections.items()}
 
 logger = get_logger(__name__)
 
@@ -174,30 +209,8 @@ if MCP_AVAILABLE and app is not None:
         start_time = time.time()
         loader = get_loader()
 
-        # Map section names to file names
-        section_map = {
-            "quick_start": "00_quick_start",
-            "00": "00_quick_start",
-            "planning": "01_planning_design",
-            "01": "01_planning_design",
-            "code_style": "02_code_style",
-            "02": "02_code_style",
-            "engineering": "03_engineering",
-            "03": "03_engineering",
-            "documentation": "04_documentation",
-            "04": "04_documentation",
-            "python": "05_python",
-            "05": "05_python",
-            "ai_collaboration": "06_ai_collaboration",
-            "06": "06_ai_collaboration",
-            "cognitive": "07_cognitive",
-            "07": "07_cognitive",
-            "quality": "08_quality",
-            "08": "08_quality",
-            "success": "09_success",
-            "09": "09_success",
-            "overview": "00_quick_start",
-        }
+        # Get section mapping from configuration
+        section_map = _get_guidelines_section_map()
 
         chapter = section_map.get(section.lower(), section)
 
@@ -404,19 +417,19 @@ if MCP_AVAILABLE and app is not None:
                 "L4_PRACTICES": "Best practices",
             },
             "content_stats": {
-                "core_files": count_md_files(kb_path / "01_core"),
-                "guidelines_files": count_md_files(kb_path / "02_guidelines"),
+                "core_files": count_md_files(kb_path / "content" / "core"),
+                "guidelines_files": count_md_files(kb_path / "content" / "guidelines"),
                 "frameworks_dirs": (
-                    len(list((kb_path / "03_frameworks").glob("*")))
-                    if (kb_path / "03_frameworks").exists()
+                    len(list((kb_path / "content" / "frameworks").glob("*")))
+                    if (kb_path / "content" / "frameworks").exists()
                     else 0
                 ),
                 "practices_dirs": (
-                    len(list((kb_path / "04_practices").glob("*")))
-                    if (kb_path / "04_practices").exists()
+                    len(list((kb_path / "content" / "practices").glob("*")))
+                    if (kb_path / "content" / "practices").exists()
                     else 0
                 ),
-                "templates": count_md_files(kb_path / "06_templates"),
+                "templates": count_md_files(kb_path / "content" / "templates"),
             },
             "timeout_config": {
                 "cache_ms": 100,

@@ -24,6 +24,8 @@ from pathlib import Path
 from types import ModuleType
 from typing import Any
 
+import yaml
+
 _project_root = Path(__file__).parent.parent.parent.parent  # core -> sage -> src -> project_root
 _tools_path = _project_root / "tools"
 
@@ -59,6 +61,131 @@ from sage.core.events import EventType, LoadEvent, SearchEvent, get_event_bus
 from sage.core.logging import get_logger
 
 logger = get_logger(__name__)
+
+
+# =============================================================================
+# Configuration Loading
+# =============================================================================
+
+_config_cache: dict[str, Any] | None = None
+
+
+def _load_config() -> dict[str, Any]:
+    """Load configuration from sage.yaml with caching."""
+    global _config_cache
+    if _config_cache is not None:
+        return _config_cache
+
+    config_path = _project_root / "sage.yaml"
+    if config_path.exists():
+        try:
+            with open(config_path, encoding="utf-8") as f:
+                _config_cache = yaml.safe_load(f) or {}
+        except Exception as e:
+            logger.warning("config_load_failed", error=str(e), path=str(config_path))
+            _config_cache = {}
+    else:
+        logger.debug("config_not_found", path=str(config_path))
+        _config_cache = {}
+
+    return _config_cache
+
+
+def _get_triggers_from_config() -> list["LoadingTrigger"]:
+    """
+    Load triggers from the sage.yaml configuration.
+    
+    Returns:
+        List of LoadingTrigger objects parsed from config, or empty list if not found.
+    """
+    config = _load_config()
+    triggers_config = config.get("triggers", {})
+
+    if not triggers_config:
+        return []
+
+    triggers: list[LoadingTrigger] = []
+    for name, trigger_data in triggers_config.items():
+        if not isinstance(trigger_data, dict):
+            continue
+
+        keywords = trigger_data.get("keywords", [])
+        files = trigger_data.get("load", [])  # Config uses "load", code uses "files"
+        timeout_ms = trigger_data.get("timeout_ms", 2000)
+
+        if keywords and files:
+            triggers.append(LoadingTrigger(
+                name=name,
+                keywords=keywords,
+                files=files,
+                timeout_ms=timeout_ms,
+            ))
+
+    # Sort by priority if available (lower = higher priority)
+    triggers.sort(key=lambda t: triggers_config.get(t.name, {}).get("priority", 999))
+
+    return triggers
+
+
+def _get_always_load_from_config() -> list[str]:
+    """
+    Load always-load files from sage.yaml configuration.
+    
+    Returns:
+        List of file paths that should always be loaded, or empty list if not found.
+    """
+    config = _load_config()
+    loading_config = config.get("loading", {})
+    return loading_config.get("always", [])
+
+
+def _parse_timeout_str(timeout_str: str | int) -> int:
+    """
+    Parse timeout string (e.g., '5s', '500ms', '2s') to milliseconds.
+    
+    Args:
+        timeout_str: Timeout value as string (e.g., '5s', '500ms') or int (ms).
+        
+    Returns:
+        Timeout in milliseconds.
+    """
+    if isinstance(timeout_str, int):
+        return timeout_str
+
+    timeout_str = str(timeout_str).strip().lower()
+
+    if timeout_str.endswith("ms"):
+        return int(timeout_str[:-2])
+    elif timeout_str.endswith("s"):
+        return int(float(timeout_str[:-1]) * 1000)
+    else:
+        # Assume milliseconds if no unit
+        return int(timeout_str)
+
+
+def _get_timeout_from_config(operation: str, default_ms: int) -> int:
+    """
+    Get timeout value for a specific operation from the sage.yaml configuration.
+    
+    Args:
+        operation: Operation name (e.g., 'full_load', 'layer_load', 'file_read').
+        default_ms: Default timeout in milliseconds if not found in config.
+        
+    Returns:
+        Timeout in milliseconds.
+    """
+    config = _load_config()
+    timeout_config = config.get("timeout", {})
+    operations = timeout_config.get("operations", {})
+
+    if operation in operations:
+        return _parse_timeout_str(operations[operation])
+
+    # Fallback to default timeout from config
+    if "default" in timeout_config:
+        return _parse_timeout_str(timeout_config["default"])
+
+    return default_ms
 
 
 class Layer(Enum):
@@ -121,168 +248,12 @@ class KnowledgeLoader:
     - Differential loading support
     """
 
-    # Default loading triggers (bilingual: English + Chinese)
-    DEFAULT_TRIGGERS = [
-        LoadingTrigger(
-            name="code",
-            keywords=[
-                "code",
-                "implement",
-                "fix",
-                "refactor",
-                "debug",
-                "bug",
-                "代码",
-                "实现",
-                "修复",
-                "重构",
-                "调试",
-                "错误",
-                "函数",
-                "方法",
-            ],
-            files=[
-                "content/guidelines/02_code_style.md",
-                "content/guidelines/05_python.md",
-            ],
-            timeout_ms=2000,
-        ),
-        LoadingTrigger(
-            name="architecture",
-            keywords=[
-                "architecture",
-                "design",
-                "system",
-                "scale",
-                "module",
-                "架构",
-                "设计",
-                "系统",
-                "扩展",
-                "模块",
-                "组件",
-                "结构",
-            ],
-            files=["content/guidelines/01_planning_design.md"],
-            timeout_ms=3000,
-        ),
-        LoadingTrigger(
-            name="testing",
-            keywords=[
-                "test",
-                "testing",
-                "verify",
-                "validation",
-                "coverage",
-                "测试",
-                "验证",
-                "覆盖",
-                "单元测试",
-                "集成测试",
-            ],
-            files=["content/guidelines/03_engineering.md"],
-            timeout_ms=2000,
-        ),
-        LoadingTrigger(
-            name="ai_collaboration",
-            keywords=[
-                "autonomy",
-                "collaboration",
-                "instruction",
-                "batch",
-                "自主",
-                "协作",
-                "指令",
-                "批处理",
-                "AI",
-                "助手",
-                "等级",
-            ],
-            files=["content/guidelines/06_ai_collaboration.md"],
-            timeout_ms=2000,
-        ),
-        LoadingTrigger(
-            name="complex_decision",
-            keywords=[
-                "decision",
-                "review",
-                "expert",
-                "committee",
-                "evaluate",
-                "决策",
-                "评审",
-                "专家",
-                "委员会",
-                "评估",
-                "审查",
-            ],
-            files=["content/frameworks/cognitive/expert_committee.md"],
-            timeout_ms=3000,
-        ),
-        LoadingTrigger(
-            name="documentation",
-            keywords=[
-                "document",
-                "doc",
-                "readme",
-                "guide",
-                "changelog",
-                "文档",
-                "说明",
-                "指南",
-                "变更日志",
-                "注释",
-            ],
-            files=["content/guidelines/04_documentation.md"],
-            timeout_ms=2000,
-        ),
-        LoadingTrigger(
-            name="python",
-            keywords=[
-                "python",
-                "decorator",
-                "async",
-                "typing",
-                "pydantic",
-                "Python",
-                "装饰器",
-                "异步",
-                "类型",
-                "类型注解",
-            ],
-            files=["content/guidelines/05_python.md"],
-            timeout_ms=2000,
-        ),
-        LoadingTrigger(
-            name="quality",
-            keywords=[
-                "quality",
-                "standard",
-                "best practice",
-                "principle",
-                "质量",
-                "标准",
-                "最佳实践",
-                "原则",
-                "规范",
-            ],
-            files=["content/guidelines/08_quality.md"],
-            timeout_ms=2000,
-        ),
-    ]
-
-    # Always load these files
-    ALWAYS_LOAD = [
-        "index.md",
-        "content/core/principles.md",
-        "content/core/quick_reference.md",
-    ]
-
     def __init__(
         self,
         kb_path: Path | None = None,
         timeout_manager: Any | None = None,  # TimeoutManager instance
         triggers: list[LoadingTrigger] | None = None,
+        always_load: list[str] | None = None,
     ):
         """
         Initialize the knowledge loader.
@@ -290,11 +261,23 @@ class KnowledgeLoader:
         Args:
             kb_path: Path to knowledge base root (default: project root)
             timeout_manager: Custom timeout manager (default: global singleton)
-            triggers: Custom loading triggers (default: DEFAULT_TRIGGERS)
+            triggers: Custom loading triggers (default: from sage.yaml config)
+            always_load: Files to always load (default: from sage.yaml config)
         """
-        self.kb_path = kb_path or Path(__file__).parent.parent.parent
+        self.kb_path = kb_path or Path(__file__).parent.parent.parent.parent
         self.timeout_manager = timeout_manager or get_timeout_manager()
-        self.triggers = triggers or self.DEFAULT_TRIGGERS
+
+        # Load triggers: explicit param > config (no hardcoded fallback)
+        if triggers is not None:
+            self.triggers = triggers
+        else:
+            self.triggers = _get_triggers_from_config()
+
+        # Load always_load: explicit param > config (no hardcoded fallback)
+        if always_load is not None:
+            self._always_load = always_load
+        else:
+            self._always_load = _get_always_load_from_config()
 
         # Caches
         self._cache: dict[str, str] = {}
@@ -335,7 +318,7 @@ class KnowledgeLoader:
             LoadResult with content and metadata
         """
         start_time = time.monotonic()
-        timeout_ms = timeout_ms or 5000
+        timeout_ms = timeout_ms or _get_timeout_from_config("full_load", 5000)
 
         logger.debug(
             "load_started",
@@ -361,10 +344,10 @@ class KnowledgeLoader:
         elif layer is not None:
             files_to_load = self._get_files_for_layer(layer)
         else:
-            files_to_load = self.ALWAYS_LOAD.copy()
+            files_to_load = self._always_load.copy()
 
         # Always include core files
-        for core_file in self.ALWAYS_LOAD:
+        for core_file in self._always_load:
             if core_file not in files_to_load:
                 files_to_load.insert(0, core_file)
 
@@ -392,27 +375,30 @@ class KnowledgeLoader:
 
         return result
 
-    async def load_core(self, timeout_ms: int = 2000) -> LoadResult:
+    async def load_core(self, timeout_ms: int | None = None) -> LoadResult:
         """Load core principles only (L0 + L1)."""
+        timeout_ms = timeout_ms or _get_timeout_from_config("layer_load", 2000)
         return await self.load(
-            files=self.ALWAYS_LOAD,
+            files=self._always_load,
             timeout_ms=timeout_ms,
         )
 
     async def load_for_task(
         self,
         task: str,
-        timeout_ms: int = 5000,
+        timeout_ms: int | None = None,
     ) -> LoadResult:
         """Load knowledge relevant to a specific task."""
+        timeout_ms = timeout_ms or _get_timeout_from_config("full_load", 5000)
         return await self.load(task=task, timeout_ms=timeout_ms)
 
     async def load_guidelines(
         self,
         chapter: str,
-        timeout_ms: int = 3000,
+        timeout_ms: int | None = None,
     ) -> LoadResult:
         """Load a specific guidelines chapter."""
+        timeout_ms = timeout_ms or _get_timeout_from_config("layer_load", 2000)
         file_path = f"content/guidelines/{chapter}.md"
         if not chapter.endswith(".md"):
             # Try to find a matching file
@@ -428,9 +414,10 @@ class KnowledgeLoader:
     async def load_framework(
         self,
         name: str,
-        timeout_ms: int = 5000,
+        timeout_ms: int | None = None,
     ) -> LoadResult:
         """Load a specific framework."""
+        timeout_ms = timeout_ms or _get_timeout_from_config("full_load", 5000)
         framework_dir = self.kb_path / "knowledge" / "frameworks" / name
         files = []
 
@@ -459,7 +446,7 @@ class KnowledgeLoader:
         self,
         query: str,
         max_results: int = 5,
-        timeout_ms: int = 3000,
+        timeout_ms: int | None = None,
     ) -> list[dict[str, Any]]:
         """
         Search knowledge base for matching content.
@@ -472,6 +459,7 @@ class KnowledgeLoader:
         Returns:
             List of search results with a path, score, and preview
         """
+        timeout_ms = timeout_ms or _get_timeout_from_config("search", 3000)
         start_time = time.monotonic()
         results = []
         query_lower = query.lower()
@@ -579,7 +567,7 @@ class KnowledgeLoader:
                     files.update(trigger.files)
                     break
 
-        return list(files) if files else self.ALWAYS_LOAD.copy()
+        return list(files) if files else self._always_load.copy()
 
     def _get_files_for_layer(self, layer: Layer) -> list[str]:
         """Get files for a specific layer."""
@@ -750,16 +738,18 @@ class KnowledgeLoader:
 # Convenience functions
 async def load_knowledge(
     task: str = "",
-    timeout_ms: int = 5000,
+    timeout_ms: int | None = None,
 ) -> LoadResult:
     """Quick function to load knowledge for a task."""
     loader = KnowledgeLoader()
+    timeout_ms = timeout_ms or _get_timeout_from_config("full_load", 5000)
     return await loader.load(task=task, timeout_ms=timeout_ms)
 
 
-async def load_core(timeout_ms: int = 2000) -> LoadResult:
+async def load_core(timeout_ms: int | None = None) -> LoadResult:
     """Quick function to load core principles."""
     loader = KnowledgeLoader()
+    timeout_ms = timeout_ms or _get_timeout_from_config("layer_load", 2000)
     return await loader.load_core(timeout_ms=timeout_ms)
 
 

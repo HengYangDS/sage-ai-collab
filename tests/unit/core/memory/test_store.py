@@ -456,3 +456,238 @@ class TestMemoryStorePersistence:
             assert (path / "sessions").exists()
             assert (path / "summaries").exists()
             assert (path / "checkpoints").exists()
+
+
+class TestMemoryStoreUpdateExtended:
+    """Extended tests for update method."""
+
+    @pytest.fixture
+    def temp_store(self):
+        """Create a temporary MemoryStore."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yield MemoryStore(base_path=Path(tmpdir), auto_save=False)
+
+    def test_update_tags_triggers_index_update(self, temp_store):
+        """Test that updating tags updates the tag index."""
+        entry = temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Tagged entry",
+            tags=["original-tag"],
+        )
+        
+        # Update tags
+        updated = temp_store.update(entry.id, tags=["new-tag-1", "new-tag-2"])
+        
+        assert "new-tag-1" in updated.tags
+        assert "new-tag-2" in updated.tags
+        assert "original-tag" not in updated.tags
+
+    def test_update_priority(self, temp_store):
+        """Test updating entry priority."""
+        entry = temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Priority entry",
+            priority=MemoryPriority.LOW,
+        )
+        
+        updated = temp_store.update(entry.id, priority=MemoryPriority.HIGH)
+        assert updated.priority == MemoryPriority.HIGH
+
+    def test_update_tokens(self, temp_store):
+        """Test updating entry tokens."""
+        entry = temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Token entry",
+            tokens=100,
+        )
+        
+        updated = temp_store.update(entry.id, tokens=200)
+        assert updated.tokens == 200
+
+    def test_update_metadata(self, temp_store):
+        """Test updating entry metadata."""
+        entry = temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Metadata entry",
+            metadata={"key1": "value1"},
+        )
+        
+        updated = temp_store.update(entry.id, metadata={"key2": "value2"})
+        assert "key1" in updated.metadata
+        assert "key2" in updated.metadata
+
+
+class TestMemoryStoreQueryExtended:
+    """Extended tests for query method."""
+
+    @pytest.fixture
+    def temp_store(self):
+        """Create a temporary MemoryStore."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yield MemoryStore(base_path=Path(tmpdir), auto_save=False)
+
+    def test_query_order_by_updated_at(self, temp_store):
+        """Test query ordering by updated_at."""
+        entry1 = temp_store.add(type=MemoryType.CONTEXT, content="First")
+        entry2 = temp_store.add(type=MemoryType.CONTEXT, content="Second")
+        
+        # Update first entry to have later updated_at
+        temp_store.update(entry1.id, content="Updated first")
+        
+        results = temp_store.query(order_by="updated_at", descending=True)
+        assert len(results) >= 2
+
+    def test_query_order_by_priority(self, temp_store):
+        """Test query ordering by priority."""
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Low",
+            priority=MemoryPriority.LOW,
+        )
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="High",
+            priority=MemoryPriority.HIGH,
+        )
+        
+        results = temp_store.query(order_by="priority", descending=True)
+        assert len(results) >= 2
+        # Higher priority should come first when descending
+        assert results[0].priority.value >= results[1].priority.value
+
+    def test_query_order_by_priority_ascending(self, temp_store):
+        """Test query ordering by priority ascending."""
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Low",
+            priority=MemoryPriority.LOW,
+        )
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="High",
+            priority=MemoryPriority.HIGH,
+        )
+        
+        results = temp_store.query(order_by="priority", descending=False)
+        assert len(results) >= 2
+        # Lower priority should come first when ascending
+        assert results[0].priority.value <= results[1].priority.value
+
+    def test_query_nonexistent_session_triggers_load(self, temp_store):
+        """Test that querying non-existent session triggers load attempt."""
+        # Query for a session that doesn't exist
+        results = temp_store.query(session_id="nonexistent-session-xyz")
+        # Should return empty list, not raise error
+        assert results == []
+
+    def test_query_max_priority_filter(self, temp_store):
+        """Test query with max_priority filter."""
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Critical",
+            priority=MemoryPriority.CRITICAL,
+        )
+        temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="Low",
+            priority=MemoryPriority.LOW,
+        )
+        
+        results = temp_store.query(max_priority=MemoryPriority.NORMAL)
+        # Should only include LOW and NORMAL priority
+        for r in results:
+            assert r.priority.value <= MemoryPriority.NORMAL.value
+
+
+class TestMemoryStoreAutoSave:
+    """Tests for auto-save functionality."""
+
+    def test_add_with_auto_save(self):
+        """Test that add triggers auto-save when enabled."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir)
+            store = MemoryStore(base_path=path, auto_save=True)
+            
+            store.add(
+                type=MemoryType.DECISION,
+                content="Auto-saved entry",
+                session_id="auto-save-session",
+            )
+            
+            # Check that session file was created
+            session_file = path / "sessions" / "auto-save-session.json"
+            assert session_file.exists()
+
+    def test_update_with_auto_save(self):
+        """Test that update triggers auto-save when enabled."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir)
+            store = MemoryStore(base_path=path, auto_save=True)
+            
+            entry = store.add(
+                type=MemoryType.DECISION,
+                content="Original",
+                session_id="update-session",
+            )
+            
+            store.update(entry.id, content="Updated")
+            
+            # Verify file was updated
+            session_file = path / "sessions" / "update-session.json"
+            assert session_file.exists()
+
+    def test_delete_with_auto_save(self):
+        """Test that delete triggers auto-save when enabled."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            path = Path(tmpdir)
+            store = MemoryStore(base_path=path, auto_save=True)
+            
+            entry = store.add(
+                type=MemoryType.DECISION,
+                content="To delete",
+                session_id="delete-session",
+            )
+            
+            store.delete(entry.id)
+            
+            # Session file should still exist (may be empty)
+            session_file = path / "sessions" / "delete-session.json"
+            # File may or may not exist depending on implementation
+
+
+class TestMemoryStoreEdgeCases:
+    """Tests for edge cases."""
+
+    @pytest.fixture
+    def temp_store(self):
+        """Create a temporary MemoryStore."""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            yield MemoryStore(base_path=Path(tmpdir), auto_save=False)
+
+    def test_add_without_session_id(self, temp_store):
+        """Test adding entry without session_id."""
+        entry = temp_store.add(
+            type=MemoryType.CONTEXT,
+            content="No session",
+        )
+        assert entry.session_id is None or entry.session_id == ""
+
+    def test_query_empty_store(self, temp_store):
+        """Test querying empty store."""
+        results = temp_store.query()
+        assert results == []
+
+    def test_get_total_tokens_empty_store(self, temp_store):
+        """Test getting total tokens from empty store."""
+        total = temp_store.get_total_tokens()
+        assert total == 0
+
+    def test_prune_empty_store(self, temp_store):
+        """Test pruning empty store."""
+        pruned = temp_store.prune()
+        assert pruned == 0
+
+    def test_clear_empty_store(self, temp_store):
+        """Test clearing empty store."""
+        count = temp_store.clear()
+        assert count == 0

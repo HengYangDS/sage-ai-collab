@@ -83,6 +83,7 @@ class LoaderHandler(Protocol):
     Example:
         >>> class LoadMetricsHandler:
         ...     async def on_load_start(self, event: LoadEvent) -> None:
+        ...         # noinspection PyAttributeOutsideInit
         ...         self.start_time = time.time()
         ...
         ...     async def on_load_complete(self, event: LoadEvent) -> None:

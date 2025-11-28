@@ -62,7 +62,7 @@ Parallelizable:
 >
 > This roadmap tracks progress toward the **target architecture** defined in `01-architecture.md`.
 >
-> ✅ **Phase 0, A, B, C, D, E, F, G, H COMPLETE**: Full v1.1 implementation complete with memory persistence.
+> ✅ **Phase 0, A, B, C, D, E, F, G, H + DI COMPLETE**: Full v1.2 implementation with DI Container.
 
 | Component           | Current Status | Current | Target | Notes                                            |
 |---------------------|----------------|---------|--------|--------------------------------------------------|
@@ -72,12 +72,12 @@ Parallelizable:
 | Services Layer      | ✅ Complete     | 100%    | 100%   | cli.py, mcp_server.py in services/               |
 | Capabilities Layer  | ✅ Complete     | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented     |
 | Unified Logging     | ✅ Complete     | 100%    | 100%   | structlog + context management in core/logging/  |
-| DI Container        | ⏸️ Deferred    | 0%      | 100%   | YAML-driven service registration (defer to v1.2) |
+| DI Container        | ✅ Complete     | 100%    | 100%   | Lifetime mgmt, auto-wiring, 94% test coverage    |
 | EventBus            | ✅ Complete     | 100%    | 100%   | Async pub/sub with priority & timeout protection |
 | Memory Persistence  | ✅ Complete     | 100%    | 100%   | MemoryStore, TokenBudget, SessionContinuity      |
 | Plugin System       | 🟡 Basic       | 40%     | 100%   | base.py + registry.py exist                      |
 | Tools (Dev-Only)    | ✅ Complete     | 100%    | 100%   | monitors/, dev_scripts/, lazy imports            |
-| Tests               | ✅ Implemented  | 90%     | 90%    | 340 tests, 71% overall coverage                  |
+| Tests               | ✅ Implemented  | 95%     | 90%    | 523 tests, 82% overall coverage                  |
 | Dev Toolchain       | ✅ Complete     | 100%    | 100%   | Makefile, py.typed, pyproject.toml               |
 | Documentation       | 🟢 Good        | 90%     | 100%   | Design docs + README complete                    |
 | Config Files        | ✅ Complete     | 100%    | 100%   | sage.yaml, index.md created                      |
@@ -100,12 +100,16 @@ v1.1 Phases:
 Phase G: Event System       ██████████ Protocol + EventBus architecture (4 days) [COMPLETE ✅]
 Phase H: Memory System      ██████████ Cross-task persistence + token mgmt (4 days) [COMPLETE ✅]
 
-COMPLETED: 0 → A → B → C → D → E → F → G → H + Config Files + Tests + Logging + Events + Memory
+v1.2 Phases:
+Phase I: DI Container       ██████████ Dependency injection + auto-wiring (1 day) [COMPLETE ✅]
+
+COMPLETED: 0 → A → B → C → D → E → F → G → H → I + Config Files + Tests + Logging + Events + Memory + DI
 REMAINING: Plugin system enhancement (optional)
 
 MVP Duration: Structure complete, logging + events operational ✅
 v1.1 Duration: 340 tests passing (71% coverage), memory persistence operational ✅
-Current: Full v1.1 implementation with memory persistence, token budget, session continuity
+v1.2 Duration: 523 tests passing (82% coverage), DI container operational ✅
+Current: Full v1.2 implementation with DI container, lifetime management, auto-wiring
 ```
 
 ### Timeline Scenarios

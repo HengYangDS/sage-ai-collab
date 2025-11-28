@@ -49,6 +49,66 @@ loading:
     - content/core/quick_reference.md
 
 # =============================================================================
+# Guidelines Section Mapping
+# =============================================================================
+# Maps section aliases to actual file names in content/guidelines/
+guidelines:
+  sections:
+    # Quick Start / Overview
+    quick_start: quick_start
+    overview: quick_start
+    "00": quick_start
+
+    # Planning & Design
+    planning: planning_design
+    planning_design: planning_design
+    design: planning_design
+    "01": planning_design
+
+    # Code Style
+    code_style: code_style
+    code: code_style
+    style: code_style
+    "02": code_style
+
+    # Engineering (Config/Test/Perf/Change/Maintain)
+    engineering: engineering
+    config: engineering
+    test: engineering
+    "03": engineering
+
+    # Documentation
+    documentation: documentation
+    docs: documentation
+    "04": documentation
+
+    # Python
+    python: python
+    py: python
+    "05": python
+
+    # AI Collaboration
+    ai_collaboration: ai_collaboration
+    ai: ai_collaboration
+    collaboration: ai_collaboration
+    autonomy: ai_collaboration
+    "06": ai_collaboration
+
+    # Cognitive Enhancement
+    cognitive: cognitive
+    expert: cognitive
+    committee: cognitive
+    "07": cognitive
+
+    # Quality Framework
+    quality: quality
+    "08": quality
+
+    # Success Principles
+    success: success
+    "09": success
+
+# =============================================================================
 # Keyword Triggers for Context-Aware Loading
 # =============================================================================
 triggers:

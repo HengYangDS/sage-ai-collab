@@ -86,35 +86,33 @@ class StructureChecker:
 
     # Expected directory structure
     REQUIRED_DIRS = [
-        "01_core",
-        "02_guidelines",
-        "03_frameworks",
-        "04_practices",
-        "05_tools",
-        "06_templates",
-        "07_scenarios",
-        "08_archive",
+        "content/core",
+        "content/guidelines",
+        "content/frameworks",
+        "content/practices",
+        "content/templates",
+        "content/scenarios",
     ]
 
     REQUIRED_FILES = [
         "index.md",
-        "aikb.yaml",
+        "sage.yaml",
         "README.md",
-        "01_core/principles.md",
-        "01_core/quick_reference.md",
+        "content/core/principles.md",
+        "content/core/quick_reference.md",
     ]
 
     EXPECTED_GUIDELINES = [
-        "00_quick_start.md",
-        "01_planning_design.md",
-        "02_code_style.md",
-        "03_engineering.md",
-        "04_documentation.md",
-        "05_python.md",
-        "06_ai_collaboration.md",
-        "07_cognitive.md",
-        "08_quality.md",
-        "09_success.md",
+        "quick_start.md",
+        "planning_design.md",
+        "code_style.md",
+        "engineering.md",
+        "documentation.md",
+        "python.md",
+        "ai_collaboration.md",
+        "cognitive.md",
+        "quality.md",
+        "success.md",
     ]
 
     def __init__(self, root_path: Path | None = None):
@@ -193,7 +191,7 @@ class StructureChecker:
 
     def _check_guidelines(self, report: StructureReport) -> None:
         """Check guidelines structure."""
-        guidelines_dir = self.root_path / "02_guidelines"
+        guidelines_dir = self.root_path / "content" / "guidelines"
 
         if not guidelines_dir.exists():
             return  # Already reported as missing directory
@@ -206,9 +204,9 @@ class StructureChecker:
                     StructureIssue(
                         severity="warning",
                         category="missing",
-                        path=f"02_guidelines/{expected}",
+                        path=f"content/guidelines/{expected}",
                         message=f"Expected guideline file missing: {expected}",
-                        suggestion=f"Create guideline: 02_guidelines/{expected}",
+                        suggestion=f"Create guideline: content/guidelines/{expected}",
                     )
                 )
 

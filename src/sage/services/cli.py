@@ -28,8 +28,8 @@ from sage.core.loader import KnowledgeLoader, Layer
 
 # Initialize
 app = typer.Typer(
-    name="aikb",
-    help="AI Collaboration Knowledge Base CLI - Production-grade knowledge management",
+    name="sage",
+    help="SAGE: AI Collaboration Knowledge Base CLI",
     add_completion=True,
     no_args_is_help=True,
 )
@@ -289,7 +289,7 @@ def info():
         return len([d for d in path.iterdir() if d.is_dir()])
 
     # Build info table
-    table = Table(title="AI Collaboration Knowledge Base")
+    table = Table(title="SAGE: AI Collaboration Knowledge Base")
     table.add_column("Property", style="cyan")
     table.add_column("Value", style="green")
 
@@ -298,12 +298,12 @@ def info():
         ("Status", "Operational"),
         ("KB Path", str(kb_path)),
         ("", ""),
-        ("Core Files", str(count_files(kb_path / "01_core"))),
-        ("Guidelines", str(count_files(kb_path / "02_guidelines"))),
-        ("Frameworks", str(count_dirs(kb_path / "03_frameworks"))),
-        ("Practices", str(count_dirs(kb_path / "04_practices"))),
-        ("Templates", str(count_files(kb_path / "06_templates"))),
-        ("Scenarios", str(count_dirs(kb_path / "07_scenarios"))),
+        ("Core Files", str(count_files(kb_path / "content" / "core"))),
+        ("Guidelines", str(count_files(kb_path / "content" / "guidelines"))),
+        ("Frameworks", str(count_dirs(kb_path / "content" / "frameworks"))),
+        ("Practices", str(count_dirs(kb_path / "content" / "practices"))),
+        ("Templates", str(count_files(kb_path / "content" / "templates"))),
+        ("Scenarios", str(count_dirs(kb_path / "content" / "scenarios"))),
         ("", ""),
         ("Cache Files", str(loader.get_cache_stats()["cached_files"])),
         ("Cache Size", f"{loader.get_cache_stats()['total_size']:,} bytes"),
@@ -348,14 +348,12 @@ def validate(
 
     # Check required directories
     required_dirs = [
-        "01_core",
-        "02_guidelines",
-        "03_frameworks",
-        "04_practices",
-        "05_tools",
-        "06_templates",
-        "07_scenarios",
-        "08_archive",
+        "content/core",
+        "content/guidelines",
+        "content/frameworks",
+        "content/practices",
+        "content/templates",
+        "content/scenarios",
     ]
 
     for dir_name in required_dirs:
@@ -373,8 +371,8 @@ def validate(
     # Check required files
     required_files = [
         "index.md",
-        "01_core/principles.md",
-        "01_core/quick_reference.md",
+        "content/core/principles.md",
+        "content/core/quick_reference.md",
     ]
 
     for file_name in required_files:

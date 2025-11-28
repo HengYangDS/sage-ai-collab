@@ -202,6 +202,228 @@ class TestHealthMonitor:
         assert isinstance(check, HealthCheck)
 
 
+    @pytest.mark.asyncio
+    async def test_check_filesystem_no_index(self, tmp_path):
+        """Test filesystem check when index.md is missing."""
+        # Create all required directories but no index.md
+        (tmp_path / "content" / "core").mkdir(parents=True)
+        (tmp_path / "content" / "guidelines").mkdir(parents=True)
+        (tmp_path / "tools").mkdir(parents=True)
+        monitor = HealthMonitor(kb_path=tmp_path)
+        check = await monitor.check_filesystem()
+        assert check.status == HealthStatus.DEGRADED
+        assert "index.md" in check.message
+
+    @pytest.mark.asyncio
+    async def test_check_filesystem_healthy(self, tmp_path):
+        """Test filesystem check when everything is present."""
+        # Create all required directories and index.md
+        (tmp_path / "content" / "core").mkdir(parents=True)
+        (tmp_path / "content" / "guidelines").mkdir(parents=True)
+        (tmp_path / "tools").mkdir(parents=True)
+        (tmp_path / "index.md").write_text("# Index\n")
+        monitor = HealthMonitor(kb_path=tmp_path)
+        check = await monitor.check_filesystem()
+        assert check.status == HealthStatus.HEALTHY
+        assert check.details is not None
+
+    @pytest.mark.asyncio
+    async def test_check_filesystem_exception(self, tmp_path, monkeypatch):
+        """Test filesystem check handles exceptions."""
+        monitor = HealthMonitor(kb_path=tmp_path)
+        # Monkeypatch to raise exception
+        def raise_error(*args, **kwargs):
+            raise PermissionError("Access denied")
+        monkeypatch.setattr(Path, "exists", raise_error)
+        check = await monitor.check_filesystem()
+        assert check.status == HealthStatus.UNHEALTHY
+        assert "Error" in check.message
+
+    @pytest.mark.asyncio
+    async def test_check_config_valid_yaml(self, tmp_path):
+        """Test config check with valid YAML containing all keys."""
+        config_content = """
+version: 0.1.0
+timeout:
+  default: 5000
+loading:
+  lazy: true
+"""
+        (tmp_path / "aikb.yaml").write_text(config_content)
+        monitor = HealthMonitor(kb_path=tmp_path)
+        check = await monitor.check_config()
+        assert check.status == HealthStatus.HEALTHY
+        assert check.details is not None
+
+    @pytest.mark.asyncio
+    async def test_check_config_missing_keys(self, tmp_path):
+        """Test config check with missing required keys."""
+        (tmp_path / "aikb.yaml").write_text("version: 0.1.0\n")
+        monitor = HealthMonitor(kb_path=tmp_path)
+        check = await monitor.check_config()
+        assert check.status == HealthStatus.DEGRADED
+        assert "Missing config keys" in check.message
+
+    @pytest.mark.asyncio
+    async def test_check_config_invalid_yaml(self, tmp_path):
+        """Test config check with invalid YAML."""
+        (tmp_path / "aikb.yaml").write_text("invalid: yaml: content: [")
+        monitor = HealthMonitor(kb_path=tmp_path)
+        check = await monitor.check_config()
+        assert check.status == HealthStatus.UNHEALTHY
+        assert "Error" in check.message
+
+    @pytest.mark.asyncio
+    async def test_check_loader_fallback(self, tmp_path, monkeypatch):
+        """Test loader check with fallback status."""
+        from sage.core.loader import LoadResult
+        
+        async def mock_load_core(*args, **kwargs):
+            return LoadResult(
+                content="fallback content",
+                status="fallback",
+                tokens_estimate=100,
+                files_loaded=[],
+                errors=[],
+            )
+        
+        monitor = HealthMonitor(kb_path=tmp_path)
+        monkeypatch.setattr(
+            "sage.core.loader.KnowledgeLoader.load_core",
+            mock_load_core
+        )
+        check = await monitor.check_loader()
+        assert check.status == HealthStatus.DEGRADED
+        assert "fallback" in check.message.lower()
+
+    @pytest.mark.asyncio
+    async def test_check_loader_other_status(self, tmp_path, monkeypatch):
+        """Test loader check with other status."""
+        from sage.core.loader import LoadResult
+        
+        async def mock_load_core(*args, **kwargs):
+            return LoadResult(
+                content="",
+                status="partial",
+                tokens_estimate=0,
+                files_loaded=[],
+                errors=["Some error"],
+            )
+        
+        monitor = HealthMonitor(kb_path=tmp_path)
+        monkeypatch.setattr(
+            "sage.core.loader.KnowledgeLoader.load_core",
+            mock_load_core
+        )
+        check = await monitor.check_loader()
+        assert check.status == HealthStatus.DEGRADED
+        assert check.details is not None
+
+    @pytest.mark.asyncio
+    async def test_check_loader_exception(self, tmp_path, monkeypatch):
+        """Test loader check handles exceptions."""
+        async def mock_load_core(*args, **kwargs):
+            raise RuntimeError("Loader failed")
+        
+        monitor = HealthMonitor(kb_path=tmp_path)
+        monkeypatch.setattr(
+            "sage.core.loader.KnowledgeLoader.load_core",
+            mock_load_core
+        )
+        check = await monitor.check_loader()
+        assert check.status == HealthStatus.UNHEALTHY
+        assert "error" in check.message.lower()
+
+    @pytest.mark.asyncio
+    async def test_check_all_with_exception(self, tmp_path, monkeypatch):
+        """Test check_all handles exceptions from individual checks."""
+        monitor = HealthMonitor(kb_path=tmp_path)
+        
+        async def raise_exception():
+            raise ValueError("Test exception")
+        
+        monkeypatch.setattr(monitor, "check_filesystem", raise_exception)
+        report = await monitor.check_all()
+        assert report.overall_status == HealthStatus.UNHEALTHY
+        assert any(c.name == "unknown" for c in report.checks)
+
+    @pytest.mark.asyncio
+    async def test_check_all_triggers_alert(self, tmp_path):
+        """Test check_all triggers alert callbacks on unhealthy status."""
+        monitor = HealthMonitor(kb_path=tmp_path)
+        callback = Mock()
+        monitor.register_alert_callback(callback)
+        
+        # Run check (will be degraded/unhealthy due to missing files)
+        await monitor.check_all()
+        
+        # Callback should be called
+        assert callback.called
+
+    @pytest.mark.asyncio
+    async def test_check_all_alert_callback_exception(self, tmp_path):
+        """Test check_all handles alert callback exceptions."""
+        monitor = HealthMonitor(kb_path=tmp_path)
+        
+        def bad_callback(report):
+            raise RuntimeError("Callback error")
+        
+        monitor.register_alert_callback(bad_callback)
+        # Should not raise exception
+        report = await monitor.check_all()
+        assert report is not None
+
+    @pytest.mark.asyncio
+    async def test_history_overflow(self, tmp_path):
+        """Test history respects size limit."""
+        monitor = HealthMonitor(kb_path=tmp_path, history_size=3)
+        
+        # Run more checks than history size
+        for _ in range(5):
+            await monitor.check_all()
+        
+        assert len(monitor._history) == 3
+
+    @pytest.mark.asyncio
+    async def test_start_stop_monitoring(self, tmp_path):
+        """Test start and stop monitoring."""
+        monitor = HealthMonitor(kb_path=tmp_path, check_interval_s=0.1)
+        
+        await monitor.start_monitoring()
+        assert monitor._running is True
+        
+        # Wait a bit for at least one check
+        await asyncio.sleep(0.15)
+        
+        await monitor.stop_monitoring()
+        assert monitor._running is False
+        assert monitor._task is None
+
+    @pytest.mark.asyncio
+    async def test_start_monitoring_already_running(self, tmp_path):
+        """Test start_monitoring when already running."""
+        monitor = HealthMonitor(kb_path=tmp_path, check_interval_s=0.1)
+        
+        await monitor.start_monitoring()
+        task1 = monitor._task
+        
+        # Try to start again
+        await monitor.start_monitoring()
+        task2 = monitor._task
+        
+        # Should be the same task
+        assert task1 is task2
+        
+        await monitor.stop_monitoring()
+
+    def test_get_status_summary_no_history(self, tmp_path):
+        """Test get_status_summary with no history."""
+        monitor = HealthMonitor(kb_path=tmp_path)
+        summary = monitor.get_status_summary()
+        assert summary["status"] == "unknown"
+        assert "No health checks" in summary["message"]
+
+
 class TestGetHealthMonitorFunction:
     """Tests for standalone get_health_monitor function."""
 
