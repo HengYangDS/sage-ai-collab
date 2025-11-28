@@ -39,26 +39,31 @@ Maintainability  Performance
 ## Code Review Checklist
 
 ### Correctness
+
 - [ ] Logic is correct and complete
 - [ ] Edge cases are handled
 - [ ] Error handling is appropriate
 
 ### Code Quality
+
 - [ ] Follows style guidelines
 - [ ] No code duplication
 - [ ] Names are clear and consistent
 
 ### Testing
+
 - [ ] Tests cover new functionality
 - [ ] Tests cover edge cases
 - [ ] All tests pass
 
 ### Security
+
 - [ ] No hardcoded secrets
 - [ ] Input validation present
 - [ ] No SQL injection risks
 
 ### Documentation
+
 - [ ] Public APIs documented
 - [ ] Complex logic explained
 - [ ] README updated if needed

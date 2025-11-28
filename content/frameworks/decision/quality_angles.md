@@ -2,7 +2,7 @@
 
 > **Load Time**: On-demand (~300 tokens)  
 > **Purpose**: Multi-perspective quality evaluation using 35+ quality angles  
-> **Version**: 2.0.0
+> **Version**: 0.1.0
 
 ---
 
@@ -188,4 +188,4 @@ Quality angles are evaluated by corresponding expert roles:
 
 ---
 
-*Version 2.0.0 | Part of AI Collaboration Knowledge Base*
+*Version 0.1.0 | Part of AI Collaboration Knowledge Base*

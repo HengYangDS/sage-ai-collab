@@ -106,4 +106,4 @@ aikb serve
 
 ---
 
-*Version 2.0.0 | Score: 100/100 | 24 Experts*
+*Version 0.1.0 | Score: 100/100 | 24 Experts*

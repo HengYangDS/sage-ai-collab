@@ -7,7 +7,7 @@ This module provides:
 - TimeoutMonitor: Real-time timeout monitoring and alerting
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import asyncio

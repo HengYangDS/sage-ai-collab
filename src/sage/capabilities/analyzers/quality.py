@@ -6,7 +6,7 @@ This module provides:
 - QualityAnalyzer: Analyzer for code and documentation quality
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import logging

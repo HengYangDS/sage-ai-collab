@@ -9,7 +9,7 @@ Dev Tools included:
 - TimeoutMonitor: Timeout tracking, statistics, and alerting
 
 Author: SAGE AI Collab Team
-Version: 3.0.0
+Version: 0.1.0
 """
 
 from .timeout_monitor import (

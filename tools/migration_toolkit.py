@@ -8,7 +8,7 @@ This module provides:
 - MigrationToolkit: Execute migrations safely.
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import json

@@ -3,7 +3,7 @@
 > **Load Time**: On-demand (~800 tokens for core, full ~2000 tokens)  
 > **Purpose**: Multi-perspective analysis using 35+ expert roles and 35+ quality angles  
 > **Philosophy**: Taoist "One generates Two, Two generates Three, Three generates All Things"  
-> **Version**: 2.0.0
+> **Version**: 0.1.0
 
 ---
 
@@ -537,4 +537,4 @@ This framework provides:
 
 ---
 
-*Version 2.0.0 | Based on Dynamic Composable Decision Framework v1.0*
+*Version 0.1.0 | Based on Dynamic Composable Decision Framework v1.0*

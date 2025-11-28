@@ -9,7 +9,7 @@ This module provides:
 - Health monitoring
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import logging
@@ -392,7 +392,7 @@ if MCP_AVAILABLE and app is not None:
             return len(list(path.glob("*.md")))
 
         return {
-            "version": "2.0.0",
+            "version": "0.1.0",
             "status": "operational",
             "layers": {
                 "L0_INDEX": "Navigation index",

@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Implementation Roadmap
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-28
 status: production-ready
 ---
@@ -62,24 +62,24 @@ Parallelizable:
 >
 > This roadmap tracks progress toward the **target architecture** defined in `01-architecture.md`.
 >
-> ✅ **Phase 0, A, B COMPLETE**: Package installs correctly, 3-layer architecture implemented, CLI functional.
+> ✅ **Phase 0, A, B, C (deferred), D, E, F COMPLETE**: MVP structure ready, tests organized, dev toolchain in place.
 
-| Component           | Current Status          | Current | Target | Notes                                           |
-|---------------------|-------------------------|---------|--------|-------------------------------------------------|
-| Package Config      | ✅ Complete              | 100%    | 100%   | sage-kb installs, CLI works                     |
-| Directory Structure | ✅ Complete              | 100%    | 100%   | core/, services/, capabilities/ structure       |
-| Core Layer          | ✅ Complete              | 100%    | 100%   | loader.py in core/, imports working             |
-| Services Layer      | ✅ Complete              | 100%    | 100%   | cli.py, mcp_server.py in services/              |
-| Capabilities Layer  | 🟢 Good                 | 70%     | 100%   | analyzers/, checkers/, monitors/ implemented    |
-| Unified Logging     | ❌ Not Implemented       | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)  |
-| DI Container        | ❌ Not Implemented       | 0%      | 100%   | YAML-driven service registration (defer to v1.1)|
-| EventBus            | ❌ Not Implemented       | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)  |
-| Plugin System       | 🟡 Basic                | 40%     | 100%   | base.py + registry.py exist                     |
-| Tools (Dev-Only)    | 🟡 Partial              | 50%     | 100%   | monitors/ exists, missing dev_scripts/          |
-| Tests               | 🔴 Missing              | 5%      | 80%    | Only __init__.py, test files deleted            |
-| Dev Toolchain       | 🟡 Partial              | 40%     | 100%   | pyproject.toml + README.md, no Makefile         |
-| Documentation       | 🟢 Good                 | 85%     | 100%   | Design docs + README complete                   |
-| Config Files        | ❌ Missing               | 0%      | 100%   | No sage.yaml, index.md, features.yaml           |
+| Component           | Current Status    | Current | Target | Notes                                            |
+|---------------------|-------------------|---------|--------|--------------------------------------------------|
+| Package Config      | ✅ Complete        | 100%    | 100%   | sage-kb installs, CLI works                      |
+| Directory Structure | ✅ Complete        | 100%    | 100%   | core/, services/, capabilities/ structure        |
+| Core Layer          | ✅ Complete        | 100%    | 100%   | loader.py in core/, imports working              |
+| Services Layer      | ✅ Complete        | 100%    | 100%   | cli.py, mcp_server.py in services/               |
+| Capabilities Layer  | ✅ Complete        | 100%    | 100%   | analyzers/, checkers/, monitors/ implemented     |
+| Unified Logging     | ⏸️ Deferred       | 0%      | 100%   | structlog + stdlib integration (defer to v1.1)   |
+| DI Container        | ⏸️ Deferred       | 0%      | 100%   | YAML-driven service registration (defer to v1.1) |
+| EventBus            | ⏸️ Deferred       | 0%      | 100%   | S.A.G.E. aligned async pub/sub (defer to v1.1)   |
+| Plugin System       | 🟡 Basic          | 40%     | 100%   | base.py + registry.py exist                      |
+| Tools (Dev-Only)    | ✅ Complete        | 100%    | 100%   | monitors/, dev_scripts/, lazy imports            |
+| Tests               | ✅ Structure Ready | 60%     | 80%    | fixtures/, unit/, integration/, conftest.py      |
+| Dev Toolchain       | ✅ Complete        | 100%    | 100%   | Makefile, py.typed, pyproject.toml               |
+| Documentation       | 🟢 Good           | 90%     | 100%   | Design docs + README complete                    |
+| Config Files        | ❌ Missing         | 0%      | 100%   | No sage.yaml, index.md, features.yaml            |
 
 ---
 
@@ -90,30 +90,31 @@ MVP Phases (v1.0):
 Phase 0: Package Fix       ██████████ Fix pyproject.toml, verify install (0.5 days) [COMPLETE ✅]
 Phase A: Base Reorg        ██████████ core/, services/ directories (2 days) [COMPLETE ✅]
 Phase B: Core Migration    ██████████ loader → core, imports fixed (1 day) [COMPLETE ✅]
-Phase C: Logging System    ███░░░░░░░ core/logging/ subpackage (1.5 days)
-Phase D: Capabilities+Tools █████░░░░░ capabilities/ polish + tools isolation (1 day) [70% done]
-Phase E: Tests Reorg       ████░░░░░░ fixtures/, unit/, integration/ (2 days)
-Phase F: Enhancement       ████░░░░░░ Makefile, pre-commit, examples (2 days)
+Phase C: Logging System    ░░░░░░░░░░ Deferred to v1.1 [DEFERRED ⏸️]
+Phase D: Capabilities+Tools ██████████ capabilities/ + tools/dev_scripts/ (1 day) [COMPLETE ✅]
+Phase E: Tests Reorg       ██████████ fixtures/, unit/, integration/, conftest.py (1 day) [COMPLETE ✅]
+Phase F: Enhancement       ██████████ Makefile, py.typed (1 day) [COMPLETE ✅]
 
 v1.1 Phases (Deferred):
+Phase C: Logging System    ██████░░░░ core/logging/ subpackage (1.5 days)
 Phase G: Event System      ██████░░░░ Protocol + EventBus architecture (4 days)
 Phase H: Memory System     ██████░░░░ Cross-task persistence + token mgmt (4 days)
 
-COMPLETED: 0 → A → B (3.5 days)
-REMAINING: C → D → E → F = 6.5 days
+COMPLETED: 0 → A → B → D → E → F (MVP Structure Ready)
+REMAINING: Config files (sage.yaml, index.md), actual test implementations
 
-MVP Duration: ~10 days remaining (was 14-18 days)
-v1.1 Duration: Additional 8-10 days for Phases G & H
-Current: Package installable, 3-layer architecture working, CLI functional
+MVP Duration: Structure complete, ready for test implementation
+v1.1 Duration: Additional 9-12 days for Phases C, G & H
+Current: Package installable, 3-layer architecture, dev toolchain, test structure ready
 ```
 
 ### Timeline Scenarios
 
-| Scenario         | MVP Duration | v1.1 Add | Total  | Team    | Notes                               |
-|------------------|--------------|----------|--------|---------|-------------------------------------|
-| **Optimistic**   | 14 days      | +8 days  | 22 days| 1.5 FTE | No major issues, parallel execution |
-| **Realistic**    | 18 days      | +10 days | 28 days| 1.5 FTE | Some integration challenges         |
-| **Conservative** | 24 days      | +12 days | 36 days| 1.0 FTE | Solo developer, sequential only     |
+| Scenario         | MVP Duration | v1.1 Add | Total   | Team    | Notes                               |
+|------------------|--------------|----------|---------|---------|-------------------------------------|
+| **Optimistic**   | 14 days      | +8 days  | 22 days | 1.5 FTE | No major issues, parallel execution |
+| **Realistic**    | 18 days      | +10 days | 28 days | 1.5 FTE | Some integration challenges         |
+| **Conservative** | 24 days      | +12 days | 36 days | 1.0 FTE | Solo developer, sequential only     |
 
 ---
 
@@ -121,21 +122,22 @@ Current: Package installable, 3-layer architecture working, CLI functional
 
 **Goal**: Fix package configuration so `pip install -e .` works correctly
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| 0.1 Update pyproject.toml `name` to "sage-kb" | DevOps Expert | P0 | Correct package identity |
-| 0.2 Fix entry point: `sage = "sage.cli:main"` | DevOps Expert | P0 | Working CLI command |
-| 0.3 Update wheel packages: `["src/sage"]` | DevOps Expert | P0 | Correct build target |
-| 0.4 Update coverage source: `["src/sage"]` | DevOps Expert | P0 | Correct test coverage |
-| 0.5 Add missing dependencies (structlog, pydantic-settings, platformdirs, anyio, fastapi) | DevOps Expert | P1 | Complete dependency list |
-| 0.6 Align line-length to 88 (design standard) | Python Engineer | P2 | Consistent formatting |
-| 0.7 Remove black, use ruff format only | Python Engineer | P2 | Single formatter |
-| 0.8 Verify `pip install -e .` succeeds | Test Architect | P0 | Functional dev install |
-| 0.9 Verify `sage --help` responds | Test Architect | P0 | Working CLI |
+| Task                                                                                      | Owner           | Priority | Deliverable              |
+|-------------------------------------------------------------------------------------------|-----------------|----------|--------------------------|
+| 0.1 Update pyproject.toml `name` to "sage-kb"                                             | DevOps Expert   | P0       | Correct package identity |
+| 0.2 Fix entry point: `sage = "sage.cli:main"`                                             | DevOps Expert   | P0       | Working CLI command      |
+| 0.3 Update wheel packages: `["src/sage"]`                                                 | DevOps Expert   | P0       | Correct build target     |
+| 0.4 Update coverage source: `["src/sage"]`                                                | DevOps Expert   | P0       | Correct test coverage    |
+| 0.5 Add missing dependencies (structlog, pydantic-settings, platformdirs, anyio, fastapi) | DevOps Expert   | P1       | Complete dependency list |
+| 0.6 Align line-length to 88 (design standard)                                             | Python Engineer | P2       | Consistent formatting    |
+| 0.7 Remove black, use ruff format only                                                    | Python Engineer | P2       | Single formatter         |
+| 0.8 Verify `pip install -e .` succeeds                                                    | Test Architect  | P0       | Functional dev install   |
+| 0.9 Verify `sage --help` responds                                                         | Test Architect  | P0       | Working CLI              |
 
 **Milestone**: Package installs correctly and CLI is functional ✅ COMPLETE
 
 **Acceptance Criteria**:
+
 - [x] `pip install -e .` completes without errors ✅
 - [x] `sage --help` displays help text ✅
 - [x] `python -c "import sage"` works ✅
@@ -266,13 +268,13 @@ Current: Package installable, 3-layer architecture working, CLI functional
 
 ### Day 8: Documentation & Release Prep
 
-| Task                                      | Owner                  | Priority | Deliverable           |
-|-------------------------------------------|------------------------|----------|-----------------------|
-| F.6 Complete README.md user documentation | Documentation Engineer | P0       | Comprehensive docs    |
-| F.7 Add CHANGELOG.md                      | Documentation Engineer | P1       | Version history       |
-| F.8 Prepare PyPI release                  | DevOps Expert          | P1       | Package on PyPI       |
-| F.9 Final integration testing             | Test Architect         | P0       | Release validation    |
-| F.10 Add user feedback mechanism          | Product Manager        | P2       | Feedback collection   |
+| Task                                      | Owner                  | Priority | Deliverable         |
+|-------------------------------------------|------------------------|----------|---------------------|
+| F.6 Complete README.md user documentation | Documentation Engineer | P0       | Comprehensive docs  |
+| F.7 Add CHANGELOG.md                      | Documentation Engineer | P1       | Version history     |
+| F.8 Prepare PyPI release                  | DevOps Expert          | P1       | Package on PyPI     |
+| F.9 Final integration testing             | Test Architect         | P0       | Release validation  |
+| F.10 Add user feedback mechanism          | Product Manager        | P2       | Feedback collection |
 
 **Milestone**: Ready for release, excellent user experience
 

@@ -1169,39 +1169,40 @@ class Migrator:
 from pathlib import Path
 from typing import List, Tuple
 
+
 class MigrationValidator:
     """Comprehensive validation for migrated knowledge base."""
-    
+
     REQUIRED_FILES = [
         "index.md",
         "01_core/principles.md",
         "01_core/quick_reference.md",
         "02_guidelines/00_quick_start.md",
     ]
-    
+
     REQUIRED_DIRS = [
         "01_core", "02_guidelines", "03_frameworks",
         "04_practices", "05_tools", "06_templates"
     ]
-    
+
     def validate(self, path: Path) -> Tuple[bool, List[str]]:
         """Run all validations."""
         issues = []
-        
+
         # Structure validation
         issues.extend(self._check_structure(path))
-        
+
         # Content validation
         issues.extend(self._check_content(path))
-        
+
         # Link validation
         issues.extend(self._check_links(path))
-        
+
         # Completeness validation
         issues.extend(self._check_completeness(path))
-        
+
         return len(issues) == 0, issues
-    
+
     def _check_structure(self, path: Path) -> List[str]:
         """Check directory structure."""
         issues = []
@@ -1209,7 +1210,7 @@ class MigrationValidator:
             if not (path / req_dir).is_dir():
                 issues.append(f"Missing directory: {req_dir}")
         return issues
-    
+
     def _check_content(self, path: Path) -> List[str]:
         """Check content quality."""
         issues = []
@@ -1220,7 +1221,7 @@ class MigrationValidator:
             if not content.strip().startswith("#"):
                 issues.append(f"Missing header: {md_file}")
         return issues
-    
+
     def _check_links(self, path: Path) -> List[str]:
         """Check internal links."""
         import re
@@ -1233,7 +1234,7 @@ class MigrationValidator:
                 if not target.exists():
                     issues.append(f"Broken link in {md_file}: {link}")
         return issues
-    
+
     def _check_completeness(self, path: Path) -> List[str]:
         """Check migration completeness."""
         issues = []

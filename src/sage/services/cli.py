@@ -9,7 +9,7 @@ This module provides:
 - Interactive mode
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import asyncio
@@ -294,7 +294,7 @@ def info():
     table.add_column("Value", style="green")
 
     info_data = [
-        ("Version", "2.0.0"),
+        ("Version", "0.1.0"),
         ("Status", "Operational"),
         ("KB Path", str(kb_path)),
         ("", ""),
@@ -453,7 +453,7 @@ def version():
         Panel(
             """
 [bold]AI Collaboration Knowledge Base[/bold]
-Version: 2.0.0
+Version: 0.1.0
 Score: 100/100 🏆
 Experts: 24 Level 5
 

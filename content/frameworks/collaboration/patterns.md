@@ -2,7 +2,7 @@
 
 > **Load Time**: On-demand (~400 tokens)  
 > **Purpose**: Patterns for effective human-AI collaboration  
-> **Version**: 2.0.0
+> **Version**: 0.1.0
 
 ---
 
@@ -319,4 +319,4 @@ Reason: [justification]
 
 ---
 
-*Version 2.0.0 | Part of AI Collaboration Knowledge Base*
+*Version 0.1.0 | Part of AI Collaboration Knowledge Base*

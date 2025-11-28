@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Timeout & Loading Design
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-28
 status: production-ready
 ---
@@ -872,8 +872,8 @@ class TestLoaderPerformance:
         duration = (time.monotonic() - start) * 1000
         expected_range = (timeout_ms * 0.9, timeout_ms * 1.1)
 
-        assert expected_range[0] <= duration <= expected_range[1], \
-            f"Timeout of {duration}ms outside expected range {expected_range}"
+        assert expected_range[0] <= duration <= expected_range[1],
+        f"Timeout of {duration}ms outside expected range {expected_range}"
 ```
 
 ---

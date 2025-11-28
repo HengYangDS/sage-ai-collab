@@ -7,7 +7,7 @@ Dev Tools included:
 - KnowledgeGraphBuilder: Build knowledge graphs from content
 
 Author: SAGE AI Collab Team
-Version: 3.0.0
+Version: 0.1.0
 """
 
 from .knowledge_graph_builder import KnowledgeGraphBuilder

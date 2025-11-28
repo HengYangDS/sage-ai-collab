@@ -8,7 +8,7 @@ This module provides:
 - KnowledgeGraphBuilder: Build graph from knowledge base
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import json

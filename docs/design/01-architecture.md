@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Architecture Design
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-28
 status: production-ready
 ---
@@ -1291,6 +1291,7 @@ print(result.content)
 ```
 
 **Available MCP tools:**
+
 - `get_knowledge(layer, task, timeout_ms)`
 - `search_knowledge(query, max_results)`
 - `analyze_quality(path)`

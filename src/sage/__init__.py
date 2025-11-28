@@ -20,7 +20,7 @@ Philosophy:
 - 雅 (Ya): Elegance - refined, balanced, sustainable
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 Score: 100/100 🏆
 Experts: 24 Level 5
 """
@@ -47,6 +47,6 @@ __all__ = [
     "search_knowledge",
 ]
 
-__version__ = "2.0.0"
+__version__ = "0.1.0"
 __author__ = "SAGE AI Collab Team"
 __score__ = "100/100"

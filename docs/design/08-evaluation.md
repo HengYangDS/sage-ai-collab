@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Expert Committee Evaluation
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-29
 status: pending-evaluation
 ---

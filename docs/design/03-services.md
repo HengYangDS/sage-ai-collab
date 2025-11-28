@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Services Design
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-28
 status: production-ready
 ---
@@ -197,15 +197,15 @@ sage repl
 
 **REPL Commands:**
 
-| Command           | Description                         | Example              |
-|-------------------|-------------------------------------|----------------------|
-| `help`            | Show available commands             | `help`               |
-| `get <layer>`     | Load knowledge layer                | `get core`           |
-| `search <query>`  | Search knowledge base               | `search timeout`     |
-| `layers`          | List available layers               | `layers`             |
-| `history`         | Show command history                | `history`            |
-| `clear`           | Clear screen                        | `clear`              |
-| `exit` / `quit`   | Exit REPL                           | `exit`               |
+| Command          | Description             | Example          |
+|------------------|-------------------------|------------------|
+| `help`           | Show available commands | `help`           |
+| `get <layer>`    | Load knowledge layer    | `get core`       |
+| `search <query>` | Search knowledge base   | `search timeout` |
+| `layers`         | List available layers   | `layers`         |
+| `history`        | Show command history    | `history`        |
+| `clear`          | Clear screen            | `clear`          |
+| `exit` / `quit`  | Exit REPL               | `exit`           |
 
 **REPL Session Example:**
 
@@ -1158,13 +1158,14 @@ runner = "pytest -x -q"
 
 **Target Metrics**:
 
-| Metric              | Target | Description                        |
-|---------------------|--------|------------------------------------|
-| Mutation Score      | > 80%  | Percentage of mutants killed       |
-| Surviving Mutants   | < 20%  | Mutants not caught by tests        |
-| Equivalent Mutants  | < 5%   | Mutants that don't change behavior |
+| Metric             | Target | Description                        |
+|--------------------|--------|------------------------------------|
+| Mutation Score     | > 80%  | Percentage of mutants killed       |
+| Surviving Mutants  | < 20%  | Mutants not caught by tests        |
+| Equivalent Mutants | < 5%   | Mutants that don't change behavior |
 
 **When to Use**:
+
 - Before major releases to validate test suite quality
 - After significant refactoring to ensure tests are still effective
 - Periodically (monthly) as part of quality assurance

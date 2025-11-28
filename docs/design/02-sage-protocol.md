@@ -1,6 +1,6 @@
 ---
 title: SAGE Knowledge Base - Protocol Design
-version: 1.0.0
+version: 0.1.0
 date: 2025-11-28
 status: production-ready
 ---

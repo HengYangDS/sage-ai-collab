@@ -8,7 +8,7 @@ This module provides:
 - Configurable timeout settings
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import asyncio

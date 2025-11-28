@@ -2,7 +2,7 @@
 
 > **Load Time**: On-demand (~200 tokens)  
 > **Purpose**: Practical standards for effective documentation  
-> **Version**: 2.0.0
+> **Version**: 0.1.0
 
 ---
 
@@ -354,4 +354,4 @@ See [CONTRIBUTING.md](link).
 
 ---
 
-*Version 2.0.0 | Part of AI Collaboration Knowledge Base*
+*Version 0.1.0 | Part of AI Collaboration Knowledge Base*

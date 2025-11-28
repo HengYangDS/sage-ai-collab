@@ -18,7 +18,7 @@ Extension Points (7 hooks):
 - post_format: After output formatting
 
 Author: SAGE AI Collab Team
-Version: 2.0.0
+Version: 0.1.0
 """
 
 import logging
@@ -80,7 +80,7 @@ class PluginBase(ABC):
             def metadata(self) -> PluginMetadata:
                 return PluginMetadata(
                     name="my-plugin",
-                    version="1.0.0",
+                    version="0.1.0",
                     hooks=["post_load"],
                 )
 
@@ -140,7 +140,7 @@ class LoaderPlugin(PluginBase):
             def metadata(self) -> PluginMetadata:
                 return PluginMetadata(
                     name="cache-plugin",
-                    version="1.0.0",
+                    version="0.1.0",
                     hooks=["pre_load", "post_load"],
                 )
 
@@ -204,7 +204,7 @@ class AnalyzerPlugin(PluginBase):
             def metadata(self) -> PluginMetadata:
                 return PluginMetadata(
                     name="quality-analyzer",
-                    version="1.0.0",
+                    version="0.1.0",
                     hooks=["analyze"],
                 )
 
@@ -244,7 +244,7 @@ class FormatterPlugin(PluginBase):
             def metadata(self) -> PluginMetadata:
                 return PluginMetadata(
                     name="markdown-enhancer",
-                    version="1.0.0",
+                    version="0.1.0",
                     hooks=["pre_format", "post_format"],
                 )
 
@@ -308,7 +308,7 @@ class SearchPlugin(PluginBase):
             def metadata(self) -> PluginMetadata:
                 return PluginMetadata(
                     name="semantic-search",
-                    version="1.0.0",
+                    version="0.1.0",
                     hooks=["pre_search", "post_search"],
                 )
 

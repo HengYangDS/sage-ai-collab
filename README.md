@@ -9,19 +9,19 @@
 
 SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for AI-human collaboration, featuring:
 
-- **5-level timeout hierarchy** (100ms - 10s) for guaranteed response times
+- **5-level timeout hierarchy** (100 ms ~ 10 s) for guaranteed response times
 - **Circuit breaker pattern** for fault tolerance
 - **Smart task-based loading** with 95% token efficiency
-- **Graceful degradation** - never hangs, always returns useful content
+- **Graceful degradation** – never hangs, always returns useful content
 - **Plugin architecture** with 7 extension points
 
 ## Philosophy (信达雅 · Xin-Da-Ya)
 
-| Principle | Chinese | Meaning | Application |
-|-----------|---------|---------|-------------|
-| **Faithfulness** | 信 (Xin) | Accurate, reliable | Complete knowledge preservation |
-| **Clarity** | 达 (Da) | Clear, accessible | Unified structure, intuitive navigation |
-| **Elegance** | 雅 (Ya) | Refined, sustainable | Minimal dependencies, extensible |
+| Principle        | Chinese | Meaning              | Application                             |
+|------------------|---------|----------------------|-----------------------------------------|
+| **Faithfulness** | 信 (Xin) | Accurate, reliable   | Complete knowledge preservation         |
+| **Clarity**      | 达 (Da)  | Clear, accessible    | Unified structure, intuitive navigation |
+| **Elegance**     | 雅 (Ya)  | Refined, sustainable | Minimal dependencies, extensible        |
 
 ## Installation
 
@@ -88,9 +88,9 @@ See `docs/design/` for comprehensive design documents:
 
 ## License
 
-MIT License - see LICENSE file for details.
+MIT License – see LICENSE file for details.
 
 ---
 
-**Version**: 2.0.0  
+**Version**: 0.1.0
 **Author**: SAGE AI Collab Team

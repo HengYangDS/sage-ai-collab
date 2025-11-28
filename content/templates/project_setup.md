@@ -22,7 +22,7 @@ Minimal local configuration pointing to global knowledge base:
 
 This project uses AI Collaboration Knowledge Base.
 
-- **Version**: 2.0.0
+- **Version**: 0.1.0
 - **Load**: `aikb get --scenario python_backend`
 
 ## Project-Specific Rules
