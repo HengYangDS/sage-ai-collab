@@ -38,13 +38,13 @@ logger = logging.getLogger(__name__)
 if MCP_AVAILABLE:
     try:
         app = FastMCP(
-            "ai-collab-kb",
-            description="AI Collaboration Knowledge Base - Production-grade knowledge management with timeout protection",
+            "sage-kb",
+            description="SAGE Knowledge Base - Production-grade knowledge management with timeout protection",
         )
     except TypeError:
         # Fallback for older MCP versions without description parameter
         try:
-            app = FastMCP("ai-collab-kb")
+            app = FastMCP("sage-kb")
         except Exception as e:
             logger.warning(f"Failed to initialize MCP app: {e}")
             app = None

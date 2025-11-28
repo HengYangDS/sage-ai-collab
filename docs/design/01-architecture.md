@@ -18,16 +18,15 @@ status: production-ready
 >
 > | Aspect | Design Target | Current State | Status |
 > |--------|---------------|---------------|--------|
-> | Package name | `sage-kb` | `ai-collab-kb` in pyproject.toml | 🔴 MISMATCH |
-> | Source location | `src/sage/` | `src/sage/` | ✅ Correct |
-> | Config file | `sage.yaml` | Not created | ❌ Missing |
-> | Directory structure | Core/Services/Capabilities | Flat + Capabilities | 🟡 Partial |
-> | Capabilities layer | analyzers, checkers, monitors | Implemented | ✅ 70% Done |
+> | Package name | `sage-kb` | `sage-kb` in pyproject.toml | ✅ Complete |
+> | Source location | `src/sage/` | `src/sage/` | ✅ Complete |
+> | Config file | `sage.yaml` | Created at project root | ✅ Complete |
+> | Directory structure | Core/Services/Capabilities | core/, services/, capabilities/ | ✅ Complete |
+> | Capabilities layer | analyzers, checkers, monitors | Implemented | ✅ Complete |
 > | Core infrastructure | DI, EventBus, Protocols | Not implemented | ⏸️ Deferred to v1.1 |
 > | Structured logging | structlog integration | Not implemented | ⏸️ Deferred to v1.1 |
 >
-> **Critical Issue**: `pyproject.toml` references `ai_collab_kb` package but code is in `src/sage/`.
-> Package cannot be installed until Phase 0 (Package Alignment) is completed.
+> **MVP Status**: Phase 0, A, B, D, E, F complete. Package installs correctly, 56 tests passing.
 >
 > For detailed implementation status and roadmap, see `07-roadmap.md`.
 

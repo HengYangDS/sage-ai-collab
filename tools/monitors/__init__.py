@@ -1,9 +1,9 @@
 """
-Monitors - Dev-only monitoring tools for AI Collaboration Knowledge Base.
+Monitors - Dev-only monitoring tools for SAGE Knowledge Base.
 
 This package provides development-only monitoring tools.
 Runtime capabilities (HealthMonitor) are now in:
-  src/ai_collab_kb/capabilities/monitors/
+  src/sage/capabilities/monitors/
 
 Dev Tools included:
 - TimeoutMonitor: Timeout tracking, statistics, and alerting

@@ -1,0 +1,175 @@
+# SAGE Knowledge Base Configuration
+# Version: 0.1.0
+# 
+# Central configuration for timeout, loading, and circuit breaker behavior.
+# DI Container and EventBus configurations deferred to v1.1.
+
+# =============================================================================
+# Timeout Configuration (5-Level Hierarchy)
+# =============================================================================
+timeout:
+  global_max: 10s                      # Absolute maximum (T5)
+  default: 5s                          # Default if not specified (T4)
+
+  operations:
+    cache_lookup: 100ms                # T1 - Cache hits
+    file_read: 500ms                   # T2 - Single file operations
+    layer_load: 2s                     # T3 - Layer/directory loading
+    full_load: 5s                      # T4 - Complete KB load
+    analysis: 10s                      # T5 - Complex analysis
+    mcp_call: 10s                      # MCP tool timeout
+    search: 3s                         # Search operations
+
+  strategies:
+    on_timeout:
+      - return_partial                 # Return what we have
+      - use_fallback                   # Use cached/default content
+      - log_warning                    # Log for monitoring
+      - never_hang                     # Guarantee response
+
+  # Circuit Breaker Pattern
+  circuit_breaker:
+    enabled: true
+    failure_threshold: 3               # Open after 3 consecutive failures
+    reset_timeout: 30s                 # Try again after 30 seconds
+    half_open_requests: 1              # Test requests in half-open state
+
+# =============================================================================
+# Smart Loading Configuration
+# =============================================================================
+loading:
+  max_tokens: 4000                     # Maximum tokens to load
+  default_layers:
+    - core                             # Always start with core
+
+  # Always loaded (pre-cached)
+  always:
+    - index.md
+    - content/core/principles.md
+    - content/core/quick_reference.md
+
+# =============================================================================
+# Keyword Triggers for Context-Aware Loading
+# =============================================================================
+triggers:
+  code:
+    keywords:
+      # English
+      - code
+      - implement
+      - fix
+      - refactor
+      - debug
+      # Chinese (中文)
+      - 代码
+      - 实现
+      - 修复
+      - 重构
+      - 调试
+    load:
+      - content/guidelines/code_style.md
+      - content/guidelines/python.md
+    timeout_ms: 2000
+    priority: 1                        # Lower = higher priority
+
+  architecture:
+    keywords:
+      # English
+      - architecture
+      - design
+      - system
+      - pattern
+      # Chinese (中文)
+      - 架构
+      - 设计
+      - 系统
+      - 模式
+    load:
+      - content/guidelines/planning_design.md
+      - content/frameworks/decision/
+    timeout_ms: 3000
+    priority: 2
+
+  testing:
+    keywords:
+      # English
+      - test
+      - coverage
+      - unit
+      - integration
+      # Chinese (中文)
+      - 测试
+      - 覆盖率
+      - 单元
+      - 集成
+    load:
+      - content/guidelines/engineering.md
+    timeout_ms: 2000
+    priority: 3
+
+  ai_collaboration:
+    keywords:
+      # English
+      - autonomy
+      - collaboration
+      - ai
+      - level
+      # Chinese (中文)
+      - 自主
+      - 协作
+      - 人工智能
+      - 级别
+    load:
+      - content/guidelines/ai_collaboration.md
+      - content/frameworks/autonomy/
+    timeout_ms: 2000
+    priority: 4
+
+  timeout:
+    keywords:
+      - timeout
+      - performance
+      - slow
+    load:
+      - content/frameworks/timeout/
+    timeout_ms: 2000
+    priority: 5
+
+  expert:
+    keywords:
+      - expert
+      - committee
+      - review
+    load:
+      - content/frameworks/cognitive/
+    timeout_ms: 2000
+    priority: 6
+
+# =============================================================================
+# Plugin Configuration
+# =============================================================================
+plugins:
+  loader:
+    cache_enabled: true
+    cache_ttl: 300                     # 5 minutes
+
+# =============================================================================
+# Logging Configuration
+# =============================================================================
+logging:
+  level: INFO
+  format: structured                   # structured | plain
+  include_timestamps: true
+
+# =============================================================================
+# v1.1 Placeholder (DI Container - Not Active)
+# =============================================================================
+# di:
+#   auto_wire: true
+#   services:
+#     EventBus:
+#       lifetime: singleton
+#       implementation: AsyncEventBus
+#     SourceProtocol:
+#       lifetime: singleton
+#       implementation: TimeoutLoader

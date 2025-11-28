@@ -1,14 +1,14 @@
-# AI Collaboration Knowledge Base - Project Guidelines
+# SAGE Knowledge Base - Project Guidelines
 
 > **Purpose**: Primary entry point for JetBrains Junie AI collaboration.
-> **Last Updated**: 2025-11-28
+> **Last Updated**: 2025-11-29
 > **Version**: 0.1.0
 
 ---
 
 ## 📋 Project Overview
 
-**AI Collaboration Knowledge Base (ai-collab-kb)** is a production-grade knowledge management system designed for
+**SAGE Knowledge Base (sage-kb)** is a production-grade knowledge management system designed for
 AI-human collaboration. It provides structured knowledge via CLI, MCP, and API services with built-in timeout protection
 and smart loading.
 
@@ -38,14 +38,14 @@ and smart loading.
 ## 📁 Project Structure
 
 ```
-ai-collab-kb/
+sage-kb/
 ├── .junie/          # JetBrains Junie configuration (this directory)
 ├── .context/        # Project-specific knowledge base
 ├── .history/        # AI session history and handoffs
 ├── .archive/        # Historical archives
 ├── docs/            # User-facing documentation
 ├── content/         # Generic knowledge (distributable)
-├── src/             # Source code (3-layer architecture)
+├── src/sage/        # Source code (3-layer architecture)
 ├── tools/           # Development tools
 └── tests/           # Test suite
 ```
@@ -92,14 +92,14 @@ ai-collab-kb/
 
 ## 📄 Important Files
 
-| File                         | Purpose                                          |
-|------------------------------|--------------------------------------------------|
-| `aikb.yaml`                  | Main configuration (timeouts, triggers, loading) |
-| `ultimate_design_final.md`   | Comprehensive design document (4400+ lines)      |
-| `src/ai_collab_kb/core/`     | Core layer (loader, timeout, config)             |
-| `src/ai_collab_kb/services/` | Service layer (CLI, MCP, API)                    |
-| `pyproject.toml`             | Python project configuration                     |
-| `index.md`                   | Knowledge base navigation entry                  |
+| File                    | Purpose                                          |
+|-------------------------|--------------------------------------------------|
+| `sage.yaml`             | Main configuration (timeouts, triggers, loading) |
+| `docs/design/`          | Design documents (architecture, services, etc.)  |
+| `src/sage/core/`        | Core layer (loader, timeout, config)             |
+| `src/sage/services/`    | Service layer (CLI, MCP, API)                    |
+| `pyproject.toml`        | Python project configuration                     |
+| `index.md`              | Knowledge base navigation entry                  |
 
 ---
 
@@ -150,8 +150,8 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 
 ## 🔗 References
 
-- **Design Document**: @file:ultimate_design_final.md
-- **Configuration**: @file:aikb.yaml
+- **Design Documents**: @file:docs/design/00-overview.md
+- **Configuration**: @file:sage.yaml
 - **Project Context**: @file:.context/index.md (when created)
 - **Knowledge Content**: @file:content/core/principles.md
 
@@ -164,14 +164,14 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 pytest tests/ -v
 
 # Start MCP server
-python -m ai_collab_kb serve
+sage serve
 
 # CLI usage
-aikb get --layer core
-aikb search "timeout"
-aikb info
+sage get --layer core
+sage search "timeout"
+sage info
 ```
 
 ---
 
-*This guideline follows the ai-collab-kb design philosophy: 信达雅 (Xin-Da-Ya)*
+*This guideline follows the SAGE design philosophy: 信达雅 (Xin-Da-Ya)*
