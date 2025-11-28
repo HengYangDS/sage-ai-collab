@@ -14,17 +14,17 @@ Version: 2.0.0
 import importlib.util
 import logging
 from pathlib import Path
-from typing import Any, Dict, List, Optional, Type, Callable
 from threading import Lock
+from typing import Any, Optional
 
 from .base import (
-    PluginBase,
-    PluginMetadata,
-    LoaderPlugin,
+    AVAILABLE_HOOKS,
     AnalyzerPlugin,
     FormatterPlugin,
+    LoaderPlugin,
+    PluginBase,
+    PluginMetadata,
     SearchPlugin,
-    AVAILABLE_HOOKS,
 )
 
 logger = logging.getLogger(__name__)
@@ -68,11 +68,11 @@ class PluginRegistry:
         if self._initialized:
             return
 
-        self._plugins: Dict[str, PluginBase] = {}
-        self._hooks: Dict[str, List[PluginBase]] = {
+        self._plugins: dict[str, PluginBase] = {}
+        self._hooks: dict[str, list[PluginBase]] = {
             hook: [] for hook in AVAILABLE_HOOKS
         }
-        self._loaded_modules: Dict[str, Any] = {}
+        self._loaded_modules: dict[str, Any] = {}
         self._initialized = True
 
         logger.debug("PluginRegistry initialized")
@@ -140,11 +140,11 @@ class PluginRegistry:
         logger.info(f"Unregistered plugin: {name}")
         return True
 
-    def get_plugin(self, name: str) -> Optional[PluginBase]:
+    def get_plugin(self, name: str) -> PluginBase | None:
         """Get a plugin by name."""
         return self._plugins.get(name)
 
-    def get_hooks(self, hook_name: str) -> List[PluginBase]:
+    def get_hooks(self, hook_name: str) -> list[PluginBase]:
         """
         Get all plugins registered for a specific hook.
 
@@ -156,7 +156,7 @@ class PluginRegistry:
         """
         return [p for p in self._hooks.get(hook_name, []) if p.metadata.enabled]
 
-    def list_plugins(self) -> List[PluginMetadata]:
+    def list_plugins(self) -> list[PluginMetadata]:
         """List all registered plugins."""
         return [p.metadata for p in self._plugins.values()]
 
@@ -180,7 +180,7 @@ class PluginRegistry:
             return True
         return False
 
-    def configure_plugin(self, name: str, config: Dict[str, Any]) -> bool:
+    def configure_plugin(self, name: str, config: dict[str, Any]) -> bool:
         """Configure a plugin with custom settings."""
         plugin = self._plugins.get(name)
         if plugin:
@@ -342,7 +342,7 @@ class PluginRegistry:
 
         return False
 
-    def execute_hook(self, hook_name: str, *args, **kwargs) -> List[Any]:
+    def execute_hook(self, hook_name: str, *args, **kwargs) -> list[Any]:
         """
         Execute all plugins for a hook.
 
@@ -406,7 +406,7 @@ class PluginRegistry:
         self._loaded_modules.clear()
         logger.info("Plugin registry cleared")
 
-    def get_stats(self) -> Dict[str, Any]:
+    def get_stats(self) -> dict[str, Any]:
         """Get registry statistics."""
         return {
             "total_plugins": len(self._plugins),
@@ -422,7 +422,7 @@ class PluginRegistry:
 
 
 # Global registry instance
-_registry: Optional[PluginRegistry] = None
+_registry: PluginRegistry | None = None
 
 
 def get_plugin_registry() -> PluginRegistry:
@@ -438,6 +438,6 @@ def register_plugin(plugin: PluginBase) -> bool:
     return get_plugin_registry().register(plugin)
 
 
-def get_hooks(hook_name: str) -> List[PluginBase]:
+def get_hooks(hook_name: str) -> list[PluginBase]:
     """Convenience function to get plugins for a hook."""
     return get_plugin_registry().get_hooks(hook_name)

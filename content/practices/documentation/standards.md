@@ -8,7 +8,8 @@
 
 ## Overview
 
-This guide provides practical standards for creating and maintaining documentation that serves both human readers and AI collaborators effectively.
+This guide provides practical standards for creating and maintaining documentation that serves both human readers and AI
+collaborators effectively.
 
 ---
 
@@ -146,12 +147,12 @@ What is the change that we're proposing and/or doing?
 
 ### 3.1 Clarity Guidelines
 
-| Guideline | Bad Example | Good Example |
-|-----------|-------------|--------------|
-| Be specific | "Configure the system" | "Set `MAX_CONNECTIONS=100` in config.yaml" |
-| Active voice | "The file is read by the loader" | "The loader reads the file" |
-| Present tense | "This will create a user" | "This creates a user" |
-| Avoid jargon | "Utilize the endpoint" | "Use the endpoint" |
+| Guideline     | Bad Example                      | Good Example                               |
+|---------------|----------------------------------|--------------------------------------------|
+| Be specific   | "Configure the system"           | "Set `MAX_CONNECTIONS=100` in config.yaml" |
+| Active voice  | "The file is read by the loader" | "The loader reads the file"                |
+| Present tense | "This will create a user"        | "This creates a user"                      |
+| Avoid jargon  | "Utilize the endpoint"           | "Use the endpoint"                         |
 
 ### 3.2 Code Examples
 
@@ -167,11 +168,13 @@ Good code example characteristics:
 ### 3.3 Tables vs Lists
 
 **Use Tables When:**
+
 - Comparing multiple items
 - Showing structured data
 - Reference information
 
 **Use Lists When:**
+
 - Sequential steps
 - Simple enumerations
 - Hierarchical information
@@ -238,13 +241,13 @@ Related: `03_frameworks/autonomy/levels.md` (autonomy definitions)
 
 ### 5.2 Update Triggers
 
-| Trigger | Action |
-|---------|--------|
-| Code change | Update affected docs |
-| API change | Update reference + changelog |
-| New feature | Add guide + reference |
-| Bug found | Add troubleshooting |
-| User question | Improve clarity |
+| Trigger       | Action                       |
+|---------------|------------------------------|
+| Code change   | Update affected docs         |
+| API change    | Update reference + changelog |
+| New feature   | Add guide + reference        |
+| Bug found     | Add troubleshooting          |
+| User question | Improve clarity              |
 
 ### 5.3 Deprecation Process
 
@@ -258,14 +261,14 @@ Related: `03_frameworks/autonomy/levels.md` (autonomy definitions)
 
 ## 6. Documentation Types Matrix
 
-| Type | Audience | Update Frequency | Token Priority |
-|------|----------|------------------|----------------|
-| README | All | Per release | High |
-| API Reference | Developers | Per API change | Medium |
-| Tutorials | New users | Quarterly | Low |
-| ADRs | Team | Per decision | Low |
-| Changelog | All | Per release | High |
-| Comments | Developers | With code | N/A |
+| Type          | Audience   | Update Frequency | Token Priority |
+|---------------|------------|------------------|----------------|
+| README        | All        | Per release      | High           |
+| API Reference | Developers | Per API change   | Medium         |
+| Tutorials     | New users  | Quarterly        | Low            |
+| ADRs          | Team       | Per decision     | Low            |
+| Changelog     | All        | Per release      | High           |
+| Comments      | Developers | With code        | N/A            |
 
 ---
 
@@ -321,19 +324,20 @@ See [CONTRIBUTING.md](link).
 
 ## 8. Quality Metrics
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
-| Completeness | 100% public API | API coverage check |
-| Accuracy | 100% examples work | Automated testing |
-| Freshness | < 1 month since code change | Git diff analysis |
-| Readability | Grade 8 reading level | Readability score |
-| Token Efficiency | < 500 tokens/section | Token counter |
+| Metric           | Target                      | Measurement        |
+|------------------|-----------------------------|--------------------|
+| Completeness     | 100% public API             | API coverage check |
+| Accuracy         | 100% examples work          | Automated testing  |
+| Freshness        | < 1 month since code change | Git diff analysis  |
+| Readability      | Grade 8 reading level       | Readability score  |
+| Token Efficiency | < 500 tokens/section        | Token counter      |
 
 ---
 
 ## Quick Reference
 
 ### Do
+
 - ✅ Keep documents focused and single-purpose
 - ✅ Use consistent formatting
 - ✅ Include working examples
@@ -341,6 +345,7 @@ See [CONTRIBUTING.md](link).
 - ✅ Link to related documents
 
 ### Don't
+
 - ❌ Duplicate information
 - ❌ Use screenshots for code
 - ❌ Leave TODOs in published docs

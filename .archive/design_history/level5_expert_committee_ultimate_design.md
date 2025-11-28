@@ -12,6 +12,7 @@
 ## 📋 专家委员会成员
 
 ### 架构与系统组 (5人)
+
 1. **首席架构师** - 整体架构设计、模块边界
 2. **信息架构师** - 知识分类、导航设计
 3. **系统工程师** - 技术栈、依赖管理
@@ -19,6 +20,7 @@
 5. **性能架构师** - Token效率、加载策略
 
 ### 知识工程组 (5人)
+
 6. **知识管理专家** - 知识分类、生命周期
 7. **文档工程师** - 文档结构、可读性
 8. **元数据专家** - 分类体系、标签设计
@@ -26,6 +28,7 @@
 10. **内容策略师** - 内容优先级、更新策略
 
 ### AI协作组 (5人)
+
 11. **AI协作专家** - 人机协作模式
 12. **提示工程师** - Prompt设计、上下文优化
 13. **自主性专家** - 自主级别、决策边界
@@ -33,6 +36,7 @@
 15. **伦理专家** - 价值对齐、透明度
 
 ### 工程实践组 (5人)
+
 16. **DevOps专家** - 部署、自动化
 17. **Python工程师** - 代码质量、工具实现
 18. **测试架构师** - 质量保障、验证策略
@@ -46,6 +50,7 @@
 ### 1.1 现状分析
 
 **原目录结构**：
+
 ```
 .junie/                           # 根目录
 ├── 41个顶层文件                   # ❌ 严重混乱
@@ -70,35 +75,35 @@
 
 ### 1.2 核心问题
 
-| 问题 | 严重性 | 影响 |
-|------|--------|------|
-| **根目录混乱** | 🔴 严重 | 41个文件，无法快速定位 |
-| **目录重复** | 🔴 严重 | practices/, knowledge/, standards/ 职责重叠 |
-| **临时文件堆积** | 🟡 中等 | 15个日期文档污染根目录 |
-| **代码分散** | 🟡 中等 | .py文件在根目录和code/两处 |
-| **分类边界模糊** | 🔴 严重 | "知识"vs"实践"vs"标准"界限不清 |
+| 问题               | 严重性   | 影响                                      |
+|------------------|-------|-----------------------------------------|
+| **根目录混乱**        | 🔴 严重 | 41个文件，无法快速定位                            |
+| **目录重复**         | 🔴 严重 | practices/, knowledge/, standards/ 职责重叠 |
+| **临时文件堆积**       | 🟡 中等 | 15个日期文档污染根目录                            |
+| **代码分散**         | 🟡 中等 | .py文件在根目录和code/两处                       |
+| **分类边界模糊**       | 🔴 严重 | "知识"vs"实践"vs"标准"界限不清                    |
 | **guidelines重复** | 🟡 中等 | guidelines.md 与 guidelines_sections/ 并存 |
 
 ### 1.3 价值内容清单（必须完整保留）
 
-| 内容 | 行数 | 价值 | 保留策略 |
-|------|------|------|----------|
-| **核心框架** | | | |
-| ai_autonomy_levels_framework.md | 476 | ⭐⭐⭐⭐⭐ | 完整保留 |
-| cognitive_enhancement_framework.md | 859 | ⭐⭐⭐⭐⭐ | 完整保留 |
-| dynamic_composable_decision_framework.md | ~800 | ⭐⭐⭐⭐⭐ | 完整保留 |
-| **实施指南** | | | |
-| autonomy_implementation_guide.md | 816 | ⭐⭐⭐⭐⭐ | 完整保留 |
-| autonomy_calibration_checklist.md | ~400 | ⭐⭐⭐⭐ | 完整保留 |
-| instruction_engineering_reference.md | ~800 | ⭐⭐⭐⭐ | 完整保留 |
-| **核心指南** | | | |
-| guidelines.md | 1,464 | ⭐⭐⭐⭐⭐ | 重组优化 |
-| **代码工具** | | | |
-| code/documentation/ | ~3,000 | ⭐⭐⭐⭐ | 完整保留 |
-| code/intelligence/ | ~2,000 | ⭐⭐⭐⭐ | 完整保留 |
-| **最佳实践** | | | |
-| documentation_optimization_framework.md | 832 | ⭐⭐⭐⭐ | 完整保留 |
-| knowledge_distillation_workflow.md | 391 | ⭐⭐⭐⭐ | 完整保留 |
+| 内容                                       | 行数     | 价值    | 保留策略 |
+|------------------------------------------|--------|-------|------|
+| **核心框架**                                 |        |       |      |
+| ai_autonomy_levels_framework.md          | 476    | ⭐⭐⭐⭐⭐ | 完整保留 |
+| cognitive_enhancement_framework.md       | 859    | ⭐⭐⭐⭐⭐ | 完整保留 |
+| dynamic_composable_decision_framework.md | ~800   | ⭐⭐⭐⭐⭐ | 完整保留 |
+| **实施指南**                                 |        |       |      |
+| autonomy_implementation_guide.md         | 816    | ⭐⭐⭐⭐⭐ | 完整保留 |
+| autonomy_calibration_checklist.md        | ~400   | ⭐⭐⭐⭐  | 完整保留 |
+| instruction_engineering_reference.md     | ~800   | ⭐⭐⭐⭐  | 完整保留 |
+| **核心指南**                                 |        |       |      |
+| guidelines.md                            | 1,464  | ⭐⭐⭐⭐⭐ | 重组优化 |
+| **代码工具**                                 |        |       |      |
+| code/documentation/                      | ~3,000 | ⭐⭐⭐⭐  | 完整保留 |
+| code/intelligence/                       | ~2,000 | ⭐⭐⭐⭐  | 完整保留 |
+| **最佳实践**                                 |        |       |      |
+| documentation_optimization_framework.md  | 832    | ⭐⭐⭐⭐  | 完整保留 |
+| knowledge_distillation_workflow.md       | 391    | ⭐⭐⭐⭐  | 完整保留 |
 
 ---
 
@@ -107,6 +112,7 @@
 ### 2.1 第一性原理
 
 **核心问题**：如何组织知识，使得：
+
 1. **完整性**：保留所有有价值的内容
 2. **可发现性**：快速找到所需知识
 3. **Token效率**：最小化加载量
@@ -114,6 +120,7 @@
 5. **一致性**：清晰的分类边界
 
 **设计公理**：
+
 1. **MECE原则**：分类互斥且完整
 2. **单一真理源**：每个知识只存在一处
 3. **渐进披露**：从概览到细节
@@ -258,13 +265,13 @@ project/
 
 ### 3.1 四层渐进加载
 
-| 层级 | 目录 | Token | 加载时机 | 内容 |
-|------|------|-------|----------|------|
-| **L0** | index.md | ~200 | Always | 导航索引、快速入口 |
-| **L1** | 01_core/ | ~500 | Always | 核心原则、自主性速查 |
-| **L2** | 02_guidelines/单章 | ~300/章 | 按需 | 工程规范章节 |
-| **L3** | 03_frameworks/单文档 | ~500/文档 | 复杂任务 | 理论框架 |
-| **L4** | 04_practices/单文档 | ~400/文档 | 按需 | 最佳实践 |
+| 层级     | 目录                | Token   | 加载时机   | 内容         |
+|--------|-------------------|---------|--------|------------|
+| **L0** | index.md          | ~200    | Always | 导航索引、快速入口  |
+| **L1** | 01_core/          | ~500    | Always | 核心原则、自主性速查 |
+| **L2** | 02_guidelines/单章  | ~300/章  | 按需     | 工程规范章节     |
+| **L3** | 03_frameworks/单文档 | ~500/文档 | 复杂任务   | 理论框架       |
+| **L4** | 04_practices/单文档  | ~400/文档 | 按需     | 最佳实践       |
 
 ### 3.2 智能加载规则
 
@@ -275,33 +282,33 @@ loading:
     - index.md
     - 01_core/principles.md
     - 01_core/quick_reference.md
-  
+
   triggers:
     code_task:
-      keywords: ["代码", "实现", "修复", "重构", "code", "implement", "fix"]
-      load: ["02_guidelines/03_code_style.md", "02_guidelines/10_python.md"]
-    
+      keywords: [ "代码", "实现", "修复", "重构", "code", "implement", "fix" ]
+      load: [ "02_guidelines/03_code_style.md", "02_guidelines/10_python.md" ]
+
     architecture_task:
-      keywords: ["架构", "设计", "architecture", "design"]
-      load: ["02_guidelines/02_design.md", "03_frameworks/decision/"]
-    
+      keywords: [ "架构", "设计", "architecture", "design" ]
+      load: [ "02_guidelines/02_design.md", "03_frameworks/decision/" ]
+
     testing_task:
-      keywords: ["测试", "test", "验证"]
-      load: ["02_guidelines/05_testing.md"]
-    
+      keywords: [ "测试", "test", "验证" ]
+      load: [ "02_guidelines/05_testing.md" ]
+
     complex_decision:
-      keywords: ["决策", "评审", "专家", "decision", "review"]
-      load: ["03_frameworks/decision/expert_committee.md"]
+      keywords: [ "决策", "评审", "专家", "decision", "review" ]
+      load: [ "03_frameworks/decision/expert_committee.md" ]
 ```
 
 ### 3.3 Token效率对比
 
-| 场景 | 原方案 | 究极方案 | 节省 |
-|------|--------|---------|------|
-| 简单查询 | ~15,000 | ~700 | **95%** |
-| 代码开发 | ~15,000 | ~1,500 | **90%** |
-| 架构设计 | ~15,000 | ~2,500 | **83%** |
-| 复杂决策 | ~15,000 | ~4,000 | **73%** |
+| 场景     | 原方案     | 究极方案   | 节省      |
+|--------|---------|--------|---------|
+| 简单查询   | ~15,000 | ~700   | **95%** |
+| 代码开发   | ~15,000 | ~1,500 | **90%** |
+| 架构设计   | ~15,000 | ~2,500 | **83%** |
+| 复杂决策   | ~15,000 | ~4,000 | **73%** |
 | **平均** | ~15,000 | ~2,000 | **87%** |
 
 ---
@@ -310,36 +317,39 @@ loading:
 
 ### 4.1 原目录 → 新目录映射
 
-| 原位置 | 新位置 | 处理方式 |
-|--------|--------|----------|
-| guidelines.md | 02_guidelines/ (拆分) | 按章节拆分 |
-| guidelines_sections/ | 02_guidelines/ | 直接移动 |
-| intelligence/frameworks/ | 03_frameworks/ | 重组 |
-| intelligence/guides/ | 03_frameworks/各子目录 | 按主题分配 |
-| intelligence/overview/ | 01_core/ + 03_frameworks/ | 拆分 |
-| knowledge/ | 04_practices/ | 合并重组 |
-| practices/ | 04_practices/ | 合并重组 |
-| standards/ | 04_practices/knowledge/ | 合并 |
-| code/ | 05_tools/ | 直接移动 |
-| templates/ | 06_templates/ | 直接移动 |
-| mcp/ | 配置合并到 aikb.yaml | 合并 |
-| operations/ | 05_tools/ + 归档 | 筛选保留 |
-| 根目录.py文件 | 05_tools/ | 移动 |
-| *_202511*.md | 08_archive/ 或删除 | 筛选处理 |
+| 原位置                      | 新位置                       | 处理方式  |
+|--------------------------|---------------------------|-------|
+| guidelines.md            | 02_guidelines/ (拆分)       | 按章节拆分 |
+| guidelines_sections/     | 02_guidelines/            | 直接移动  |
+| intelligence/frameworks/ | 03_frameworks/            | 重组    |
+| intelligence/guides/     | 03_frameworks/各子目录        | 按主题分配 |
+| intelligence/overview/   | 01_core/ + 03_frameworks/ | 拆分    |
+| knowledge/               | 04_practices/             | 合并重组  |
+| practices/               | 04_practices/             | 合并重组  |
+| standards/               | 04_practices/knowledge/   | 合并    |
+| code/                    | 05_tools/                 | 直接移动  |
+| templates/               | 06_templates/             | 直接移动  |
+| mcp/                     | 配置合并到 aikb.yaml           | 合并    |
+| operations/              | 05_tools/ + 归档            | 筛选保留  |
+| 根目录.py文件                 | 05_tools/                 | 移动    |
+| *_202511*.md             | 08_archive/ 或删除           | 筛选处理  |
 
 ### 4.2 内容处理规则
 
 **完整保留**（核心价值）：
+
 - 所有框架文档 (intelligence/frameworks/)
 - 所有指南文档 (intelligence/guides/)
 - 代码工具 (code/)
 - 最佳实践文档
 
 **重组合并**（消除重复）：
+
 - knowledge/ + practices/ + standards/ → 04_practices/
 - guidelines.md ↔ guidelines_sections/ → 02_guidelines/
 
 **归档或删除**（临时/过时）：
+
 - 日期文档 (*_20251125.md, *_20251126.md)
 - 临时配置 (temp_rules.txt)
 - POC文档 (poc_*.md)
@@ -357,6 +367,7 @@ from mcp.server.fastmcp import FastMCP
 
 app = FastMCP("ai-collab-kb")
 
+
 @app.tool()
 def get_knowledge(
     layer: int = 1,
@@ -373,6 +384,7 @@ def get_knowledge(
     """
     pass
 
+
 @app.tool()
 def get_guidelines(section: str = "overview") -> str:
     """
@@ -382,6 +394,7 @@ def get_guidelines(section: str = "overview") -> str:
         section: 章节 (planning, design, code_style, testing, etc.)
     """
     pass
+
 
 @app.tool()
 def get_framework(name: str) -> str:
@@ -393,12 +406,14 @@ def get_framework(name: str) -> str:
     """
     pass
 
+
 @app.tool()
 def search_knowledge(query: str, max_results: int = 5) -> list:
     """
     搜索知识库
     """
     pass
+
 
 @app.tool()
 def get_template(name: str) -> str:
@@ -431,6 +446,7 @@ aikb serve                     # 启动MCP服务
 ### Phase 1: 基础重组（1周）
 
 **Week 1: 目录重构**
+
 - [ ] 创建新目录结构
 - [ ] 迁移核心框架到 03_frameworks/
 - [ ] 迁移指南章节到 02_guidelines/
@@ -440,6 +456,7 @@ aikb serve                     # 启动MCP服务
 - [ ] 创建 01_core/ 核心原则
 
 **交付物**：
+
 - 新目录结构
 - 所有内容迁移完成
 - index.md 导航索引
@@ -447,6 +464,7 @@ aikb serve                     # 启动MCP服务
 ### Phase 2: 工具实现（1周）
 
 **Week 2: 加载器与MCP**
+
 - [ ] 实现 loader.py 知识加载器
 - [ ] 实现智能加载规则
 - [ ] 实现 mcp_server.py
@@ -455,6 +473,7 @@ aikb serve                     # 启动MCP服务
 - [ ] 测试加载效率
 
 **交付物**：
+
 - 完整工具链
 - MCP服务
 - CLI工具
@@ -462,6 +481,7 @@ aikb serve                     # 启动MCP服务
 ### Phase 3: 优化验证（1周）
 
 **Week 3: 测试与优化**
+
 - [ ] Token效率验证
 - [ ] 加载性能测试
 - [ ] 内容完整性检查
@@ -469,6 +489,7 @@ aikb serve                     # 启动MCP服务
 - [ ] 发布 v1.0.0
 
 **交付物**：
+
 - 验证报告
 - v1.0.0 发布
 - 完整文档
@@ -479,21 +500,22 @@ aikb serve                     # 启动MCP服务
 
 ### 7.1 各维度评分
 
-| 维度 | 原方案 | 究极方案 | 提升 |
-|------|--------|---------|------|
-| **架构清晰度** | 60/100 | 95/100 | +58% |
-| **知识完整性** | 100/100 | 100/100 | 0% |
-| **Token效率** | 20/100 | 87/100 | +335% |
-| **可维护性** | 50/100 | 92/100 | +84% |
-| **可发现性** | 40/100 | 90/100 | +125% |
-| **一致性** | 30/100 | 95/100 | +217% |
-| **扩展性** | 70/100 | 93/100 | +33% |
-| **用户体验** | 50/100 | 88/100 | +76% |
-| **综合评分** | **52.5/100** | **92.5/100** | **+76%** |
+| 维度          | 原方案          | 究极方案         | 提升       |
+|-------------|--------------|--------------|----------|
+| **架构清晰度**   | 60/100       | 95/100       | +58%     |
+| **知识完整性**   | 100/100      | 100/100      | 0%       |
+| **Token效率** | 20/100       | 87/100       | +335%    |
+| **可维护性**    | 50/100       | 92/100       | +84%     |
+| **可发现性**    | 40/100       | 90/100       | +125%    |
+| **一致性**     | 30/100       | 95/100       | +217%    |
+| **扩展性**     | 70/100       | 93/100       | +33%     |
+| **用户体验**    | 50/100       | 88/100       | +76%     |
+| **综合评分**    | **52.5/100** | **92.5/100** | **+76%** |
 
 ### 7.2 专家签名
 
 **架构与系统组**：
+
 - ✅ 首席架构师：MECE分类清晰，层次合理
 - ✅ 信息架构师：导航设计优秀，可发现性强
 - ✅ 系统工程师：技术实现可行，依赖简洁
@@ -501,6 +523,7 @@ aikb serve                     # 启动MCP服务
 - ✅ 性能架构师：Token效率显著提升
 
 **知识工程组**：
+
 - ✅ 知识管理专家：分类体系科学
 - ✅ 文档工程师：结构清晰，易于维护
 - ✅ 元数据专家：标签体系完善
@@ -508,6 +531,7 @@ aikb serve                     # 启动MCP服务
 - ✅ 内容策略师：优先级明确
 
 **AI协作组**：
+
 - ✅ AI协作专家：协作模式完善
 - ✅ 提示工程师：上下文优化良好
 - ✅ 自主性专家：自主级别设计合理
@@ -515,6 +539,7 @@ aikb serve                     # 启动MCP服务
 - ✅ 伦理专家：价值对齐考虑周全
 
 **工程实践组**：
+
 - ✅ DevOps专家：部署方案可行
 - ✅ Python工程师：代码组织良好
 - ✅ 测试架构师：验证策略完善
@@ -544,6 +569,7 @@ aikb serve                     # 启动MCP服务
 **92.5/100** - 接近理论最优
 
 未达100的原因：
+
 - 保留改进空间（实践中可能发现更优方案）
 - 部分边界case需要实践验证
 

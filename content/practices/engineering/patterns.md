@@ -8,9 +8,11 @@
 ## Repository Pattern
 
 ### Purpose
+
 Abstract data access logic from business logic.
 
 ### Implementation
+
 ```python
 from abc import ABC, abstractmethod
 from typing import Optional, List, Generic, TypeVar
@@ -56,6 +58,7 @@ class UserRepository(Repository[User]):
 ```
 
 ### When to Use
+
 - Multiple data sources possible
 - Need to swap storage backends
 - Testing requires mock data access
@@ -66,9 +69,11 @@ class UserRepository(Repository[User]):
 ## Service Layer Pattern
 
 ### Purpose
+
 Encapsulate business logic separate from presentation and data access.
 
 ### Implementation
+
 ```python
 class UserService:
     """Business logic for user operations."""
@@ -105,6 +110,7 @@ class UserService:
 ```
 
 ### When to Use
+
 - Business logic spans multiple entities
 - Operations have side effects (email, events)
 - Same logic needed from multiple entry points
@@ -115,9 +121,11 @@ class UserService:
 ## Factory Pattern
 
 ### Purpose
+
 Encapsulate object creation logic.
 
 ### Implementation
+
 ```python
 from typing import Dict, Type
 
@@ -150,6 +158,7 @@ class OrderCreatedHandler(Handler):
 ```
 
 ### When to Use
+
 - Object creation is complex
 - Multiple types share interface
 - Need to decouple creation from usage
@@ -160,9 +169,11 @@ class OrderCreatedHandler(Handler):
 ## Strategy Pattern
 
 ### Purpose
+
 Define family of algorithms, encapsulate each, make them interchangeable.
 
 ### Implementation
+
 ```python
 from abc import ABC, abstractmethod
 from typing import Protocol
@@ -200,6 +211,7 @@ class Order:
 ```
 
 ### When to Use
+
 - Multiple algorithms for same task
 - Algorithm selection at runtime
 - Avoid complex conditionals
@@ -210,9 +222,11 @@ class Order:
 ## Observer Pattern
 
 ### Purpose
+
 Define one-to-many dependency; when one object changes, dependents are notified.
 
 ### Implementation
+
 ```python
 from typing import List, Callable, Any
 
@@ -241,6 +255,7 @@ event_bus.publish("user.created", {"user_id": "123"})
 ```
 
 ### When to Use
+
 - Decoupled communication needed
 - Multiple reactions to single event
 - Plugin/extension architecture
@@ -251,21 +266,25 @@ event_bus.publish("user.created", {"user_id": "123"})
 ## Circuit Breaker Pattern
 
 ### Purpose
+
 Prevent cascading failures by failing fast when service is unavailable.
 
 ### Implementation
+
 ```python
 from enum import Enum
 from datetime import datetime, timedelta
 
+
 class CircuitState(Enum):
-    CLOSED = "closed"      # Normal operation
-    OPEN = "open"          # Failing fast
+    CLOSED = "closed"  # Normal operation
+    OPEN = "open"  # Failing fast
     HALF_OPEN = "half_open"  # Testing recovery
+
 
 class CircuitBreaker:
     """Circuit breaker for external calls."""
-    
+
     def __init__(
         self,
         failure_threshold: int = 5,
@@ -276,7 +295,7 @@ class CircuitBreaker:
         self.failures = 0
         self.state = CircuitState.CLOSED
         self.last_failure_time = None
-    
+
     def call(self, func: Callable, *args, **kwargs):
         """Execute function with circuit breaker protection."""
         if self.state == CircuitState.OPEN:
@@ -284,7 +303,7 @@ class CircuitBreaker:
                 self.state = CircuitState.HALF_OPEN
             else:
                 raise CircuitOpenError("Circuit is open")
-        
+
         try:
             result = func(*args, **kwargs)
             self._on_success()
@@ -292,11 +311,11 @@ class CircuitBreaker:
         except Exception as e:
             self._on_failure()
             raise
-    
+
     def _on_success(self):
         self.failures = 0
         self.state = CircuitState.CLOSED
-    
+
     def _on_failure(self):
         self.failures += 1
         self.last_failure_time = datetime.now()
@@ -305,6 +324,7 @@ class CircuitBreaker:
 ```
 
 ### When to Use
+
 - Calling external services
 - Preventing cascade failures
 - Graceful degradation needed
@@ -314,25 +334,25 @@ class CircuitBreaker:
 
 ## Pattern Selection Guide
 
-| Scenario | Recommended Pattern |
-|----------|---------------------|
-| Data access abstraction | Repository |
-| Business logic encapsulation | Service Layer |
-| Complex object creation | Factory |
-| Interchangeable algorithms | Strategy |
-| Decoupled event handling | Observer |
-| External service resilience | Circuit Breaker |
+| Scenario                     | Recommended Pattern |
+|------------------------------|---------------------|
+| Data access abstraction      | Repository          |
+| Business logic encapsulation | Service Layer       |
+| Complex object creation      | Factory             |
+| Interchangeable algorithms   | Strategy            |
+| Decoupled event handling     | Observer            |
+| External service resilience  | Circuit Breaker     |
 
 ---
 
 ## Anti-Patterns to Avoid
 
-| Anti-Pattern | Problem | Solution |
-|--------------|---------|----------|
-| God Object | Does everything | Split responsibilities |
-| Anemic Domain | Logic outside entities | Rich domain models |
-| Service Locator | Hidden dependencies | Dependency injection |
-| Singleton Overuse | Global state | Scoped instances |
+| Anti-Pattern      | Problem                | Solution               |
+|-------------------|------------------------|------------------------|
+| God Object        | Does everything        | Split responsibilities |
+| Anemic Domain     | Logic outside entities | Rich domain models     |
+| Service Locator   | Hidden dependencies    | Dependency injection   |
+| Singleton Overuse | Global state           | Scoped instances       |
 
 ---
 

@@ -11,15 +11,14 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
-import asyncio
+import logging
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Set, Tuple
-from urllib.parse import urlparse, unquote
-import logging
+from typing import Any
+from urllib.parse import unquote, urlparse
 
 logger = logging.getLogger(__name__)
 
@@ -55,9 +54,9 @@ class LinkResult:
     link_type: LinkType
     status: LinkStatus
     message: str = ""
-    details: Dict[str, Any] = field(default_factory=dict)
+    details: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "source_file": self.source_file,
@@ -80,7 +79,7 @@ class LinkReport:
     broken_count: int
     warning_count: int
     skipped_count: int
-    results: List[LinkResult]
+    results: list[LinkResult]
     files_checked: int
     duration_ms: float
     timestamp: datetime = field(default_factory=datetime.now)
@@ -91,7 +90,7 @@ class LinkReport:
         checked = self.total_links - self.skipped_count
         return (self.broken_count / checked * 100) if checked > 0 else 0
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "total_links": self.total_links,
@@ -129,7 +128,7 @@ class LinkChecker:
 
     def __init__(
         self,
-        kb_path: Optional[Path] = None,
+        kb_path: Path | None = None,
         check_external: bool = False,
         timeout_s: float = 10.0,
     ):
@@ -145,8 +144,8 @@ class LinkChecker:
         self.check_external = check_external
         self.timeout_s = timeout_s
 
-        self._heading_cache: Dict[str, Set[str]] = {}
-        self._file_cache: Set[str] = set()
+        self._heading_cache: dict[str, set[str]] = {}
+        self._file_cache: set[str] = set()
 
     def _normalize_anchor(self, heading: str) -> str:
         """Convert heading text to anchor format."""
@@ -156,7 +155,7 @@ class LinkChecker:
         anchor = re.sub(r"\s+", "-", anchor)
         return anchor
 
-    def _get_file_headings(self, file_path: Path) -> Set[str]:
+    def _get_file_headings(self, file_path: Path) -> set[str]:
         """Extract all headings from a markdown file."""
         if str(file_path) in self._heading_cache:
             return self._heading_cache[str(file_path)]
@@ -368,7 +367,7 @@ class LinkChecker:
                 message=f"URL parse error: {e}",
             )
 
-    def check_file(self, file_path: Path) -> List[LinkResult]:
+    def check_file(self, file_path: Path) -> list[LinkResult]:
         """
         Check all links in a single file.
 
@@ -486,7 +485,7 @@ class LinkChecker:
             duration_ms=duration,
         )
 
-    def get_broken_links(self) -> List[LinkResult]:
+    def get_broken_links(self) -> list[LinkResult]:
         """Get all broken links from the last check."""
         report = self.check_all()
         return [r for r in report.results if r.status == LinkStatus.BROKEN]
@@ -498,7 +497,7 @@ class LinkChecker:
 
 
 # Convenience function
-def check_links(kb_path: Optional[Path] = None) -> LinkReport:
+def check_links(kb_path: Path | None = None) -> LinkReport:
     """Quick function to check all links in KB."""
     checker = LinkChecker(kb_path=kb_path)
     return checker.check_all()

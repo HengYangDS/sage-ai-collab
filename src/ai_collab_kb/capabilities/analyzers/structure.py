@@ -9,10 +9,10 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
+import logging
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Optional, Any
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -27,7 +27,7 @@ class StructureIssue:
     message: str
     suggestion: str = ""
 
-    def to_dict(self) -> Dict[str, str]:
+    def to_dict(self) -> dict[str, str]:
         """Convert to dictionary."""
         return {
             "severity": self.severity,
@@ -43,8 +43,8 @@ class StructureReport:
     """Report from structure validation."""
 
     valid: bool = True
-    issues: List[StructureIssue] = field(default_factory=list)
-    stats: Dict[str, int] = field(default_factory=dict)
+    issues: list[StructureIssue] = field(default_factory=list)
+    stats: dict[str, int] = field(default_factory=dict)
 
     @property
     def error_count(self) -> int:
@@ -62,7 +62,7 @@ class StructureReport:
         if issue.severity == "error":
             self.valid = False
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "valid": self.valid,
@@ -117,7 +117,7 @@ class StructureChecker:
         "09_success.md",
     ]
 
-    def __init__(self, root_path: Optional[Path] = None):
+    def __init__(self, root_path: Path | None = None):
         """
         Initialize the structure checker.
 
@@ -246,7 +246,7 @@ class StructureChecker:
                     )
                 )
 
-    def _collect_stats(self) -> Dict[str, int]:
+    def _collect_stats(self) -> dict[str, int]:
         """Collect structure statistics."""
         stats = {
             "directories": 0,
@@ -273,7 +273,7 @@ class StructureChecker:
 
         return stats
 
-    def fix_issues(self, report: StructureReport, dry_run: bool = True) -> List[str]:
+    def fix_issues(self, report: StructureReport, dry_run: bool = True) -> list[str]:
         """
         Attempt to fix reported issues.
 
@@ -307,7 +307,7 @@ class StructureChecker:
         return actions
 
 
-def check_structure(path: Optional[Path] = None) -> StructureReport:
+def check_structure(path: Path | None = None) -> StructureReport:
     """Convenience function to check structure."""
     checker = StructureChecker(path)
     return checker.check()

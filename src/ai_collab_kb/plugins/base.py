@@ -21,10 +21,10 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
+import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import Any, Dict, List, Optional
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -49,12 +49,12 @@ class PluginMetadata:
     version: str
     author: str = "Unknown"
     description: str = ""
-    hooks: List[str] = field(default_factory=list)
+    hooks: list[str] = field(default_factory=list)
     priority: int = 100  # Lower = higher priority
     enabled: bool = True
-    config: Dict[str, Any] = field(default_factory=dict)
+    config: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "name": self.name,
@@ -94,7 +94,7 @@ class PluginBase(ABC):
         """Return plugin metadata. Must be implemented by subclasses."""
         pass
 
-    def on_load(self, context: Dict[str, Any]) -> None:
+    def on_load(self, context: dict[str, Any]) -> None:
         """
         Called when plugin is loaded into the registry.
 
@@ -115,7 +115,7 @@ class PluginBase(ABC):
         """Called when plugin is disabled."""
         pass
 
-    def configure(self, config: Dict[str, Any]) -> None:
+    def configure(self, config: dict[str, Any]) -> None:
         """
         Configure the plugin with custom settings.
 
@@ -154,7 +154,7 @@ class LoaderPlugin(PluginBase):
                 return content
     """
 
-    def pre_load(self, layer: str, path: str) -> Optional[str]:
+    def pre_load(self, layer: str, path: str) -> str | None:
         """
         Hook before loading content.
 
@@ -180,7 +180,7 @@ class LoaderPlugin(PluginBase):
         """
         return content
 
-    def on_timeout(self, layer: str, elapsed_ms: int) -> Optional[str]:
+    def on_timeout(self, layer: str, elapsed_ms: int) -> str | None:
         """
         Hook when loading times out.
 
@@ -216,7 +216,7 @@ class AnalyzerPlugin(PluginBase):
     """
 
     @abstractmethod
-    def analyze(self, content: str, context: Dict[str, Any]) -> Dict[str, Any]:
+    def analyze(self, content: str, context: dict[str, Any]) -> dict[str, Any]:
         """
         Perform analysis on content.
 
@@ -325,8 +325,8 @@ class SearchPlugin(PluginBase):
     def pre_search(
         self,
         query: str,
-        options: Dict[str, Any],
-    ) -> tuple[str, Dict[str, Any]]:
+        options: dict[str, Any],
+    ) -> tuple[str, dict[str, Any]]:
         """
         Preprocess search query.
 
@@ -341,9 +341,9 @@ class SearchPlugin(PluginBase):
 
     def post_search(
         self,
-        results: List[Dict[str, Any]],
+        results: list[dict[str, Any]],
         query: str,
-    ) -> List[Dict[str, Any]]:
+    ) -> list[dict[str, Any]]:
         """
         Post-process search results.
 

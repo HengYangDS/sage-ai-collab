@@ -23,10 +23,10 @@ MCP Tools exposed:
 """
 
 from ai_collab_kb.capabilities.analyzers import (
-    QualityAnalyzer,
-    QualityScore,
     ContentAnalyzer,
     ContentMetrics,
+    QualityAnalyzer,
+    QualityScore,
     StructureChecker,
     StructureReport,
 )

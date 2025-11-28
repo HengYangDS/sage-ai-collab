@@ -8,18 +8,21 @@
 ## 1.1 Execution Principles
 
 ### Think Before Acting
+
 - **Understand** the full scope before implementation
 - **Plan** the approach with clear milestones
 - **Validate** assumptions early
 - **Iterate** based on feedback
 
 ### Scope Management
+
 ```
 GOOD: "Implement user authentication with JWT"
 BAD:  "Make the app secure"
 ```
 
 ### Task Decomposition
+
 1. Break large tasks into subtasks (max 2-4 hours each)
 2. Define clear acceptance criteria per subtask
 3. Identify dependencies between subtasks
@@ -30,6 +33,7 @@ BAD:  "Make the app secure"
 ## 1.2 Architecture Patterns
 
 ### Layered Architecture
+
 ```
 ┌─────────────────────┐
 │   Presentation      │  ← UI/API Layer
@@ -43,19 +47,21 @@ BAD:  "Make the app secure"
 ```
 
 ### Key Principles
-| Principle | Description | Example |
-|-----------|-------------|---------|
-| **SRP** | Single Responsibility | One class = one purpose |
-| **OCP** | Open/Closed | Extend, don't modify |
-| **LSP** | Liskov Substitution | Subtypes are substitutable |
-| **ISP** | Interface Segregation | Small, focused interfaces |
-| **DIP** | Dependency Inversion | Depend on abstractions |
+
+| Principle | Description           | Example                    |
+|-----------|-----------------------|----------------------------|
+| **SRP**   | Single Responsibility | One class = one purpose    |
+| **OCP**   | Open/Closed           | Extend, don't modify       |
+| **LSP**   | Liskov Substitution   | Subtypes are substitutable |
+| **ISP**   | Interface Segregation | Small, focused interfaces  |
+| **DIP**   | Dependency Inversion  | Depend on abstractions     |
 
 ---
 
 ## 1.3 Modularity Guidelines
 
 ### Module Design
+
 ```python
 # GOOD: Clear boundaries
 class UserService:
@@ -75,6 +81,7 @@ class UserService:
 ```
 
 ### Dependency Management
+
 1. **Explicit dependencies**: Pass via constructor
 2. **Interface-based**: Depend on protocols/ABCs
 3. **Minimal coupling**: Only expose what's needed
@@ -98,13 +105,13 @@ Before implementation, verify:
 
 ## 1.5 Anti-Patterns to Avoid
 
-| Anti-Pattern | Problem | Solution |
-|--------------|---------|----------|
-| God Class | Does everything | Split by responsibility |
-| Spaghetti Code | No structure | Apply SOLID principles |
+| Anti-Pattern           | Problem                 | Solution                       |
+|------------------------|-------------------------|--------------------------------|
+| God Class              | Does everything         | Split by responsibility        |
+| Spaghetti Code         | No structure            | Apply SOLID principles         |
 | Premature Optimization | Complexity without need | Profile first, optimize second |
-| Copy-Paste | Duplication | Extract to shared modules |
-| Magic Numbers | Unclear intent | Use named constants |
+| Copy-Paste             | Duplication             | Extract to shared modules      |
+| Magic Numbers          | Unclear intent          | Use named constants            |
 
 ---
 

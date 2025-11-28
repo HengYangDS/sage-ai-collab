@@ -179,14 +179,14 @@ class PluginRegistry:
 
 ### Key Benefits
 
-| Aspect          | Old (ABC)              | New (Protocol + EventBus)      |
-|-----------------|------------------------|--------------------------------|
-| Coupling        | Tight (inheritance)    | Loose (structural typing)      |
-| Async           | Not supported          | Native async/await             |
-| Extensibility   | 7 fixed hooks          | Unlimited event types          |
-| Error Isolation | One plugin crashes all | Per-handler isolation          |
-| Testing         | Requires mocking       | Easy event injection           |
-| Priority        | Fixed by registration  | Configurable per subscription  |
+| Aspect          | Old (ABC)              | New (Protocol + EventBus)     |
+|-----------------|------------------------|-------------------------------|
+| Coupling        | Tight (inheritance)    | Loose (structural typing)     |
+| Async           | Not supported          | Native async/await            |
+| Extensibility   | 7 fixed hooks          | Unlimited event types         |
+| Error Isolation | One plugin crashes all | Per-handler isolation         |
+| Testing         | Requires mocking       | Easy event injection          |
+| Priority        | Fixed by registration  | Configurable per subscription |
 
 ### 5.4.2 Event Types
 

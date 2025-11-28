@@ -65,20 +65,20 @@ Parallelizable:
 >
 > Many features documented in the design (DI Container, EventBus, structured logging) are not yet implemented.
 
-| Component                 | Current Status          | Current | Target | Notes                                       |
-|---------------------------|-------------------------|---------|--------|---------------------------------------------|
-| Directory Structure       | 🟡 Partial              | 60%     | 100%   | Core-Services-Capabilities architecture     |
-| Core Layer                | 🟡 Basic                | 50%     | 100%   | loader.py exists, needs timeout/config/etc. |
-| Services Layer            | 🟡 Basic                | 60%     | 100%   | CLI, MCP exist, need refactoring            |
-| Capabilities Layer        | ❌ Not Implemented       | 0%      | 100%   | analyzers/, checkers/, monitors/            |
-| Unified Logging           | ❌ Not Implemented       | 0%      | 100%   | structlog + stdlib integration              |
-| DI Container              | ❌ Not Implemented       | 0%      | 100%   | YAML-driven service registration            |
-| EventBus                  | ❌ Not Implemented       | 0%      | 100%   | S.A.G.E. aligned async pub/sub              |
-| Plugin System             | 🟡 Basic                | 40%     | 100%   | base.py + registry.py exist                 |
-| Tools (Dev-Only)          | 🟡 Needs Reorganization | 50%     | 100%   | Isolate to monitors/ + dev_scripts/         |
-| Tests                     | 🟡 Basic                | 50%     | 90%    | Need fixtures/, unit/, integration/         |
-| Dev Toolchain             | ❌ Missing               | 0%      | 100%   | Makefile, justfile, pre-commit              |
-| Documentation             | 🟢 Good                 | 80%     | 100%   | Design docs complete, API docs needed       |
+| Component           | Current Status          | Current | Target | Notes                                       |
+|---------------------|-------------------------|---------|--------|---------------------------------------------|
+| Directory Structure | 🟡 Partial              | 60%     | 100%   | Core-Services-Capabilities architecture     |
+| Core Layer          | 🟡 Basic                | 50%     | 100%   | loader.py exists, needs timeout/config/etc. |
+| Services Layer      | 🟡 Basic                | 60%     | 100%   | CLI, MCP exist, need refactoring            |
+| Capabilities Layer  | ❌ Not Implemented       | 0%      | 100%   | analyzers/, checkers/, monitors/            |
+| Unified Logging     | ❌ Not Implemented       | 0%      | 100%   | structlog + stdlib integration              |
+| DI Container        | ❌ Not Implemented       | 0%      | 100%   | YAML-driven service registration            |
+| EventBus            | ❌ Not Implemented       | 0%      | 100%   | S.A.G.E. aligned async pub/sub              |
+| Plugin System       | 🟡 Basic                | 40%     | 100%   | base.py + registry.py exist                 |
+| Tools (Dev-Only)    | 🟡 Needs Reorganization | 50%     | 100%   | Isolate to monitors/ + dev_scripts/         |
+| Tests               | 🟡 Basic                | 50%     | 90%    | Need fixtures/, unit/, integration/         |
+| Dev Toolchain       | ❌ Missing               | 0%      | 100%   | Makefile, justfile, pre-commit              |
+| Documentation       | 🟢 Good                 | 80%     | 100%   | Design docs complete, API docs needed       |
 
 ---
 
@@ -110,11 +110,11 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 ### Timeline Scenarios
 
-| Scenario         | Duration | Team    | Notes                                    |
-|------------------|----------|---------|------------------------------------------|
-| **Optimistic**   | 20 days  | 1.5 FTE | No major issues, parallel execution      |
-| **Realistic**    | 24 days  | 1.5 FTE | Some integration challenges              |
-| **Conservative** | 32 days  | 1.0 FTE | Solo developer, sequential only          |
+| Scenario         | Duration | Team    | Notes                               |
+|------------------|----------|---------|-------------------------------------|
+| **Optimistic**   | 20 days  | 1.5 FTE | No major issues, parallel execution |
+| **Realistic**    | 24 days  | 1.5 FTE | Some integration challenges         |
+| **Conservative** | 32 days  | 1.0 FTE | Solo developer, sequential only     |
 
 ---
 
@@ -122,15 +122,15 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 **Goal**: Create new directory structure for 3-layer architecture
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| A.1 Create docs/ directory structure | Documentation Engineer | P0 | docs/design/, docs/api/, docs/guides/ |
-| A.2 Move ultimate_design_final.md to docs/design/ | Documentation Engineer | P0 | Clean root directory |
-| A.3 Create src/sage/core/ directory | Chief Architect | P0 | Layer 1 structure |
-| A.4 Create src/sage/services/ directory | Chief Architect | P0 | Layer 2 structure |
-| A.5 Move loader.py to core/ | Python Engineer | P0 | Core layer migration |
-| A.6 Move cli.py, mcp_server.py to services/ | Python Engineer | P0 | Services layer migration |
-| A.7 Run tests to verify | Test Architect | P0 | No regressions |
+| Task                                              | Owner                  | Priority | Deliverable                           |
+|---------------------------------------------------|------------------------|----------|---------------------------------------|
+| A.1 Create docs/ directory structure              | Documentation Engineer | P0       | docs/design/, docs/api/, docs/guides/ |
+| A.2 Move ultimate_design_final.md to docs/design/ | Documentation Engineer | P0       | Clean root directory                  |
+| A.3 Create src/sage/core/ directory               | Chief Architect        | P0       | Layer 1 structure                     |
+| A.4 Create src/sage/services/ directory           | Chief Architect        | P0       | Layer 2 structure                     |
+| A.5 Move loader.py to core/                       | Python Engineer        | P0       | Core layer migration                  |
+| A.6 Move cli.py, mcp_server.py to services/       | Python Engineer        | P0       | Services layer migration              |
+| A.7 Run tests to verify                           | Test Architect         | P0       | No regressions                        |
 
 **Milestone**: 3-layer directory structure created
 
@@ -140,15 +140,15 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 **Goal**: Complete core layer with timeout and unified entry point
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| B.1 Move timeout_manager.py to core/timeout.py | Reliability Engineer | P0 | Core timeout module |
-| B.2 Create core/config.py with enhanced Config class | Systems Engineer | P0 | YAML+ENV+defaults support |
-| B.3 Create core/models.py with data classes | API Designer | P0 | Document, Layer, SearchResult |
-| B.4 Create __main__.py unified entry point | Chief Architect | P0 | python -m sage |
-| B.5 Update all import statements | Python Engineer | P0 | No import errors |
-| B.6 Delete or deprecate root server.py | DevOps Expert | P1 | Clean root directory |
-| B.7 Run tests to verify | Test Architect | P0 | No regressions |
+| Task                                                 | Owner                | Priority | Deliverable                   |
+|------------------------------------------------------|----------------------|----------|-------------------------------|
+| B.1 Move timeout_manager.py to core/timeout.py       | Reliability Engineer | P0       | Core timeout module           |
+| B.2 Create core/config.py with enhanced Config class | Systems Engineer     | P0       | YAML+ENV+defaults support     |
+| B.3 Create core/models.py with data classes          | API Designer         | P0       | Document, Layer, SearchResult |
+| B.4 Create __main__.py unified entry point           | Chief Architect      | P0       | python -m sage                |
+| B.5 Update all import statements                     | Python Engineer      | P0       | No import errors              |
+| B.6 Delete or deprecate root server.py               | DevOps Expert        | P1       | Clean root directory          |
+| B.7 Run tests to verify                              | Test Architect       | P0       | No regressions                |
 
 **Milestone**: Core layer complete, unified entry point working
 
@@ -158,15 +158,15 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 **Goal**: Implement unified structured logging
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| C.1 Create core/logging/ subpackage | Python Engineer | P0 | Logging directory |
-| C.2 Implement logging/__init__.py exports | Python Engineer | P0 | get_logger, bind_context |
-| C.3 Implement logging/config.py | Python Engineer | P0 | configure_logging() |
-| C.4 Implement logging/context.py | Python Engineer | P0 | Context management |
-| C.5 Add structlog to requirements.txt | DevOps Expert | P0 | Dependency added |
-| C.6 Integrate logging in loader.py | Python Engineer | P1 | Structured log output |
-| C.7 Integrate logging in mcp_server.py | Python Engineer | P1 | Request tracing |
+| Task                                      | Owner           | Priority | Deliverable              |
+|-------------------------------------------|-----------------|----------|--------------------------|
+| C.1 Create core/logging/ subpackage       | Python Engineer | P0       | Logging directory        |
+| C.2 Implement logging/__init__.py exports | Python Engineer | P0       | get_logger, bind_context |
+| C.3 Implement logging/config.py           | Python Engineer | P0       | configure_logging()      |
+| C.4 Implement logging/context.py          | Python Engineer | P0       | Context management       |
+| C.5 Add structlog to requirements.txt     | DevOps Expert   | P0       | Dependency added         |
+| C.6 Integrate logging in loader.py        | Python Engineer | P1       | Structured log output    |
+| C.7 Integrate logging in mcp_server.py    | Python Engineer | P1       | Request tracing          |
 
 **Milestone**: Unified logging operational
 
@@ -178,25 +178,26 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 ### Day 4: Capabilities Layer (Runtime, exposed via MCP)
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| D.1 Create src/sage/capabilities/ directory | Chief Architect | P0 | Capabilities layer structure |
-| D.2 Create capabilities/analyzers/ with quality.py, content.py | Python Engineer | P0 | MCP: analyze_quality, analyze_content |
-| D.3 Create capabilities/checkers/ with links.py | Python Engineer | P0 | MCP: check_links |
-| D.4 Create capabilities/monitors/ with health.py | Reliability Engineer | P0 | MCP: check_health |
-| D.5 Update MCP server to use Capabilities | Python Engineer | P0 | Services → Capabilities integration |
+| Task                                                           | Owner                | Priority | Deliverable                           |
+|----------------------------------------------------------------|----------------------|----------|---------------------------------------|
+| D.1 Create src/sage/capabilities/ directory                    | Chief Architect      | P0       | Capabilities layer structure          |
+| D.2 Create capabilities/analyzers/ with quality.py, content.py | Python Engineer      | P0       | MCP: analyze_quality, analyze_content |
+| D.3 Create capabilities/checkers/ with links.py                | Python Engineer      | P0       | MCP: check_links                      |
+| D.4 Create capabilities/monitors/ with health.py               | Reliability Engineer | P0       | MCP: check_health                     |
+| D.5 Update MCP server to use Capabilities                      | Python Engineer      | P0       | Services → Capabilities integration   |
 
 ### Day 5: Tools Isolation (Dev-Only, NOT imported at runtime)
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| D.6 Restructure tools/ to monitors/ + dev_scripts/ | DevOps Expert | P0 | Dev-only isolation |
-| D.7 Move TimeoutMonitor to tools/monitors/ | Reliability Engineer | P0 | Dev performance tool |
-| D.8 Create tools/dev_scripts/ for setup scripts | DevOps Expert | P0 | Development utilities |
-| D.9 Remove runtime imports from tools/ | Python Engineer | P0 | Ensure dev-only isolation |
-| D.10 Update tools/__init__.py with lazy imports | Python Engineer | P1 | Dynamic import only when called |
+| Task                                               | Owner                | Priority | Deliverable                     |
+|----------------------------------------------------|----------------------|----------|---------------------------------|
+| D.6 Restructure tools/ to monitors/ + dev_scripts/ | DevOps Expert        | P0       | Dev-only isolation              |
+| D.7 Move TimeoutMonitor to tools/monitors/         | Reliability Engineer | P0       | Dev performance tool            |
+| D.8 Create tools/dev_scripts/ for setup scripts    | DevOps Expert        | P0       | Development utilities           |
+| D.9 Remove runtime imports from tools/             | Python Engineer      | P0       | Ensure dev-only isolation       |
+| D.10 Update tools/__init__.py with lazy imports    | Python Engineer      | P1       | Dynamic import only when called |
 
 **Key Distinction**:
+
 - **Capabilities** (src/sage/capabilities/): Runtime abilities exposed via MCP/API
 - **Tools** (tools/): Dev-only utilities, never imported at runtime
 
@@ -208,16 +209,16 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 **Goal**: Mirror source structure in tests
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| E.1 Create tests/fixtures/ directory | Test Architect | P0 | Test data home |
-| E.2 Add sample_content/, mock_responses/, configs/ | Test Architect | P0 | Test fixtures |
-| E.3 Create tests/unit/core/ directory | Test Architect | P0 | Core unit tests |
-| E.4 Create tests/unit/services/ directory | Test Architect | P0 | Services unit tests |
-| E.5 Move existing tests to new structure | Test Architect | P0 | Mirrored structure |
-| E.6 Create tests/integration/ directory | Test Architect | P1 | Integration tests |
-| E.7 Create conftest.py with global fixtures | Test Architect | P0 | Shared fixtures |
-| E.8 Run all tests to verify | Test Architect | P0 | No regressions |
+| Task                                               | Owner          | Priority | Deliverable         |
+|----------------------------------------------------|----------------|----------|---------------------|
+| E.1 Create tests/fixtures/ directory               | Test Architect | P0       | Test data home      |
+| E.2 Add sample_content/, mock_responses/, configs/ | Test Architect | P0       | Test fixtures       |
+| E.3 Create tests/unit/core/ directory              | Test Architect | P0       | Core unit tests     |
+| E.4 Create tests/unit/services/ directory          | Test Architect | P0       | Services unit tests |
+| E.5 Move existing tests to new structure           | Test Architect | P0       | Mirrored structure  |
+| E.6 Create tests/integration/ directory            | Test Architect | P1       | Integration tests   |
+| E.7 Create conftest.py with global fixtures        | Test Architect | P0       | Shared fixtures     |
+| E.8 Run all tests to verify                        | Test Architect | P0       | No regressions      |
 
 **Milestone**: Test structure mirrors source, all tests pass
 
@@ -229,26 +230,27 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 ### Day 7: Development Toolchain
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| F.1 Create Makefile with all commands | DevOps Expert | P0 | make install/test/lint/serve |
-| F.2 Create .pre-commit-config.yaml | DevOps Expert | P0 | ruff, mypy hooks |
-| F.3 Create .env.example | DevOps Expert | P1 | Environment template |
-| F.4 Add py.typed marker | Python Engineer | P1 | PEP 561 compliance |
-| F.5 Create examples/ directory with samples | Documentation Engineer | P1 | Usage examples |
+| Task                                        | Owner                  | Priority | Deliverable                  |
+|---------------------------------------------|------------------------|----------|------------------------------|
+| F.1 Create Makefile with all commands       | DevOps Expert          | P0       | make install/test/lint/serve |
+| F.2 Create .pre-commit-config.yaml          | DevOps Expert          | P0       | ruff, mypy hooks             |
+| F.3 Create .env.example                     | DevOps Expert          | P1       | Environment template         |
+| F.4 Add py.typed marker                     | Python Engineer        | P1       | PEP 561 compliance           |
+| F.5 Create examples/ directory with samples | Documentation Engineer | P1       | Usage examples               |
 
 ### Day 8: Documentation & Release Prep
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| F.6 Complete README.md user documentation | Documentation Engineer | P0 | Comprehensive docs |
-| F.7 Add CHANGELOG.md | Documentation Engineer | P1 | Version history |
-| F.8 Prepare PyPI release | DevOps Expert | P1 | Package on PyPI |
-| F.9 Final integration testing | Test Architect | P0 | Release validation |
+| Task                                      | Owner                  | Priority | Deliverable        |
+|-------------------------------------------|------------------------|----------|--------------------|
+| F.6 Complete README.md user documentation | Documentation Engineer | P0       | Comprehensive docs |
+| F.7 Add CHANGELOG.md                      | Documentation Engineer | P1       | Version history    |
+| F.8 Prepare PyPI release                  | DevOps Expert          | P1       | Package on PyPI    |
+| F.9 Final integration testing             | Test Architect         | P0       | Release validation |
 
 **Milestone**: Ready for release, excellent user experience
 
 **Acceptance Criteria**:
+
 - [ ] Average response time < 500ms
 - [ ] Timeout rate < 1%
 - [ ] Complete documentation
@@ -262,18 +264,18 @@ Target: Production-ready MVP with Core-Services-Capabilities architecture
 
 **Goal**: Implement Protocol + EventBus async decoupling for plugin system
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| G.1 Create core/events/ module structure | Chief Architect | P0 | events/__init__.py, bus.py, events.py, protocols.py |
-| G.2 Implement Event base class and types | Python Engineer | P0 | Event, LoadEvent, TimeoutEvent, SearchEvent |
-| G.3 Implement EventType enum | Python Engineer | P0 | Standard event types with namespacing |
-| G.4 Implement Protocol interfaces | Python Engineer | P0 | LoaderHandler, TimeoutHandler, SearchHandler |
-| G.5 Implement EventBus with async support | Python Engineer | P0 | subscribe, publish, wildcard matching |
-| G.6 Add priority-based subscription ordering | Python Engineer | P0 | Lower priority = earlier execution |
-| G.7 Add per-handler timeout protection | Reliability Engineer | P0 | Error isolation between handlers |
-| G.8 Implement PluginAdapter for migration | Python Engineer | P1 | Backward compatibility with old plugins |
-| G.9 Add unit tests for EventBus | Test Architect | P0 | 90%+ coverage |
-| G.10 Integration with existing loader | Python Engineer | P1 | Events published during loading |
+| Task                                         | Owner                | Priority | Deliverable                                         |
+|----------------------------------------------|----------------------|----------|-----------------------------------------------------|
+| G.1 Create core/events/ module structure     | Chief Architect      | P0       | events/__init__.py, bus.py, events.py, protocols.py |
+| G.2 Implement Event base class and types     | Python Engineer      | P0       | Event, LoadEvent, TimeoutEvent, SearchEvent         |
+| G.3 Implement EventType enum                 | Python Engineer      | P0       | Standard event types with namespacing               |
+| G.4 Implement Protocol interfaces            | Python Engineer      | P0       | LoaderHandler, TimeoutHandler, SearchHandler        |
+| G.5 Implement EventBus with async support    | Python Engineer      | P0       | subscribe, publish, wildcard matching               |
+| G.6 Add priority-based subscription ordering | Python Engineer      | P0       | Lower priority = earlier execution                  |
+| G.7 Add per-handler timeout protection       | Reliability Engineer | P0       | Error isolation between handlers                    |
+| G.8 Implement PluginAdapter for migration    | Python Engineer      | P1       | Backward compatibility with old plugins             |
+| G.9 Add unit tests for EventBus              | Test Architect       | P0       | 90%+ coverage                                       |
+| G.10 Integration with existing loader        | Python Engineer      | P1       | Events published during loading                     |
 
 **Milestone**: Event-driven plugin system operational with backward compatibility
 
@@ -296,20 +298,20 @@ src/sage/core/events/
 
 **Goal**: Implement memory persistence, token management, and session continuity
 
-| Task | Owner | Priority | Deliverable |
-|------|-------|----------|-------------|
-| H.1 Create core/memory/ module structure | Chief Architect | P0 | memory/__init__.py, store.py, token_budget.py, session.py |
-| H.2 Implement MemoryType and MemoryPriority enums | Python Engineer | P0 | 6 memory types, 6 priority levels |
-| H.3 Implement MemoryEntry dataclass | Python Engineer | P0 | Complete entry structure with serialization |
-| H.4 Implement MemoryStore with file backend | Python Engineer | P0 | CRUD, query, checkpoint support |
-| H.5 Implement TokenWarningLevel enum | Python Engineer | P0 | 5 warning levels (70%, 80%, 90%, 95%) |
-| H.6 Implement TokenBudget controller | Reliability Engineer | P0 | Real-time tracking, auto-actions |
-| H.7 Implement SessionState dataclass | Python Engineer | P0 | Full session state tracking |
-| H.8 Implement HandoffPackage with to_prompt() | Python Engineer | P0 | Cross-task continuation |
-| H.9 Implement SessionContinuity service | Python Engineer | P0 | Start, update, checkpoint, handoff |
-| H.10 Add EventBus integration | Python Engineer | P1 | Automatic memory tracking via events |
-| H.11 Add unit tests for memory system | Test Architect | P0 | 90%+ coverage |
-| H.12 Add integration tests | Test Architect | P1 | End-to-end session continuity |
+| Task                                              | Owner                | Priority | Deliverable                                               |
+|---------------------------------------------------|----------------------|----------|-----------------------------------------------------------|
+| H.1 Create core/memory/ module structure          | Chief Architect      | P0       | memory/__init__.py, store.py, token_budget.py, session.py |
+| H.2 Implement MemoryType and MemoryPriority enums | Python Engineer      | P0       | 6 memory types, 6 priority levels                         |
+| H.3 Implement MemoryEntry dataclass               | Python Engineer      | P0       | Complete entry structure with serialization               |
+| H.4 Implement MemoryStore with file backend       | Python Engineer      | P0       | CRUD, query, checkpoint support                           |
+| H.5 Implement TokenWarningLevel enum              | Python Engineer      | P0       | 5 warning levels (70%, 80%, 90%, 95%)                     |
+| H.6 Implement TokenBudget controller              | Reliability Engineer | P0       | Real-time tracking, auto-actions                          |
+| H.7 Implement SessionState dataclass              | Python Engineer      | P0       | Full session state tracking                               |
+| H.8 Implement HandoffPackage with to_prompt()     | Python Engineer      | P0       | Cross-task continuation                                   |
+| H.9 Implement SessionContinuity service           | Python Engineer      | P0       | Start, update, checkpoint, handoff                        |
+| H.10 Add EventBus integration                     | Python Engineer      | P1       | Automatic memory tracking via events                      |
+| H.11 Add unit tests for memory system             | Test Architect       | P0       | 90%+ coverage                                             |
+| H.12 Add integration tests                        | Test Architect       | P1       | End-to-end session continuity                             |
 
 **Milestone**: Cross-task memory persistence operational with token management
 
@@ -410,10 +412,10 @@ C:\Users\<user>\AppData\Local\sage\memory\    # Windows
 
 ### 7.13.1 Deployment Options
 
-| Option | Use Case | Complexity |
-|--------|----------|------------|
-| **Docker Compose** | Small deployments | Low |
-| **Kubernetes** | Scale deployments | Medium |
+| Option             | Use Case          | Complexity |
+|--------------------|-------------------|------------|
+| **Docker Compose** | Small deployments | Low        |
+| **Kubernetes**     | Scale deployments | Medium     |
 
 ### 7.13.2 API Versioning Strategy
 
@@ -437,12 +439,12 @@ C:\Users\<user>\AppData\Local\sage\memory\    # Windows
 
 ### 7.13.4 Rollback Strategy
 
-| Scenario                   | Action                      | Recovery Time |
-|----------------------------|-----------------------------|---------------|
-| Failed deployment          | Revert to previous image    | < 5 min       |
-| Database migration failure | Run down migration          | < 10 min      |
-| Configuration error        | Restore from backup         | < 2 min       |
-| Service degradation        | Scale down new, scale up old| < 3 min       |
+| Scenario                   | Action                       | Recovery Time |
+|----------------------------|------------------------------|---------------|
+| Failed deployment          | Revert to previous image     | < 5 min       |
+| Database migration failure | Run down migration           | < 10 min      |
+| Configuration error        | Restore from backup          | < 2 min       |
+| Service degradation        | Scale down new, scale up old | < 3 min       |
 
 **Rollback Commands:**
 

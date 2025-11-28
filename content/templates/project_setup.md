@@ -13,35 +13,44 @@ Minimal local configuration pointing to global knowledge base:
 # Project Guidelines
 
 ## Project Info
+
 - **Name**: [Project Name]
 - **Type**: [Python Backend / Web Frontend / Data Analysis / etc.]
 - **Language**: [Python 3.12 / TypeScript / etc.]
 
 ## Knowledge Base
+
 This project uses AI Collaboration Knowledge Base.
+
 - **Version**: 2.0.0
 - **Load**: `aikb get --scenario python_backend`
 
 ## Project-Specific Rules
 
 ### Naming Conventions
+
 - [Any overrides to standard naming]
 
 ### File Organization
+
 - [Project-specific structure notes]
 
 ### Dependencies
+
 - [Key dependencies and version constraints]
 
 ### Testing
+
 - [Project-specific test requirements]
 
 ## Autonomy Calibration
+
 - **Default Level**: L4 (Medium-High)
 - **Elevated for**: [routine tasks that can be L5+]
 - **Lowered for**: [sensitive areas requiring L1-L2]
 
 ## Quick Commands
+
 ```bash
 # Development
 [dev command]
@@ -52,6 +61,7 @@ This project uses AI Collaboration Knowledge Base.
 # Build
 [build command]
 ```
+
 ```
 
 ---
@@ -92,6 +102,7 @@ addopts = "-v --cov=src"
 ```
 
 ### Directory Structure
+
 ```
 project-name/
 ├── src/
@@ -130,15 +141,18 @@ Brief description of the project.
 ## Quick Start
 
 ### Prerequisites
+
 - Python 3.11+
 - [Other requirements]
 
 ### Installation
+
 ```bash
 pip install project-name
 ```
 
 ### Usage
+
 ```python
 from project_name import main_function
 
@@ -148,6 +162,7 @@ result = main_function()
 ## Development
 
 ### Setup
+
 ```bash
 git clone https://github.com/user/project-name
 cd project-name
@@ -155,11 +170,13 @@ pip install -e ".[dev]"
 ```
 
 ### Testing
+
 ```bash
 pytest
 ```
 
 ### Code Quality
+
 ```bash
 ruff check .
 mypy src/
@@ -179,6 +196,7 @@ See [docs/](docs/) for full documentation.
 ## License
 
 MIT License - see LICENSE file.
+
 ```
 
 ---
@@ -244,6 +262,7 @@ secrets.yaml
 ## Docker Template
 
 ### Dockerfile
+
 ```dockerfile
 FROM python:3.11-slim
 
@@ -261,6 +280,7 @@ CMD ["python", "-m", "project_name"]
 ```
 
 ### docker-compose.yml
+
 ```yaml
 version: '3.8'
 
@@ -292,43 +312,44 @@ volumes:
 ## CI/CD Template (GitHub Actions)
 
 ### .github/workflows/ci.yml
+
 ```yaml
 name: CI
 
 on:
   push:
-    branches: [main, develop]
+    branches: [ main, develop ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   test:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: ['3.11', '3.12']
+        python-version: [ '3.11', '3.12' ]
 
     steps:
       - uses: actions/checkout@v4
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
-      
+
       - name: Install dependencies
         run: |
           pip install -e ".[dev]"
-      
+
       - name: Lint
         run: |
           ruff check .
           mypy src/
-      
+
       - name: Test
         run: |
           pytest --cov --cov-report=xml
-      
+
       - name: Upload coverage
         uses: codecov/codecov-action@v3
 ```

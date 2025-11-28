@@ -11,14 +11,15 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
-import shutil
 import json
+import logging
+import shutil
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Callable
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -53,10 +54,10 @@ class MigrationStep:
     source: str = ""
     target: str = ""
     description: str = ""
-    transform_func: Optional[Callable[[str], str]] = None
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    transform_func: Callable[[str], str] | None = None
+    metadata: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary (excluding transform_func)."""
         return {
             "step_type": self.step_type.value,
@@ -77,7 +78,7 @@ class StepResult:
     backup_path: str = ""
     duration_ms: float = 0.0
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "step": self.step.to_dict(),
@@ -94,12 +95,12 @@ class MigrationPlan:
 
     name: str
     version: str
-    steps: List[MigrationStep]
+    steps: list[MigrationStep]
     description: str = ""
     created_at: datetime = field(default_factory=datetime.now)
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "name": self.name,
@@ -121,10 +122,10 @@ class MigrationResult:
 
     plan: MigrationPlan
     status: MigrationStatus
-    step_results: List[StepResult]
+    step_results: list[StepResult]
     backup_dir: str = ""
     started_at: datetime = field(default_factory=datetime.now)
-    completed_at: Optional[datetime] = None
+    completed_at: datetime | None = None
     error: str = ""
 
     @property
@@ -142,7 +143,7 @@ class MigrationResult:
         successful = sum(1 for r in self.step_results if r.success)
         return (successful / len(self.step_results)) * 100
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "plan": self.plan.to_dict(),
@@ -173,8 +174,8 @@ class MigrationToolkit:
 
     def __init__(
         self,
-        kb_path: Optional[Path] = None,
-        backup_dir: Optional[Path] = None,
+        kb_path: Path | None = None,
+        backup_dir: Path | None = None,
     ):
         """
         Initialize migration toolkit.
@@ -185,7 +186,7 @@ class MigrationToolkit:
         """
         self.kb_path = kb_path or Path(__file__).parent.parent
         self.backup_dir = backup_dir or self.kb_path / ".migration_backups"
-        self._history: List[MigrationResult] = []
+        self._history: list[MigrationResult] = []
 
     def create_backup(self, name: str = "") -> Path:
         """
@@ -474,11 +475,11 @@ class MigrationToolkit:
         logger.warning("Last migration has no backup")
         return False
 
-    def get_history(self) -> List[MigrationResult]:
+    def get_history(self) -> list[MigrationResult]:
         """Get migration history."""
         return self._history.copy()
 
-    def list_backups(self) -> List[Dict[str, Any]]:
+    def list_backups(self) -> list[dict[str, Any]]:
         """List all available backups."""
         backups = []
 
@@ -525,7 +526,7 @@ class MigrationToolkit:
 def create_migration_plan(
     name: str,
     version: str,
-    steps: List[Dict[str, Any]],
+    steps: list[dict[str, Any]],
     description: str = "",
 ) -> MigrationPlan:
     """Create a migration plan from step definitions."""
@@ -550,7 +551,7 @@ def create_migration_plan(
 
 def migrate(
     plan: MigrationPlan,
-    kb_path: Optional[Path] = None,
+    kb_path: Path | None = None,
     dry_run: bool = False,
 ) -> MigrationResult:
     """Quick function to execute a migration."""

@@ -11,13 +11,13 @@ Version: 2.0.0
 """
 
 import asyncio
-import time
+import logging
 from collections import deque
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime, timedelta
 from enum import Enum
-from typing import Optional, List, Dict, Any, Callable, Deque
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -42,14 +42,14 @@ class TimeoutEvent:
     actual_ms: float
     timed_out: bool
     timestamp: datetime = field(default_factory=datetime.now)
-    details: Dict[str, Any] = field(default_factory=dict)
+    details: dict[str, Any] = field(default_factory=dict)
 
     @property
     def utilization(self) -> float:
         """Percentage of timeout used."""
         return (self.actual_ms / self.timeout_ms) * 100 if self.timeout_ms > 0 else 0
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "operation": self.operation,
@@ -72,7 +72,7 @@ class TimeoutStats:
     near_timeout_count: int = 0  # >80% utilization
     avg_utilization: float = 0.0
     max_utilization: float = 0.0
-    by_level: Dict[str, Dict[str, Any]] = field(default_factory=dict)
+    by_level: dict[str, dict[str, Any]] = field(default_factory=dict)
     period_start: datetime = field(default_factory=datetime.now)
     period_end: datetime = field(default_factory=datetime.now)
 
@@ -94,7 +94,7 @@ class TimeoutStats:
             else 0
         )
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "total_operations": self.total_operations,
@@ -142,10 +142,10 @@ class TimeoutMonitor:
         self.max_events = max_events
         self.stats_window_minutes = stats_window_minutes
 
-        self._events: Deque[TimeoutEvent] = deque(maxlen=max_events)
-        self._alert_callbacks: List[Callable[[str, TimeoutStats], None]] = []
+        self._events: deque[TimeoutEvent] = deque(maxlen=max_events)
+        self._alert_callbacks: list[Callable[[str, TimeoutStats], None]] = []
         self._running = False
-        self._task: Optional[asyncio.Task] = None
+        self._task: asyncio.Task | None = None
 
     def register_alert_callback(
         self,
@@ -166,7 +166,7 @@ class TimeoutMonitor:
         timeout_ms: int,
         actual_ms: float,
         timed_out: bool = False,
-        details: Optional[Dict[str, Any]] = None,
+        details: dict[str, Any] | None = None,
     ) -> TimeoutEvent:
         """
         Record a timeout event.
@@ -201,9 +201,9 @@ class TimeoutMonitor:
 
     def get_stats(
         self,
-        minutes: Optional[int] = None,
-        level: Optional[TimeoutLevel] = None,
-        operation: Optional[str] = None,
+        minutes: int | None = None,
+        level: TimeoutLevel | None = None,
+        operation: str | None = None,
     ) -> TimeoutStats:
         """
         Get timeout statistics.
@@ -268,7 +268,7 @@ class TimeoutMonitor:
         self,
         limit: int = 100,
         timed_out_only: bool = False,
-    ) -> List[TimeoutEvent]:
+    ) -> list[TimeoutEvent]:
         """
         Get recent timeout events.
 
@@ -286,7 +286,7 @@ class TimeoutMonitor:
 
         return events[-limit:]
 
-    def get_recommendations(self) -> List[Dict[str, Any]]:
+    def get_recommendations(self) -> list[dict[str, Any]]:
         """
         Get recommendations for timeout tuning.
 
@@ -414,7 +414,7 @@ class TimeoutMonitor:
         self._events.clear()
         return count
 
-    def get_summary(self) -> Dict[str, Any]:
+    def get_summary(self) -> dict[str, Any]:
         """Get a summary of timeout monitoring status."""
         stats = self.get_stats()
         recommendations = self.get_recommendations()
@@ -433,7 +433,7 @@ class TimeoutMonitor:
 
 
 # Global monitor instance
-_monitor: Optional[TimeoutMonitor] = None
+_monitor: TimeoutMonitor | None = None
 
 
 def get_timeout_monitor() -> TimeoutMonitor:
@@ -450,7 +450,7 @@ def record_timeout_event(
     timeout_ms: int,
     actual_ms: float,
     timed_out: bool = False,
-    details: Optional[Dict[str, Any]] = None,
+    details: dict[str, Any] | None = None,
 ) -> TimeoutEvent:
     """Convenience function to record a timeout event."""
     monitor = get_timeout_monitor()

@@ -8,6 +8,7 @@
 ## 3.1 Configuration Management
 
 ### Configuration Hierarchy
+
 ```
 Priority (highest to lowest):
 1. Command-line arguments
@@ -18,6 +19,7 @@ Priority (highest to lowest):
 ```
 
 ### Best Practices
+
 ```python
 # GOOD: Typed configuration with defaults
 from pydantic_settings import BaseSettings
@@ -35,6 +37,7 @@ DB_URL = os.getenv("DB_URL", "sqlite:///db.sqlite")
 ```
 
 ### Secrets Management
+
 - ❌ Never commit secrets to version control
 - ✅ Use environment variables or secret managers
 - ✅ Document required environment variables
@@ -45,6 +48,7 @@ DB_URL = os.getenv("DB_URL", "sqlite:///db.sqlite")
 ## 3.2 Testing Practices
 
 ### Test Pyramid
+
 ```
         /‾‾‾‾‾‾‾\
        / E2E     \      ← Few, slow, expensive
@@ -56,6 +60,7 @@ DB_URL = os.getenv("DB_URL", "sqlite:///db.sqlite")
 ```
 
 ### Test Organization
+
 ```
 tests/
 ├── unit/           # Isolated component tests
@@ -66,15 +71,17 @@ tests/
 ```
 
 ### Test Quality Criteria
-| Criterion | Description |
-|-----------|-------------|
-| **Fast** | Unit tests < 100ms each |
-| **Isolated** | No external dependencies |
-| **Repeatable** | Same result every run |
+
+| Criterion           | Description                |
+|---------------------|----------------------------|
+| **Fast**            | Unit tests < 100ms each    |
+| **Isolated**        | No external dependencies   |
+| **Repeatable**      | Same result every run      |
 | **Self-validating** | Pass/fail, no manual check |
-| **Timely** | Written with/before code |
+| **Timely**          | Written with/before code   |
 
 ### Testing Patterns
+
 ```python
 # Arrange-Act-Assert (AAA)
 def test_user_creation():
@@ -95,12 +102,14 @@ def test_user_creation():
 ## 3.3 Performance Guidelines
 
 ### Performance Principles
+
 1. **Measure first**: Profile before optimizing
 2. **Optimize hot paths**: Focus on 20% causing 80% issues
 3. **Cache wisely**: Trade memory for speed
 4. **Async for I/O**: Don't block on network/disk
 
 ### Common Optimizations
+
 ```python
 # GOOD: Batch database operations
 users = repository.get_many(user_ids)  # Single query
@@ -110,6 +119,7 @@ users = [repository.get(id) for id in user_ids]  # N queries
 ```
 
 ### Performance Checklist
+
 - [ ] Database queries are optimized (indexes, joins)
 - [ ] Large data is paginated
 - [ ] External calls have timeouts
@@ -121,6 +131,7 @@ users = [repository.get(id) for id in user_ids]  # N queries
 ## 3.4 Change Control
 
 ### Git Commit Standards
+
 ```
 <type>(<scope>): <subject>
 
@@ -132,6 +143,7 @@ users = [repository.get(id) for id in user_ids]  # N queries
 Types: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
 ### Examples
+
 ```
 feat(auth): add JWT token refresh endpoint
 
@@ -143,6 +155,7 @@ Closes #123
 ```
 
 ### Branch Strategy
+
 ```
 main (production)
   └── develop (integration)
@@ -152,6 +165,7 @@ main (production)
 ```
 
 ### Code Review Checklist
+
 - [ ] Code follows style guidelines
 - [ ] Tests are included and pass
 - [ ] Documentation is updated
@@ -164,14 +178,16 @@ main (production)
 ## 3.5 Maintainability
 
 ### Technical Debt Management
-| Priority | Action | Timeline |
-|----------|--------|----------|
-| **Critical** | Blocking issues | Immediate |
-| **High** | Significant impact | Next sprint |
-| **Medium** | Moderate impact | Roadmap |
-| **Low** | Minor improvements | As time allows |
+
+| Priority     | Action             | Timeline       |
+|--------------|--------------------|----------------|
+| **Critical** | Blocking issues    | Immediate      |
+| **High**     | Significant impact | Next sprint    |
+| **Medium**   | Moderate impact    | Roadmap        |
+| **Low**      | Minor improvements | As time allows |
 
 ### Code Health Indicators
+
 ```python
 # GOOD: Low complexity, clear flow
 def process_order(order: Order) -> Result:
@@ -195,6 +211,7 @@ def process_order(order):
 ```
 
 ### Refactoring Triggers
+
 - Duplicate code (DRY violation)
 - Long methods (> 50 lines)
 - Large classes (> 300 lines)
@@ -206,16 +223,19 @@ def process_order(order):
 ## 3.6 Engineering Checklist
 
 ### Before Starting
+
 - [ ] Requirements documented
 - [ ] Design reviewed
 - [ ] Dependencies identified
 
 ### During Development
+
 - [ ] Tests written alongside code
 - [ ] Code follows style guide
 - [ ] Changes are incremental and reviewable
 
 ### Before Merging
+
 - [ ] All tests pass
 - [ ] Code review approved
 - [ ] Documentation updated

@@ -9,25 +9,21 @@ Tests cover:
 - Convenience functions
 """
 
-import asyncio
-import pytest
-from pathlib import Path
-from unittest.mock import patch, MagicMock, AsyncMock
-import tempfile
-import os
-
 import sys
+from pathlib import Path
+
+import pytest
 
 # Add the src directory to the path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
 from ai_collab_kb.loader import (
-    Layer,
-    LoadResult,
-    LoadingTrigger,
     KnowledgeLoader,
-    load_knowledge,
+    Layer,
+    LoadingTrigger,
+    LoadResult,
     load_core,
+    load_knowledge,
     search_knowledge,
 )
 
@@ -174,7 +170,7 @@ class TestKnowledgeLoader:
         """Default triggers should be properly defined."""
         triggers = KnowledgeLoader.DEFAULT_TRIGGERS
         assert len(triggers) == 8  # 6 original + python + quality
-        
+
         trigger_names = [t.name for t in triggers]
         assert "code" in trigger_names
         assert "architecture" in trigger_names
@@ -196,7 +192,7 @@ class TestKnowledgeLoader:
     async def test_load_core(self, loader):
         """load_core should return core content."""
         result = await loader.load_core(timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback"]
         assert result.duration_ms >= 0
@@ -205,7 +201,7 @@ class TestKnowledgeLoader:
     async def test_load_for_task_code(self, loader):
         """load_for_task should load relevant files for code tasks."""
         result = await loader.load_for_task("implement a feature", timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback"]
 
@@ -213,7 +209,7 @@ class TestKnowledgeLoader:
     async def test_load_for_task_documentation(self, loader):
         """load_for_task should load relevant files for documentation tasks."""
         result = await loader.load_for_task("write documentation", timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback"]
 
@@ -221,7 +217,7 @@ class TestKnowledgeLoader:
     async def test_load_with_specific_files(self, loader):
         """load should accept specific file list."""
         result = await loader.load(files=["index.md"], timeout_ms=5000)
-        
+
         assert result.content is not None
         assert "index.md" in result.files_loaded or result.status == "fallback"
 
@@ -229,7 +225,7 @@ class TestKnowledgeLoader:
     async def test_load_with_layer(self, loader):
         """load should accept layer parameter."""
         result = await loader.load(layer=Layer.L1_CORE, timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback"]
 
@@ -237,7 +233,7 @@ class TestKnowledgeLoader:
     async def test_load_guidelines(self, loader):
         """load_guidelines should load specific chapter."""
         result = await loader.load_guidelines("code_style", timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback", "error"]
 
@@ -245,7 +241,7 @@ class TestKnowledgeLoader:
     async def test_load_framework(self, loader):
         """load_framework should load framework content."""
         result = await loader.load_framework("autonomy", timeout_ms=5000)
-        
+
         assert result.content is not None
         assert result.status in ["success", "partial", "fallback", "error"]
 
@@ -253,7 +249,7 @@ class TestKnowledgeLoader:
     async def test_load_framework_not_found(self, loader):
         """load_framework should handle non-existent framework."""
         result = await loader.load_framework("nonexistent_framework", timeout_ms=5000)
-        
+
         assert result.status == "error"
         assert "not found" in result.content.lower() or len(result.errors) > 0
 
@@ -261,7 +257,7 @@ class TestKnowledgeLoader:
     async def test_search(self, loader):
         """search should find matching content."""
         results = await loader.search("principles", max_results=5, timeout_ms=5000)
-        
+
         assert isinstance(results, list)
         # Should find at least principles.md
         if len(results) > 0:
@@ -271,8 +267,10 @@ class TestKnowledgeLoader:
     @pytest.mark.asyncio
     async def test_search_no_results(self, loader):
         """search should return empty list for no matches."""
-        results = await loader.search("xyznonexistentquery123", max_results=5, timeout_ms=5000)
-        
+        results = await loader.search(
+            "xyznonexistentquery123", max_results=5, timeout_ms=5000
+        )
+
         assert isinstance(results, list)
         assert len(results) == 0
 
@@ -287,10 +285,10 @@ class TestKnowledgeLoader:
         """clear_cache should empty all caches."""
         # First load something to populate cache
         await loader.load_core(timeout_ms=5000)
-        
+
         # Clear cache
         loader.clear_cache()
-        
+
         assert loader._cache == {}
         assert loader._cache_hashes == {}
 
@@ -298,7 +296,7 @@ class TestKnowledgeLoader:
     async def test_get_cache_stats(self, loader):
         """get_cache_stats should return cache statistics."""
         stats = loader.get_cache_stats()
-        
+
         assert "cached_files" in stats
         assert "total_size" in stats
         assert isinstance(stats["cached_files"], int)
@@ -308,7 +306,7 @@ class TestKnowledgeLoader:
     async def test_load_result_tokens_estimate(self, loader):
         """Load result should include tokens estimate."""
         result = await loader.load_core(timeout_ms=5000)
-        
+
         # Tokens estimate should be positive for non-empty content
         if result.content and result.status == "success":
             assert result.tokens_estimate > 0
@@ -317,11 +315,11 @@ class TestKnowledgeLoader:
     async def test_load_timeout_protection(self, loader):
         """Load should complete within timeout."""
         import time
-        
+
         start = time.monotonic()
         result = await loader.load_core(timeout_ms=100)  # Very short timeout
         elapsed = (time.monotonic() - start) * 1000
-        
+
         # Should complete within reasonable time (2x timeout as buffer)
         assert elapsed < 500  # 500ms max
 
@@ -333,24 +331,24 @@ class TestConvenienceFunctions:
     async def test_load_knowledge(self):
         """load_knowledge should return content."""
         result = await load_knowledge(task="test task", timeout_ms=5000)
-        
+
         assert result is not None
-        assert hasattr(result, 'content')
-        assert hasattr(result, 'status')
+        assert hasattr(result, "content")
+        assert hasattr(result, "status")
 
     @pytest.mark.asyncio
     async def test_load_core_function(self):
         """load_core function should return core content."""
         result = await load_core(timeout_ms=5000)
-        
+
         assert result is not None
-        assert hasattr(result, 'content')
+        assert hasattr(result, "content")
 
     @pytest.mark.asyncio
     async def test_search_knowledge(self):
         """search_knowledge should return results."""
         results = await search_knowledge("principles", max_results=5)
-        
+
         assert isinstance(results, list)
 
 
@@ -367,17 +365,17 @@ class TestLoadResultIntegration:
     async def test_load_result_complete_structure(self, loader):
         """LoadResult should have complete structure after load."""
         result = await loader.load_core(timeout_ms=5000)
-        
+
         # Check all attributes exist
-        assert hasattr(result, 'content')
-        assert hasattr(result, 'layers_loaded')
-        assert hasattr(result, 'files_loaded')
-        assert hasattr(result, 'tokens_estimate')
-        assert hasattr(result, 'duration_ms')
-        assert hasattr(result, 'complete')
-        assert hasattr(result, 'status')
-        assert hasattr(result, 'errors')
-        
+        assert hasattr(result, "content")
+        assert hasattr(result, "layers_loaded")
+        assert hasattr(result, "files_loaded")
+        assert hasattr(result, "tokens_estimate")
+        assert hasattr(result, "duration_ms")
+        assert hasattr(result, "complete")
+        assert hasattr(result, "status")
+        assert hasattr(result, "errors")
+
         # Check types
         assert isinstance(result.content, str)
         assert isinstance(result.layers_loaded, list)
@@ -392,14 +390,14 @@ class TestLoadResultIntegration:
     async def test_load_result_to_dict_serializable(self, loader):
         """LoadResult.to_dict() should be JSON serializable."""
         import json
-        
+
         result = await loader.load_core(timeout_ms=5000)
         d = result.to_dict()
-        
+
         # Should not raise
         json_str = json.dumps(d)
         assert isinstance(json_str, str)
-        
+
         # Should round-trip
         parsed = json.loads(json_str)
         assert parsed["status"] == result.status

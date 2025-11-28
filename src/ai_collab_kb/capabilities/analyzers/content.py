@@ -9,11 +9,11 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
+import logging
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Optional, Any
-import re
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -40,7 +40,7 @@ class ContentMetrics:
 
     # Metadata
     file_path: str = ""
-    sections: List[str] = field(default_factory=list)
+    sections: list[str] = field(default_factory=list)
 
     @property
     def efficiency_score(self) -> int:
@@ -56,7 +56,7 @@ class ContentMetrics:
         # Cap at 100
         return min(100, int(ratio * 100))
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "file_path": self.file_path,
@@ -167,8 +167,8 @@ class ContentAnalyzer:
         )
 
     def analyze_directory(
-        self, dir_path: Path, extensions: Optional[List[str]] = None
-    ) -> Dict[str, ContentMetrics]:
+        self, dir_path: Path, extensions: list[str] | None = None
+    ) -> dict[str, ContentMetrics]:
         """
         Analyze all matching files in a directory.
 
@@ -195,7 +195,7 @@ class ContentAnalyzer:
 
         return results
 
-    def get_summary(self, metrics_list: List[ContentMetrics]) -> Dict[str, Any]:
+    def get_summary(self, metrics_list: list[ContentMetrics]) -> dict[str, Any]:
         """
         Get summary statistics for multiple files.
 
@@ -235,7 +235,7 @@ class ContentAnalyzer:
         # Estimate tables (at least 3 lines per table)
         return len(table_lines) // 3
 
-    def _extract_sections(self, content: str) -> List[str]:
+    def _extract_sections(self, content: str) -> list[str]:
         """Extract section headers from content."""
         sections = []
 
@@ -259,7 +259,7 @@ class ContentAnalyzer:
         """
         return int(len(text) * self.TOKENS_PER_CHAR)
 
-    def suggest_optimizations(self, metrics: ContentMetrics) -> List[str]:
+    def suggest_optimizations(self, metrics: ContentMetrics) -> list[str]:
         """
         Suggest optimizations based on metrics.
 

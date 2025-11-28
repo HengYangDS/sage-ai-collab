@@ -8,6 +8,7 @@
 ## 5.1 Type Hints
 
 ### Basic Type Hints
+
 ```python
 from typing import Optional, List, Dict, Callable, TypeVar
 
@@ -23,6 +24,7 @@ def find_user(user_id: str) -> Optional[User]:
 ```
 
 ### Advanced Type Hints
+
 ```python
 from typing import TypeVar, Generic, Protocol
 
@@ -42,6 +44,7 @@ def sort_items(items: List[Comparable]) -> List[Comparable]:
 ```
 
 ### Type Hint Best Practices
+
 - ✅ Use type hints for all public APIs
 - ✅ Use `Optional[X]` instead of `X | None` for Python 3.9 compatibility
 - ✅ Use `TypeVar` for generic functions
@@ -52,6 +55,7 @@ def sort_items(items: List[Comparable]) -> List[Comparable]:
 ## 5.2 Docstrings (Google Style)
 
 ### Function Docstring
+
 ```python
 def calculate_total(
     items: List[Item],
@@ -81,6 +85,7 @@ def calculate_total(
 ```
 
 ### Class Docstring
+
 ```python
 class UserService:
     """Service for user management operations.
@@ -103,6 +108,7 @@ class UserService:
 ## 5.3 Import Organization
 
 ### Import Order
+
 ```python
 # 1. Future imports (if needed)
 from __future__ import annotations
@@ -129,6 +135,7 @@ from ..shared import constants
 ```
 
 ### Import Anti-Patterns
+
 ```python
 # BAD: Wildcard imports
 from mymodule import *
@@ -148,6 +155,7 @@ from mymodule import specific_function, SpecificClass
 ## 5.4 Decorator Patterns
 
 ### Basic Decorator with functools.wraps
+
 ```python
 import functools
 from typing import Callable, TypeVar, ParamSpec
@@ -171,6 +179,7 @@ def process_data(data: str) -> str:
 ```
 
 ### Decorator with Arguments
+
 ```python
 def retry(max_attempts: int = 3, delay: float = 1.0):
     """Decorator that retries failed function calls."""
@@ -194,6 +203,7 @@ def fetch_data(url: str) -> dict:
 ```
 
 ### Registry Pattern
+
 ```python
 from typing import Dict, Type, TypeVar
 
@@ -230,6 +240,7 @@ class XmlHandler:
 ## 5.5 Context Managers
 
 ### Custom Context Manager
+
 ```python
 from contextlib import contextmanager
 from typing import Generator
@@ -250,6 +261,7 @@ with timed_operation("data processing"):
 ```
 
 ### Class-Based Context Manager
+
 ```python
 class DatabaseConnection:
     """Database connection with automatic cleanup."""
@@ -273,6 +285,7 @@ class DatabaseConnection:
 ## 5.6 Async Patterns
 
 ### Async Best Practices
+
 ```python
 import asyncio
 from typing import List

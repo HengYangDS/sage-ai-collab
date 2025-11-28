@@ -23,7 +23,8 @@
 
 ## 1. Executive Summary
 
-This framework defines a **6-level autonomy spectrum** for AI assistants, ranging from minimal guidance (Level 1, 0-20%) to full autonomy (Level 6, 95-100%).
+This framework defines a **6-level autonomy spectrum** for AI assistants, ranging from minimal guidance (Level 1, 0-20%)
+to full autonomy (Level 6, 95-100%).
 
 **Key Principle**: Autonomy level should adapt dynamically based on context, risk, and collaboration maturity.
 
@@ -37,13 +38,14 @@ This framework defines a **6-level autonomy spectrum** for AI assistants, rangin
 
 **Decision Authority**: 0-20%
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Execute only explicitly instructed tasks; ask approval before every significant decision; report after each small step; never make architectural changes |
-| **When to Use** | Initial onboarding; critical production systems (first time); unfamiliar domains; high-risk operations |
-| **Report Frequency** | After each step |
+| Aspect               | Description                                                                                                                                              |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Execute only explicitly instructed tasks; ask approval before every significant decision; report after each small step; never make architectural changes |
+| **When to Use**      | Initial onboarding; critical production systems (first time); unfamiliar domains; high-risk operations                                                   |
+| **Report Frequency** | After each step                                                                                                                                          |
 
 **Example**:
+
 ```
 User: "Update this configuration file"
 AI: "I plan to change line 23. Should I proceed?"
@@ -57,13 +59,14 @@ AI: "Done. What's next?"
 
 **Decision Authority**: 20-40%
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Execute well-defined tasks independently; ask approval on implementation choices; report after each task; follow strict guidelines |
-| **When to Use** | New project phases; after major architectural changes; unfamiliar codebase; learning user preferences |
-| **Report Frequency** | After each task |
+| Aspect               | Description                                                                                                                        |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Execute well-defined tasks independently; ask approval on implementation choices; report after each task; follow strict guidelines |
+| **When to Use**      | New project phases; after major architectural changes; unfamiliar codebase; learning user preferences                              |
+| **Report Frequency** | After each task                                                                                                                    |
 
 **Example**:
+
 ```
 User: "Implement validation for user input"
 AI: [Implements validation logic]
@@ -76,13 +79,14 @@ AI: "Completed validation with 3 checks. Should I add more?"
 
 **Decision Authority**: 40-60%
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Complete entire tasks without asking; make implementation decisions within guidelines; report after logical units; ask only for architectural/breaking changes |
-| **When to Use** | Established collaboration patterns; routine development; well-documented systems; clear guidelines exist |
-| **Report Frequency** | After feature completion |
+| Aspect               | Description                                                                                                                                                    |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Complete entire tasks without asking; make implementation decisions within guidelines; report after logical units; ask only for architectural/breaking changes |
+| **When to Use**      | Established collaboration patterns; routine development; well-documented systems; clear guidelines exist                                                       |
+| **Report Frequency** | After feature completion                                                                                                                                       |
 
 **Example**:
+
 ```
 User: "Implement user authentication"
 AI: [Implements auth with JWT, password hashing, sessions]
@@ -97,13 +101,14 @@ AI: "Authentication complete. Added 5 endpoints, 12 tests. Documentation updated
 
 **Current Default Level**
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Complete multi-task initiatives independently; proactively identify and report issues; make architectural decisions within patterns; self-validate with comprehensive checks; report at milestone completion |
-| **When to Use** | Mature collaboration (3+ weeks); well-established guidelines; high trust relationship; iterative improvement culture |
-| **Report Frequency** | At milestones (Phase/Week level) |
+| Aspect               | Description                                                                                                                                                                                                  |
+|----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Complete multi-task initiatives independently; proactively identify and report issues; make architectural decisions within patterns; self-validate with comprehensive checks; report at milestone completion |
+| **When to Use**      | Mature collaboration (3+ weeks); well-established guidelines; high trust relationship; iterative improvement culture                                                                                         |
+| **Report Frequency** | At milestones (Phase/Week level)                                                                                                                                                                             |
 
 **Key Behaviors**:
+
 - ✅ Complete multi-task initiatives independently
 - ✅ Proactively identify issues before user notices
 - ✅ Make architectural decisions within established patterns
@@ -112,6 +117,7 @@ AI: "Authentication complete. Added 5 endpoints, 12 tests. Documentation updated
 - ⚠️ Ask approval for: Breaking changes, file deletion, major shifts
 
 **Example**:
+
 ```
 User: "Reorganize the history directory"
 AI: [Analyzes 71 files, creates plan]
@@ -128,13 +134,14 @@ AI: "Reorganization complete. 100% compliant. 3 issues found.
 
 **Decision Authority**: 80-95%
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Make strategic decisions independently; refactor architecture proactively; initiate features based on patterns; auto-merge approved patterns |
-| **When to Use** | Very mature collaboration (6+ months); extremely clear guidelines; trusted production systems |
-| **Report Frequency** | At Phase completion |
+| Aspect               | Description                                                                                                                                  |
+|----------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Make strategic decisions independently; refactor architecture proactively; initiate features based on patterns; auto-merge approved patterns |
+| **When to Use**      | Very mature collaboration (6+ months); extremely clear guidelines; trusted production systems                                                |
+| **Report Frequency** | At Phase completion                                                                                                                          |
 
 **Example**:
+
 ```
 User: "Continue advancing project"
 AI: [Completes entire Phase over 3-4 weeks]
@@ -152,33 +159,34 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 
 **Rarely Appropriate**
 
-| Aspect | Description |
-|--------|-------------|
-| **Characteristics** | Make all decisions independently; deploy to production automatically; handle incidents without human involvement; quarterly reports only |
-| **When to Use** | ⚠️ Rarely recommended; fully automated systems; non-critical environments; comprehensive rollback required |
-| **Report Frequency** | Quarterly summaries |
+| Aspect               | Description                                                                                                                              |
+|----------------------|------------------------------------------------------------------------------------------------------------------------------------------|
+| **Characteristics**  | Make all decisions independently; deploy to production automatically; handle incidents without human involvement; quarterly reports only |
+| **When to Use**      | ⚠️ Rarely recommended; fully automated systems; non-critical environments; comprehensive rollback required                               |
+| **Report Frequency** | Quarterly summaries                                                                                                                      |
 
 ---
 
 ## 3. Decision Matrix
 
-| Scenario | Recommended Level | Rationale |
-|----------|-------------------|-----------|
-| **New project start** | Level 2 (Low) | Learn codebase and patterns |
-| **Routine development** | Level 3 (Medium) | Execute familiar tasks |
-| **Mature collaboration** | Level 4 (Medium-High) ⭐ | Proactive partnership |
-| **Critical systems** | Level 2-3 | Safety over speed |
-| **Experimental features** | Level 4-5 | Innovation encouraged |
-| **Production deployment** | Level 2-3 | Human oversight critical |
-| **Documentation work** | Level 4 | Low risk, high value |
-| **Security changes** | Level 2 | Maximum oversight |
-| **Refactoring** | Level 3-4 | Balanced approach |
+| Scenario                  | Recommended Level       | Rationale                   |
+|---------------------------|-------------------------|-----------------------------|
+| **New project start**     | Level 2 (Low)           | Learn codebase and patterns |
+| **Routine development**   | Level 3 (Medium)        | Execute familiar tasks      |
+| **Mature collaboration**  | Level 4 (Medium-High) ⭐ | Proactive partnership       |
+| **Critical systems**      | Level 2-3               | Safety over speed           |
+| **Experimental features** | Level 4-5               | Innovation encouraged       |
+| **Production deployment** | Level 2-3               | Human oversight critical    |
+| **Documentation work**    | Level 4                 | Low risk, high value        |
+| **Security changes**      | Level 2                 | Maximum oversight           |
+| **Refactoring**           | Level 3-4               | Balanced approach           |
 
 ---
 
 ## 4. Dynamic Autonomy Adjustment
 
 ### Increase Autonomy When:
+
 - ✅ Clear guidelines exist
 - ✅ Established patterns proven successful
 - ✅ User feedback is consistently positive
@@ -187,6 +195,7 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 - ✅ Strong test coverage exists
 
 ### Decrease Autonomy When:
+
 - ⚠️ Entering new domain/technology
 - ⚠️ User expresses concerns
 - ⚠️ High-risk operations (production, security, data)
@@ -196,22 +205,23 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 
 ### Calibration Signals
 
-| User Says | Interpretation | Adjust To |
-|-----------|----------------|-----------|
+| User Says                    | Interpretation    | Adjust To |
+|------------------------------|-------------------|-----------|
 | "Let me see first" / "先让我看看" | Decrease autonomy | Level 2-3 |
-| "You decide" / "你自主决策" | Increase autonomy | Level 4-5 |
-| "Don't stop" / "不要停下来" | Batch execution | Level 4 |
-| "Report after completion" | Incremental mode | Level 3 |
-| "Accelerate" / "加速" | MVP mode | Level 4 |
-| "Production-ready" / "生产就绪" | Quality priority | Level 3 |
-| "Batch execute" / "批量执行" | Continuous mode | Level 4-5 |
-| "Full autonomy" / "最高自主权" | Maximum autonomy | Level 5 |
+| "You decide" / "你自主决策"       | Increase autonomy | Level 4-5 |
+| "Don't stop" / "不要停下来"       | Batch execution   | Level 4   |
+| "Report after completion"    | Incremental mode  | Level 3   |
+| "Accelerate" / "加速"          | MVP mode          | Level 4   |
+| "Production-ready" / "生产就绪"  | Quality priority  | Level 3   |
+| "Batch execute" / "批量执行"     | Continuous mode   | Level 4-5 |
+| "Full autonomy" / "最高自主权"    | Maximum autonomy  | Level 5   |
 
 ---
 
 ## 5. Level 4 Boundaries
 
 ### Autonomous (No Approval Needed)
+
 - ✅ Documentation organization and reorganization
 - ✅ File moves (not deletion)
 - ✅ Creating new directories following structure spec
@@ -224,6 +234,7 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 - ✅ Code style fixes and formatting
 
 ### Requires Approval
+
 - ⚠️ File deletion (always ask first)
 - ⚠️ Breaking API changes
 - ⚠️ Major architectural shifts
@@ -234,6 +245,7 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 - ⚠️ External service integrations
 
 ### Never Autonomous
+
 - ❌ Deleting user data
 - ❌ Bypassing security controls
 - ❌ Ignoring test failures to proceed
@@ -247,18 +259,21 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 ## 6. Success Metrics
 
 ### Short-term (1 month)
+
 - ✅ Every delivery includes self-check results
 - ✅ 10+ issues proactively identified and reported
 - ✅ Zero constraint violations (caught by AI before user notices)
 - ✅ 95%+ task completion rate without rework
 
 ### Medium-term (3 months)
+
 - ✅ Automated health checks trigger successfully
 - ✅ 5+ guidelines updates from experience extraction
 - ✅ Documentation health score consistently >90/100
 - ✅ User rarely needs to provide detailed instructions
 
 ### Long-term (6 months)
+
 - ✅ User rarely needs to remind about organization
 - ✅ Issues prevented before they accumulate
 - ✅ AI operates as true project partner, not task executor
@@ -335,26 +350,29 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 **Answer 3 Questions**:
 
 ### Q1: How mature is the collaboration?
-| Duration | Recommended |
-|----------|-------------|
-| New (0-2 weeks) | Level 2-3 |
-| Established (3-8 weeks) | Level 3-4 |
-| Mature (2+ months) | Level 4-5 |
+
+| Duration                | Recommended |
+|-------------------------|-------------|
+| New (0-2 weeks)         | Level 2-3   |
+| Established (3-8 weeks) | Level 3-4   |
+| Mature (2+ months)      | Level 4-5   |
 
 ### Q2: How clear are the guidelines?
-| Documentation State | Recommended |
-|---------------------|-------------|
-| Minimal documentation | Level 2 |
-| Basic guidelines | Level 3 |
-| Comprehensive guidelines | Level 4 |
-| Living guideline system | Level 4-5 |
+
+| Documentation State      | Recommended |
+|--------------------------|-------------|
+| Minimal documentation    | Level 2     |
+| Basic guidelines         | Level 3     |
+| Comprehensive guidelines | Level 4     |
+| Living guideline system  | Level 4-5   |
 
 ### Q3: What's the risk level?
-| Risk Type | Recommended |
-|-----------|-------------|
-| High (production, security, data) | Level 2-3 |
-| Medium (features, refactoring) | Level 3-4 |
-| Low (documentation, tests) | Level 4-5 |
+
+| Risk Type                         | Recommended |
+|-----------------------------------|-------------|
+| High (production, security, data) | Level 2-3   |
+| Medium (features, refactoring)    | Level 3-4   |
+| Low (documentation, tests)        | Level 4-5   |
 
 **Formula**: Recommended Level = Average of above answers
 
@@ -384,14 +402,14 @@ AI: "Phase 13 complete. 18,000 lines delivered.
 
 ## Summary
 
-| Level | Name | Authority | Report Frequency | Use Case |
-|-------|------|-----------|------------------|----------|
-| **L1** | Minimal | 0-20% | Each step | Onboarding, critical systems |
-| **L2** | Low | 20-40% | Each task | New phases, learning |
-| **L3** | Medium | 40-60% | Each feature | Routine development |
-| **L4** | Medium-High ⭐ | 60-80% | Milestones | Mature collaboration |
-| **L5** | High | 80-95% | Phase completion | Strategic partnership |
-| **L6** | Full | 95-100% | Quarterly | Autonomous agents |
+| Level  | Name          | Authority | Report Frequency | Use Case                     |
+|--------|---------------|-----------|------------------|------------------------------|
+| **L1** | Minimal       | 0-20%     | Each step        | Onboarding, critical systems |
+| **L2** | Low           | 20-40%    | Each task        | New phases, learning         |
+| **L3** | Medium        | 40-60%    | Each feature     | Routine development          |
+| **L4** | Medium-High ⭐ | 60-80%    | Milestones       | Mature collaboration         |
+| **L5** | High          | 80-95%    | Phase completion | Strategic partnership        |
+| **L6** | Full          | 95-100%   | Quarterly        | Autonomous agents            |
 
 **Golden Rule**: Start conservative (L2-3), increase gradually based on demonstrated success.
 

@@ -27,11 +27,11 @@ Experts: 24 Level 5
 
 from .loader import (
     KnowledgeLoader,
-    LoadResult,
     Layer,
     LoadingTrigger,
-    load_knowledge,
+    LoadResult,
     load_core,
+    load_knowledge,
     search_knowledge,
 )
 

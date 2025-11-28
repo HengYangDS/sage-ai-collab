@@ -43,21 +43,20 @@ Version: 2.0.0
 """
 
 from .base import (
-    PluginMetadata,
-    PluginBase,
-    LoaderPlugin,
+    AVAILABLE_HOOKS,
+    HOOK_TYPES,
     AnalyzerPlugin,
     FormatterPlugin,
+    LoaderPlugin,
+    PluginBase,
+    PluginMetadata,
     SearchPlugin,
-    HOOK_TYPES,
-    AVAILABLE_HOOKS,
 )
-
 from .registry import (
     PluginRegistry,
+    get_hooks,
     get_plugin_registry,
     register_plugin,
-    get_hooks,
 )
 
 __all__ = [

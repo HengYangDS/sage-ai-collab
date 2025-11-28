@@ -9,11 +9,11 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
+import logging
+import re
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import List, Dict, Optional, Any
-import re
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -32,8 +32,8 @@ class QualityScore:
     # Metadata
     file_path: str = ""
     analysis_type: str = ""  # "code" or "documentation"
-    issues: List[str] = field(default_factory=list)
-    suggestions: List[str] = field(default_factory=list)
+    issues: list[str] = field(default_factory=list)
+    suggestions: list[str] = field(default_factory=list)
 
     @property
     def overall(self) -> float:
@@ -63,7 +63,7 @@ class QualityScore:
         else:
             return "F"
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "file_path": self.file_path,
@@ -124,8 +124,8 @@ class QualityAnalyzer:
             )
 
     def analyze_directory(
-        self, dir_path: Path, extensions: Optional[List[str]] = None
-    ) -> List[QualityScore]:
+        self, dir_path: Path, extensions: list[str] | None = None
+    ) -> list[QualityScore]:
         """
         Analyze all files in a directory.
 
@@ -328,7 +328,7 @@ class QualityAnalyzer:
             suggestions=suggestions,
         )
 
-    def _load_code_patterns(self) -> Dict[str, Any]:
+    def _load_code_patterns(self) -> dict[str, Any]:
         """Load code analysis patterns."""
         return {
             "anti_patterns": [
@@ -343,7 +343,7 @@ class QualityAnalyzer:
             ],
         }
 
-    def _load_doc_patterns(self) -> Dict[str, Any]:
+    def _load_doc_patterns(self) -> dict[str, Any]:
         """Load documentation analysis patterns."""
         return {
             "required_sections": [

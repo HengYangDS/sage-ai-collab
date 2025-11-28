@@ -7,7 +7,8 @@
 
 ## Overview
 
-The Timeout Hierarchy ensures the system always responds within acceptable time limits by implementing cascading fallbacks. The principle: **Always return something, never hang.**
+The Timeout Hierarchy ensures the system always responds within acceptable time limits by implementing cascading
+fallbacks. The principle: **Always return something, never hang.**
 
 ---
 
@@ -32,6 +33,7 @@ Hard Fallback: Embedded minimal response
 ## Level Definitions
 
 ### Level 0: Cache (100ms)
+
 ```
 Source: In-memory cache
 Timeout: 100ms
@@ -48,6 +50,7 @@ Response:
 ```
 
 ### Level 1: File (500ms)
+
 ```
 Source: Local file system
 Timeout: 500ms
@@ -65,6 +68,7 @@ Response:
 ```
 
 ### Level 2: Layer (2s)
+
 ```
 Source: Knowledge layer loading
 Timeout: 2s
@@ -81,6 +85,7 @@ Response:
 ```
 
 ### Level 3: Full (5s)
+
 ```
 Source: Complete knowledge base
 Timeout: 5s
@@ -97,6 +102,7 @@ Response:
 ```
 
 ### Level 4: Emergency (10s)
+
 ```
 Source: Any available content
 Timeout: 10s
@@ -113,6 +119,7 @@ Response:
 ```
 
 ### Hard Fallback: Embedded
+
 ```
 Source: Compiled-in minimal content
 Timeout: None (immediate)
@@ -131,6 +138,7 @@ Always available, never fails.
 ## Implementation Pattern
 
 ### Python Implementation
+
 ```python
 from typing import Optional, TypeVar, Callable
 import asyncio
@@ -187,6 +195,7 @@ async def load_with_hierarchy(query: str) -> str:
 ## Timeout Configuration
 
 ### Default Timeouts (aikb.yaml)
+
 ```yaml
 timeouts:
   cache_ms: 100
@@ -201,6 +210,7 @@ timeouts:
 ```
 
 ### Dynamic Adjustment
+
 ```python
 def adjust_timeout(base_ms: int, context: Context) -> int:
     """Adjust timeout based on context."""
@@ -220,15 +230,17 @@ def adjust_timeout(base_ms: int, context: Context) -> int:
 ## Fallback Content Strategy
 
 ### Graceful Degradation
-| Level Failed | Response Strategy |
-|--------------|-------------------|
-| Cache miss | Load from file |
-| File timeout | Return cached subset |
-| Layer timeout | Return core only |
-| Full timeout | Return index + error |
-| Emergency timeout | Embedded fallback |
+
+| Level Failed      | Response Strategy    |
+|-------------------|----------------------|
+| Cache miss        | Load from file       |
+| File timeout      | Return cached subset |
+| Layer timeout     | Return core only     |
+| Full timeout      | Return index + error |
+| Emergency timeout | Embedded fallback    |
 
 ### Partial Response Format
+
 ```json
 {
   "content": "... partial content ...",
@@ -245,6 +257,7 @@ def adjust_timeout(base_ms: int, context: Context) -> int:
 ## Monitoring and Alerting
 
 ### Metrics to Track
+
 ```
 - timeout_count_by_level
 - fallback_trigger_count
@@ -254,18 +267,20 @@ def adjust_timeout(base_ms: int, context: Context) -> int:
 ```
 
 ### Alert Thresholds
-| Metric | Warning | Critical |
-|--------|---------|----------|
-| Level 2+ timeouts | >5% | >15% |
-| Emergency fallbacks | >1% | >5% |
-| Cache hit rate | <80% | <60% |
-| Avg response time | >1s | >3s |
+
+| Metric              | Warning | Critical |
+|---------------------|---------|----------|
+| Level 2+ timeouts   | >5%     | >15%     |
+| Emergency fallbacks | >1%     | >5%      |
+| Cache hit rate      | <80%    | <60%     |
+| Avg response time   | >1s     | >3s      |
 
 ---
 
 ## Best Practices
 
 ### Do
+
 - ✅ Always have a fallback at each level
 - ✅ Log timeout events for analysis
 - ✅ Cache aggressively for hot paths
@@ -273,6 +288,7 @@ def adjust_timeout(base_ms: int, context: Context) -> int:
 - ✅ Include metadata about response completeness
 
 ### Don't
+
 - ❌ Let any operation run unbounded
 - ❌ Fail silently on timeout
 - ❌ Return empty response without explanation

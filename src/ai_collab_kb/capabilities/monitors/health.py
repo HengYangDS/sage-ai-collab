@@ -11,13 +11,14 @@ Version: 2.0.0
 """
 
 import asyncio
+import logging
 import time
+from collections.abc import Callable
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Callable, Awaitable
-import logging
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -40,9 +41,9 @@ class HealthCheck:
     message: str = ""
     duration_ms: float = 0.0
     timestamp: datetime = field(default_factory=datetime.now)
-    details: Dict[str, Any] = field(default_factory=dict)
+    details: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "name": self.name,
@@ -59,11 +60,11 @@ class HealthReport:
     """Comprehensive health report."""
 
     overall_status: HealthStatus
-    checks: List[HealthCheck]
+    checks: list[HealthCheck]
     timestamp: datetime = field(default_factory=datetime.now)
     duration_ms: float = 0.0
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "overall_status": self.overall_status.value,
@@ -98,7 +99,7 @@ class HealthMonitor:
 
     def __init__(
         self,
-        kb_path: Optional[Path] = None,
+        kb_path: Path | None = None,
         check_interval_s: float = 60.0,
         history_size: int = 100,
     ):
@@ -114,10 +115,10 @@ class HealthMonitor:
         self.check_interval_s = check_interval_s
         self.history_size = history_size
 
-        self._history: List[HealthReport] = []
-        self._alert_callbacks: List[Callable[[HealthReport], None]] = []
+        self._history: list[HealthReport] = []
+        self._alert_callbacks: list[Callable[[HealthReport], None]] = []
         self._running = False
-        self._task: Optional[asyncio.Task] = None
+        self._task: asyncio.Task | None = None
 
     def register_alert_callback(
         self,
@@ -203,7 +204,7 @@ class HealthMonitor:
             # Try to parse YAML
             import yaml
 
-            with open(config_path, "r", encoding="utf-8") as f:
+            with open(config_path, encoding="utf-8") as f:
                 config = yaml.safe_load(f)
 
             # Check required keys
@@ -375,11 +376,11 @@ class HealthMonitor:
             self._task = None
         logger.info("Health monitoring stopped")
 
-    def get_history(self, limit: int = 10) -> List[HealthReport]:
+    def get_history(self, limit: int = 10) -> list[HealthReport]:
         """Get recent health history."""
         return self._history[-limit:]
 
-    def get_status_summary(self) -> Dict[str, Any]:
+    def get_status_summary(self) -> dict[str, Any]:
         """Get the current status summary."""
         if not self._history:
             return {
@@ -397,6 +398,6 @@ class HealthMonitor:
 
 
 # Convenience function
-def get_health_monitor(kb_path: Optional[Path] = None) -> HealthMonitor:
+def get_health_monitor(kb_path: Path | None = None) -> HealthMonitor:
     """Get a health monitor instance."""
     return HealthMonitor(kb_path=kb_path)

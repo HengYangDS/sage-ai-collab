@@ -19,14 +19,14 @@ Version: 3.0.0
 """
 
 from .timeout_manager import (
-    TimeoutLevel,
-    TimeoutConfig,
-    TimeoutResult,
-    CircuitState,
-    CircuitBreakerConfig,
-    CircuitBreaker,
-    TimeoutManager,
     EMBEDDED_CORE,
+    CircuitBreaker,
+    CircuitBreakerConfig,
+    CircuitState,
+    TimeoutConfig,
+    TimeoutLevel,
+    TimeoutManager,
+    TimeoutResult,
     get_default_timeout_manager,
     get_timeout_manager,
 )

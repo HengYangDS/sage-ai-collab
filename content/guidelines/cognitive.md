@@ -20,7 +20,8 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 8. [Task Decomposition](#78-task-decomposition)
 9. [Learning & Adaptation](#79-learning--adaptation)
 
-**Complete Framework**: See [Cognitive Enhancement Framework](../03_frameworks/cognitive/expert_committee.md) for full details.
+**Complete Framework**: See [Cognitive Enhancement Framework](../03_frameworks/cognitive/expert_committee.md) for full
+details.
 
 ---
 
@@ -29,12 +30,14 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 **Principle**: Show reasoning process, not just final answer.
 
 ### When to Use
+
 - Architecture decisions
 - Breaking changes
 - Trade-off decisions
 - Novel problems without precedent
 
 ### Structure
+
 ```markdown
 ## Problem Analysis
 - What: [Problem description]
@@ -61,10 +64,11 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 ```
 
 ### Integration with Autonomy
-| Level | Chain-of-Thought Display |
-|-------|--------------------------|
-| L2-L3 | Show all reasoning |
-| L4 | Show key decisions only |
+
+| Level | Chain-of-Thought Display     |
+|-------|------------------------------|
+| L2-L3 | Show all reasoning           |
+| L4    | Show key decisions only      |
 | L5-L6 | Show only for novel problems |
 
 ---
@@ -74,6 +78,7 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 **Principle**: Think → Decide → Observe → Iterate
 
 ### Cycle Structure
+
 ```
 ┌─────────────────────────────────────┐
 │ 1. THINK                            │
@@ -104,6 +109,7 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 ```
 
 ### Documentation Template
+
 ```markdown
 ## Iteration [N]
 
@@ -124,10 +130,11 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 ```
 
 ### Integration with Autonomy
-| Level | Iteration Reporting |
-|-------|---------------------|
-| L2-L3 | Report each cycle |
-| L4 | Report milestones |
+
+| Level | Iteration Reporting       |
+|-------|---------------------------|
+| L2-L3 | Report each cycle         |
+| L4    | Report milestones         |
 | L5-L6 | Report completion summary |
 
 ---
@@ -139,35 +146,41 @@ This chapter covers 9 cognitive dimensions for enhanced AI collaboration:
 ### Core 10 Quality Angles
 
 #### Functional Quality (4)
-| Angle | Definition | Key Questions |
-|-------|------------|---------------|
-| **Correctness** | Solves problem accurately | Edge cases handled? Production-ready? |
-| **Completeness** | All requirements met | Docs complete? Tests sufficient? |
-| **Safety** | Secure and protected | Input validated? Vulnerabilities? |
-| **Effectiveness** | Delivers business value | Goal achieved? User problem solved? |
+
+| Angle             | Definition                | Key Questions                         |
+|-------------------|---------------------------|---------------------------------------|
+| **Correctness**   | Solves problem accurately | Edge cases handled? Production-ready? |
+| **Completeness**  | All requirements met      | Docs complete? Tests sufficient?      |
+| **Safety**        | Secure and protected      | Input validated? Vulnerabilities?     |
+| **Effectiveness** | Delivers business value   | Goal achieved? User problem solved?   |
 
 #### Architectural Quality (3)
-| Angle | Definition | Key Questions |
-|-------|------------|---------------|
-| **Clarity** | Understandable code | Readable? Well-named? Maintainable? |
-| **Efficiency** | Good performance | Fast enough? Resources reasonable? |
-| **Reliability** | Stable operation | Fault-tolerant? Graceful degradation? |
+
+| Angle           | Definition          | Key Questions                         |
+|-----------------|---------------------|---------------------------------------|
+| **Clarity**     | Understandable code | Readable? Well-named? Maintainable?   |
+| **Efficiency**  | Good performance    | Fast enough? Resources reasonable?    |
+| **Reliability** | Stable operation    | Fault-tolerant? Graceful degradation? |
 
 #### Evolutionary Quality (3)
-| Angle | Definition | Key Questions |
-|-------|------------|---------------|
-| **Testability** | Easy to test | Mockable? Isolated? Coverage possible? |
-| **Observability** | Easy to monitor | Logging? Metrics? Debuggable? |
-| **Adaptability** | Easy to change | Extensible? Configurable? Migratable? |
+
+| Angle             | Definition      | Key Questions                          |
+|-------------------|-----------------|----------------------------------------|
+| **Testability**   | Easy to test    | Mockable? Isolated? Coverage possible? |
+| **Observability** | Easy to monitor | Logging? Metrics? Debuggable?          |
+| **Adaptability**  | Easy to change  | Extensible? Configurable? Migratable?  |
 
 ### Extended Angles (15+)
+
 Activate for specific scenarios:
+
 - **User Experience**: Usability, Accessibility, Responsiveness, Aesthetics
 - **Technical Depth**: Scalability, Performance, Portability, Interoperability, Resilience
 - **Maintenance**: Maintainability, Reproducibility, Upgradability
 - **Compliance**: Auditability, Compliance, Privacy
 
 ### Quick Critique Template
+
 ```markdown
 ## Quality Critique: [Feature/Component]
 
@@ -194,15 +207,16 @@ Activate for specific scenarios:
 
 ### The 5 Critical Questions
 
-| # | Question | Purpose | Action |
-|---|----------|---------|--------|
-| 1 | **What am I assuming?** | Surface hidden assumptions | Challenge, validate |
-| 2 | **What could go wrong?** | Identify failure modes | Plan mitigation |
-| 3 | **Is there a simpler way?** | Avoid over-engineering | Apply KISS |
-| 4 | **What will future maintainers need?** | Ensure sustainability | Document decisions |
-| 5 | **How does this fit the bigger picture?** | System coherence | Align with 信达雅 |
+| # | Question                                  | Purpose                    | Action              |
+|---|-------------------------------------------|----------------------------|---------------------|
+| 1 | **What am I assuming?**                   | Surface hidden assumptions | Challenge, validate |
+| 2 | **What could go wrong?**                  | Identify failure modes     | Plan mitigation     |
+| 3 | **Is there a simpler way?**               | Avoid over-engineering     | Apply KISS          |
+| 4 | **What will future maintainers need?**    | Ensure sustainability      | Document decisions  |
+| 5 | **How does this fit the bigger picture?** | System coherence           | Align with 信达雅      |
 
 ### Application Example
+
 ```
 Task: Add caching to user API
 
@@ -231,14 +245,15 @@ Q5: Bigger picture: fits performance optimization initiative
 
 ### Tool Categories
 
-| Category | Examples | Best Practices |
-|----------|----------|----------------|
-| **Code Execution** | PowerShell, Python | Validate outputs, handle errors |
-| **Search & Discovery** | File search, symbol search | Use specific queries, verify results |
-| **File Operations** | Create, read, update, move | Validate paths, backup critical files |
-| **Database & APIs** | Query, call, process | Handle timeouts, validate responses |
+| Category               | Examples                   | Best Practices                        |
+|------------------------|----------------------------|---------------------------------------|
+| **Code Execution**     | PowerShell, Python         | Validate outputs, handle errors       |
+| **Search & Discovery** | File search, symbol search | Use specific queries, verify results  |
+| **File Operations**    | Create, read, update, move | Validate paths, backup critical files |
+| **Database & APIs**    | Query, call, process       | Handle timeouts, validate responses   |
 
 ### Best Practices
+
 - ✅ Validate all tool outputs
 - ✅ Handle errors gracefully
 - ✅ Document actions taken
@@ -254,6 +269,7 @@ Q5: Bigger picture: fits performance optimization initiative
 **Principle**: Persistent knowledge across sessions.
 
 ### Memory Architecture
+
 ```
 Session (Ephemeral)
     ↓ Extract patterns
@@ -267,6 +283,7 @@ Principles (Permanent)
 ```
 
 ### Knowledge Formation Flow
+
 1. **Session**: Immediate work, temporary context
 2. **Experience**: Extracted patterns, lessons learned
 3. **Practices**: Validated approaches, reusable solutions
@@ -274,6 +291,7 @@ Principles (Permanent)
 5. **Principles**: Core philosophy (信达雅, 术法道)
 
 ### Recall Strategy
+
 1. Check guidelines first (crystallized knowledge)
 2. Search frameworks (structured approaches)
 3. Review practices (validated patterns)
@@ -287,15 +305,16 @@ Principles (Permanent)
 
 ### Quick Reference
 
-| Decision Complexity | Experts | Angles | Time |
-|---------------------|---------|--------|------|
-| **Level 1 (Micro)** | 2-3 core | 4-5 core | 15min |
-| **Level 2 (Rapid)** | 3-5 core | 6-8 core | 30min |
-| **Level 3 (Major)** | 7-10 + 2-4 extended | 8-10 + 2-4 | 2hrs |
-| **Level 4 (Strategic)** | 10 + 5-8 + domain | 10 + 5-8 + domain | 4hrs |
-| **Level 5 (Transformative)** | 15-25 total | 15-25 total | 1 day |
+| Decision Complexity          | Experts             | Angles            | Time  |
+|------------------------------|---------------------|-------------------|-------|
+| **Level 1 (Micro)**          | 2-3 core            | 4-5 core          | 15min |
+| **Level 2 (Rapid)**          | 3-5 core            | 6-8 core          | 30min |
+| **Level 3 (Major)**          | 7-10 + 2-4 extended | 8-10 + 2-4        | 2hrs  |
+| **Level 4 (Strategic)**      | 10 + 5-8 + domain   | 10 + 5-8 + domain | 4hrs  |
+| **Level 5 (Transformative)** | 15-25 total         | 15-25 total       | 1 day |
 
 ### Invocation Syntax
+
 ```markdown
 ## Lightweight (Level 1-2)
 [EXPERT: Architect, Security]
@@ -321,15 +340,17 @@ Question: <strategic decision>
 **Principle**: Break complex tasks into manageable units.
 
 ### SMART Decomposition
-| Criterion | Description | Example |
-|-----------|-------------|---------|
-| **S**pecific | Clear, unambiguous | "Add login endpoint" not "improve auth" |
-| **M**easurable | Verifiable completion | "Pass 10 test cases" |
-| **A**chievable | Realistic scope | Single session completable |
-| **R**elevant | Aligned with goal | Contributes to milestone |
-| **T**ime-bound | Estimated duration | "2 hours" |
+
+| Criterion      | Description           | Example                                 |
+|----------------|-----------------------|-----------------------------------------|
+| **S**pecific   | Clear, unambiguous    | "Add login endpoint" not "improve auth" |
+| **M**easurable | Verifiable completion | "Pass 10 test cases"                    |
+| **A**chievable | Realistic scope       | Single session completable              |
+| **R**elevant   | Aligned with goal     | Contributes to milestone                |
+| **T**ime-bound | Estimated duration    | "2 hours"                               |
 
 ### Decomposition Template
+
 ```markdown
 ## Task: [Parent Task]
 
@@ -349,11 +370,12 @@ Question: <strategic decision>
 ```
 
 ### Granularity Guidelines
-| Task Size | Decomposition Level |
-|-----------|---------------------|
-| < 1 hour | No decomposition needed |
-| 1-4 hours | 2-4 subtasks |
-| 4-8 hours | 4-8 subtasks |
+
+| Task Size | Decomposition Level                    |
+|-----------|----------------------------------------|
+| < 1 hour  | No decomposition needed                |
+| 1-4 hours | 2-4 subtasks                           |
+| 4-8 hours | 4-8 subtasks                           |
 | > 8 hours | Consider splitting into multiple tasks |
 
 ---
@@ -363,15 +385,17 @@ Question: <strategic decision>
 **Principle**: Continuously improve through feedback.
 
 ### Learning Triggers
-| Trigger | Action |
-|---------|--------|
-| Task completed | Extract lessons learned |
-| Mistake made | Document and prevent recurrence |
-| Pattern discovered | Propose guideline update |
-| User feedback | Adjust behavior |
-| New domain | Study before acting |
+
+| Trigger            | Action                          |
+|--------------------|---------------------------------|
+| Task completed     | Extract lessons learned         |
+| Mistake made       | Document and prevent recurrence |
+| Pattern discovered | Propose guideline update        |
+| User feedback      | Adjust behavior                 |
+| New domain         | Study before acting             |
 
 ### Experience Extraction Template
+
 ```markdown
 ## Experience: [Title]
 
@@ -395,6 +419,7 @@ What was the task/situation?
 ```
 
 ### Adaptation Mechanisms
+
 1. **Immediate**: Adjust current approach based on feedback
 2. **Session**: Apply lessons to remaining tasks
 3. **Cross-session**: Update knowledge base
@@ -404,17 +429,17 @@ What was the task/situation?
 
 ## Summary
 
-| Dimension | When to Use | Key Output |
-|-----------|-------------|------------|
-| Chain-of-Thought | Complex decisions | Visible reasoning |
-| Iterative Loop | Multi-step tasks | Documented cycles |
-| Multi-Perspective | Quality review | Angle-based critique |
-| Critical Thinking | Before delivery | Validated assumptions |
-| External Systems | Tool operations | Verified results |
-| Long-Term Memory | Knowledge work | Persistent learnings |
-| Multi-Agent | Major decisions | Expert consensus |
-| Task Decomposition | Large tasks | SMART subtasks |
-| Learning | After completion | Experience extraction |
+| Dimension          | When to Use       | Key Output            |
+|--------------------|-------------------|-----------------------|
+| Chain-of-Thought   | Complex decisions | Visible reasoning     |
+| Iterative Loop     | Multi-step tasks  | Documented cycles     |
+| Multi-Perspective  | Quality review    | Angle-based critique  |
+| Critical Thinking  | Before delivery   | Validated assumptions |
+| External Systems   | Tool operations   | Verified results      |
+| Long-Term Memory   | Knowledge work    | Persistent learnings  |
+| Multi-Agent        | Major decisions   | Expert consensus      |
+| Task Decomposition | Large tasks       | SMART subtasks        |
+| Learning           | After completion  | Experience extraction |
 
 **Golden Rule**: Make thinking visible, iterate based on feedback, learn from every interaction.
 

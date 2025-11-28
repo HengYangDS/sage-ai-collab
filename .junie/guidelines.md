@@ -8,7 +8,9 @@
 
 ## 📋 Project Overview
 
-**AI Collaboration Knowledge Base (ai-collab-kb)** is a production-grade knowledge management system designed for AI-human collaboration. It provides structured knowledge via CLI, MCP, and API services with built-in timeout protection and smart loading.
+**AI Collaboration Knowledge Base (ai-collab-kb)** is a production-grade knowledge management system designed for
+AI-human collaboration. It provides structured knowledge via CLI, MCP, and API services with built-in timeout protection
+and smart loading.
 
 ### Design Philosophy
 
@@ -20,16 +22,16 @@
 
 ## 🛠️ Tech Stack
 
-| Category | Technology |
-|----------|------------|
-| **Language** | Python 3.12+ |
-| **CLI** | Typer + Rich |
-| **MCP** | FastMCP |
-| **API** | FastAPI + Uvicorn |
-| **Config** | PyYAML + Pydantic-Settings |
-| **Logging** | structlog + stdlib logging |
-| **Testing** | pytest + pytest-asyncio |
-| **Linting** | Ruff + MyPy |
+| Category     | Technology                 |
+|--------------|----------------------------|
+| **Language** | Python 3.12+               |
+| **CLI**      | Typer + Rich               |
+| **MCP**      | FastMCP                    |
+| **API**      | FastAPI + Uvicorn          |
+| **Config**   | PyYAML + Pydantic-Settings |
+| **Logging**  | structlog + stdlib logging |
+| **Testing**  | pytest + pytest-asyncio    |
+| **Linting**  | Ruff + MyPy                |
 
 ---
 
@@ -50,14 +52,14 @@ ai-collab-kb/
 
 ### Key Directories Explained
 
-| Directory | Purpose | Visibility |
-|-----------|---------|------------|
-| `.junie/` | AI client config for JetBrains Junie | Hidden |
-| `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden |
-| `.history/` | AI session records and task handoffs | Hidden |
-| `.archive/` | Historical/deprecated content | Hidden |
-| `docs/` | User-facing documentation | Visible |
-| `content/` | Generic, distributable knowledge | Visible |
+| Directory   | Purpose                                        | Visibility |
+|-------------|------------------------------------------------|------------|
+| `.junie/`   | AI client config for JetBrains Junie           | Hidden     |
+| `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden     |
+| `.history/` | AI session records and task handoffs           | Hidden     |
+| `.archive/` | Historical/deprecated content                  | Hidden     |
+| `docs/`     | User-facing documentation                      | Visible    |
+| `content/`  | Generic, distributable knowledge               | Visible    |
 
 ---
 
@@ -72,11 +74,11 @@ ai-collab-kb/
 
 ### Naming Conventions
 
-| Element | Convention | Example |
-|---------|------------|---------|
-| Files | `snake_case.py` | `timeout_manager.py` |
-| Classes | `PascalCase` | `TimeoutLoader` |
-| Functions | `snake_case` | `load_with_timeout` |
+| Element   | Convention         | Example              |
+|-----------|--------------------|----------------------|
+| Files     | `snake_case.py`    | `timeout_manager.py` |
+| Classes   | `PascalCase`       | `TimeoutLoader`      |
+| Functions | `snake_case`       | `load_with_timeout`  |
 | Constants | `UPPER_SNAKE_CASE` | `DEFAULT_TIMEOUT_MS` |
 
 ### Architecture Rules
@@ -90,14 +92,14 @@ ai-collab-kb/
 
 ## 📄 Important Files
 
-| File | Purpose |
-|------|---------|
-| `aikb.yaml` | Main configuration (timeouts, triggers, loading) |
-| `ultimate_design_final.md` | Comprehensive design document (4400+ lines) |
-| `src/ai_collab_kb/core/` | Core layer (loader, timeout, config) |
-| `src/ai_collab_kb/services/` | Service layer (CLI, MCP, API) |
-| `pyproject.toml` | Python project configuration |
-| `index.md` | Knowledge base navigation entry |
+| File                         | Purpose                                          |
+|------------------------------|--------------------------------------------------|
+| `aikb.yaml`                  | Main configuration (timeouts, triggers, loading) |
+| `ultimate_design_final.md`   | Comprehensive design document (4400+ lines)      |
+| `src/ai_collab_kb/core/`     | Core layer (loader, timeout, config)             |
+| `src/ai_collab_kb/services/` | Service layer (CLI, MCP, API)                    |
+| `pyproject.toml`             | Python project configuration                     |
+| `index.md`                   | Knowledge base navigation entry                  |
 
 ---
 
@@ -107,11 +109,11 @@ ai-collab-kb/
 
 > **Reference**: See `content/frameworks/autonomy/levels.md` for full 6-level autonomy framework
 
-| Level | Name | Description | Example Tasks |
-|-------|------|-------------|---------------|
-| L1-L2 | Minimal/Low (0-40%) | Ask before changes | Breaking changes, new dependencies, critical systems |
-| L3-L4 | Medium/Medium-High (40-80%) | Proceed, report after | Bug fixes, refactoring, routine development ⭐ |
-| L5-L6 | High/Full (80-100%) | High autonomy | Formatting, comments, docs, trusted patterns |
+| Level | Name                        | Description           | Example Tasks                                        |
+|-------|-----------------------------|-----------------------|------------------------------------------------------|
+| L1-L2 | Minimal/Low (0-40%)         | Ask before changes    | Breaking changes, new dependencies, critical systems |
+| L3-L4 | Medium/Medium-High (40-80%) | Proceed, report after | Bug fixes, refactoring, routine development ⭐        |
+| L5-L6 | High/Full (80-100%)         | High autonomy         | Formatting, comments, docs, trusted patterns         |
 
 **Default**: L4 (Medium-High) for mature collaboration.
 
@@ -136,13 +138,13 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 
 ## ⏱️ Timeout Hierarchy
 
-| Level | Timeout | Scope | Action on Timeout |
-|-------|---------|-------|-------------------|
-| T1 | 100ms | Cache lookup | Return cached/fallback |
-| T2 | 500ms | Single file | Use partial/fallback |
-| T3 | 2s | Layer load | Load partial + warning |
-| T4 | 5s | Full KB load | Emergency core only |
-| T5 | 10s | Complex analysis | Abort + summary |
+| Level | Timeout | Scope            | Action on Timeout      |
+|-------|---------|------------------|------------------------|
+| T1    | 100ms   | Cache lookup     | Return cached/fallback |
+| T2    | 500ms   | Single file      | Use partial/fallback   |
+| T3    | 2s      | Layer load       | Load partial + warning |
+| T4    | 5s      | Full KB load     | Emergency core only    |
+| T5    | 10s     | Complex analysis | Abort + summary        |
 
 ---
 

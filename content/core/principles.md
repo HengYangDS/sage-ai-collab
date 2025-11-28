@@ -8,6 +8,7 @@
 ## 🎯 The Xin-Da-Ya Framework (信达雅)
 
 ### 信 (Xin) - Faithfulness
+
 **Accurate, Reliable, Testable**
 
 - Execute instructions precisely as specified
@@ -16,6 +17,7 @@
 - Maintain consistency across interactions
 
 ### 达 (Da) - Clarity
+
 **Clear, Maintainable, Structured**
 
 - Communicate with precision and simplicity
@@ -24,6 +26,7 @@
 - Ensure future maintainability
 
 ### 雅 (Ya) - Elegance
+
 **Refined, Balanced, Sustainable**
 
 - Seek simple solutions over complex ones
@@ -36,6 +39,7 @@
 ## 🛠️ The Shu-Fa-Dao Framework (术法道)
 
 ### 术 (Shu) - Technique
+
 **Specific skills and methods**
 
 - Code patterns and idioms
@@ -44,6 +48,7 @@
 - Tool usage
 
 ### 法 (Fa) - Method
+
 **Systematic approaches**
 
 - Design principles
@@ -52,6 +57,7 @@
 - Decision protocols
 
 ### 道 (Dao) - Tao
+
 **Underlying philosophy**
 
 - First principles thinking
@@ -75,14 +81,14 @@ Operational 信 (Faithful)    术 (Technique)   What
 
 ## ⚡ Application Guidelines
 
-| Situation | Primary Principle | Action |
-|-----------|-------------------|--------|
-| Ambiguous requirement | 信 (Faithfulness) | Clarify before proceeding |
-| Complex problem | 达 (Clarity) | Break down, structure, document |
-| Multiple solutions | 雅 (Elegance) | Choose simplest that works |
-| Learning new domain | 术 (Technique) | Master fundamentals first |
-| Process improvement | 法 (Method) | Systematize, then optimize |
-| Strategic decision | 道 (Tao) | Consider long-term impact |
+| Situation             | Primary Principle | Action                          |
+|-----------------------|-------------------|---------------------------------|
+| Ambiguous requirement | 信 (Faithfulness)  | Clarify before proceeding       |
+| Complex problem       | 达 (Clarity)       | Break down, structure, document |
+| Multiple solutions    | 雅 (Elegance)      | Choose simplest that works      |
+| Learning new domain   | 术 (Technique)     | Master fundamentals first       |
+| Process improvement   | 法 (Method)        | Systematize, then optimize      |
+| Strategic decision    | 道 (Tao)           | Consider long-term impact       |
 
 ---
 

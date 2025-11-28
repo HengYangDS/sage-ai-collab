@@ -8,23 +8,26 @@
 ## 4.1 Documentation Philosophy
 
 ### Core Principles
+
 - **Accuracy**: Always up-to-date with code
 - **Clarity**: Understandable by target audience
 - **Completeness**: Covers all necessary information
 - **Accessibility**: Easy to find and navigate
 
 ### Xin-Da-Ya Applied to Docs
-| Principle | Application |
-|-----------|-------------|
-| **信 (Xin)** | Technically accurate, no misleading info |
-| **达 (Da)** | Clear structure, appropriate detail level |
-| **雅 (Ya)** | Well-formatted, consistent style |
+
+| Principle   | Application                               |
+|-------------|-------------------------------------------|
+| **信 (Xin)** | Technically accurate, no misleading info  |
+| **达 (Da)**  | Clear structure, appropriate detail level |
+| **雅 (Ya)**  | Well-formatted, consistent style          |
 
 ---
 
 ## 4.2 Documentation Types
 
 ### README.md Structure
+
 ```markdown
 # Project Name
 
@@ -57,6 +60,7 @@ License information
 ```
 
 ### API Documentation
+
 ```python
 def fetch_user(
     user_id: str,
@@ -92,14 +96,16 @@ def fetch_user(
 ## 4.3 Code Comments
 
 ### When to Comment
-| Scenario | Comment Type | Example |
-|----------|--------------|---------|
-| Complex algorithm | Explain logic | `# Using Dijkstra's for shortest path` |
-| Non-obvious decision | Explain why | `# JSON preferred over XML for browser compat` |
-| Workaround | Document reason | `# HACK: API bug requires retry` |
-| Public API | Full docstring | Args, Returns, Raises, Example |
+
+| Scenario             | Comment Type    | Example                                        |
+|----------------------|-----------------|------------------------------------------------|
+| Complex algorithm    | Explain logic   | `# Using Dijkstra's for shortest path`         |
+| Non-obvious decision | Explain why     | `# JSON preferred over XML for browser compat` |
+| Workaround           | Document reason | `# HACK: API bug requires retry`               |
+| Public API           | Full docstring  | Args, Returns, Raises, Example                 |
 
 ### When NOT to Comment
+
 ```python
 # BAD: Obvious comments
 counter = 0  # Initialize counter to zero
@@ -115,6 +121,7 @@ user_count += 1
 ## 4.4 Changelog Format
 
 ### Keep a Changelog Style
+
 ```markdown
 # Changelog
 
@@ -147,6 +154,7 @@ user_count += 1
 ## 4.5 Architecture Documentation
 
 ### ADR (Architecture Decision Record)
+
 ```markdown
 # ADR-001: Use PostgreSQL for Primary Database
 
@@ -175,12 +183,14 @@ We will use PostgreSQL 15+.
 ## 4.6 Documentation Maintenance
 
 ### Keep Docs Current
+
 - [ ] Update docs with every code change
 - [ ] Review docs during code review
 - [ ] Test code examples regularly
 - [ ] Remove outdated information
 
 ### Documentation Debt Signs
+
 - Outdated examples that don't work
 - Missing documentation for new features
 - Inconsistent terminology
@@ -191,16 +201,18 @@ We will use PostgreSQL 15+.
 ## 4.7 Quick Reference
 
 ### Markdown Best Practices
-| Element | Usage |
-|---------|-------|
-| `# H1` | Document title only |
-| `## H2` | Major sections |
-| `### H3` | Subsections |
+
+| Element      | Usage                   |
+|--------------|-------------------------|
+| `# H1`       | Document title only     |
+| `## H2`      | Major sections          |
+| `### H3`     | Subsections             |
 | `` `code` `` | Inline code, file names |
-| `**bold**` | Important terms |
-| `> quote` | Notes, warnings |
+| `**bold**`   | Important terms         |
+| `> quote`    | Notes, warnings         |
 
 ### Documentation Checklist
+
 - [ ] README is complete and current
 - [ ] API has full docstrings
 - [ ] Complex code is commented

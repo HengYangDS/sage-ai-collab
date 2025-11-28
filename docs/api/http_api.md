@@ -26,7 +26,8 @@ http://localhost:8000
 
 ### Authentication
 
-Currently, the API does not require authentication. For production deployments, configure authentication middleware as needed.
+Currently, the API does not require authentication. For production deployments, configure authentication middleware as
+needed.
 
 ---
 
@@ -44,10 +45,10 @@ GET /health
 
 **Response**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `status` | string | Health status ("healthy") |
-| `version` | string | API version |
+| Field      | Type   | Description                 |
+|------------|--------|-----------------------------|
+| `status`   | string | Health status ("healthy")   |
+| `version`  | string | API version                 |
 | `services` | object | Status of internal services |
 
 **Example Request**
@@ -85,10 +86,10 @@ GET /v1/layers
 
 Array of layer information objects:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `name` | string | Layer name |
-| `tokens` | integer | Estimated token count |
+| Field         | Type    | Description                    |
+|---------------|---------|--------------------------------|
+| `name`        | string  | Layer name                     |
+| `tokens`      | integer | Estimated token count          |
 | `always_load` | boolean | Whether layer is always loaded |
 
 **Example Request**
@@ -121,21 +122,21 @@ POST /v1/knowledge
 
 **Request Body**
 
-| Field | Type | Required | Default | Description |
-|-------|------|----------|---------|-------------|
-| `layers` | array | No | `["core"]` | Layers to load |
-| `query` | string | No | `null` | Optional query for smart loading |
-| `timeout_ms` | integer | No | `5000` | Timeout in milliseconds (100-30000) |
+| Field        | Type    | Required | Default    | Description                         |
+|--------------|---------|----------|------------|-------------------------------------|
+| `layers`     | array   | No       | `["core"]` | Layers to load                      |
+| `query`      | string  | No       | `null`     | Optional query for smart loading    |
+| `timeout_ms` | integer | No       | `5000`     | Timeout in milliseconds (100-30000) |
 
 **Response**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `content` | string | Knowledge content |
-| `tokens` | integer | Token count |
-| `status` | string | Load status |
-| `duration_ms` | integer | Request duration in ms |
-| `layers_loaded` | array | List of loaded layers |
+| Field           | Type    | Description            |
+|-----------------|---------|------------------------|
+| `content`       | string  | Knowledge content      |
+| `tokens`        | integer | Token count            |
+| `status`        | string  | Load status            |
+| `duration_ms`   | integer | Request duration in ms |
+| `layers_loaded` | array   | List of loaded layers  |
 
 **Example Request**
 
@@ -172,15 +173,15 @@ GET /v1/knowledge/{layer}
 
 **Path Parameters**
 
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `layer` | string | Layer name (core, guidelines, frameworks, practices, scenarios) |
+| Parameter | Type   | Description                                                     |
+|-----------|--------|-----------------------------------------------------------------|
+| `layer`   | string | Layer name (core, guidelines, frameworks, practices, scenarios) |
 
 **Query Parameters**
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `timeout_ms` | integer | No | `5000` | Timeout in milliseconds (100-30000) |
+| Parameter    | Type    | Required | Default | Description                         |
+|--------------|---------|----------|---------|-------------------------------------|
+| `timeout_ms` | integer | No       | `5000`  | Timeout in milliseconds (100-30000) |
 
 **Response**
 
@@ -226,29 +227,29 @@ GET /v1/search
 
 **Query Parameters**
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `q` | string | Yes | - | Search query (min 1 character) |
-| `max_results` | integer | No | `5` | Maximum results (1-20) |
-| `timeout_ms` | integer | No | `3000` | Timeout in milliseconds (100-10000) |
+| Parameter     | Type    | Required | Default | Description                         |
+|---------------|---------|----------|---------|-------------------------------------|
+| `q`           | string  | Yes      | -       | Search query (min 1 character)      |
+| `max_results` | integer | No       | `5`     | Maximum results (1-20)              |
+| `timeout_ms`  | integer | No       | `3000`  | Timeout in milliseconds (100-10000) |
 
 **Response**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `query` | string | Original search query |
-| `results` | array | Array of search results |
-| `count` | integer | Number of results |
-| `duration_ms` | integer | Search duration in ms |
+| Field         | Type    | Description             |
+|---------------|---------|-------------------------|
+| `query`       | string  | Original search query   |
+| `results`     | array   | Array of search results |
+| `count`       | integer | Number of results       |
+| `duration_ms` | integer | Search duration in ms   |
 
 **Search Result Item**
 
-| Field | Type | Description |
-|-------|------|-------------|
-| `path` | string | File path |
-| `score` | float | Relevance score |
+| Field     | Type   | Description     |
+|-----------|--------|-----------------|
+| `path`    | string | File path       |
+| `score`   | float  | Relevance score |
 | `preview` | string | Content preview |
-| `layer` | string | Source layer |
+| `layer`   | string | Source layer    |
 
 **Example Request**
 
@@ -286,13 +287,13 @@ curl "http://localhost:8000/v1/search?q=timeout&max_results=3"
 
 The API uses standard HTTP status codes:
 
-| Status Code | Description |
-|-------------|-------------|
-| `200` | Success |
-| `400` | Bad Request (invalid parameters) |
-| `404` | Not Found |
-| `408` | Request Timeout |
-| `500` | Internal Server Error |
+| Status Code | Description                      |
+|-------------|----------------------------------|
+| `200`       | Success                          |
+| `400`       | Bad Request (invalid parameters) |
+| `404`       | Not Found                        |
+| `408`       | Request Timeout                  |
+| `500`       | Internal Server Error            |
 
 **Error Response Format**
 
@@ -323,12 +324,12 @@ uvicorn sage.services.http_server:app --host 0.0.0.0 --port 8000
 
 Environment variables:
 
-| Variable | Description | Default |
-|----------|-------------|---------|
-| `SAGE_API_HOST` | Server host | `0.0.0.0` |
-| `SAGE_API_PORT` | Server port | `8000` |
-| `SAGE_CORS_ORIGINS` | Allowed CORS origins | `[]` |
-| `SAGE_DEBUG` | Enable debug mode (shows /docs) | `false` |
+| Variable            | Description                     | Default   |
+|---------------------|---------------------------------|-----------|
+| `SAGE_API_HOST`     | Server host                     | `0.0.0.0` |
+| `SAGE_API_PORT`     | Server port                     | `8000`    |
+| `SAGE_CORS_ORIGINS` | Allowed CORS origins            | `[]`      |
+| `SAGE_DEBUG`        | Enable debug mode (shows /docs) | `false`   |
 
 ---
 

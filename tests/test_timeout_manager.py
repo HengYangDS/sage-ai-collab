@@ -13,27 +13,26 @@ Tests cover:
 """
 
 import asyncio
-import time
-import pytest
-from unittest.mock import patch, MagicMock
-
 import sys
+import time
 from pathlib import Path
+
+import pytest
 
 # Add the tools directory to the path
 sys.path.insert(0, str(Path(__file__).parent.parent / "tools"))
 
 from timeout_manager import (
-    TimeoutLevel,
+    EMBEDDED_CORE,
+    CircuitBreaker,
+    CircuitBreakerConfig,
     CircuitState,
     TimeoutConfig,
-    CircuitBreakerConfig,
-    TimeoutResult,
-    CircuitBreaker,
+    TimeoutLevel,
     TimeoutManager,
+    TimeoutResult,
     get_default_timeout_manager,
     get_timeout_manager,
-    EMBEDDED_CORE,
 )
 
 
@@ -217,11 +216,11 @@ class TestCircuitBreaker:
         """Circuit should open after reaching failure threshold."""
         config = CircuitBreakerConfig(failure_threshold=3)
         cb = CircuitBreaker(config)
-        
+
         cb.record_failure()
         cb.record_failure()
         assert cb.state == CircuitState.CLOSED
-        
+
         cb.record_failure()  # 3rd failure
         assert cb._state == CircuitState.OPEN
 
@@ -242,7 +241,7 @@ class TestCircuitBreaker:
         config = CircuitBreakerConfig(half_open_max_calls=2)
         cb = CircuitBreaker(config)
         cb._state = CircuitState.HALF_OPEN
-        
+
         assert cb.allow_request() is True  # 1st call
         assert cb.allow_request() is True  # 2nd call
         assert cb.allow_request() is False  # 3rd call rejected
@@ -267,7 +266,7 @@ class TestCircuitBreaker:
         cb = CircuitBreaker(config)
         cb._state = CircuitState.OPEN
         cb._last_failure_time = time.monotonic() - 0.02  # 20ms ago
-        
+
         # Accessing state should trigger transition
         assert cb.state == CircuitState.HALF_OPEN
 
@@ -278,9 +277,9 @@ class TestCircuitBreaker:
         cb._failure_count = 5
         cb._last_failure_time = time.monotonic()
         cb._half_open_calls = 3
-        
+
         cb.reset()
-        
+
         assert cb._state == CircuitState.CLOSED
         assert cb._failure_count == 0
         assert cb._last_failure_time is None
@@ -302,7 +301,7 @@ class TestTimeoutManager:
         timeout_config = TimeoutConfig(cache_ms=200)
         circuit_config = CircuitBreakerConfig(failure_threshold=5)
         tm = TimeoutManager(timeout_config, circuit_config)
-        
+
         assert tm.timeout_config.cache_ms == 200
         assert tm.circuit_breaker.config.failure_threshold == 5
 
@@ -327,15 +326,15 @@ class TestTimeoutManager:
     async def test_execute_with_timeout_success(self):
         """Should return success result for fast operations."""
         tm = TimeoutManager()
-        
+
         async def fast_operation():
             return "result"
-        
+
         result = await tm.execute_with_timeout(
             fast_operation(),
             TimeoutLevel.T2_FILE,
         )
-        
+
         assert result.success is True
         assert result.value == "result"
         assert result.error is None
@@ -344,16 +343,16 @@ class TestTimeoutManager:
     async def test_execute_with_timeout_timeout(self):
         """Should return failure result on timeout."""
         tm = TimeoutManager()
-        
+
         async def slow_operation():
             await asyncio.sleep(1)
             return "result"
-        
+
         result = await tm.execute_with_timeout(
             slow_operation(),
             TimeoutLevel.T1_CACHE,  # 100ms timeout
         )
-        
+
         assert result.success is False
         assert "Timeout" in result.error
 
@@ -361,11 +360,11 @@ class TestTimeoutManager:
     async def test_execute_with_timeout_custom_timeout(self):
         """Should respect custom timeout_ms parameter."""
         tm = TimeoutManager()
-        
+
         async def medium_operation():
             await asyncio.sleep(0.15)
             return "result"
-        
+
         # Should fail with 100ms timeout
         result = await tm.execute_with_timeout(
             medium_operation(),
@@ -373,7 +372,7 @@ class TestTimeoutManager:
             timeout_ms=100,
         )
         assert result.success is False
-        
+
         # Should succeed with 500ms timeout
         result = await tm.execute_with_timeout(
             medium_operation(),
@@ -387,17 +386,17 @@ class TestTimeoutManager:
         """Should use fallback on timeout when registered."""
         tm = TimeoutManager()
         tm.register_fallback("slow_op", lambda: "fallback_result")
-        
+
         async def slow_operation():
             await asyncio.sleep(1)
             return "result"
-        
+
         result = await tm.execute_with_timeout(
             slow_operation(),
             TimeoutLevel.T1_CACHE,
             fallback_key="slow_op",
         )
-        
+
         assert result.success is False
         assert result.value == "fallback_result"
         assert result.fallback_used is True
@@ -406,15 +405,15 @@ class TestTimeoutManager:
     async def test_execute_with_timeout_exception(self):
         """Should handle exceptions gracefully."""
         tm = TimeoutManager()
-        
+
         async def failing_operation():
             raise ValueError("Test error")
-        
+
         result = await tm.execute_with_timeout(
             failing_operation(),
             TimeoutLevel.T2_FILE,
         )
-        
+
         assert result.success is False
         assert "Test error" in result.error
 
@@ -425,17 +424,17 @@ class TestTimeoutManager:
         tm.register_fallback("test", lambda: "cb_fallback")
         tm.circuit_breaker._state = CircuitState.OPEN
         tm.circuit_breaker._last_failure_time = time.monotonic()
-        
+
         async def operation():
             return "result"
-        
+
         # TimeoutManager now automatically closes the coroutine when circuit breaker is open
         result = await tm.execute_with_timeout(
             operation(),
             TimeoutLevel.T2_FILE,
             fallback_key="test",
         )
-        
+
         assert result.success is False
         assert result.value == "cb_fallback"
         assert "Circuit breaker open" in result.error
@@ -444,13 +443,13 @@ class TestTimeoutManager:
     async def test_timeout_decorator(self):
         """Timeout decorator should wrap async functions."""
         tm = TimeoutManager()
-        
+
         @tm.timeout_decorator(TimeoutLevel.T2_FILE)
         async def decorated_function():
             return "decorated_result"
-        
+
         result = await decorated_function()
-        
+
         assert result.success is True
         assert result.value == "decorated_result"
 
@@ -458,14 +457,14 @@ class TestTimeoutManager:
     async def test_timeout_decorator_with_timeout(self):
         """Timeout decorator should handle timeouts."""
         tm = TimeoutManager()
-        
+
         @tm.timeout_decorator(TimeoutLevel.T1_CACHE)
         async def slow_decorated():
             await asyncio.sleep(1)
             return "result"
-        
+
         result = await slow_decorated()
-        
+
         assert result.success is False
         assert "Timeout" in result.error
 
@@ -476,7 +475,7 @@ class TestConvenienceFunctions:
     def test_get_default_timeout_manager(self):
         """Should return pre-configured manager."""
         tm = get_default_timeout_manager()
-        
+
         assert isinstance(tm, TimeoutManager)
         assert tm.get_fallback("core") is not None
         assert tm.get_fallback("index") is not None
@@ -485,20 +484,20 @@ class TestConvenienceFunctions:
         """Core fallback should contain Xin-Da-Ya."""
         tm = get_default_timeout_manager()
         core_content = tm.get_fallback("core")
-        
+
         assert "Xin-Da-Ya" in core_content
         assert "信达雅" in core_content
 
     def test_get_timeout_manager_singleton(self):
         """Should return singleton instance."""
         import timeout_manager as tm_module
-        
+
         # Reset singleton
         tm_module._default_manager = None
-        
+
         tm1 = get_timeout_manager()
         tm2 = get_timeout_manager()
-        
+
         assert tm1 is tm2
 
     def test_embedded_core_content(self):

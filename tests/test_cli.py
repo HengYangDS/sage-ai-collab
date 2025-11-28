@@ -8,12 +8,8 @@ Tests cover:
 - Output formatting
 """
 
-import asyncio
-import pytest
-from pathlib import Path
-from unittest.mock import patch, MagicMock, AsyncMock
-from io import StringIO
 import sys
+from pathlib import Path
 
 # Add the src directory to the path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
@@ -22,14 +18,12 @@ from typer.testing import CliRunner
 
 from ai_collab_kb.cli import (
     app,
-    get_loader,
-    run_async,
     display_content,
     display_result,
-    console,
+    get_loader,
+    run_async,
 )
-from ai_collab_kb.loader import KnowledgeLoader, LoadResult, Layer
-
+from ai_collab_kb.loader import KnowledgeLoader, LoadResult
 
 runner = CliRunner()
 
@@ -40,16 +34,18 @@ class TestGetLoader:
     def test_get_loader_returns_knowledge_loader(self):
         """get_loader should return a KnowledgeLoader instance."""
         import ai_collab_kb.cli as cli_module
+
         cli_module._loader = None
-        
+
         loader = get_loader()
         assert isinstance(loader, KnowledgeLoader)
 
     def test_get_loader_returns_singleton(self):
         """get_loader should return the same instance on multiple calls."""
         import ai_collab_kb.cli as cli_module
+
         cli_module._loader = None
-        
+
         loader1 = get_loader()
         loader2 = get_loader()
         assert loader1 is loader2
@@ -60,17 +56,19 @@ class TestRunAsync:
 
     def test_run_async_executes_coroutine(self):
         """run_async should execute an async coroutine."""
+
         async def simple_coro():
             return "result"
-        
+
         result = run_async(simple_coro())
         assert result == "result"
 
     def test_run_async_with_awaitable(self):
         """run_async should handle awaitables."""
+
         async def add_numbers(a, b):
             return a + b
-        
+
         result = run_async(add_numbers(2, 3))
         assert result == 5
 

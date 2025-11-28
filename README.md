@@ -75,13 +75,13 @@ print(f"Loaded {result.tokens_estimate} tokens in {result.duration_ms}ms")
 
 ## 📚 Knowledge Layers
 
-| Layer | Directory | Tokens | Description |
-|-------|-----------|--------|-------------|
-| **L0** | `index.md` | ~100 | Navigation index |
-| **L1** | `content/core/` | ~500 | Core principles (always loaded) |
-| **L2** | `content/guidelines/` | ~100-200/ch | 10 engineering guidelines chapters |
-| **L3** | `content/frameworks/` | ~300-500/doc | Deep frameworks |
-| **L4** | `content/practices/` | ~200-400/doc | Best practices |
+| Layer  | Directory             | Tokens       | Description                        |
+|--------|-----------------------|--------------|------------------------------------|
+| **L0** | `index.md`            | ~100         | Navigation index                   |
+| **L1** | `content/core/`       | ~500         | Core principles (always loaded)    |
+| **L2** | `content/guidelines/` | ~100-200/ch  | 10 engineering guidelines chapters |
+| **L3** | `content/frameworks/` | ~300-500/doc | Deep frameworks                    |
+| **L4** | `content/practices/`  | ~200-400/doc | Best practices                     |
 
 ---
 
@@ -131,13 +131,13 @@ ai-collab-kb/
 
 ## ⏱️ Timeout Guarantees
 
-| Level | Timeout | Scope | Fallback |
-|-------|---------|-------|----------|
-| **T1** | 100ms | Cache lookup | Embedded core |
-| **T2** | 500ms | Single file | Partial content |
-| **T3** | 2s | Layer load | Core only |
-| **T4** | 5s | Full KB load | Emergency |
-| **T5** | 10s | Analysis | Abort + summary |
+| Level  | Timeout | Scope        | Fallback        |
+|--------|---------|--------------|-----------------|
+| **T1** | 100ms   | Cache lookup | Embedded core   |
+| **T2** | 500ms   | Single file  | Partial content |
+| **T3** | 2s      | Layer load   | Core only       |
+| **T4** | 5s      | Full KB load | Emergency       |
+| **T5** | 10s     | Analysis     | Abort + summary |
 
 **Golden Rule**: Always returns something, never hangs.
 
@@ -163,26 +163,26 @@ ai-collab-kb/
 
 ## 🎚️ Autonomy Levels
 
-| Level | Name | Authority | When to Use |
-|-------|------|-----------|-------------|
-| L1 | Minimal | 0-20% | Critical/unfamiliar tasks, onboarding |
-| L2 | Low | 20-40% | New project phases, learning codebase |
-| L3 | Medium | 40-60% | Routine development, clear guidelines |
-| L4 | Medium-High ⭐ | 60-80% | Mature collaboration (default) |
-| L5 | High | 80-95% | Strategic partnership, trusted systems |
-| L6 | Full | 95-100% | Autonomous agent (rarely recommended) |
+| Level | Name          | Authority | When to Use                            |
+|-------|---------------|-----------|----------------------------------------|
+| L1    | Minimal       | 0-20%     | Critical/unfamiliar tasks, onboarding  |
+| L2    | Low           | 20-40%    | New project phases, learning codebase  |
+| L3    | Medium        | 40-60%    | Routine development, clear guidelines  |
+| L4    | Medium-High ⭐ | 60-80%    | Mature collaboration (default)         |
+| L5    | High          | 80-95%    | Strategic partnership, trusted systems |
+| L6    | Full          | 95-100%   | Autonomous agent (rarely recommended)  |
 
 ---
 
 ## 📊 Token Efficiency
 
-| Scenario | Original | Optimized | Savings |
-|----------|----------|-----------|---------|
-| Simple Query | ~15,000 | ~300 | **98%** |
-| Code Task | ~15,000 | ~800 | **95%** |
-| Architecture | ~15,000 | ~1,800 | **88%** |
-| Complex Decision | ~15,000 | ~3,000 | **80%** |
-| **Average** | ~15,000 | **~750** | **95%** |
+| Scenario         | Original | Optimized | Savings |
+|------------------|----------|-----------|---------|
+| Simple Query     | ~15,000  | ~300      | **98%** |
+| Code Task        | ~15,000  | ~800      | **95%** |
+| Architecture     | ~15,000  | ~1,800    | **88%** |
+| Complex Decision | ~15,000  | ~3,000    | **80%** |
+| **Average**      | ~15,000  | **~750**  | **95%** |
 
 ---
 
@@ -193,7 +193,9 @@ ai-collab-kb/
   "mcpServers": {
     "ai-collab-kb": {
       "command": "aikb",
-      "args": ["serve"]
+      "args": [
+        "serve"
+      ]
     }
   }
 }

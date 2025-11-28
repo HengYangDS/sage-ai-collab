@@ -1075,20 +1075,20 @@ di:
   auto_wire: true                      # Auto-resolve from type hints
 
   services:
-    EventBus:                          # S.A.G.E. aligned event bus
+    EventBus: # S.A.G.E. aligned event bus
       lifetime: singleton              # One instance for entire app
       implementation: AsyncEventBus    # source.*/analyze.*/generate.*/evolve.* channels
 
-    SourceProtocol:                    # S.A.G.E. - Source (knowledge sourcing)
+    SourceProtocol: # S.A.G.E. - Source (knowledge sourcing)
       lifetime: singleton
       implementation: TimeoutLoader
       config_key: plugins.loader       # Additional config location
 
-    AnalyzeProtocol:                   # S.A.G.E. - Analyze (processing & analysis)
+    AnalyzeProtocol: # S.A.G.E. - Analyze (processing & analysis)
       lifetime: transient              # New instance per request
       implementation: KnowledgeService
 
-    GenerateProtocol:                  # S.A.G.E. - Generate (multi-channel output)
+    GenerateProtocol: # S.A.G.E. - Generate (multi-channel output)
       lifetime: scoped                 # One instance per scope/request
       implementation: MultiChannelOutput
 ```
@@ -1482,6 +1482,38 @@ result = await get_knowledge(task="implement authentication API")
 | **L5-L6** (High/Full, 80-100%)           | Use tools autonomously, only report on completion             |
 
 **Default**: L4 (Medium-High) for mature collaboration.
+
+### Autonomy Decision Tree
+
+```
+                        ┌─────────────────────┐
+                        │   Assess Task Type  │
+                        └──────────┬──────────┘
+                                   │
+              ┌────────────────────┼────────────────────┐
+              │                    │                    │
+              ▼                    ▼                    ▼
+     ┌────────────────┐   ┌────────────────┐   ┌────────────────┐
+     │  High Risk?    │   │  Reversible?   │   │  Precedent?    │
+     │  (breaking     │   │  (can undo     │   │  (done before  │
+     │   changes)     │   │   easily)      │   │   successfully)│
+     └───────┬────────┘   └───────┬────────┘   └───────┬────────┘
+             │                    │                    │
+        Yes  │  No           No   │  Yes          No   │  Yes
+             │                    │                    │
+             ▼                    ▼                    ▼
+        ┌────────┐           ┌────────┐           ┌────────┐
+        │ L1-L2  │           │ L3-L4  │           │ L5-L6  │
+        │  Ask   │           │Proceed │           │  Auto  │
+        │ First  │           │& Report│           │        │
+        └────────┘           └────────┘           └────────┘
+
+Decision Factors:
+  • Impact Scope: Single file (↑) vs Multiple systems (↓)
+  • Reversibility: Easy rollback (↑) vs Permanent (↓)
+  • Precedent: Established pattern (↑) vs Novel approach (↓)
+  • User Trust: Mature collaboration (↑) vs New relationship (↓)
+```
 
 ---
 

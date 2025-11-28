@@ -372,6 +372,46 @@ Both systems work together:
 
 ---
 
+## 6.9 Content Versioning Strategy
+
+Knowledge content follows semantic versioning principles for maintainability:
+
+### Version Tracking
+
+| Aspect              | Approach                                          |
+|---------------------|---------------------------------------------------|
+| **File-level**      | YAML frontmatter with `version` and `date` fields |
+| **Package-level**   | `content/VERSION` file tracking content releases  |
+| **Change tracking** | Git history with conventional commit messages     |
+
+### Frontmatter Template
+
+```yaml
+---
+title: Document Title
+version: 1.0.0
+date: 2025-11-28
+status: stable  # draft | review | stable | deprecated
+---
+```
+
+### Version Lifecycle
+
+| Status       | Description             | Action                |
+|--------------|-------------------------|-----------------------|
+| `draft`      | Work in progress        | Not loaded by default |
+| `review`     | Ready for expert review | Load with warning     |
+| `stable`     | Production-ready        | Normal loading        |
+| `deprecated` | Scheduled for removal   | Load with warning     |
+
+### Compatibility Rules
+
+- **Major version** (1.0 → 2.0): Breaking changes, requires migration
+- **Minor version** (1.0 → 1.1): New content, backward compatible
+- **Patch version** (1.0.0 → 1.0.1): Fixes, clarifications only
+
+---
+
 ## References
 
 - **Architecture**: See `01-architecture.md`

@@ -4,7 +4,7 @@
 > **Version**: 3.1.0  
 > **Status**: Production-Grade Technical Specifications  
 > **Certification**: Level 5 Expert Committee (24/24 Unanimous Approval)  
-> **Date**: 2025-11-28  
+> **Date**: 2025-11-28
 
 ---
 
@@ -23,7 +23,8 @@
 
 ## 1. Overview
 
-This document contains complete code implementations extracted from `ultimate_design_final.md`. It serves as the technical reference for developers implementing ai-collab-kb.
+This document contains complete code implementations extracted from `ultimate_design_final.md`. It serves as the
+technical reference for developers implementing ai-collab-kb.
 
 **Source**: Lines 900-3300 of ultimate_design_final.md  
 **Coverage**: SAGE Protocol, EventBus, DI Container, Timeout, Memory System
@@ -39,6 +40,7 @@ This document contains complete code implementations extracted from `ultimate_de
 from typing import Protocol, runtime_checkable, Any, Dict, List, Optional
 from dataclasses import dataclass, field
 
+
 @dataclass
 class LoadRequest:
     """Knowledge load request."""
@@ -46,6 +48,7 @@ class LoadRequest:
     query: Optional[str] = None
     timeout_ms: int = 5000
     context: Dict[str, Any] = field(default_factory=dict)
+
 
 @dataclass
 class LoadResult:
@@ -56,6 +59,7 @@ class LoadResult:
     duration_ms: int
     layers_loaded: List[str] = field(default_factory=list)
     metadata: Dict[str, Any] = field(default_factory=dict)
+
 
 @dataclass
 class SearchResult:
@@ -73,28 +77,42 @@ class SearchResult:
 @runtime_checkable
 class LoaderProtocol(Protocol):
     """L - Loader Protocol: Knowledge loading interface."""
+
     async def load(self, request: LoadRequest) -> LoadResult: ...
+
     async def validate(self, content: str) -> tuple[bool, List[str]]: ...
+
     async def get_fallback(self) -> str: ...
+
 
 @runtime_checkable
 class KnowledgeProtocol(Protocol):
     """K - Knowledge Protocol: Processing and analysis interface."""
+
     async def search(self, query: str, max_results: int = 10) -> List[SearchResult]: ...
+
     async def analyze(self, content: str, task: str) -> Dict[str, Any]: ...
+
     async def summarize(self, content: str, max_tokens: int = 500) -> str: ...
+
 
 @runtime_checkable
 class OutputProtocol(Protocol):
     """O - Output Protocol: Multi-channel output interface."""
+
     async def render(self, data: Any, format: str = "markdown") -> str: ...
+
     async def serve(self, channel: str, config: Dict[str, Any]) -> None: ...
+
 
 @runtime_checkable
 class RefineProtocol(Protocol):
     """R - Refine Protocol: Metrics and optimization interface."""
+
     async def collect_metrics(self, context: Dict[str, Any]) -> None: ...
+
     async def optimize(self, target: str) -> Dict[str, Any]: ...
+
     async def checkpoint(self, session_id: str) -> str: ...
 ```
 
@@ -112,6 +130,7 @@ from typing import Any, Dict, Optional
 import time
 import uuid
 
+
 class EventType(str, Enum):
     # Loader events
     LOAD_REQUESTED = "loader.requested"
@@ -126,6 +145,7 @@ class EventType(str, Enum):
     # Memory events
     MEMORY_CHECKPOINT = "memory.checkpoint"
     MEMORY_WARNING = "memory.warning"
+
 
 @dataclass
 class Event:
@@ -148,27 +168,28 @@ import fnmatch
 
 EventHandler = Callable[[Event], Awaitable[None]]
 
+
 class EventBus:
     """Async event bus with wildcard support."""
-    
+
     _instance: Optional["EventBus"] = None
-    
+
     def __init__(self):
         self._handlers: Dict[str, List[tuple[EventHandler, int]]] = {}
         self._history: List[Event] = []
         self._max_history: int = 1000
         self._handler_timeout_ms: int = 1000
-    
+
     @classmethod
     def get_instance(cls) -> "EventBus":
         if cls._instance is None:
             cls._instance = cls()
         return cls._instance
-    
+
     def subscribe(
-        self, 
-        pattern: str, 
-        handler: EventHandler, 
+        self,
+        pattern: str,
+        handler: EventHandler,
         priority: int = 100
     ) -> None:
         """Subscribe to events matching pattern (supports wildcards)."""
@@ -176,22 +197,22 @@ class EventBus:
             self._handlers[pattern] = []
         self._handlers[pattern].append((handler, priority))
         self._handlers[pattern].sort(key=lambda x: x[1])
-    
+
     async def publish(self, event: Event) -> None:
         """Publish event to all matching handlers."""
         self._history.append(event)
         if len(self._history) > self._max_history:
             self._history.pop(0)
-        
+
         tasks = []
         for pattern, handlers in self._handlers.items():
             if fnmatch.fnmatch(event.type.value, pattern):
                 for handler, _ in handlers:
                     tasks.append(self._safe_call(handler, event))
-        
+
         if tasks:
             await asyncio.gather(*tasks, return_exceptions=True)
-    
+
     async def _safe_call(self, handler: EventHandler, event: Event) -> None:
         """Call handler with timeout protection."""
         try:
@@ -203,6 +224,7 @@ class EventBus:
             pass  # Log warning in production
         except Exception:
             pass  # Log error in production
+
 
 def get_event_bus() -> EventBus:
     return EventBus.get_instance()
@@ -218,6 +240,7 @@ def get_event_bus() -> EventBus:
 ### 4.1 DI Container Overview
 
 The DI Container provides:
+
 - **Service Registration**: Register implementations for protocols
 - **Lifetime Management**: Singleton, Transient, Scoped lifetimes
 - **Auto-Wiring**: Automatic dependency resolution from type hints
@@ -241,11 +264,13 @@ from enum import Enum
 from dataclasses import dataclass
 import inspect
 
+
 class Lifetime(Enum):
     """Service lifetime options."""
     SINGLETON = "singleton"  # Single instance for entire application
     TRANSIENT = "transient"  # New instance on each resolve
-    SCOPED = "scoped"        # Single instance within a scope
+    SCOPED = "scoped"  # Single instance within a scope
+
 
 @dataclass
 class ServiceRegistration:
@@ -256,6 +281,7 @@ class ServiceRegistration:
     factory: Optional[Callable] = None
     config_key: Optional[str] = None
 
+
 class DIContainer:
     """
     Lightweight Dependency Injection Container.
@@ -265,36 +291,36 @@ class DIContainer:
         container.register(LoaderProtocol, TimeoutLoader, Lifetime.SINGLETON)
         loader = container.resolve(LoaderProtocol)
     """
-    
+
     _instance: Optional["DIContainer"] = None
-    
+
     def __init__(self):
         self._registrations: Dict[Type, ServiceRegistration] = {}
         self._singletons: Dict[Type, Any] = {}
         self._scoped: Dict[str, Dict[Type, Any]] = {}
         self._config: Dict[str, Any] = {}
-    
+
     @classmethod
     def get_instance(cls) -> "DIContainer":
         """Get singleton container instance."""
         if cls._instance is None:
             cls._instance = cls()
         return cls._instance
-    
+
     @classmethod
     def reset(cls) -> None:
         """Reset container (for testing)."""
         cls._instance = None
-    
+
     def configure(self, config: Dict[str, Any]) -> None:
         """Configure container from YAML config dict."""
         self._config = config
-        
+
         # Auto-register from di.services config section
         di_config = config.get("di", {}).get("services", {})
         for service_name, service_config in di_config.items():
             self._register_from_config(service_name, service_config)
-    
+
     def register(
         self,
         service_type: Type,
@@ -321,7 +347,7 @@ class DIContainer:
         if instance is not None:
             self._singletons[service_type] = instance
             lifetime = Lifetime.SINGLETON
-        
+
         self._registrations[service_type] = ServiceRegistration(
             service_type=service_type,
             implementation=implementation or service_type,
@@ -330,7 +356,7 @@ class DIContainer:
             config_key=config_key
         )
         return self
-    
+
     def resolve(self, service_type: Type, scope_id: str = None) -> Any:
         """
         Resolve a service instance.
@@ -349,13 +375,13 @@ class DIContainer:
         registration = self._registrations.get(service_type)
         if not registration:
             raise KeyError(f"Service {service_type.__name__} not registered")
-        
+
         # Handle different lifetimes
         if registration.lifetime == Lifetime.SINGLETON:
             if service_type not in self._singletons:
                 self._singletons[service_type] = self._create_instance(registration)
             return self._singletons[service_type]
-        
+
         elif registration.lifetime == Lifetime.SCOPED:
             if scope_id is None:
                 raise ValueError("scope_id required for scoped services")
@@ -364,24 +390,24 @@ class DIContainer:
             if service_type not in self._scoped[scope_id]:
                 self._scoped[scope_id][service_type] = self._create_instance(registration)
             return self._scoped[scope_id][service_type]
-        
+
         else:  # TRANSIENT
             return self._create_instance(registration)
-    
+
     def _create_instance(self, registration: ServiceRegistration) -> Any:
         """Create service instance with auto-wiring."""
         # Use factory if provided
         if registration.factory:
             return registration.factory()
-        
+
         impl = registration.implementation
-        
+
         # Get constructor type hints for auto-wiring
         try:
             hints = get_type_hints(impl.__init__)
         except Exception:
             hints = {}
-        
+
         # Auto-resolve dependencies
         kwargs = {}
         for param_name, param_type in hints.items():
@@ -389,13 +415,13 @@ class DIContainer:
                 continue
             if param_type in self._registrations:
                 kwargs[param_name] = self.resolve(param_type)
-        
+
         # Add config if specified
         if registration.config_key:
             kwargs['config'] = self._get_nested_config(registration.config_key)
-        
+
         return impl(**kwargs)
-    
+
     def _get_nested_config(self, key: str) -> Any:
         """Get nested config value by dot-separated key."""
         value = self._config
@@ -405,13 +431,13 @@ class DIContainer:
             else:
                 return {}
         return value
-    
+
     def _register_from_config(self, service_name: str, config: Dict) -> None:
         """Register service from YAML config."""
         # This would resolve type names to actual types
         # Implementation depends on type registry
         pass
-    
+
     def dispose_scope(self, scope_id: str) -> None:
         """Dispose all services in a scope."""
         if scope_id in self._scoped:
@@ -429,25 +455,25 @@ def get_container() -> DIContainer:
 # sage.yaml - DI Container Configuration
 di:
   auto_wire: true
-  
+
   services:
     EventBus:
       lifetime: singleton
       implementation: AsyncEventBus
-      
+
     LoaderProtocol:
       lifetime: singleton
       implementation: TimeoutLoader
       config_key: plugins.loader
-      
+
     KnowledgeProtocol:
       lifetime: transient
       implementation: KnowledgeService
-      
+
     OutputProtocol:
       lifetime: scoped
       implementation: MultiChannelOutput
-      
+
     RefineProtocol:
       lifetime: singleton
       implementation: MetricsCollector
@@ -628,22 +654,22 @@ from enum import Enum
 
 class MemoryType(str, Enum):
     """Types of memory entries."""
-    CONVERSATION = "conversation"   # Chat history
-    DECISION = "decision"           # Important decisions made
-    CONTEXT = "context"             # Task context
-    SUMMARY = "summary"             # Consolidated summaries
-    CHECKPOINT = "checkpoint"       # Session checkpoints
-    ARTIFACT = "artifact"           # Generated artifacts
+    CONVERSATION = "conversation"  # Chat history
+    DECISION = "decision"  # Important decisions made
+    CONTEXT = "context"  # Task context
+    SUMMARY = "summary"  # Consolidated summaries
+    CHECKPOINT = "checkpoint"  # Session checkpoints
+    ARTIFACT = "artifact"  # Generated artifacts
 
 
 class MemoryPriority(int, Enum):
     """Memory retention priority (higher = more important)."""
-    EPHEMERAL = 10      # Can be discarded first
-    LOW = 30            # Nice to have
-    NORMAL = 50         # Standard importance
-    HIGH = 70           # Should be retained
-    CRITICAL = 90       # Must be retained
-    PERMANENT = 100     # Never discard
+    EPHEMERAL = 10  # Can be discarded first
+    LOW = 30  # Nice to have
+    NORMAL = 50  # Standard importance
+    HIGH = 70  # Should be retained
+    CRITICAL = 90  # Must be retained
+    PERMANENT = 100  # Never discard
 ```
 
 ### 6.3 Memory Entry Structure
@@ -663,7 +689,7 @@ class MemoryEntry:
     task_id: Optional[str] = None
     tags: list[str] = field(default_factory=list)
     metadata: dict[str, Any] = field(default_factory=dict)
-    
+
     # For summarization tracking
     is_summarized: bool = False
     summary_of: list[str] = field(default_factory=list)
@@ -676,20 +702,20 @@ class MemoryEntry:
 
 class TokenWarningLevel(str, Enum):
     """Warning levels for token usage."""
-    NORMAL = "normal"       # < 70%
-    CAUTION = "caution"     # 70-80%
-    WARNING = "warning"     # 80-90%
-    CRITICAL = "critical"   # 90-95%
-    OVERFLOW = "overflow"   # > 95%
+    NORMAL = "normal"  # < 70%
+    CAUTION = "caution"  # 70-80%
+    WARNING = "warning"  # 80-90%
+    CRITICAL = "critical"  # 90-95%
+    OVERFLOW = "overflow"  # > 95%
 
 
 @dataclass
 class TokenBudgetConfig:
     """Configuration for token budget management."""
-    max_tokens: int = 128000          # Model context window
-    reserved_tokens: int = 4000       # Reserved for response
-    warning_threshold: float = 0.70   # 70% - start monitoring
-    caution_threshold: float = 0.80   # 80% - suggest summarization
+    max_tokens: int = 128000  # Model context window
+    reserved_tokens: int = 4000  # Reserved for response
+    warning_threshold: float = 0.70  # 70% - start monitoring
+    caution_threshold: float = 0.80  # 80% - suggest summarization
     critical_threshold: float = 0.90  # 90% - auto-summarize
     overflow_threshold: float = 0.95  # 95% - force pruning
     auto_summarize: bool = True
@@ -698,13 +724,13 @@ class TokenBudgetConfig:
 
 **Token Warning Levels:**
 
-| Level | Threshold | Action |
-|-------|-----------|--------|
-| NORMAL | < 70% | No action needed |
-| CAUTION | 70-80% | Suggest summarizing older context |
-| WARNING | 80-90% | Recommend summarization; consider task handoff |
-| CRITICAL | 90-95% | Auto-summarize; create checkpoint |
-| OVERFLOW | > 95% | Force prune low-priority; emergency handoff |
+| Level    | Threshold | Action                                         |
+|----------|-----------|------------------------------------------------|
+| NORMAL   | < 70%     | No action needed                               |
+| CAUTION  | 70-80%    | Suggest summarizing older context              |
+| WARNING  | 80-90%    | Recommend summarization; consider task handoff |
+| CRITICAL | 90-95%    | Auto-summarize; create checkpoint              |
+| OVERFLOW | > 95%     | Force prune low-priority; emergency handoff    |
 
 ### 6.5 Session Continuity
 
@@ -718,17 +744,17 @@ class SessionState:
     task_id: Optional[str] = None
     status: SessionStatus = SessionStatus.ACTIVE
     created_at: datetime = field(default_factory=datetime.now)
-    
+
     # Context
     current_objective: str = ""
     completed_steps: list[str] = field(default_factory=list)
     pending_steps: list[str] = field(default_factory=list)
-    
+
     # Progress
     progress_percentage: float = 0.0
     last_action: str = ""
     last_result: str = ""
-    
+
     # Memory references
     key_decisions: list[str] = field(default_factory=list)
     important_context: list[str] = field(default_factory=list)
@@ -739,12 +765,12 @@ class SessionState:
 class HandoffPackage:
     """Package for session handoff to new task."""
     session_state: SessionState
-    summary: str                      # AI-generated summary
-    key_context: list[MemoryEntry]    # Critical context entries
-    decisions: list[MemoryEntry]      # Important decisions
-    continuation_prompt: str          # Prompt to continue work
+    summary: str  # AI-generated summary
+    key_context: list[MemoryEntry]  # Critical context entries
+    decisions: list[MemoryEntry]  # Important decisions
+    continuation_prompt: str  # Prompt to continue work
     token_count: int
-    
+
     def to_prompt(self) -> str:
         """Generate continuation prompt for new task."""
         return f"""## Session Continuation
@@ -804,12 +830,14 @@ session = continuity.start_session(
 )
 
 # Add memories during work
-store.add(MemoryEntry(
-    id="decision-001",
-    type=MemoryType.DECISION,
-    content="Using async EventBus for decoupling",
-    priority=MemoryPriority.HIGH
-))
+store.add(
+    MemoryEntry(
+        id="decision-001",
+        type=MemoryType.DECISION,
+        content="Using async EventBus for decoupling",
+        priority=MemoryPriority.HIGH
+    )
+)
 
 # Check token budget
 warning = budget.check_warning_level()
@@ -872,24 +900,24 @@ async def bootstrap(
     # 1. Load configuration
     config_path = config_path or Path("sage.yaml")
     config = _load_config(config_path)
-    
+
     # Apply overrides
     if config_override:
         config = _deep_merge(config, config_override)
-    
+
     # 2. Configure logging
     log_config = config.get("logging", {})
     configure_logging(
         level=log_config.get("level", "INFO"),
         format=log_config.get("format", "console")
     )
-    
+
     logger.info("bootstrapping application", config_path=str(config_path))
-    
+
     # 3. Get container and configure
     container = get_container()
     container.configure(config)
-    
+
     # 4. Initialize EventBus
     event_bus = get_event_bus()
     event_config = config.get("events", {}).get("bus", {})
@@ -898,15 +926,15 @@ async def bootstrap(
         handler_timeout_ms=event_config.get("handler_timeout_ms", 1000)
     )
     container.register(EventBus, instance=event_bus)
-    
+
     # 5. Register core services
     _register_core_services(container, config)
-    
+
     # 6. Auto-subscribe event handlers
     _setup_event_subscriptions(event_bus, config)
-    
+
     logger.info("bootstrap complete", services=list(container._registrations.keys()))
-    
+
     return container
 
 
@@ -915,7 +943,7 @@ def _load_config(path: Path) -> Dict[str, Any]:
     if not path.exists():
         logger.warning("config file not found, using defaults", path=str(path))
         return {}
-    
+
     with open(path, encoding="utf-8") as f:
         return yaml.safe_load(f) or {}
 
@@ -938,7 +966,7 @@ def _register_core_services(container: DIContainer, config: Dict) -> None:
     from ai_collab_kb.core.knowledge import KnowledgeService
     from ai_collab_kb.core.output import MultiChannelOutput
     from ai_collab_kb.core.refine import MetricsCollector
-    
+
     # Register with appropriate lifetimes
     container.register(LoaderProtocol, TimeoutLoader, Lifetime.SINGLETON)
     container.register(KnowledgeProtocol, KnowledgeService, Lifetime.TRANSIENT)
@@ -949,11 +977,11 @@ def _register_core_services(container: DIContainer, config: Dict) -> None:
 def _setup_event_subscriptions(event_bus: EventBus, config: Dict) -> None:
     """Setup event subscriptions from config."""
     subscriptions = config.get("events", {}).get("subscriptions", [])
-    
+
     for sub in subscriptions:
         event_pattern = sub.get("event")
         handlers = sub.get("handlers", [])
-        
+
         for handler_name in handlers:
             logger.debug("subscribing handler", event=event_pattern, handler=handler_name)
             # Handler registration would be implemented based on handler registry
@@ -981,10 +1009,10 @@ from .core.bootstrap import bootstrap
 async def main():
     """Main entry point."""
     container = await bootstrap()
-    
+
     # Determine mode from command line
     mode = sys.argv[1] if len(sys.argv) > 1 else "serve"
-    
+
     if mode == "serve":
         from .services.mcp import start_mcp_server
         await start_mcp_server(container)

@@ -63,18 +63,18 @@ The project follows the classical Chinese translation principles adapted for sof
 
 ### Terminology
 
-| Term                  | Definition                                                                      |
-|-----------------------|---------------------------------------------------------------------------------|
-| **SAGE**              | Smart AI-Guided Expertise; also the 4-stage protocol (Source-Analyze-Generate-Evolve) |
-| **MECE**              | Mutually Exclusive, Collectively Exhaustive - a classification principle        |
-| **信达雅 (Xin-Da-Ya)** | Classical Chinese translation principles: Faithfulness, Clarity, Elegance       |
-| **MCP**               | Model Context Protocol - JSON-RPC based protocol for AI assistant integration   |
-| **EventBus**          | Async pub/sub message broker for decoupled component communication              |
-| **DI Container**      | Dependency Injection Container for service lifecycle management                 |
-| **Circuit Breaker**   | Fault tolerance pattern that prevents cascading failures                        |
-| **Token Budget**      | Maximum token allocation for knowledge loading operations                       |
-| **Autonomy Level**    | 6-level scale (L1-L6) defining AI decision-making boundaries                    |
-| **Graceful Degradation** | Strategy to return partial results rather than failing completely            |
+| Term                     | Definition                                                                            |
+|--------------------------|---------------------------------------------------------------------------------------|
+| **SAGE**                 | Smart AI-Guided Expertise; also the 4-stage protocol (Source-Analyze-Generate-Evolve) |
+| **MECE**                 | Mutually Exclusive, Collectively Exhaustive - a classification principle              |
+| **信达雅 (Xin-Da-Ya)**      | Classical Chinese translation principles: Faithfulness, Clarity, Elegance             |
+| **MCP**                  | Model Context Protocol - JSON-RPC based protocol for AI assistant integration         |
+| **EventBus**             | Async pub/sub message broker for decoupled component communication                    |
+| **DI Container**         | Dependency Injection Container for service lifecycle management                       |
+| **Circuit Breaker**      | Fault tolerance pattern that prevents cascading failures                              |
+| **Token Budget**         | Maximum token allocation for knowledge loading operations                             |
+| **Autonomy Level**       | 6-level scale (L1-L6) defining AI decision-making boundaries                          |
+| **Graceful Degradation** | Strategy to return partial results rather than failing completely                     |
 
 ---
 

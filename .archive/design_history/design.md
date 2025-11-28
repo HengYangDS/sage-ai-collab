@@ -34,14 +34,14 @@ protection, smart loading, and cross-task memory persistence.
 
 ### 1.2 Key Innovations
 
-| Innovation                   | Description                             | Benefit                     |
-|------------------------------|-----------------------------------------|-----------------------------|
-| **Three-Layer Architecture** | Core → Services → Tools separation      | Zero coupling, testable     |
+| Innovation                   | Description                               | Benefit                     |
+|------------------------------|-------------------------------------------|-----------------------------|
+| **Three-Layer Architecture** | Core → Services → Tools separation        | Zero coupling, testable     |
 | **SAGE Protocol**            | Source-Analyze-Generate-Evolve interfaces | Domain-specific, extensible |
-| **Event-Driven Plugins**     | Protocol + EventBus pattern             | Async decoupling            |
-| **Memory Persistence**       | Cross-task session continuity           | Seamless handoffs           |
-| **5-Level Timeout**          | T1:100ms → T5:10s hierarchy             | Never blocks                |
-| **Token Budget Management**  | 5-level warnings with auto-actions      | Context optimization        |
+| **Event-Driven Plugins**     | Protocol + EventBus pattern               | Async decoupling            |
+| **Memory Persistence**       | Cross-task session continuity             | Seamless handoffs           |
+| **5-Level Timeout**          | T1:100ms → T5:10s hierarchy               | Never blocks                |
+| **Token Budget Management**  | 5-level warnings with auto-actions        | Context optimization        |
 
 ### 1.3 Technical Highlights
 

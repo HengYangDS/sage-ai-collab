@@ -11,14 +11,14 @@ Author: AI Collaboration KB Team
 Version: 2.0.0
 """
 
+import json
+import logging
 import re
 from dataclasses import dataclass, field
 from datetime import datetime
 from enum import Enum
 from pathlib import Path
-from typing import Optional, List, Dict, Any, Set, Tuple
-import logging
-import json
+from typing import Any
 
 logger = logging.getLogger(__name__)
 
@@ -54,9 +54,9 @@ class KnowledgeNode:
     path: str = ""
     level: int = 0  # For headings
     tokens: int = 0
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "id": self.id,
@@ -77,9 +77,9 @@ class KnowledgeEdge:
     target: str  # Node ID
     edge_type: EdgeType
     weight: float = 1.0
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "source": self.source,
@@ -94,9 +94,9 @@ class KnowledgeEdge:
 class KnowledgeGraph:
     """Knowledge graph structure."""
 
-    nodes: Dict[str, KnowledgeNode] = field(default_factory=dict)
-    edges: List[KnowledgeEdge] = field(default_factory=list)
-    metadata: Dict[str, Any] = field(default_factory=dict)
+    nodes: dict[str, KnowledgeNode] = field(default_factory=dict)
+    edges: list[KnowledgeEdge] = field(default_factory=list)
+    metadata: dict[str, Any] = field(default_factory=dict)
 
     def add_node(self, node: KnowledgeNode) -> None:
         """Add a node to the graph."""
@@ -106,11 +106,11 @@ class KnowledgeGraph:
         """Add an edge to the graph."""
         self.edges.append(edge)
 
-    def get_node(self, node_id: str) -> Optional[KnowledgeNode]:
+    def get_node(self, node_id: str) -> KnowledgeNode | None:
         """Get a node by ID."""
         return self.nodes.get(node_id)
 
-    def get_neighbors(self, node_id: str) -> List[str]:
+    def get_neighbors(self, node_id: str) -> list[str]:
         """Get all neighbor node IDs."""
         neighbors = []
         for edge in self.edges:
@@ -120,11 +120,11 @@ class KnowledgeGraph:
                 neighbors.append(edge.source)
         return neighbors
 
-    def get_edges_for_node(self, node_id: str) -> List[KnowledgeEdge]:
+    def get_edges_for_node(self, node_id: str) -> list[KnowledgeEdge]:
         """Get all edges connected to a node."""
         return [e for e in self.edges if e.source == node_id or e.target == node_id]
 
-    def to_dict(self) -> Dict[str, Any]:
+    def to_dict(self) -> dict[str, Any]:
         """Convert to dictionary."""
         return {
             "nodes": [n.to_dict() for n in self.nodes.values()],
@@ -137,7 +137,7 @@ class KnowledgeGraph:
             },
         }
 
-    def _count_by_type(self) -> Dict[str, int]:
+    def _count_by_type(self) -> dict[str, int]:
         """Count nodes by type."""
         counts = {}
         for node in self.nodes.values():
@@ -168,7 +168,7 @@ class KnowledgeGraphBuilder:
     MD_TAG_PATTERN = re.compile(r"#(\w+)")
     CONCEPT_PATTERN = re.compile(r"\*\*([^*]+)\*\*")  # Bold text as concepts
 
-    def __init__(self, kb_path: Optional[Path] = None):
+    def __init__(self, kb_path: Path | None = None):
         """
         Initialize graph builder.
 
@@ -177,7 +177,7 @@ class KnowledgeGraphBuilder:
         """
         self.kb_path = kb_path or Path(__file__).parent.parent.parent
         self.graph = KnowledgeGraph()
-        self._file_nodes: Dict[str, str] = {}  # path -> node_id
+        self._file_nodes: dict[str, str] = {}  # path -> node_id
 
     def _generate_id(self, prefix: str, name: str) -> str:
         """Generate a unique ID for a node."""
@@ -443,7 +443,7 @@ class KnowledgeGraphBuilder:
 
         return subgraph
 
-    def get_statistics(self) -> Dict[str, Any]:
+    def get_statistics(self) -> dict[str, Any]:
         """Get graph statistics."""
         if not self.graph.nodes:
             self.build_from_directory()
@@ -482,7 +482,7 @@ class KnowledgeGraphBuilder:
 
 
 # Convenience function
-def build_knowledge_graph(kb_path: Optional[Path] = None) -> KnowledgeGraph:
+def build_knowledge_graph(kb_path: Path | None = None) -> KnowledgeGraph:
     """Quick function to build knowledge graph."""
     builder = KnowledgeGraphBuilder(kb_path=kb_path)
     return builder.build_from_directory()

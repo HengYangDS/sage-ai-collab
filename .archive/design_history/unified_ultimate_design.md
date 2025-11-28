@@ -14,6 +14,7 @@
 ## 📋 Expert Committee Members (24 Experts)
 
 ### Architecture & Systems Group (6)
+
 1. **Chief Architect** - System design, module boundaries, scalability
 2. **Information Architect** - Knowledge taxonomy, navigation design
 3. **Systems Engineer** - Tech stack, dependency management
@@ -22,6 +23,7 @@
 6. **Reliability Engineer** - Timeout mechanisms, fault tolerance
 
 ### Knowledge Engineering Group (6)
+
 7. **Knowledge Manager** - Classification, lifecycle management
 8. **Documentation Engineer** - Structure, readability, maintainability
 9. **Metadata Specialist** - Taxonomy, tagging, indexing
@@ -30,6 +32,7 @@
 12. **Ontology Designer** - Semantic relationships, graph structure
 
 ### AI Collaboration Group (6)
+
 13. **AI Collaboration Expert** - Human-AI interaction patterns
 14. **Prompt Engineer** - Context optimization, instruction design
 15. **Autonomy Specialist** - Decision boundaries, calibration
@@ -38,6 +41,7 @@
 18. **Timeout & Safety Expert** - Response guarantees, graceful degradation
 
 ### Engineering Practice Group (6)
+
 19. **DevOps Expert** - Deployment, automation, CI/CD
 20. **Python Engineer** - Code quality, tool implementation
 21. **Test Architect** - Quality assurance, validation strategies
@@ -51,21 +55,21 @@
 
 ### 1.1 Source Documents Analyzed
 
-| Document | Score | Lines | Key Strengths |
-|----------|-------|-------|---------------|
-| ULTIMATE_DESIGN_99_SCORE.md | 100 | 1327 | Plugin architecture, Rich CLI, Migration toolkit |
-| AI_COLLAB_KB_ULTIMATE_DESIGN.md | 99 | 948 | 5-level Timeout, Circuit Breaker, Graceful degradation |
-| LEVEL5_EXPERT_COMMITTEE_ULTIMATE_DESIGN.md | 92.5 | 556 | Problem diagnosis, Value content list, MCP tools |
+| Document                                   | Score | Lines | Key Strengths                                          |
+|--------------------------------------------|-------|-------|--------------------------------------------------------|
+| ULTIMATE_DESIGN_99_SCORE.md                | 100   | 1327  | Plugin architecture, Rich CLI, Migration toolkit       |
+| AI_COLLAB_KB_ULTIMATE_DESIGN.md            | 99    | 948   | 5-level Timeout, Circuit Breaker, Graceful degradation |
+| LEVEL5_EXPERT_COMMITTEE_ULTIMATE_DESIGN.md | 92.5  | 556   | Problem diagnosis, Value content list, MCP tools       |
 
 ### 1.2 Consolidated Issues from Original .junie
 
-| Issue | Severity | Impact | Solution |
-|-------|----------|--------|----------|
-| Root directory chaos | 🔴 Critical | 41 files, hard to locate | MECE 8-directory structure |
-| Directory duplication | 🔴 Critical | practices/, knowledge/, standards/ overlap | Single source of truth |
-| Chapter imbalance | 🟡 Medium | 16 chapters, 20-275 lines each | Consolidate to 10 chapters |
-| No timeout mechanism | 🔴 Critical | Long waits, poor UX | 5-level timeout hierarchy |
-| Mixed languages | 🟡 Medium | CN/EN inconsistent | English-first policy |
+| Issue                 | Severity    | Impact                                     | Solution                   |
+|-----------------------|-------------|--------------------------------------------|----------------------------|
+| Root directory chaos  | 🔴 Critical | 41 files, hard to locate                   | MECE 8-directory structure |
+| Directory duplication | 🔴 Critical | practices/, knowledge/, standards/ overlap | Single source of truth     |
+| Chapter imbalance     | 🟡 Medium   | 16 chapters, 20-275 lines each             | Consolidate to 10 chapters |
+| No timeout mechanism  | 🔴 Critical | Long waits, poor UX                        | 5-level timeout hierarchy  |
+| Mixed languages       | 🟡 Medium   | CN/EN inconsistent                         | English-first policy       |
 
 ### 1.3 Design Axioms (Consolidated)
 
@@ -132,18 +136,18 @@ ai-collab-kb/
 
 ### 2.2 Chapter Consolidation (16 → 10)
 
-| Original Chapters | New Chapter | Lines | Rationale |
-|-------------------|-------------|-------|-----------|
-| 0. Quick Reference | 00_quick_start.md | ~60 | Keep as-is |
-| 1. Planning + 2. Design | 01_planning_design.md | ~80 | Merge short |
-| 3. Code Style | 02_code_style.md | ~150 | Keep as-is |
-| 4-8. Config/Test/Perf/Change/Maintain | 03_engineering.md | ~120 | Merge 5 mini |
-| 9. Documentation | 04_documentation.md | ~100 | Keep as-is |
-| 10. Python + 11. Decorator | 05_python.md | ~130 | Merge overlap |
-| 12. AI Collab + 13. Autonomy | 06_ai_collaboration.md | ~200 | Unify AI |
-| 14. Cognitive (core) | 07_cognitive.md | ~100 | Extract core |
-| (new) Quality | 08_quality.md | ~80 | From 14 |
-| 15. Success | 09_success.md | ~80 | Streamline |
+| Original Chapters                     | New Chapter            | Lines | Rationale     |
+|---------------------------------------|------------------------|-------|---------------|
+| 0. Quick Reference                    | 00_quick_start.md      | ~60   | Keep as-is    |
+| 1. Planning + 2. Design               | 01_planning_design.md  | ~80   | Merge short   |
+| 3. Code Style                         | 02_code_style.md       | ~150  | Keep as-is    |
+| 4-8. Config/Test/Perf/Change/Maintain | 03_engineering.md      | ~120  | Merge 5 mini  |
+| 9. Documentation                      | 04_documentation.md    | ~100  | Keep as-is    |
+| 10. Python + 11. Decorator            | 05_python.md           | ~130  | Merge overlap |
+| 12. AI Collab + 13. Autonomy          | 06_ai_collaboration.md | ~200  | Unify AI      |
+| 14. Cognitive (core)                  | 07_cognitive.md        | ~100  | Extract core  |
+| (new) Quality                         | 08_quality.md          | ~80   | From 14       |
+| 15. Success                           | 09_success.md          | ~80   | Streamline    |
 
 **Result**: 16 → 10 chapters, ~1,100 lines (from ~1,464, -25%)
 
@@ -170,13 +174,13 @@ timeout:
 
 ### 3.2 Five-Level Timeout Hierarchy
 
-| Level | Timeout | Scope | Action on Timeout |
-|-------|---------|-------|-------------------|
-| **T1** | 100ms | Cache lookup | Return cached/fallback |
-| **T2** | 500ms | Single file read | Use partial/fallback |
-| **T3** | 2s | Layer load | Load partial + warning |
-| **T4** | 5s | Full KB load | Emergency core only |
-| **T5** | 10s | Complex analysis | Abort + summary |
+| Level  | Timeout | Scope            | Action on Timeout      |
+|--------|---------|------------------|------------------------|
+| **T1** | 100ms   | Cache lookup     | Return cached/fallback |
+| **T2** | 500ms   | Single file read | Use partial/fallback   |
+| **T3** | 2s      | Layer load       | Load partial + warning |
+| **T4** | 5s      | Full KB load     | Emergency core only    |
+| **T5** | 10s     | Complex analysis | Abort + summary        |
 
 ### 3.3 Timeout Configuration
 
@@ -185,7 +189,7 @@ timeout:
 timeout:
   global_max: 10s
   default: 5s
-  
+
   operations:
     cache_lookup: 100ms
     file_read: 500ms
@@ -194,14 +198,14 @@ timeout:
     analysis: 10s
     mcp_call: 10s
     search: 3s
-    
+
   strategies:
     on_timeout:
       - return_partial
       - use_fallback
       - log_warning
       - never_hang
-      
+
   circuit_breaker:
     enabled: true
     failure_threshold: 3
@@ -238,6 +242,7 @@ import asyncio
 from typing import Optional
 from dataclasses import dataclass
 
+
 @dataclass
 class TimeoutConfig:
     """Configurable timeout settings."""
@@ -246,6 +251,7 @@ class TimeoutConfig:
     layer_ms: int = 2000
     full_ms: int = 5000
     analysis_ms: int = 10000
+
 
 @dataclass
 class LoadResult:
@@ -256,16 +262,17 @@ class LoadResult:
     layers_loaded: int
     status: str  # "success", "partial", "fallback", "emergency"
 
+
 class TimeoutLoader:
     """Knowledge loader with built-in timeout protection."""
-    
+
     def __init__(self, config: Optional[TimeoutConfig] = None):
         self.config = config or TimeoutConfig()
         self._cache: dict = {}
         self._fallbacks: dict = {}
-    
+
     async def load_with_timeout(
-        self, 
+        self,
         layers: list[str],
         timeout_ms: Optional[int] = None
     ) -> LoadResult:
@@ -274,12 +281,12 @@ class TimeoutLoader:
         start = time.monotonic()
         timeout = (timeout_ms or self.config.full_ms) / 1000
         results = []
-        
+
         for layer in layers:
             remaining = timeout - (time.monotonic() - start)
             if remaining <= 0:
                 break
-            
+
             try:
                 content = await asyncio.wait_for(
                     self._load_layer(layer),
@@ -288,10 +295,10 @@ class TimeoutLoader:
                 results.append(content)
             except asyncio.TimeoutError:
                 results.append(self._get_fallback(layer))
-        
+
         duration = int((time.monotonic() - start) * 1000)
         complete = len(results) == len(layers)
-        
+
         return LoadResult(
             content="\n\n".join(results),
             complete=complete,
@@ -299,11 +306,11 @@ class TimeoutLoader:
             layers_loaded=len(results),
             status="success" if complete else "partial"
         )
-    
+
     def _get_fallback(self, layer: str) -> str:
         """Return fallback content on timeout."""
         return self._fallbacks.get(layer, self._embedded_core())
-    
+
     @staticmethod
     def _embedded_core() -> str:
         """Hardcoded minimal core for ultimate fallback."""
@@ -322,77 +329,99 @@ class TimeoutLoader:
 5. How does this fit the bigger picture?
 """
 
+
 ---
 
 ## 📈 Part 4: Token Efficiency & Smart Loading
 
 ### 4.1 Four-Layer Progressive Loading
 
-| Layer | Directory | Tokens | Load Timing | Timeout |
-|-------|-----------|--------|-------------|---------|
-| **L0** | index.md | ~100 | Always | 100ms |
-| **L1** | 01_core/ | ~500 | Always | 500ms |
-| **L2** | 02_guidelines/chapter | ~100-200/ch | On-demand | 500ms |
-| **L3** | 03_frameworks/doc | ~300-500/doc | Complex tasks | 2s |
-| **L4** | 04_practices/doc | ~200-400/doc | On-demand | 2s |
+| Layer | Directory | Tokens | Load
+Timing | Timeout |
+| ------- | ----------- | -------- | ------------- | --------- |
+| ** L0 ** | index.md | ~100 | Always | 100
+ms |
+| ** L1 ** | 01
+_core / | ~500 | Always | 500
+ms |
+| ** L2 ** | 02
+_guidelines / chapter | ~100 - 200 / ch | On - demand | 500
+ms |
+| ** L3 ** | 03
+_frameworks / doc | ~300 - 500 / doc | Complex
+tasks | 2
+s |
+| ** L4 ** | 04
+_practices / doc | ~200 - 400 / doc | On - demand | 2
+s |
 
 ### 4.2 Token Efficiency Comparison
 
 | Scenario | Original | Unified | Savings | Response |
-|----------|----------|---------|---------|----------|
-| **Simple Query** | ~15,000 | ~300 | **98%** | <500ms |
-| **Code Task** | ~15,000 | ~800 | **95%** | <1s |
-| **Architecture** | ~15,000 | ~1,800 | **88%** | <2s |
-| **Complex Decision** | ~15,000 | ~3,000 | **80%** | <3s |
-| **Average** | ~15,000 | **~750** | **95%** | <1s |
+| ---------- | ---------- | --------- | --------- | ---------- |
+| ** Simple
+Query ** | ~15, 000 | ~300 | ** 98 % ** | < 500
+ms |
+| ** Code
+Task ** | ~15, 000 | ~800 | ** 95 % ** | < 1
+s |
+| ** Architecture ** | ~15, 000 | ~1, 800 | ** 88 % ** | < 2
+s |
+| ** Complex
+Decision ** | ~15, 000 | ~3, 000 | ** 80 % ** | < 3
+s |
+| ** Average ** | ~15, 000 | ** ~750 ** | ** 95 % ** | < 1
+s |
 
 ### 4.3 Smart Loading Rules
 
 ```yaml
 # aikb.yaml - Smart Loading Configuration
 loading:
-  always:
-    - index.md
-    - 01_core/principles.md
-    - 01_core/quick_reference.md
-  
-  triggers:
-    code:
-      keywords: ["code", "implement", "fix", "refactor", "debug", "bug"]
-      load: ["02_guidelines/02_code_style.md", "02_guidelines/05_python.md"]
-      timeout_ms: 2000
-    
-    architecture:
-      keywords: ["architecture", "design", "system", "scale", "module"]
-      load: ["02_guidelines/01_planning_design.md", "03_frameworks/decision/"]
-      timeout_ms: 3000
-    
-    testing:
-      keywords: ["test", "testing", "verify", "validation", "coverage"]
-      load: ["02_guidelines/03_engineering.md"]
-      timeout_ms: 2000
-    
-    ai_collaboration:
-      keywords: ["autonomy", "collaboration", "instruction", "batch"]
-      load: ["02_guidelines/06_ai_collaboration.md"]
-      timeout_ms: 2000
-    
-    complex_decision:
-      keywords: ["decision", "review", "expert", "committee", "evaluate"]
-      load: ["03_frameworks/cognitive/expert_committee.md"]
-      timeout_ms: 3000
-    
-    documentation:
-      keywords: ["document", "doc", "readme", "guide", "changelog"]
-      load: ["02_guidelines/04_documentation.md", "04_practices/documentation/"]
-      timeout_ms: 2000
+always:
+- index.md
+- 01
+_core / principles.md
+- 01
+_core / quick_reference.md
 
-  optimization:
-    differential_loading: true    # Only load changed since last session
-    compression_mode: false       # Summarized versions (~50% smaller)
-    client_cache: true            # Client-side cache
-    lazy_expansion: true          # Headers-only with expand-on-demand
-    context_pruning: true         # Auto-remove irrelevant sections
+triggers:
+code:
+keywords: ["code", "implement", "fix", "refactor", "debug", "bug"]
+load: ["02_guidelines/02_code_style.md", "02_guidelines/05_python.md"]
+timeout_ms: 2000
+
+architecture:
+keywords: ["architecture", "design", "system", "scale", "module"]
+load: ["02_guidelines/01_planning_design.md", "03_frameworks/decision/"]
+timeout_ms: 3000
+
+testing:
+keywords: ["test", "testing", "verify", "validation", "coverage"]
+load: ["02_guidelines/03_engineering.md"]
+timeout_ms: 2000
+
+ai_collaboration:
+keywords: ["autonomy", "collaboration", "instruction", "batch"]
+load: ["02_guidelines/06_ai_collaboration.md"]
+timeout_ms: 2000
+
+complex_decision:
+keywords: ["decision", "review", "expert", "committee", "evaluate"]
+load: ["03_frameworks/cognitive/expert_committee.md"]
+timeout_ms: 3000
+
+documentation:
+keywords: ["document", "doc", "readme", "guide", "changelog"]
+load: ["02_guidelines/04_documentation.md", "04_practices/documentation/"]
+timeout_ms: 2000
+
+optimization:
+differential_loading: true  # Only load changed since last session
+compression_mode: false  # Summarized versions (~50% smaller)
+client_cache: true  # Client-side cache
+lazy_expansion: true  # Headers-only with expand-on-demand
+context_pruning: true  # Auto-remove irrelevant sections
 ```
 
 ### 4.4 Enhanced Loading Features
@@ -448,6 +477,7 @@ from abc import ABC, abstractmethod
 from typing import Any, Dict, List, Optional
 from dataclasses import dataclass
 
+
 @dataclass
 class PluginMetadata:
     """Plugin metadata for registration."""
@@ -458,34 +488,36 @@ class PluginMetadata:
     hooks: List[str]
     priority: int = 100  # Lower = higher priority
 
+
 class PluginBase(ABC):
     """Base class for all plugins."""
-    
+
     @property
     @abstractmethod
     def metadata(self) -> PluginMetadata:
         """Return plugin metadata."""
         pass
-    
+
     def on_load(self, context: Dict[str, Any]) -> None:
         """Called when plugin is loaded."""
         pass
-    
+
     def on_unload(self) -> None:
         """Called when plugin is unloaded."""
         pass
 
+
 class LoaderPlugin(PluginBase):
     """Plugin for customizing knowledge loading."""
-    
+
     def pre_load(self, layer: str, path: str) -> Optional[str]:
         """Hook before loading - return modified path or None."""
         return None
-    
+
     def post_load(self, layer: str, content: str) -> str:
         """Hook after loading - return modified content."""
         return content
-    
+
     def on_timeout(self, layer: str, elapsed_ms: int) -> Optional[str]:
         """Hook on timeout - return fallback content or None."""
         return None
@@ -493,15 +525,15 @@ class LoaderPlugin(PluginBase):
 
 ### 5.2 Extension Points (7 Hooks)
 
-| Hook | Phase | Use Case |
-|------|-------|----------|
-| `pre_load` | Before loading | Custom path resolution, caching |
-| `post_load` | After loading | Content transformation, injection |
-| `on_timeout` | On timeout | Custom fallback strategies |
-| `pre_search` | Before search | Query expansion, synonyms |
-| `post_search` | After search | Result ranking, filtering |
-| `pre_format` | Before output | Content preprocessing |
-| `post_format` | After output | Final transformations |
+| Hook          | Phase          | Use Case                          |
+|---------------|----------------|-----------------------------------|
+| `pre_load`    | Before loading | Custom path resolution, caching   |
+| `post_load`   | After loading  | Content transformation, injection |
+| `on_timeout`  | On timeout     | Custom fallback strategies        |
+| `pre_search`  | Before search  | Query expansion, synonyms         |
+| `post_search` | After search   | Result ranking, filtering         |
+| `pre_format`  | Before output  | Content preprocessing             |
+| `post_format` | After output   | Final transformations             |
 
 ### 5.3 Plugin Registry
 
@@ -511,18 +543,19 @@ from typing import Dict, List
 from pathlib import Path
 import importlib.util
 
+
 class PluginRegistry:
     """Central plugin registry with hot-reload support."""
-    
+
     _instance = None
-    
+
     def __new__(cls):
         if cls._instance is None:
             cls._instance = super().__new__(cls)
             cls._instance._plugins: Dict[str, PluginBase] = {}
             cls._instance._hooks: Dict[str, List[PluginBase]] = {}
         return cls._instance
-    
+
     def register(self, plugin: PluginBase) -> None:
         """Register a plugin."""
         meta = plugin.metadata
@@ -533,11 +566,11 @@ class PluginRegistry:
             self._hooks[hook].append(plugin)
             self._hooks[hook].sort(key=lambda p: p.metadata.priority)
         plugin.on_load({"registry": self})
-    
+
     def get_hooks(self, hook_name: str) -> List[PluginBase]:
         """Get all plugins registered for a hook."""
         return self._hooks.get(hook_name, [])
-    
+
     def load_from_directory(self, path: Path) -> int:
         """Load all plugins from a directory."""
         count = 0
@@ -571,6 +604,7 @@ import asyncio
 
 app = FastMCP("ai-collab-kb")
 
+
 @app.tool()
 async def get_knowledge(
     layer: int = 0,
@@ -591,7 +625,7 @@ async def get_knowledge(
     import time
     start = time.time()
     loader = TimeoutLoader()
-    
+
     try:
         result = await asyncio.wait_for(
             loader.load_with_timeout(["core"] if layer == 0 else ["guidelines"]),
@@ -607,15 +641,16 @@ async def get_knowledge(
             status="timeout_fallback"
         )
         status = "timeout_fallback"
-    
+
     return {
-        "content": result.content,
-        "tokens": len(result.content) // 4,
-        "status": status,
-        "complete": result.complete,
+        "content"    : result.content,
+        "tokens"     : len(result.content) // 4,
+        "status"     : status,
+        "complete"   : result.complete,
         "duration_ms": int((time.time() - start) * 1000),
-        "timeout_ms": timeout_ms
+        "timeout_ms" : timeout_ms
     }
+
 
 @app.tool()
 async def get_guidelines(
@@ -625,6 +660,7 @@ async def get_guidelines(
     """Get engineering guidelines by section."""
     pass
 
+
 @app.tool()
 async def get_framework(
     name: str,
@@ -632,6 +668,7 @@ async def get_framework(
 ) -> dict:
     """Get framework documentation (autonomy, cognitive, decision, collaboration)."""
     pass
+
 
 @app.tool()
 async def search_knowledge(
@@ -641,6 +678,7 @@ async def search_knowledge(
 ) -> list:
     """Search knowledge base with timeout."""
     pass
+
 
 @app.tool()
 async def get_template(name: str) -> str:
@@ -667,6 +705,7 @@ app = typer.Typer(
 )
 console = Console()
 
+
 @app.command()
 def get(
     layer: int = typer.Argument(0, help="Layer (0=core, 1=guidelines, 2=frameworks)"),
@@ -683,12 +722,13 @@ def get(
         task = progress.add_task(f"Loading layer {layer}...", total=None)
         result = asyncio.run(_load_with_progress(layer, topic, timeout))
         progress.remove_task(task)
-    
+
     if result["status"] == "success":
         _display_content(result["content"], format)
     else:
         console.print(f"[yellow]⚠ {result['status']}: Using fallback[/yellow]")
         _display_content(result["content"], format)
+
 
 @app.command()
 def search(
@@ -698,11 +738,11 @@ def search(
     """Search the knowledge base."""
     with console.status("[bold green]Searching..."):
         results = asyncio.run(_search_kb(query, limit))
-    
+
     if not results:
         console.print("[yellow]No results found[/yellow]")
         return
-    
+
     table = Table(title=f"Search Results for '{query}'")
     table.add_column("Score", style="cyan", width=8)
     table.add_column("Path", style="green")
@@ -710,6 +750,7 @@ def search(
     for r in results:
         table.add_row(f"{r['score']:.2f}", r['path'], r['preview'][:60] + "...")
     console.print(table)
+
 
 @app.command()
 def info():
@@ -728,6 +769,7 @@ def info():
         table.add_row(prop, val)
     console.print(table)
 
+
 @app.command()
 def validate(
     path: str = typer.Argument(".", help="Path to validate"),
@@ -737,6 +779,7 @@ def validate(
     console.print(Panel("Validating...", title="Validation"))
     # Validation logic
 
+
 @app.command()
 def serve(
     host: str = typer.Option("localhost", help="Host"),
@@ -745,6 +788,7 @@ def serve(
     """Start MCP server."""
     console.print(f"[green]Starting MCP server on {host}:{port}[/green]")
     # Start server
+
 
 if __name__ == "__main__":
     app()
@@ -787,16 +831,17 @@ Risk Buffer: 1 week (17%)
 
 **Goal**: Core structure and timeout infrastructure
 
-| Task | Owner | Days | Deliverable |
-|------|-------|------|-------------|
-| Create 8-directory structure | Chief Architect | 1 | Directory layout |
-| Implement TimeoutLoader | Reliability Engineer | 2 | loader.py with timeout |
-| Implement TimeoutConfig | Systems Engineer | 1 | timeout_manager.py |
-| Create 01_core/ content | Knowledge Manager | 2 | principles.md, quick_reference.md |
-| Create index.md | Information Architect | 1 | Navigation index |
-| Unit tests for timeout | Test Architect | 2 | 90%+ coverage |
+| Task                         | Owner                 | Days | Deliverable                       |
+|------------------------------|-----------------------|------|-----------------------------------|
+| Create 8-directory structure | Chief Architect       | 1    | Directory layout                  |
+| Implement TimeoutLoader      | Reliability Engineer  | 2    | loader.py with timeout            |
+| Implement TimeoutConfig      | Systems Engineer      | 1    | timeout_manager.py                |
+| Create 01_core/ content      | Knowledge Manager     | 2    | principles.md, quick_reference.md |
+| Create index.md              | Information Architect | 1    | Navigation index                  |
+| Unit tests for timeout       | Test Architect        | 2    | 90%+ coverage                     |
 
 **Acceptance Criteria**:
+
 - [ ] All 8 directories created
 - [ ] TimeoutLoader passes unit tests
 - [ ] Core content migrated and validated
@@ -806,15 +851,16 @@ Risk Buffer: 1 week (17%)
 
 **Goal**: Migrate and consolidate all content
 
-| Task | Owner | Days | Deliverable |
-|------|-------|------|-------------|
-| Merge 16→10 guidelines chapters | Documentation Engineer | 3 | 02_guidelines/ (10 files) |
-| Migrate frameworks | Knowledge Manager | 2 | 03_frameworks/ (4 subdirs) |
-| Migrate practices | Content Strategist | 2 | 04_practices/ (3 subdirs) |
-| Migrate code tools | Python Engineer | 2 | 05_tools/ |
-| Create templates | Documentation Engineer | 1 | 06_templates/ |
+| Task                            | Owner                  | Days | Deliverable                |
+|---------------------------------|------------------------|------|----------------------------|
+| Merge 16→10 guidelines chapters | Documentation Engineer | 3    | 02_guidelines/ (10 files)  |
+| Migrate frameworks              | Knowledge Manager      | 2    | 03_frameworks/ (4 subdirs) |
+| Migrate practices               | Content Strategist     | 2    | 04_practices/ (3 subdirs)  |
+| Migrate code tools              | Python Engineer        | 2    | 05_tools/                  |
+| Create templates                | Documentation Engineer | 1    | 06_templates/              |
 
 **Acceptance Criteria**:
+
 - [ ] All content migrated without loss
 - [ ] No duplicate content across directories
 - [ ] All internal links valid
@@ -824,15 +870,16 @@ Risk Buffer: 1 week (17%)
 
 **Goal**: Complete toolchain with timeout
 
-| Task | Owner | Days | Deliverable |
-|------|-------|------|-------------|
-| MCP server with timeout | API Designer | 2 | mcp_server.py |
-| Rich CLI implementation | Python Engineer | 2 | cli.py |
-| Plugin system | Systems Engineer | 2 | plugins/ |
-| Smart loading rules | Performance Architect | 1 | aikb.yaml |
-| Integration tests | Test Architect | 2 | Test suite |
+| Task                    | Owner                 | Days | Deliverable   |
+|-------------------------|-----------------------|------|---------------|
+| MCP server with timeout | API Designer          | 2    | mcp_server.py |
+| Rich CLI implementation | Python Engineer       | 2    | cli.py        |
+| Plugin system           | Systems Engineer      | 2    | plugins/      |
+| Smart loading rules     | Performance Architect | 1    | aikb.yaml     |
+| Integration tests       | Test Architect        | 2    | Test suite    |
 
 **Acceptance Criteria**:
+
 - [ ] All MCP tools have timeout_ms parameter
 - [ ] CLI supports --timeout flag
 - [ ] Plugin system loads extensions
@@ -842,14 +889,15 @@ Risk Buffer: 1 week (17%)
 
 **Goal**: Production ready release
 
-| Task | Owner | Days | Deliverable |
-|------|-------|------|-------------|
-| End-to-end testing | Test Architect | 2 | Test report |
-| Performance benchmarks | Performance Architect | 1 | Benchmark report |
-| Documentation | Documentation Engineer | 2 | README, API docs |
-| PyPI release | DevOps Expert | 1 | v2.0.0 on PyPI |
+| Task                   | Owner                  | Days | Deliverable      |
+|------------------------|------------------------|------|------------------|
+| End-to-end testing     | Test Architect         | 2    | Test report      |
+| Performance benchmarks | Performance Architect  | 1    | Benchmark report |
+| Documentation          | Documentation Engineer | 2    | README, API docs |
+| PyPI release           | DevOps Expert          | 1    | v2.0.0 on PyPI   |
 
 **Acceptance Criteria**:
+
 - [ ] Average response time < 500ms
 - [ ] Timeout rate < 1%
 - [ ] Complete documentation
@@ -861,48 +909,48 @@ Risk Buffer: 1 week (17%)
 
 ### 8.1 Scoring Matrix
 
-| Dimension | Weight | Score | Weighted |
-|-----------|--------|-------|----------|
-| **Architecture** | 15% | 100 | 15.00 |
-| **Token Efficiency** | 15% | 100 | 15.00 |
-| **MECE Compliance** | 10% | 100 | 10.00 |
-| **Timeout Resilience** | 10% | 100 | 10.00 |
-| **Usability** | 10% | 100 | 10.00 |
-| **Maintainability** | 10% | 100 | 10.00 |
-| **Extensibility** | 10% | 100 | 10.00 |
-| **Documentation** | 10% | 100 | 10.00 |
-| **Code Quality** | 5% | 100 | 5.00 |
-| **Migration Path** | 5% | 100 | 5.00 |
-| **Total** | 100% | - | **100.00** 🏆 |
+| Dimension              | Weight | Score | Weighted      |
+|------------------------|--------|-------|---------------|
+| **Architecture**       | 15%    | 100   | 15.00         |
+| **Token Efficiency**   | 15%    | 100   | 15.00         |
+| **MECE Compliance**    | 10%    | 100   | 10.00         |
+| **Timeout Resilience** | 10%    | 100   | 10.00         |
+| **Usability**          | 10%    | 100   | 10.00         |
+| **Maintainability**    | 10%    | 100   | 10.00         |
+| **Extensibility**      | 10%    | 100   | 10.00         |
+| **Documentation**      | 10%    | 100   | 10.00         |
+| **Code Quality**       | 5%     | 100   | 5.00          |
+| **Migration Path**     | 5%     | 100   | 5.00          |
+| **Total**              | 100%   | -     | **100.00** 🏆 |
 
 ### 8.2 Expert Votes (All 24 Experts)
 
-| Group | Expert | Vote | Key Comment |
-|-------|--------|------|-------------|
-| **Architecture** | Chief Architect | ✅ 100 | "Unified design combines best of all approaches" |
-| | Information Architect | ✅ 100 | "MECE structure exemplary" |
-| | Systems Engineer | ✅ 100 | "Timeout + Plugin integration excellent" |
-| | API Designer | ✅ 100 | "MCP interface clean and intuitive" |
-| | Performance Architect | ✅ 100 | "95% token reduction achieved" |
-| | Reliability Engineer | ✅ 100 | "5-level timeout hierarchy robust" |
-| **Knowledge** | Knowledge Manager | ✅ 100 | "Complete knowledge preservation" |
-| | Documentation Engineer | ✅ 100 | "English-first policy well executed" |
-| | Metadata Specialist | ✅ 100 | "Taxonomy comprehensive" |
-| | Search Expert | ✅ 100 | "Smart loading triggers effective" |
-| | Content Strategist | ✅ 100 | "Balanced depth and accessibility" |
-| | Ontology Designer | ✅ 100 | "Semantic relationships well modeled" |
-| **AI Collab** | AI Collaboration Expert | ✅ 100 | "Autonomy integration seamless" |
-| | Prompt Engineer | ✅ 100 | "Context optimization excellent" |
-| | Autonomy Specialist | ✅ 100 | "6-level framework preserved" |
-| | Cognitive Scientist | ✅ 100 | "CoT patterns practical" |
-| | Ethics Expert | ✅ 100 | "Transparency and fallbacks good" |
-| | Timeout & Safety Expert | ✅ 100 | "Never-hang guarantee production-ready" |
-| **Engineering** | DevOps Expert | ✅ 100 | "6-week roadmap realistic" |
-| | Python Engineer | ✅ 100 | "Code clean and idiomatic" |
-| | Test Architect | ✅ 100 | "Validation strategy comprehensive" |
-| | UX Expert | ✅ 100 | "Rich CLI excellent UX" |
-| | Product Manager | ✅ 100 | "Unified design maximizes value" |
-| | Security Engineer | ✅ 100 | "No security concerns" |
+| Group            | Expert                  | Vote  | Key Comment                                      |
+|------------------|-------------------------|-------|--------------------------------------------------|
+| **Architecture** | Chief Architect         | ✅ 100 | "Unified design combines best of all approaches" |
+|                  | Information Architect   | ✅ 100 | "MECE structure exemplary"                       |
+|                  | Systems Engineer        | ✅ 100 | "Timeout + Plugin integration excellent"         |
+|                  | API Designer            | ✅ 100 | "MCP interface clean and intuitive"              |
+|                  | Performance Architect   | ✅ 100 | "95% token reduction achieved"                   |
+|                  | Reliability Engineer    | ✅ 100 | "5-level timeout hierarchy robust"               |
+| **Knowledge**    | Knowledge Manager       | ✅ 100 | "Complete knowledge preservation"                |
+|                  | Documentation Engineer  | ✅ 100 | "English-first policy well executed"             |
+|                  | Metadata Specialist     | ✅ 100 | "Taxonomy comprehensive"                         |
+|                  | Search Expert           | ✅ 100 | "Smart loading triggers effective"               |
+|                  | Content Strategist      | ✅ 100 | "Balanced depth and accessibility"               |
+|                  | Ontology Designer       | ✅ 100 | "Semantic relationships well modeled"            |
+| **AI Collab**    | AI Collaboration Expert | ✅ 100 | "Autonomy integration seamless"                  |
+|                  | Prompt Engineer         | ✅ 100 | "Context optimization excellent"                 |
+|                  | Autonomy Specialist     | ✅ 100 | "6-level framework preserved"                    |
+|                  | Cognitive Scientist     | ✅ 100 | "CoT patterns practical"                         |
+|                  | Ethics Expert           | ✅ 100 | "Transparency and fallbacks good"                |
+|                  | Timeout & Safety Expert | ✅ 100 | "Never-hang guarantee production-ready"          |
+| **Engineering**  | DevOps Expert           | ✅ 100 | "6-week roadmap realistic"                       |
+|                  | Python Engineer         | ✅ 100 | "Code clean and idiomatic"                       |
+|                  | Test Architect          | ✅ 100 | "Validation strategy comprehensive"              |
+|                  | UX Expert               | ✅ 100 | "Rich CLI excellent UX"                          |
+|                  | Product Manager         | ✅ 100 | "Unified design maximizes value"                 |
+|                  | Security Engineer       | ✅ 100 | "No security concerns"                           |
 
 ### 8.3 Score Progression
 
@@ -916,16 +964,16 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 
 ### 8.4 Key Innovations Summary
 
-| Innovation | Source | Impact |
-|------------|--------|--------|
-| **5-Level Timeout Hierarchy** | AI_COLLAB_KB | Production reliability |
-| **Circuit Breaker Pattern** | AI_COLLAB_KB | Fault tolerance |
-| **Plugin Architecture (7 hooks)** | ULTIMATE_99 | Maximum extensibility |
-| **Rich CLI with REPL** | ULTIMATE_99 | Excellent UX |
-| **Chapter Consolidation 16→10** | ULTIMATE_99 | Better navigation |
-| **Value Content Inventory** | LEVEL5 | Complete preservation |
-| **MECE 8-Directory Structure** | LEVEL5 | Clear boundaries |
-| **Graceful Degradation (4 levels)** | AI_COLLAB_KB | Never-fail guarantee |
+| Innovation                          | Source       | Impact                 |
+|-------------------------------------|--------------|------------------------|
+| **5-Level Timeout Hierarchy**       | AI_COLLAB_KB | Production reliability |
+| **Circuit Breaker Pattern**         | AI_COLLAB_KB | Fault tolerance        |
+| **Plugin Architecture (7 hooks)**   | ULTIMATE_99  | Maximum extensibility  |
+| **Rich CLI with REPL**              | ULTIMATE_99  | Excellent UX           |
+| **Chapter Consolidation 16→10**     | ULTIMATE_99  | Better navigation      |
+| **Value Content Inventory**         | LEVEL5       | Complete preservation  |
+| **MECE 8-Directory Structure**      | LEVEL5       | Clear boundaries       |
+| **Graceful Degradation (4 levels)** | AI_COLLAB_KB | Never-fail guarantee   |
 
 ---
 
@@ -939,16 +987,16 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 
 ### Final Metrics
 
-| Metric | Target | Achieved |
-|--------|--------|----------|
-| Expert Score | 100 | **100.00** 🏆 |
-| Token Efficiency | 95%+ | **95%** ✅ |
-| Chapter Count | ≤12 | **10** ✅ |
-| Timeout Coverage | 100% | **100%** ✅ |
-| English Coverage | 100% | **100%** ✅ |
-| MECE Compliance | 100% | **100%** ✅ |
-| Plugin Extensibility | Yes | **7 hooks** ✅ |
-| Source Integration | 3 docs | **100%** ✅ |
+| Metric               | Target | Achieved      |
+|----------------------|--------|---------------|
+| Expert Score         | 100    | **100.00** 🏆 |
+| Token Efficiency     | 95%+   | **95%** ✅     |
+| Chapter Count        | ≤12    | **10** ✅      |
+| Timeout Coverage     | 100%   | **100%** ✅    |
+| English Coverage     | 100%   | **100%** ✅    |
+| MECE Compliance      | 100%   | **100%** ✅    |
+| Plugin Extensibility | Yes    | **7 hooks** ✅ |
+| Source Integration   | 3 docs | **100%** ✅    |
 
 ### Key Achievements
 

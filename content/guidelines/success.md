@@ -8,15 +8,17 @@
 ## 9.1 Xin-Da-Ya (信达雅) Framework
 
 ### Core Philosophy
+
 The ancient Chinese translation principles, applied to software development:
 
-| Principle | Chinese | Meaning | Application |
-|-----------|---------|---------|-------------|
-| **Xin** | 信 | Faithfulness | Accurate, reliable, trustworthy |
-| **Da** | 达 | Clarity | Clear, comprehensible, accessible |
-| **Ya** | 雅 | Elegance | Refined, balanced, harmonious |
+| Principle | Chinese | Meaning      | Application                       |
+|-----------|---------|--------------|-----------------------------------|
+| **Xin**   | 信       | Faithfulness | Accurate, reliable, trustworthy   |
+| **Da**    | 达       | Clarity      | Clear, comprehensible, accessible |
+| **Ya**    | 雅       | Elegance     | Refined, balanced, harmonious     |
 
 ### Hierarchy of Excellence
+
 ```
          雅 (Ya)
         Elegance
@@ -39,9 +41,11 @@ Finally → Refine for elegance
 ## 9.2 Xin (信) - Faithfulness
 
 ### Definition
+
 Code that does exactly what it claims to do, reliably.
 
 ### Application Checklist
+
 - [ ] Behavior matches documentation
 - [ ] Edge cases handled correctly
 - [ ] Error states communicated clearly
@@ -49,6 +53,7 @@ Code that does exactly what it claims to do, reliably.
 - [ ] Contracts honored
 
 ### Examples
+
 ```python
 # HIGH XIN: Clear contract, reliable behavior
 def divide(a: float, b: float) -> float:
@@ -74,9 +79,11 @@ def divide(a, b):
 ## 9.3 Da (达) - Clarity
 
 ### Definition
+
 Code that communicates its intent clearly to readers.
 
 ### Application Checklist
+
 - [ ] Names reveal intent
 - [ ] Structure follows logic
 - [ ] Complexity is minimized
@@ -84,6 +91,7 @@ Code that communicates its intent clearly to readers.
 - [ ] Flow is easy to follow
 
 ### Examples
+
 ```python
 # HIGH DA: Clear intent, easy to understand
 def calculate_order_total(items: List[Item], discount_percent: float) -> Money:
@@ -101,9 +109,11 @@ def calc(i, d):
 ## 9.4 Ya (雅) - Elegance
 
 ### Definition
+
 Code that achieves its purpose with grace and balance.
 
 ### Application Checklist
+
 - [ ] No unnecessary complexity
 - [ ] Proportional to the problem
 - [ ] Aesthetically consistent
@@ -111,6 +121,7 @@ Code that achieves its purpose with grace and balance.
 - [ ] Delights rather than frustrates
 
 ### Examples
+
 ```python
 # HIGH YA: Elegant, proportional solution
 def is_palindrome(text: str) -> bool:
@@ -133,13 +144,15 @@ class PalindromeChecker:
 ## 9.5 Shu-Fa-Dao (术法道) Framework
 
 ### The Three Levels
-| Level | Chinese | Meaning | Focus |
-|-------|---------|---------|-------|
-| **Shu** | 术 | Technique | How to do things |
-| **Fa** | 法 | Method | Why things work |
-| **Dao** | 道 | Way | Principles behind it all |
+
+| Level   | Chinese | Meaning   | Focus                    |
+|---------|---------|-----------|--------------------------|
+| **Shu** | 术       | Technique | How to do things         |
+| **Fa**  | 法       | Method    | Why things work          |
+| **Dao** | 道       | Way       | Principles behind it all |
 
 ### Application to Development
+
 ```
 术 (Shu) - Techniques
 ├── Syntax and language features
@@ -161,6 +174,7 @@ class PalindromeChecker:
 ```
 
 ### Progression Path
+
 1. **Learn Shu**: Master techniques and tools
 2. **Understand Fa**: Know when and why to apply them
 3. **Embody Dao**: Principles become intuition
@@ -170,37 +184,42 @@ class PalindromeChecker:
 ## 9.6 Success Criteria Matrix
 
 ### Project Success
-| Dimension | Criteria | Measure |
-|-----------|----------|---------|
-| **Functional** | Does it work? | Tests pass, requirements met |
-| **Technical** | Is it well-built? | Code quality metrics |
-| **Process** | Was it efficient? | Time, resources used |
-| **Learning** | Did we grow? | Skills gained, knowledge shared |
+
+| Dimension      | Criteria          | Measure                         |
+|----------------|-------------------|---------------------------------|
+| **Functional** | Does it work?     | Tests pass, requirements met    |
+| **Technical**  | Is it well-built? | Code quality metrics            |
+| **Process**    | Was it efficient? | Time, resources used            |
+| **Learning**   | Did we grow?      | Skills gained, knowledge shared |
 
 ### Code Success
-| Criterion | Question | Indicator |
-|-----------|----------|-----------|
-| Correct | Does it do the right thing? | Tests, validation |
-| Clear | Can others understand it? | Review feedback |
-| Maintainable | Can it evolve? | Change cost |
-| Performant | Is it fast enough? | Benchmarks |
+
+| Criterion    | Question                    | Indicator         |
+|--------------|-----------------------------|-------------------|
+| Correct      | Does it do the right thing? | Tests, validation |
+| Clear        | Can others understand it?   | Review feedback   |
+| Maintainable | Can it evolve?              | Change cost       |
+| Performant   | Is it fast enough?          | Benchmarks        |
 
 ---
 
 ## 9.7 Balance and Trade-offs
 
 ### The Balance Principle
+
 > "The best solution balances competing concerns appropriately for the context."
 
 ### Common Trade-offs
-| Trade-off | Lean Toward A When | Lean Toward B When |
-|-----------|-------------------|-------------------|
-| Speed vs Quality | Prototype, learning | Production, critical |
-| Simple vs Flexible | Clear requirements | Uncertain future |
-| DRY vs Clarity | Pattern is stable | Abstraction obscures |
-| Performance vs Readability | Proven bottleneck | General code |
+
+| Trade-off                  | Lean Toward A When  | Lean Toward B When   |
+|----------------------------|---------------------|----------------------|
+| Speed vs Quality           | Prototype, learning | Production, critical |
+| Simple vs Flexible         | Clear requirements  | Uncertain future     |
+| DRY vs Clarity             | Pattern is stable   | Abstraction obscures |
+| Performance vs Readability | Proven bottleneck   | General code         |
 
 ### Decision Framework
+
 ```
 1. Identify the trade-off
 2. Understand the context
@@ -214,16 +233,19 @@ class PalindromeChecker:
 ## 9.8 Quick Success Reference
 
 ### Before Starting
+
 - [ ] Success criteria defined
 - [ ] Trade-offs acknowledged
 - [ ] Priorities clear
 
 ### During Work
+
 - [ ] Xin: Is this correct?
 - [ ] Da: Is this clear?
 - [ ] Ya: Is this elegant?
 
 ### After Completion
+
 - [ ] Success criteria met?
 - [ ] What did we learn?
 - [ ] What could be better?

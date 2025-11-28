@@ -4,7 +4,7 @@
 > **Version**: 3.1.0  
 > **Status**: Production-Grade Testing Documentation  
 > **Certification**: Level 5 Expert Committee (24/24 Unanimous Approval)  
-> **Date**: 2025-11-28  
+> **Date**: 2025-11-28
 
 ---
 
@@ -26,31 +26,31 @@
 
 Testing follows the project's 信达雅 (Xin-Da-Ya) philosophy:
 
-| Principle | Testing Application |
-|-----------|---------------------|
-| **信 (Faithfulness)** | Tests accurately verify behavior |
-| **达 (Clarity)** | Tests are readable and maintainable |
-| **雅 (Elegance)** | Tests are minimal yet comprehensive |
+| Principle            | Testing Application                 |
+|----------------------|-------------------------------------|
+| **信 (Faithfulness)** | Tests accurately verify behavior    |
+| **达 (Clarity)**      | Tests are readable and maintainable |
+| **雅 (Elegance)**     | Tests are minimal yet comprehensive |
 
 ### 1.2 Testing Stack
 
-| Tool | Version | Purpose |
-|------|---------|---------|
-| pytest | >=8.3 | Test framework |
-| pytest-asyncio | >=0.24 | Async testing |
-| pytest-cov | >=5.0 | Coverage reporting |
-| pytest-xdist | >=3.5 | Parallel execution |
-| allure-pytest | >=2.13 | Test reporting |
-| hypothesis | >=6.108 | Property testing |
+| Tool           | Version | Purpose            |
+|----------------|---------|--------------------|
+| pytest         | >=8.3   | Test framework     |
+| pytest-asyncio | >=0.24  | Async testing      |
+| pytest-cov     | >=5.0   | Coverage reporting |
+| pytest-xdist   | >=3.5   | Parallel execution |
+| allure-pytest  | >=2.13  | Test reporting     |
+| hypothesis     | >=6.108 | Property testing   |
 
 ### 1.3 Coverage Targets
 
-| Component | Target | Current |
-|-----------|--------|---------|
-| Core Layer | 95% | - |
-| Services Layer | 90% | - |
-| Tools Layer | 80% | - |
-| **Overall** | **90%** | - |
+| Component      | Target  | Current |
+|----------------|---------|---------|
+| Core Layer     | 95%     | -       |
+| Services Layer | 90%     | -       |
+| Tools Layer    | 80%     | -       |
+| **Overall**    | **90%** | -       |
 
 ---
 
@@ -172,10 +172,11 @@ markers = [
 import allure
 from allure import severity_level
 
+
 @allure.epic("AI Collaboration Knowledge Base")
 @allure.feature("Core Engine")
 class TestTimeoutLoader:
-    
+
     @allure.story("Knowledge Loading")
     @allure.title("Load core layer with default timeout")
     @allure.severity(severity_level.CRITICAL)
@@ -184,15 +185,15 @@ class TestTimeoutLoader:
         """Test loading core layer with default configuration."""
         with allure.step("Initialize loader with default config"):
             assert loader is not None
-        
+
         with allure.step("Load core layer"):
             result = await loader.load(["core"])
-        
+
         with allure.step("Verify successful load"):
             assert result.status == "success"
             assert result.tokens > 0
             allure.attach(
-                result.content[:500], 
+                result.content[:500],
                 "Loaded Content Preview",
                 allure.attachment_type.TEXT
             )
@@ -200,13 +201,13 @@ class TestTimeoutLoader:
 
 ### 3.4 Severity Levels
 
-| Level | Use Case | Example |
-|-------|----------|---------|
-| `BLOCKER` | System cannot function | Core loader fails |
-| `CRITICAL` | Major functionality broken | Timeout not working |
-| `NORMAL` | Standard functionality | Search returns results |
-| `MINOR` | Minor feature issue | Formatting inconsistency |
-| `TRIVIAL` | Cosmetic issues | Log message typo |
+| Level      | Use Case                   | Example                  |
+|------------|----------------------------|--------------------------|
+| `BLOCKER`  | System cannot function     | Core loader fails        |
+| `CRITICAL` | Major functionality broken | Timeout not working      |
+| `NORMAL`   | Standard functionality     | Search returns results   |
+| `MINOR`    | Minor feature issue        | Formatting inconsistency |
+| `TRIVIAL`  | Cosmetic issues            | Log message typo         |
 
 ### 3.5 Running Tests with Allure
 
@@ -237,16 +238,17 @@ import allure
 from ai_collab_kb.core.loader import TimeoutLoader
 from ai_collab_kb.core.protocols import LoadRequest
 
+
 @allure.epic("AI Collaboration Knowledge Base")
 @allure.feature("Core Engine")
 class TestTimeoutLoader:
     """Unit tests for TimeoutLoader."""
-    
+
     @pytest.fixture
     def loader(self, tmp_path):
         """Create loader with test configuration."""
         return TimeoutLoader(config_path=tmp_path / "sage.yaml")
-    
+
     @allure.story("Knowledge Loading")
     @allure.title("Load single layer successfully")
     @allure.severity(allure.severity_level.CRITICAL)
@@ -254,18 +256,18 @@ class TestTimeoutLoader:
         """Test loading a single layer."""
         request = LoadRequest(layers=["core"], timeout_ms=5000)
         result = await loader.load(request)
-        
+
         assert result.status == "success"
         assert result.tokens > 0
         assert "core" in result.layers_loaded
-    
+
     @allure.story("Timeout Handling")
     @allure.title("Return fallback on timeout")
     async def test_timeout_fallback(self, loader):
         """Test graceful degradation on timeout."""
         request = LoadRequest(layers=["large"], timeout_ms=1)
         result = await loader.load(request)
-        
+
         assert result.status in ["fallback", "partial"]
         assert len(result.content) > 0  # Fallback content provided
 ```
@@ -278,16 +280,17 @@ import pytest
 import allure
 from ai_collab_kb.core.bootstrap import bootstrap
 
+
 @allure.epic("AI Collaboration Knowledge Base")
 @allure.feature("Integration")
 class TestEndToEnd:
     """End-to-end integration tests."""
-    
+
     @pytest.fixture
     async def container(self):
         """Bootstrap application container."""
         return await bootstrap()
-    
+
     @allure.story("Full Workflow")
     @allure.title("Load, search, and render knowledge")
     async def test_full_workflow(self, container):
@@ -295,20 +298,20 @@ class TestEndToEnd:
         from ai_collab_kb.core.protocols import (
             LoaderProtocol, KnowledgeProtocol, OutputProtocol
         )
-        
+
         with allure.step("Resolve services from container"):
             loader = container.resolve(LoaderProtocol)
             knowledge = container.resolve(KnowledgeProtocol)
             output = container.resolve(OutputProtocol)
-        
+
         with allure.step("Load core knowledge"):
             content = await loader.load(LoadRequest(layers=["core"]))
             assert content.status == "success"
-        
+
         with allure.step("Search knowledge"):
             results = await knowledge.search("autonomy", max_results=5)
             assert len(results) > 0
-        
+
         with allure.step("Render output"):
             rendered = await output.render(results, format="markdown")
             assert len(rendered) > 0
@@ -323,32 +326,33 @@ import asyncio
 import allure
 from ai_collab_kb.core.events import EventBus, Event, EventType
 
+
 @allure.feature("Event System")
 class TestEventBus:
     """Tests for async EventBus."""
-    
+
     @pytest.fixture
     def event_bus(self):
         """Create fresh EventBus instance."""
         EventBus._instance = None  # Reset singleton
         return EventBus.get_instance()
-    
+
     @allure.story("Pub/Sub")
     @allure.title("Publish and receive events")
     async def test_publish_subscribe(self, event_bus):
         """Test event publication and subscription."""
         received = []
-        
+
         async def handler(event: Event):
             received.append(event)
-        
+
         with allure.step("Subscribe to events"):
             event_bus.subscribe("loader.*", handler)
-        
+
         with allure.step("Publish event"):
             event = Event(type=EventType.LOAD_COMPLETED, payload={"test": True})
             await event_bus.publish(event)
-        
+
         with allure.step("Verify event received"):
             await asyncio.sleep(0.1)  # Allow async processing
             assert len(received) == 1
@@ -364,10 +368,11 @@ from hypothesis import given, strategies as st
 import allure
 from ai_collab_kb.core.timeout import TimeoutConfig
 
+
 @allure.feature("Timeout System")
 class TestTimeoutProperties:
     """Property-based tests for timeout configuration."""
-    
+
     @given(st.integers(min_value=1, max_value=30000))
     @allure.story("Configuration")
     @allure.title("Valid timeout values are accepted")
@@ -375,7 +380,7 @@ class TestTimeoutProperties:
         """Any positive timeout up to 30s should be valid."""
         config = TimeoutConfig(default_ms=timeout_ms)
         assert config.default_ms == timeout_ms
-    
+
     @given(st.integers(max_value=0))
     @allure.story("Configuration")
     @allure.title("Invalid timeout values are rejected")
@@ -402,6 +407,7 @@ from pathlib import Path
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 
+
 def pytest_configure(config):
     """Configure Allure environment properties."""
     allure_dir = config.getoption("--alluredir", default="allure-results")
@@ -414,6 +420,7 @@ def pytest_configure(config):
             f.write(f"ai-collab-kb=3.1.0\n")
             f.write(f"pytest={pytest.__version__}\n")
 
+
 @pytest.hookimpl(tryfirst=True)
 def pytest_runtest_makereport(item, call):
     """Attach error details on test failure."""
@@ -424,6 +431,7 @@ def pytest_runtest_makereport(item, call):
             allure.attachment_type.TEXT
         )
 
+
 # ============ Fixtures ============
 
 @pytest.fixture
@@ -431,29 +439,33 @@ def sample_content_dir(tmp_path):
     """Create sample content directory for testing."""
     content_dir = tmp_path / "content"
     content_dir.mkdir()
-    
+
     # Create core directory
     core_dir = content_dir / "core"
     core_dir.mkdir()
-    
+
     # Create sample files
     (core_dir / "principles.md").write_text("# Core Principles\nXin-Da-Ya")
     (core_dir / "quick_reference.md").write_text("# Quick Reference\n5 Questions")
-    
+
     return content_dir
+
 
 @pytest.fixture
 def test_config(tmp_path):
     """Create test configuration file."""
     config_file = tmp_path / "sage.yaml"
-    config_file.write_text("""
-version: "3.1.0"
-timeout:
-  default_ms: 1000
-loading:
-  max_tokens: 1000
-""")
+    config_file.write_text(
+        """
+        version: "3.1.0"
+        timeout:
+          default_ms: 1000
+        loading:
+          max_tokens: 1000
+        """
+    )
     return config_file
+
 
 @pytest.fixture
 async def event_bus():
@@ -463,6 +475,7 @@ async def event_bus():
     bus = EventBus.get_instance()
     yield bus
     EventBus._instance = None
+
 
 @pytest.fixture
 async def container(test_config):
@@ -481,6 +494,7 @@ FIXTURES_DIR = Path(__file__).parent
 SAMPLE_CONTENT = FIXTURES_DIR / "sample_content"
 MOCK_RESPONSES = FIXTURES_DIR / "mock_responses"
 TEST_CONFIGS = FIXTURES_DIR / "configs"
+
 
 def load_mock_response(name: str) -> dict:
     """Load mock response JSON."""
@@ -519,17 +533,17 @@ fail_under = 90
 
 ### 6.2 Coverage by Component
 
-| Component | Files | Target | Focus Areas |
-|-----------|-------|--------|-------------|
-| `core/config.py` | 1 | 95% | All settings loaded |
-| `core/loader.py` | 1 | 95% | All paths, timeouts |
-| `core/timeout.py` | 1 | 95% | All levels, fallbacks |
-| `core/events/` | 3 | 90% | Pub/sub, wildcards |
-| `core/di/` | 2 | 90% | Registration, resolution |
-| `core/memory/` | 3 | 85% | Store, budget, session |
-| `services/cli.py` | 1 | 85% | Commands, options |
-| `services/mcp_server.py` | 1 | 85% | Tools, responses |
-| `services/api_server.py` | 1 | 85% | Endpoints, errors |
+| Component                | Files | Target | Focus Areas              |
+|--------------------------|-------|--------|--------------------------|
+| `core/config.py`         | 1     | 95%    | All settings loaded      |
+| `core/loader.py`         | 1     | 95%    | All paths, timeouts      |
+| `core/timeout.py`        | 1     | 95%    | All levels, fallbacks    |
+| `core/events/`           | 3     | 90%    | Pub/sub, wildcards       |
+| `core/di/`               | 2     | 90%    | Registration, resolution |
+| `core/memory/`           | 3     | 85%    | Store, budget, session   |
+| `services/cli.py`        | 1     | 85%    | Commands, options        |
+| `services/mcp_server.py` | 1     | 85%    | Tools, responses         |
+| `services/api_server.py` | 1     | 85%    | Endpoints, errors        |
 
 ### 6.3 Running Coverage
 

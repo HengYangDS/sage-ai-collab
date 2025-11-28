@@ -4,7 +4,7 @@
 > **Version**: 3.1.0  
 > **Status**: Production-Grade API Documentation  
 > **Certification**: Level 5 Expert Committee (24/24 Unanimous Approval)  
-> **Date**: 2025-11-28  
+> **Date**: 2025-11-28
 
 ---
 
@@ -25,11 +25,11 @@
 
 ai-collab-kb provides three service interfaces:
 
-| Service | Protocol | Port | Use Case |
-|---------|----------|------|----------|
-| **CLI** | Terminal | N/A | Local development, scripts |
-| **MCP** | JSON-RPC | 8000 | AI assistant integration (Claude, etc.) |
-| **API** | HTTP REST | 8080 | Web apps, external systems |
+| Service | Protocol  | Port | Use Case                                |
+|---------|-----------|------|-----------------------------------------|
+| **CLI** | Terminal  | N/A  | Local development, scripts              |
+| **MCP** | JSON-RPC  | 8000 | AI assistant integration (Claude, etc.) |
+| **API** | HTTP REST | 8080 | Web apps, external systems              |
 
 ### 1.2 Common Response Format
 
@@ -38,10 +38,10 @@ All services return consistent response structures:
 ```python
 @dataclass
 class KnowledgeResponse:
-    content: str           # Knowledge content
-    tokens: int            # Token count
-    status: str            # success | partial | fallback | timeout
-    duration_ms: int       # Processing time
+    content: str  # Knowledge content
+    tokens: int  # Token count
+    status: str  # success | partial | fallback | timeout
+    duration_ms: int  # Processing time
     layers_loaded: List[str]  # Loaded layers
 ```
 
@@ -79,12 +79,12 @@ sage get --timeout 5000
 
 **Options:**
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `--layer`, `-l` | str | "core" | Layer to load |
-| `--query`, `-q` | str | None | Query for smart loading |
-| `--timeout`, `-t` | int | 5000 | Timeout in milliseconds |
-| `--format`, `-f` | str | "markdown" | Output format |
+| Option            | Type | Default    | Description             |
+|-------------------|------|------------|-------------------------|
+| `--layer`, `-l`   | str  | "core"     | Layer to load           |
+| `--query`, `-q`   | str  | None       | Query for smart loading |
+| `--timeout`, `-t` | int  | 5000       | Timeout in milliseconds |
+| `--format`, `-f`  | str  | "markdown" | Output format           |
 
 #### `sage search` - Search Knowledge
 
@@ -101,10 +101,10 @@ sage search "protocol" --layer frameworks
 
 **Options:**
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `--limit`, `-n` | int | 10 | Maximum results |
-| `--layer`, `-l` | str | None | Filter by layer |
+| Option          | Type | Default | Description     |
+|-----------------|------|---------|-----------------|
+| `--limit`, `-n` | int  | 10      | Maximum results |
+| `--layer`, `-l` | str  | None    | Filter by layer |
 
 #### `sage info` - System Information
 
@@ -152,11 +152,11 @@ sage serve --host 0.0.0.0 --port 9000
 
 **Options:**
 
-| Option | Type | Default | Description |
-|--------|------|---------|-------------|
-| `--service`, `-s` | str | "mcp" | Service to start |
-| `--host`, `-h` | str | "localhost" | Host to bind |
-| `--port`, `-p` | int | 8000 | Port number |
+| Option            | Type | Default     | Description      |
+|-------------------|------|-------------|------------------|
+| `--service`, `-s` | str  | "mcp"       | Service to start |
+| `--host`, `-h`    | str  | "localhost" | Host to bind     |
+| `--port`, `-p`    | int  | 8000        | Port number      |
 
 ### 2.3 CLI Implementation
 
@@ -172,6 +172,7 @@ app = typer.Typer(
 )
 console = Console()
 
+
 @app.command()
 def get(
     layer: str = typer.Option("core", "--layer", "-l"),
@@ -183,19 +184,22 @@ def get(
     from ai_collab_kb.core.bootstrap import bootstrap
     from ai_collab_kb.core.protocols import LoadRequest, LoaderProtocol
     import asyncio
-    
+
     async def _get():
         container = await bootstrap()
         loader = container.resolve(LoaderProtocol)
-        result = await loader.load(LoadRequest(
-            layers=[layer],
-            query=query,
-            timeout_ms=timeout
-        ))
+        result = await loader.load(
+            LoadRequest(
+                layers=[layer],
+                query=query,
+                timeout_ms=timeout
+            )
+        )
         return result
-    
+
     result = asyncio.run(_get())
     console.print(result.content)
+
 
 @app.command()
 def search(
@@ -207,10 +211,12 @@ def search(
     # Implementation similar to get()
     pass
 
+
 @app.command()
 def info(json_output: bool = typer.Option(False, "--json")):
     """Show system information."""
     pass
+
 
 @app.command()
 def serve(
@@ -220,6 +226,7 @@ def serve(
 ):
     """Start a service."""
     pass
+
 
 def main():
     app()
@@ -269,7 +276,9 @@ The MCP service provides JSON-RPC tools for AI assistants like Claude.
   "tokens": 500,
   "status": "success",
   "duration_ms": 150,
-  "layers_loaded": ["core"]
+  "layers_loaded": [
+    "core"
+  ]
 }
 ```
 
@@ -304,7 +313,13 @@ The MCP service provides JSON-RPC tools for AI assistants like Claude.
     "name": {
       "type": "string",
       "required": true,
-      "enum": ["autonomy", "cognitive", "decision", "collaboration", "timeout"],
+      "enum": [
+        "autonomy",
+        "cognitive",
+        "decision",
+        "collaboration",
+        "timeout"
+      ],
       "description": "Framework name"
     }
   }
@@ -330,6 +345,7 @@ import asyncio
 
 app = FastMCP("ai-collab-kb")
 
+
 @app.tool()
 async def get_knowledge(
     layer: int = 0,
@@ -339,42 +355,46 @@ async def get_knowledge(
     """Get knowledge from the knowledge base with timeout protection."""
     from ai_collab_kb.core.bootstrap import bootstrap
     from ai_collab_kb.core.protocols import LoadRequest, LoaderProtocol
-    
+
     container = await bootstrap()
     loader = container.resolve(LoaderProtocol)
-    
+
     layer_map = {0: "core", 1: "guidelines", 2: "frameworks", 3: "practices"}
     layer_name = layer_map.get(layer, "core")
-    
-    result = await loader.load(LoadRequest(
-        layers=[layer_name],
-        query=task,
-        timeout_ms=timeout_ms
-    ))
-    
+
+    result = await loader.load(
+        LoadRequest(
+            layers=[layer_name],
+            query=task,
+            timeout_ms=timeout_ms
+        )
+    )
+
     return {
-        "content": result.content,
-        "tokens": result.tokens,
-        "status": result.status,
-        "duration_ms": result.duration_ms,
+        "content"      : result.content,
+        "tokens"       : result.tokens,
+        "status"       : result.status,
+        "duration_ms"  : result.duration_ms,
         "layers_loaded": result.layers_loaded
     }
+
 
 @app.tool()
 async def search_kb(query: str, max_results: int = 10) -> dict:
     """Search the knowledge base."""
     from ai_collab_kb.core.bootstrap import bootstrap
     from ai_collab_kb.core.protocols import KnowledgeProtocol
-    
+
     container = await bootstrap()
     knowledge = container.resolve(KnowledgeProtocol)
     results = await knowledge.search(query, max_results)
-    
+
     return {
-        "query": query,
+        "query"  : query,
         "results": [r.__dict__ for r in results],
-        "count": len(results)
+        "count"  : len(results)
     }
+
 
 @app.tool()
 async def get_framework(name: str) -> dict:
@@ -382,18 +402,20 @@ async def get_framework(name: str) -> dict:
     valid_frameworks = ["autonomy", "cognitive", "decision", "collaboration", "timeout"]
     if name not in valid_frameworks:
         return {"error": f"Unknown framework. Valid: {valid_frameworks}"}
-    
+
     # Load framework content
     pass
+
 
 @app.tool()
 async def kb_info() -> dict:
     """Get knowledge base system information."""
     return {
-        "version": "3.1.0",
-        "layers": ["core", "guidelines", "frameworks", "practices"],
+        "version" : "3.1.0",
+        "layers"  : ["core", "guidelines", "frameworks", "practices"],
         "services": ["cli", "mcp", "api"]
     }
+
 
 async def start_mcp_server(host: str = "localhost", port: int = 8000):
     """Start the MCP server."""
@@ -443,10 +465,26 @@ curl http://localhost:8080/layers
 ```json
 {
   "layers": [
-    {"name": "core", "tokens": 500, "always_load": true},
-    {"name": "guidelines", "tokens": 1200, "always_load": false},
-    {"name": "frameworks", "tokens": 2000, "always_load": false},
-    {"name": "practices", "tokens": 1500, "always_load": false}
+    {
+      "name": "core",
+      "tokens": 500,
+      "always_load": true
+    },
+    {
+      "name": "guidelines",
+      "tokens": 1200,
+      "always_load": false
+    },
+    {
+      "name": "frameworks",
+      "tokens": 2000,
+      "always_load": false
+    },
+    {
+      "name": "practices",
+      "tokens": 1500,
+      "always_load": false
+    }
   ]
 }
 ```
@@ -463,7 +501,9 @@ curl -X POST http://localhost:8080/knowledge \
 
 ```json
 {
-  "layers": ["core"],
+  "layers": [
+    "core"
+  ],
   "query": "optional query for smart loading",
   "timeout_ms": 5000
 }
@@ -477,7 +517,9 @@ curl -X POST http://localhost:8080/knowledge \
   "tokens": 500,
   "status": "success",
   "duration_ms": 150,
-  "layers_loaded": ["core"]
+  "layers_loaded": [
+    "core"
+  ]
 }
 ```
 
@@ -489,10 +531,10 @@ curl "http://localhost:8080/search?q=autonomy&limit=5"
 
 **Query Parameters:**
 
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `q` | string | Yes | - | Search query |
-| `limit` | int | No | 10 | Max results (1-100) |
+| Parameter | Type   | Required | Default | Description         |
+|-----------|--------|----------|---------|---------------------|
+| `q`       | string | Yes      | -       | Search query        |
+| `limit`   | int    | No       | 10      | Max results (1-100) |
 
 **Response:**
 
@@ -520,9 +562,9 @@ curl http://localhost:8080/frameworks/autonomy
 
 **Path Parameters:**
 
-| Parameter | Type | Valid Values |
-|-----------|------|--------------|
-| `name` | string | autonomy, cognitive, decision, collaboration, timeout |
+| Parameter | Type   | Valid Values                                          |
+|-----------|--------|-------------------------------------------------------|
+| `name`    | string | autonomy, cognitive, decision, collaboration, timeout |
 
 **Response:**
 
@@ -543,11 +585,13 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 from typing import Optional, List
 
+
 # Request/Response Models
 class KnowledgeRequest(BaseModel):
     layers: List[str] = Field(default=["core"])
     query: Optional[str] = None
     timeout_ms: int = Field(5000, ge=100, le=30000)
+
 
 class KnowledgeResponse(BaseModel):
     content: str
@@ -555,6 +599,7 @@ class KnowledgeResponse(BaseModel):
     status: str
     duration_ms: int
     layers_loaded: List[str]
+
 
 # FastAPI App
 def create_api_app() -> FastAPI:
@@ -564,32 +609,32 @@ def create_api_app() -> FastAPI:
         docs_url="/docs",
         redoc_url="/redoc"
     )
-    
+
     app.add_middleware(
         CORSMiddleware,
         allow_origins=["*"],
         allow_methods=["*"],
         allow_headers=["*"]
     )
-    
+
     @app.get("/health")
     async def health():
         return {"status": "healthy", "version": "3.1.0"}
-    
+
     @app.get("/layers")
     async def layers():
         return {"layers": [...]}
-    
+
     @app.post("/knowledge", response_model=KnowledgeResponse)
     async def get_knowledge(request: KnowledgeRequest):
         # Implementation
         pass
-    
+
     @app.get("/search")
     async def search(q: str = Query(..., min_length=1), limit: int = 10):
         # Implementation
         pass
-    
+
     @app.get("/frameworks/{name}")
     async def get_framework(name: str):
         valid = ["autonomy", "cognitive", "decision", "collaboration", "timeout"]
@@ -597,8 +642,9 @@ def create_api_app() -> FastAPI:
             raise HTTPException(404, f"Framework not found. Valid: {valid}")
         # Implementation
         pass
-    
+
     return app
+
 
 def start_api_server(host: str = "0.0.0.0", port: int = 8080):
     import uvicorn
@@ -612,13 +658,13 @@ def start_api_server(host: str = "0.0.0.0", port: int = 8080):
 
 ### 5.1 Common Error Codes
 
-| Code | Name | Description |
-|------|------|-------------|
-| `E001` | TIMEOUT | Operation timed out |
-| `E002` | LAYER_NOT_FOUND | Requested layer does not exist |
-| `E003` | VALIDATION_ERROR | Input validation failed |
-| `E004` | SERVICE_UNAVAILABLE | Service is not available |
-| `E005` | INTERNAL_ERROR | Internal server error |
+| Code   | Name                | Description                    |
+|--------|---------------------|--------------------------------|
+| `E001` | TIMEOUT             | Operation timed out            |
+| `E002` | LAYER_NOT_FOUND     | Requested layer does not exist |
+| `E003` | VALIDATION_ERROR    | Input validation failed        |
+| `E004` | SERVICE_UNAVAILABLE | Service is not available       |
+| `E005` | INTERNAL_ERROR      | Internal server error          |
 
 ### 5.2 Error Response Format
 
