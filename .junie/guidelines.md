@@ -13,8 +13,10 @@
 - [5. Coding Standards](#5-coding-standards)
 - [6. Documentation Standards](#6-documentation-standards)
 - [7. Directory Structure](#7-directory-structure)
-- [8. References](#8-references)
-- [9. Template Information](#9-template-information)
+- [8. Token Efficiency](#8-token-efficiency)
+- [9. Configuration Validation](#9-configuration-validation)
+- [10. References](#10-references)
+- [11. Template Information](#11-template-information)
 
 ---
 
@@ -238,6 +240,25 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 | Project context   | `.context/`      |
 | Generic knowledge | `.knowledge/`    |
 
+### Quality Checklist
+
+Before committing documentation changes, verify:
+
+| Category      | Check                                   | ✓ |
+|:--------------|:----------------------------------------|:--|
+| **Structure** | Has TOC if >60 lines or >3 H2 sections  |   |
+|               | H2 sections are numbered (1., 2., 3.)   |   |
+|               | Related section at document end         |   |
+| **Content**   | Tables for structured comparisons       |   |
+|               | Code examples are complete and runnable |   |
+|               | Cross-references instead of duplication |   |
+| **Format**    | Consistent table alignment (`:---`)     |   |
+|               | Standard footer present                 |   |
+|               | No orphaned links                       |   |
+| **Quality**   | Spell-checked                           |   |
+|               | Technical accuracy verified             |   |
+|               | 3-5 Related links present               |   |
+
 ---
 
 ## 7. Directory Structure
@@ -268,23 +289,142 @@ project-root/
 
 ---
 
-## 8. References
+## 8. Token Efficiency
 
-For project-specific information, see:
+Optimize token usage for better AI performance and cost efficiency.
 
-- **Project Config**: `project/config.yaml`
-- **Project Quick Reference**: `project/quickref.md`
+### Token Budget by Priority
 
-For generic configuration, see:
+| Priority | Files                             | Budget    | Load Strategy    |
+|:---------|:----------------------------------|:----------|:-----------------|
+| P1       | `guidelines.md`, `project/config` | ~2000     | Always load      |
+| P2       | `quickref.md` files               | ~500 each | Load for complex |
+| P3       | `docs/*`                          | ~1000     | Load on demand   |
 
-- **Quick Reference**: `generic/quickref.md`
-- **Configuration**: `generic/config.yaml`
-- **MCP Settings**: `mcp/mcp.json`
-- **Documentation**: `docs/`
+### Efficiency Patterns
+
+| Pattern                     | Token Savings | When to Use              |
+|:----------------------------|:--------------|:-------------------------|
+| Tables instead of prose     | ~40%          | Structured comparisons   |
+| Lists instead of paragraphs | ~30%          | Sequential items         |
+| Cross-references            | ~70%          | Repeated content         |
+| Layered loading             | ~50%          | Large documentation sets |
+
+### Anti-Patterns to Avoid
+
+- ❌ Loading entire `docs/` directory at once
+- ❌ Repeating content instead of cross-referencing
+- ❌ Verbose descriptions where tables suffice
+- ❌ Deep nesting (>3 levels) in documentation
 
 ---
 
-## 9. Template Information
+## 9. Configuration Validation
+
+Ensure configuration correctness before deployment.
+
+### Validation Checklist
+
+| Component          | Validation Method            | Frequency    |
+|:-------------------|:-----------------------------|:-------------|
+| **YAML syntax**    | IDE validation or `yamllint` | Every change |
+| **JSON syntax**    | IDE validation or `jsonlint` | Every change |
+| **Schema match**   | JSON Schema validation       | Every change |
+| **MCP servers**    | `Settings                    | Tools        | Junie | MCP Servers` | After config |
+| **Terminal rules** | Test with sample commands    | After adding |
+
+### Quick Validation Commands
+
+```bash
+# Validate YAML syntax
+python -c "import yaml; yaml.safe_load(open('.junie/generic/config.yaml'))"
+
+# Validate JSON syntax  
+python -c "import json; json.load(open('.junie/mcp/mcp.json'))"
+
+# Test MCP server manually
+npx -y @modelcontextprotocol/server-filesystem .
+```
+
+### Common Issues and Fixes
+
+| Issue                  | Symptom                      | Fix                             |
+|:-----------------------|:-----------------------------|:--------------------------------|
+| Invalid YAML           | Parse error on load          | Check indentation (2 spaces)    |
+| Invalid JSON           | Syntax error                 | Check trailing commas, quotes   |
+| MCP server won't start | "Disconnected" status        | Verify Node.js v18+, check PATH |
+| Rules not matching     | Commands still need approval | Test regex at regex101.com      |
+
+### Error Recovery Steps
+
+When configuration issues occur, follow this sequence:
+
+```
+1. Identify → Check IDE logs (Help | Show Log in Explorer)
+       ↓
+2. Isolate → Test component independently
+       ↓
+3. Validate → Run syntax validation commands
+       ↓
+4. Fix → Apply targeted fix from table above
+       ↓
+5. Verify → Restart affected component and test
+```
+
+### Emergency Fallbacks
+
+| Component Failure     | Fallback Action                               |
+|:----------------------|:----------------------------------------------|
+| MCP servers down      | Use IDE built-in file operations              |
+| Memory server lost    | Document decisions in `.history/` files       |
+| Config corrupted      | Restore from `schema/` templates              |
+| Terminal rules broken | Clear and re-add rules from `docs/reference/` |
+
+---
+
+## 10. References
+
+### Configuration Files
+
+| File                  | Purpose                      | Priority |
+|:----------------------|:-----------------------------|:---------|
+| `project/config.yaml` | Project identity, tech stack | P1       |
+| `project/quickref.md` | Project-specific patterns    | P2       |
+| `generic/config.yaml` | Generic Junie settings       | P2       |
+| `generic/quickref.md` | Quick lookup card            | P2       |
+| `mcp/mcp.json`        | MCP server configuration     | P1       |
+
+### Key Documentation
+
+| Document                          | Purpose                      | When to Use        |
+|:----------------------------------|:-----------------------------|:-------------------|
+| `docs/README.md`                  | Documentation index          | Finding docs       |
+| `docs/guides/quick-start.md`      | First-time setup             | New users          |
+| `docs/guides/action-allowlist.md` | Terminal rules configuration | Setting up rules   |
+| `docs/mcp/configuration.md`       | MCP server setup             | MCP configuration  |
+| `docs/mcp/troubleshooting.md`     | Problem solving              | Fixing issues      |
+| `docs/operations/recovery.md`     | Error recovery procedures    | Recovery scenarios |
+
+### Schema Files
+
+| File                        | Purpose                |
+|:----------------------------|:-----------------------|
+| `schema/config.schema.json` | YAML config validation |
+| `schema/mcp.schema.json`    | MCP config validation  |
+
+### Version Compatibility
+
+| Component          | Minimum Version | Recommended | Notes                          |
+|:-------------------|:----------------|:------------|:-------------------------------|
+| **Junie Plugin**   | 2024.3          | 2025.1+     | MCP requires 2025.1+           |
+| **JetBrains IDE**  | 2024.3          | 2025.1+     | PyCharm, IntelliJ, WebStorm    |
+| **Node.js**        | v18.0           | v20+        | Required for MCP servers       |
+| **Schema Version** | 1.0             | 1.0         | Current stable version         |
+| **Config Version** | 1.0             | 1.0         | In generic/project config.yaml |
+
+---
+
+## 11. Template Information
 
 This `.junie/` configuration follows the **Thin Layer** principle with clear separation:
 

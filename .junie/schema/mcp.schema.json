@@ -3,6 +3,8 @@
   "$id": "https://sage-kb.dev/schemas/mcp.schema.json",
   "title": "MCP Server Configuration",
   "description": "JSON Schema for validating MCP server configuration files",
+  "version": "1.0.0",
+  "$comment": "Schema Version: 1.0.0 | Last Updated: 2025-11-30 | Changelog: Initial stable release with full validation for MCP server configurations including command, args, env, and _meta fields.",
   "type": "object",
   "properties": {
     "$schema": {

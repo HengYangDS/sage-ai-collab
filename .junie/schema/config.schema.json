@@ -3,6 +3,8 @@
   "$id": "https://sage-kb.dev/schemas/junie-config.schema.json",
   "title": "Junie Configuration Schema",
   "description": "JSON Schema for validating Junie YAML configuration files (generic/config.yaml and project/config.yaml)",
+  "version": "1.0.0",
+  "$comment": "Schema Version: 1.0.0 | Last Updated: 2025-11-30 | Changelog: Initial stable release with full validation support for collaboration, context loading, output, timeouts, MCP, and project settings.",
   "type": "object",
   "properties": {
     "schema_version": {

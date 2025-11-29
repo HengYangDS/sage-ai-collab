@@ -8,11 +8,12 @@
 
 1. [Overview](#1-overview)
 2. [Documentation Structure](#2-documentation-structure)
-3. [Quick Navigation](#3-quick-navigation)
-4. [Key Metrics](#4-key-metrics)
-5. [Platform Reference](#5-platform-reference)
-6. [Version Compatibility](#6-version-compatibility)
-7. [Related](#7-related)
+3. [File Length Policy](#3-file-length-policy)
+4. [Quick Navigation](#4-quick-navigation)
+5. [Key Metrics](#5-key-metrics)
+6. [Platform Reference](#6-platform-reference)
+7. [Version Compatibility](#7-version-compatibility)
+8. [Related](#8-related)
 
 ---
 
@@ -65,7 +66,42 @@ docs/
 
 ---
 
-## 3. Quick Navigation
+## 3. File Length Policy
+
+Some documentation files exceed the recommended 300-line limit. This is an **intentional design decision**.
+
+### Policy Rationale
+
+| Principle              | Explanation                                                   |
+|:-----------------------|:--------------------------------------------------------------|
+| **Content Integrity**  | Splitting would break logical flow and cross-references       |
+| **Single Source**      | Each file is the authoritative source for its topic           |
+| **Reduced Navigation** | Users find complete information without jumping between files |
+| **Search Efficiency**  | Full-text search works better with consolidated content       |
+
+### Files Exceeding 300 Lines
+
+| File                         | Lines | Justification                                       |
+|:-----------------------------|:------|:----------------------------------------------------|
+| `mcp/configuration.md`       | ~527  | Complete server setup requires all details together |
+| `mcp/servers.md`             | ~451  | All server docs in one reference                    |
+| `mcp/troubleshooting.md`     | ~437  | Comprehensive problem-solving guide                 |
+| `mcp/memory.md`              | ~386  | Complete memory patterns and examples               |
+| `operations/recovery.md`     | ~398  | All recovery procedures in one place                |
+| `guides/action-allowlist.md` | ~325  | Complete rule configuration guide                   |
+
+### When to Split vs. Keep Together
+
+| Keep Together When                   | Split When                        |
+|:-------------------------------------|:----------------------------------|
+| Content has strong interdependencies | Sections are independently useful |
+| Users need complete context          | File exceeds 800 lines            |
+| Topic is single logical unit         | Distinct audiences for sections   |
+| Cross-references would be excessive  | Natural chapter boundaries exist  |
+
+---
+
+## 4. Quick Navigation
 
 ### By Goal
 
@@ -88,7 +124,7 @@ docs/
 
 ---
 
-## 4. Key Metrics
+## 5. Key Metrics
 
 | Metric                 | Target    | Description                           |
 |:-----------------------|:----------|:--------------------------------------|
@@ -99,7 +135,7 @@ docs/
 
 ---
 
-## 5. Platform Reference
+## 6. Platform Reference
 
 | Platform           | Terminal Rules | Key Commands             |
 |:-------------------|:---------------|:-------------------------|
@@ -110,7 +146,7 @@ docs/
 
 ---
 
-## 6. Version Compatibility
+## 7. Version Compatibility
 
 | Component             | Tested Versions                     | Notes                                |
 |:----------------------|:------------------------------------|:-------------------------------------|
@@ -121,7 +157,7 @@ docs/
 
 ---
 
-## 7. Related
+## 8. Related
 
 - `../guidelines.md` — AI collaboration rules (main entry point)
 - `../generic/config.yaml` — Generic Junie settings
