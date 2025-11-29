@@ -15,7 +15,7 @@ tokens: ~150
 
 | Field | Value |
 |:------|:------|
-| **Version** | 1.0.1 |
+| **Version** | 1.0.2 |
 | **Release Date** | 2025-11-30 |
 | **Status** | Stable |
 | **Files** | 132 |
@@ -43,6 +43,35 @@ tokens: ~150
 ---
 
 ## Changelog
+
+### v1.0.2 (2025-11-30)
+
+**Related Links Enhancement (Optional/Low-Priority Optimization)**
+
+Added or expanded Related sections for better document interconnectivity:
+
+Guidelines layer (9 files):
+- `quick_start.md`, `code_style.md`, `ai_collaboration.md`, `python.md`
+- `planning.md`, `engineering.md`, `cognitive.md`, `quality.md`, `success.md`
+
+References layer (3 files):
+- `glossary.md`, `knowledge_quick_ref.md`, `performance_checklist.md`
+
+Frameworks layer (1 file):
+- `patterns/decision.md`
+
+Templates layer (1 file):
+- `case_study.md`
+
+Scenarios checklists (11 files):
+- All checklist.md files now have 3+ Related links
+
+Improvements:
+- Total files with Related sections: +25
+- Documents now meet 3-5 links standard
+- Enhanced cross-layer navigation
+
+---
 
 ### v1.0.1 (2025-11-30)
 

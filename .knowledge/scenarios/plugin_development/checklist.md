@@ -106,7 +106,9 @@ tokens: ~500
 
 ## Related
 
-- `.knowledge/scenarios/plugin_development/context.md` — Scenario context and guidance
+- `.knowledge/scenarios/plugin_development/context.md` — Plugin development context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
 ---
 

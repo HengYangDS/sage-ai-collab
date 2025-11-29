@@ -98,7 +98,9 @@ tokens: ~500
 
 ## Related
 
-- `.knowledge/scenarios/monorepo/context.md` — Scenario context and guidance
+- `.knowledge/scenarios/monorepo/context.md` — Monorepo context
+- `.knowledge/practices/engineering/git_workflow.md` — Git workflow practices
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
 
 ---
 

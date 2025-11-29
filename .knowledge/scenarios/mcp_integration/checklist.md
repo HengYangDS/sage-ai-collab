@@ -98,7 +98,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/mcp_integration/context.md` — Scenario context and guidance
+- `.knowledge/scenarios/mcp_integration/context.md` — MCP integration context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
 ---
 

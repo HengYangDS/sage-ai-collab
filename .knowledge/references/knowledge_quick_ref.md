@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -11,7 +11,18 @@ tokens: ~500
 
 ---
 
-## Layer Hierarchy
+## Table of Contents
+
+- [1. Layer Hierarchy](#1-layer-hierarchy)
+- [2. Layer Token Budgets](#2-layer-token-budgets)
+- [3. Navigation Pattern](#3-navigation-pattern)
+- [4. MECE Principle](#4-mece-principle)
+- [5. Loading Strategy](#5-loading-strategy)
+- [6. Content Distribution](#6-content-distribution)
+
+---
+
+## 1. Layer Hierarchy
 
 ```
 .knowledge/
@@ -25,7 +36,7 @@ tokens: ~500
 
 ---
 
-## Layer Token Budgets
+## 2. Layer Token Budgets
 
 | Layer      | Budget | Load Timing    |
 |------------|--------|----------------|
@@ -38,7 +49,7 @@ tokens: ~500
 
 ---
 
-## Navigation Pattern
+## 3. Navigation Pattern
 
 ```
 [layer]/index.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
@@ -46,7 +57,7 @@ tokens: ~500
 
 ---
 
-## MECE Principle
+## 4. MECE Principle
 
 | Aspect                  | Rule                      |
 |-------------------------|---------------------------|
@@ -57,7 +68,7 @@ tokens: ~500
 
 ---
 
-## Loading Strategy
+## 5. Loading Strategy
 
 | Phase            | Load       | Purpose        |
 |------------------|------------|----------------|
@@ -69,7 +80,7 @@ tokens: ~500
 
 ---
 
-## Content Distribution
+## 6. Content Distribution
 
 | Type       | Location      | Reference From |
 |------------|---------------|----------------|

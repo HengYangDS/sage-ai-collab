@@ -98,7 +98,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/microservices/context.md` — Scenario context and guidance
+- `.knowledge/scenarios/microservices/context.md` — Microservices context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/frameworks/patterns/integration.md` — Integration patterns
 
 ---
 

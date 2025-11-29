@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -11,7 +11,17 @@ tokens: ~450
 
 ---
 
-## Timeout Targets
+## Table of Contents
+
+- [1. Timeout Targets](#1-timeout-targets)
+- [2. Profiling Commands](#2-profiling-commands)
+- [3. Performance Checklist](#3-performance-checklist)
+- [4. Common Optimizations](#4-common-optimizations)
+- [5. Key Patterns](#5-key-patterns)
+
+---
+
+## 1. Timeout Targets
 
 | Operation        | Target  | Level |
 |------------------|---------|-------|
@@ -23,7 +33,7 @@ tokens: ~450
 
 ---
 
-## Profiling Commands
+## 2. Profiling Commands
 
 ```bash
 # CPU profiling
@@ -41,7 +51,7 @@ py-spy record -o profile.svg -- python script.py
 
 ---
 
-## Performance Checklist
+## 3. Performance Checklist
 
 | Area                | Check                         |
 |---------------------|-------------------------------|
@@ -54,7 +64,7 @@ py-spy record -o profile.svg -- python script.py
 
 ---
 
-## Common Optimizations
+## 4. Common Optimizations
 
 | Slow             | Fast               |
 |------------------|--------------------|
@@ -66,7 +76,7 @@ py-spy record -o profile.svg -- python script.py
 
 ---
 
-## Key Patterns
+## 5. Key Patterns
 
 ```python
 # LRU Cache
