@@ -1,0 +1,188 @@
+# Guidelines Index - Semantic Ordering Configuration
+# Purpose: Define the recommended reading order and relationships between guidelines
+# Version: 0.1.0
+
+metadata:
+  name: "SAGE Guidelines Index"
+  version: "0.1.0"
+  description: "Semantic ordering and categorization for engineering guidelines"
+
+# Reading order: Start with quick_start, progress through fundamentals to advanced
+reading_order:
+  - id: quick_start
+    file: quick_start.md
+    priority: 1
+    category: getting_started
+    description: "3-minute quick start guide"
+    prerequisites: []
+    estimated_time: "3 min"
+    tokens: 60
+
+  - id: planning_design
+    file: planning_design.md
+    priority: 2
+    category: fundamentals
+    description: "Planning and architecture principles"
+    prerequisites: [quick_start]
+    estimated_time: "5 min"
+    tokens: 80
+
+  - id: code_style
+    file: code_style.md
+    priority: 3
+    category: fundamentals
+    description: "Code style standards and conventions"
+    prerequisites: [quick_start]
+    estimated_time: "10 min"
+    tokens: 150
+
+  - id: engineering
+    file: engineering.md
+    priority: 4
+    category: fundamentals
+    description: "Configuration, testing, performance, maintenance"
+    prerequisites: [code_style]
+    estimated_time: "8 min"
+    tokens: 120
+
+  - id: python
+    file: python.md
+    priority: 5
+    category: language_specific
+    description: "Python-specific best practices"
+    prerequisites: [code_style, engineering]
+    estimated_time: "8 min"
+    tokens: 130
+
+  - id: documentation
+    file: documentation.md
+    priority: 6
+    category: fundamentals
+    description: "Documentation standards and templates"
+    prerequisites: [quick_start]
+    estimated_time: "6 min"
+    tokens: 100
+
+  - id: quality
+    file: quality.md
+    priority: 7
+    category: quality_assurance
+    description: "Quality framework and validation"
+    prerequisites: [engineering]
+    estimated_time: "5 min"
+    tokens: 80
+
+  - id: ai_collaboration
+    file: ai_collaboration.md
+    priority: 8
+    category: ai_integration
+    description: "AI collaboration patterns and autonomy"
+    prerequisites: [quick_start, planning_design]
+    estimated_time: "12 min"
+    tokens: 200
+
+  - id: cognitive
+    file: cognitive.md
+    priority: 9
+    category: ai_integration
+    description: "Cognitive enhancement and decision frameworks"
+    prerequisites: [ai_collaboration]
+    estimated_time: "6 min"
+    tokens: 100
+
+  - id: success
+    file: success.md
+    priority: 10
+    category: summary
+    description: "Xin-Da-Ya mapping and success criteria"
+    prerequisites: [ai_collaboration, quality]
+    estimated_time: "5 min"
+    tokens: 80
+
+# Categories for filtering and grouping
+categories:
+  getting_started:
+    name: "Getting Started"
+    description: "Essential first steps for new users"
+    color: "#4CAF50"
+    files: [quick_start]
+
+  fundamentals:
+    name: "Fundamentals"
+    description: "Core engineering principles and standards"
+    color: "#2196F3"
+    files: [planning_design, code_style, engineering, documentation]
+
+  language_specific:
+    name: "Language Specific"
+    description: "Language-specific guidelines"
+    color: "#FF9800"
+    files: [python]
+
+  quality_assurance:
+    name: "Quality Assurance"
+    description: "Quality frameworks and validation"
+    color: "#9C27B0"
+    files: [quality]
+
+  ai_integration:
+    name: "AI Integration"
+    description: "AI collaboration and cognitive enhancement"
+    color: "#E91E63"
+    files: [ai_collaboration, cognitive]
+
+  summary:
+    name: "Summary"
+    description: "Overview and success criteria"
+    color: "#607D8B"
+    files: [success]
+
+# Dependency graph for smart loading
+dependencies:
+  quick_start: []
+  planning_design: [quick_start]
+  code_style: [quick_start]
+  engineering: [code_style]
+  python: [code_style, engineering]
+  documentation: [quick_start]
+  quality: [engineering]
+  ai_collaboration: [quick_start, planning_design]
+  cognitive: [ai_collaboration]
+  success: [ai_collaboration, quality]
+
+# Scenario-based loading presets
+presets:
+  minimal:
+    description: "Minimal set for quick reference"
+    files: [quick_start]
+    tokens: 60
+
+  python_developer:
+    description: "Essential guidelines for Python developers"
+    files: [quick_start, code_style, engineering, python, documentation]
+    tokens: 520
+
+  ai_collaboration:
+    description: "Guidelines for AI-assisted development"
+    files: [quick_start, ai_collaboration, cognitive, success]
+    tokens: 440
+
+  complete:
+    description: "Full guidelines set"
+    files: [quick_start, planning_design, code_style, engineering, python, documentation, quality, ai_collaboration, cognitive, success]
+    tokens: 1100
+
+# Load triggers (keywords that activate specific guidelines)
+triggers:
+  - keywords: [style, format, naming, convention]
+    files: [code_style]
+  - keywords: [test, testing, quality, coverage]
+    files: [engineering, quality]
+  - keywords: [python, pip, pytest, ruff]
+    files: [python]
+  - keywords: [doc, documentation, readme, comment]
+    files: [documentation]
+  - keywords: [ai, collaboration, autonomy, assistant]
+    files: [ai_collaboration, cognitive]
+  - keywords: [plan, design, architecture]
+    files: [planning_design]

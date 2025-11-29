@@ -55,20 +55,19 @@
 
 > **Location**: `sage.yaml` → `timeout`
 
-| Level | Key                       | Purpose                  |
-|-------|---------------------------|--------------------------|
-| T1    | `operations.cache_lookup` | Cache hit operations     |
-| T2    | `operations.file_read`    | Single file operations   |
-| T3    | `operations.layer_load`   | Layer/directory loading  |
-| T4    | `operations.full_load`    | Complete KB load         |
-| T5    | `operations.analysis`     | Complex analysis         |
-| -     | `operations.mcp_call`     | MCP tool timeout         |
-| -     | `operations.search`       | Search operations        |
-| -     | `global_max`              | Absolute maximum timeout |
-| -     | `default`                 | Default if not specified |
+| Level | Key | Purpose |
+|-------|-----|---------|
+| T1 | `operations.cache_lookup` | Cache hit operations |
+| T2 | `operations.file_read` | Single file operations |
+| T3 | `operations.layer_load` | Layer/directory loading |
+| T4 | `operations.full_load` | Complete KB load |
+| T5 | `operations.analysis` | Complex analysis |
+| - | `operations.mcp_call` | MCP tool timeout |
+| - | `operations.search` | Search operations |
+| - | `global_max` | Absolute maximum timeout |
+| - | `default` | Default if not specified |
 
 **Additional Features** (see `sage.yaml`):
-
 - `strategies.on_timeout` - Timeout handling strategies
 - `circuit_breaker` - Circuit breaker pattern configuration
 
@@ -76,33 +75,33 @@
 
 > **Location**: `sage.yaml` → `loading`
 
-| Key              | Purpose                            |
-|------------------|------------------------------------|
-| `max_tokens`     | Maximum tokens to load per request |
-| `default_layers` | Layers loaded by default           |
-| `always`         | Files always pre-cached            |
+| Key | Purpose |
+|-----|---------|
+| `max_tokens` | Maximum tokens to load per request |
+| `default_layers` | Layers loaded by default |
+| `always` | Files always pre-cached |
 
 ### Quality Thresholds
 
 > **Location**: `sage.yaml` → `quality`
 
-| Category      | Keys                                                                          | Purpose              |
-|---------------|-------------------------------------------------------------------------------|----------------------|
-| Code Quality  | `min_test_coverage`, `max_function_lines`, `max_file_lines`, `max_complexity` | Code quality metrics |
-| Code Style    | `max_line_length`, `min_type_hint_coverage`                                   | Style enforcement    |
-| Documentation | `max_doc_line_length`                                                         | Markdown formatting  |
+| Category | Keys | Purpose |
+|----------|------|---------|
+| Code Quality | `min_test_coverage`, `max_function_lines`, `max_file_lines`, `max_complexity` | Code quality metrics |
+| Code Style | `max_line_length`, `min_type_hint_coverage` | Style enforcement |
+| Documentation | `max_doc_line_length` | Markdown formatting |
 
 ### Other Configuration Sections
 
 > **Location**: `sage.yaml`
 
-| Section               | Purpose                            |
-|-----------------------|------------------------------------|
-| `guidelines.sections` | Alias mapping for guidelines       |
-| `triggers`            | Keyword-based context loading      |
-| `plugins`             | Plugin configuration (cache, etc.) |
-| `logging`             | Logging level, format, timestamps  |
-| `di`                  | Dependency injection container     |
+| Section | Purpose |
+|---------|---------|
+| `guidelines.sections` | Alias mapping for guidelines |
+| `triggers` | Keyword-based context loading |
+| `plugins` | Plugin configuration (cache, etc.) |
+| `logging` | Logging level, format, timestamps |
+| `di` | Dependency injection container |
 
 ---
 
@@ -180,15 +179,15 @@ Success Rate    Adjustment
 
 > **Location**: `sage.yaml` → `timeout.fallback`
 
-When a timeout or error occurs, the system applies configured fallback actions:
+When timeout or error occurs, the system applies configured fallback actions:
 
-| Situation      | Config Key       | Action                 |
-|----------------|------------------|------------------------|
-| Timeout (< 5s) | `timeout_short`  | Return partial results |
-| Timeout (> 5s) | `timeout_long`   | Return core principles |
-| File not found | `file_not_found` | Return helpful error   |
-| Parse error    | `parse_error`    | Return raw content     |
-| Network error  | `network_error`  | Use cached content     |
+| Situation | Config Key | Action |
+|-----------|------------|--------|
+| Timeout (< 5s) | `timeout_short` | Return partial results |
+| Timeout (> 5s) | `timeout_long` | Return core principles |
+| File not found | `file_not_found` | Return helpful error |
+| Parse error | `parse_error` | Return raw content |
+| Network error | `network_error` | Use cached content |
 
 **Golden Rule**: Always return something useful, never hang or crash.
 

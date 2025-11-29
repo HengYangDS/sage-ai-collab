@@ -32,25 +32,7 @@ timeout:
     enabled: true
     failure_threshold: 3               # Open after 3 consecutive failures
     reset_timeout: 30s                 # Try again after 30 seconds
-    half_open_requests: 1              # Test requests in a half-open state
-
-  # Fallback Behavior Configuration
-  fallback:
-    timeout_short:                     # Timeout < 5s
-      action: return_partial
-      description: "Return partial results"
-    timeout_long:                      # Timeout > 5s
-      action: return_core
-      description: "Return core principles"
-    file_not_found:
-      action: return_error
-      description: "Return helpful error message"
-    parse_error:
-      action: return_raw
-      description: "Return raw content"
-    network_error:
-      action: use_cache
-      description: "Use cached content"
+    half_open_requests: 1              # Test requests in half-open state
 
 # =============================================================================
 # Smart Loading Configuration

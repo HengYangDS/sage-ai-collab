@@ -1,0 +1,56 @@
+# SAGE Test Configuration
+# This configuration is used for unit and integration tests
+
+version: "0.1.0"
+environment: test
+
+# Knowledge base settings
+kb_path: "tests/fixtures/sample_content"
+
+# Timeout configuration (in milliseconds)
+timeout:
+  default: 5000
+  operations:
+    load: 3000
+    search: 2000
+    analyze: 4000
+
+# Layer configuration
+layers:
+  - name: core
+    path: core/
+    priority: 1
+    enabled: true
+  - name: guidelines
+    path: guidelines/
+    priority: 2
+    enabled: true
+  - name: frameworks
+    path: frameworks/
+    priority: 3
+    enabled: true
+
+# Plugin configuration
+plugins:
+  enabled: true
+  bundled:
+    content_cache:
+      enabled: true
+      max_entries: 100
+      ttl_seconds: 300
+    semantic_search:
+      enabled: true
+      min_term_length: 2
+      max_results: 10
+
+# Logging configuration
+logging:
+  level: DEBUG
+  format: json
+  include_timestamps: true
+
+# Test-specific settings
+test:
+  mock_external_calls: true
+  use_test_fixtures: true
+  capture_events: true
