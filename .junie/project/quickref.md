@@ -6,7 +6,16 @@
 
 ## Table of Contents
 
-[1. Project Overview](#1-project-overview) · [2. Tech Stack](#2-tech-stack) · [3. Project Structure](#3-project-structure) · [4. Coding Standards](#4-coding-standards) · [5. Important Files](#5-important-files) · [6. Quick Commands](#6-quick-commands) · [7. Key Paths](#7-key-paths) · [8. Timeout Hierarchy](#8-timeout-hierarchy) · [9. References](#9-references) · [10. AI Collaboration](#10-ai-collaboration)
+- [1. Project Overview](#1-project-overview)
+- [2. Tech Stack](#2-tech-stack)
+- [3. Project Structure](#3-project-structure)
+- [4. Coding Standards](#4-coding-standards)
+- [5. Important Files](#5-important-files)
+- [6. Quick Commands](#6-quick-commands)
+- [7. Key Paths](#7-key-paths)
+- [8. Timeout Hierarchy](#8-timeout-hierarchy)
+- [9. References](#9-references)
+- [10. AI Collaboration](#10-ai-collaboration)
 
 ---
 
