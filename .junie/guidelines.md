@@ -1,4 +1,4 @@
-﻿# Project Guidelines
+# Project Guidelines
 
 > Primary entry point for JetBrains Junie AI collaboration
 
@@ -187,7 +187,7 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 | API documentation | `docs/api/`      |
 | Design documents  | `docs/design/`   |
 | Project context   | `.context/`      |
-| Generic knowledge | `.knowledge/`       |
+| Generic knowledge | `.knowledge/`    |
 
 ---
 

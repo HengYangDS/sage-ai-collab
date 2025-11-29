@@ -1,4 +1,4 @@
-﻿# MCP Tools Guide
+# MCP Tools Guide
 
 > Complete reference for SAGE Knowledge Base MCP tools
 

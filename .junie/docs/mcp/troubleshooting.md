@@ -10,18 +10,18 @@
 
 1. Open `Settings | Tools | Junie | MCP Servers`
 2. Check server status:
-   - 🟢 **Connected** — Working normally
-   - 🟡 **Starting** — Initializing (wait ~10s)
-   - 🔴 **Disconnected** — Not running or error
+    - 🟢 **Connected** — Working normally
+    - 🟡 **Starting** — Initializing (wait ~10s)
+    - 🔴 **Disconnected** — Not running or error
 
 ### Common Status Indicators
 
-| Status        | Meaning                    | Action                    |
-|:--------------|:---------------------------|:--------------------------|
-| Connected     | Server running normally    | None needed               |
-| Disconnected  | Server not running         | Start or restart server   |
-| Error         | Configuration or runtime error | Check logs, fix config |
-| Timeout       | Server took too long       | Restart, check resources  |
+| Status       | Meaning                        | Action                   |
+|:-------------|:-------------------------------|:-------------------------|
+| Connected    | Server running normally        | None needed              |
+| Disconnected | Server not running             | Start or restart server  |
+| Error        | Configuration or runtime error | Check logs, fix config   |
+| Timeout      | Server took too long           | Restart, check resources |
 
 ---
 
@@ -32,6 +32,7 @@
 **Symptoms**: Server stays "Disconnected" after clicking Start
 
 **Diagnosis**:
+
 ```bash
 # Verify Node.js installation
 node --version    # Should show v18.x or higher
@@ -45,18 +46,19 @@ npx -y @modelcontextprotocol/server-filesystem .
 
 **Solutions**:
 
-| Cause                  | Solution                                      |
-|:-----------------------|:----------------------------------------------|
-| Node.js not installed  | Install Node.js v18+                          |
-| npx not in PATH        | Add Node.js to system PATH                    |
-| Package not found      | Check package name spelling                   |
-| Network issues         | Check internet connection for npm registry    |
+| Cause                 | Solution                                   |
+|:----------------------|:-------------------------------------------|
+| Node.js not installed | Install Node.js v18+                       |
+| npx not in PATH       | Add Node.js to system PATH                 |
+| Package not found     | Check package name spelling                |
+| Network issues        | Check internet connection for npm registry |
 
 ### Server Disconnects Immediately
 
 **Symptoms**: Server shows "Connected" briefly then "Disconnected"
 
 **Possible Causes**:
+
 1. **Invalid configuration** — Check JSON syntax
 2. **Missing dependencies** — Server package needs installation
 3. **Permission issues** — Server can't access required resources
@@ -80,6 +82,7 @@ npx -y @modelcontextprotocol/server-filesystem .
 **Symptoms**: Server connection times out
 
 **Solutions**:
+
 1. **Increase timeout** — Some servers need more startup time
 2. **Check system resources** — CPU/memory availability
 3. **Disable antivirus temporarily** — May block server processes
@@ -94,6 +97,7 @@ npx -y @modelcontextprotocol/server-filesystem .
 **Symptoms**: Error message about JSON parsing
 
 **Diagnosis**:
+
 ```bash
 # Validate JSON syntax
 # Use online JSON validator or IDE JSON support
@@ -101,14 +105,15 @@ npx -y @modelcontextprotocol/server-filesystem .
 
 **Common Mistakes**:
 
-| Mistake                    | Fix                                    |
-|:---------------------------|:---------------------------------------|
-| Trailing comma             | Remove comma after last item           |
-| Missing quotes             | Add quotes around string values        |
-| Single quotes              | Use double quotes for JSON             |
-| Unescaped characters       | Escape backslashes: `\\`               |
+| Mistake              | Fix                             |
+|:---------------------|:--------------------------------|
+| Trailing comma       | Remove comma after last item    |
+| Missing quotes       | Add quotes around string values |
+| Single quotes        | Use double quotes for JSON      |
+| Unescaped characters | Escape backslashes: `\\`        |
 
 **Example Fix**:
+
 ```json
 // Wrong
 {
@@ -128,6 +133,7 @@ npx -y @modelcontextprotocol/server-filesystem .
 **Symptoms**: Server can't find specified paths
 
 **Diagnosis**:
+
 ```bash
 # Verify path exists
 ls .junie    # or dir .junie on Windows
@@ -135,17 +141,18 @@ ls .junie    # or dir .junie on Windows
 
 **Solutions**:
 
-| Issue                      | Solution                               |
-|:---------------------------|:---------------------------------------|
-| Path doesn't exist         | Create directory or fix path           |
-| Wrong path separator       | Use `/` not `\` in JSON                |
-| Relative path wrong        | Paths are relative to project root     |
+| Issue                | Solution                           |
+|:---------------------|:-----------------------------------|
+| Path doesn't exist   | Create directory or fix path       |
+| Wrong path separator | Use `/` not `\` in JSON            |
+| Relative path wrong  | Paths are relative to project root |
 
 ### Environment Variable Not Set
 
 **Symptoms**: Server requiring token fails to authenticate
 
 **Diagnosis**:
+
 ```bash
 # Check if variable is set
 echo $GITHUB_PERSONAL_ACCESS_TOKEN    # Unix
@@ -155,6 +162,7 @@ echo $env:GITHUB_PERSONAL_ACCESS_TOKEN  # PowerShell
 **Solutions**:
 
 **Windows PowerShell**:
+
 ```powershell
 # Set for current session
 $env:GITHUB_PERSONAL_ACCESS_TOKEN = "your-token"
@@ -164,6 +172,7 @@ $env:GITHUB_PERSONAL_ACCESS_TOKEN = "your-token"
 ```
 
 **macOS/Linux**:
+
 ```bash
 # Set for current session
 export GITHUB_PERSONAL_ACCESS_TOKEN="your-token"
@@ -182,24 +191,26 @@ source ~/.bashrc
 **Symptoms**: Server connected but tools return errors
 
 **Diagnosis**:
+
 1. Check server logs in IDE
 2. Test tool with simple input
 3. Verify permissions
 
 **Common Causes**:
 
-| Error                      | Cause                    | Solution                    |
-|:---------------------------|:-------------------------|:----------------------------|
-| Permission denied          | File/directory access    | Check file permissions      |
-| File not found             | Wrong path               | Verify path exists          |
-| Invalid argument           | Wrong parameter type     | Check tool documentation    |
-| Rate limited               | Too many requests        | Add delays between requests |
+| Error             | Cause                 | Solution                    |
+|:------------------|:----------------------|:----------------------------|
+| Permission denied | File/directory access | Check file permissions      |
+| File not found    | Wrong path            | Verify path exists          |
+| Invalid argument  | Wrong parameter type  | Check tool documentation    |
+| Rate limited      | Too many requests     | Add delays between requests |
 
 ### Memory Server Issues
 
 **Symptoms**: Knowledge not persisting or search returns empty
 
 **Solutions**:
+
 1. **Verify entity creation** — Check for errors in response
 2. **Use correct names** — Entity names are case-sensitive
 3. **Search broadly** — Try different search terms
@@ -210,6 +221,7 @@ source ~/.bashrc
 **Symptoms**: Can't read or write files
 
 **Solutions**:
+
 1. **Check allowed paths** — Verify path is in server args
 2. **Check permissions** — File system permissions
 3. **Verify path format** — Use forward slashes in JSON
@@ -223,6 +235,7 @@ source ~/.bashrc
 **Issue**: `npx` not recognized
 
 **Solution**:
+
 ```powershell
 # Use npx.cmd instead of npx
 "command": "npx.cmd"
@@ -234,6 +247,7 @@ $env:PATH += ";C:\Program Files\nodejs"
 **Issue**: Long path errors
 
 **Solution**:
+
 ```powershell
 # Enable long paths in Windows
 # Run as Administrator:
@@ -245,6 +259,7 @@ New-ItemProperty -Path "HKLM:\SYSTEM\CurrentControlSet\Control\FileSystem" -Name
 **Issue**: Permission denied for npx
 
 **Solution**:
+
 ```bash
 # Check npm permissions
 npm config get prefix
@@ -256,6 +271,7 @@ sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
 **Issue**: Server not found in PATH
 
 **Solution**:
+
 ```bash
 # Add to PATH in shell config
 export PATH="$PATH:$(npm config get prefix)/bin"
@@ -343,6 +359,7 @@ Test with minimal config to isolate issues:
 ### Q: Why does my server keep disconnecting?
 
 **A**: Common causes:
+
 1. Server process crashes — check logs
 2. Resource exhaustion — check memory/CPU
 3. Configuration error — validate JSON
@@ -351,6 +368,7 @@ Test with minimal config to isolate issues:
 ### Q: Can I use multiple filesystem paths?
 
 **A**: Yes, add paths as additional arguments:
+
 ```json
 "args": ["-y", "@modelcontextprotocol/server-filesystem", ".", ".junie", "docs"]
 ```
@@ -358,6 +376,7 @@ Test with minimal config to isolate issues:
 ### Q: Why doesn't `${PROJECT_ROOT}` work?
 
 **A**: Junie doesn't expand environment variables in args. Use relative paths:
+
 ```json
 // Wrong
 "args": ["-y", "server", "${PROJECT_ROOT}"]
@@ -369,6 +388,7 @@ Test with minimal config to isolate issues:
 ### Q: How do I switch between Windows and Unix configs?
 
 **A**: Keep platform-specific templates and copy as needed:
+
 ```bash
 # Unix
 cp mcp.unix.json mcp.json

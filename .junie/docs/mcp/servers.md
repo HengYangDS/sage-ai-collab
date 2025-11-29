@@ -6,11 +6,11 @@
 
 ## Server Priority Overview
 
-| Priority | Servers                                    | Recommendation        |
-|:---------|:-------------------------------------------|:----------------------|
-| **P0**   | filesystem, memory                         | Always enable         |
-| **P1**   | fetch, github, sequential-thinking         | Enable for most projects |
-| **P2**   | puppeteer, docker, everything, desktop-commander | Enable as needed |
+| Priority | Servers                                          | Recommendation           |
+|:---------|:-------------------------------------------------|:-------------------------|
+| **P0**   | filesystem, memory                               | Always enable            |
+| **P1**   | fetch, github, sequential-thinking               | Enable for most projects |
+| **P2**   | puppeteer, docker, everything, desktop-commander | Enable as needed         |
 
 ---
 
@@ -23,11 +23,17 @@
 **Package**: `@modelcontextprotocol/server-filesystem`
 
 **Configuration**:
+
 ```json
 {
   "filesystem": {
     "command": "npx.cmd",
-    "args": ["-y", "@modelcontextprotocol/server-filesystem", ".", ".junie"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-filesystem",
+      ".",
+      ".junie"
+    ],
     "_meta": {
       "description": "File operations within project scope",
       "priority": "P0",
@@ -45,15 +51,16 @@
 
 **Tools Available**:
 
-| Tool           | Description                    | Example                           |
-|:---------------|:-------------------------------|:----------------------------------|
-| `read_file`    | Read file content              | `read_file("src/main.py")`        |
-| `write_file`   | Write content to file          | `write_file("test.txt", "hello")` |
-| `list_directory` | List directory contents      | `list_directory("src/")`          |
-| `search_files` | Search for text in files       | `search_files("class User")`      |
-| `get_file_info`| Get file metadata              | `get_file_info("README.md")`      |
+| Tool             | Description              | Example                           |
+|:-----------------|:-------------------------|:----------------------------------|
+| `read_file`      | Read file content        | `read_file("src/main.py")`        |
+| `write_file`     | Write content to file    | `write_file("test.txt", "hello")` |
+| `list_directory` | List directory contents  | `list_directory("src/")`          |
+| `search_files`   | Search for text in files | `search_files("class User")`      |
+| `get_file_info`  | Get file metadata        | `get_file_info("README.md")`      |
 
 **Path Configuration**:
+
 - Add directories as additional args
 - Use relative paths from project root
 - Example: `[".", ".junie", "docs", "src"]`
@@ -67,11 +74,15 @@
 **Package**: `@modelcontextprotocol/server-memory`
 
 **Configuration**:
+
 ```json
 {
   "memory": {
     "command": "npx.cmd",
-    "args": ["-y", "@modelcontextprotocol/server-memory"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-memory"
+    ],
     "_meta": {
       "description": "Cross-session knowledge persistence",
       "priority": "P0",
@@ -89,13 +100,13 @@
 
 **Tools Available**:
 
-| Tool               | Description                    | Example                                    |
-|:-------------------|:-------------------------------|:-------------------------------------------|
-| `create_entities`  | Store knowledge entities       | `create_entities([{name, type, content}])` |
-| `search_nodes`     | Search knowledge graph         | `search_nodes("authentication")`           |
-| `create_relations` | Create entity relationships    | `create_relations([{from, to, type}])`     |
-| `open_nodes`       | Retrieve specific entities     | `open_nodes(["entity_name"])`              |
-| `delete_entities`  | Remove entities                | `delete_entities(["old_entity"])`          |
+| Tool               | Description                 | Example                                    |
+|:-------------------|:----------------------------|:-------------------------------------------|
+| `create_entities`  | Store knowledge entities    | `create_entities([{name, type, content}])` |
+| `search_nodes`     | Search knowledge graph      | `search_nodes("authentication")`           |
+| `create_relations` | Create entity relationships | `create_relations([{from, to, type}])`     |
+| `open_nodes`       | Retrieve specific entities  | `open_nodes(["entity_name"])`              |
+| `delete_entities`  | Remove entities             | `delete_entities(["old_entity"])`          |
 
 **Best Practices**: See [Memory Best Practices](memory.md) for detailed patterns.
 
@@ -110,11 +121,14 @@
 **Package**: `mcp-server-fetch` (via uvx)
 
 **Configuration**:
+
 ```json
 {
   "fetch": {
     "command": "uvx",
-    "args": ["mcp-server-fetch"],
+    "args": [
+      "mcp-server-fetch"
+    ],
     "_meta": {
       "description": "HTTP requests to external URLs",
       "priority": "P1",
@@ -131,11 +145,12 @@
 
 **Tools Available**:
 
-| Tool    | Description          | Example                              |
-|:--------|:---------------------|:-------------------------------------|
-| `fetch` | Fetch URL content    | `fetch("https://api.example.com/docs")` |
+| Tool    | Description       | Example                                 |
+|:--------|:------------------|:----------------------------------------|
+| `fetch` | Fetch URL content | `fetch("https://api.example.com/docs")` |
 
 **Use Cases**:
+
 - Fetching external documentation
 - Accessing public APIs
 - Downloading configuration templates
@@ -149,11 +164,15 @@
 **Package**: `@modelcontextprotocol/server-github`
 
 **Configuration**:
+
 ```json
 {
   "github": {
     "command": "npx.cmd",
-    "args": ["-y", "@modelcontextprotocol/server-github"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-github"
+    ],
     "env": {
       "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
     },
@@ -174,14 +193,15 @@
 
 **Tools Available**:
 
-| Tool              | Description              | Example                                 |
-|:------------------|:-------------------------|:----------------------------------------|
-| `list_issues`     | List repository issues   | `list_issues("owner/repo", "open")`     |
-| `get_pull_request`| Get PR details           | `get_pull_request("owner/repo", 123)`   |
-| `search_issues`   | Search issues            | `search_issues("bug label:critical")`   |
-| `get_repository`  | Get repo info            | `get_repository("owner/repo")`          |
+| Tool               | Description            | Example                               |
+|:-------------------|:-----------------------|:--------------------------------------|
+| `list_issues`      | List repository issues | `list_issues("owner/repo", "open")`   |
+| `get_pull_request` | Get PR details         | `get_pull_request("owner/repo", 123)` |
+| `search_issues`    | Search issues          | `search_issues("bug label:critical")` |
+| `get_repository`   | Get repo info          | `get_repository("owner/repo")`        |
 
 **Setup Requirements**:
+
 1. Create GitHub Personal Access Token at https://github.com/settings/tokens
 2. Set environment variable `GITHUB_PERSONAL_ACCESS_TOKEN`
 
@@ -194,11 +214,15 @@
 **Package**: `@modelcontextprotocol/server-sequential-thinking`
 
 **Configuration**:
+
 ```json
 {
   "sequential-thinking": {
     "command": "npx.cmd",
-    "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-sequential-thinking"
+    ],
     "_meta": {
       "description": "Step-by-step problem decomposition",
       "priority": "P1",
@@ -215,6 +239,7 @@
 ```
 
 **Use Cases**:
+
 - Breaking down complex problems
 - Planning multi-step implementations
 - Analyzing architecture decisions
@@ -231,11 +256,15 @@
 **Package**: `@modelcontextprotocol/server-puppeteer`
 
 **Configuration**:
+
 ```json
 {
   "puppeteer": {
     "command": "npx.cmd",
-    "args": ["-y", "@modelcontextprotocol/server-puppeteer"],
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-puppeteer"
+    ],
     "_meta": {
       "description": "Headless browser automation",
       "priority": "P2",
@@ -253,12 +282,12 @@
 
 **Tools Available**:
 
-| Tool       | Description              | Example                           |
-|:-----------|:-------------------------|:----------------------------------|
-| `navigate` | Navigate to URL          | `navigate("http://localhost:3000")` |
-| `screenshot` | Take screenshot        | `screenshot()`                    |
-| `click`    | Click element            | `click("button#submit")`          |
-| `evaluate` | Execute JavaScript       | `evaluate("document.title")`      |
+| Tool         | Description        | Example                             |
+|:-------------|:-------------------|:------------------------------------|
+| `navigate`   | Navigate to URL    | `navigate("http://localhost:3000")` |
+| `screenshot` | Take screenshot    | `screenshot()`                      |
+| `click`      | Click element      | `click("button#submit")`            |
+| `evaluate`   | Execute JavaScript | `evaluate("document.title")`        |
 
 ---
 
@@ -269,11 +298,15 @@
 **Package**: `mcp-server-docker`
 
 **Configuration**:
+
 ```json
 {
   "docker": {
     "command": "npx.cmd",
-    "args": ["-y", "mcp-server-docker"],
+    "args": [
+      "-y",
+      "mcp-server-docker"
+    ],
     "_meta": {
       "description": "Docker container management",
       "priority": "P2",
@@ -291,12 +324,12 @@
 
 **Tools Available**:
 
-| Tool              | Description           | Example                          |
-|:------------------|:----------------------|:---------------------------------|
-| `list_containers` | List containers       | `list_containers()`              |
-| `container_logs`  | Get container logs    | `container_logs("container_id")` |
-| `start_container` | Start container       | `start_container("container_id")`|
-| `stop_container`  | Stop container        | `stop_container("container_id")` |
+| Tool              | Description        | Example                           |
+|:------------------|:-------------------|:----------------------------------|
+| `list_containers` | List containers    | `list_containers()`               |
+| `container_logs`  | Get container logs | `container_logs("container_id")`  |
+| `start_container` | Start container    | `start_container("container_id")` |
+| `stop_container`  | Stop container     | `stop_container("container_id")`  |
 
 ---
 
@@ -307,11 +340,15 @@
 **Package**: `mcp-server-everything`
 
 **Configuration**:
+
 ```json
 {
   "everything": {
     "command": "npx.cmd",
-    "args": ["-y", "mcp-server-everything"],
+    "args": [
+      "-y",
+      "mcp-server-everything"
+    ],
     "_meta": {
       "description": "System-wide fast file search (Windows)",
       "priority": "P2",
@@ -327,6 +364,7 @@
 ```
 
 **Requirements**:
+
 - Windows only
 - Everything search engine installed
 
@@ -339,11 +377,15 @@
 **Package**: `@wonderwhy-er/desktop-commander`
 
 **Configuration**:
+
 ```json
 {
   "desktop-commander": {
     "command": "npx.cmd",
-    "args": ["-y", "@wonderwhy-er/desktop-commander@latest"],
+    "args": [
+      "-y",
+      "@wonderwhy-er/desktop-commander@latest"
+    ],
     "_meta": {
       "description": "Desktop automation and system commands",
       "priority": "P2",
@@ -364,24 +406,24 @@
 
 ### By Project Type
 
-| Project Type      | Recommended Servers                          |
-|:------------------|:---------------------------------------------|
-| **Python Backend**| filesystem, memory, github, fetch            |
-| **Web Frontend**  | filesystem, memory, puppeteer, fetch         |
-| **Full Stack**    | filesystem, memory, github, fetch, docker    |
-| **Documentation** | filesystem, memory, fetch                    |
+| Project Type       | Recommended Servers                       |
+|:-------------------|:------------------------------------------|
+| **Python Backend** | filesystem, memory, github, fetch         |
+| **Web Frontend**   | filesystem, memory, puppeteer, fetch      |
+| **Full Stack**     | filesystem, memory, github, fetch, docker |
+| **Documentation**  | filesystem, memory, fetch                 |
 
 ### By Task
 
-| Task                    | Best Server              |
-|:------------------------|:-------------------------|
-| Read/write files        | filesystem               |
-| Remember decisions      | memory                   |
-| Access external APIs    | fetch                    |
-| GitHub integration      | github                   |
-| Complex reasoning       | sequential-thinking      |
-| Browser automation      | puppeteer                |
-| Container management    | docker                   |
+| Task                 | Best Server         |
+|:---------------------|:--------------------|
+| Read/write files     | filesystem          |
+| Remember decisions   | memory              |
+| Access external APIs | fetch               |
+| GitHub integration   | github              |
+| Complex reasoning    | sequential-thinking |
+| Browser automation   | puppeteer           |
+| Container management | docker              |
 
 ---
 

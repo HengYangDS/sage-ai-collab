@@ -1,4 +1,4 @@
-﻿# Timeout Design Patterns
+# Timeout Design Patterns
 
 > Universal timeout and resilience patterns for system design
 

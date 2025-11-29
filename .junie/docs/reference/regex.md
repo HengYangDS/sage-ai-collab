@@ -47,18 +47,19 @@ This is the **critical security pattern** used in all Terminal rules. It matches
 
 **Characters Excluded**:
 
-| Character | Risk                  | Example Attack               |
-|:----------|:----------------------|:-----------------------------|
-| `\s`      | Space (word boundary) | Prevents command splitting   |
-| `;`       | Command chaining      | `git status; rm -rf /`       |
-| `&`       | Background/chaining   | `cmd & malicious`            |
-| `\|`      | Pipe injection        | `cmd \| evil`                |
-| `<`       | Input redirection     | `cmd < /etc/passwd`          |
-| `>`       | Output redirection    | `cmd > /etc/passwd`          |
-| `@`       | Special expansion     | Email/user injection         |
-| `$`       | Variable expansion    | `$HOME` manipulation         |
+| Character | Risk                  | Example Attack             |
+|:----------|:----------------------|:---------------------------|
+| `\s`      | Space (word boundary) | Prevents command splitting |
+| `;`       | Command chaining      | `git status; rm -rf /`     |
+| `&`       | Background/chaining   | `cmd & malicious`          |
+| `\|`      | Pipe injection        | `cmd \| evil`              |
+| `<`       | Input redirection     | `cmd < /etc/passwd`        |
+| `>`       | Output redirection    | `cmd > /etc/passwd`        |
+| `@`       | Special expansion     | Email/user injection       |
+| `$`       | Variable expansion    | `$HOME` manipulation       |
 
 **Usage**:
+
 ```regex
 ^\Qcommand\E [^\s;&|<>@$]*$
 ```
@@ -115,27 +116,35 @@ Allows command with optional parts:
 ## Pattern Templates
 
 ### Template 1: Exact Match
+
 ```regex
 ^\Q<command>\E$
 ```
+
 Use for: Commands that should never have arguments
 
 ### Template 2: Safe Arguments
+
 ```regex
 ^\Q<command>\E [^\s;&|<>@$]*$
 ```
+
 Use for: Commands that need arguments but must be secure
 
 ### Template 3: Any Arguments
+
 ```regex
 ^\Q<command>\E.*$
 ```
+
 Use for: Safe commands where any argument is acceptable
 
 ### Template 4: Specific Subcommands
+
 ```regex
 ^\Q<command>\E (<sub1>|<sub2>|<sub3>).*$
 ```
+
 Use for: Commands with specific allowed subcommands
 
 ---
@@ -223,13 +232,13 @@ Should NOT MATCH:
 
 ## Common Mistakes
 
-| Mistake                    | Problem                        | Fix                          |
-|:---------------------------|:-------------------------------|:-----------------------------|
-| Missing `^`                | Matches anywhere in command    | Add `^` at start             |
-| Missing `$`                | Matches partial commands       | Add `$` at end               |
-| Using `.*` without caution | Allows dangerous characters    | Use `[^\s;&\|<>@$]*` instead |
-| Not escaping special chars | Pattern doesn't match literal  | Use `\Q...\E` wrapper        |
-| Forgetting space           | Pattern too restrictive        | Add space before `[^...]`    |
+| Mistake                    | Problem                       | Fix                          |
+|:---------------------------|:------------------------------|:-----------------------------|
+| Missing `^`                | Matches anywhere in command   | Add `^` at start             |
+| Missing `$`                | Matches partial commands      | Add `$` at end               |
+| Using `.*` without caution | Allows dangerous characters   | Use `[^\s;&\|<>@$]*` instead |
+| Not escaping special chars | Pattern doesn't match literal | Use `\Q...\E` wrapper        |
+| Forgetting space           | Pattern too restrictive       | Add space before `[^...]`    |
 
 ---
 

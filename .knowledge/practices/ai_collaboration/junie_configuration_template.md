@@ -1,4 +1,4 @@
-﻿# Junie Configuration Template System
+# Junie Configuration Template System
 
 > A reusable template system for JetBrains Junie AI collaboration configuration.
 
@@ -73,11 +73,11 @@ Other files reference `project/config.yaml` instead of duplicating values.
 
 The `.junie/` thin layer delegates detailed knowledge to:
 
-| Target      | Content Type                                   |
-|-------------|------------------------------------------------|
-| `.context/` | Project-specific knowledge (ADRs, conventions) |
-| `.knowledge/`  | Generic, reusable knowledge                    |
-| `docs/`     | User-facing documentation                      |
+| Target        | Content Type                                   |
+|---------------|------------------------------------------------|
+| `.context/`   | Project-specific knowledge (ADRs, conventions) |
+| `.knowledge/` | Generic, reusable knowledge                    |
+| `docs/`       | User-facing documentation                      |
 
 ---
 

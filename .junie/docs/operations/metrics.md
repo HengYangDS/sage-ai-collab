@@ -110,12 +110,12 @@ Where:
 
 ### Efficiency Factors
 
-| Factor                     | Impact   | How to Optimize                     |
-|:---------------------------|:---------|:------------------------------------|
-| **Context Caching**        | 20-30%   | Use Memory server for decisions     |
-| **Selective File Loading** | 15-25%   | Load only relevant file sections    |
-| **Knowledge Persistence**  | 10-15%   | Store patterns for future sessions  |
-| **Smart Retrieval**        | 5-10%    | Query instead of re-explaining      |
+| Factor                     | Impact | How to Optimize                    |
+|:---------------------------|:-------|:-----------------------------------|
+| **Context Caching**        | 20-30% | Use Memory server for decisions    |
+| **Selective File Loading** | 15-25% | Load only relevant file sections   |
+| **Knowledge Persistence**  | 10-15% | Store patterns for future sessions |
+| **Smart Retrieval**        | 5-10%  | Query instead of re-explaining     |
 
 ### Tracking Token Usage
 
@@ -123,16 +123,19 @@ Where:
 ## Session Token Analysis
 
 ### Session Info
+
 - Date: [DATE]
 - Duration: [hours]
 - Task: [description]
 
 ### Token Metrics
+
 - Estimated Baseline: ___
 - Actual Used: ___
 - Efficiency: ___%
 
 ### MCP Usage
+
 - Memory queries: ___
 - Filesystem reads: ___
 - Context from cache: ___
@@ -144,12 +147,12 @@ Where:
 
 ### Session Quality Indicators
 
-| Indicator            | Good          | Needs Attention |
-|:---------------------|:--------------|:----------------|
-| **Session Duration** | 30-120 min    | < 10 or > 180   |
-| **Task Completion**  | ≥80%          | < 60%           |
-| **Context Switches** | ≤2 per hour   | > 5 per hour    |
-| **Manual Approvals** | ≤10%          | > 25%           |
+| Indicator            | Good        | Needs Attention |
+|:---------------------|:------------|:----------------|
+| **Session Duration** | 30-120 min  | < 10 or > 180   |
+| **Task Completion**  | ≥80%        | < 60%           |
+| **Context Switches** | ≤2 per hour | > 5 per hour    |
+| **Manual Approvals** | ≤10%        | > 25%           |
 
 ### Session Tracking Template
 
@@ -157,22 +160,26 @@ Where:
 ## Session: [DATE] [TIME]
 
 ### Overview
+
 - Start Time: ___
 - End Time: ___
 - Primary Task: ___
 - Status: [Completed / Partial / Blocked]
 
 ### Productivity Metrics
+
 - Tasks Planned: ___
 - Tasks Completed: ___
 - Completion Rate: ___%
 
 ### Interruptions
+
 - Manual Approvals: ___
 - Context Reloads: ___
 - MCP Reconnections: ___
 
 ### Notes
+
 [Key observations, blockers, improvements]
 ```
 
@@ -183,16 +190,19 @@ Where:
 ### Automated Tracking
 
 Currently available:
+
 - IDE logs (manual review)
 - MCP server status monitoring
 
 Future possibilities:
+
 - Automated metrics collection
 - Dashboard integration
 
 ### Manual Tracking
 
 Use templates above for:
+
 - Weekly command statistics
 - Session productivity logs
 - Monthly trend analysis
@@ -225,6 +235,7 @@ Quarterly:
 **Diagnosis**: Many commands requiring manual approval
 
 **Actions**:
+
 1. Review denied commands from last week
 2. Identify safe patterns that should be allowed
 3. Add rules for common project commands
@@ -235,6 +246,7 @@ Quarterly:
 **Diagnosis**: High context overhead
 
 **Actions**:
+
 1. Verify Memory server is connected
 2. Store frequently referenced decisions
 3. Use filesystem server for targeted file reads
@@ -245,6 +257,7 @@ Quarterly:
 **Diagnosis**: Workflow disruptions too frequent
 
 **Actions**:
+
 1. Check MCP server stability
 2. Add rules for frequently used commands
 3. Verify network connectivity
@@ -266,21 +279,25 @@ Quarterly:
 ### Characteristics by Stage
 
 **Initial**:
+
 - Default rules only
 - Frequent manual approvals
 - Limited MCP usage
 
 **Configured**:
+
 - Project-specific rules added
 - MCP servers connected
 - Basic knowledge persistence
 
 **Optimized**:
+
 - Fine-tuned regex patterns
 - Active Memory usage
 - Established workflows
 
 **Mature**:
+
 - Continuous improvement
 - High automation
 - Knowledge accumulation
@@ -291,16 +308,17 @@ Quarterly:
 
 ### Industry Standards (Estimated)
 
-| Metric                | Basic Setup | Good | Excellent |
-|:----------------------|:------------|:-----|:----------|
-| Auto-Approval Rate    | 50%         | 80%  | 95%       |
-| Token Efficiency      | 0%          | 40%  | 70%       |
-| Session Completion    | 60%         | 80%  | 95%       |
-| Daily Productivity    | 1x          | 3x   | 5x        |
+| Metric             | Basic Setup | Good | Excellent |
+|:-------------------|:------------|:-----|:----------|
+| Auto-Approval Rate | 50%         | 80%  | 95%       |
+| Token Efficiency   | 0%          | 40%  | 70%       |
+| Session Completion | 60%         | 80%  | 95%       |
+| Daily Productivity | 1x          | 3x   | 5x        |
 
 ### Target Setting
 
 Start with achievable targets:
+
 1. Week 1: 70% auto-approval
 2. Week 2: 80% auto-approval, 30% token efficiency
 3. Week 4: 90% auto-approval, 50% token efficiency

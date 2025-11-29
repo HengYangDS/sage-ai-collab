@@ -1,4 +1,4 @@
-﻿# Design Framework
+# Design Framework
 
 > Core design principles and axioms for SAGE
 

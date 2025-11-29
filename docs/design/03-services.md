@@ -1,4 +1,4 @@
-﻿---
+---
 title: SAGE Knowledge Base - Services Design
 version: 0.1.0
 date: 2025-11-28

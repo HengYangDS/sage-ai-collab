@@ -1,4 +1,4 @@
-﻿# Lessons Learned
+# Lessons Learned
 
 > Key insights and learnings from SAGE Knowledge Base development
 

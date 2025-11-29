@@ -26,12 +26,12 @@ Issue Detected
 
 ### Emergency Contacts
 
-| Issue Type         | First Action                    | Escalation                    |
-|:-------------------|:--------------------------------|:------------------------------|
-| MCP Server Down    | Restart server                  | Check logs, reinstall         |
-| Config Corrupted   | Restore from backup             | Rebuild from template         |
-| IDE Unresponsive   | Force quit, restart             | Clear caches, reinstall plugin|
-| Data Loss          | Check .history/ and Memory      | Restore from backups          |
+| Issue Type       | First Action               | Escalation                     |
+|:-----------------|:---------------------------|:-------------------------------|
+| MCP Server Down  | Restart server             | Check logs, reinstall          |
+| Config Corrupted | Restore from backup        | Rebuild from template          |
+| IDE Unresponsive | Force quit, restart        | Clear caches, reinstall plugin |
+| Data Loss        | Check .history/ and Memory | Restore from backups           |
 
 ---
 
@@ -42,6 +42,7 @@ Issue Detected
 **Symptoms**: Server status shows "Disconnected" or "Error"
 
 **Quick Fix**:
+
 ```
 1. Settings | Tools | Junie | MCP Servers
 2. Select affected server
@@ -51,6 +52,7 @@ Issue Detected
 ```
 
 **Diagnosis**:
+
 ```bash
 # Check Node.js
 node --version
@@ -62,6 +64,7 @@ npx -y @modelcontextprotocol/server-filesystem .
 ```
 
 **Full Recovery**:
+
 ```bash
 # 1. Stop all servers in IDE
 
@@ -85,19 +88,20 @@ Remove-Item -Recurse "$env:LOCALAPPDATA\npm-cache\_npx"  # Windows
 **Symptoms**: Server starts then crashes within seconds
 
 **Diagnosis**:
+
 1. Check IDE logs: `Help | Show Log in Explorer`
 2. Look for MCP-related errors
 3. Note error messages
 
 **Common Causes & Fixes**:
 
-| Cause                | Fix                                        |
-|:---------------------|:-------------------------------------------|
-| Invalid JSON config  | Validate and fix mcp.json                  |
-| Missing dependencies | Reinstall server package                   |
-| Permission denied    | Check file/directory permissions           |
-| Port conflict        | Restart IDE or system                      |
-| Memory exhaustion    | Close other applications, increase RAM     |
+| Cause                | Fix                                    |
+|:---------------------|:---------------------------------------|
+| Invalid JSON config  | Validate and fix mcp.json              |
+| Missing dependencies | Reinstall server package               |
+| Permission denied    | Check file/directory permissions       |
+| Port conflict        | Restart IDE or system                  |
+| Memory exhaustion    | Close other applications, increase RAM |
 
 ### Memory Server Data Loss
 
@@ -111,6 +115,7 @@ Remove-Item -Recurse "$env:LOCALAPPDATA\npm-cache\_npx"  # Windows
 4. **Rebuild from scratch** — Re-enter critical knowledge
 
 **Prevention**:
+
 - Regularly export important decisions to `.history/`
 - Use meaningful entity names
 - Create relationships for better retrieval
@@ -124,6 +129,7 @@ Remove-Item -Recurse "$env:LOCALAPPDATA\npm-cache\_npx"  # Windows
 **Symptoms**: Parse errors, IDE won't load config
 
 **Quick Fix**:
+
 ```bash
 # Restore from backup
 cp .junie/mcp/mcp.json.backup .junie/mcp/mcp.json
@@ -133,6 +139,7 @@ cp -r .junie.backup-YYYYMMDD .junie
 ```
 
 **No Backup Available**:
+
 ```bash
 # 1. Validate current file
 python -m json.tool .junie/mcp/mcp.json
@@ -148,6 +155,7 @@ python -m json.tool .junie/mcp/mcp.json
 **Symptoms**: Files deleted or moved
 
 **Recovery**:
+
 ```bash
 # Check if files exist
 ls -la .junie/
@@ -164,6 +172,7 @@ cp -r .junie.backup-YYYYMMDD/* .junie/
 **Symptoms**: Validation errors about schema version
 
 **Fix**:
+
 ```bash
 # Check current versions
 grep "schema_version" .junie/generic/config.yaml
@@ -182,6 +191,7 @@ grep "schema_version" .junie/project/config.yaml
 **Symptoms**: Junie chat unresponsive, commands not executing
 
 **Quick Fix**:
+
 ```
 1. View | Tool Windows | Junie
 2. Click refresh/reload if available
@@ -189,6 +199,7 @@ grep "schema_version" .junie/project/config.yaml
 ```
 
 **Full Recovery**:
+
 ```
 1. File | Invalidate Caches / Restart
 2. Select "Invalidate and Restart"
@@ -201,6 +212,7 @@ grep "schema_version" .junie/project/config.yaml
 **Symptoms**: IDE crashes or behaves unexpectedly
 
 **Diagnosis**:
+
 ```
 1. Help | Diagnostic Tools | Activity Monitor
 2. Look for exceptions or high CPU
@@ -208,6 +220,7 @@ grep "schema_version" .junie/project/config.yaml
 ```
 
 **Fix**:
+
 ```
 1. Settings | Plugins
 2. Disable recently added plugins
@@ -220,6 +233,7 @@ grep "schema_version" .junie/project/config.yaml
 **Symptoms**: Action Allowlist rules missing, MCP config gone
 
 **Recovery**:
+
 ```
 1. Check if .junie/ directory exists
 2. Reload from project configuration
@@ -268,12 +282,14 @@ rm -rf ~/.npm/_npx
 ### Step 4: Reset Configuration
 
 **Option A: Restore from backup**
+
 ```bash
 rm -rf .junie
 cp -r .junie.backup-YYYYMMDD .junie
 ```
 
 **Option B: Start fresh**
+
 ```bash
 rm -rf .junie
 # Copy template from documentation or another project
@@ -350,6 +366,7 @@ pytest tests/tools/test_junie_config.py -v --tb=short
 ### Documentation
 
 After recovery, document:
+
 - What went wrong
 - How it was fixed
 - Prevention measures added

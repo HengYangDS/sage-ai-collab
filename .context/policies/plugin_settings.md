@@ -1,4 +1,4 @@
-﻿# Plugin System Configuration
+# Plugin System Configuration
 
 > Configuration reference for the SAGE plugin system
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: SAGE Knowledge Base - Implementation Roadmap
 version: 0.1.0
 date: 2025-11-28
@@ -256,16 +256,16 @@ Current: M4 in progress - configuration complete, services planned
 
 **Goal**: Mirror source structure in tests
 
-| Task                                               | Owner          | Priority | Deliverable         |
-|----------------------------------------------------|----------------|----------|---------------------|
-| E.1 Create tests/fixtures/ directory               | Test Architect | P0       | Test data home      |
+| Task                                                  | Owner          | Priority | Deliverable         |
+|-------------------------------------------------------|----------------|----------|---------------------|
+| E.1 Create tests/fixtures/ directory                  | Test Architect | P0       | Test data home      |
 | E.2 Add sample_.knowledge/, mock_responses/, configs/ | Test Architect | P0       | Test fixtures       |
-| E.3 Create tests/unit/core/ directory              | Test Architect | P0       | Core unit tests     |
-| E.4 Create tests/unit/services/ directory          | Test Architect | P0       | Services unit tests |
-| E.5 Move existing tests to new structure           | Test Architect | P0       | Mirrored structure  |
-| E.6 Create tests/integration/ directory            | Test Architect | P1       | Integration tests   |
-| E.7 Create conftest.py with global fixtures        | Test Architect | P0       | Shared fixtures     |
-| E.8 Run all tests to verify                        | Test Architect | P0       | No regressions      |
+| E.3 Create tests/unit/core/ directory                 | Test Architect | P0       | Core unit tests     |
+| E.4 Create tests/unit/services/ directory             | Test Architect | P0       | Services unit tests |
+| E.5 Move existing tests to new structure              | Test Architect | P0       | Mirrored structure  |
+| E.6 Create tests/integration/ directory               | Test Architect | P1       | Integration tests   |
+| E.7 Create conftest.py with global fixtures           | Test Architect | P0       | Shared fixtures     |
+| E.8 Run all tests to verify                           | Test Architect | P0       | No regressions      |
 
 **Milestone**: Test structure mirrors source, all tests pass
 

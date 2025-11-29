@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base
+# SAGE Knowledge Base
 
 > **Smart AI-Guided Expertise** — Navigation Entry
 
@@ -44,11 +44,11 @@ sage-kb/
 
 ### 2.1 Knowledge & Context
 
-| Directory   | Purpose                                                         | Visibility |
-|-------------|-----------------------------------------------------------------|------------|
-| `.context/` | Project-specific knowledge (ADRs, conventions, configurations)  | Hidden     |
-| `.knowledge/`  | Generic, reusable knowledge (principles, frameworks, practices) | Visible    |
-| `docs/`     | User-facing documentation (design, API, guides)                 | Visible    |
+| Directory     | Purpose                                                         | Visibility |
+|---------------|-----------------------------------------------------------------|------------|
+| `.context/`   | Project-specific knowledge (ADRs, conventions, configurations)  | Hidden     |
+| `.knowledge/` | Generic, reusable knowledge (principles, frameworks, practices) | Visible    |
+| `docs/`       | User-facing documentation (design, API, guides)                 | Visible    |
 
 ### 2.2 Configuration & Runtime
 
@@ -86,8 +86,8 @@ sage-kb/
 
 ### 3.1 Knowledge Content
 
-| Layer          | Path                  | Purpose                                   |
-|----------------|-----------------------|-------------------------------------------|
+| Layer          | Path                     | Purpose                                   |
+|----------------|--------------------------|-------------------------------------------|
 | **Core**       | `.knowledge/core/`       | Principles, defaults, quick reference     |
 | **Guidelines** | `.knowledge/guidelines/` | Code style, engineering, AI collaboration |
 | **Frameworks** | `.knowledge/frameworks/` | Autonomy, timeout, cognitive patterns     |
@@ -95,13 +95,13 @@ sage-kb/
 
 ### 3.2 Key Files
 
-| File                         | Purpose                                          |
-|------------------------------|--------------------------------------------------|
-| `config/sage.yaml`           | Main configuration (timeouts, triggers, loading) |
+| File                            | Purpose                                          |
+|---------------------------------|--------------------------------------------------|
+| `config/sage.yaml`              | Main configuration (timeouts, triggers, loading) |
 | `.knowledge/core/principles.md` | Core philosophy (信达雅)                            |
-| `.context/index.md`          | Project-specific context navigation              |
-| `.junie/guidelines.md`       | AI collaboration guidelines                      |
-| `docs/design/00-overview.md` | Design overview                                  |
+| `.context/index.md`             | Project-specific context navigation              |
+| `.junie/guidelines.md`          | AI collaboration guidelines                      |
+| `docs/design/00-overview.md`    | Design overview                                  |
 
 ---
 

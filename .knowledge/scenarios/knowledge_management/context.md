@@ -1,4 +1,4 @@
-﻿# Knowledge Management Scenario Context
+# Knowledge Management Scenario Context
 
 > Pre-configured context for knowledge management system development
 
@@ -33,22 +33,22 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                                                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `.knowledge/references/knowledge_quick_ref.md`                                                                                                                       |
+| **Auto-Load** | `core/principles.md` · `.knowledge/references/knowledge_quick_ref.md`                                                                                                                    |
 | **On-Demand** | `practices/documentation/knowledge_organization.md` · `frameworks/design/` · `practices/documentation/documentation_standards.md` · `practices/ai_collaboration/knowledge_extraction.md` |
 
 ---
 
 ## 3. Project Structure
 
-| Directory    | Purpose                      |
-|--------------|------------------------------|
-| `.knowledge/`   | Generic, reusable knowledge  |
-| `.context/`  | Project-specific knowledge   |
-| `docs/`      | User-facing documentation    |
-| `config/`    | Configuration files          |
-| `.history/`  | Session history and handoffs |
-| `templates/` | Document templates           |
-| `schemas/`   | Content validation schemas   |
+| Directory     | Purpose                      |
+|---------------|------------------------------|
+| `.knowledge/` | Generic, reusable knowledge  |
+| `.context/`   | Project-specific knowledge   |
+| `docs/`       | User-facing documentation    |
+| `config/`     | Configuration files          |
+| `.history/`   | Session history and handoffs |
+| `templates/`  | Document templates           |
+| `schemas/`    | Content validation schemas   |
 
 ---
 
@@ -266,11 +266,11 @@ sage search "new topic"
 
 ## 8. Quick Commands
 
-| Category       | Commands                                             |
-|----------------|------------------------------------------------------|
+| Category       | Commands                                                |
+|----------------|---------------------------------------------------------|
 | **Search**     | `sage search "query"` · `grep -r "pattern" .knowledge/` |
 | **Validate**   | `sage validate --all` · `markdownlint .knowledge/`      |
-| **Index**      | `sage index --rebuild` · `find content -name "*.md"` |
+| **Index**      | `sage index --rebuild` · `find content -name "*.md"`    |
 | **Statistics** | `sage info --layers` · `wc -l .knowledge/**/*.md`       |
 
 ---

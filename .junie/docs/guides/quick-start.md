@@ -33,8 +33,8 @@ If your project includes `.junie/` configuration:
 
 1. **Restart IDE** after opening the project
 2. **Verify Configuration**:
-   - Open `Settings | Tools | Junie | Action Allowlist`
-   - Confirm you see Terminal rules listed
+    - Open `Settings | Tools | Junie | Action Allowlist`
+    - Confirm you see Terminal rules listed
 
 3. **Test Execution**:
    ```bash
@@ -46,8 +46,8 @@ If your project includes `.junie/` configuration:
 1. Open `Settings | Tools | Junie | Action Allowlist`
 2. Click "Add" to add Terminal rules
 3. Copy rules from:
-   - [Windows Rules](../reference/rules-windows.md)
-   - [macOS/Linux Rules](../reference/rules-unix.md)
+    - [Windows Rules](../reference/rules-windows.md)
+    - [macOS/Linux Rules](../reference/rules-unix.md)
 
 ### Method C: Quick Copy-Paste
 
@@ -83,12 +83,12 @@ For immediate setup, copy the essential rules:
 
 In `Settings | Tools | Junie | Action Allowlist`, enable:
 
-| Action                | Recommended | Purpose                    |
-|:----------------------|:------------|:---------------------------|
-| **RunTest**           | ✅ Enable    | Run tests automatically    |
-| **Build**             | ✅ Enable    | Build project              |
-| **ReadOutsideProject**| ✅ Enable    | Read external files        |
-| **WriteOutsideProject**| ⚠️ Optional | Modify external files      |
+| Action                  | Recommended | Purpose                 |
+|:------------------------|:------------|:------------------------|
+| **RunTest**             | ✅ Enable    | Run tests automatically |
+| **Build**               | ✅ Enable    | Build project           |
+| **ReadOutsideProject**  | ✅ Enable    | Read external files     |
+| **WriteOutsideProject** | ⚠️ Optional | Modify external files   |
 
 ---
 
@@ -105,11 +105,11 @@ MCP servers provide advanced capabilities like persistent memory and external to
 
 ### Essential MCP Servers
 
-| Server       | Priority | Purpose                      |
-|:-------------|:---------|:-----------------------------|
-| **filesystem** | P0     | File operations within project |
-| **memory**     | P0     | Cross-session knowledge      |
-| **fetch**      | P1     | External URL access          |
+| Server         | Priority | Purpose                        |
+|:---------------|:---------|:-------------------------------|
+| **filesystem** | P0       | File operations within project |
+| **memory**     | P0       | Cross-session knowledge        |
+| **fetch**      | P1       | External URL access            |
 
 For detailed MCP configuration, see [MCP Configuration](../mcp/configuration.md).
 
@@ -130,6 +130,7 @@ npm --version
 ### Test MCP Connection
 
 In Junie chat, try:
+
 - "Read the README.md file" (tests filesystem server)
 - "Remember that we use pytest for testing" (tests memory server)
 
@@ -153,11 +154,11 @@ In Junie chat, try:
 
 ## Next Steps
 
-| Goal                        | Document                                    |
-|:----------------------------|:--------------------------------------------|
-| Configure all 87 rules      | [Action Allowlist](action-allowlist.md)     |
-| Setup advanced MCP features | [MCP Overview](../mcp/overview.md)          |
-| Track efficiency metrics    | [Metrics](../operations/metrics.md)         |
+| Goal                        | Document                                          |
+|:----------------------------|:--------------------------------------------------|
+| Configure all 87 rules      | [Action Allowlist](action-allowlist.md)           |
+| Setup advanced MCP features | [MCP Overview](../mcp/overview.md)                |
+| Track efficiency metrics    | [Metrics](../operations/metrics.md)               |
 | Learn about future features | [Future Protocols](../vision/future-protocols.md) |
 
 ---

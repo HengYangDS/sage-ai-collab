@@ -1,4 +1,4 @@
-﻿# Documentation Standards (SSOT)
+# Documentation Standards (SSOT)
 
 > Single source of truth for documentation writing standards
 
@@ -186,27 +186,27 @@ print(greet("World"))  # Output: Hello, World
 
 ### 5.2 Directory Conventions
 
-| Directory   | Purpose                    | Git Policy |
-|-------------|----------------------------|------------|
-| `.context/` | Project-specific knowledge | Tracked    |
-| `.history/` | Session history, handoffs  | Tracked    |
-| `.archive/` | Historical/deprecated      | Tracked    |
-| `.backups/` | Pre-change snapshots       | Tracked    |
-| `.logs/`    | Runtime logs               | Ignored    |
-| `.outputs/` | Intermediate files         | Ignored    |
-| `.knowledge/`  | Generic reusable knowledge | Tracked    |
-| `docs/`     | User-facing documentation  | Tracked    |
+| Directory     | Purpose                    | Git Policy |
+|---------------|----------------------------|------------|
+| `.context/`   | Project-specific knowledge | Tracked    |
+| `.history/`   | Session history, handoffs  | Tracked    |
+| `.archive/`   | Historical/deprecated      | Tracked    |
+| `.backups/`   | Pre-change snapshots       | Tracked    |
+| `.logs/`      | Runtime logs               | Ignored    |
+| `.outputs/`   | Intermediate files         | Ignored    |
+| `.knowledge/` | Generic reusable knowledge | Tracked    |
+| `docs/`       | User-facing documentation  | Tracked    |
 
 ### 5.3 Content Placement
 
-| Content Type         | Location                |
-|----------------------|-------------------------|
-| Project conventions  | `.context/conventions/` |
-| Universal guidelines | `.knowledge/guidelines/`   |
-| ADR records          | `.context/decisions/`   |
-| API documentation    | `docs/api/`             |
-| Session handoffs     | `.history/handoffs/`    |
-| Deprecated content   | `.archive/`             |
+| Content Type         | Location                 |
+|----------------------|--------------------------|
+| Project conventions  | `.context/conventions/`  |
+| Universal guidelines | `.knowledge/guidelines/` |
+| ADR records          | `.context/decisions/`    |
+| API documentation    | `docs/api/`              |
+| Session handoffs     | `.history/handoffs/`     |
+| Deprecated content   | `.archive/`              |
 
 ### 5.4 MECE Principle
 

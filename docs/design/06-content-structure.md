@@ -1,4 +1,4 @@
-﻿---
+---
 title: SAGE Knowledge Base - Content Structure & Knowledge Taxonomy
 version: 0.1.0
 date: 2025-11-28
@@ -153,12 +153,12 @@ sage/                          # Project root directory
 |----------------------------------|----------|---------|-----------------------------------------------|
 | Root                             | 12       | 8       | Project entry, config, dev toolchain          |
 | docs/                            | 7        | 4       | Project documentation (+standards/)           |
-| .knowledge/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)    |
-| .knowledge/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index)    |
-| .knowledge/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)               |
-| .knowledge/practices/               | 4        | 4       | Best practices (+decisions/)                  |
-| .knowledge/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                |
-| .knowledge/templates/               | 2        | 0       | Templates (+expert_committee.md)              |
+| .knowledge/core/                 | 3        | 0       | Core principles (~500 tokens, Always Load)    |
+| .knowledge/guidelines/           | 11       | 0       | Engineering guidelines (+guidelines_index)    |
+| .knowledge/frameworks/           | 5        | 5       | Deep frameworks (~2,000 tokens)               |
+| .knowledge/practices/            | 4        | 4       | Best practices (+decisions/)                  |
+| .knowledge/scenarios/            | 1        | 1       | Scenario presets (~500 tokens)                |
+| .knowledge/templates/            | 2        | 0       | Templates (+expert_committee.md)              |
 | src/sage/interfaces/             | 2        | 0       | Protocol definitions (centralized)            |
 | src/sage/domain/                 | 3        | 0       | Business domain models                        |
 | src/sage/core/                   | 9        | 1       | Core layer (<500 lines)                       |
@@ -256,14 +256,14 @@ project-root/
 
 ### 6.5.2 Directory Purpose & Differentiation
 
-| Directory   | Purpose                                        | Hidden | Git Track | Scope           |
-|-------------|------------------------------------------------|--------|-----------|-----------------|
-| `.junie/`   | AI client config for JetBrains Junie           | Yes    | Yes       | Client-specific |
-| `.context/` | Project-specific knowledge (ADRs, conventions) | Yes    | Yes       | Project-local   |
-| `.history/` | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
-| `.archive/` | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
-| `docs/`     | User-facing documentation                      | No     | Yes       | Public          |
-| `.knowledge/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
+| Directory     | Purpose                                        | Hidden | Git Track | Scope           |
+|---------------|------------------------------------------------|--------|-----------|-----------------|
+| `.junie/`     | AI client config for JetBrains Junie           | Yes    | Yes       | Client-specific |
+| `.context/`   | Project-specific knowledge (ADRs, conventions) | Yes    | Yes       | Project-local   |
+| `.history/`   | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
+| `.archive/`   | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
+| `docs/`       | User-facing documentation                      | No     | Yes       | Public          |
+| `.knowledge/` | Generic, distributable knowledge               | No     | Yes       | Package         |
 
 ---
 
@@ -312,9 +312,9 @@ project-root/
 
 ### Knowledge Layer Loading Strategy
 
-| Layer | Directory             | Token Budget  | Loading         |
-|-------|-----------------------|---------------|-----------------|
-| L0    | `index.md`            | ~100 tokens   | **Always Load** |
+| Layer | Directory                | Token Budget  | Loading         |
+|-------|--------------------------|---------------|-----------------|
+| L0    | `index.md`               | ~100 tokens   | **Always Load** |
 | L1    | `.knowledge/core/`       | ~500 tokens   | **Always Load** |
 | L2    | `.knowledge/guidelines/` | ~1,200 tokens | On-Demand       |
 | L3    | `.knowledge/frameworks/` | ~2,000 tokens | On-Demand       |
@@ -378,11 +378,11 @@ Knowledge content follows semantic versioning principles for maintainability:
 
 ### Version Tracking
 
-| Aspect              | Approach                                          |
-|---------------------|---------------------------------------------------|
-| **File-level**      | YAML frontmatter with `version` and `date` fields |
-| **Package-level**   | `.knowledge/VERSION` file tracking content releases  |
-| **Change tracking** | Git history with conventional commit messages     |
+| Aspect              | Approach                                            |
+|---------------------|-----------------------------------------------------|
+| **File-level**      | YAML frontmatter with `version` and `date` fields   |
+| **Package-level**   | `.knowledge/VERSION` file tracking content releases |
+| **Change tracking** | Git history with conventional commit messages       |
 
 ### Frontmatter Template
 
@@ -437,16 +437,16 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 ### Navigation Decision Matrix
 
-| Content Type      | Location              | Rationale           |
-|-------------------|-----------------------|---------------------|
-| Project overview  | `index.md`            | Universal entry     |
-| AI client config  | `.junie/`             | Client-specific     |
+| Content Type      | Location                 | Rationale           |
+|-------------------|--------------------------|---------------------|
+| Project overview  | `index.md`               | Universal entry     |
+| AI client config  | `.junie/`                | Client-specific     |
 | Core philosophy   | `.knowledge/core/`       | Always needed       |
 | How-to guides     | `.knowledge/guidelines/` | Task-triggered      |
 | Deep frameworks   | `.knowledge/frameworks/` | Complex decisions   |
-| Project decisions | `.context/decisions/` | Project-specific    |
-| Session history   | `.history/`           | Ephemeral           |
-| Design documents  | `docs/design/`        | Technical reference |
+| Project decisions | `.context/decisions/`    | Project-specific    |
+| Session history   | `.history/`              | Ephemeral           |
+| Design documents  | `docs/design/`           | Technical reference |
 
 ---
 
@@ -470,12 +470,12 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-| Phase   | Location    | Trigger               | Action                            |
-|---------|-------------|-----------------------|-----------------------------------|
-| CAPTURE | `.history/` | Every session         | Auto-save conversations, handoffs |
-| REFINE  | `.context/` | Sprint end, milestone | Extract ADRs, conventions         |
-| PUBLISH | `.knowledge/`  | Quarterly review      | Promote generic knowledge         |
-| ARCHIVE | `.archive/` | Content superseded    | Preserve historical records       |
+| Phase   | Location      | Trigger               | Action                            |
+|---------|---------------|-----------------------|-----------------------------------|
+| CAPTURE | `.history/`   | Every session         | Auto-save conversations, handoffs |
+| REFINE  | `.context/`   | Sprint end, milestone | Extract ADRs, conventions         |
+| PUBLISH | `.knowledge/` | Quarterly review      | Promote generic knowledge         |
+| ARCHIVE | `.archive/`   | Content superseded    | Preserve historical records       |
 
 ### Content Knowledge Lifecycle
 
@@ -495,8 +495,8 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 ### Update Frequency by Layer
 
-| Layer | Directory             | Frequency        | Governance       |
-|-------|-----------------------|------------------|------------------|
+| Layer | Directory                | Frequency        | Governance       |
+|-------|--------------------------|------------------|------------------|
 | L1    | `.knowledge/core/`       | Rare (1-2x/year) | Expert Committee |
 | L2    | `.knowledge/guidelines/` | Quarterly        | 2+ reviewers     |
 | L3    | `.knowledge/frameworks/` | As needed        | Expert review    |

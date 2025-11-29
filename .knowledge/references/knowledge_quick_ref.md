@@ -1,4 +1,4 @@
-﻿# Knowledge Organization Quick Reference
+# Knowledge Organization Quick Reference
 
 > Essential patterns for organizing AI-collaborative knowledge bases
 

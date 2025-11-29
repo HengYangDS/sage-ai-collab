@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base - Project Guidelines
+# SAGE Knowledge Base - Project Guidelines
 
 > Project-specific quick reference for SAGE Knowledge Base
 
@@ -68,15 +68,15 @@ sage-kb/
 
 ### Key Directories
 
-| Directory   | Purpose                                        | Visibility |
-|-------------|------------------------------------------------|------------|
-| `.junie/`   | AI client config for JetBrains Junie           | Hidden     |
-| `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden     |
-| `.history/` | AI session records and task handoffs           | Hidden     |
-| `.outputs/` | Intermediate process files                     | Hidden     |
-| `config/`   | Runtime configuration (modular YAML structure) | Visible    |
-| `docs/`     | User-facing documentation                      | Visible    |
-| `.knowledge/`  | Generic, distributable knowledge               | Visible    |
+| Directory     | Purpose                                        | Visibility |
+|---------------|------------------------------------------------|------------|
+| `.junie/`     | AI client config for JetBrains Junie           | Hidden     |
+| `.context/`   | Project-specific knowledge (ADRs, conventions) | Hidden     |
+| `.history/`   | AI session records and task handoffs           | Hidden     |
+| `.outputs/`   | Intermediate process files                     | Hidden     |
+| `config/`     | Runtime configuration (modular YAML structure) | Visible    |
+| `docs/`       | User-facing documentation                      | Visible    |
+| `.knowledge/` | Generic, distributable knowledge               | Visible    |
 
 ---
 

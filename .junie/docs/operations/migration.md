@@ -82,6 +82,7 @@ Phase 4: Completion
 **Initial stable release** — No breaking changes from previous versions.
 
 **Key Features**:
+
 - Thin Layer architecture (generic/project separation)
 - MCP server configuration with metadata
 - Session history management
@@ -106,6 +107,7 @@ Phase 4: Completion
 **When**: Bug fixes, documentation updates
 
 **Procedure**:
+
 ```bash
 # 1. Pull latest configuration
 git pull origin main
@@ -124,6 +126,7 @@ pytest tests/tools/test_junie_config.py -v
 **When**: New features, backward compatible
 
 **Procedure**:
+
 ```bash
 # 1. Backup current config
 cp -r .junie .junie.backup-$(date +%Y%m%d)
@@ -148,6 +151,7 @@ pytest tests/tools/test_junie_config.py -v
 **When**: Breaking changes, new architecture
 
 **Procedure**:
+
 ```bash
 # 1. Full backup
 cp -r .junie .junie.backup-major-$(date +%Y%m%d)

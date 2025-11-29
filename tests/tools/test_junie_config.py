@@ -243,10 +243,10 @@ class TestDirectoryStructure:
     def test_docs_structure_exist(self) -> None:
         """Verify documentation directory structure exists."""
         docs_dir = JUNIE_DIR / "docs"
-        
+
         # Check main README
         assert (docs_dir / "README.md").exists(), "docs/README.md not found"
-        
+
         # Check subdirectories exist
         expected_subdirs = ["guides", "mcp", "operations", "reference", "vision"]
         for subdir in expected_subdirs:
@@ -264,7 +264,13 @@ class TestDirectoryStructure:
     def test_docs_mcp_exist(self) -> None:
         """Verify MCP documentation files exist."""
         mcp_dir = JUNIE_DIR / "docs" / "mcp"
-        expected_files = ["overview.md", "configuration.md", "servers.md", "memory.md", "troubleshooting.md"]
+        expected_files = [
+            "overview.md",
+            "configuration.md",
+            "servers.md",
+            "memory.md",
+            "troubleshooting.md",
+        ]
         for filename in expected_files:
             file_path = mcp_dir / filename
             assert file_path.exists(), f"mcp/{filename} not found"
@@ -280,7 +286,12 @@ class TestDirectoryStructure:
     def test_docs_reference_exist(self) -> None:
         """Verify reference documentation files exist."""
         ref_dir = JUNIE_DIR / "docs" / "reference"
-        expected_files = ["glossary.md", "regex.md", "rules-windows.md", "rules-unix.md"]
+        expected_files = [
+            "glossary.md",
+            "regex.md",
+            "rules-windows.md",
+            "rules-unix.md",
+        ]
         for filename in expected_files:
             file_path = ref_dir / filename
             assert file_path.exists(), f"reference/{filename} not found"

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Structure Checker - Directory and file structure validation.
 
 This module provides:

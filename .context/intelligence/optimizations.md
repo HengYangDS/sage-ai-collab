@@ -1,4 +1,4 @@
-﻿# SAGE Project Optimizations
+# SAGE Project Optimizations
 
 > SAGE-specific optimizations, shortcuts, and code patterns
 
@@ -8,8 +8,8 @@
 
 For comprehensive guides on general development practices, see:
 
-| Topic                | Reference                                                   |
-|----------------------|-------------------------------------------------------------|
+| Topic                | Reference                                                      |
+|----------------------|----------------------------------------------------------------|
 | **Code Patterns**    | `.knowledge/practices/engineering/patterns.md`                 |
 | **Testing Strategy** | `.knowledge/practices/engineering/testing_strategy.md`         |
 | **Documentation**    | `.knowledge/practices/documentation/`                          |

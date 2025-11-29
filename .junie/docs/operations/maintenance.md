@@ -52,6 +52,7 @@
 #### MCP Servers (Partial Restart)
 
 **Option A: Restart Single Server**
+
 ```
 1. Settings | Tools | Junie | MCP Servers
 2. Select server → Click "Restart"
@@ -59,6 +60,7 @@
 ```
 
 **Option B: Restart All Servers**
+
 ```
 1. Settings | Tools | Junie | MCP Servers
 2. Click "Restart All"
@@ -68,11 +70,13 @@
 #### Full Configuration (IDE Restart Required)
 
 For changes to:
+
 - `generic/config.yaml`
 - `project/config.yaml`
 - Structural changes to `mcp.json`
 
 **Procedure**:
+
 ```
 1. Save all changes
 2. File | Exit (or IDE exit shortcut)
@@ -90,17 +94,20 @@ For changes to:
 ## Week of [DATE]
 
 ### Configuration Health
+
 - [ ] Verify MCP servers connected
 - [ ] Check Terminal rule count (target: 87)
 - [ ] Review any blocked commands
 - [ ] Update rules for new patterns if needed
 
 ### Documentation
+
 - [ ] Update session history if significant work done
 - [ ] Review and clean up .outputs/ directory
 - [ ] Archive old session files if needed
 
 ### Performance
+
 - [ ] Check auto-approval rate (target: 90%+)
 - [ ] Review token efficiency metrics
 - [ ] Identify optimization opportunities
@@ -112,18 +119,21 @@ For changes to:
 ## Month of [DATE]
 
 ### Configuration Review
+
 - [ ] Review all Terminal rules for relevance
 - [ ] Check for deprecated patterns
 - [ ] Update MCP server versions if available
 - [ ] Validate schema compliance
 
 ### Knowledge Cleanup
+
 - [ ] Review Memory server entities
 - [ ] Remove obsolete entities
 - [ ] Consolidate duplicate information
 - [ ] Update relationships
 
 ### Documentation
+
 - [ ] Review and update project/quickref.md
 - [ ] Check cross-references are valid
 - [ ] Update version numbers if needed
@@ -146,9 +156,10 @@ cp .junie/mcp/mcp.json .junie/mcp/mcp.json.backup
 ```
 
 **Windows PowerShell**:
+
 ```powershell
 # Full backup
-Copy-Item -Recurse .junie ".junie.backup-$(Get-Date -Format 'yyyyMMdd')"
+Copy-Item -Recurse .junie ".junie.backup-$( Get-Date -Format 'yyyyMMdd' )"
 
 # Specific file backup
 Copy-Item .junie\mcp\mcp.json .junie\mcp\mcp.json.backup
@@ -251,6 +262,7 @@ Target: ≥90%
 ### MCP Server Health
 
 Check daily:
+
 - All P0 servers (filesystem, memory) connected
 - No recurring errors in logs
 - Response times acceptable
@@ -258,6 +270,7 @@ Check daily:
 ### Configuration Drift
 
 Monthly review:
+
 - Compare current config with baseline
 - Document intentional changes
 - Revert unintended changes

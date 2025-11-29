@@ -1,4 +1,4 @@
-﻿# Session State: History Directory Completeness Enhancement
+# Session State: History Directory Completeness Enhancement
 
 > **Session ID**: session-20251129-2214
 > **Started**: 2025-11-29 22:14
@@ -62,15 +62,15 @@ None - all tasks completed successfully:
 
 ### Files Being Modified
 
-| File                                       | Purpose                | Status |
-|--------------------------------------------|------------------------|--------|
+| File                                          | Purpose                | Status |
+|-----------------------------------------------|------------------------|--------|
 | `.knowledge/templates/conversation_record.md` | Conversation template  | Done   |
 | `.knowledge/templates/session_state.md`       | Session state template | Done   |
 | `.knowledge/templates/task_handoff.md`        | Handoff template       | Done   |
 | `.knowledge/templates/index.md`               | Template catalog       | Done   |
-| `.history/conversations/_example-*.md`     | Example conversation   | Done   |
-| `.history/current/_example-*.md`           | Example session state  | Done   |
-| `.history/handoffs/_example-*.md`          | Example handoff        | Done   |
+| `.history/conversations/_example-*.md`        | Example conversation   | Done   |
+| `.history/current/_example-*.md`              | Example session state  | Done   |
+| `.history/handoffs/_example-*.md`             | Example handoff        | Done   |
 
 ### Key Decisions Made
 

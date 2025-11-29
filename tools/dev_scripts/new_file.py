@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env python3
+#!/usr/bin/env python3
 """SAGE New File Creator.
 
 Creates new files with correct placement and template.

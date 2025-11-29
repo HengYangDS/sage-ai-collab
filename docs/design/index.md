@@ -1,4 +1,4 @@
-﻿# Design Documents Navigation
+# Design Documents Navigation
 
 > Architecture and design decisions for SAGE Knowledge Base
 

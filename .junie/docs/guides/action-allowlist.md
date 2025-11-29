@@ -6,15 +6,16 @@
 
 ## Overview
 
-**Action Allowlist** is Junie's permission management mechanism that controls which operations can be executed automatically without manual approval.
+**Action Allowlist** is Junie's permission management mechanism that controls which operations can be executed
+automatically without manual approval.
 
 ### Goals
 
-| Target                 | Value                   | Effect                        |
-|:-----------------------|:------------------------|:------------------------------|
-| **Terminal Rules**     | 87 precise rules        | 90%+ auto-approval rate       |
-| **Execution Mode**     | Batch execution         | Continuous collaboration      |
-| **Security**           | Dangerous char exclusion| Balance security & efficiency |
+| Target             | Value                    | Effect                        |
+|:-------------------|:-------------------------|:------------------------------|
+| **Terminal Rules** | 87 precise rules         | 90%+ auto-approval rate       |
+| **Execution Mode** | Batch execution          | Continuous collaboration      |
+| **Security**       | Dangerous char exclusion | Balance security & efficiency |
 
 ### Key Benefits
 
@@ -28,21 +29,21 @@
 
 ### Security Classification
 
-| Category            | Description                              | Example                    |
-|:--------------------|:-----------------------------------------|:---------------------------|
-| **Safe Actions**    | Reversible, no sensitive changes         | Editing code, reading files|
-| **Sensitive Actions**| Potential risks, require permission     | Terminal commands, builds  |
+| Category              | Description                         | Example                     |
+|:----------------------|:------------------------------------|:----------------------------|
+| **Safe Actions**      | Reversible, no sensitive changes    | Editing code, reading files |
+| **Sensitive Actions** | Potential risks, require permission | Terminal commands, builds   |
 
 ### Rule Types
 
-| Rule Type               | Function                    | Status      |
-|:------------------------|:----------------------------|:------------|
-| **Terminal**            | Allow terminal commands     | ✅ 87 rules  |
-| **RunTest**             | Allow running tests         | ✅ Enabled   |
-| **Build**               | Allow building project      | ✅ Enabled   |
-| **ReadOutsideProject**  | Read external files         | ✅ Enabled   |
-| **WriteOutsideProject** | Modify external files       | ⚠️ Optional |
-| **MCP**                 | Execute MCP tools           | ✅ Supported |
+| Rule Type               | Function                | Status      |
+|:------------------------|:------------------------|:------------|
+| **Terminal**            | Allow terminal commands | ✅ 87 rules  |
+| **RunTest**             | Allow running tests     | ✅ Enabled   |
+| **Build**               | Allow building project  | ✅ Enabled   |
+| **ReadOutsideProject**  | Read external files     | ✅ Enabled   |
+| **WriteOutsideProject** | Modify external files   | ⚠️ Optional |
+| **MCP**                 | Execute MCP tools       | ✅ Supported |
 
 ---
 
@@ -58,25 +59,25 @@ All Terminal rules follow this secure pattern:
 
 **Components**:
 
-| Part              | Purpose                                      |
-|:------------------|:---------------------------------------------|
-| `^`               | Start of command                             |
-| `\Q...\E`         | Literal text (escape special chars)          |
-| `[^\s;&|<>@$]*`   | Safe characters only (security filter)       |
-| `$`               | End of command                               |
+| Part      | Purpose                             |
+|:----------|:------------------------------------|
+| `^`       | Start of command                    |
+| `\Q...\E` | Literal text (escape special chars) |
+| `[^\s;&   | <>@$]*`                             | Safe characters only (security filter)       |
+| `$`       | End of command                      |
 
 ### Security Pattern: `[^\s;&|<>@$]*`
 
 This pattern **excludes** dangerous characters:
 
-| Character | Risk                  | Example Attack               |
-|:----------|:----------------------|:-----------------------------|
-| `;`       | Command chaining      | `git status; rm -rf /`       |
-| `&`       | Background/chaining   | `cmd & malicious`            |
-| `\|`      | Pipe injection        | `cmd \| evil`                |
-| `<` `>`   | Redirection           | `cmd > /etc/passwd`          |
-| `@`       | Special expansion     | Email/user injection         |
-| `$`       | Variable expansion    | `$HOME` manipulation         |
+| Character | Risk                | Example Attack         |
+|:----------|:--------------------|:-----------------------|
+| `;`       | Command chaining    | `git status; rm -rf /` |
+| `&`       | Background/chaining | `cmd & malicious`      |
+| `\|`      | Pipe injection      | `cmd \| evil`          |
+| `<` `>`   | Redirection         | `cmd > /etc/passwd`    |
+| `@`       | Special expansion   | Email/user injection   |
+| `$`       | Variable expansion  | `$HOME` manipulation   |
 
 ---
 
@@ -259,12 +260,12 @@ Target: ≥90%
 
 **Common issues**:
 
-| Issue                    | Solution                                      |
-|:-------------------------|:----------------------------------------------|
-| Missing `^` or `$`       | Add anchors: `^pattern$`                      |
-| Special chars not escaped| Use `\Q...\E` wrapper                         |
-| Pattern too restrictive  | Add `.*` for flexible matching                |
-| Pattern too permissive   | Add `[^\s;&\|<>@$]*` for security             |
+| Issue                     | Solution                          |
+|:--------------------------|:----------------------------------|
+| Missing `^` or `$`        | Add anchors: `^pattern$`          |
+| Special chars not escaped | Use `\Q...\E` wrapper             |
+| Pattern too restrictive   | Add `.*` for flexible matching    |
+| Pattern too permissive    | Add `[^\s;&\|<>@$]*` for security |
 
 ---
 

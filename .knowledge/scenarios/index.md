@@ -1,4 +1,4 @@
-﻿# Scenario Presets
+# Scenario Presets
 
 > Context-specific knowledge presets for common development scenarios
 

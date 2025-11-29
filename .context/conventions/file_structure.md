@@ -1,4 +1,4 @@
-﻿# SAGE File Structure Conventions
+# SAGE File Structure Conventions
 
 > Project-specific file organization standards for SAGE Knowledge Base
 
@@ -101,12 +101,12 @@ This section defines the rules for organizing knowledge across the project's dir
 
 ### 2.1 Directory Purpose Matrix
 
-| Directory   | Content Type       | Scope            | Distributable |
-|-------------|--------------------|------------------|---------------|
-| `.knowledge/`  | Generic knowledge  | Universal        | ✅ Yes         |
-| `.context/` | Project-specific   | SAGE only        | ❌ No          |
-| `docs/`     | User documentation | SAGE users       | ✅ Yes         |
-| `.history/` | Session records    | AI collaboration | ❌ No          |
+| Directory     | Content Type       | Scope            | Distributable |
+|---------------|--------------------|------------------|---------------|
+| `.knowledge/` | Generic knowledge  | Universal        | ✅ Yes         |
+| `.context/`   | Project-specific   | SAGE only        | ❌ No          |
+| `docs/`       | User documentation | SAGE users       | ✅ Yes         |
+| `.history/`   | Session records    | AI collaboration | ❌ No          |
 
 ### 2.2 Content Directory (`.knowledge/`)
 

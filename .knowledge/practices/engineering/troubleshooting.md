@@ -1,4 +1,4 @@
-﻿# Troubleshooting Guide
+# Troubleshooting Guide
 
 > Common issues, debugging techniques, and solutions for SAGE Knowledge Base
 
@@ -42,7 +42,7 @@ sage check --all
 | Python version    | `python --version`         | ≥ 3.12                 |
 | Dependencies      | `pip check`                | No broken dependencies |
 | Config file       | `test -f config/sage.yaml` | File exists            |
-| Content directory | `ls .knowledge/`              | Directories present    |
+| Content directory | `ls .knowledge/`           | Directories present    |
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# ADR-0007: Configuration Management
+# ADR-0007: Configuration Management
 
 > Architecture Decision Record for SAGE Knowledge Base
 

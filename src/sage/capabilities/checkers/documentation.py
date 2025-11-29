@@ -1,4 +1,4 @@
-﻿"""
+"""
 Documentation Checker - Validate documentation against SAGE standards.
 
 This module provides:

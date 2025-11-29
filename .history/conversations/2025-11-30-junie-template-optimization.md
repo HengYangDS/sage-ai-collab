@@ -1,4 +1,4 @@
-﻿# Junie Template System Optimization
+# Junie Template System Optimization
 
 > **Date**: 2025-11-30
 > **Type**: Optimization & Knowledge Capture

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Knowledge Loader - Production-grade knowledge loading with timeout protection.
 
 This module provides:

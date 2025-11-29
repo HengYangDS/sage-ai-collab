@@ -35,6 +35,7 @@ your-project/
 ```
 
 **Advantages**:
+
 - Version controlled with project
 - Shared across team
 - Project-specific servers
@@ -48,6 +49,7 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
 3. Add servers manually
 
 **Advantages**:
+
 - Global configuration
 - No project setup required
 
@@ -73,19 +75,19 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
 
 ### Field Reference
 
-| Field       | Required | Description                              |
-|:------------|:---------|:-----------------------------------------|
-| `command`   | Yes      | Executable to run (`npx.cmd` or `npx`)   |
-| `args`      | Yes      | Command arguments array                  |
-| `env`       | No       | Environment variables                    |
-| `_meta`     | No       | Metadata for documentation               |
+| Field     | Required | Description                            |
+|:----------|:---------|:---------------------------------------|
+| `command` | Yes      | Executable to run (`npx.cmd` or `npx`) |
+| `args`    | Yes      | Command arguments array                |
+| `env`     | No       | Environment variables                  |
+| `_meta`   | No       | Metadata for documentation             |
 
 ### Platform Commands
 
-| Platform        | Command     |
-|:----------------|:------------|
-| **Windows**     | `npx.cmd`   |
-| **macOS/Linux** | `npx`       |
+| Platform        | Command   |
+|:----------------|:----------|
+| **Windows**     | `npx.cmd` |
+| **macOS/Linux** | `npx`     |
 
 ---
 
@@ -112,6 +114,7 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
 ```
 
 **Path Arguments**:
+
 - `.` — Project root (current directory)
 - `.junie` — Configuration directory
 - Add more paths as needed
@@ -171,6 +174,7 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
 ```
 
 **Setup**:
+
 1. Create GitHub Personal Access Token
 2. Set environment variable: `GITHUB_PERSONAL_ACCESS_TOKEN`
 
@@ -334,11 +338,13 @@ Allow access to multiple directories:
 For servers requiring authentication:
 
 **Windows PowerShell**:
+
 ```powershell
 $env:GITHUB_PERSONAL_ACCESS_TOKEN = "your-token-here"
 ```
 
 **macOS/Linux**:
+
 ```bash
 export GITHUB_PERSONAL_ACCESS_TOKEN="your-token-here"
 ```
@@ -370,6 +376,7 @@ export GITHUB_PERSONAL_ACCESS_TOKEN="ghp_xxxxxxxxxxxx"
 ### Step 3: Verify Connection
 
 Test with Junie:
+
 - "Read the README.md file" (filesystem)
 - "Remember that we use pytest" (memory)
 

@@ -1,4 +1,4 @@
-﻿# Autonomy Decision Cases
+# Autonomy Decision Cases
 
 > Concrete examples for autonomy level decisions
 

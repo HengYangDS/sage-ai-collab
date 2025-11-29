@@ -1,4 +1,4 @@
-﻿"""
+"""
 Test Configuration - Global pytest fixtures.
 
 This module provides shared fixtures for all tests following the mock strategy:

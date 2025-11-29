@@ -1,4 +1,4 @@
-﻿# Documentation Navigation
+# Documentation Navigation
 
 > User-facing documentation for SAGE Knowledge Base
 

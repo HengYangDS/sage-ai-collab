@@ -1,4 +1,4 @@
-﻿# Contributing to SAGE Knowledge Base
+# Contributing to SAGE Knowledge Base
 
 Thank you for your interest in contributing to SAGE! This document provides guidelines and instructions for
 contributing.
@@ -285,7 +285,7 @@ class TestLoader:
 | API docs | `docs/api/`    | API reference     |
 | Guides   | `docs/guides/` | How-to guides     |
 | Design   | `docs/design/` | Architecture docs |
-| Content  | `.knowledge/`     | Knowledge content |
+| Content  | `.knowledge/`  | Knowledge content |
 
 ### Documentation Style
 

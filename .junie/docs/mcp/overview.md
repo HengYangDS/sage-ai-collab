@@ -6,7 +6,8 @@
 
 ## What is MCP?
 
-**Model Context Protocol (MCP)** is an open protocol developed by Anthropic that establishes standardized connections between AI applications and external data sources and tools.
+**Model Context Protocol (MCP)** is an open protocol developed by Anthropic that establishes standardized connections
+between AI applications and external data sources and tools.
 
 ### Official Resources
 
@@ -82,12 +83,12 @@
 
 **🚀 Core Goal**: Achieve intelligent context management with 60-75% token efficiency improvement
 
-| Benefit                | Impact       | Description                           |
-|:-----------------------|:-------------|:--------------------------------------|
-| **Token Efficiency**   | 60-75%       | Reduced context by intelligent caching|
-| **Cross-Session Memory**| Persistent  | Knowledge survives session boundaries |
-| **External Access**    | Expanded     | Access APIs, files, and services      |
-| **Automation**         | Enhanced     | Complex workflows via tool chaining   |
+| Benefit                  | Impact     | Description                            |
+|:-------------------------|:-----------|:---------------------------------------|
+| **Token Efficiency**     | 60-75%     | Reduced context by intelligent caching |
+| **Cross-Session Memory** | Persistent | Knowledge survives session boundaries  |
+| **External Access**      | Expanded   | Access APIs, files, and services       |
+| **Automation**           | Enhanced   | Complex workflows via tool chaining    |
 
 ---
 
@@ -95,26 +96,26 @@
 
 ### Priority Levels
 
-| Priority | Name       | Description                              | Examples                         |
-|:---------|:-----------|:-----------------------------------------|:---------------------------------|
-| **P0**   | Critical   | Essential for basic functionality        | filesystem, memory               |
-| **P1**   | Important  | Significantly enhances workflow          | github, fetch, sequential-thinking|
-| **P2**   | Useful     | Nice-to-have for specific scenarios      | puppeteer, docker, everything    |
-| **P3**   | Optional   | Rarely needed, specialized use cases     | Custom project-specific servers  |
+| Priority | Name      | Description                          | Examples                           |
+|:---------|:----------|:-------------------------------------|:-----------------------------------|
+| **P0**   | Critical  | Essential for basic functionality    | filesystem, memory                 |
+| **P1**   | Important | Significantly enhances workflow      | github, fetch, sequential-thinking |
+| **P2**   | Useful    | Nice-to-have for specific scenarios  | puppeteer, docker, everything      |
+| **P3**   | Optional  | Rarely needed, specialized use cases | Custom project-specific servers    |
 
 ### Server Overview
 
-| Server                 | Priority | Core Value                              |
-|:-----------------------|:---------|:----------------------------------------|
-| **filesystem**         | P0 🔥🔥🔥 | File operations within project scope    |
-| **memory**             | P0 🔥🔥🔥 | Cross-session knowledge persistence     |
-| **fetch**              | P1 🔥🔥   | HTTP requests to external URLs/APIs     |
-| **github**             | P1 🔥🔥   | GitHub API integration                  |
-| **sequential-thinking**| P1 🔥🔥   | Step-by-step problem decomposition      |
-| **puppeteer**          | P2 🔥     | Headless browser automation             |
-| **docker**             | P2 🔥     | Docker container management             |
-| **everything**         | P2 🔥     | System-wide file search (Windows)       |
-| **desktop-commander**  | P2 🔥     | Desktop automation                      |
+| Server                  | Priority  | Core Value                           |
+|:------------------------|:----------|:-------------------------------------|
+| **filesystem**          | P0 🔥🔥🔥 | File operations within project scope |
+| **memory**              | P0 🔥🔥🔥 | Cross-session knowledge persistence  |
+| **fetch**               | P1 🔥🔥   | HTTP requests to external URLs/APIs  |
+| **github**              | P1 🔥🔥   | GitHub API integration               |
+| **sequential-thinking** | P1 🔥🔥   | Step-by-step problem decomposition   |
+| **puppeteer**           | P2 🔥     | Headless browser automation          |
+| **docker**              | P2 🔥     | Docker container management          |
+| **everything**          | P2 🔥     | System-wide file search (Windows)    |
+| **desktop-commander**   | P2 🔥     | Desktop automation                   |
 
 For detailed server configuration, see [Servers Reference](servers.md).
 
@@ -157,6 +158,7 @@ MCP uses **stdio** (standard input/output) with **JSON-RPC** messages:
 ### 1. Intelligent Context Loading
 
 Instead of loading entire files, Junie can:
+
 - Read specific sections via filesystem server
 - Query relevant knowledge via memory server
 - Fetch external documentation on demand
@@ -164,6 +166,7 @@ Instead of loading entire files, Junie can:
 ### 2. Persistent Knowledge
 
 Memory server enables:
+
 - Architecture decisions that persist across sessions
 - Learned patterns from codebase analysis
 - User preferences and conventions
@@ -171,6 +174,7 @@ Memory server enables:
 ### 3. Extended Capabilities
 
 MCP servers provide:
+
 - File system operations
 - External API access
 - Browser automation
@@ -189,12 +193,12 @@ MCP servers provide:
 
 ### Next Steps
 
-| Goal                    | Document                              |
-|:------------------------|:--------------------------------------|
-| Configure MCP servers   | [Configuration](configuration.md)     |
-| Learn server details    | [Servers Reference](servers.md)       |
-| Use Memory effectively  | [Memory Best Practices](memory.md)    |
-| Fix connection issues   | [Troubleshooting](troubleshooting.md) |
+| Goal                   | Document                              |
+|:-----------------------|:--------------------------------------|
+| Configure MCP servers  | [Configuration](configuration.md)     |
+| Learn server details   | [Servers Reference](servers.md)       |
+| Use Memory effectively | [Memory Best Practices](memory.md)    |
+| Fix connection issues  | [Troubleshooting](troubleshooting.md) |
 
 ---
 

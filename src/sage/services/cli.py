@@ -1,4 +1,4 @@
-﻿"""
+"""
 CLI - Rich Command Line Interface for AI Collaboration Knowledge Base.
 
 This module provides:

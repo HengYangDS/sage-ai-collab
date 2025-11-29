@@ -1,4 +1,4 @@
-﻿# SAGE Timeout Hierarchy
+# SAGE Timeout Hierarchy
 
 > SAGE Knowledge Base specific timeout configuration (T1-T5 levels)
 >
@@ -104,10 +104,10 @@ timeout:
 
 ## 6. Related
 
-| Document           | Location                                            | Description                               |
-|--------------------|-----------------------------------------------------|-------------------------------------------|
+| Document           | Location                                               | Description                               |
+|--------------------|--------------------------------------------------------|-------------------------------------------|
 | Timeout Patterns   | `.knowledge/frameworks/resilience/timeout_patterns.md` | Universal timeout and resilience patterns |
-| Main Configuration | `sage.yaml`                                         | Runtime timeout settings                  |
+| Main Configuration | `sage.yaml`                                            | Runtime timeout settings                  |
 | Defaults           | `.knowledge/core/defaults.md`                          | Default timeout values reference          |
 
 ---

@@ -1,4 +1,4 @@
-﻿# History Completeness Review: .history Directory Analysis
+# History Completeness Review: .history Directory Analysis
 
 > **Date**: 2025-11-29
 > **Participants**: Developer, Junie AI
@@ -30,11 +30,11 @@ create consistent records.
 
 ## Decisions Made
 
-| Decision                                 | Rationale                               | Impact                                      |
-|------------------------------------------|-----------------------------------------|---------------------------------------------|
-| Create three session templates           | Standardize documentation format        | Enables consistent AI collaboration records |
-| Store templates in `.knowledge/templates/`  | Follows existing knowledge organization | Templates accessible project-wide           |
-| Add example files to `.history/` subdirs | Demonstrate expected usage              | Reduces ambiguity for new users             |
+| Decision                                   | Rationale                               | Impact                                      |
+|--------------------------------------------|-----------------------------------------|---------------------------------------------|
+| Create three session templates             | Standardize documentation format        | Enables consistent AI collaboration records |
+| Store templates in `.knowledge/templates/` | Follows existing knowledge organization | Templates accessible project-wide           |
+| Add example files to `.history/` subdirs   | Demonstrate expected usage              | Reduces ambiguity for new users             |
 
 ---
 

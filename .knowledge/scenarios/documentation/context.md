@@ -1,4 +1,4 @@
-﻿# Documentation Scenario Context
+# Documentation Scenario Context
 
 > Pre-configured context for technical writing and documentation projects
 
@@ -48,7 +48,7 @@ autonomy_default: L4
 | `docs/api/`    | API reference documentation |
 | `docs/design/` | Design documents and ADRs   |
 | `docs/assets/` | Images, diagrams, media     |
-| `.knowledge/`     | Knowledge base content      |
+| `.knowledge/`  | Knowledge base content      |
 | `templates/`   | Document templates          |
 
 ---

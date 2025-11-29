@@ -1,4 +1,4 @@
-﻿# Configuration Design
+# Configuration Design
 
 > Modular configuration system with smart loading and graceful degradation
 

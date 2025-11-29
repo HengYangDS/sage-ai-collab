@@ -1,4 +1,4 @@
-﻿# Technical Cases Repository
+# Technical Cases Repository
 
 > Collection of problem-solving cases and lessons learned
 
@@ -137,18 +137,18 @@ After analyzing the project structure, identified the following areas for improv
 
 Created 10 new documentation files:
 
-| File                                               | Lines     | Purpose               |
-|----------------------------------------------------|-----------|-----------------------|
+| File                                                  | Lines     | Purpose               |
+|-------------------------------------------------------|-----------|-----------------------|
 | `.knowledge/practices/engineering/troubleshooting.md` | 451       | Troubleshooting guide |
 | `.knowledge/frameworks/patterns/integration.md`       | 574       | Integration patterns  |
 | `.knowledge/practices/engineering/security.md`        | 592       | Security practices    |
-| `docs/guides/migration.md`                         | 477       | Version migration     |
-| `docs/guides/faq.md`                               | 472       | FAQ                   |
+| `docs/guides/migration.md`                            | 477       | Version migration     |
+| `docs/guides/faq.md`                                  | 472       | FAQ                   |
 | `.knowledge/templates/case_study.md`                  | 231       | Case study template   |
-| `docs/guides/configuration.md`                     | 756       | Configuration guide   |
+| `docs/guides/configuration.md`                        | 756       | Configuration guide   |
 | `.knowledge/practices/engineering/knowledge_graph.md` | 562       | Knowledge graph guide |
-| `docs/guides/mcp_tools.md`                         | 861       | MCP tools guide       |
-| `.context/intelligence/cases.md`                   | This file | Cases repository      |
+| `docs/guides/mcp_tools.md`                            | 861       | MCP tools guide       |
+| `.context/intelligence/cases.md`                      | This file | Cases repository      |
 
 **Total**: ~5,000 lines of documentation added
 

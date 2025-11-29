@@ -1,4 +1,4 @@
-﻿# Error Handling Patterns
+# Error Handling Patterns
 
 > Consistent error handling for robust applications
 

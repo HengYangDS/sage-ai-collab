@@ -1,4 +1,4 @@
-﻿# Knowledge Capture
+# Knowledge Capture
 
 > When and how to document knowledge during AI collaboration
 
@@ -229,9 +229,9 @@ How to fix or avoid it?
 | Coding conventions        | `.context/conventions/`   | Standard doc         |
 | AI collaboration insights | `.context/intelligence/`  | Patterns/calibration |
 | Configuration docs        | `.context/policies/`      | Config reference     |
-| General practices         | `.knowledge/practices/`      | Practice guide       |
-| Reusable frameworks       | `.knowledge/frameworks/`     | Framework doc        |
-| Scenario contexts         | `.knowledge/scenarios/`      | Context file         |
+| General practices         | `.knowledge/practices/`   | Practice guide       |
+| Reusable frameworks       | `.knowledge/frameworks/`  | Framework doc        |
+| Scenario contexts         | `.knowledge/scenarios/`   | Context file         |
 | Session records           | `.history/conversations/` | Conversation record  |
 | User documentation        | `docs/`                   | User-facing docs     |
 

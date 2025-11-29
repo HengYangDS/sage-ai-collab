@@ -10,11 +10,11 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ### Protocol Overview
 
-| Protocol | Developer          | Status              | Use Case                        |
-|:---------|:-------------------|:--------------------|:--------------------------------|
-| **MCP**  | Anthropic          | Production-ready    | AI-to-tool integration          |
-| **A2A**  | Google + Consortium| In development      | Multi-agent collaboration       |
-| **ACP**  | Industry           | Specification phase | Client-to-agent communication   |
+| Protocol | Developer           | Status              | Use Case                      |
+|:---------|:--------------------|:--------------------|:------------------------------|
+| **MCP**  | Anthropic           | Production-ready    | AI-to-tool integration        |
+| **A2A**  | Google + Consortium | In development      | Multi-agent collaboration     |
+| **ACP**  | Industry            | Specification phase | Client-to-agent communication |
 
 ### MCP (Model Context Protocol)
 
@@ -93,11 +93,11 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ### Protocol Responsibilities
 
-| Protocol | Layer            | Primary Function                           | Status        |
-|:---------|:-----------------|:-------------------------------------------|:--------------|
-| **MCP**  | Agent ↔ Tool     | AI-to-tool integration, context management | ✅ Production  |
-| **A2A**  | Agent ↔ Agent    | Multi-agent collaboration, task delegation | 🔄 2026+      |
-| **ACP**  | Client ↔ Agent   | Client application integration with agents | 📋 Evaluating |
+| Protocol | Layer          | Primary Function                           | Status        |
+|:---------|:---------------|:-------------------------------------------|:--------------|
+| **MCP**  | Agent ↔ Tool   | AI-to-tool integration, context management | ✅ Production  |
+| **A2A**  | Agent ↔ Agent  | Multi-agent collaboration, task delegation | 🔄 2026+      |
+| **ACP**  | Client ↔ Agent | Client application integration with agents | 📋 Evaluating |
 
 ---
 
@@ -105,14 +105,14 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ### What MCP Provides Today
 
-| Capability              | Status | Description                              |
-|:------------------------|:-------|:-----------------------------------------|
-| **File Operations**     | ✅      | Read, write, search project files        |
-| **Knowledge Persistence**| ✅     | Cross-session memory via knowledge graph |
-| **External APIs**       | ✅      | HTTP requests to external services       |
-| **Version Control**     | ✅      | GitHub API integration                   |
-| **Browser Automation**  | ✅      | Headless browser control                 |
-| **Container Management**| ✅      | Docker operations                        |
+| Capability                | Status | Description                              |
+|:--------------------------|:-------|:-----------------------------------------|
+| **File Operations**       | ✅      | Read, write, search project files        |
+| **Knowledge Persistence** | ✅      | Cross-session memory via knowledge graph |
+| **External APIs**         | ✅      | HTTP requests to external services       |
+| **Version Control**       | ✅      | GitHub API integration                   |
+| **Browser Automation**    | ✅      | Headless browser control                 |
+| **Container Management**  | ✅      | Docker operations                        |
 
 ### MCP Integration Benefits
 
@@ -127,12 +127,12 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ### What A2A Will Enable
 
-| Capability               | Description                              | Use Case                    |
-|:-------------------------|:-----------------------------------------|:----------------------------|
-| **Multi-Agent Tasks**    | Delegate tasks to specialized agents     | Code review by security agent|
-| **Collaborative Problem Solving** | Multiple agents work together   | Architecture decisions      |
-| **Agent Discovery**      | Find agents with specific capabilities   | Locate testing specialist   |
-| **Task Handoff**         | Transfer context between agents          | Development to deployment   |
+| Capability                        | Description                            | Use Case                      |
+|:----------------------------------|:---------------------------------------|:------------------------------|
+| **Multi-Agent Tasks**             | Delegate tasks to specialized agents   | Code review by security agent |
+| **Collaborative Problem Solving** | Multiple agents work together          | Architecture decisions        |
+| **Agent Discovery**               | Find agents with specific capabilities | Locate testing specialist     |
+| **Task Handoff**                  | Transfer context between agents        | Development to deployment     |
 
 ### Anticipated A2A Workflow
 
@@ -193,6 +193,7 @@ For Junie, ACP is **lower priority** because:
 - Session management exists within IDE
 
 **Evaluation**: Monitor ACP development, adopt if beneficial for:
+
 - Web-based Junie access
 - Mobile companion apps
 - Cross-IDE synchronization
@@ -240,20 +241,20 @@ For Junie, ACP is **lower priority** because:
 
 ### For Today
 
-| Priority | Action                           | Benefit                          |
-|:---------|:---------------------------------|:---------------------------------|
-| **High** | Maximize MCP integration         | Immediate productivity gains     |
-| **High** | Use Memory server consistently   | Knowledge persistence for future |
-| **Med**  | Document decisions in .history/  | Fallback and audit trail         |
-| **Med**  | Structure workflows modularly    | Easier future delegation         |
+| Priority | Action                          | Benefit                          |
+|:---------|:--------------------------------|:---------------------------------|
+| **High** | Maximize MCP integration        | Immediate productivity gains     |
+| **High** | Use Memory server consistently  | Knowledge persistence for future |
+| **Med**  | Document decisions in .history/ | Fallback and audit trail         |
+| **Med**  | Structure workflows modularly   | Easier future delegation         |
 
 ### For Preparation
 
-| Priority | Action                           | Timeline    |
-|:---------|:---------------------------------|:------------|
-| **Med**  | Monitor A2A specification        | Ongoing     |
-| **Low**  | Evaluate ACP relevance           | When stable |
-| **Low**  | Plan agent discovery strategy    | 2025 Q4     |
+| Priority | Action                        | Timeline    |
+|:---------|:------------------------------|:------------|
+| **Med**  | Monitor A2A specification     | Ongoing     |
+| **Low**  | Evaluate ACP relevance        | When stable |
+| **Low**  | Plan agent discovery strategy | 2025 Q4     |
 
 ---
 

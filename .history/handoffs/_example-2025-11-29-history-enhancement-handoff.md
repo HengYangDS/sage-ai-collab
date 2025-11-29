@@ -1,4 +1,4 @@
-﻿# Task Handoff: History Directory Enhancement
+# Task Handoff: History Directory Enhancement
 
 > **Handoff ID**: 2025-11-29-history-enhancement-handoff
 > **From**: Current session (Junie)
@@ -44,23 +44,23 @@ session history tracking.
 
 ### Key Files
 
-| File                                       | Role                   | Current State |
-|--------------------------------------------|------------------------|---------------|
+| File                                          | Role                   | Current State |
+|-----------------------------------------------|------------------------|---------------|
 | `.knowledge/templates/conversation_record.md` | Conversation template  | Ready         |
 | `.knowledge/templates/session_state.md`       | Session state template | Ready         |
 | `.knowledge/templates/task_handoff.md`        | Handoff template       | Ready         |
 | `.knowledge/templates/index.md`               | Template catalog       | Updated       |
-| `.history/conversations/_example-*.md`     | Example conversation   | Ready         |
-| `.history/current/_example-*.md`           | Example session state  | Ready         |
-| `.history/handoffs/_example-*.md`          | Example handoff        | Ready         |
+| `.history/conversations/_example-*.md`        | Example conversation   | Ready         |
+| `.history/current/_example-*.md`              | Example session state  | Ready         |
+| `.history/handoffs/_example-*.md`             | Example handoff        | Ready         |
 
 ### Important Decisions Already Made
 
-| Decision                            | Rationale                              | Reference          |
-|-------------------------------------|----------------------------------------|--------------------|
-| `_example-` prefix for examples     | Distinguishes from real records        | All example files  |
-| Templates in `.knowledge/templates/`   | Follows project knowledge organization | Template index     |
-| Comprehensive examples in templates | Reduces learning curve                 | Each template file |
+| Decision                             | Rationale                              | Reference          |
+|--------------------------------------|----------------------------------------|--------------------|
+| `_example-` prefix for examples      | Distinguishes from real records        | All example files  |
+| Templates in `.knowledge/templates/` | Follows project knowledge organization | Template index     |
+| Comprehensive examples in templates  | Reduces learning curve                 | Each template file |
 
 ---
 

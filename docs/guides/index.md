@@ -1,4 +1,4 @@
-﻿# User Guides
+# User Guides
 
 > SAGE Knowledge Base Guides and Tutorials
 

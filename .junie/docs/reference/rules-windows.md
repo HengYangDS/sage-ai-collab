@@ -207,11 +207,11 @@ Copy this entire block for quick setup:
 
 ## Summary
 
-| Category              | Count |
-|:----------------------|:------|
-| Cross-Platform        | 57    |
-| Windows-Specific      | 11    |
-| **Total**             | **68**|
+| Category         | Count  |
+|:-----------------|:-------|
+| Cross-Platform   | 57     |
+| Windows-Specific | 11     |
+| **Total**        | **68** |
 
 ---
 

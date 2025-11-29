@@ -6,13 +6,13 @@
 
 ## Core Concepts
 
-| Term                 | Definition                                                                 |
-|:---------------------|:---------------------------------------------------------------------------|
-| **Junie**            | JetBrains AI Assistant integrated into JetBrains IDEs                      |
+| Term                 | Definition                                                                     |
+|:---------------------|:-------------------------------------------------------------------------------|
+| **Junie**            | JetBrains AI Assistant integrated into JetBrains IDEs                          |
 | **Action Allowlist** | Permission rules that control which operations Junie can execute automatically |
-| **Terminal Rules**   | Regex patterns defining allowed terminal commands                          |
-| **MCP**              | Model Context Protocol - standardized AI-to-tool integration protocol      |
-| **Session**          | A continuous period of AI-human collaboration work                         |
+| **Terminal Rules**   | Regex patterns defining allowed terminal commands                              |
+| **MCP**              | Model Context Protocol - standardized AI-to-tool integration protocol          |
+| **Session**          | A continuous period of AI-human collaboration work                             |
 
 ---
 
@@ -22,11 +22,11 @@
 
 The guiding design philosophy for this configuration system, derived from Chinese translation theory:
 
-| Chinese | Pinyin | English       | Application in Configuration                    |
-|:--------|:-------|:--------------|:------------------------------------------------|
-| **信**  | Xin    | Faithfulness  | Accurate, reliable, testable configurations     |
-| **达**  | Da     | Clarity       | Clear, maintainable, well-structured documents  |
-| **雅**  | Ya     | Elegance      | Refined, balanced, sustainable design           |
+| Chinese | Pinyin | English      | Application in Configuration                   |
+|:--------|:-------|:-------------|:-----------------------------------------------|
+| **信**   | Xin    | Faithfulness | Accurate, reliable, testable configurations    |
+| **达**   | Da     | Clarity      | Clear, maintainable, well-structured documents |
+| **雅**   | Ya     | Elegance     | Refined, balanced, sustainable design          |
 
 **Usage**: Always reference as "信达雅 (Xin-Da-Ya)" for consistency across documents.
 
@@ -34,40 +34,40 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ## MCP Terminology
 
-| Term              | Definition                                                              |
-|:------------------|:------------------------------------------------------------------------|
-| **MCP Server**    | A service that exposes tools to AI assistants via MCP protocol          |
-| **MCP Client**    | The component in Junie that connects to MCP servers                     |
-| **Tool**          | A specific function exposed by an MCP server (e.g., `read_file`)        |
-| **stdio**         | Standard input/output - the communication method for MCP servers        |
-| **JSON-RPC**      | The message format used in MCP communication                            |
+| Term           | Definition                                                       |
+|:---------------|:-----------------------------------------------------------------|
+| **MCP Server** | A service that exposes tools to AI assistants via MCP protocol   |
+| **MCP Client** | The component in Junie that connects to MCP servers              |
+| **Tool**       | A specific function exposed by an MCP server (e.g., `read_file`) |
+| **stdio**      | Standard input/output - the communication method for MCP servers |
+| **JSON-RPC**   | The message format used in MCP communication                     |
 
 ### Priority Levels
 
-| Priority | Name       | Description                              | Examples                         |
-|:---------|:-----------|:-----------------------------------------|:---------------------------------|
-| **P0**   | Critical   | Essential for basic functionality        | filesystem, memory               |
-| **P1**   | Important  | Significantly enhances workflow          | github, fetch, sequential-thinking |
-| **P2**   | Useful     | Nice-to-have for specific scenarios      | puppeteer, docker, everything    |
-| **P3**   | Optional   | Rarely needed, specialized use cases     | Custom project-specific servers  |
+| Priority | Name      | Description                          | Examples                           |
+|:---------|:----------|:-------------------------------------|:-----------------------------------|
+| **P0**   | Critical  | Essential for basic functionality    | filesystem, memory                 |
+| **P1**   | Important | Significantly enhances workflow      | github, fetch, sequential-thinking |
+| **P2**   | Useful    | Nice-to-have for specific scenarios  | puppeteer, docker, everything      |
+| **P3**   | Optional  | Rarely needed, specialized use cases | Custom project-specific servers    |
 
 ---
 
 ## Configuration Terms
 
-| Term                | Definition                                                              |
-|:--------------------|:------------------------------------------------------------------------|
-| **Schema Version**  | Version identifier for configuration format compatibility               |
-| **Thin Layer**      | Architecture principle separating generic (🔄) and project-specific (📌) configs |
-| **Hot Reload**      | Ability to apply configuration changes without full IDE restart         |
-| **Fallback**        | Alternative approach when primary method fails                          |
+| Term               | Definition                                                                       |
+|:-------------------|:---------------------------------------------------------------------------------|
+| **Schema Version** | Version identifier for configuration format compatibility                        |
+| **Thin Layer**     | Architecture principle separating generic (🔄) and project-specific (📌) configs |
+| **Hot Reload**     | Ability to apply configuration changes without full IDE restart                  |
+| **Fallback**       | Alternative approach when primary method fails                                   |
 
 ### File Type Markers
 
-| Marker | Meaning          | Description                                    |
-|:-------|:-----------------|:-----------------------------------------------|
-| 🔄     | Generic          | Reusable across projects without modification  |
-| 📌     | Project-specific | Must be customized for each project            |
+| Marker | Meaning          | Description                                   |
+|:-------|:-----------------|:----------------------------------------------|
+| 🔄     | Generic          | Reusable across projects without modification |
+| 📌     | Project-specific | Must be customized for each project           |
 
 ---
 
@@ -75,22 +75,22 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ### Autonomy Levels
 
-| Level   | Name        | Autonomy Range | Behavior                                      |
-|:--------|:------------|:---------------|:----------------------------------------------|
-| **L1**  | Minimal     | 0-20%          | Ask before any changes                        |
-| **L2**  | Low         | 20-40%         | Ask before significant changes                |
-| **L3**  | Medium      | 40-60%         | Proceed with routine tasks, ask for complex   |
-| **L4**  | Medium-High | 60-80%         | Proceed, report after (default) ⭐             |
-| **L5**  | High        | 80-95%         | High autonomy for trusted patterns            |
-| **L6**  | Full        | 95-100%        | Full autonomy (documentation, formatting)     |
+| Level  | Name        | Autonomy Range | Behavior                                    |
+|:-------|:------------|:---------------|:--------------------------------------------|
+| **L1** | Minimal     | 0-20%          | Ask before any changes                      |
+| **L2** | Low         | 20-40%         | Ask before significant changes              |
+| **L3** | Medium      | 40-60%         | Proceed with routine tasks, ask for complex |
+| **L4** | Medium-High | 60-80%         | Proceed, report after (default) ⭐           |
+| **L5** | High        | 80-95%         | High autonomy for trusted patterns          |
+| **L6** | Full        | 95-100%        | Full autonomy (documentation, formatting)   |
 
 ### Session Management
 
-| Term              | Definition                                                        |
-|:------------------|:------------------------------------------------------------------|
-| **Handoff**       | Document created when work is incomplete, for session continuation|
-| **Conversation**  | Record of key decisions and outcomes from a session               |
-| **Session State** | Active work tracking file in `.history/current/`                  |
+| Term              | Definition                                                         |
+|:------------------|:-------------------------------------------------------------------|
+| **Handoff**       | Document created when work is incomplete, for session continuation |
+| **Conversation**  | Record of key decisions and outcomes from a session                |
+| **Session State** | Active work tracking file in `.history/current/`                   |
 
 ### Timeout Tiers
 
@@ -106,24 +106,24 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ## Regex Terminology
 
-| Term        | Definition                                              |
-|:------------|:--------------------------------------------------------|
-| **Anchor**  | Pattern that matches position (`^` start, `$` end)      |
-| **Literal** | Text matched exactly as written                         |
-| **Quantifier** | Specifies how many times to match (`*`, `+`, `?`)    |
-| **Character Class** | Set of characters to match (`[abc]`, `[^abc]`)  |
-| **Escape Sequence** | `\Q...\E` for literal matching in Java regex     |
+| Term                | Definition                                         |
+|:--------------------|:---------------------------------------------------|
+| **Anchor**          | Pattern that matches position (`^` start, `$` end) |
+| **Literal**         | Text matched exactly as written                    |
+| **Quantifier**      | Specifies how many times to match (`*`, `+`, `?`)  |
+| **Character Class** | Set of characters to match (`[abc]`, `[^abc]`)     |
+| **Escape Sequence** | `\Q...\E` for literal matching in Java regex       |
 
 ---
 
 ## File Paths
 
-| Path              | Purpose                                    |
-|:------------------|:-------------------------------------------|
-| `.junie/`         | Junie AI configuration directory           |
-| `.context/`       | Project-specific knowledge base            |
-| `.history/`       | AI session records                         |
-| `.outputs/`       | Temporary/intermediate files (git-ignored) |
+| Path        | Purpose                                    |
+|:------------|:-------------------------------------------|
+| `.junie/`   | Junie AI configuration directory           |
+| `.context/` | Project-specific knowledge base            |
+| `.history/` | AI session records                         |
+| `.outputs/` | Temporary/intermediate files (git-ignored) |
 
 ---
 

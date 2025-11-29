@@ -1,4 +1,4 @@
-﻿# Configuration Guide
+# Configuration Guide
 
 > Complete reference for SAGE Knowledge Base configuration options
 

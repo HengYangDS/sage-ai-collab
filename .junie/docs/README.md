@@ -57,33 +57,33 @@ docs/
 
 ### By Goal
 
-| Your Goal                     | Go To                                                   | Time      |
-|:------------------------------|:--------------------------------------------------------|:----------|
-| 🚀 **First-time setup**       | [Quick Start](guides/quick-start.md)                    | 10 min    |
-| 📘 **Configure Terminal rules** | [Action Allowlist](guides/action-allowlist.md)         | 30 min    |
-| 🔌 **Setup MCP servers**      | [MCP Configuration](mcp/configuration.md)               | 30 min    |
-| 📋 **Copy all rules**         | [Windows](reference/rules-windows.md) / [Unix](reference/rules-unix.md) | 5 min |
-| 🐛 **Fix issues**             | [MCP Troubleshooting](mcp/troubleshooting.md)           | 10-20 min |
-| 🔮 **Learn future protocols** | [Future Protocols](vision/future-protocols.md)          | 30 min    |
+| Your Goal                       | Go To                                                                   | Time      |
+|:--------------------------------|:------------------------------------------------------------------------|:----------|
+| 🚀 **First-time setup**         | [Quick Start](guides/quick-start.md)                                    | 10 min    |
+| 📘 **Configure Terminal rules** | [Action Allowlist](guides/action-allowlist.md)                          | 30 min    |
+| 🔌 **Setup MCP servers**        | [MCP Configuration](mcp/configuration.md)                               | 30 min    |
+| 📋 **Copy all rules**           | [Windows](reference/rules-windows.md) / [Unix](reference/rules-unix.md) | 5 min     |
+| 🐛 **Fix issues**               | [MCP Troubleshooting](mcp/troubleshooting.md)                           | 10-20 min |
+| 🔮 **Learn future protocols**   | [Future Protocols](vision/future-protocols.md)                          | 30 min    |
 
 ### By Role
 
-| Role              | Recommended Path                                                |
-|:------------------|:----------------------------------------------------------------|
-| **New User**      | Quick Start → Action Allowlist → MCP Overview                   |
-| **Administrator** | Operations (all) → Migration → Metrics                          |
-| **Advanced User** | MCP Configuration → Memory → Future Protocols                   |
+| Role              | Recommended Path                              |
+|:------------------|:----------------------------------------------|
+| **New User**      | Quick Start → Action Allowlist → MCP Overview |
+| **Administrator** | Operations (all) → Migration → Metrics        |
+| **Advanced User** | MCP Configuration → Memory → Future Protocols |
 
 ---
 
 ## Key Metrics
 
-| Metric                   | Target    | Description                              |
-|:-------------------------|:----------|:-----------------------------------------|
-| **Terminal Rules**       | 87 rules  | Cross-platform command automation        |
-| **Auto-Approval Rate**   | 90%+      | Commands auto-approved after setup       |
-| **Token Efficiency**     | 60-75%    | Improvement with MCP integration         |
-| **Security**             | Zero risk | Dangerous character exclusion pattern    |
+| Metric                 | Target    | Description                           |
+|:-----------------------|:----------|:--------------------------------------|
+| **Terminal Rules**     | 87 rules  | Cross-platform command automation     |
+| **Auto-Approval Rate** | 90%+      | Commands auto-approved after setup    |
+| **Token Efficiency**   | 60-75%    | Improvement with MCP integration      |
+| **Security**           | Zero risk | Dangerous character exclusion pattern |
 
 ---
 
@@ -100,12 +100,12 @@ docs/
 
 ## Version Compatibility
 
-| Component             | Tested Versions   | Notes                                |
-|:----------------------|:------------------|:-------------------------------------|
-| **Junie Plugin**      | 2025.1+           | MCP support requires 2025.1+         |
-| **JetBrains IDEs**    | 2024.3+, 2025.x   | PyCharm, IntelliJ IDEA, WebStorm     |
-| **Node.js**           | v18+              | Required for MCP servers             |
-| **Operating Systems** | Win 10/11, macOS 12+, Ubuntu 20.04+ |               |
+| Component             | Tested Versions                     | Notes                            |
+|:----------------------|:------------------------------------|:---------------------------------|
+| **Junie Plugin**      | 2025.1+                             | MCP support requires 2025.1+     |
+| **JetBrains IDEs**    | 2024.3+, 2025.x                     | PyCharm, IntelliJ IDEA, WebStorm |
+| **Node.js**           | v18+                                | Required for MCP servers         |
+| **Operating Systems** | Win 10/11, macOS 12+, Ubuntu 20.04+ |                                  |
 
 ---
 

@@ -6,7 +6,8 @@
 
 ## Overview
 
-The **Memory MCP Server** provides cross-session knowledge persistence through a knowledge graph structure. It enables Junie to remember decisions, patterns, and context across multiple sessions.
+The **Memory MCP Server** provides cross-session knowledge persistence through a knowledge graph structure. It enables
+Junie to remember decisions, patterns, and context across multiple sessions.
 
 ### Core Capabilities
 
@@ -20,12 +21,14 @@ The **Memory MCP Server** provides cross-session knowledge persistence through a
 ### When to Use
 
 ✅ **Recommended**:
+
 - Architecture decisions that affect future development
 - User preferences and coding conventions
 - Learned patterns from codebase analysis
 - Project-specific terminology and concepts
 
 ❌ **Not Recommended**:
+
 - Temporary debugging information
 - Session-specific context (use `.history/` instead)
 - Large binary data or file contents
@@ -78,9 +81,9 @@ Store architecture or design decisions:
 
 ```javascript
 memory.create_entities([{
-  name: "decision_auth_jwt",
-  type: "decision",
-  content: "Using JWT for API authentication. Reasons: stateless, scalable, industry standard. Access tokens expire in 15 minutes, refresh tokens in 7 days."
+    name: "decision_auth_jwt",
+    type: "decision",
+    content: "Using JWT for API authentication. Reasons: stateless, scalable, industry standard. Access tokens expire in 15 minutes, refresh tokens in 7 days."
 }])
 ```
 
@@ -90,9 +93,9 @@ Store coding conventions:
 
 ```javascript
 memory.create_entities([{
-  name: "convention_file_naming",
-  type: "convention",
-  content: "Python files use snake_case. Classes use PascalCase. Constants use UPPER_SNAKE_CASE. Test files prefix with test_."
+    name: "convention_file_naming",
+    type: "convention",
+    content: "Python files use snake_case. Classes use PascalCase. Constants use UPPER_SNAKE_CASE. Test files prefix with test_."
 }])
 ```
 
@@ -102,9 +105,9 @@ Store recognized code patterns:
 
 ```javascript
 memory.create_entities([{
-  name: "pattern_error_handling",
-  type: "pattern",
-  content: "Use custom exception classes. Log errors with context. Return structured error responses. Never expose internal errors to users."
+    name: "pattern_error_handling",
+    type: "pattern",
+    content: "Use custom exception classes. Log errors with context. Return structured error responses. Never expose internal errors to users."
 }])
 ```
 
@@ -114,9 +117,9 @@ Store user preferences:
 
 ```javascript
 memory.create_entities([{
-  name: "preference_testing",
-  type: "preference",
-  content: "User prefers pytest with pytest-asyncio. Tests should be in tests/ directory. Use fixtures for common setup. Target 80% coverage."
+    name: "preference_testing",
+    type: "preference",
+    content: "User prefers pytest with pytest-asyncio. Tests should be in tests/ directory. Use fixtures for common setup. Target 80% coverage."
 }])
 ```
 
@@ -128,34 +131,34 @@ memory.create_entities([{
 
 ```javascript
 memory.create_relations([{
-  from: "UserService",
-  to: "AuthModule",
-  type: "depends_on"
+    from: "UserService",
+    to: "AuthModule",
+    type: "depends_on"
 }])
 ```
 
 ### Relationship Types
 
-| Type          | Description                    | Example                           |
-|:--------------|:-------------------------------|:----------------------------------|
-| `depends_on`  | Dependency relationship        | Service → Module                  |
-| `implements`  | Implementation relationship    | Class → Interface                 |
-| `contains`    | Containment relationship       | Module → Functions                |
-| `related_to`  | General relationship           | Concept → Concept                 |
-| `supersedes`  | Replacement relationship       | NewDecision → OldDecision         |
+| Type         | Description                 | Example                   |
+|:-------------|:----------------------------|:--------------------------|
+| `depends_on` | Dependency relationship     | Service → Module          |
+| `implements` | Implementation relationship | Class → Interface         |
+| `contains`   | Containment relationship    | Module → Functions        |
+| `related_to` | General relationship        | Concept → Concept         |
+| `supersedes` | Replacement relationship    | NewDecision → OldDecision |
 
 ### Relationship Example
 
 ```javascript
 // Create component entities
 memory.create_entities([
-  { name: "core_layer", type: "component", content: "Core layer with loader, config, timeout" },
-  { name: "service_layer", type: "component", content: "Service layer with CLI, MCP, API" }
+    {name: "core_layer", type: "component", content: "Core layer with loader, config, timeout"},
+    {name: "service_layer", type: "component", content: "Service layer with CLI, MCP, API"}
 ])
 
 // Create relationships
 memory.create_relations([
-  { from: "service_layer", to: "core_layer", type: "depends_on" }
+    {from: "service_layer", to: "core_layer", type: "depends_on"}
 ])
 ```
 
@@ -183,12 +186,12 @@ memory.open_nodes(["decision_auth_jwt", "convention_file_naming"])
 
 ### Search Tips
 
-| Goal                  | Approach                              |
-|:----------------------|:--------------------------------------|
-| Find related concepts | Use semantic search with keywords     |
-| Get specific entity   | Use `open_nodes` with exact name      |
-| Explore area          | Search with broad terms first         |
-| Verify existence      | Search before creating to avoid dups  |
+| Goal                  | Approach                             |
+|:----------------------|:-------------------------------------|
+| Find related concepts | Use semantic search with keywords    |
+| Get specific entity   | Use `open_nodes` with exact name     |
+| Explore area          | Search with broad terms first        |
+| Verify existence      | Search before creating to avoid dups |
 
 ---
 
@@ -210,9 +213,9 @@ memory.open_nodes(["project_overview", "current_sprint"])
 ```javascript
 // Store important decisions as they're made
 memory.create_entities([{
-  name: "decision_api_versioning",
-  type: "decision",
-  content: "Using URL path versioning (v1, v2). Decided during API design discussion."
+    name: "decision_api_versioning",
+    type: "decision",
+    content: "Using URL path versioning (v1, v2). Decided during API design discussion."
 }])
 ```
 
@@ -221,16 +224,16 @@ memory.create_entities([{
 ```javascript
 // 1. Store key outcomes
 memory.create_entities([{
-  name: "session_outcome_20251130",
-  type: "session",
-  content: "Completed authentication module. Next: implement refresh tokens."
+    name: "session_outcome_20251130",
+    type: "session",
+    content: "Completed authentication module. Next: implement refresh tokens."
 }])
 
 // 2. Update relationships if needed
 memory.create_relations([{
-  from: "auth_module",
-  to: "user_service",
-  type: "depends_on"
+    from: "auth_module",
+    to: "user_service",
+    type: "depends_on"
 }])
 ```
 
@@ -240,30 +243,30 @@ memory.create_relations([{
 
 ### Naming
 
-| Practice                    | Example                              |
-|:----------------------------|:-------------------------------------|
-| Use descriptive names       | `decision_auth_jwt` not `auth1`      |
-| Include category prefix     | `pattern_`, `decision_`, `convention_` |
-| Use snake_case              | `error_handling_pattern`             |
-| Be specific                 | `test_framework_pytest` not `testing`|
+| Practice                | Example                                |
+|:------------------------|:---------------------------------------|
+| Use descriptive names   | `decision_auth_jwt` not `auth1`        |
+| Include category prefix | `pattern_`, `decision_`, `convention_` |
+| Use snake_case          | `error_handling_pattern`               |
+| Be specific             | `test_framework_pytest` not `testing`  |
 
 ### Content
 
-| Practice                    | Description                          |
-|:----------------------------|:-------------------------------------|
-| Include context             | Why the decision was made            |
-| Be concise but complete     | Key information in few sentences     |
-| Use structured format       | Lists, categories when appropriate   |
-| Include dates when relevant | For time-sensitive decisions         |
+| Practice                    | Description                        |
+|:----------------------------|:-----------------------------------|
+| Include context             | Why the decision was made          |
+| Be concise but complete     | Key information in few sentences   |
+| Use structured format       | Lists, categories when appropriate |
+| Include dates when relevant | For time-sensitive decisions       |
 
 ### Organization
 
-| Practice                    | Description                          |
-|:----------------------------|:-------------------------------------|
-| Check before creating       | Avoid duplicate entities             |
-| Update rather than duplicate| Modify existing entities             |
-| Create relationships        | Connect related concepts             |
-| Clean up obsolete data      | Remove outdated entities             |
+| Practice                     | Description              |
+|:-----------------------------|:-------------------------|
+| Check before creating        | Avoid duplicate entities |
+| Update rather than duplicate | Modify existing entities |
+| Create relationships         | Connect related concepts |
+| Clean up obsolete data       | Remove outdated entities |
 
 ---
 
@@ -274,9 +277,9 @@ memory.create_relations([{
 ```javascript
 // Store project overview
 memory.create_entities([{
-  name: "project_overview",
-  type: "concept",
-  content: "SAGE Knowledge Base - Production-grade knowledge management system. Python 3.12+, FastAPI, pytest. 3-layer architecture: Core → Services → Capabilities."
+    name: "project_overview",
+    type: "concept",
+    content: "SAGE Knowledge Base - Production-grade knowledge management system. Python 3.12+, FastAPI, pytest. 3-layer architecture: Core → Services → Capabilities."
 }])
 ```
 
@@ -285,9 +288,9 @@ memory.create_entities([{
 ```javascript
 // Record architecture decision
 memory.create_entities([{
-  name: "decision_database_sqlite",
-  type: "decision",
-  content: "Using SQLite for metadata storage. Reasons: simple deployment, sufficient for expected scale, file-based backup."
+    name: "decision_database_sqlite",
+    type: "decision",
+    content: "Using SQLite for metadata storage. Reasons: simple deployment, sufficient for expected scale, file-based backup."
 }])
 ```
 
@@ -296,9 +299,9 @@ memory.create_entities([{
 ```javascript
 // Document coding convention
 memory.create_entities([{
-  name: "convention_imports",
-  type: "convention",
-  content: "Import order: stdlib, third-party, local. Use absolute imports. Group with blank lines. Sort alphabetically within groups."
+    name: "convention_imports",
+    type: "convention",
+    content: "Import order: stdlib, third-party, local. Use absolute imports. Group with blank lines. Sort alphabetically within groups."
 }])
 ```
 
@@ -311,6 +314,7 @@ memory.create_entities([{
 **Symptom**: `search_nodes` returns empty
 
 **Solutions**:
+
 1. Check entity name spelling
 2. Try broader search terms
 3. Verify entity was created successfully
@@ -320,6 +324,7 @@ memory.create_entities([{
 **Symptom**: Multiple similar entities exist
 
 **Solutions**:
+
 1. Search before creating
 2. Delete duplicates: `memory.delete_entities(["duplicate_name"])`
 3. Establish naming conventions
@@ -329,6 +334,7 @@ memory.create_entities([{
 **Symptom**: Entity contains outdated information
 
 **Solutions**:
+
 1. Delete old entity
 2. Create new entity with updated content
 3. Use `supersedes` relationship if needed

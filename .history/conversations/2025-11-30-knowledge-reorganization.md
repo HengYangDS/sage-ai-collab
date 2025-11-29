@@ -1,4 +1,4 @@
-﻿# Knowledge Reorganization - 2025-11-30
+# Knowledge Reorganization - 2025-11-30
 
 ## Context
 
@@ -96,7 +96,8 @@ content
 | `config/knowledge/loading.yaml`  | ✓ Valid | `always` list files exist                           |
 | `config/sage.yaml`               | ✓ Valid | Abstract paths, no direct file refs                 |
 
-**Configuration Status**: All configuration files use abstract directory references (`.knowledge/references/`) rather than
+**Configuration Status**: All configuration files use abstract directory references (`.knowledge/references/`) rather
+than
 specific file paths. The `.knowledge/references/` directory still exists with `knowledge_quick_ref.md` and
 `performance_checklist.md`, so no configuration changes were needed.
 
@@ -104,8 +105,8 @@ specific file paths. The `.knowledge/references/` directory still exists with `k
 
 **Found and fixed broken references to moved files:**
 
-| File                                              | Old Reference                      | New Reference                  |
-|---------------------------------------------------|------------------------------------|--------------------------------|
+| File                                                 | Old Reference                         | New Reference                  |
+|------------------------------------------------------|---------------------------------------|--------------------------------|
 | `.knowledge/scenarios/mcp_integration/context.md`    | `.knowledge/references/mcp_api.md`    | `docs/api/mcp_quick_ref.md`    |
 | `.knowledge/scenarios/plugin_development/context.md` | `.knowledge/references/plugin_api.md` | `docs/api/plugin_quick_ref.md` |
 
@@ -241,12 +242,12 @@ established during optimization sessions into permanent, referenceable guideline
 
 ### Rules Solidified
 
-| Rule Category           | Location                     | Content                                             |
-|-------------------------|------------------------------|-----------------------------------------------------|
-| **Document Format**     | `.junie/guidelines.md`       | Header, TOC, sections, related, footer rules        |
+| Rule Category           | Location                     | Content                                                |
+|-------------------------|------------------------------|--------------------------------------------------------|
+| **Document Format**     | `.junie/guidelines.md`       | Header, TOC, sections, related, footer rules           |
 | **Knowledge Placement** | `.junie/guidelines.md`       | `.context/` vs `.knowledge/` vs `docs/` vs `.history/` |
-| **Index Maintenance**   | `.junie/guidelines.md`       | Update counts, listings, cross-refs after changes   |
-| **Full Standards**      | `documentation_standards.md` | Complete SSOT for documentation                     |
+| **Index Maintenance**   | `.junie/guidelines.md`       | Update counts, listings, cross-refs after changes      |
+| **Full Standards**      | `documentation_standards.md` | Complete SSOT for documentation                        |
 
 ### Learnings (Iteration 3)
 
@@ -379,21 +380,21 @@ theory.
 
 ### Knowledge Structure Clarified
 
-| Content Type                | Location                              | Example                                         |
-|-----------------------------|---------------------------------------|-------------------------------------------------|
+| Content Type                | Location                                 | Example                                         |
+|-----------------------------|------------------------------------------|-------------------------------------------------|
 | **Generic practices**       | `.knowledge/practices/ai_collaboration/` | `session_management.md`, `session_checklist.md` |
 | **Generic templates**       | `.knowledge/templates/`                  | `conversation_record.md`, `task_handoff.md`     |
-| **Project-specific config** | `.history/`                           | `_session-end-checklist.md` (SAGE additions)    |
-| **Instance data**           | `.history/`                           | Actual conversation records, handoffs           |
+| **Project-specific config** | `.history/`                              | `_session-end-checklist.md` (SAGE additions)    |
+| **Instance data**           | `.history/`                              | Actual conversation records, handoffs           |
 
 ### Files Changed
 
-| File                                                      | Action     | Lines    |
-|-----------------------------------------------------------|------------|----------|
+| File                                                         | Action     | Lines    |
+|--------------------------------------------------------------|------------|----------|
 | `.knowledge/practices/ai_collaboration/session_checklist.md` | Created    | 159      |
-| `.history/_session-end-checklist.md`                      | Refactored | 143 → 72 |
+| `.history/_session-end-checklist.md`                         | Refactored | 143 → 72 |
 | `.knowledge/practices/index.md`                              | Updated    | +1 line  |
-| `.junie/guidelines.md`                                    | Updated    | ~4 lines |
+| `.junie/guidelines.md`                                       | Updated    | ~4 lines |
 
 ### Learnings (Iteration 5)
 
@@ -405,7 +406,8 @@ theory.
     - Templates (`.knowledge/templates/`) — Document structure blueprints
     - Checklists (`.knowledge/practices/`) — Quick-reference workflows
 
-3. **Instance vs Pattern**: `.history/` stores instance data (actual records) while `.knowledge/` stores patterns (how to
+3. **Instance vs Pattern**: `.history/` stores instance data (actual records) while `.knowledge/` stores patterns (how
+   to
    create records).
 
 ---
@@ -446,11 +448,11 @@ all previous optimizations are complete and properly implemented.
 
 #### Directory Content Audit
 
-| Directory             | Status    | Notes                                                         |
-|-----------------------|-----------|---------------------------------------------------------------|
+| Directory                | Status    | Notes                                                         |
+|--------------------------|-----------|---------------------------------------------------------------|
 | `.knowledge/references/` | ✓ 2 files | Generic: `knowledge_quick_ref.md`, `performance_checklist.md` |
-| `docs/guides/`        | ✓ 9 files | User-facing SAGE documentation                                |
-| `docs/api/`           | ✓ 6 files | Includes migrated quick refs                                  |
+| `docs/guides/`           | ✓ 9 files | User-facing SAGE documentation                                |
+| `docs/api/`              | ✓ 6 files | Includes migrated quick refs                                  |
 
 ### Validation Summary
 
@@ -743,12 +745,12 @@ This work is documented in a separate, detailed record:
 
 ### Key Outcomes
 
-| Change                      | Description                                                                  |
-|-----------------------------|------------------------------------------------------------------------------|
-| **Directory Restructuring** | Reorganized `.junie/` into `generic/`, `mcp/`, `configuration/`, `project/`  |
-| **Content Separation**      | Clear 🔄 Generic vs 📌 Project-specific categorization                       |
+| Change                      | Description                                                                     |
+|-----------------------------|---------------------------------------------------------------------------------|
+| **Directory Restructuring** | Reorganized `.junie/` into `generic/`, `mcp/`, `configuration/`, `project/`     |
+| **Content Separation**      | Clear 🔄 Generic vs 📌 Project-specific categorization                          |
 | **Template Documentation**  | Created `.knowledge/practices/ai_collaboration/junie_configuration_template.md` |
-| **Reusability**             | Generic files can be copied to new projects without modification             |
+| **Reusability**             | Generic files can be copied to new projects without modification                |
 
 ### Files Changed
 

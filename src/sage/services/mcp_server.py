@@ -1,4 +1,4 @@
-﻿"""
+"""
 MCP Server - Model Context Protocol service for AI Collaboration Knowledge Base.
 
 This module provides:

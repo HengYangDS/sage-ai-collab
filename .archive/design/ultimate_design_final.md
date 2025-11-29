@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base - Design Document
+# SAGE Knowledge Base - Design Document
 
 ## 🏆 Level 5 Expert Committee Consolidated Design
 
@@ -407,12 +407,12 @@ sage/                          # Project root directory
 |------------------------|----------|---------|---------------------------------------------|
 | Root                   | 11       | 8       | Project entry, configuration, dev toolchain |
 | docs/                  | 6        | 3       | Project documentation                       |
-| .knowledge/core/          | 3        | 0       | Core principles                             |
-| .knowledge/guidelines/    | 10       | 0       | Engineering guidelines                      |
-| .knowledge/frameworks/    | 5        | 5       | Deep frameworks                             |
-| .knowledge/practices/     | 3        | 3       | Best practices                              |
-| .knowledge/scenarios/     | 1        | 1       | Scenario presets                            |
-| .knowledge/templates/     | 1        | 0       | Templates                                   |
+| .knowledge/core/       | 3        | 0       | Core principles                             |
+| .knowledge/guidelines/ | 10       | 0       | Engineering guidelines                      |
+| .knowledge/frameworks/ | 5        | 5       | Deep frameworks                             |
+| .knowledge/practices/  | 3        | 3       | Best practices                              |
+| .knowledge/scenarios/  | 1        | 1       | Scenario presets                            |
+| .knowledge/templates/  | 1        | 0       | Templates                                   |
 | src/sage/core/         | 5        | 1       | Core layer (Layer 1)                        |
 | src/sage/core/logging/ | 4        | 0       | Unified logging                             |
 | src/sage/services/     | 4        | 0       | Services layer (Layer 2)                    |
@@ -1919,14 +1919,14 @@ project-root/
 
 #### 2.12.2 Directory Purpose & Differentiation
 
-| Directory   | Purpose                                        | Hidden | Git Track | Scope           |
-|-------------|------------------------------------------------|--------|-----------|-----------------|
-| `.junie/`   | AI client config for JetBrains Junie           | Yes    | Yes       | Client-specific |
-| `.context/` | Project-specific knowledge (ADRs, conventions) | Yes    | Yes       | Project-local   |
-| `.history/` | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
-| `.archive/` | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
-| `docs/`     | User-facing documentation                      | No     | Yes       | Public          |
-| `.knowledge/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
+| Directory     | Purpose                                        | Hidden | Git Track | Scope           |
+|---------------|------------------------------------------------|--------|-----------|-----------------|
+| `.junie/`     | AI client config for JetBrains Junie           | Yes    | Yes       | Client-specific |
+| `.context/`   | Project-specific knowledge (ADRs, conventions) | Yes    | Yes       | Project-local   |
+| `.history/`   | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
+| `.archive/`   | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
+| `docs/`       | User-facing documentation                      | No     | Yes       | Public          |
+| `.knowledge/` | Generic, distributable knowledge               | No     | Yes       | Package         |
 
 #### 2.12.3 Knowledge Taxonomy
 
@@ -2805,9 +2805,9 @@ src/sage/
 
 ### 4.1 Four-Layer Progressive Loading
 
-| Layer  | Directory           | Tokens       | Load Timing   | Timeout |
-|--------|---------------------|--------------|---------------|---------|
-| **L0** | index.md            | ~100         | Always        | 100ms   |
+| Layer  | Directory              | Tokens       | Load Timing   | Timeout |
+|--------|------------------------|--------------|---------------|---------|
+| **L0** | index.md               | ~100         | Always        | 100ms   |
 | **L1** | .knowledge/core/       | ~500         | Always        | 500ms   |
 | **L2** | .knowledge/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
 | **L3** | .knowledge/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
@@ -4109,7 +4109,7 @@ Parallelizable:
 | Directory Structure      | 🟡 Needs Reorganization | 86/100 | 100/100        | Implement 3-layer architecture |
 | Three-Layer Architecture | ❌ Not Implemented       | 0%     | 100%           | core/ + services/ separation   |
 | Unified Logging          | ❌ Not Implemented       | 0%     | 100%           | structlog + stdlib             |
-| Core Content             | 🟡 Partial              | 70%    | 90%            | .knowledge/core/ enhancement      |
+| Core Content             | 🟡 Partial              | 70%    | 90%            | .knowledge/core/ enhancement   |
 | Source Code              | 🟡 Needs Refactoring    | 80%    | 100%           | Move to core/ + services/      |
 | Tools                    | 🟡 Needs Reorganization | 75%    | 100%           | Merge analyzers + checkers     |
 | Tests                    | 🟡 Needs Restructuring  | 60%    | 90%            | Mirror source structure        |
@@ -4220,16 +4220,16 @@ Target: Production-ready MVP
 
 **Goal**: Mirror source structure in tests
 
-| Task                                               | Owner          | Priority | Status    | Deliverable         |
-|----------------------------------------------------|----------------|----------|-----------|---------------------|
-| E.1 Create tests/fixtures/ directory               | Test Architect | P0       | ⚪ Pending | Test data home      |
+| Task                                                  | Owner          | Priority | Status    | Deliverable         |
+|-------------------------------------------------------|----------------|----------|-----------|---------------------|
+| E.1 Create tests/fixtures/ directory                  | Test Architect | P0       | ⚪ Pending | Test data home      |
 | E.2 Add sample_.knowledge/, mock_responses/, configs/ | Test Architect | P0       | ⚪ Pending | Test fixtures       |
-| E.3 Create tests/unit/core/ directory              | Test Architect | P0       | ⚪ Pending | Core unit tests     |
-| E.4 Create tests/unit/services/ directory          | Test Architect | P0       | ⚪ Pending | Services unit tests |
-| E.5 Move existing tests to new structure           | Test Architect | P0       | ⚪ Pending | Mirrored structure  |
-| E.6 Create tests/integration/ directory            | Test Architect | P1       | ⚪ Pending | Integration tests   |
-| E.7 Create conftest.py with global fixtures        | Test Architect | P0       | ⚪ Pending | Shared fixtures     |
-| E.8 Run all tests to verify                        | Test Architect | P0       | ⚪ Pending | No regressions      |
+| E.3 Create tests/unit/core/ directory                 | Test Architect | P0       | ⚪ Pending | Core unit tests     |
+| E.4 Create tests/unit/services/ directory             | Test Architect | P0       | ⚪ Pending | Services unit tests |
+| E.5 Move existing tests to new structure              | Test Architect | P0       | ⚪ Pending | Mirrored structure  |
+| E.6 Create tests/integration/ directory               | Test Architect | P1       | ⚪ Pending | Integration tests   |
+| E.7 Create conftest.py with global fixtures           | Test Architect | P0       | ⚪ Pending | Shared fixtures     |
+| E.8 Run all tests to verify                           | Test Architect | P0       | ⚪ Pending | No regressions      |
 
 **Milestone**: Test structure mirrors source, all tests pass
 
@@ -4777,12 +4777,12 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 
 #### 8.5.1 Re-Review Issues Addressed
 
-| Issue                                 | Before               | After                                            | Resolution |
-|---------------------------------------|----------------------|--------------------------------------------------|------------|
-| Directory 06~08 not expanded          | Only directory names | Fully expanded to file level                     | ✅ Resolved |
-| Other subdirectories not expanded     | Partial expansion    | All 20 subdirectories fully expanded             | ✅ Resolved |
+| Issue                                 | Before               | After                                               | Resolution |
+|---------------------------------------|----------------------|-----------------------------------------------------|------------|
+| Directory 06~08 not expanded          | Only directory names | Fully expanded to file level                        | ✅ Resolved |
+| Other subdirectories not expanded     | Partial expansion    | All 20 subdirectories fully expanded                | ✅ Resolved |
 | Design vs. actual project mismatch    | Idealized structure  | Aligned with actual `.knowledge/`, `src/`, `tools/` | ✅ Resolved |
-| Roadmap not reflecting current status | From-scratch plan    | Incremental improvement plan (~70% complete)     | ✅ Resolved |
+| Roadmap not reflecting current status | From-scratch plan    | Incremental improvement plan (~70% complete)        | ✅ Resolved |
 
 #### 8.5.2 Expert Committee Re-Review Votes
 
@@ -4846,16 +4846,16 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 
 #### 8.6.1 Enhancement Issues Addressed
 
-| Issue                       | Before (96/100)                    | After (100/100)                           | Resolution    |
-|-----------------------------|------------------------------------|-------------------------------------------|---------------|
-| No three-layer architecture | Flat src/ structure                | Core → Services → Tools layers            | ✅ Implemented |
-| No unified logging          | Ad-hoc logging                     | structlog + stdlib integration            | ✅ Implemented |
-| Entry points scattered      | server.py + cli.py + mcp_server.py | Unified __main__.py                       | ✅ Implemented |
-| tools/ boundaries unclear   | analyzers/ vs checkers/ confusion  | analysis/ + runtime/ + migration/         | ✅ Implemented |
-| tests/ not mirroring src/   | Flat test structure                | unit/core/, unit/services/, integration/  | ✅ Implemented |
-| No dev toolchain            | Manual commands                    | Makefile + pre-commit + .env.example      | ✅ Implemented |
+| Issue                       | Before (96/100)                    | After (100/100)                              | Resolution    |
+|-----------------------------|------------------------------------|----------------------------------------------|---------------|
+| No three-layer architecture | Flat src/ structure                | Core → Services → Tools layers               | ✅ Implemented |
+| No unified logging          | Ad-hoc logging                     | structlog + stdlib integration               | ✅ Implemented |
+| Entry points scattered      | server.py + cli.py + mcp_server.py | Unified __main__.py                          | ✅ Implemented |
+| tools/ boundaries unclear   | analyzers/ vs checkers/ confusion  | analysis/ + runtime/ + migration/            | ✅ Implemented |
+| tests/ not mirroring src/   | Flat test structure                | unit/core/, unit/services/, integration/     | ✅ Implemented |
+| No dev toolchain            | Manual commands                    | Makefile + pre-commit + .env.example         | ✅ Implemented |
 | No test fixtures            | Scattered test data                | fixtures/sample_.knowledge/, mock_responses/ | ✅ Implemented |
-| No usage examples           | Limited documentation              | examples/ directory with samples          | ✅ Implemented |
+| No usage examples           | Limited documentation              | examples/ directory with samples             | ✅ Implemented |
 
 #### 8.6.2 Expert Committee 100-Score Enhancement Votes
 
@@ -4864,7 +4864,7 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 | **Architecture** | Chief Architect         | ✅ 100 | "Three-layer architecture is industry standard"      |
 | **Architecture** | Systems Engineer        | ✅ 100 | "Dependency rules prevent circular imports"          |
 | **Architecture** | Reliability Engineer    | ✅ 100 | "timeout in core layer is correct placement"         |
-| **Knowledge**    | Documentation Engineer  | ✅ 100 | "docs/ separation from .knowledge/ is crucial"          |
+| **Knowledge**    | Documentation Engineer  | ✅ 100 | "docs/ separation from .knowledge/ is crucial"       |
 | **Knowledge**    | Knowledge Manager       | ✅ 100 | "Content remains pure knowledge, no code docs mixed" |
 | **AI Collab**    | AI Collaboration Expert | ✅ 100 | "Structured logging aids AI debugging"               |
 | **AI Collab**    | Cognitive Scientist     | ✅ 100 | "Three-layer model reduces cognitive load"           |
@@ -5402,16 +5402,16 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 **Decision Matrix**:
 
-| Content Type      | Location            | Rationale           |
-|-------------------|---------------------|---------------------|
-| Project overview  | index.md            | Universal entry     |
-| AI client config  | .junie/             | Client-specific     |
+| Content Type      | Location               | Rationale           |
+|-------------------|------------------------|---------------------|
+| Project overview  | index.md               | Universal entry     |
+| AI client config  | .junie/                | Client-specific     |
 | Core philosophy   | .knowledge/core/       | Always needed       |
 | How-to guides     | .knowledge/guidelines/ | Task-triggered      |
 | Deep frameworks   | .knowledge/frameworks/ | Complex decisions   |
-| Project decisions | .context/decisions/ | Project-specific    |
-| Session history   | .history/           | Ephemeral           |
-| Design documents  | docs/design/        | Technical reference |
+| Project decisions | .context/decisions/    | Project-specific    |
+| Session history   | .history/              | Ephemeral           |
+| Design documents  | docs/design/           | Technical reference |
 
 #### 8.10.6 Issue 5: .junie Knowledge Index
 
@@ -5511,12 +5511,12 @@ fallback:
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-| Phase   | Location  | Trigger               | Action                            |
-|---------|-----------|-----------------------|-----------------------------------|
-| CAPTURE | .history/ | Every session         | Auto-save conversations, handoffs |
-| REFINE  | .context/ | Sprint end, milestone | Extract ADRs, conventions         |
-| PUBLISH | .knowledge/  | Quarterly review      | Promote generic knowledge         |
-| ARCHIVE | .archive/ | Content superseded    | Preserve historical records       |
+| Phase   | Location    | Trigger               | Action                            |
+|---------|-------------|-----------------------|-----------------------------------|
+| CAPTURE | .history/   | Every session         | Auto-save conversations, handoffs |
+| REFINE  | .context/   | Sprint end, milestone | Extract ADRs, conventions         |
+| PUBLISH | .knowledge/ | Quarterly review      | Promote generic knowledge         |
+| ARCHIVE | .archive/   | Content superseded    | Preserve historical records       |
 
 #### 8.10.9 Issue 8: Content Knowledge Lifecycle
 
@@ -5536,8 +5536,8 @@ fallback:
 
 **Update Frequency by Layer**:
 
-| Layer | Directory           | Frequency        | Governance       |
-|-------|---------------------|------------------|------------------|
+| Layer | Directory              | Frequency        | Governance       |
+|-------|------------------------|------------------|------------------|
 | L1    | .knowledge/core/       | Rare (1-2x/year) | Expert Committee |
 | L2    | .knowledge/guidelines/ | Quarterly        | 2+ reviewers     |
 | L3    | .knowledge/frameworks/ | As needed        | Expert review    |

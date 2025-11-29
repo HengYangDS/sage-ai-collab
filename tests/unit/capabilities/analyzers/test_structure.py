@@ -1,4 +1,4 @@
-﻿"""
+"""
 Tests for structure checker module.
 
 Tests cover:

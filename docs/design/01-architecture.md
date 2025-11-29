@@ -1,4 +1,4 @@
-﻿---
+---
 title: SAGE Knowledge Base - Architecture Design
 version: 0.1.0
 date: 2025-11-28
@@ -418,12 +418,12 @@ sage/                                  # 📁 Project root directory
 | .history/                        | 0        | 3       | AI session history (current/conversations/handoffs)   |
 | .archive/                        | 0        | 1       | Historical archives (monthly: 202511/)                |
 | docs/                            | 7        | 4       | Project documentation (+standards/)                   |
-| .knowledge/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)            |
-| .knowledge/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index.yaml)       |
-| .knowledge/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)                       |
-| .knowledge/practices/               | 4        | 4       | Best practices (+decisions/)                          |
-| .knowledge/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                        |
-| .knowledge/templates/               | 2        | 0       | Templates (+expert_committee.md)                      |
+| .knowledge/core/                 | 3        | 0       | Core principles (~500 tokens, Always Load)            |
+| .knowledge/guidelines/           | 11       | 0       | Engineering guidelines (+guidelines_index.yaml)       |
+| .knowledge/frameworks/           | 5        | 5       | Deep frameworks (~2,000 tokens)                       |
+| .knowledge/practices/            | 4        | 4       | Best practices (+decisions/)                          |
+| .knowledge/scenarios/            | 1        | 1       | Scenario presets (~500 tokens)                        |
+| .knowledge/templates/            | 2        | 0       | Templates (+expert_committee.md)                      |
 | src/sage/interfaces/             | 2        | 0       | Protocol definitions (centralized)                    |
 | src/sage/domain/                 | 3        | 0       | Business domain models                                |
 | src/sage/core/                   | 9        | 1       | Core layer (Layer 1, <500 lines)                      |
@@ -999,13 +999,13 @@ export SAGE_LOADING_CACHE_ENABLED=false
 
 ### Five-Level Timeout Hierarchy
 
-| Level  | Timeout | Scope            | Action on Timeout      | Use Case                   |
-|--------|---------|------------------|------------------------|----------------------------|
-| **T1** | 100ms   | Cache lookup     | Return cached/fallback | Memory cache, index lookup |
-| **T2** | 500ms   | Single file read | Use partial/fallback   | Individual markdown file   |
-| **T3** | 2s      | Layer load       | Load partial + warning | `.knowledge/core/` directory  |
-| **T4** | 5s      | Full KB load     | Emergency core only    | All layers requested       |
-| **T5** | 10s     | Complex analysis | Abort + summary        | Search, graph building     |
+| Level  | Timeout | Scope            | Action on Timeout      | Use Case                     |
+|--------|---------|------------------|------------------------|------------------------------|
+| **T1** | 100ms   | Cache lookup     | Return cached/fallback | Memory cache, index lookup   |
+| **T2** | 500ms   | Single file read | Use partial/fallback   | Individual markdown file     |
+| **T3** | 2s      | Layer load       | Load partial + warning | `.knowledge/core/` directory |
+| **T4** | 5s      | Full KB load     | Emergency core only    | All layers requested         |
+| **T5** | 10s     | Complex analysis | Abort + summary        | Search, graph building       |
 
 ### Graceful Degradation Strategy
 

@@ -1,4 +1,4 @@
-﻿"""
+"""
 Health Monitor - System health monitoring for AI Collaboration Knowledge Base.
 
 This module provides:

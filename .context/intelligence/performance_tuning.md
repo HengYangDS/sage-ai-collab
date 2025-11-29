@@ -1,4 +1,4 @@
-﻿# SAGE Performance Tuning
+# SAGE Performance Tuning
 
 > SAGE-specific performance goals, benchmarks, and monitoring
 
@@ -8,8 +8,8 @@
 
 For comprehensive performance optimization guides, see:
 
-| Topic                       | Reference                                                   |
-|-----------------------------|-------------------------------------------------------------|
+| Topic                       | Reference                                                      |
+|-----------------------------|----------------------------------------------------------------|
 | **Optimization Strategies** | `.knowledge/frameworks/performance/optimization_strategies.md` |
 | **Caching Patterns**        | `.knowledge/frameworks/performance/caching_patterns.md`        |
 | **Profiling Guide**         | `.knowledge/frameworks/performance/profiling_guide.md`         |

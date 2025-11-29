@@ -1,4 +1,4 @@
-﻿# Project Directory Structure Patterns
+# Project Directory Structure Patterns
 
 > Universal directory organization patterns for AI-collaborative projects
 
@@ -55,20 +55,20 @@ project/
 
 ### 2.2 By Git Policy
 
-| Policy      | Directories                                                             | Rationale                                  |
-|-------------|-------------------------------------------------------------------------|--------------------------------------------|
+| Policy      | Directories                                                                | Rationale                                  |
+|-------------|----------------------------------------------------------------------------|--------------------------------------------|
 | **Tracked** | `.context/`, `.history/`, `.archive/`, `.backups/`, `.knowledge/`, `docs/` | Preserve history and collaboration context |
-| **Ignored** | `.logs/`, `.outputs/`                                                   | Runtime artifacts, regenerable             |
+| **Ignored** | `.logs/`, `.outputs/`                                                      | Runtime artifacts, regenerable             |
 
 ### 2.3 By Content Lifecycle
 
-| Stage      | Directory                                | Description            |
-|------------|------------------------------------------|------------------------|
+| Stage      | Directory                                   | Description            |
+|------------|---------------------------------------------|------------------------|
 | Active     | `.context/`, `.knowledge/`, `docs/`, `src/` | Current, maintained    |
-| Session    | `.history/`                              | Collaboration records  |
-| Backup     | `.backups/`                              | Pre-change snapshots   |
-| Deprecated | `.archive/`                              | Historical reference   |
-| Ephemeral  | `.logs/`, `.outputs/`                    | Temporary, regenerable |
+| Session    | `.history/`                                 | Collaboration records  |
+| Backup     | `.backups/`                                 | Pre-change snapshots   |
+| Deprecated | `.archive/`                                 | Historical reference   |
+| Ephemeral  | `.logs/`, `.outputs/`                       | Temporary, regenerable |
 
 ---
 
@@ -201,17 +201,17 @@ Is this an intermediate/generated file?
 
 ### Quick Reference
 
-| Content Type              | Location                |
-|---------------------------|-------------------------|
-| Project conventions       | `.context/conventions/` |
-| Universal guidelines      | `.knowledge/guidelines/`   |
-| ADR records               | `.context/decisions/`   |
-| API documentation         | `docs/api/`             |
-| Session handoffs          | `.history/handoffs/`    |
-| Deprecated code           | `.archive/`             |
-| Pre-refactoring snapshots | `.backups/`             |
-| Runtime logs              | `.logs/`                |
-| Test outputs              | `.outputs/`             |
+| Content Type              | Location                 |
+|---------------------------|--------------------------|
+| Project conventions       | `.context/conventions/`  |
+| Universal guidelines      | `.knowledge/guidelines/` |
+| ADR records               | `.context/decisions/`    |
+| API documentation         | `docs/api/`              |
+| Session handoffs          | `.history/handoffs/`     |
+| Deprecated code           | `.archive/`              |
+| Pre-refactoring snapshots | `.backups/`              |
+| Runtime logs              | `.logs/`                 |
+| Test outputs              | `.outputs/`              |
 
 ---
 

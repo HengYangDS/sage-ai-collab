@@ -233,11 +233,11 @@ Copy this entire block for quick setup:
 
 ## Summary
 
-| Category              | Count |
-|:----------------------|:------|
-| Cross-Platform        | 57    |
-| Unix-Specific         | 19    |
-| **Total**             | **76**|
+| Category       | Count  |
+|:---------------|:-------|
+| Cross-Platform | 57     |
+| Unix-Specific  | 19     |
+| **Total**      | **76** |
 
 ---
 

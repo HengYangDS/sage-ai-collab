@@ -1,4 +1,4 @@
-﻿# Session End Checklist - SAGE Project
+# Session End Checklist - SAGE Project
 
 > Quick reference for SAGE session management
 
@@ -40,8 +40,8 @@ This includes:
 
 ### SAGE Templates
 
-| Template      | Location                                   |
-|---------------|--------------------------------------------|
+| Template      | Location                                      |
+|---------------|-----------------------------------------------|
 | Conversation  | `.knowledge/templates/conversation_record.md` |
 | Handoff       | `.knowledge/templates/task_handoff.md`        |
 | Session State | `.knowledge/templates/session_state.md`       |
