@@ -25,6 +25,7 @@ loading:
     practices: 1500                    # Best practices
     scenarios: 500                     # Scenario presets
     templates: 300                     # Reusable templates
+    references: 800                    # Quick reference documents
 
   # Loading strategy
   strategy:

@@ -1,28 +1,27 @@
----
-title: SAGE Knowledge Base - Design Overview
-version: 0.1.0
-date: 2025-11-29
-status: alpha
----
-
 # SAGE Knowledge Base - Design Overview
 
-> **Production-grade knowledge management system for AI-human collaboration**
->
-> ⚠️ **Status: Alpha (v0.1.0)** - Under active development and testing
+> Production-grade knowledge management system for AI-human collaboration
 
-## Project Summary
+---
+
+## Table of Contents
+
+[1. Project Summary](#1-project-summary) · [2. Design Philosophy](#2-design-philosophy) · [3. Expert Committee](#3-expert-committee) · [4. Document Navigation](#4-document-navigation) · [5. Key Metrics](#5-key-metrics) · [6. Implementation Progress](#6-implementation-progress) · [7. Technology Stack](#7-technology-stack) · [8. Quick Start](#8-quick-start)
+
+---
+
+## 1. Project Summary
 
 | Attribute        | Value                                                        |
 |------------------|--------------------------------------------------------------|
 | **Project Name** | SAGE (Smart AI-Guided Expertise)                             |
-| **Version**      | 0.1.0                                                        |
+| **Version**      | 0.1.0 (Alpha)                                                |
 | **Python**       | ≥3.12 (3.12, 3.13, 3.14 supported)                           |
 | **Architecture** | Core-Services-Tools Three-Layer Model with Zero Cross-Import |
 | **Protocol**     | SAGE (Source-Analyze-Generate-Evolve)                        |
 | **Expert Score** | 99/100 🏆 (Level 5 Expert Committee Approved)                |
 
-### Architecture Layers
+### 1.1 Architecture Layers
 
 | Layer            | Components                                             | Responsibility                              |
 |------------------|--------------------------------------------------------|---------------------------------------------|
@@ -32,7 +31,7 @@ status: alpha
 | **Tools**        | TimeoutMonitor, MigrationToolkit                       | Dev-only utilities, NOT imported at runtime |
 | **Plugins**      | Base + Bundled (Cache, SemanticSearch)                 | Extension mechanism (7 hook points)         |
 
-### Key Distinctions
+### 1.2 Key Distinctions
 
 | Component          | Layer        | Purpose                                                  |
 |--------------------|--------------|----------------------------------------------------------|
@@ -42,7 +41,7 @@ status: alpha
 
 ---
 
-## Design Philosophy (信达雅 · Xin-Da-Ya)
+## 2. Design Philosophy (信达雅 · Xin-Da-Ya)
 
 The project follows the classical Chinese translation principles adapted for software design:
 
@@ -52,9 +51,7 @@ The project follows the classical Chinese translation principles adapted for sof
 | **Clarity**      | 达 (Da)  | Clear, accessible    | Unified structure, intuitive navigation        |
 | **Elegance**     | 雅 (Ya)  | Refined, sustainable | Minimal dependencies, extensible architecture  |
 
-### Design Axioms
-
-> **Reference**: See `content/frameworks/design/design_axioms.md` for detailed documentation.
+### 2.1 Design Axioms
 
 1. **MECE Principle**: Mutually Exclusive, Collectively Exhaustive
 2. **Single Source of Truth (SSOT)**: Each knowledge exists in one place only
@@ -65,13 +62,13 @@ The project follows the classical Chinese translation principles adapted for sof
 7. **Zero Cross-Import**: Layers communicate via EventBus, no direct dependencies
 8. **On-Demand Loading**: Minimal core engine, features loaded as needed
 
-### Terminology
+### 2.2 Terminology
 
 | Term                     | Definition                                                                            |
 |--------------------------|---------------------------------------------------------------------------------------|
 | **SAGE**                 | Smart AI-Guided Expertise; also the 4-stage protocol (Source-Analyze-Generate-Evolve) |
 | **MECE**                 | Mutually Exclusive, Collectively Exhaustive - a classification principle              |
-| **信达雅 (Xin-Da-Ya)**      | Classical Chinese translation principles: Faithfulness, Clarity, Elegance             |
+| **信达雅 (Xin-Da-Ya)**   | Classical Chinese translation principles: Faithfulness, Clarity, Elegance             |
 | **MCP**                  | Model Context Protocol - JSON-RPC based protocol for AI assistant integration         |
 | **EventBus**             | Async pub/sub message broker for decoupled component communication                    |
 | **DI Container**         | Dependency Injection Container for service lifecycle management                       |
@@ -82,11 +79,11 @@ The project follows the classical Chinese translation principles adapted for sof
 
 ---
 
-## Expert Committee (24 Experts)
+## 3. Expert Committee (24 Experts)
 
 The design is validated by a Level 5 Expert Committee comprising 24 experts across 4 groups:
 
-### Architecture & Systems Group (6)
+### 3.1 Architecture & Systems Group
 
 | Role                  | Responsibility                                |
 |-----------------------|-----------------------------------------------|
@@ -97,7 +94,7 @@ The design is validated by a Level 5 Expert Committee comprising 24 experts acro
 | Performance Architect | Token efficiency, loading strategies          |
 | Reliability Engineer  | Timeout mechanisms, fault tolerance           |
 
-### Knowledge Engineering Group (6)
+### 3.2 Knowledge Engineering Group
 
 | Role                   | Responsibility                          |
 |------------------------|-----------------------------------------|
@@ -108,7 +105,7 @@ The design is validated by a Level 5 Expert Committee comprising 24 experts acro
 | Content Strategist     | Prioritization, update policies         |
 | Ontology Designer      | Semantic relationships, graph structure |
 
-### AI Collaboration Group (6)
+### 3.3 AI Collaboration Group
 
 | Role                    | Responsibility                            |
 |-------------------------|-------------------------------------------|
@@ -119,7 +116,7 @@ The design is validated by a Level 5 Expert Committee comprising 24 experts acro
 | Ethics Expert           | Value alignment, transparency             |
 | Timeout & Safety Expert | Response guarantees, graceful degradation |
 
-### Engineering Practice Group (6)
+### 3.4 Engineering Practice Group
 
 | Role              | Responsibility                                  |
 |-------------------|-------------------------------------------------|
@@ -132,34 +129,32 @@ The design is validated by a Level 5 Expert Committee comprising 24 experts acro
 
 ---
 
-## Document Navigation
+## 4. Document Navigation
 
 This design is organized into 10 independent documents:
 
-| Document                    | Description                                                 | Lines |
-|-----------------------------|-------------------------------------------------------------|-------|
-| **00-overview.md**          | Project overview, philosophy, progress (this file)          | ~250  |
-| **01-architecture.md**      | Three-layer architecture, directory structure, toolchain    | ~1540 |
-| **02-sage-protocol.md**     | SAGE Protocol, DI Container, EventBus, Bootstrap            | ~830  |
-| **03-services.md**          | API/MCP/CLI services, error handling, testing               | ~930  |
-| **04-timeout-loading.md**   | Timeout mechanism, token efficiency, smart loading          | ~890  |
-| **05-plugin-memory.md**     | Plugin architecture, Memory persistence, Session continuity | ~630  |
-| **06-content-structure.md** | Content organization, knowledge taxonomy, versioning        | ~345  |
-| **07-roadmap.md**           | Implementation roadmap, phases, MVP/v1.1 split              | ~650  |
-| **08-evaluation.md**        | Expert committee evaluation, 99.8/100 score, approved       | ~125  |
-| **09-configuration.md**     | Configuration system, modular config files, settings        | ~420  |
+| Document                    | Description                                                 |
+|-----------------------------|-------------------------------------------------------------|
+| **00-overview.md**          | Project overview, philosophy, progress (this file)          |
+| **01-architecture.md**      | Three-layer architecture, directory structure, toolchain    |
+| **02-sage-protocol.md**     | SAGE Protocol, DI Container, EventBus, Bootstrap            |
+| **03-services.md**          | API/MCP/CLI services, error handling, testing               |
+| **04-timeout-loading.md**   | Timeout mechanism, token efficiency, smart loading          |
+| **05-plugin-memory.md**     | Plugin architecture, Memory persistence, Session continuity |
+| **06-content-structure.md** | Content organization, knowledge taxonomy, versioning        |
+| **07-roadmap.md**           | Implementation roadmap, phases, MVP/v1.1 split              |
+| **08-evaluation.md**        | Expert committee evaluation, 99.8/100 score, approved       |
+| **09-configuration.md**     | Configuration system, modular config files, settings        |
 
-### Reading Order
+### 4.1 Reading Order
 
-**For new readers**: Start with this overview, then read in order (01 → 09).
-
-**For implementers**: Focus on 01-architecture → 07-roadmap → 09-configuration.
-
-**For reviewers**: Read 08-evaluation for scoring details and expert votes.
+- **New readers**: Start with this overview, then read in order (01 → 09)
+- **Implementers**: Focus on 01-architecture → 07-roadmap → 09-configuration
+- **Reviewers**: Read 08-evaluation for scoring details and expert votes
 
 ---
 
-## Key Metrics
+## 5. Key Metrics
 
 | Metric           | Target | Status          |
 |------------------|--------|-----------------|
@@ -172,7 +167,7 @@ This design is organized into 10 independent documents:
 
 ---
 
-## Implementation Progress (2025-11-29)
+## 6. Implementation Progress
 
 | Milestone            | Status          | Notes                                       |
 |----------------------|-----------------|---------------------------------------------|
@@ -191,11 +186,7 @@ This design is organized into 10 independent documents:
 | Type Safety          | ✅ Complete      | mypy strict, 26→9 errors fixed              |
 | Production Ready     | ✅ v1.2 Complete | All MVP + v1.1 + v1.2 phases complete       |
 
-**Status**: Full v1.2 implementation complete with CI/CD pipeline and type safety improvements.
-
----
-
-## Key Achievements
+### 6.1 Key Achievements
 
 1. **Unified Best Practices**: Combined strengths from 5 design iterations
 2. **Production-Ready Reliability**: 5-level timeout + circuit breaker + graceful degradation
@@ -206,7 +197,7 @@ This design is organized into 10 independent documents:
 
 ---
 
-## Technology Stack
+## 7. Technology Stack
 
 | Category     | Technology                                    |
 |--------------|-----------------------------------------------|
@@ -221,7 +212,7 @@ This design is organized into 10 independent documents:
 
 ---
 
-## Quick Start
+## 8. Quick Start
 
 ```bash
 # Install
@@ -231,7 +222,9 @@ pip install sage-kb
 sage get core           # Get core knowledge
 sage search "timeout"   # Search knowledge base
 sage serve              # Start MCP server
+```
 
+```python
 # Python usage
 from sage.core.loader import KnowledgeLoader, Layer
 
@@ -242,14 +235,13 @@ print(result.content)
 
 ---
 
-## References
+## Related
 
-- **Architecture**: See `01-architecture.md`
-- **Implementation**: See `07-roadmap.md`
-- **Evaluation**: See `08-evaluation.md`
-- **Configuration**: See `sage.yaml` in project root
+- `01-architecture.md` — Three-layer architecture details
+- `07-roadmap.md` — Implementation roadmap
+- `08-evaluation.md` — Expert committee evaluation
+- `../index.md` — Documentation navigation
 
 ---
 
-**Document Status**: ✅ Approved by Level 5 Expert Committee (99.8/100)  
-**Last Updated**: 2025-11-29
+*Part of SAGE Knowledge Base*

@@ -14,10 +14,10 @@ guidelines:
     "00": quick_start
 
     # Planning & Design
-    planning: planning_design
-    planning_design: planning_design
-    design: planning_design
-    "01": planning_design
+    planning: planning
+    planning_design: planning
+    design: planning
+    "01": planning
 
     # Code Style
     code_style: code_style

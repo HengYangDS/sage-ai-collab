@@ -16,6 +16,7 @@ content:
     practices: "content/practices"     # Best practices
     scenarios: "content/scenarios"     # Scenario presets
     templates: "content/templates"     # Reusable templates
+    references: "content/references"   # Quick reference documents
 
   # File type configuration
   file_types:
