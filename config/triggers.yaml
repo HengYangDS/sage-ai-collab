@@ -15,12 +15,20 @@ triggers:
       - fix
       - refactor
       - debug
+      - bug
+      - function
+      - class
+      - method
       # Chinese (中文)
       - 代码
       - 实现
       - 修复
       - 重构
       - 调试
+      - 缺陷
+      - 函数
+      - 类
+      - 方法
     load:
       - content/guidelines/code_style.md
       - content/guidelines/python.md
@@ -34,11 +42,19 @@ triggers:
       - design
       - system
       - pattern
+      - scale
+      - module
+      - component
+      - structure
       # Chinese (中文)
       - 架构
       - 设计
       - 系统
       - 模式
+      - 扩展
+      - 模块
+      - 组件
+      - 结构
     load:
       - content/guidelines/planning_design.md
       - content/frameworks/decision/
@@ -49,14 +65,21 @@ triggers:
     keywords:
       # English
       - test
+      - testing
       - coverage
       - unit
       - integration
+      - verify
+      - validation
+      - mock
       # Chinese (中文)
       - 测试
       - 覆盖率
       - 单元
       - 集成
+      - 验证
+      - 校验
+      - 模拟
     load:
       - content/guidelines/engineering.md
     timeout_ms: 2000
@@ -69,11 +92,17 @@ triggers:
       - collaboration
       - ai
       - level
+      - instruction
+      - assistant
+      - batch
       # Chinese (中文)
       - 自主
       - 协作
       - 人工智能
       - 级别
+      - 指令
+      - 助手
+      - 批量
     load:
       - content/guidelines/ai_collaboration.md
       - content/frameworks/autonomy/
@@ -132,3 +161,46 @@ triggers:
       - content/frameworks/decision/quality_angles.md
     timeout_ms: 2000
     priority: 7
+
+  documentation:
+    keywords:
+      # English
+      - document
+      - doc
+      - readme
+      - guide
+      - changelog
+      - comment
+      - docstring
+      # Chinese (中文)
+      - 文档
+      - 说明
+      - 自述
+      - 指南
+      - 变更日志
+      - 注释
+      - 文档字符串
+    load:
+      - content/guidelines/documentation.md
+      - content/practices/documentation/
+    timeout_ms: 2000
+    priority: 8
+
+  python:
+    keywords:
+      # English
+      - python
+      - decorator
+      - async
+      - typing
+      - pydantic
+      - fastapi
+      # Chinese (中文)
+      - 装饰器
+      - 异步
+      - 类型
+      - 类型注解
+    load:
+      - content/guidelines/python.md
+    timeout_ms: 2000
+    priority: 9

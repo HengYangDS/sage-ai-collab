@@ -1,0 +1,65 @@
+# SAGE API Service Configuration
+#
+# Configuration for HTTP REST API service.
+# This file is part of the modular configuration system.
+#
+# Note: API service is disabled by default (features.api_service: false).
+# Enable in config/features.yaml to activate these settings.
+
+# =============================================================================
+# API Service Configuration
+# =============================================================================
+services:
+  api:
+    # Service enablement (also controlled by features.api_service)
+    enabled: false
+
+    # Server binding
+    host: "0.0.0.0"
+    port: 8080
+
+    # CORS Configuration
+    cors:
+      enabled: true
+      origins:
+        - "*"                          # Restrict in production
+      allow_methods:
+        - "GET"
+        - "POST"
+        - "OPTIONS"
+      allow_headers:
+        - "Content-Type"
+        - "Authorization"
+
+    # API Documentation (OpenAPI/Swagger)
+    docs:
+      enabled: true
+      path: /docs
+      redoc_path: /redoc
+
+    # Rate Limiting
+    rate_limit:
+      enabled: false
+      requests_per_minute: 60
+      burst_size: 10
+
+    # Request/Response Settings
+    request:
+      max_body_size: 1048576           # 1MB
+      timeout_ms: 30000                # 30 seconds
+
+    # Health Check Endpoint
+    health:
+      enabled: true
+      path: /health
+      include_details: true
+
+# =============================================================================
+# API Endpoints Reference (for documentation)
+# =============================================================================
+# GET  /health              - Health check
+# GET  /layers              - List available layers
+# POST /knowledge           - Get knowledge content
+# GET  /search?q=&limit=    - Search knowledge base
+# GET  /frameworks/{name}   - Get specific framework
+# GET  /guidelines/{section} - Get guideline section

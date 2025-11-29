@@ -2,6 +2,11 @@
 #
 # Configuration for DI container service registration.
 # This file is part of the modular configuration system.
+#
+# Lifetime options:
+#   - singleton: Single instance for entire application.
+#   - transient: New instance on each resolve.
+#   - scoped: Single instance within a scope.
 
 # =============================================================================
 # DI Container Configuration
@@ -10,12 +15,16 @@ di:
   auto_wire: true
 
   services:
+    # =========================================================================
+    # Core Services (Implemented)
+    # =========================================================================
+
     # Event Bus - Async pub/sub message broker
     EventBus:
       lifetime: singleton
       implementation: AsyncEventBus
 
-    # Source Protocol - Knowledge loading
+    # Source Protocol - Knowledge loading (LoaderProtocol in design doc)
     SourceProtocol:
       lifetime: singleton
       implementation: TimeoutLoader
@@ -30,3 +39,23 @@ di:
     TokenBudget:
       lifetime: singleton
       implementation: TokenBudget
+
+    # =========================================================================
+    # v1.1 Placeholder Services (Not Yet Implemented)
+    # =========================================================================
+    # Uncomment when implementations are available
+
+    # Knowledge Protocol - Knowledge search and retrieval
+    # KnowledgeProtocol:
+    #   lifetime: transient
+    #   implementation: KnowledgeService
+
+    # Output Protocol - Multi-channel output formatting
+    # OutputProtocol:
+    #   lifetime: scoped
+    #   implementation: MultiChannelOutput
+
+    # Refine Protocol - Metrics collection and refinement
+    # RefineProtocol:
+    #   lifetime: singleton
+    #   implementation: MetricsCollector

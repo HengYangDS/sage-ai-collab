@@ -7,8 +7,16 @@
 # Feature Flags
 # =============================================================================
 features:
+  # Core Features
   event_driven_plugins: true           # Enable event-driven plugin architecture
   memory_persistence: true             # Enable cross-session memory persistence
   api_service: false                   # Enable HTTP REST API service
+
+  # ==========================================================================
+  # Loading Optimization Features (from design doc optimization section)
+  # ==========================================================================
   differential_loading: false          # Load only changed content since the last session
-  compressed_loading: false            # Enable compressed/summarized content loading
+  compressed_loading: false            # Enable compressed/summarized content loading (~50% smaller)
+  client_cache: true                   # Enable client-side caching
+  lazy_expansion: true                 # Headers-only with expand-on-demand
+  context_pruning: false               # Auto-remove irrelevant sections (v1.1+)

@@ -27,6 +27,7 @@ includes:
   - config/memory.yaml
   - config/di.yaml
   - config/features.yaml
+  - config/api.yaml
 
 # =============================================================================
 # Metadata (kept in main file for quick reference)
