@@ -1,47 +1,8 @@
 # Quick Reference Card
 
-> Instant lookup for common tasks and paths
+> Instant lookup for AI collaboration essentials
 
-<!-- TEMPLATE NOTES:
-     📌 PROJECT-SPECIFIC: Commands, paths, and key files - update per project
-     🔄 GENERIC: Autonomy levels, timeouts, session checklist
-     Reference: project.yaml for centralized project variables -->
-
----
-
-## 🚀 Commands
-
-```bash
-# Testing
-pytest tests/ -v                    # Run all tests
-pytest tests/unit/ -v               # Unit tests only
-pytest tests/integration/ -v        # Integration tests only
-
-# Services
-sage serve                          # Start MCP server
-sage get --layer core               # Get core layer content
-sage search "timeout"               # Search knowledge base
-sage info                           # System information
-
-# Development
-ruff check src/                     # Lint check
-ruff format src/                    # Format code
-mypy src/                           # Type check
-```
-
----
-
-## 📁 Key Paths
-
-| Category | Path | Purpose |
-|----------|------|---------|
-| **Conventions** | `.context/conventions/` | Naming, patterns, structure |
-| **Policies** | `.context/policies/` | Timeouts, loading, runtime |
-| **ADRs** | `.context/decisions/` | Architecture decisions |
-| **AI Patterns** | `.context/intelligence/` | Interaction patterns |
-| **Config** | `config/sage.yaml` | Main configuration |
-| **Core Code** | `src/sage/core/` | Core layer |
-| **Services** | `src/sage/services/` | CLI, MCP, API |
+**Type**: 🔄 Generic (reusable across projects)
 
 ---
 
@@ -57,34 +18,80 @@ mypy src/                           # Type check
 
 ---
 
-## ⏱️ Timeouts
+## ⏱️ Timeout Tiers
 
-```
-T1: 100ms  → Cache lookup
-T2: 500ms  → Single file
-T3: 2s     → Layer load
-T4: 5s     → Full KB load
-T5: 10s    → Complex analysis
-```
+| Tier | Duration | Use Case |
+|------|----------|----------|
+| T1 | ~100ms | Cache lookup |
+| T2 | ~500ms | Single file |
+| T3 | ~2s | Layer load |
+| T4 | ~5s | Full init |
+| T5 | ~10s | Complex analysis |
 
 ---
 
 ## 📝 Session End Checklist
 
-1. Create records in `.history/` if significant work done
-2. Update relevant `index.md` file counts
-3. Run tests before committing
-4. Use `.outputs/` for temporary files
+1. ☐ Create records in `.history/` if significant work done
+2. ☐ Update relevant `index.md` file counts
+3. ☐ Run tests before committing
+4. ☐ Use `.outputs/` for temporary files
+5. ☐ Document key decisions made
+
+---
+
+## 📁 Standard Paths
+
+| Category | Typical Path | Purpose |
+|----------|--------------|---------|
+| **AI Config** | `.junie/` | Junie configuration |
+| **Context** | `.context/` | Project knowledge |
+| **History** | `.history/` | Session records |
+| **Outputs** | `.outputs/` | Temporary files |
+| **Docs** | `docs/` | Documentation |
+| **Source** | `src/` | Source code |
+| **Tests** | `tests/` | Test suite |
 
 ---
 
 ## 🔗 Quick Links
 
-- **Full Guidelines**: `guidelines.md`
-- **Project Context**: `.context/index.md`
-- **Session History**: `.history/index.md`
-- **Design Docs**: `docs/design/00-overview.md`
+| Document | Purpose |
+|----------|---------|
+| `guidelines.md` | Full AI collaboration rules |
+| `config.yaml` | Junie settings |
+| `project.yaml` | Project variables |
+| `project-guidelines.md` | Project-specific info |
+| `mcp/mcp.json` | MCP server config |
 
 ---
 
-*Part of SAGE Knowledge Base - Quick Reference*
+## 📋 Naming Conventions
+
+### Session History Files
+
+| Type | Format | Example |
+|------|--------|---------|
+| Conversation | `YYYY-MM-DD-topic.md` | `2025-01-15-api-design.md` |
+| Handoff | `YYYY-MM-DD-task-handoff.md` | `2025-01-15-refactor-handoff.md` |
+| Session | `session-YYYYMMDD-HHMM.md` | `session-20250115-1430.md` |
+
+---
+
+## 🚀 Project-Specific Commands
+
+See `project-guidelines.md` for:
+- Build commands
+- Test commands
+- Service commands
+- Development scripts
+
+See `project.yaml` for:
+- Project identity
+- Tech stack
+- Directory structure
+- Key files
+
+---
+
+*Part of the Junie Configuration Template System*

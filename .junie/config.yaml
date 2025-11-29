@@ -1,16 +1,15 @@
 # Junie Configuration
-# This file contains Junie-specific settings for AI collaboration
+# Generic settings for AI collaboration - reusable across projects
 #
-# TEMPLATE NOTES:
-# - 🔄 GENERIC: Structure and most settings are reusable across projects
-# - 📌 PROJECT-SPECIFIC: Values should match project.yaml definitions
-# - Reference: project.yaml for centralized project variables
+# Type: 🔄 Generic (reusable across projects)
+# Schema Version: 1.0
 
-# Version information (📌 PROJECT-SPECIFIC: match project.yaml)
-version: "0.1.0"
+# Version information
 schema_version: "1.0"
 
-# Collaboration settings
+# ============================================================================
+# COLLABORATION SETTINGS
+# ============================================================================
 collaboration:
   # Default autonomy level (L1-L6)
   # L1-L2: Ask before changes (breaking changes, new deps)
@@ -27,9 +26,12 @@ collaboration:
     auto_record: false  # Manual record creation recommended
     location: ".history/"
 
-# Context loading configuration
+# ============================================================================
+# CONTEXT LOADING CONFIGURATION
+# ============================================================================
 context_loading:
   # Priority order for loading context (first = highest priority)
+  # Customize these paths based on your project structure
   priority:
     - ".context/intelligence/"      # AI patterns first
     - ".context/conventions/"       # Then conventions
@@ -47,7 +49,9 @@ context_loading:
     - ".logs/"
     - ".outputs/"
 
-# Output settings
+# ============================================================================
+# OUTPUT SETTINGS
+# ============================================================================
 output:
   # Directory for temporary/intermediate files
   temp_directory: ".outputs/"
@@ -58,17 +62,22 @@ output:
     - "src/"                        # Source code directory
     - "config/"                     # Configuration directory
 
-# Timeout awareness (reference only, actual values in .context/policies/)
+# ============================================================================
+# TIMEOUT SETTINGS (Reference)
+# ============================================================================
+# These are reference values; actual implementation depends on project
 timeouts:
-  reference: ".context/policies/timeout_hierarchy.md"
-  quick_lookup:
-    T1: "100ms"   # Cache lookup
-    T2: "500ms"   # Single file
-    T3: "2s"      # Layer load
-    T4: "5s"      # Full KB load
-    T5: "10s"     # Complex analysis
+  enabled: true
+  tiers:
+    T1: "100ms"   # Cache lookup, in-memory operations
+    T2: "500ms"   # Single file read, simple queries
+    T3: "2s"      # Layer/module loading
+    T4: "5s"      # Full system initialization
+    T5: "10s"     # Complex analysis, external calls
 
-# MCP configuration
+# ============================================================================
+# MCP CONFIGURATION
+# ============================================================================
 mcp:
   config_file: "mcp/mcp.json"
   default_profile: "standard"
@@ -83,3 +92,12 @@ mcp:
       - fetch
     full:
       - all
+
+# ============================================================================
+# PROJECT REFERENCES
+# ============================================================================
+# Project-specific values are defined in project.yaml
+# This file contains only generic, reusable settings
+project:
+  variables_file: "project.yaml"
+  guidelines_file: "project-guidelines.md"

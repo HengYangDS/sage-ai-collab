@@ -1377,6 +1377,8 @@ def run_server(host: str = "localhost", port: int = 8000) -> None:
     )
     print("\nDev Tools (from tools/):")
     print("  build_knowledge_graph, get_timeout_stats, create_backup, list_backups")
+    print("\nSession Tools:")
+    print("  session_start, session_end, session_status")
     print("\nMeta:")
     print("  list_tools")
 

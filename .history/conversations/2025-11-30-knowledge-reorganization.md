@@ -438,6 +438,87 @@ User requested to continue the optimization work. This iteration performed a com
 
 ---
 
-*Session Duration: ~10 minutes (Iteration 6)*
-*Total Session Duration: ~135 minutes*
+## Session Continuation 7: Session History Automation
+
+### Context
+
+User asked "上述流程如何能更自动化触发" (How can the above workflow be triggered more automatically) - requesting automation for the session history management workflow established in previous sessions.
+
+### Analysis
+
+**Current State**:
+- Session automation requirements documented in `.context/intelligence/session_automation_requirements.md`
+- No MCP tools implemented for session management
+- No CLI commands for sessions
+- Manual workflow only
+
+**Options Evaluated**:
+- **A**: Instruction enhancement only (no code)
+- **B**: MCP tools implementation
+- **C**: CLI commands implementation
+- **D**: Hybrid approach (recommended) — Instructions + MCP tools
+
+User selected **Option D: Hybrid Approach**.
+
+### Decision 11: Implement Session Automation Tools
+
+**Rationale**: MCP tools provide programmatic automation that AI can call automatically based on trigger rules, while enhanced instructions ensure consistent behavior.
+
+**Actions**:
+
+1. **Implemented 3 MCP Tools** in `src/sage/services/mcp_server.py`:
+
+| Tool | Purpose | Parameters |
+|------|---------|------------|
+| `session_start` | Create session state file | `task`, `description`, `autonomy_level` |
+| `session_end` | End session, create record | `summary`, `next_steps`, `record_type` |
+| `session_status` | Check active sessions | (none) |
+
+2. **Updated `list_tools()`** to include `session_tools` category
+
+3. **Updated server startup message** to list session tools
+
+4. **Added trigger rules** to `.junie/guidelines.md`:
+   - Session Automation section with tool descriptions
+   - Automatic trigger rules table (6 conditions)
+   - Usage examples
+
+### Implementation Details
+
+**Tool Behavior**:
+- `session_start`: Creates `.history/current/session-YYYYMMDD-HHMM.md` with task state template
+- `session_end`: 
+  - Auto-detects record type (conversation vs handoff) based on `next_steps`
+  - Creates record in `.history/conversations/` or `.history/handoffs/`
+  - Removes session state file after completion
+- `session_status`: Returns active sessions and recent records
+
+**Trigger Rules Added**:
+
+| Trigger | Action |
+|---------|--------|
+| Complex task begins | `session_status()` → `session_start()` |
+| Work completed | `session_end(summary)` |
+| Work interrupted | `session_end(summary, next_steps="...")` |
+| Resuming work | `session_status()` |
+
+### Files Changed
+
+| File | Action | Changes |
+|------|--------|---------|
+| `src/sage/services/mcp_server.py` | Modified | +329 lines (3 tools + category) |
+| `.junie/guidelines.md` | Modified | +36 lines (automation section) |
+
+### Learnings (Iteration 7)
+
+1. **Tool-Based Automation**: MCP tools provide a middle ground between manual workflows and full automation - AI can call them based on rules without requiring complex event systems.
+
+2. **Auto-Detection Pattern**: The `session_end` tool's auto-detection of record type (based on whether `next_steps` is provided) reduces decision burden while maintaining flexibility.
+
+3. **Incremental Automation**: Phase 1 (semi-automated with tools) can be implemented quickly; full automation (Phase 2-3 with EventBus integration) can be added later.
+
+---
+
+*Session Duration: ~20 minutes (Iteration 7)*
+*Total Session Duration: ~155 minutes*
 *Part of SAGE Knowledge Base - Session History*

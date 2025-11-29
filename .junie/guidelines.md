@@ -1,140 +1,24 @@
-# SAGE Knowledge Base - Project Guidelines
+# Project Guidelines
 
 > **Purpose**: Primary entry point for JetBrains Junie AI collaboration.
-> **Last Updated**: 2025-11-30
-> **Version**: 0.1.0
-> **Status**: Alpha - Under active development and testing
 > **Compatibility**: Junie v2024.3+, MCP v1.0+
 > **Schema Version**: 1.0
 
 ---
 
-<!-- ========================================================================
-     TEMPLATE USAGE NOTES
-     
-     This file follows a template structure for cross-project reusability.
-     
-     📌 PROJECT-SPECIFIC sections: Must be customized per project
-     🔄 GENERIC sections: Can be reused across projects with minimal changes
-     
-     Project variables are centralized in: project.yaml
-     ======================================================================== -->
+## 🔄 About This File
 
-## 📋 Project Overview
+This file contains **generic AI collaboration rules** that apply to any project.
+Project-specific information is defined in separate files:
 
-<!-- 📌 PROJECT-SPECIFIC: Customize for your project -->
-<!-- Reference: project.yaml → project.name, project.description -->
-
-**SAGE Knowledge Base (sage-kb)** is a production-grade knowledge management system designed for
-AI-human collaboration. It provides structured knowledge via CLI, MCP, and API services with built-in timeout protection
-and smart loading.
-
-### Design Philosophy
-
-<!-- 📌 PROJECT-SPECIFIC: Your project's guiding principles -->
-<!-- Reference: project.yaml → project.philosophy -->
-
-- **信 (Xin/Faithfulness)**: Accurate, reliable, testable
-- **达 (Da/Clarity)**: Clear, maintainable, structured
-- **雅 (Ya/Elegance)**: Refined, balanced, sustainable
-
----
-
-## 🛠️ Tech Stack
-
-<!-- 📌 PROJECT-SPECIFIC: Your project's technology choices -->
-<!-- Reference: project.yaml → tech_stack -->
-
-| Category     | Technology                 |
-|--------------|----------------------------|
-| **Language** | Python 3.12+               |
-| **CLI**      | Typer + Rich               |
-| **MCP**      | FastMCP                    |
-| **API**      | FastAPI + Uvicorn          |
-| **Config**   | PyYAML + Pydantic-Settings |
-| **Logging**  | structlog + stdlib logging |
-| **Testing**  | pytest + pytest-asyncio    |
-| **Linting**  | Ruff + MyPy                |
-
----
-
-## 📁 Project Structure
-
-<!-- 📌 PROJECT-SPECIFIC: Your project's directory layout -->
-<!-- Reference: project.yaml → directories -->
-
-```
-sage-kb/
-├── .junie/          # JetBrains Junie configuration (this directory)
-├── .context/        # Project-specific knowledge base
-├── .history/        # AI session history and handoffs
-├── .outputs/        # Intermediate process files (git-ignored)
-├── config/          # Runtime configuration (modular YAML)
-├── docs/            # User-facing documentation
-├── content/         # Generic knowledge (distributable)
-├── src/sage/        # Source code (3-layer architecture)
-├── tools/           # Development tools
-└── tests/           # Test suite
-```
-
-### Key Directories Explained
-
-| Directory   | Purpose                                        | Visibility |
-|-------------|------------------------------------------------|------------|
-| `.junie/`   | AI client config for JetBrains Junie           | Hidden     |
-| `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden     |
-| `.history/` | AI session records and task handoffs           | Hidden     |
-| `.outputs/` | Intermediate process files                     | Hidden     |
-| `config/`   | Runtime configuration (modular YAML structure) | Visible    |
-| `docs/`     | User-facing documentation                      | Visible    |
-| `content/`  | Generic, distributable knowledge               | Visible    |
-
----
-
-## 📐 Coding Standards
-
-<!-- 🔄 GENERIC: Structure is reusable; update references per project -->
-
-> **Reference**: See `content/guidelines/python.md` and `.context/conventions/naming.md` for full details
-
-**Quick Summary:**
-- **Formatter**: Ruff (line-length: 88) | **Type Hints**: Required | **Docstrings**: Google style
-- **Naming**: Files `snake_case.py`, Classes `PascalCase`, Constants `UPPER_SNAKE_CASE`
-- **Architecture**: Core → Services → Capabilities (see `.context/conventions/code_patterns.md`)
-
----
-
-## 📝 Documentation Standards
-
-<!-- 🔄 GENERIC: Reference pattern is reusable -->
-
-> **Reference**: See `content/practices/documentation/DOCUMENTATION_STANDARDS.md` for full SSOT (format rules, knowledge placement, index maintenance)
-
----
-
-## 📄 Important Files
-
-<!-- 📌 PROJECT-SPECIFIC: Your project's key files -->
-<!-- Reference: project.yaml → key_files -->
-
-| File                 | Purpose                                          |
-|----------------------|--------------------------------------------------|
-| `config/sage.yaml`   | Main configuration (timeouts, triggers, loading) |
-| `docs/design/`       | Design documents (architecture, services, etc.)  |
-| `src/sage/core/`     | Core layer (loader, timeout, config)             |
-| `src/sage/services/` | Service layer (CLI, MCP, API)                    |
-| `pyproject.toml`     | Python project configuration                     |
-| `index.md`           | Knowledge base navigation entry                  |
+- **Project Variables**: `project.yaml` — Project identity, tech stack, commands
+- **Project Guidelines**: `project-guidelines.md` — Project-specific documentation
 
 ---
 
 ## 🤖 AI Collaboration Rules
 
-<!-- 🔄 GENERIC: This entire section is reusable across projects -->
-
 ### Autonomy Levels
-
-> **Reference**: See `content/frameworks/autonomy/levels.md` for full 6-level autonomy framework
 
 | Level | Name                        | Description           | Example Tasks                                        |
 |-------|-----------------------------|-----------------------|------------------------------------------------------|
@@ -146,98 +30,188 @@ sage-kb/
 
 ### Key Behaviors
 
-<!-- 🔄 GENERIC: These behaviors apply to any project -->
-
-1. **Always respect timeout limits** (T1:100ms → T5:10s)
-2. **Use English** for code and documentation
-3. **Follow existing patterns** in the codebase
-4. **Run tests** before committing changes
-5. **Update relevant documentation** when modifying features
-6. **Output files to `.outputs/`** — All temporary/intermediate files must go to `.outputs/`, never project root
-7. **Create session records** for significant work sessions (see Session History below)
+1. **Follow existing patterns** in the codebase
+2. **Run tests** before committing changes
+3. **Update relevant documentation** when modifying features
+4. **Output files to designated temp directory** — All temporary/intermediate files must go to the configured output directory (typically `.outputs/`), never project root
+5. **Create session records** for significant work sessions (see Session History below)
+6. **Use English** for code and documentation (unless project specifies otherwise)
+7. **Respect timeout limits** when applicable
 
 ### Session History Management
 
-<!-- 🔄 GENERIC: Pattern is reusable; directory names may vary -->
+At session end, create records in the designated history directory (typically `.history/`):
 
-> **Reference**: See `content/practices/ai_collaboration/session_checklist.md` for generic checklist
-> **Project-specific**: See `.history/_session-end-checklist.md` for SAGE-specific additions
+| Directory | Purpose |
+|-----------|---------|
+| `conversations/` | Key decisions and outcomes |
+| `handoffs/` | Task continuation context |
+| `current/` | Active work state |
 
-At session end, create records in `.history/`: **conversations/** (decisions), **handoffs/** (continuation), **current/** (active work).
-Templates available in `content/templates/` (conversation_record, task_handoff, session_state).
+**Naming Conventions**:
+- Conversations: `YYYY-MM-DD-topic.md`
+- Handoffs: `YYYY-MM-DD-task-handoff.md`
+- Sessions: `session-YYYYMMDD-HHMM.md`
+
+### Session Automation (MCP Tools)
+
+Use these MCP tools to automate session tracking:
+
+| Tool | When to Call | Purpose |
+|------|--------------|---------|
+| `session_start` | Beginning of significant work (>30 min expected) | Creates session state file |
+| `session_end` | Work completed or session ending | Creates conversation/handoff record |
+| `session_status` | Start of new session, or to check state | Shows active sessions and recent records |
+
+**Automatic Trigger Rules**:
+
+| Trigger Condition | Action |
+|-------------------|--------|
+| Session begins with complex task | Call `session_status()` then `session_start(task, description)` |
+| Important decision made | Document in current session file |
+| Session duration > 30 minutes | Ensure session tracking is active |
+| Work completed successfully | Call `session_end(summary)` |
+| Work incomplete/interrupted | Call `session_end(summary, next_steps="...")` for handoff |
+| Resuming after break | Call `session_status()` to check for active sessions |
+
+**Usage Examples**:
+```
+# Start tracking a session
+session_start(task="Implement authentication", description="Add JWT-based auth to API")
+
+# Check current status
+session_status()
+
+# End with completed work
+session_end(summary="Implemented JWT authentication with refresh tokens")
+
+# End with incomplete work (creates handoff)
+session_end(summary="Partial auth implementation", next_steps="Add refresh token logic, write tests")
+```
 
 ### Expert Committee Pattern
 
-<!-- 🔄 GENERIC: Reusable cognitive framework -->
+For complex decisions, simulate a **Level 5 Expert Committee** review with multiple expert groups:
 
-> **Reference**: See `content/frameworks/cognitive/expert_committee.md` for full methodology
-
-For complex decisions, simulate a **Level 5 Expert Committee** review with 4 groups (Architecture, Knowledge Engineering, AI Collaboration, Engineering Practice).
+- **Architecture** — System design, scalability, maintainability
+- **Engineering Practice** — Code quality, testing, CI/CD
+- **Domain Knowledge** — Business logic, requirements alignment
+- **AI Collaboration** — Human-AI interaction patterns
 
 ---
 
 ## ⏱️ Timeout Hierarchy
 
-<!-- 🔄 GENERIC: Timeout concept is reusable; values may vary -->
+When implementing time-sensitive operations, consider a tiered timeout approach:
 
-> **Reference**: See `.context/policies/timeout_hierarchy.md` for full details and implementation guidelines
+| Tier | Duration | Use Case |
+|------|----------|----------|
+| T1 | ~100ms | Cache lookup, in-memory operations |
+| T2 | ~500ms | Single file read, simple queries |
+| T3 | ~2s | Layer/module loading |
+| T4 | ~5s | Full system initialization |
+| T5 | ~10s | Complex analysis, external calls |
 
-**Quick Reference**: T1:100ms (cache) → T2:500ms (file) → T3:2s (layer) → T4:5s (full KB) → T5:10s (analysis)
+**Principle**: Always have fallback strategies for timeout scenarios.
+
+---
+
+## 📐 Coding Standards
+
+### General Principles
+
+- **Formatter**: Use project's configured formatter
+- **Type Hints**: Required for statically-typed languages
+- **Docstrings**: Follow project's documentation style
+- **Naming**: Follow project's naming conventions
+
+### Architecture Patterns
+
+- Follow the project's established architecture patterns
+- Maintain layer separation (e.g., Core → Services → Capabilities)
+- Use dependency injection where applicable
+- Implement proper error handling and logging
+
+---
+
+## 📝 Documentation Standards
+
+### Key Principles
+
+1. **Single Source of Truth (SSOT)** — One authoritative location per topic
+2. **Index Maintenance** — Keep navigation indexes up to date
+3. **Cross-References** — Link related documents appropriately
+4. **Version Tracking** — Note significant changes
+
+### Documentation Locations
+
+| Type | Typical Location |
+|------|------------------|
+| User-facing docs | `docs/` |
+| API documentation | `docs/api/` |
+| Design documents | `docs/design/` |
+| Project context | `.context/` |
+| Generic knowledge | `content/` |
+
+---
+
+## 📁 Standard Directory Structure
+
+A well-organized project typically includes:
+
+```
+project-root/
+├── .junie/          # AI collaboration configuration
+├── .context/        # Project-specific knowledge (optional)
+├── .history/        # AI session history (optional)
+├── .outputs/        # Temporary files (git-ignored)
+├── config/          # Runtime configuration
+├── docs/            # User-facing documentation
+├── src/             # Source code
+├── tests/           # Test suite
+└── tools/           # Development tools
+```
+
+### Hidden Directories
+
+| Directory | Purpose |
+|-----------|---------|
+| `.junie/` | Junie AI configuration |
+| `.context/` | Project-specific knowledge base |
+| `.history/` | AI session records |
+| `.outputs/` | Temporary/intermediate files |
 
 ---
 
 ## 🔗 References
 
-<!-- 📌 PROJECT-SPECIFIC: Update paths per project -->
+For project-specific information, see:
 
-- **Project Variables**: @file:project.yaml
-- **Design Documents**: @file:docs/design/00-overview.md
-- **Documentation Standards**: @file:content/practices/documentation/DOCUMENTATION_STANDARDS.md
-- **Documentation Index**: @file:docs/index.md
-- **Configuration**: @file:config/sage.yaml
-- **Project Context**: @file:.context/index.md
-- **Knowledge Content**: @file:content/index.md
-- **Directory Conventions**: @file:content/practices/documentation/project_directory_structure.md
-- **Timeout Hierarchy**: @file:.context/policies/timeout_hierarchy.md
-- **Core Principles**: @file:content/core/principles.md
-
----
-
-## 📝 Quick Commands
-
-<!-- 📌 PROJECT-SPECIFIC: Your project's commands -->
-<!-- Reference: project.yaml → commands -->
-
-```bash
-# Run tests
-pytest tests/ -v
-
-# Start MCP server
-sage serve
-
-# CLI usage
-sage get --layer core
-sage search "timeout"
-sage info
-```
+- **Project Variables**: `project.yaml`
+- **Project Guidelines**: `project-guidelines.md`
+- **Quick Reference**: `quickref.md`
+- **Configuration**: `config.yaml`
+- **MCP Settings**: `mcp/mcp.json`
 
 ---
 
 ## 📋 Template Information
 
-<!-- 🔄 GENERIC: Template metadata -->
+This `.junie/` configuration follows the **Thin Layer** principle:
 
-This `.junie/` configuration follows the **薄层 (Thin Layer)** principle:
+| File | Purpose |
+|------|---------|
+| `README.md` | Directory documentation |
+| `guidelines.md` | Generic AI collaboration rules (this file) |
+| `config.yaml` | Junie-specific settings |
+| `quickref.md` | Quick reference card |
+| `project.yaml` | Project variables definition |
+| `project-guidelines.md` | Project-specific guidelines |
+| `mcp/mcp.json` | MCP server configuration |
 
-- **Entry Point**: `guidelines.md` (this file)
-- **Project Variables**: `project.yaml` — centralized project-specific values
-- **AI Configuration**: `config.yaml` — Junie-specific settings
-- **Quick Reference**: `quickref.md` — instant lookup card
-- **MCP Configuration**: `mcp/mcp.json` — MCP server settings
-
-**Reusability**: Sections marked with 🔄 GENERIC can be copied to new projects with minimal changes.
-Sections marked with 📌 PROJECT-SPECIFIC should be customized using values from `project.yaml`.
+**Reusability**: Files marked as 🔄 Generic can be copied to new projects without modification.
+Files marked as 📌 Project must be customized for each project.
 
 ---
 
-*This guideline follows the SAGE design philosophy: 信达雅 (Xin-Da-Ya)*
+*Part of the Junie Configuration Template System*
