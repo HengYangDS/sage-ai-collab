@@ -358,7 +358,7 @@ groups:
 
       - alert: HighLatency
         expr: |
-          histogram_quantile(0.99, 
+          histogram_quantile(0.99,
             sum(rate(http_request_duration_seconds_bucket[5m])) by (le)
           ) > 2
         for: 5m

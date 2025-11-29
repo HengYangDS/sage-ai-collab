@@ -226,23 +226,9 @@ git commit -m "chore(deps): update dependencies"
 
 ## 6. Environment Management
 
-### 6.1 Virtual Environments
+### 6.1 Conda Environment (Recommended)
 
-```bash
-# Create virtual environment
-python -m venv .venv
-
-# Activate (Linux/macOS)
-source .venv/bin/activate
-
-# Activate (Windows)
-.venv\Scripts\activate
-
-# Install dependencies
-pip install -e ".[dev]"
-```
-
-### 6.2 Conda Environment
+Miniconda is the recommended virtual environment management tool.
 
 ```yaml
 # environment.yml
@@ -266,16 +252,35 @@ conda activate sage-kb
 
 # Update
 conda env update -f environment.yml
+
+# Deactivate
+conda deactivate
+```
+
+### 6.2 Virtual Environments (venv Alternative)
+
+```bash
+# Create virtual environment
+python -m venv .venv
+
+# Activate (Linux/macOS)
+source .venv/bin/activate
+
+# Activate (Windows)
+.venv\Scripts\activate
+
+# Install dependencies
+pip install -e ".[dev]"
 ```
 
 ### 6.3 Development Setup
 
 ```bash
-# Full development setup
+# Full development setup (using conda - recommended)
 git clone https://github.com/org/sage-kb.git
 cd sage-kb
-python -m venv .venv
-source .venv/bin/activate
+conda env create -f environment.yml
+conda activate sage-kb
 pip install -e ".[all]"
 pre-commit install
 ```

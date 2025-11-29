@@ -57,7 +57,7 @@ Look for issues labeled:
 
 - Python 3.12+
 - Git
-- Virtual environment tool (venv, conda)
+- Virtual environment tool (conda/miniconda recommended, or venv)
 
 ### Setup Steps
 
@@ -68,10 +68,14 @@ Look for issues labeled:
 git clone https://github.com/YOUR_USERNAME/sage-kb.git
 cd sage-kb
 
-# 3. Create virtual environment
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-# .venv\Scripts\activate   # Windows
+# 3. Create virtual environment (conda recommended)
+conda env create -f environment.yml
+conda activate sage-kb
+
+# Or use venv as alternative:
+# python -m venv .venv
+# source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate     # Windows
 
 # 4. Install dependencies
 pip install -e ".[all]"

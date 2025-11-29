@@ -378,7 +378,15 @@ The following diagram shows how Junie decides whether to execute a command autom
 
 **Platform Compatibility**: 🔧 Platform-Specific (select based on your OS and tool)
 
-**Supports both venv and conda**
+**Supports both conda and venv (conda/miniconda recommended)**
+
+**conda (Miniconda/Anaconda) - Recommended**:
+
+```regex
+^\Qconda activate\E [^\s;&|<>@$]*$
+^\Qconda deactivate\E$
+^\Qconda env list\E$
+```
 
 **venv (Python built-in)**:
 
@@ -388,20 +396,12 @@ The following diagram shows how Junie decides whether to execute a command autom
 ^\.\\[^\s;&|<>@$]*\\Scripts\\Activate.ps1$
 ```
 
-**conda (Anaconda/Miniconda)**:
-
-```regex
-^\Qconda activate\E [^\s;&|<>@$]*$
-^\Qconda deactivate\E$
-^\Qconda env list\E$
-```
-
-| Function       | venv (Windows)                | venv (macOS/Linux)         | conda (All Platforms)     |
-|----------------|-------------------------------|----------------------------|---------------------------|
-| Create env     | `python -m venv`              | `python -m venv`           | `conda create -n`         |
-| Activate env   | `.\venv\Scripts\Activate.ps1` | `source venv/bin/activate` | `conda activate env_name` |
-| Deactivate env | `deactivate`                  | `deactivate`               | `conda deactivate`        |
-| List envs      | -                             | -                          | `conda env list`          |
+| Function       | conda (All Platforms) - Recommended | venv (Windows)                | venv (macOS/Linux)         |
+|----------------|-------------------------------------|-------------------------------|----------------------------|
+| Create env     | `conda create -n env_name`          | `python -m venv`              | `python -m venv`           |
+| Activate env   | `conda activate env_name`           | `.\venv\Scripts\Activate.ps1` | `source venv/bin/activate` |
+| Deactivate env | `conda deactivate`                  | `deactivate`                  | `deactivate`               |
+| List envs      | `conda env list`                    | -                             | -                          |
 
 **Allowed Operations**: Virtual environment creation, activation, deactivation, and listing
 

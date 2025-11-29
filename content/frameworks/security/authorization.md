@@ -306,7 +306,7 @@ policies = [
     ABACPolicy(
         name="clearance_access",
         condition=lambda ctx: (
-            ctx.resource.get("classification", 0) <= 
+            ctx.resource.get("classification", 0) <=
             ctx.subject.get("clearance_level", 0)
         )
     ),

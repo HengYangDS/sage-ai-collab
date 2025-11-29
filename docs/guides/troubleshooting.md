@@ -92,8 +92,9 @@ sage get --layer core --timeout 5000
 
 2. **Verify virtual environment**:
    ```bash
-   # Ensure venv is activated
-   which python  # Should point to venv
+   # Ensure conda environment is activated (recommended)
+   conda env list  # Check active environment
+   which python    # Should point to conda env
    
    # Reinstall in correct environment
    pip install -e ".[all]"
@@ -110,7 +111,14 @@ sage get --layer core --timeout 5000
 
 **Solutions**:
 
-1. **Use virtual environment** (recommended):
+1. **Use conda environment** (recommended):
+   ```bash
+   conda create -n sage-kb python=3.12
+   conda activate sage-kb
+   pip install sage-kb
+   ```
+
+   Or use venv as alternative:
    ```bash
    python -m venv .venv
    source .venv/bin/activate  # Linux/macOS

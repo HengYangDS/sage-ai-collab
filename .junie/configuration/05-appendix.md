@@ -196,7 +196,7 @@ Copy-paste the complete rule block below:
 - ✅ Development Assistance - Windows (2: Invoke-WebRequest, curl)
 - ✅ Compression - Universal (2: unzip)
 - ✅ Network Diagnostics (4)
-- ✅ Python Virtual Environments - Windows (4: venv create, activate, conda)
+- ✅ Python Virtual Environments - Windows (4: conda activate/deactivate/list, venv)
 - ✅ Code Quality Tools (6)
 - ✅ Database Clients (2)
 
@@ -301,7 +301,7 @@ Copy-paste the complete rule block below:
 - ✅ Text Processing (7: head, tail, wc, sort, uniq, awk, sed)
 - ✅ Compression - Unix (4: tar, unzip)
 - ✅ Network Diagnostics (4)
-- ✅ Python Virtual Environments - Unix (4: venv create, source activate, conda)
+- ✅ Python Virtual Environments - Unix (4: conda activate/deactivate/list, venv)
 - ✅ Code Quality Tools (6)
 - ✅ Database Clients (2)
 
@@ -309,21 +309,21 @@ Copy-paste the complete rule block below:
 
 ### 📋 Cross-Platform Differences Summary
 
-| Feature             | Windows (68 Rules)            | macOS/Linux (76 Rules)                                       |
-|---------------------|-------------------------------|--------------------------------------------------------------|
-| **File Listing**    | `dir`, `Get-ChildItem`        | `ls`                                                         |
-| **File Search**     | `Get-ChildItem -Recurse`      | `find`                                                       |
-| **Content Search**  | `Select-String`               | `grep`                                                       |
-| **View File**       | `Get-Content`                 | `cat`                                                        |
-| **Print Text**      | `Write-Host`                  | `echo`                                                       |
-| **Show Path**       | `Get-Location`                | `pwd`                                                        |
-| **Environment**     | (PowerShell automatic)        | `env`                                                        |
-| **Current Time**    | `Get-Date`                    | `date`                                                       |
-| **Find Command**    | `Get-Command`                 | `which`                                                      |
-| **HTTP Request**    | `Invoke-WebRequest`, `curl`   | `wget`, `curl`                                               |
-| **Text Processing** | (Not included)                | `head`, `tail`, `wc`, `sort`, `uniq`, `awk`, `sed` (7 rules) |
-| **Archive**         | `unzip` (2)                   | `tar`, `unzip` (4)                                           |
-| **Activate venv**   | `.\venv\Scripts\Activate.ps1` | `source venv/bin/activate`                                   |
+| Feature             | Windows (68 Rules)                                                      | macOS/Linux (76 Rules)                                               |
+|---------------------|-------------------------------------------------------------------------|----------------------------------------------------------------------|
+| **File Listing**    | `dir`, `Get-ChildItem`                                                  | `ls`                                                                 |
+| **File Search**     | `Get-ChildItem -Recurse`                                                | `find`                                                               |
+| **Content Search**  | `Select-String`                                                         | `grep`                                                               |
+| **View File**       | `Get-Content`                                                           | `cat`                                                                |
+| **Print Text**      | `Write-Host`                                                            | `echo`                                                               |
+| **Show Path**       | `Get-Location`                                                          | `pwd`                                                                |
+| **Environment**     | (PowerShell automatic)                                                  | `env`                                                                |
+| **Current Time**    | `Get-Date`                                                              | `date`                                                               |
+| **Find Command**    | `Get-Command`                                                           | `which`                                                              |
+| **HTTP Request**    | `Invoke-WebRequest`, `curl`                                             | `wget`, `curl`                                                       |
+| **Text Processing** | (Not included)                                                          | `head`, `tail`, `wc`, `sort`, `uniq`, `awk`, `sed` (7 rules)         |
+| **Archive**         | `unzip` (2)                                                             | `tar`, `unzip` (4)                                                   |
+| **Activate env**    | `conda activate env_name` (recommended) / `.\venv\Scripts\Activate.ps1` | `conda activate env_name` (recommended) / `source venv/bin/activate` |
 
 ---
 
@@ -349,7 +349,8 @@ Copy-paste the complete rule block below:
 
 ---
 
-> **💡 Note**: Include conda virtual environment rules if using conda instead of venv (
+> **💡 Note**: Conda/Miniconda is recommended for virtual environment management. Both conda and venv rules are
+> included (
 > see [Python Virtual Environments](#11-python-virtual-environments-6-rules---v20-added) in Configuration Rules)
 
 ---

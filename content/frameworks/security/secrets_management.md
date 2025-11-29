@@ -231,7 +231,7 @@ def generate_password(
     
     # Fill rest randomly
     password.extend(
-        secrets.choice(alphabet) 
+        secrets.choice(alphabet)
         for _ in range(length - len(password))
     )
     

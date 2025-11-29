@@ -81,6 +81,36 @@ commands:
   cli_get: "sage get --layer core"
   cli_search: "sage search \"timeout\""
   cli_info: "sage info"
+  
+  # Development Tools (tools/ directory)
+  # Reference: tools/README.md for full documentation
+  tools:
+    # Development environment setup
+    setup_dev: "python tools/dev_scripts/setup_dev.py"
+    setup_dev_minimal: "python tools/dev_scripts/setup_dev.py --minimal"
+    setup_dev_reset: "python tools/dev_scripts/setup_dev.py --reset"
+    
+    # Knowledge graph
+    build_graph: "python tools/knowledge_graph/knowledge_graph_builder.py"
+    visualize_graph: "python tools/knowledge_graph/knowledge_graph_builder.py --visualize --output .outputs/graph.html"
+    
+    # Timeout monitoring and management
+    monitor_timeout: "python tools/monitors/timeout_monitor.py --dashboard"
+    timeout_test: "python tools/timeout_manager.py test"
+    timeout_benchmark: "python tools/timeout_manager.py benchmark --all"
+    timeout_tune: "python tools/timeout_manager.py tune --recommend"
+    
+    # Content migration
+    migration_status: "python tools/migration_toolkit.py status"
+    migration_backup: "python tools/migration_toolkit.py backup"
+    migration_validate: "python tools/migration_toolkit.py validate"
+    
+    # Quality checks
+    check_links: "python tools/check_links.py"
+    maintain_index: "python tools/index_maintainer.py"
+    check_architecture: "python tools/dev_scripts/check_architecture.py"
+    validate_format: "python tools/dev_scripts/validate_format.py"
+    generate_index: "python tools/dev_scripts/generate_index.py"
 
 # ============================================================================
 # KEY FILES

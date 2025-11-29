@@ -45,7 +45,9 @@ We will...
 
 ## Related
 
-- [Related ADR](../decisions/ADR-0000-example.md)
+<!-- Add links to related ADRs, documents, or external resources -->
+
+- [Related ADR](#) <!-- Replace with actual ADR path, e.g., ../decisions/ADR-0001-architecture.md -->
 
 ---
 

@@ -70,8 +70,10 @@ This convention is enforced by:
 
 ## Related
 
-- [Related Convention](./related_convention.md)
-- [Code Patterns](./code_patterns.md)
+<!-- Add links to related conventions, patterns, or documents -->
+
+- [Related Convention](#) <!-- Replace with actual convention path -->
+- [Code Patterns](#) <!-- Replace with actual patterns path -->
 
 ---
 

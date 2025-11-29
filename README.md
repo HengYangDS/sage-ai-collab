@@ -29,6 +29,26 @@ SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for A
 
 ## Installation
 
+### Prerequisites
+
+- Python 3.12+
+- Miniconda (recommended) or venv
+
+### Setup Environment (Recommended)
+
+```bash
+# Create conda environment (recommended)
+conda env create -f environment.yml
+conda activate sage-kb
+
+# Or use venv as alternative:
+# python -m venv .venv
+# source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate     # Windows
+```
+
+### Install Package
+
 ```bash
 # Install from source
 pip install -e .
@@ -93,10 +113,14 @@ SAGE uses a 3-layer architecture:
 ### Setup
 
 ```bash
-# Install with development dependencies
+# 1. Setup conda environment (see Installation section above)
+conda env create -f environment.yml
+conda activate sage-kb
+
+# 2. Install with development dependencies
 pip install -e ".[dev]"
 
-# Install pre-commit hooks
+# 3. Install pre-commit hooks
 pip install pre-commit
 pre-commit install
 ```

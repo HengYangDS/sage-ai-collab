@@ -51,7 +51,7 @@ python tools/dev_scripts/setup_dev.py --reset       # Reset to clean state
 
 **What it does:**
 
-1. Creates virtual environment (if not exists)
+1. Creates virtual environment (if not exists) - conda recommended, venv as fallback
 2. Installs all dependencies (`pip install -e ".[dev]"`)
 3. Sets up pre-commit hooks
 4. Creates necessary directories (`.logs/`, `.outputs/`, `.cache/`)
@@ -60,10 +60,10 @@ python tools/dev_scripts/setup_dev.py --reset       # Reset to clean state
 
 **Environment Variables:**
 
-| Variable              | Description              | Default |
-|-----------------------|--------------------------|---------|
-| `SAGE_DEV_VENV`       | Virtual environment path | `.venv` |
-| `SAGE_DEV_SKIP_TESTS` | Skip initial tests       | `false` |
+| Variable              | Description                         | Default |
+|-----------------------|-------------------------------------|---------|
+| `SAGE_DEV_VENV`       | Virtual environment path (for venv) | `.venv` |
+| `SAGE_DEV_SKIP_TESTS` | Skip initial tests                  | `false` |
 
 ---
 
@@ -311,12 +311,23 @@ python tools/timeout_manager.py tune --recommend
 ### Setting Up Development
 
 ```bash
-# 1. Clone and setup
+# 1. Clone repository
 git clone https://github.com/HengYangDS/sage-kb.git
 cd sage-kb
+
+# 2. Setup conda environment (recommended)
+conda env create -f environment.yml
+conda activate sage-kb
+
+# Or use venv as alternative:
+# python -m venv .venv
+# source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate     # Windows
+
+# 3. Run setup script
 python tools/dev_scripts/setup_dev.py
 
-# 2. Verify setup
+# 4. Verify setup
 sage info
 pytest tests/ -v --tb=short
 ```

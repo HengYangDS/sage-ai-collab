@@ -8,20 +8,69 @@
         "-y",
         "@modelcontextprotocol/server-filesystem",
         "${PROJECT_ROOT}"
-      ]
+      ],
+      "_meta": {
+        "description": "File system operations within project scope - read, write, search, and list files",
+        "priority": "P0",
+        "triggers": [
+          "Need to read project file content",
+          "Search for code patterns or text in files",
+          "List directory contents",
+          "Check if file exists",
+          "Read configuration files"
+        ],
+        "examples": [
+          "filesystem.read_file('.junie/guidelines.md')",
+          "filesystem.search_files('class UserService')",
+          "filesystem.list_directory('src/')"
+        ],
+        "fallback": "Use IDE built-in file reading if filesystem server unavailable"
+      }
     },
     "fetch": {
       "command": "uvx",
       "args": [
         "mcp-server-fetch"
-      ]
+      ],
+      "_meta": {
+        "description": "HTTP requests to external URLs and APIs - fetch web content and API responses",
+        "priority": "P1",
+        "triggers": [
+          "Need to access external documentation or URLs",
+          "Fetch API responses from external services",
+          "Download remote resources",
+          "Check external service status"
+        ],
+        "examples": [
+          "fetch.get('https://api.example.com/docs')",
+          "fetch.post('https://api.example.com/data', body={...})"
+        ],
+        "fallback": "Ask user to provide content manually if fetch fails"
+      }
     },
     "memory": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "@modelcontextprotocol/server-memory"
-      ]
+      ],
+      "_meta": {
+        "description": "Cross-session knowledge persistence - store and retrieve information in knowledge graph",
+        "priority": "P0",
+        "triggers": [
+          "Store important decisions for future sessions",
+          "Remember user preferences or conventions",
+          "Persist learned patterns from codebase",
+          "Retrieve context from previous sessions",
+          "Build project knowledge graph"
+        ],
+        "examples": [
+          "memory.create_entities([{name: 'auth_decision', type: 'decision', content: 'Using JWT'}])",
+          "memory.search_nodes('authentication approach')",
+          "memory.create_relations([{from: 'UserService', to: 'AuthModule', type: 'depends_on'}])"
+        ],
+        "fallback": "Document decisions in .history/ files if memory server unavailable"
+      }
     },
     "github": {
       "command": "npx.cmd",
@@ -31,6 +80,23 @@
       ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+      },
+      "_meta": {
+        "description": "GitHub API integration - access issues, PRs, repository metadata and actions",
+        "priority": "P1",
+        "triggers": [
+          "Query GitHub issues or pull requests",
+          "Check repository metadata or status",
+          "Search for related issues",
+          "Get PR review comments",
+          "Access commit history from GitHub"
+        ],
+        "examples": [
+          "github.list_issues(repo='owner/repo', state='open')",
+          "github.get_pull_request(repo='owner/repo', pr_number=123)",
+          "github.search_issues(query='bug label:critical')"
+        ],
+        "fallback": "Use git CLI commands for local repository operations"
       }
     },
     "puppeteer": {
@@ -38,35 +104,117 @@
       "args": [
         "-y",
         "@modelcontextprotocol/server-puppeteer"
-      ]
+      ],
+      "_meta": {
+        "description": "Headless browser automation - web scraping, UI testing, and page interaction",
+        "priority": "P2",
+        "triggers": [
+          "Need to test web UI behavior",
+          "Scrape dynamic web content",
+          "Take screenshots of web pages",
+          "Automate browser interactions",
+          "Test frontend rendering"
+        ],
+        "examples": [
+          "puppeteer.navigate('http://localhost:3000')",
+          "puppeteer.screenshot()",
+          "puppeteer.click('button#submit')",
+          "puppeteer.evaluate('document.title')"
+        ],
+        "fallback": "Use fetch for static content, manual testing for UI interactions"
+      }
     },
     "docker": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "mcp-server-docker"
-      ]
+      ],
+      "_meta": {
+        "description": "Docker container management - manage containers, images, and services",
+        "priority": "P2",
+        "triggers": [
+          "Check container status",
+          "Start or stop development services",
+          "View container logs",
+          "Manage Docker images",
+          "Debug containerized applications"
+        ],
+        "examples": [
+          "docker.list_containers()",
+          "docker.container_logs(container_id='abc123')",
+          "docker.start_container(container_id='abc123')"
+        ],
+        "fallback": "Use docker CLI commands directly in terminal"
+      }
     },
     "sequential-thinking": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "@modelcontextprotocol/server-sequential-thinking"
-      ]
+      ],
+      "_meta": {
+        "description": "Step-by-step problem decomposition - structured reasoning for complex problems",
+        "priority": "P1",
+        "triggers": [
+          "Complex problem requiring step-by-step breakdown",
+          "Multi-step reasoning needed",
+          "Debugging complex issues",
+          "Architecture decision analysis",
+          "Planning complex refactoring"
+        ],
+        "examples": [
+          "sequential_thinking.analyze(problem='How to migrate from REST to GraphQL')",
+          "sequential_thinking.decompose(task='Implement authentication system')"
+        ],
+        "fallback": "Use Expert Committee Pattern in guidelines.md for complex decisions"
+      }
     },
     "everything": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "mcp-server-everything"
-      ]
+      ],
+      "_meta": {
+        "description": "System-wide fast file search using Everything search engine (Windows)",
+        "priority": "P2",
+        "triggers": [
+          "Need fast file search across entire system",
+          "Find files by name pattern system-wide",
+          "Locate files outside project directory",
+          "Search for files when path is unknown"
+        ],
+        "examples": [
+          "everything.search('*.config.js')",
+          "everything.search('package.json')"
+        ],
+        "fallback": "Use filesystem.search for project-scoped search, or terminal find/grep"
+      }
     },
     "desktop-commander": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "@wonderwhy-er/desktop-commander@latest"
-      ]
+      ],
+      "_meta": {
+        "description": "Desktop automation and system command execution - advanced terminal and file operations",
+        "priority": "P2",
+        "triggers": [
+          "Execute complex terminal commands",
+          "Perform system-level operations",
+          "Automate desktop tasks",
+          "Run long-running background processes",
+          "Advanced file manipulations"
+        ],
+        "examples": [
+          "desktop_commander.execute('npm run build')",
+          "desktop_commander.run_background('npm run dev')"
+        ],
+        "fallback": "Use standard terminal commands via bash tool"
+      }
     }
   }
 }

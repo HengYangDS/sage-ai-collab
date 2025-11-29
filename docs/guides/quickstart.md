@@ -19,9 +19,22 @@
 ### 1.1 Requirements
 
 - Python 3.12 or higher
-- pip or conda package manager
+- Miniconda (recommended) or venv
 
-### 1.2 Install from PyPI
+### 1.2 Setup Environment (Recommended)
+
+```bash
+# Create conda environment (recommended)
+conda create -n sage-kb python=3.12
+conda activate sage-kb
+
+# Or use venv as alternative:
+# python -m venv .venv
+# source .venv/bin/activate  # Linux/macOS
+# .venv\Scripts\activate     # Windows
+```
+
+### 1.3 Install from PyPI
 
 ```bash
 # Basic installation
@@ -34,18 +47,22 @@ pip install sage-kb[mcp]
 pip install sage-kb[all]
 ```
 
-### 1.3 Install from Source
+### 1.4 Install from Source
 
 ```bash
 # Clone the repository
 git clone https://github.com/HengYangDS/sage-kb.git
 cd sage-kb
 
+# Setup conda environment
+conda env create -f environment.yml
+conda activate sage-kb
+
 # Install in development mode
 pip install -e ".[dev]"
 ```
 
-### 1.4 Verify Installation
+### 1.5 Verify Installation
 
 ```bash
 # Check version
@@ -145,7 +162,9 @@ Add SAGE to your AI client's MCP configuration:
   "mcpServers": {
     "sage": {
       "command": "sage",
-      "args": ["serve"],
+      "args": [
+        "serve"
+      ],
       "env": {}
     }
   }
@@ -198,9 +217,11 @@ for result in results:
 import asyncio
 from sage import async_get_knowledge
 
+
 async def main():
     knowledge = await async_get_knowledge(layer="core")
     print(knowledge.content)
+
 
 asyncio.run(main())
 ```

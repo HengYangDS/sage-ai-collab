@@ -454,7 +454,7 @@ const usersWithOrders = await prisma.user.findMany({
 # Use raw SQL for complex queries
 result = session.execute(
     """
-        SELECT 
+        SELECT
             u.id,
             u.name,
             COUNT(o.id) as order_count,

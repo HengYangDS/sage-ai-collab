@@ -33,7 +33,7 @@
 ### 1.2 Review Order
 
 | Phase | Focus              | Files                        |
-|-------|--------------------|------------------------------| 
+|-------|--------------------|------------------------------|
 | 1     | Standards document | `documentation_standards.md` |
 | 2     | Index files        | `*/index.md`                 |
 | 3     | Core content       | High-traffic files           |

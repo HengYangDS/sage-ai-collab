@@ -54,11 +54,11 @@ sage check --all
 
 **Causes & Solutions**:
 
-| Cause                    | Solution              |
-|--------------------------|-----------------------|
-| Package not installed    | `pip install -e .`    |
-| Wrong Python environment | Activate correct venv |
-| Path issues              | Check `PYTHONPATH`    |
+| Cause                    | Solution                           |
+|--------------------------|------------------------------------|
+| Package not installed    | `pip install -e .`                 |
+| Wrong Python environment | Activate correct conda env or venv |
+| Path issues              | Check `PYTHONPATH`                 |
 
 **Debug Steps**:
 
@@ -437,12 +437,12 @@ sage check --all
 
 ### 8.4 Emergency Procedures
 
-| Scenario            | Procedure                              |
-|---------------------|----------------------------------------|
-| Server crash        | Check logs → Restart → Review errors   |
-| Data loss           | Restore from backup → Verify integrity |
-| Config corruption   | Reset config → Reapply settings        |
-| Dependency conflict | Create fresh venv → Reinstall          |
+| Scenario            | Procedure                               |
+|---------------------|-----------------------------------------|
+| Server crash        | Check logs → Restart → Review errors    |
+| Data loss           | Restore from backup → Verify integrity  |
+| Config corruption   | Reset config → Reapply settings         |
+| Dependency conflict | Create fresh conda env/venv → Reinstall |
 
 ---
 

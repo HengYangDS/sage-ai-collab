@@ -140,6 +140,8 @@ Content...
 
 ### 5.2 Index Pattern
 
+<!-- Example template - replace placeholder links with actual document paths -->
+
 ```markdown
 # Category Index
 
@@ -151,8 +153,8 @@ Content...
 
 | Document | Purpose | Tokens |
 |----------|---------|--------|
-| [Doc 1](doc1.md) | Description | ~200 |
-| [Doc 2](doc2.md) | Description | ~300 |
+| [Doc 1](#) | Description | ~200 |  <!-- Replace # with actual path -->
+| [Doc 2](#) | Description | ~300 |  <!-- Replace # with actual path -->
 
 ---
 

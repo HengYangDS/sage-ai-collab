@@ -67,8 +67,10 @@ Key configuration options:
 
 ## Related
 
-- [Related Guide](./related-guide.md)
-- [API Reference](../api/reference.md)
+<!-- Add links to related guides, references, or documents -->
+
+- [Related Guide](#) <!-- Replace with actual guide path -->
+- [API Reference](#) <!-- Replace with actual API reference path -->
 
 ---
 

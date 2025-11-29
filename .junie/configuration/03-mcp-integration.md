@@ -10,10 +10,11 @@
 - [2. MCP Tools for Junie](#2-mcp-tools-for-junie)
 - [3. MCP Configuration Methods](#3-mcp-configuration-methods)
 - [4. Integration Roadmap](#4-integration-roadmap)
-- [5. Best Practices](#5-best-practices)
-- [6. Troubleshooting](#6-troubleshooting)
-- [7. FAQ](#7-faq)
-- [8. Summary](#8-summary)
+- [5. Tool Invocation Patterns](#5-tool-invocation-patterns)
+- [6. Best Practices](#6-best-practices)
+- [7. Troubleshooting](#7-troubleshooting)
+- [8. FAQ](#8-faq)
+- [9. Summary](#9-summary)
 
 ---
 
@@ -550,7 +551,173 @@ documentation: https://www.jetbrains.com/help/junie/mcp-settings.html
 
 ---
 
-## 5. Best Practices
+## 5. Tool Invocation Patterns
+
+This section provides guidance on when and how AI agents should automatically invoke MCP tools. Tool metadata is defined
+in `mcp.json` with `_meta` fields containing triggers, examples, and fallbacks.
+
+#### 5.1 Tool Priority Levels
+
+| Priority | Level    | Description                                    | Tools                                            |
+|:---------|:---------|:-----------------------------------------------|:-------------------------------------------------|
+| **P0**   | Core     | Essential tools for basic functionality        | filesystem, memory                               |
+| **P1**   | Enhanced | Tools that improve efficiency and capabilities | fetch, github, sequential-thinking               |
+| **P2**   | Optional | Specialized tools for specific use cases       | puppeteer, docker, everything, desktop-commander |
+
+**Recommendation**: Start with P0 tools, add P1 tools after validating benefits, use P2 tools only when specific needs
+arise.
+
+---
+
+#### 5.2 Automatic Trigger Rules
+
+The following table maps common task scenarios to appropriate MCP tools:
+
+| Trigger Condition                        | Tool                  | Action                                                                |
+|:-----------------------------------------|:----------------------|:----------------------------------------------------------------------|
+| Need to read project file content        | `filesystem`          | `filesystem.read_file('.junie/guidelines.md')`                        |
+| Search for code patterns or text         | `filesystem`          | `filesystem.search_files('class UserService')`                        |
+| List directory contents                  | `filesystem`          | `filesystem.list_directory('src/')`                                   |
+| Store important decisions for future     | `memory`              | `memory.create_entities([{name: 'decision', ...}])`                   |
+| Retrieve context from previous sessions  | `memory`              | `memory.search_nodes('authentication approach')`                      |
+| Build project knowledge graph            | `memory`              | `memory.create_relations([{from: 'A', to: 'B', type: 'depends_on'}])` |
+| Access external documentation or URLs    | `fetch`               | `fetch.get('https://api.example.com/docs')`                           |
+| Query GitHub issues or PRs               | `github`              | `github.list_issues(repo='owner/repo', state='open')`                 |
+| Complex problem requiring step breakdown | `sequential-thinking` | `sequential_thinking.analyze(problem='...')`                          |
+| Test web UI behavior                     | `puppeteer`           | `puppeteer.navigate('http://localhost:3000')`                         |
+| Check container status                   | `docker`              | `docker.list_containers()`                                            |
+| Fast file search across system           | `everything`          | `everything.search('*.config.js')`                                    |
+| Execute complex terminal commands        | `desktop-commander`   | `desktop_commander.execute('npm run build')`                          |
+
+---
+
+#### 5.3 Tool Chain Combinations
+
+For complex workflows, combine multiple tools in sequence:
+
+**Pattern 1: Intelligent Configuration Loading**
+
+```
+1. filesystem.search_files('authentication')     # Find relevant config
+2. filesystem.read_file('found_file.md')         # Read content
+3. memory.create_entities([...])                 # Persist to knowledge graph
+```
+
+**Pattern 2: Decision Documentation**
+
+```
+1. sequential_thinking.analyze(problem='...')    # Analyze problem
+2. memory.create_entities([{type: 'decision'}])  # Store decision
+3. filesystem.write_file('.history/...')         # Create history record
+```
+
+**Pattern 3: External Knowledge Integration**
+
+```
+1. fetch.get('https://docs.example.com/api')     # Fetch external docs
+2. memory.create_entities([...])                 # Store relevant info
+3. filesystem.search_files('related_code')       # Find related code
+```
+
+**Pattern 4: GitHub Issue Investigation**
+
+```
+1. github.get_issue(repo='...', issue_number=N)  # Get issue details
+2. filesystem.search_files('error_message')      # Search codebase
+3. sequential_thinking.decompose(task='fix')     # Plan fix approach
+```
+
+---
+
+#### 5.4 Fallback Strategies
+
+When a tool is unavailable or fails, use these fallback approaches:
+
+| Tool                  | Primary Function      | Fallback Strategy                                              |
+|:----------------------|:----------------------|:---------------------------------------------------------------|
+| `filesystem`          | File operations       | Use IDE built-in file reading                                  |
+| `memory`              | Knowledge persistence | Document in `.history/` files                                  |
+| `fetch`               | HTTP requests         | Ask user to provide content manually                           |
+| `github`              | GitHub API            | Use git CLI commands for local operations                      |
+| `sequential-thinking` | Complex reasoning     | Use Expert Committee Pattern in guidelines.md                  |
+| `puppeteer`           | Browser automation    | Use fetch for static content, manual testing for UI            |
+| `docker`              | Container management  | Use docker CLI commands directly                               |
+| `everything`          | System-wide search    | Use filesystem.search for project scope, or terminal find/grep |
+| `desktop-commander`   | System commands       | Use standard terminal commands via bash tool                   |
+
+---
+
+#### 5.5 Usage Examples
+
+##### Filesystem Operations
+
+```javascript
+// Read a configuration file
+filesystem.read_file('.junie/guidelines.md')
+
+// Search for patterns in code
+filesystem.search_files('class UserService')
+
+// List directory contents
+filesystem.list_directory('src/')
+```
+
+##### Memory Operations
+
+```javascript
+// Store a decision
+memory.create_entities([{
+    name: 'auth_decision',
+    type: 'decision',
+    content: 'Using JWT for API authentication'
+}])
+
+// Search for previous context
+memory.search_nodes('authentication approach')
+
+// Create relationships
+memory.create_relations([{
+    from: 'UserService',
+    to: 'AuthModule',
+    type: 'depends_on'
+}])
+```
+
+##### External Data Access
+
+```javascript
+// Fetch external documentation
+fetch.get('https://api.example.com/docs')
+
+// Query GitHub issues
+github.list_issues(repo = 'owner/repo', state = 'open')
+github.get_pull_request(repo = 'owner/repo', pr_number = 123)
+```
+
+##### Complex Problem Solving
+
+```javascript
+// Step-by-step problem analysis
+sequential_thinking.analyze(problem = 'How to migrate from REST to GraphQL')
+
+// Task decomposition
+sequential_thinking.decompose(task = 'Implement authentication system')
+```
+
+---
+
+#### 5.6 Best Practices for Tool Invocation
+
+1. **Check tool availability** before attempting complex tool chains
+2. **Use P0 tools first** - filesystem and memory cover most common needs
+3. **Persist important findings** - use memory to store discoveries for future sessions
+4. **Document fallback usage** - when fallbacks are used, note why the primary tool failed
+5. **Minimize external calls** - batch fetch/github requests when possible
+6. **Validate before storing** - ensure data quality before persisting to memory
+
+---
+
+## 6. Best Practices
 
 #### 1. Security First
 
@@ -588,7 +755,7 @@ documentation: https://www.jetbrains.com/help/junie/mcp-settings.html
 
 ---
 
-## 6. Troubleshooting
+## 7. Troubleshooting
 
 #### Problem 1: MCP Server Cannot Start
 
@@ -762,7 +929,7 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 ---
 
-## 7. FAQ
+## 8. FAQ
 
 > **Scope**: This FAQ covers MCP integration questions. For Action Allowlist questions,
 > see [Action Allowlist FAQ](#action-allowlist-faq) in Part 2.
@@ -798,9 +965,9 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 ---
 
-## 8. Summary
+## 9. Summary
 
-### 8.1 Configuration Achievements
+### 9.1 Configuration Achievements
 
 **Basic Configuration (Action Allowlist)**:
 
@@ -818,7 +985,7 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 ---
 
-### 8.2 Core Values
+### 9.2 Core Values
 
 **Basic Configuration Values**:
 
@@ -837,7 +1004,7 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 ---
 
-### 8.3 Expected Results
+### 9.3 Expected Results
 
 **After Action Allowlist Configuration**:
 

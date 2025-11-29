@@ -64,7 +64,9 @@ Avoid these common mistakes:
 
 ## Related
 
-- [Related Practice](../engineering/related.md)
+<!-- Add links to related practices, patterns, or documents -->
+
+- [Related Practice](#) <!-- Replace with actual practice path -->
 
 ---
 

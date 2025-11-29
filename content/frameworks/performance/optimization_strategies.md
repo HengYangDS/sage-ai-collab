@@ -192,9 +192,9 @@ for user in users:
     orders = db.query("SELECT * FROM orders WHERE user_id = ?", user.id)
 
 -- Good: Single query with JOIN
-SELECT u.*, o.* 
-FROM users u 
-LEFT JOIN orders o ON u.id = o.user_id 
+SELECT u.*, o.*
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
 WHERE u.status = 'active';
 ```
 
@@ -210,17 +210,17 @@ WHERE u.status = 'active';
 
 ```sql
 -- Create composite index for common query pattern
-CREATE INDEX idx_user_status_created 
+CREATE INDEX idx_user_status_created
 ON orders (user_id, status, created_at);
 
 -- Partial index for subset of data
-CREATE INDEX idx_active_users 
-ON users (email) 
+CREATE INDEX idx_active_users
+ON users (email)
 WHERE status = 'active';
 
 -- Covering index
-CREATE INDEX idx_user_orders_covering 
-ON orders (user_id) 
+CREATE INDEX idx_user_orders_covering
+ON orders (user_id)
 INCLUDE (total, status, created_at);
 ```
 

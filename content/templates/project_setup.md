@@ -105,16 +105,29 @@ Brief description.
 
 ## Quick Start
 
-`pip install project-name`
+```bash
+# Setup environment (conda recommended)
+conda create -n project-name python=3.12
+conda activate project-name
+
+# Install
+pip install project-name
+```
 
 ```python
 from project_name import main_function
+
 result = main_function()
 ```
 
 ## Development
 
-`git clone <url> && cd project-name && pip install -e ".[dev]"`
+```bash
+git clone <url> && cd project-name
+conda env create -f environment.yml  # recommended
+conda activate project-name
+pip install -e ".[dev]"
+```
 
 **Test**: `pytest` | **Lint**: `ruff check . && mypy src/`
 
@@ -220,7 +233,26 @@ PROJECT=$1
 mkdir -p "$PROJECT"/{src/"$PROJECT",tests/{unit,integration},docs,.junie}
 touch "$PROJECT"/{src/"$PROJECT"/__init__.py,tests/conftest.py,README.md,.gitignore}
 echo "# Guidelines\nUses AI Collaboration KB v0.1.0" > "$PROJECT"/.junie/guidelines.md
-echo "Created $PROJECT! Next: cd $PROJECT && sage get"
+
+# Create environment.yml for conda (recommended)
+cat > "$PROJECT"/environment.yml << EOF
+name: $PROJECT
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - pip
+  - pip:
+      - -e ".[dev]"
+EOF
+
+echo "Created $PROJECT!"
+echo "Next steps:"
+echo "  cd $PROJECT"
+echo "  conda env create -f environment.yml"
+echo "  conda activate $PROJECT"
+echo "  sage get"
 ```
 
 ---

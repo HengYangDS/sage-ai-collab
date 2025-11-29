@@ -7,13 +7,75 @@
 # Documentation Configuration
 # =============================================================================
 documentation:
-  # Table of Contents (TOC) settings
+  # ===========================================================================
+  # Table of Contents (TOC) Settings
+  # ===========================================================================
   toc:
     line_threshold: 60             # Lines threshold: require TOC when exceeded
     heading_threshold: 3           # Heading threshold: require TOC when exceeded
     style: "inline_links"          # TOC style: inline_links | bullet_list
+    auto_generate: true            # Auto-generate TOC for qualifying docs
+    position: "after_title"        # TOC position: after_title | before_content
 
-  # Document structure settings
+  # ===========================================================================
+  # Document Structure Settings
+  # ===========================================================================
   structure:
     max_heading_depth: 4           # Maximum heading depth (h1-h4)
     require_title: true            # Require h1 title at document start
+    require_description: false     # Require description after title
+    max_section_length: 500        # Maximum lines per section (0 = unlimited)
+
+  # ===========================================================================
+  # Frontmatter Settings
+  # ===========================================================================
+  frontmatter:
+    enabled: false                 # Require YAML frontmatter
+    required_fields: [ ]            # Required frontmatter fields
+    optional_fields: # Suggested optional fields
+      - title
+      - description
+      - author
+      - date
+      - tags
+      - version
+
+  # ===========================================================================
+  # Code Block Settings
+  # ===========================================================================
+  code_blocks:
+    require_language: true         # Require language specification
+    max_lines: 100                 # Maximum lines per code block
+    allowed_languages: # Allowed language identifiers
+      - python
+      - yaml
+      - json
+      - bash
+      - markdown
+      - text
+
+  # ===========================================================================
+  # Link Settings
+  # ===========================================================================
+  links:
+    check_internal: true           # Validate internal links
+    check_external: false          # Validate external links (slow)
+    allow_relative: true           # Allow relative paths
+    prefer_relative: true          # Prefer relative over absolute paths
+
+  # ===========================================================================
+  # Formatting Settings
+  # ===========================================================================
+  formatting:
+    max_line_length: 120           # Maximum line length for prose
+    trailing_whitespace: false     # Allow trailing whitespace
+    final_newline: true            # Require final newline
+    consistent_headers: true       # Require consistent header style
+
+  # ===========================================================================
+  # Naming Conventions
+  # ===========================================================================
+  naming:
+    file_pattern: "^[a-z0-9_-]+\\.md$"  # File naming pattern (regex)
+    directory_pattern: "^[a-z0-9_-]+$"  # Directory naming pattern
+    max_filename_length: 50        # Maximum filename length

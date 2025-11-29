@@ -5798,8 +5798,8 @@ dev = [
 testpaths = ["tests"]
 asyncio_mode = "auto"
 addopts = """
-    -v 
-    --cov=sage 
+    -v
+    --cov=sage
     --cov-report=term-missing
     --alluredir=allure-results
 """

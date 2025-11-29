@@ -7,15 +7,110 @@
 # Quality Thresholds Configuration
 # =============================================================================
 quality:
-  # Code quality thresholds
-  min_test_coverage: 95                # Minimum test coverage percentage
-  max_function_lines: 50               # Maximum lines per function
-  max_file_lines: 500                  # Maximum lines per file
-  max_complexity: 10                   # Maximum cyclomatic complexity
+  # ===========================================================================
+  # Code Quality Thresholds
+  # ===========================================================================
+  code:
+    min_test_coverage: 95              # Minimum test coverage percentage
+    max_function_lines: 50             # Maximum lines per function
+    max_file_lines: 500                # Maximum lines per file
+    max_complexity: 10                 # Maximum cyclomatic complexity
+    max_parameters: 5                  # Maximum function parameters
+    max_nesting_depth: 4               # Maximum nesting depth
+    max_cognitive_complexity: 15       # Maximum cognitive complexity
 
-  # Code style thresholds
-  max_line_length: 88                  # Maximum line length (characters)
-  min_type_hint_coverage: 50           # Minimum type hint coverage percentage
+  # ===========================================================================
+  # Code Style Thresholds
+  # ===========================================================================
+  style:
+    max_line_length: 88                # Maximum line length (characters)
+    min_type_hint_coverage: 50         # Minimum type hint coverage percentage
+    require_docstrings: true           # Require docstrings for public APIs
+    docstring_style: "google"          # Docstring style: google | numpy | sphinx
 
-  # Documentation thresholds
-  max_doc_line_length: 120             # Maximum line length in Markdown
+  # ===========================================================================
+  # Documentation Quality Thresholds
+  # ===========================================================================
+  documentation:
+    max_line_length: 120               # Maximum line length in Markdown
+    min_readability_score: 60          # Minimum readability score (0-100)
+    max_sentence_length: 40            # Maximum words per sentence
+    min_heading_density: 0.02          # Minimum headings per line ratio
+    max_passive_voice: 0.2             # Maximum passive voice ratio
+
+  # ===========================================================================
+  # Test Quality Thresholds
+  # ===========================================================================
+  testing:
+    min_coverage: 80                   # Minimum overall coverage
+    min_branch_coverage: 70            # Minimum branch coverage
+    max_test_file_lines: 500           # Maximum lines per test file
+    require_test_docstrings: false     # Require docstrings in tests
+    max_test_complexity: 5             # Maximum complexity in test functions
+
+  # ===========================================================================
+  # Security Thresholds
+  # ===========================================================================
+  security:
+    max_vulnerability_severity: "medium"  # Maximum allowed: low | medium | high
+    require_input_validation: true     # Require input validation
+    require_output_encoding: true      # Require output encoding
+
+  # ===========================================================================
+  # Performance Thresholds
+  # ===========================================================================
+  performance:
+    max_response_time_ms: 5000         # Maximum response time
+    max_memory_mb: 512                 # Maximum memory usage
+    max_startup_time_ms: 3000          # Maximum startup time
+
+  # ===========================================================================
+  # Quality Gates
+  # ===========================================================================
+  gates:
+    # Pre-commit gate
+    pre_commit:
+      enabled: true
+      checks:
+        - lint
+        - format
+        - type_check
+      fail_on_warning: false
+
+    # CI gate
+    ci:
+      enabled: true
+      checks:
+        - lint
+        - format
+        - type_check
+        - test
+        - coverage
+        - security
+      fail_on_warning: true
+
+    # Release gate
+    release:
+      enabled: true
+      checks:
+        - all
+      min_coverage: 90
+      require_changelog: true
+      require_version_bump: true
+
+  # ===========================================================================
+  # Quality Scoring
+  # ===========================================================================
+  scoring:
+    enabled: true
+    weights:
+      code_quality: 0.3                # Code quality weight
+      test_coverage: 0.25              # Test coverage weight
+      documentation: 0.2               # Documentation weight
+      security: 0.15                   # Security weight
+      performance: 0.1                 # Performance weight
+    thresholds:
+      excellent: 90                    # Excellent score threshold
+      good: 75                         # Good score threshold
+      acceptable: 60                   # Acceptable score threshold
+      poor: 40                         # Poor score threshold

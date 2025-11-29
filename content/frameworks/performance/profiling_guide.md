@@ -267,7 +267,7 @@ ALTER SYSTEM SET log_min_duration_statement = '100ms';
 SELECT pg_reload_conf();
 
 -- View recent slow queries
-SELECT 
+SELECT
     query,
     calls,
     total_time / 1000 as total_seconds,
@@ -278,7 +278,7 @@ ORDER BY total_time DESC
 LIMIT 10;
 
 -- Find missing indexes
-SELECT 
+SELECT
     schemaname || '.' || relname as table,
     seq_scan,
     seq_tup_read,

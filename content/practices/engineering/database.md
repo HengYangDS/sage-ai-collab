@@ -77,9 +77,9 @@ SELECT id, name, email FROM users WHERE id = 1;
 
 -- ❌ Bad: N+1 queries (in application loop)
 -- ✅ Good: JOIN or batch query
-SELECT u.*, o.* 
-FROM users u 
-LEFT JOIN orders o ON u.id = o.user_id 
+SELECT u.*, o.*
+FROM users u
+LEFT JOIN orders o ON u.id = o.user_id
 WHERE u.id IN (1, 2, 3);
 
 -- ❌ Bad: LIKE with leading wildcard
@@ -96,9 +96,9 @@ SELECT * FROM users WHERE to_tsvector(name) @@ to_tsquery('john');
 SELECT * FROM orders ORDER BY id LIMIT 20 OFFSET 10000;
 
 -- ✅ Good: Keyset pagination
-SELECT * FROM orders 
-WHERE id > :last_seen_id 
-ORDER BY id 
+SELECT * FROM orders
+WHERE id > :last_seen_id
+ORDER BY id
 LIMIT 20;
 ```
 
@@ -106,7 +106,7 @@ LIMIT 20;
 
 ```sql
 -- Always analyze slow queries
-EXPLAIN ANALYZE 
+EXPLAIN ANALYZE
 SELECT * FROM orders WHERE user_id = 123 AND status = 'pending';
 
 -- Look for:
