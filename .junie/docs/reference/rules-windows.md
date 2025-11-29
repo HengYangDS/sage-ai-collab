@@ -1,4 +1,4 @@
-# Windows Terminal Rules
+﻿# Windows Terminal Rules
 
 > Complete rule list for Windows PowerShell (68 Rules)
 
@@ -223,4 +223,4 @@ Copy this entire block for quick setup:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

@@ -1,4 +1,4 @@
-# Quick Start Guide
+﻿# Quick Start Guide
 
 > Get Junie configured in 10 minutes for maximum productivity
 

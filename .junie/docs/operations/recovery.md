@@ -1,4 +1,4 @@
-# Error Recovery Guide
+﻿# Error Recovery Guide
 
 > Recovery procedures for common issues (~10 min read)
 
@@ -381,4 +381,4 @@ After recovery, document:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

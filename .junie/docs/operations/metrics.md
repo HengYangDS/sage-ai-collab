@@ -1,4 +1,4 @@
-# Collaboration Efficiency Metrics
+﻿# Collaboration Efficiency Metrics
 
 > Track and optimize AI collaboration effectiveness (~10 min read)
 
@@ -334,4 +334,4 @@ Start with achievable targets:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

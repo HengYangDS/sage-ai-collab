@@ -1,4 +1,4 @@
-# MCP Servers Reference
+﻿# MCP Servers Reference
 
 > Detailed documentation for each MCP server (~20 min read)
 
@@ -436,4 +436,4 @@
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

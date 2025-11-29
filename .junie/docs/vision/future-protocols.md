@@ -1,4 +1,4 @@
-# Future Protocol Vision
+﻿# Future Protocol Vision
 
 > Prepare architecture for future multi-agent collaboration (~30 min read)
 
@@ -300,4 +300,4 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

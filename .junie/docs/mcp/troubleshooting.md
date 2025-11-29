@@ -1,4 +1,4 @@
-# MCP Troubleshooting
+﻿# MCP Troubleshooting
 
 > Problem solving guide for MCP server issues (~10 min read)
 
@@ -408,4 +408,4 @@ copy mcp.windows.json mcp.json
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

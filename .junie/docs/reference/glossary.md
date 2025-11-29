@@ -1,4 +1,4 @@
-# Glossary
+﻿# Glossary
 
 > Unified terminology definitions for Junie configuration (~5 min reference)
 
@@ -136,4 +136,4 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

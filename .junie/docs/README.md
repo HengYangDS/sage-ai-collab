@@ -1,4 +1,4 @@
-# Junie Documentation
+﻿# Junie Documentation
 
 > Comprehensive documentation for JetBrains Junie AI Assistant configuration
 
@@ -100,16 +100,16 @@ docs/
 
 ## Version Compatibility
 
-| Component             | Tested Versions                     | Notes                            |
-|:----------------------|:------------------------------------|:---------------------------------|
-| **Junie Plugin**      | 2025.1+                             | MCP support requires 2025.1+     |
-| **JetBrains IDEs**    | 2024.3+, 2025.x                     | PyCharm, IntelliJ IDEA, WebStorm |
-| **Node.js**           | v18+                                | Required for MCP servers         |
-| **Operating Systems** | Win 10/11, macOS 12+, Ubuntu 20.04+ |                                  |
+| Component             | Tested Versions                     | Notes                                |
+|:----------------------|:------------------------------------|:-------------------------------------|
+| **Junie Plugin**      | 2024.3+                             | Basic features; MCP requires 2025.1+ |
+| **JetBrains IDEs**    | 2024.3+, 2025.x                     | PyCharm, IntelliJ IDEA, WebStorm     |
+| **Node.js**           | v18+                                | Required for MCP servers             |
+| **Operating Systems** | Win 10/11, macOS 12+, Ubuntu 20.04+ |                                      |
 
 ---
 
-## Related Files
+## Related
 
 - `../guidelines.md` — AI collaboration rules (main entry point)
 - `../generic/config.yaml` — Generic Junie settings

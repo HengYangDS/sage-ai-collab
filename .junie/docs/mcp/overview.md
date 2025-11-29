@@ -1,4 +1,4 @@
-# MCP Overview
+﻿# MCP Overview
 
 > Model Context Protocol architecture and concepts (~15 min read)
 
@@ -211,4 +211,4 @@ MCP servers provide:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

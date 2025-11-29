@@ -1,4 +1,4 @@
-# macOS/Linux Terminal Rules
+﻿# macOS/Linux Terminal Rules
 
 > Complete rule list for Bash/Zsh (76 Rules)
 
@@ -249,4 +249,4 @@ Copy this entire block for quick setup:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

@@ -1,4 +1,4 @@
-# MCP Configuration
+﻿# MCP Configuration
 
 > Setup and configure MCP servers for Junie (~30 min)
 
@@ -441,4 +441,4 @@ Use JSON schema for validation:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

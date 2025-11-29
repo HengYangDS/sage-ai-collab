@@ -1,4 +1,4 @@
-# Memory Server Best Practices
+﻿# Memory Server Best Practices
 
 > Knowledge graph persistence patterns and usage guidelines (~15 min read)
 
@@ -366,4 +366,4 @@ If Memory server is unavailable, use file-based persistence:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

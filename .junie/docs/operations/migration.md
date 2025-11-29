@@ -1,4 +1,4 @@
-# Version Migration Guide
+﻿# Version Migration Guide
 
 > Version migration strategies and breaking change handling (~10 min read)
 
@@ -311,4 +311,4 @@ git diff origin/main -- .junie/generic/config.yaml | grep schema_version
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*

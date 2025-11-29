@@ -1,4 +1,4 @@
-# Configuration Maintenance
+﻿# Configuration Maintenance
 
 > Daily operations and hot reload procedures (~10 min read)
 
@@ -285,4 +285,4 @@ Monthly review:
 
 ---
 
-*Part of the Junie Documentation*
+*Part of the Junie Configuration Template System*
