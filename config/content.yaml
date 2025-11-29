@@ -19,7 +19,7 @@ content:
 
   # File type configuration
   file_types:
-    supported:                         # Supported file extensions
+    supported: # Supported file extensions
       - ".md"
       - ".yaml"
       - ".yml"

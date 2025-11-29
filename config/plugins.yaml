@@ -32,7 +32,7 @@ plugins:
   loading:
     auto_discover: true                # Auto-discover plugins
     plugin_dir: "plugins"              # Custom plugins directory
-    disabled: []                       # List of disabled plugins
+    disabled: [ ]                       # List of disabled plugins
 
   # Bundled plugin configurations
   # Each plugin is configured at plugins.bundled.<plugin_name>

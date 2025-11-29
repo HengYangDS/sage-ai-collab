@@ -15,12 +15,12 @@ search:
 
   # Search scope configuration
   scope:
-    include_layers:                    # Default layers to search
+    include_layers: # Default layers to search
       - core
       - guidelines
       - frameworks
       - practices
-    exclude_patterns:                  # File patterns to exclude
+    exclude_patterns: # File patterns to exclude
       - "*.bak"
       - "*.tmp"
       - "_*"

@@ -9,8 +9,8 @@
 documentation:
   # Table of Contents (TOC) settings
   toc:
-    line_threshold: 100            # Lines threshold: require TOC when exceeded
-    heading_threshold: 5           # Heading threshold: require TOC when exceeded
+    line_threshold: 60             # Lines threshold: require TOC when exceeded
+    heading_threshold: 3           # Heading threshold: require TOC when exceeded
     style: "inline_links"          # TOC style: inline_links | bullet_list
 
   # Document structure settings
