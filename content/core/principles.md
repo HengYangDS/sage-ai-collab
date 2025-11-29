@@ -1,6 +1,6 @@
-# Core Principles - Xin-Da-Ya · Shu-Fa-Dao
+# Core Principles - 信达雅 · 术法道
 
-> **Load Priority**: Always Load (~200 tokens)  
+> **Load Priority**: Always Load   
 > **Purpose**: Foundational philosophy for AI collaboration
 
 ---

@@ -1,6 +1,6 @@
 # SAGE Knowledge Base
 
-> **Navigation Entry** | Version 0.1.0 | ~100 tokens
+> **Navigation Entry**
 
 ## Quick Navigation
 

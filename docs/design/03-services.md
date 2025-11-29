@@ -1400,6 +1400,47 @@ class TestLoaderTimeout:
 | `@allure.link` | External links | Issue tracker, docs |
 | `@allure.issue` | Bug/issue link | "SAGE-123" |
 
+#### SAGE Test Hierarchy
+
+> **Source**: Level 5 Expert Committee Comprehensive Modernization Enhancement (8.11.3)
+
+```
+Epic: AI Collaboration Knowledge Base
+├── Feature: Core Engine
+│   ├── Story: Knowledge Loading
+│   │   ├── Test: Load core layer with default timeout
+│   │   ├── Test: Load with smart triggers
+│   │   └── Test: Progressive loading
+│   ├── Story: Timeout Handling
+│   │   ├── Test: T1-T5 timeout levels
+│   │   ├── Test: Circuit breaker activation
+│   │   └── Test: Graceful degradation
+│   └── Story: Configuration
+│       ├── Test: YAML config loading
+│       └── Test: Environment variable override
+├── Feature: Services Layer
+│   ├── Story: CLI Service
+│   │   ├── Test: get command
+│   │   ├── Test: search command
+│   │   └── Test: info command
+│   ├── Story: MCP Service
+│   │   ├── Test: get_knowledge tool
+│   │   ├── Test: search_knowledge tool
+│   │   └── Test: kb_info tool
+│   └── Story: API Service
+│       ├── Test: GET /knowledge endpoint
+│       ├── Test: GET /search endpoint
+│       └── Test: GET /health endpoint
+├── Feature: Plugin System
+│   ├── Story: Plugin Registration
+│   ├── Story: Event-Driven Hooks
+│   └── Story: Plugin Lifecycle
+└── Feature: Memory Persistence
+    ├── Story: Session Checkpoints
+    ├── Story: Token Budget Management
+    └── Story: Handoff Packages
+```
+
 #### CI Integration
 
 ```yaml
