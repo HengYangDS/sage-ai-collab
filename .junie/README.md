@@ -27,6 +27,10 @@
 ├── mcp/                    # 🔄 MCP server configuration
 │   └── mcp.json            # MCP servers definition
 │
+├── schema/                 # 🔄 JSON Schema validation
+│   ├── config.schema.json  # Config file schema
+│   └── mcp.schema.json     # MCP config schema
+│
 ├── docs/                   # 🔄 Junie documentation
 │   ├── README.md           # Documentation index
 │   ├── guides/             # User guides
