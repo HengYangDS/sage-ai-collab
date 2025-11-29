@@ -1,4 +1,4 @@
-﻿# Collaboration Efficiency Metrics
+# Collaboration Efficiency Metrics
 
 > Track and optimize AI collaboration effectiveness (~10 min read)
 
@@ -318,7 +318,7 @@ Quarterly:
 
 ---
 
-## Benchmarks
+## 8. Benchmarks
 
 ### Industry Standards (Estimated)
 
@@ -340,7 +340,7 @@ Start with achievable targets:
 
 ---
 
-## Related
+## 9. Related
 
 - [Maintenance](maintenance.md) — Daily operations
 - [Migration](migration.md) — Version updates

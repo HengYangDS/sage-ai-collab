@@ -1,4 +1,4 @@
-﻿# MCP Troubleshooting
+# MCP Troubleshooting
 
 > Problem solving guide for MCP server issues (~10 min read)
 
@@ -132,13 +132,20 @@ npx -y @modelcontextprotocol/server-filesystem .
 // Wrong
 {
   "command": "npx.cmd",
-  "args": ["-y", "server"],  // <- trailing comma error
+  "args": [
+    "-y",
+    "server"
+  ]
+  // <- trailing comma error
 }
 
 // Correct
 {
   "command": "npx.cmd",
-  "args": ["-y", "server"]
+  "args": [
+    "-y",
+    "server"
+  ]
 }
 ```
 
@@ -338,7 +345,11 @@ Test with minimal config to isolate issues:
   "mcpServers": {
     "filesystem": {
       "command": "npx.cmd",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ]
     }
   }
 }

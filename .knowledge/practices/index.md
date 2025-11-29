@@ -35,13 +35,13 @@
 
 ### 1.3 Documentation
 
-| File                                           | Purpose                               |
-|------------------------------------------------|---------------------------------------|
-| `documentation/ascii_art_formatting.md`        | ASCII art box alignment best practices|
-| `documentation/documentation_standards.md`     | Documentation format standards (SSOT) |
-| `documentation/knowledge_organization.md`      | Knowledge hierarchy patterns          |
-| `documentation/optimization_workflow.md`       | Batch optimization process            |
-| `documentation/project_directory_structure.md` | Project directory patterns            |
+| File                                           | Purpose                                |
+|------------------------------------------------|----------------------------------------|
+| `documentation/ascii_art_formatting.md`        | ASCII art box alignment best practices |
+| `documentation/documentation_standards.md`     | Documentation format standards (SSOT)  |
+| `documentation/knowledge_organization.md`      | Knowledge hierarchy patterns           |
+| `documentation/optimization_workflow.md`       | Batch optimization process             |
+| `documentation/project_directory_structure.md` | Project directory patterns             |
 
 ### 1.4 Engineering
 

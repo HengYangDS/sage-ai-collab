@@ -36,21 +36,21 @@ The right border `│` appears misaligned because emojis and special Unicode cha
 | Character Type | Byte Width | Display Width | Predictable |
 |:---------------|:-----------|:--------------|:------------|
 | ASCII (A-Z)    | 1 byte     | 1 column      | ✓ Yes       |
-| Emoji (✅)     | 3-4 bytes  | 1-2 columns   | ✗ No        |
-| CJK (中文)     | 3 bytes    | 2 columns     | Mostly      |
+| Emoji (✅)      | 3-4 bytes  | 1-2 columns   | ✗ No        |
+| CJK (中文)       | 3 bytes    | 2 columns     | Mostly      |
 | Box drawing    | 3 bytes    | 1 column      | ✓ Yes       |
 
 ### 2.2 Environment Differences
 
 Different environments render character widths differently:
 
-| Environment           | Emoji Width Behavior          |
-|:----------------------|:------------------------------|
-| Terminal (monospace)  | Often 2 columns               |
-| IDE editor            | Varies by font                |
-| Markdown preview      | Varies by renderer            |
-| GitHub                | Usually 2 columns             |
-| Web browser           | Font-dependent                |
+| Environment          | Emoji Width Behavior |
+|:---------------------|:---------------------|
+| Terminal (monospace) | Often 2 columns      |
+| IDE editor           | Varies by font       |
+| Markdown preview     | Varies by renderer   |
+| GitHub               | Usually 2 columns    |
+| Web browser          | Font-dependent       |
 
 ---
 
@@ -60,23 +60,25 @@ Different environments render character widths differently:
 
 Replace emojis and special Unicode with ASCII equivalents:
 
-| Avoid       | Use Instead | Notes                    |
-|:------------|:------------|:-------------------------|
-| ✅          | `[OK]`      | Status indicator         |
-| ❌          | `[X]`       | Failure indicator        |
-| ⚠️          | `[!]`       | Warning indicator        |
-| ✓           | `[v]`       | Checkmark                |
-| →           | `-->`       | Arrow                    |
-| •           | `-` or `*`  | Bullet point             |
+| Avoid | Use Instead | Notes             |
+|:------|:------------|:------------------|
+| ✅     | `[OK]`      | Status indicator  |
+| ❌     | `[X]`       | Failure indicator |
+| ⚠️    | `[!]`       | Warning indicator |
+| ✓     | `[v]`       | Checkmark         |
+| →     | `-->`       | Arrow             |
+| •     | `-` or `*`  | Bullet point      |
 
 ### 3.2 Example Fix
 
 **Before** (problematic):
+
 ```
 │ ├── Junie integration: ✅ Complete                          │
 ```
 
 **After** (consistent):
+
 ```
 │ ├── Junie integration: [OK] Complete                        │
 ```

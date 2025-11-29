@@ -1,4 +1,4 @@
-﻿# Junie Documentation
+# Junie Documentation
 
 > Comprehensive documentation for JetBrains Junie AI Assistant configuration
 

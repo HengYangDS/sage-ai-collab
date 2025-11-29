@@ -1,4 +1,4 @@
-﻿# MCP Configuration
+# MCP Configuration
 
 > Setup and configure MCP servers for Junie (~30 min)
 
@@ -82,7 +82,10 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
   "mcpServers": {
     "server-name": {
       "command": "npx.cmd",
-      "args": ["-y", "@package/server-name"],
+      "args": [
+        "-y",
+        "@package/server-name"
+      ],
       "env": {},
       "_meta": {}
     }
@@ -160,7 +163,9 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
 {
   "fetch": {
     "command": "uvx",
-    "args": ["mcp-server-fetch"],
+    "args": [
+      "mcp-server-fetch"
+    ],
     "_meta": {
       "description": "HTTP requests to external URLs",
       "priority": "P1"
@@ -206,54 +211,88 @@ Configure via `Settings | Tools | Junie | MCP Servers`:
   "mcpServers": {
     "filesystem": {
       "command": "npx.cmd",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", ".", ".junie"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        ".",
+        ".junie"
+      ],
       "_meta": {
         "description": "File system operations",
         "priority": "P0",
-        "triggers": ["Read file", "Search code", "List directory"],
+        "triggers": [
+          "Read file",
+          "Search code",
+          "List directory"
+        ],
         "fallback": "Use IDE built-in file reading"
       }
     },
     "memory": {
       "command": "npx.cmd",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "_meta": {
         "description": "Knowledge persistence",
         "priority": "P0",
-        "triggers": ["Store decision", "Remember pattern", "Retrieve context"],
+        "triggers": [
+          "Store decision",
+          "Remember pattern",
+          "Retrieve context"
+        ],
         "fallback": "Document in .history/ files"
       }
     },
     "fetch": {
       "command": "uvx",
-      "args": ["mcp-server-fetch"],
+      "args": [
+        "mcp-server-fetch"
+      ],
       "_meta": {
         "description": "HTTP requests",
         "priority": "P1",
-        "triggers": ["Access external docs", "Fetch API responses"],
+        "triggers": [
+          "Access external docs",
+          "Fetch API responses"
+        ],
         "fallback": "Ask user to provide content"
       }
     },
     "github": {
       "command": "npx.cmd",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
       },
       "_meta": {
         "description": "GitHub API",
         "priority": "P1",
-        "triggers": ["Query issues", "Check PRs", "Repository info"],
+        "triggers": [
+          "Query issues",
+          "Check PRs",
+          "Repository info"
+        ],
         "fallback": "Use git CLI commands"
       }
     },
     "sequential-thinking": {
       "command": "npx.cmd",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
       "_meta": {
         "description": "Step-by-step reasoning",
         "priority": "P1",
-        "triggers": ["Complex problem", "Multi-step analysis"],
+        "triggers": [
+          "Complex problem",
+          "Multi-step analysis"
+        ],
         "fallback": "Use Expert Committee Pattern"
       }
     }
@@ -274,8 +313,12 @@ Essential servers only:
 ```json
 {
   "mcpServers": {
-    "filesystem": { "..." },
-    "memory": { "..." }
+    "filesystem": {
+      "..."
+    },
+    "memory": {
+      "..."
+    }
   }
 }
 ```
@@ -289,10 +332,18 @@ Common workflow servers:
 ```json
 {
   "mcpServers": {
-    "filesystem": { "..." },
-    "memory": { "..." },
-    "fetch": { "..." },
-    "github": { "..." }
+    "filesystem": {
+      "..."
+    },
+    "memory": {
+      "..."
+    },
+    "fetch": {
+      "..."
+    },
+    "github": {
+      "..."
+    }
   }
 }
 ```
@@ -306,13 +357,27 @@ All available servers:
 ```json
 {
   "mcpServers": {
-    "filesystem": { "..." },
-    "memory": { "..." },
-    "fetch": { "..." },
-    "github": { "..." },
-    "sequential-thinking": { "..." },
-    "puppeteer": { "..." },
-    "docker": { "..." }
+    "filesystem": {
+      "..."
+    },
+    "memory": {
+      "..."
+    },
+    "fetch": {
+      "..."
+    },
+    "github": {
+      "..."
+    },
+    "sequential-thinking": {
+      "..."
+    },
+    "puppeteer": {
+      "..."
+    },
+    "docker": {
+      "..."
+    }
   }
 }
 ```
@@ -437,7 +502,7 @@ Use JSON schema for validation:
 ```json
 {
   "$schema": "./mcp.schema.json",
-  "mcpServers": { }
+  "mcpServers": {}
 }
 ```
 
