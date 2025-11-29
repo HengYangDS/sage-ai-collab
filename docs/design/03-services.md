@@ -1,8 +1,10 @@
 ---
 title: SAGE Knowledge Base - Services Design
-version: 0.1.0
-date: 2025-11-28
+version: "0.1.0"
+last_updated: "2025-11-30"
 status: production-ready
+tokens: ~5000
+note: "TODO: Split into 3 documents (cli, mcp, api) - see docs improvement plan"
 ---
 
 # Services Design

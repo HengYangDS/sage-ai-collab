@@ -17,7 +17,7 @@
 
 ```
 sage-kb/
-├── .backups/        # Backup files (hidden, git-ignored)
+├── .backups/        # Backup files (hidden, tracked)
 ├── .context/        # Project-specific knowledge (hidden)
 ├── .history/        # AI session history (hidden)
 ├── .archive/        # Historical archives (hidden)

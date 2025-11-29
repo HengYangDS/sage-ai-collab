@@ -1,10 +1,26 @@
+---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~300
+---
+
 # API Reference
 
 > SAGE Knowledge Base API Documentation
 
 ---
 
-## Overview
+## Table of Contents
+
+- [1. Overview](#1-overview)
+- [2. Quick Links](#2-quick-links)
+- [3. Interface Comparison](#3-interface-comparison)
+- [4. Common Patterns](#4-common-patterns)
+
+---
+
+## 1. Overview
 
 SAGE provides three interface layers for accessing knowledge:
 
@@ -16,20 +32,34 @@ SAGE provides three interface layers for accessing knowledge:
 
 ---
 
-## Quick Links
+## 2. Quick Links
 
-- [CLI Reference](cli.md) — Command-line interface commands
-- [MCP Protocol](mcp.md) — MCP server tools and resources
-- [Python API](python.md) — Python library usage
+### 2.1 Main References
 
-### Quick References
+| Document                            | Description                    |
+|-------------------------------------|--------------------------------|
+| [CLI Reference](cli.md)             | Command-line interface         |
+| [MCP Protocol](mcp.md)              | MCP server overview            |
+| [Python API](python.md)             | Python library basics          |
 
-- [MCP Quick Reference](mcp_quick_ref.md) — Essential MCP tools and resources
-- [Plugin API Quick Reference](plugin_quick_ref.md) — Plugin development API
+### 2.2 MCP Detailed References
+
+| Document                                  | Description                    |
+|-------------------------------------------|--------------------------------|
+| [MCP Tools Reference](mcp_tools_ref.md)   | Detailed tool schemas          |
+| [MCP Resources](mcp_resources.md)         | Resources, prompts, errors     |
+| [MCP Quick Reference](mcp_quick_ref.md)   | One-page quick reference       |
+
+### 2.3 Python Detailed References
+
+| Document                                    | Description                  |
+|---------------------------------------------|------------------------------|
+| [Python Advanced](python_advanced.md)       | Search, events, exceptions   |
+| [Plugin API Quick Ref](plugin_quick_ref.md) | Plugin development API       |
 
 ---
 
-## Interface Comparison
+## 3. Interface Comparison
 
 | Feature        | CLI | MCP | Python |
 |----------------|-----|-----|--------|
@@ -41,9 +71,9 @@ SAGE provides three interface layers for accessing knowledge:
 
 ---
 
-## Common Patterns
+## 4. Common Patterns
 
-### Loading Knowledge
+### 4.1 Loading Knowledge
 
 All interfaces support the same knowledge loading patterns:
 
@@ -58,7 +88,7 @@ search "timeout", search "autonomy"
 coding, debugging, reviewing, planning
 ```
 
-### Timeout Behavior
+### 4.2 Timeout Behavior
 
 All interfaces respect the 5-level timeout hierarchy:
 
@@ -80,4 +110,4 @@ All interfaces respect the 5-level timeout hierarchy:
 
 ---
 
-*SAGE Knowledge Base - API Reference*
+*Part of SAGE Knowledge Base*

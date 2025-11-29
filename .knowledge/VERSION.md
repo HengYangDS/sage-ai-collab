@@ -46,13 +46,36 @@ tokens: ~150
 
 ### v1.0.0 (2025-11-30)
 
-- Initial stable release
-- Added metadata headers to core documents
-- Added validation script
-- Added session fallback documentation
-- Added maintenance SOP
-- Expanded references layer
-- Updated file counts
+**L5 Expert Committee Review & Improvements**
+
+P1 Improvements:
+- Unified path reference format across documents
+- Added YAML front matter metadata standard to documentation_standards.md
+- Added metadata headers to 7 core index files
+- Created `scripts/validate_knowledge.py` (automated validation)
+- Created `session_fallback.md` (manual fallback procedures)
+
+P2 Improvements:
+- Added "Scope & Boundaries" section to guidelines/index.md
+- Created `knowledge_maintenance_sop.md` (maintenance procedures)
+- Expanded references layer (2→4 files): added index.md, glossary.md
+- Updated file counts in main index.md
+
+P3 Improvements:
+- Created `VERSION.md` (version management)
+- Created `effectiveness_metrics.md` (AI collaboration metrics)
+- Added practical examples to token_optimization.md
+
+Follow-up Improvements:
+- Batch added metadata to 119 documents (131/132 total)
+- Created `scripts/add_metadata.py` (batch metadata tool)
+- Created `.github/workflows/validate-knowledge.yml` (CI automation)
+- Created `quarterly_review_process.md` (L5 review process)
+
+Metrics:
+- Files: 116 → 132 (+16)
+- Warnings: 158 → 39 (-75%)
+- Metadata coverage: 0% → 99.2%
 
 ---
 
