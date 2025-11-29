@@ -165,9 +165,9 @@
 
 ## Related
 
-- `standards.md` — Documentation format standards
-- `knowledge_organization.md` — Knowledge hierarchy patterns
-- `../../guidelines/documentation.md` — Documentation guidelines
+- `content/practices/documentation/standards.md` — Documentation format standards
+- `content/practices/documentation/knowledge_organization.md` — Knowledge hierarchy patterns
+- `content/guidelines/documentation.md` — Documentation guidelines
 
 ---
 

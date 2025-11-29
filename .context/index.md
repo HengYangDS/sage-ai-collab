@@ -46,11 +46,12 @@ AI collaboration patterns and learned behaviors:
 
 ## 3. Quick Access
 
-| Document                     | Purpose                    |
-|------------------------------|----------------------------|
-| `conventions/naming.md`      | Naming conventions         |
-| `decisions/ADR-0001-*.md`    | First architecture decision|
-| `intelligence/patterns.md`   | AI interaction patterns    |
+| Document                              | Purpose                    |
+|---------------------------------------|----------------------------|
+| `conventions/directory_structure.md`  | Directory organization     |
+| `conventions/naming.md`               | Naming conventions         |
+| `decisions/ADR-0001-*.md`             | First architecture decision|
+| `intelligence/patterns.md`            | AI interaction patterns    |
 
 ---
 

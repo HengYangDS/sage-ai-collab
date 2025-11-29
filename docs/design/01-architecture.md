@@ -200,6 +200,12 @@ sage/                                  # 📁 Project root directory
 ├── .archive/                          # 🔒 Historical archives (hidden)
 │   └── 202511/                        # 🆕 Monthly organization (YYYYMM format)
 │
+├── .logs/                             # 🔒 Runtime log files (hidden, git-ignored)
+│   └── .gitkeep                       #    Placeholder for empty directory
+│
+├── .outputs/                          # 🔒 Intermediate process files (hidden, git-ignored)
+│   └── .gitkeep                       #    Placeholder for empty directory
+│
 ├── docs/                              # 📖 Project documentation (separate from content)
 │   ├── design/                        #    Design documents
 │   │   ├── 00-overview.md             #    Project overview

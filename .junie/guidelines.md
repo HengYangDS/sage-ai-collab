@@ -43,6 +43,8 @@ sage-kb/
 ├── .context/        # Project-specific knowledge base
 ├── .history/        # AI session history and handoffs
 ├── .archive/        # Historical archives
+├── .logs/           # Runtime log files (git-ignored)
+├── .outputs/        # Intermediate process files (git-ignored)
 ├── docs/            # User-facing documentation
 ├── content/         # Generic knowledge (distributable)
 ├── src/sage/        # Source code (3-layer architecture)
@@ -58,6 +60,8 @@ sage-kb/
 | `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden     |
 | `.history/` | AI session records and task handoffs           | Hidden     |
 | `.archive/` | Historical/deprecated content                  | Hidden     |
+| `.logs/`    | Runtime log files                              | Hidden     |
+| `.outputs/` | Intermediate process files                     | Hidden     |
 | `docs/`     | User-facing documentation                      | Visible    |
 | `content/`  | Generic, distributable knowledge               | Visible    |
 
@@ -152,7 +156,8 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 
 - **Design Documents**: @file:docs/design/00-overview.md
 - **Configuration**: @file:sage.yaml
-- **Project Context**: @file:.context/index.md (when created)
+- **Project Context**: @file:.context/index.md
+- **Directory Conventions**: @file:.context/conventions/directory_structure.md
 - **Knowledge Content**: @file:content/core/principles.md
 
 ---
