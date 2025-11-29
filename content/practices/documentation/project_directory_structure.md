@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-[1. Overview](#1-overview) · [2. Directory Categories](#2-directory-categories) · [3. Hidden Directory Conventions](#3-hidden-directory-conventions) · [4. Visible Directory Conventions](#4-visible-directory-conventions) · [5. Placement Decision Tree](#5-placement-decision-tree)
+[1. Overview](#1-overview) · [2. Directory Categories](#2-directory-categories) · [3. Hidden Directory Conventions](#3-hidden-directory-conventions) · [4. Visible Directory Conventions](#4-visible-directory-conventions) · [5. Placement Decision Tree](#5-placement-decision-tree) · [6. File Naming Conventions](#6-file-naming-conventions)
 
 ---
 
@@ -206,6 +206,19 @@ Is this an intermediate/generated file?
 | Pre-refactoring snapshots | `.backups/` |
 | Runtime logs | `.logs/` |
 | Test outputs | `.outputs/` |
+
+---
+
+## 6. File Naming Conventions
+
+| Type | Convention | Example |
+|------|------------|---------|
+| Markdown | `snake_case.md` | `directory_structure.md` |
+| ADR | `ADR-NNNN-title.md` | `ADR-0001-fastmcp-choice.md` |
+| Session | `YYYY-MM-DD-topic.md` | `2025-11-29-timeout.md` |
+| Handoff | `YYYY-MM-DD-handoff.md` | `2025-11-29-api-handoff.md` |
+| Archive folder | `YYYYMM/` | `202511/` |
+| Backup folder | `YYYY-MM-DD-description/` | `2025-11-29-pre-refactor/` |
 
 ---
 

@@ -78,7 +78,7 @@ include = [
     "/content",
     "/tools",
     "/index.md",
-    "/sage.yaml",
+    "/config",
     "/README.md",
     "/LICENSE",
 ]

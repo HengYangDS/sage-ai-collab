@@ -79,15 +79,16 @@ Ask before every task:
 
 ## 4. Timeout Tiers
 
-| Tier | Time  | Use For          |
-|------|-------|------------------|
-| T1   | 100ms | Cache lookup     |
-| T2   | 500ms | Single file      |
-| T3   | 2s    | Layer load       |
-| T4   | 5s    | Full KB load     |
-| T5   | 10s   | Complex analysis |
+| Tier | Typical Range | Use For |
+|------|---------------|---------|
+| Fast | 50-200ms | Cache, memory access |
+| Standard | 200-1000ms | Single file, local I/O |
+| Extended | 1-5s | Multi-file, network |
+| Long | 5-30s | Full load, analysis |
 
 **Rule**: Always return something, never hang.
+
+> See project configuration for specific timeout values.
 
 ---
 

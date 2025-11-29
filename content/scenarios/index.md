@@ -88,7 +88,7 @@ scenarios/[name]/
 
 1. Create directory: `scenarios/[name]/`
 2. Add `context.md` with scenario context
-3. Define auto-load triggers in `config/triggers.yaml`
+3. Define auto-load triggers in `config/knowledge/triggers.yaml`
 4. Update this index
 
 ### Recommended Scenarios (Future)
@@ -105,7 +105,7 @@ scenarios/[name]/
 - `guidelines/index.md` — General guidelines
 - `practices/index.md` — Implementation practices
 - `templates/index.md` — Document templates
-- `config/triggers.yaml` — Trigger configuration
+- `config/knowledge/triggers.yaml` — Trigger configuration
 
 ---
 

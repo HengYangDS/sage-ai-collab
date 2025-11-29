@@ -98,7 +98,7 @@ sage-kb/
 
 | File                 | Purpose                                          |
 |----------------------|--------------------------------------------------|
-| `sage.yaml`          | Main configuration (timeouts, triggers, loading) |
+| `config/sage.yaml`   | Main configuration (timeouts, triggers, loading) |
 | `docs/design/`       | Design documents (architecture, services, etc.)  |
 | `src/sage/core/`     | Core layer (loader, timeout, config)             |
 | `src/sage/services/` | Service layer (CLI, MCP, API)                    |
@@ -155,9 +155,10 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 ## 🔗 References
 
 - **Design Documents**: @file:docs/design/00-overview.md
-- **Configuration**: @file:sage.yaml
+- **Configuration**: @file:config/sage.yaml
 - **Project Context**: @file:.context/index.md
-- **Directory Conventions**: @file:.context/conventions/directory_structure.md
+- **Directory Conventions**: @file:content/practices/documentation/project_directory_structure.md
+- **Timeout Hierarchy**: @file:.context/configurations/timeout_hierarchy.md
 - **Knowledge Content**: @file:content/core/principles.md
 
 ---

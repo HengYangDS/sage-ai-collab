@@ -12,30 +12,37 @@
 
 ## 1. Directory Structure
 
-| Directory        | Purpose                              |
-|------------------|--------------------------------------|
-| `conventions/`   | Project-specific coding conventions  |
-| `decisions/`     | Architecture Decision Records (ADRs) |
-| `intelligence/`  | AI intelligence patterns             |
+| Directory         | Purpose                              |
+|-------------------|--------------------------------------|
+| `configurations/` | Project-specific configurations      |
+| `conventions/`    | Project-specific coding conventions  |
+| `decisions/`      | Architecture Decision Records (ADRs) |
+| `intelligence/`   | AI intelligence patterns             |
 
 ---
 
 ## 2. Content Categories
 
-### 2.1 Conventions
+### 2.1 Configurations
+
+Project-specific configuration documentation:
+- Timeout hierarchy (T1-T5 levels)
+- Loading configurations
+- Runtime settings
+
+### 2.2 Conventions
 
 Project-specific rules and standards that apply only to this project:
 - Naming conventions specific to SAGE
-- File organization rules
 - Code patterns unique to this project
 
-### 2.2 Decisions
+### 2.3 Decisions
 
 Architecture Decision Records documenting significant technical decisions:
 - Format: `ADR-NNNN-title.md`
 - Include: context, decision, consequences
 
-### 2.3 Intelligence
+### 2.4 Intelligence
 
 AI collaboration patterns and learned behaviors:
 - Successful interaction patterns
@@ -46,12 +53,12 @@ AI collaboration patterns and learned behaviors:
 
 ## 3. Quick Access
 
-| Document                              | Purpose                    |
-|---------------------------------------|----------------------------|
-| `conventions/directory_structure.md`  | Directory organization     |
-| `conventions/naming.md`               | Naming conventions         |
-| `decisions/ADR-0001-*.md`             | First architecture decision|
-| `intelligence/patterns.md`            | AI interaction patterns    |
+| Document                              | Purpose                     |
+|---------------------------------------|-----------------------------|
+| `configurations/timeout_hierarchy.md` | SAGE T1-T5 timeout levels   |
+| `conventions/naming.md`               | Naming conventions          |
+| `decisions/ADR-0001-*.md`             | First architecture decision |
+| `intelligence/patterns.md`            | AI interaction patterns     |
 
 ---
 

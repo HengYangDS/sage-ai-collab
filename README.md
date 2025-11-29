@@ -125,7 +125,7 @@ GitHub Actions workflows:
 - **CI** (`ci.yml`): Runs on push/PR to main/develop
   - Lint & format check (Ruff)
   - Type check (MyPy)
-  - Tests (Python 3.11-3.13, Linux/Windows/macOS)
+  - Tests (Python 3.12-3.14, Linux/Windows/macOS)
   - Build package verification
 
 - **Release** (`release.yml`): Runs on version tags

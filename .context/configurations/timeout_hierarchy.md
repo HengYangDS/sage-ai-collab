@@ -1,6 +1,8 @@
-# Timeout Hierarchy Framework
+# SAGE Timeout Hierarchy
 
-> Guarantee response times, prevent hangs, graceful degradation
+> SAGE Knowledge Base specific timeout configuration (T1-T5 levels)
+>
+> For universal timeout patterns, see `content/frameworks/resilience/timeout_patterns.md`
 
 ---
 
@@ -95,19 +97,16 @@ timeout:
 
 ---
 
-## 6. Related Patterns
+## 6. Related
 
-For detailed implementation patterns, see `timeout_patterns.md`:
-
-| Pattern             | Description               | Reference                                      |
-|---------------------|---------------------------|------------------------------------------------|
-| **Circuit Breaker** | Prevent cascade failures  | `timeout_patterns.md#4-circuit-breaker-pattern` |
-| **Retry**           | Handle transient failures | `timeout_patterns.md#3-retry-pattern`           |
-| **Bulkhead**        | Isolate failures          | `timeout_patterns.md#6-bulkhead-pattern`        |
-| **Fallback**        | Provide alternatives      | `timeout_patterns.md#5-fallback-pattern`        |
+| Document | Location | Description |
+|----------|----------|-------------|
+| Timeout Patterns | `content/frameworks/resilience/timeout_patterns.md` | Universal timeout and resilience patterns |
+| Main Configuration | `sage.yaml` | Runtime timeout settings |
+| Defaults | `content/core/defaults.md` | Default timeout values reference |
 
 ---
 
 **Golden Rule**: Always return something, never hang.
 
-*Part of SAGE Knowledge Base*
+*Part of SAGE Knowledge Base - Project Configuration*

@@ -154,7 +154,7 @@ async def resilient_call(params):
 
 ## Related
 
-- `timeout.md` — 5-level timeout hierarchy
+- `.context/configurations/timeout_hierarchy.md` — SAGE-specific T1-T5 timeout hierarchy
 - `../patterns/persistence.md` — Data persistence patterns
 
 ---

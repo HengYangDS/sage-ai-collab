@@ -53,7 +53,7 @@
 
 ## Related
 
-- `sage.yaml` — Main configuration
+- `config/sage.yaml` — Main configuration
 - `docs/design/00-overview.md` — Design overview
 
 ---

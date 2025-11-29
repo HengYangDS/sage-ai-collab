@@ -21,8 +21,7 @@
 | **Patterns**   | `patterns/collaboration.md`        | AI collaboration patterns |
 | **Patterns**   | `patterns/decision.md`             | Quality angles framework  |
 | **Patterns**   | `patterns/persistence.md`          | Data lifecycle patterns   |
-| **Resilience** | `resilience/timeout.md`            | 5-level timeout hierarchy |
-| **Resilience** | `resilience/timeout_patterns.md`   | Timeout implementation    |
+| **Resilience** | `resilience/timeout_patterns.md`   | Timeout & resilience patterns |
 
 ---
 
@@ -37,7 +36,7 @@
 | AI interaction     | `patterns/collaboration.md`        |
 | Quality evaluation | `patterns/decision.md`             |
 | Data management    | `patterns/persistence.md`          |
-| Timeout handling   | `resilience/timeout.md`            |
+| Timeout handling   | `resilience/timeout_patterns.md`   |
 
 ---
 

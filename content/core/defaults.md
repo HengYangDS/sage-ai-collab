@@ -1,6 +1,6 @@
 # Default Behaviors and Calibration
 
-> Baseline behaviors and calibration parameters
+> Universal baseline behaviors and calibration parameters for AI collaboration
 
 ---
 
@@ -12,13 +12,15 @@
 
 ## 1. Loading Defaults
 
-| Parameter     | Value                                       | Config Location       |
-|---------------|---------------------------------------------|-----------------------|
-| Max tokens    | 4000                                        | `config/loading.yaml` |
-| Default layer | core                                        | `config/loading.yaml` |
-| Preload       | index.md, principles.md, quick_reference.md | `config/loading.yaml` |
+### 1.1 Recommended Parameters
 
-### 1.1 Layer Budgets
+| Parameter | Typical Value | Purpose |
+|-----------|---------------|---------|
+| Max tokens | 4000-8000 | Context window budget |
+| Default layer | core | Always-load foundation |
+| Preload files | index, principles, quick_reference | Essential context |
+
+### 1.2 Layer Budgets
 
 | Layer      | Budget | Purpose       |
 |------------|--------|---------------|
@@ -33,21 +35,24 @@
 
 ## 2. Timeout Defaults
 
-| Tier | Timeout | Operation        |
-|------|---------|------------------|
-| T1   | 100ms   | Cache lookup     |
-| T2   | 500ms   | Single file read |
-| T3   | 2s      | Layer load       |
-| T4   | 5s      | Full KB load     |
-| T5   | 10s     | Complex analysis |
+### 2.1 Tiered Timeout Pattern
 
-### 2.1 Circuit Breaker
+| Tier | Typical Range | Operation Type |
+|------|---------------|----------------|
+| Fast | 50-200ms | Cache lookup, memory access |
+| Standard | 200-1000ms | Single file read, local I/O |
+| Extended | 1-5s | Multi-file load, network call |
+| Long | 5-30s | Full load, complex analysis |
 
-| Parameter          | Value         |
+> **Note**: For project-specific timeout configurations, see your project's configuration files.
+
+### 2.2 Circuit Breaker Defaults
+
+| Parameter          | Typical Value |
 |--------------------|---------------|
-| Failure threshold  | 3 consecutive |
-| Reset timeout      | 30s           |
-| Half-open requests | 1             |
+| Failure threshold  | 3-5 consecutive |
+| Reset timeout      | 30-60s |
+| Half-open requests | 1-3 |
 
 ---
 
@@ -127,11 +132,10 @@
 
 ## Related
 
-- `sage.yaml` — Main configuration
-- `config/timeout.yaml` — Timeout settings
-- `config/loading.yaml` — Loading settings
-- `config/autonomy.yaml` — Autonomy settings
+- `core/principles.md` — Core philosophy (Xin-Da-Ya)
+- `core/quick_reference.md` — Quick reference card
 - `frameworks/autonomy/levels.md` — Full autonomy framework
+- `frameworks/resilience/timeout_patterns.md` — Timeout design patterns
 
 ---
 

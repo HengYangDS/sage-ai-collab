@@ -1,32 +1,120 @@
 # SAGE Knowledge Base
 
-> **Navigation Entry**
+> **Smart AI-Guided Expertise** — Navigation Entry
 
-## Quick Navigation
+---
 
-| Layer          | Path                  | Purpose                                   |
-|----------------|-----------------------|-------------------------------------------|
-| **Core**       | `content/core/`       | Principles, defaults, quick reference     |
+## Table of Contents
+
+[1. Project Structure](#1-project-structure) · [2. Directory Definitions](#2-directory-definitions) · [3. Quick Access](#3-quick-access) · [4. CLI Commands](#4-cli-commands)
+
+---
+
+## 1. Project Structure
+
+```
+sage-kb/
+├── .context/        # Project-specific knowledge (hidden)
+├── .history/        # AI session history (hidden)
+├── .archive/        # Historical archives (hidden)
+├── .junie/          # AI client configuration (hidden)
+├── .logs/           # Runtime logs (hidden, git-ignored)
+├── .outputs/        # Intermediate files (hidden, git-ignored)
+├── config/          # Runtime configuration
+│   ├── capabilities/  # Feature and plugin configs
+│   ├── core/          # Core infrastructure configs
+│   ├── knowledge/     # Knowledge management configs
+│   ├── services/      # Service layer configs
+│   └── sage.yaml      # Main configuration entry
+├── content/         # Generic reusable knowledge
+├── docs/            # User-facing documentation
+├── src/sage/        # Source code
+├── tests/           # Test suite
+└── tools/           # Development tools
+```
+
+---
+
+## 2. Directory Definitions
+
+### 2.1 Knowledge & Context
+
+| Directory | Purpose | Visibility |
+|-----------|---------|------------|
+| `.context/` | Project-specific knowledge (ADRs, conventions, configurations) | Hidden |
+| `content/` | Generic, reusable knowledge (principles, frameworks, practices) | Visible |
+| `docs/` | User-facing documentation (design, API, guides) | Visible |
+
+### 2.2 Configuration & Runtime
+
+| Directory | Purpose | Visibility |
+|-----------|---------|------------|
+| `config/` | Runtime configuration (modular YAML structure) | Visible |
+| `config/core/` | Core infrastructure (timeout, logging, memory, DI) | Visible |
+| `config/services/` | Service layer (CLI, MCP, API) | Visible |
+| `config/knowledge/` | Knowledge management (content, loading, search) | Visible |
+| `config/capabilities/` | Features and plugins (autonomy, quality) | Visible |
+| `.logs/` | Runtime log files | Hidden (git-ignored) |
+| `.outputs/` | Intermediate process files | Hidden (git-ignored) |
+
+### 2.3 History & Archives
+
+| Directory | Purpose | Visibility |
+|-----------|---------|------------|
+| `.history/` | AI session records and task handoffs | Hidden |
+| `.archive/` | Historical/deprecated content | Hidden |
+| `.junie/` | JetBrains Junie AI client configuration | Hidden |
+
+### 2.4 Development
+
+| Directory | Purpose | Visibility |
+|-----------|---------|------------|
+| `src/sage/` | Source code (3-layer architecture) | Visible |
+| `tests/` | Test suite | Visible |
+| `tools/` | Development tools (not imported at runtime) | Visible |
+
+---
+
+## 3. Quick Access
+
+### 3.1 Knowledge Content
+
+| Layer | Path | Purpose |
+|-------|------|---------|
+| **Core** | `content/core/` | Principles, defaults, quick reference |
 | **Guidelines** | `content/guidelines/` | Code style, engineering, AI collaboration |
-| **Frameworks** | `content/frameworks/` | Autonomy, timeout, cognitive patterns     |
-| **Practices**  | `content/practices/`  | Documentation, engineering patterns       |
-| **Scenarios**  | `content/scenarios/`  | Context-specific guides                   |
-| **Templates**  | `content/templates/`  | Project setup templates                   |
+| **Frameworks** | `content/frameworks/` | Autonomy, timeout, cognitive patterns |
+| **Practices** | `content/practices/` | Documentation, engineering patterns |
 
-## Key Files
+### 3.2 Key Files
 
-- `sage.yaml` - Configuration (timeout, triggers, loading)
-- `content/core/principles.md` - Core principles (信达雅)
-- `content/guidelines/quick_start.md` - Quick start guide
-- `docs/design/00-overview.md` - Design overview
+| File | Purpose |
+|------|---------|
+| `config/sage.yaml` | Main configuration (timeouts, triggers, loading) |
+| `content/core/principles.md` | Core philosophy (信达雅) |
+| `.context/index.md` | Project-specific context navigation |
+| `.junie/guidelines.md` | AI collaboration guidelines |
+| `docs/design/00-overview.md` | Design overview |
 
-## CLI Commands
+---
+
+## 4. CLI Commands
 
 ```bash
 sage get core          # Load core knowledge
 sage search "keyword"  # Search knowledge base
 sage serve             # Start MCP server
+sage info              # Show system information
 ```
 
 ---
+
+## Related
+
+- `content/index.md` — Knowledge content navigation
+- `.context/index.md` — Project context navigation
+- `config/index.md` — Configuration documentation
+
+---
+
 *SAGE: Smart AI-Guided Expertise*
