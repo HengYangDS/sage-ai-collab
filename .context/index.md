@@ -15,16 +15,25 @@
 
 ## 1. Directory Structure
 
-| Directory       | Purpose                              | Files |
-|:-----------------|:--------------------------------------|:-------|
-| `policies/`     | Project-specific policies            | 6     |
-| `conventions/`  | Project-specific coding conventions  | 3     |
-| `decisions/`    | Architecture Decision Records (ADRs) | 8     |
-| `intelligence/` | AI intelligence patterns             | 8     |
+| Directory       | Purpose                              | Contents |
+|:-----------------|:--------------------------------------|:---------|
+| `overview/`     | Project introduction and quick start | 1 file   |
+| `policies/`     | Project-specific policies            | 6 files  |
+| `conventions/`  | Project-specific coding conventions  | 3 files  |
+| `decisions/`    | Architecture Decision Records (ADRs) | 8 files  |
+| `intelligence/` | AI collaboration (4 subdirectories)  | 8 files  |
 
 ---
 
 ## 2. Content Categories
+
+### 2.0 Overview
+
+Quick introduction to the project:
+
+| Document              | Description                                      |
+|:----------------------|:-------------------------------------------------|
+| `project_overview.md` | Project introduction, architecture, key concepts |
 
 ### 2.1 Policies
 
@@ -79,18 +88,44 @@ AI collaboration patterns, learned behaviors, and project-specific calibration d
 - **Learning**: Cases, lessons, and pitfalls from actual development
 - **Optimization**: Performance tuning and efficiency improvements
 
-AI collaboration patterns and learned behaviors:
+#### Subdirectory Structure
 
-| Document                             | Description                                       |
-|:--------------------------------------|:---------------------------------------------------|
-| `patterns.md`                        | Successful interaction patterns and templates     |
-| `optimizations.md`                   | Code generation preferences, testing, performance |
-| `calibration.md`                     | Autonomy level calibration (L1-L6)                |
-| `cases.md`                           | Case studies and real-world examples              |
-| `common_pitfalls.md`                 | Common mistakes and how to avoid them             |
-| `lessons_learned.md`                 | Key learnings from project development            |
-| `performance_tuning.md`              | Performance optimization strategies               |
-| `session_automation_requirements.md` | Long-term automation plan for session history     |
+| Subdirectory    | Purpose                        | Files |
+|:----------------|:-------------------------------|:------|
+| `calibration/`  | Autonomy levels and patterns   | 2     |
+| `learning/`     | Cases, lessons, pitfalls       | 3     |
+| `optimization/` | Performance and optimizations  | 2     |
+| `automation/`   | Session automation planning    | 1     |
+
+#### Files by Subdirectory
+
+**calibration/** — Autonomy and patterns:
+
+| Document          | Description                                   |
+|:------------------|:----------------------------------------------|
+| `calibration.md`  | Autonomy level calibration (L1-L6)            |
+| `patterns.md`     | Successful interaction patterns and templates |
+
+**learning/** — Cases and lessons:
+
+| Document             | Description                           |
+|:---------------------|:--------------------------------------|
+| `cases.md`           | Case studies and real-world examples  |
+| `lessons_learned.md` | Key learnings from project development|
+| `common_pitfalls.md` | Common mistakes and how to avoid them |
+
+**optimization/** — Performance:
+
+| Document              | Description                                   |
+|:----------------------|:----------------------------------------------|
+| `optimizations.md`    | Code generation preferences, testing          |
+| `performance_tuning.md` | Performance optimization strategies         |
+
+**automation/** — Session management:
+
+| Document                             | Description                               |
+|:-------------------------------------|:------------------------------------------|
+| `session_automation_requirements.md` | Long-term automation plan for session history |
 
 ---
 
@@ -98,16 +133,20 @@ AI collaboration patterns and learned behaviors:
 
 ### 3.1 By Topic
 
-| Topic                | Documents                                                                       |
-|:----------------------|:---------------------------------------------------------------------------------|
-| **Getting Started**  | `conventions/naming.md`, `conventions/file_structure.md`                        |
-| **Architecture**     | `decisions/ADR-0001-architecture.md`, `decisions/ADR-0002-sage-protocol.md`     |
-| **Configuration**    | `policies/runtime_settings.md`, `policies/loading_configurations.md`            |
-| **Timeouts**         | `policies/timeout_hierarchy.md`, `decisions/ADR-0003-timeout-hierarchy.md`      |
-| **DI & Events**      | `decisions/ADR-0004-dependency-injection.md`, `decisions/ADR-0005-event-bus.md` |
-| **AI Collaboration** | `intelligence/patterns.md`, `intelligence/calibration.md`                       |
+| Topic                | Documents                                                                            |
+|:----------------------|:-------------------------------------------------------------------------------------|
+| **Getting Started**  | `overview/project_overview.md`, `conventions/naming.md`                              |
+| **Architecture**     | `decisions/ADR-0001-architecture.md`, `decisions/ADR-0002-sage-protocol.md`          |
+| **Configuration**    | `policies/runtime_settings.md`, `policies/loading_configurations.md`                 |
+| **Timeouts**         | `policies/timeout_hierarchy.md`, `decisions/ADR-0003-timeout-hierarchy.md`           |
+| **DI & Events**      | `decisions/ADR-0004-dependency-injection.md`, `decisions/ADR-0005-event-bus.md`      |
+| **AI Collaboration** | `intelligence/calibration/calibration.md`, `intelligence/calibration/patterns.md`   |
 
 ### 3.2 All Documents
+
+#### Overview
+
+- `overview/project_overview.md` — Project introduction and quick start
 
 #### Policies
 
@@ -137,14 +176,21 @@ AI collaboration patterns and learned behaviors:
 
 #### Intelligence
 
-- `intelligence/patterns.md` — AI interaction patterns
-- `intelligence/optimizations.md` — Project optimizations
-- `intelligence/calibration.md` — Autonomy calibration
-- `intelligence/cases.md` — Case studies and examples
-- `intelligence/common_pitfalls.md` — Common mistakes to avoid
-- `intelligence/lessons_learned.md` — Key project learnings
-- `intelligence/performance_tuning.md` — Performance optimization
-- `intelligence/session_automation_requirements.md` — Session history automation plan
+**calibration/**
+- `intelligence/calibration/calibration.md` — Autonomy calibration (L1-L6)
+- `intelligence/calibration/patterns.md` — AI interaction patterns
+
+**learning/**
+- `intelligence/learning/cases.md` — Case studies and examples
+- `intelligence/learning/lessons_learned.md` — Key project learnings
+- `intelligence/learning/common_pitfalls.md` — Common mistakes to avoid
+
+**optimization/**
+- `intelligence/optimization/optimizations.md` — Project optimizations
+- `intelligence/optimization/performance_tuning.md` — Performance optimization
+
+**automation/**
+- `intelligence/automation/session_automation_requirements.md` — Session history automation
 
 ---
 
@@ -152,16 +198,16 @@ AI collaboration patterns and learned behaviors:
 
 ### 4.1 For New Contributors
 
-1. Start with `conventions/naming.md` and `conventions/file_structure.md`
-2. Read key ADRs: ADR-0001 (architecture), ADR-0002 (SAGE protocol)
-3. Review `intelligence/patterns.md` for AI collaboration
+1. Start with `overview/project_overview.md` for quick introduction
+2. Read `conventions/naming.md` and `conventions/file_structure.md`
+3. Review key ADRs: ADR-0001 (architecture), ADR-0002 (SAGE protocol)
 
 ### 4.2 For AI Assistants
 
-1. Check `intelligence/calibration.md` for autonomy levels
-2. Follow patterns in `intelligence/patterns.md`
-3. Use optimizations from `intelligence/optimizations.md`
-4. Reference conventions when generating code
+1. Check `intelligence/calibration/calibration.md` for autonomy levels
+2. Follow patterns in `intelligence/calibration/patterns.md`
+3. Use optimizations from `intelligence/optimization/optimizations.md`
+4. Learn from `intelligence/learning/` (cases, lessons, pitfalls)
 
 ### 4.3 For Policies
 

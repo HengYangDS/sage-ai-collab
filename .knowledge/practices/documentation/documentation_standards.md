@@ -98,6 +98,46 @@
 | Link count      | 3-5 per document                |
 | Priority        | Same layer first, then adjacent |
 
+### 2.4 Path Format Standard
+
+**Rule**: All paths in Related sections and cross-references MUST use **project-root-relative paths** (starting with `.`).
+
+#### Path Format Examples
+
+| ✅ Correct (Project-Root-Relative)         | ❌ Incorrect (Relative/Mixed)    |
+|--------------------------------------------|----------------------------------|
+| `.context/policies/timeout_hierarchy.md`   | `timeout_hierarchy.md`           |
+| `.knowledge/frameworks/autonomy/levels.md` | `../frameworks/autonomy/levels.md` |
+| `.junie/guidelines.md`                     | `guidelines.md`                  |
+| `docs/design/01-architecture.md`           | `../../docs/design/01-architecture.md` |
+
+#### Rationale
+
+| Benefit              | Explanation                                      |
+|----------------------|--------------------------------------------------|
+| **Unambiguous**      | Clear location regardless of current file        |
+| **IDE-friendly**     | Easy navigation with Ctrl+Click                  |
+| **Maintainable**     | No broken links when files move within directory |
+| **Consistent**       | Same format across all documents                 |
+| **Cross-directory**  | Works for references outside current directory   |
+
+#### Format Rules
+
+1. **Start with `.`**: All paths begin with `.` (project root) or directory name under root
+2. **Use forward slashes**: Always `/`, never `\` (cross-platform)
+3. **Include extension**: Always include `.md` for markdown files
+4. **No `../`**: Never use relative parent traversal
+5. **Directories end without `/`**: `docs/api` not `docs/api/`
+
+#### Special Cases
+
+| Case                    | Format                              | Example                          |
+|-------------------------|-------------------------------------|----------------------------------|
+| Same directory file     | Full path from root                 | `.context/policies/timeout.md`   |
+| Source code reference   | Path from root                      | `src/sage/core/config.py`        |
+| Config file reference   | Path from root                      | `config/sage.yaml`               |
+| External URL            | Full URL                            | `https://example.com/docs`       |
+
 ---
 
 ## 3. Token Efficiency
