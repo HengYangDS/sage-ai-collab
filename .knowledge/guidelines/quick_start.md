@@ -97,4 +97,13 @@ sage serve             # Start MCP server
 
 ---
 
+## Related
+
+- `.knowledge/core/quick_reference.md` — Core quick reference card
+- `.knowledge/guidelines/code_style.md` — Code style standards
+- `.knowledge/guidelines/ai_collaboration.md` — AI collaboration patterns
+- `.knowledge/core/principles.md` — Core philosophy (信达雅 · 术法道)
+
+---
+
 *Part of SAGE Knowledge Base*

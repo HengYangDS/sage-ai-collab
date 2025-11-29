@@ -119,4 +119,13 @@ tokens: ~950
 
 ---
 
+## Related
+
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions (L1-L6)
+- `.knowledge/practices/ai_collaboration/workflow.md` — Detailed workflow practices
+- `.knowledge/practices/ai_collaboration/context_management.md` — Context management
+- `.knowledge/practices/ai_collaboration/session_management.md` — Session management
+
+---
+
 *Part of SAGE Knowledge Base*

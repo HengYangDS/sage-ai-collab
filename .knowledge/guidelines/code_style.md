@@ -136,4 +136,13 @@ def process(data: str) -> Result:
 
 ---
 
+## Related
+
+- `.knowledge/guidelines/python.md` — Python-specific guidelines
+- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/practices/engineering/code_review.md` — Code review practices
+- `.knowledge/guidelines/quality.md` — Quality assurance guidelines
+
+---
+
 *Part of SAGE Knowledge Base*
