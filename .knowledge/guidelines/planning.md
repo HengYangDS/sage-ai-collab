@@ -109,4 +109,13 @@ tokens: ~800
 
 ---
 
+## Related
+
+- `.knowledge/frameworks/design/axioms.md` — Design axioms and principles
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/frameworks/patterns/decision.md` — Decision quality framework
+
+---
+
 *Part of SAGE Knowledge Base*

@@ -206,4 +206,13 @@ class UserRepository:
 
 ---
 
+## Related
+
+- `.knowledge/guidelines/code_style.md` — General code style standards
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/scenarios/python_backend/context.md` — Python backend scenario
+
+---
+
 *Part of SAGE Knowledge Base*

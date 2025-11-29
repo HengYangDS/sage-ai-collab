@@ -1,3 +1,10 @@
+﻿---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~500
+---
+
 # Core Principles - Test Fixture
 
 > Test fixture for core principles content.

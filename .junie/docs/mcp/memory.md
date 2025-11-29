@@ -1,3 +1,10 @@
+﻿---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~500
+---
+
 # Memory Server Best Practices
 
 > Knowledge graph persistence patterns and usage guidelines (~15 min read)

@@ -1,3 +1,10 @@
+﻿---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~500
+---
+
 # Error Recovery Guide
 
 > Recovery procedures for common issues (~10 min read)

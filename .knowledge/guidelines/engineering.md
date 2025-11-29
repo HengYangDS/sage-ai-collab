@@ -132,4 +132,13 @@ Measure → Profile → Optimize → Verify
 
 ---
 
+## Related
+
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD configuration
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/practices/engineering/git_workflow.md` — Git workflow practices
+- `.knowledge/guidelines/quality.md` — Quality assurance guidelines
+
+---
+
 *Part of SAGE Knowledge Base*

@@ -1,3 +1,10 @@
+﻿---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~500
+---
+
 # SAGE Knowledge Base - Design Document
 
 ## 🏆 Level 5 Expert Committee Consolidated Design

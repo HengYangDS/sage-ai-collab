@@ -1,3 +1,10 @@
+﻿---
+version: "1.0"
+last_updated: "2025-11-30"
+status: published
+tokens: ~500
+---
+
 # Quick Start Guide
 
 > Get Junie configured in 10 minutes for maximum productivity
