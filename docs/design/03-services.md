@@ -1,4 +1,4 @@
----
+﻿---
 title: SAGE Knowledge Base - Services Design
 version: 0.1.0
 date: 2025-11-28
@@ -222,7 +222,7 @@ sage> search "autonomy level"
 Found 3 results:
   1. frameworks/autonomy/levels.md (score: 0.95)
   2. guidelines/ai_collaboration.md (score: 0.72)
-  3. content/core/quick_reference.md (score: 0.65)
+  3. .knowledge/core/quick_reference.md (score: 0.65)
 
 sage> exit
 Goodbye!

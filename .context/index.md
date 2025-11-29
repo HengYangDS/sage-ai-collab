@@ -1,4 +1,4 @@
-# Project Context Navigation
+﻿# Project Context Navigation
 
 > Project-specific knowledge base for SAGE Knowledge Base
 
@@ -160,7 +160,7 @@ AI collaboration patterns and learned behaviors:
 
 ## Related
 
-- `content/` — Generic, reusable knowledge
+- `.knowledge/` — Generic, reusable knowledge
 - `.junie/guidelines.md` — AI collaboration guidelines
 - `docs/design/` — Design documents
 - `README.md` — Project overview

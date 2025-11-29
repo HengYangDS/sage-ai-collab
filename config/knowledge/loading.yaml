@@ -1,4 +1,4 @@
-# SAGE Smart Loading Configuration
+﻿# SAGE Smart Loading Configuration
 #
 # Configuration for knowledge content loading behavior.
 # This file is part of the modular configuration system.
@@ -14,8 +14,8 @@ loading:
   # Always loaded (pre-cached)
   always:
     - index.md
-    - content/core/principles.md
-    - content/core/quick_reference.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
 
   # Layer token budgets (from 06-content-structure.md)
   layer_budgets:

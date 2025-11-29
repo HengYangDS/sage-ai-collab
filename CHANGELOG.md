@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 All notable changes to SAGE Knowledge Base will be documented in this file.
 
@@ -14,7 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - User guides (`docs/guides/`)
 - Extended scenario documentation for knowledge management, MCP integration, and plugin development
 - Design documentation index (`docs/design/index.md`)
-- Framework index files for all `content/frameworks/` subdirectories
+- Framework index files for all `.knowledge/frameworks/` subdirectories
 - Archive index (`.archive/index.md`)
 
 ### Changed
@@ -73,7 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Design documents (`docs/design/00-09`)
 - Code conventions (`.context/conventions/`)
-- Document templates (`content/templates/`)
+- Document templates (`.knowledge/templates/`)
 - AI collaboration guidelines (`.junie/guidelines.md`)
 
 #### Development Tools

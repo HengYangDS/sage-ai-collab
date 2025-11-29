@@ -1,4 +1,4 @@
----
+﻿---
 title: SAGE Knowledge Base - Timeout & Loading Design
 version: 0.1.0
 date: 2025-11-28
@@ -626,10 +626,10 @@ class TimeoutLoader:
 | Layer  | Directory           | Tokens       | Load Timing   | Timeout |
 |--------|---------------------|--------------|---------------|---------|
 | **L0** | index.md            | ~100         | Always        | 100ms   |
-| **L1** | content/core/       | ~500         | Always        | 500ms   |
-| **L2** | content/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
-| **L3** | content/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
-| **L4** | content/practices/  | ~200-400/doc | On-demand     | 2s      |
+| **L1** | .knowledge/core/       | ~500         | Always        | 500ms   |
+| **L2** | .knowledge/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
+| **L3** | .knowledge/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
+| **L4** | .knowledge/practices/  | ~200-400/doc | On-demand     | 2s      |
 
 ### Smart Loading Strategy
 
@@ -640,7 +640,7 @@ class TimeoutLoader:
 │                                                             │
 │  Always Load (~600 tokens):                                 │
 │  ┌─────────────┐  ┌─────────────────────────────┐          │
-│  │  index.md   │  │  content/core/*.md          │          │
+│  │  index.md   │  │  .knowledge/core/*.md          │          │
 │  │  (~100)     │  │  (~500)                     │          │
 │  └─────────────┘  └─────────────────────────────┘          │
 │                                                             │

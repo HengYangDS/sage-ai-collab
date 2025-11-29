@@ -1,4 +1,4 @@
----
+﻿---
 title: SAGE Knowledge Base - Protocol Design
 version: 0.1.0
 date: 2025-11-28
@@ -780,7 +780,7 @@ async def on_any_source_event(event: Event):
 bus.subscribe("source.*", on_any_source_event)
 
 # Publish event
-event = LoadEvent(type=EventType.PRE_LOAD, layer="core", path="content/core/")
+event = LoadEvent(type=EventType.PRE_LOAD, layer="core", path=".knowledge/core/")
 result = await bus.publish(event)
 ```
 

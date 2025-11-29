@@ -1,4 +1,4 @@
-# Junie Template System Optimization
+﻿# Junie Template System Optimization
 
 > **Date**: 2025-11-30
 > **Type**: Optimization & Knowledge Capture
@@ -103,7 +103,7 @@ clean separation between generic (reusable) and project-specific content.
 
 ### 1. Thin Layer Principle
 
-Keep `.junie/` minimal—delegate detailed knowledge to `.context/` and `content/`.
+Keep `.junie/` minimal—delegate detailed knowledge to `.context/` and `.knowledge/`.
 
 ### 2. Variable Centralization
 
@@ -150,7 +150,7 @@ When restructuring, update ALL references (guidelines.md, README.md, index files
 
 ### Knowledge Documents
 
-- `content/practices/ai_collaboration/junie_configuration_template.md` — Comprehensive template guide
+- `.knowledge/practices/ai_collaboration/junie_configuration_template.md` — Comprehensive template guide
 
 ### Session Records
 
@@ -158,7 +158,7 @@ When restructuring, update ALL references (guidelines.md, README.md, index files
 
 ### Updated Files
 
-- `content/practices/index.md` — Added template reference
+- `.knowledge/practices/index.md` — Added template reference
 - `.context/index.md` — Updated if needed
 
 ---
@@ -178,7 +178,7 @@ For new projects, copy `.junie/` and:
 ## Related
 
 - `2025-11-30-knowledge-reorganization.md` — Main session record (this is Iteration 9)
-- `content/practices/ai_collaboration/junie_configuration_template.md` — Full template documentation
+- `.knowledge/practices/ai_collaboration/junie_configuration_template.md` — Full template documentation
 - `.junie/guidelines.md` — Main entry point
 - `.context/index.md` — Project context navigation
 

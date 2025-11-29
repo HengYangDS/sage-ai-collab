@@ -1,4 +1,4 @@
-# SAGE Test Suite
+﻿# SAGE Test Suite
 
 > Comprehensive testing guide for SAGE Knowledge Base
 
@@ -107,7 +107,7 @@ tests/
 │   │   └── test_sage.yaml
 │   ├── mock_responses/        # Mocked API responses
 │   │   └── mcp_responses.json
-│   └── sample_content/        # Test content files
+│   └── sample_.knowledge/        # Test content files
 │       └── core/
 │           └── test_principles.md
 ├── unit/
@@ -343,7 +343,7 @@ knowledge:
   content_path: tests/fixtures/sample_content
 ```
 
-**Sample Content (`fixtures/sample_content/core/test_principles.md`):**
+**Sample Content (`fixtures/sample_.knowledge/core/test_principles.md`):**
 
 ```markdown
 # Test Principles
@@ -556,7 +556,7 @@ repos:
 ## Related
 
 - `docs/guides/advanced.md` — Advanced usage
-- `content/practices/engineering/testing_strategy.md` — Testing strategy
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
 - `.github/workflows/ci.yml` — CI configuration
 - `pyproject.toml` — pytest configuration
 

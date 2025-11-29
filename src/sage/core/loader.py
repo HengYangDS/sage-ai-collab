@@ -1,4 +1,4 @@
-"""
+﻿"""
 Knowledge Loader - Production-grade knowledge loading with timeout protection.
 
 This module provides:
@@ -415,14 +415,14 @@ class KnowledgeLoader:
     ) -> LoadResult:
         """Load a specific guidelines chapter."""
         timeout_ms = timeout_ms or _get_timeout_from_config("layer_load", 2000)
-        file_path = f"content/guidelines/{chapter}.md"
+        file_path = f".knowledge/guidelines/{chapter}.md"
         if not chapter.endswith(".md"):
             # Try to find a matching file
             guidelines_dir = self.kb_path / "knowledge" / "guidelines"
             if guidelines_dir.exists():
                 for f in guidelines_dir.glob("*.md"):
                     if chapter.lower() in f.stem.lower():
-                        file_path = f"content/guidelines/{f.name}"
+                        file_path = f".knowledge/guidelines/{f.name}"
                         break
 
         return await self.load(files=[file_path], timeout_ms=timeout_ms)
@@ -439,7 +439,7 @@ class KnowledgeLoader:
 
         if framework_dir.exists():
             files = [
-                f"content/frameworks/{name}/{f.name}"
+                f".knowledge/frameworks/{name}/{f.name}"
                 for f in framework_dir.glob("*.md")
             ]
         else:
@@ -447,7 +447,7 @@ class KnowledgeLoader:
             for subdir in (self.kb_path / "knowledge" / "frameworks").glob("*"):
                 if subdir.is_dir():
                     for f in subdir.glob(f"*{name}*.md"):
-                        files.append(f"content/frameworks/{subdir.name}/{f.name}")
+                        files.append(f".knowledge/frameworks/{subdir.name}/{f.name}")
 
         if not files:
             return LoadResult(
@@ -501,7 +501,7 @@ class KnowledgeLoader:
             async def do_search():  # type: ignore[no-untyped-def]
                 for md_file in self.kb_path.rglob("*.md"):
                     # Skip archive
-                    if "content/archive" in str(md_file).replace("\\", "/"):
+                    if ".knowledge/archive" in str(md_file).replace("\\", "/"):
                         continue
 
                     try:
@@ -594,10 +594,10 @@ class KnowledgeLoader:
         """Get files for a specific layer."""
         layer_dirs = {
             Layer.L0_INDEX: ["index.md"],
-            Layer.L1_CORE: ["content/core"],
-            Layer.L2_GUIDELINES: ["content/guidelines"],
-            Layer.L3_FRAMEWORKS: ["content/frameworks"],
-            Layer.L4_PRACTICES: ["content/practices"],
+            Layer.L1_CORE: [".knowledge/core"],
+            Layer.L2_GUIDELINES: [".knowledge/guidelines"],
+            Layer.L3_FRAMEWORKS: [".knowledge/frameworks"],
+            Layer.L4_PRACTICES: [".knowledge/practices"],
         }
 
         files = []
@@ -705,18 +705,18 @@ class KnowledgeLoader:
         """Determine a layer for a file path."""
         if file_path == "index.md":
             return Layer.L0_INDEX
-        elif "content/core" in file_path or file_path.startswith("content/core"):
+        elif ".knowledge/core" in file_path or file_path.startswith(".knowledge/core"):
             return Layer.L1_CORE
-        elif "content/guidelines" in file_path or file_path.startswith(
-            "content/guidelines"
+        elif ".knowledge/guidelines" in file_path or file_path.startswith(
+            ".knowledge/guidelines"
         ):
             return Layer.L2_GUIDELINES
-        elif "content/frameworks" in file_path or file_path.startswith(
-            "content/frameworks"
+        elif ".knowledge/frameworks" in file_path or file_path.startswith(
+            ".knowledge/frameworks"
         ):
             return Layer.L3_FRAMEWORKS
-        elif "content/practices" in file_path or file_path.startswith(
-            "content/practices"
+        elif ".knowledge/practices" in file_path or file_path.startswith(
+            ".knowledge/practices"
         ):
             return Layer.L4_PRACTICES
         else:

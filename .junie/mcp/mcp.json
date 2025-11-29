@@ -1,5 +1,5 @@
 {
-  "$schema": "./mcp.schema.json",
+  "$schema": "../schema/mcp.schema.json",
   "$comment": "MCP Server Configuration. Profiles defined in ../generic/config.yaml: minimal (filesystem, memory), standard (+github, fetch), full (all). Platform Note: This config uses 'npx.cmd' for Windows. For macOS/Linux, replace 'npx.cmd' with 'npx' in all server commands.",
   "mcpServers": {
     "filesystem": {

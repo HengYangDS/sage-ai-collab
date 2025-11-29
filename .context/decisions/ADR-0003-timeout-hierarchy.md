@@ -1,4 +1,4 @@
-# ADR-0003: Timeout Hierarchy Design
+﻿# ADR-0003: Timeout Hierarchy Design
 
 > Architecture Decision Record for SAGE Knowledge Base
 
@@ -187,7 +187,7 @@ timeout:
 
 - `.context/policies/timeout_hierarchy.md` — Detailed configuration
 - `ADR-0001-architecture.md` — Architecture context
-- `content/frameworks/resilience/timeout_patterns.md` — Universal patterns
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Universal patterns
 - `docs/design/04-timeout-loading.md` — Full design documentation
 
 ---

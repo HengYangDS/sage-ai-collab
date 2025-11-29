@@ -1,4 +1,4 @@
-{
+﻿{
   "jsonrpc": "2.0",
   "id": 1,
   "error": {
@@ -6,11 +6,11 @@
     "message": "Content not found",
     "data": {
       "error_type": "ContentNotFoundError",
-      "path": "content/missing/file.md",
+      "path": ".knowledge/missing/file.md",
       "details": {
         "searched_paths": [
-          "content/missing/file.md",
-          "content/missing/file/index.md"
+          ".knowledge/missing/file.md",
+          ".knowledge/missing/file/index.md"
         ],
         "suggestion": "Check if the file exists or use search to find similar content"
       }

@@ -1,4 +1,4 @@
-"""
+﻿"""
 Structure Checker - Directory and file structure validation.
 
 This module provides:
@@ -86,20 +86,20 @@ class StructureChecker:
 
     # Expected directory structure
     REQUIRED_DIRS = [
-        "content/core",
-        "content/guidelines",
-        "content/frameworks",
-        "content/practices",
-        "content/templates",
-        "content/scenarios",
+        ".knowledge/core",
+        ".knowledge/guidelines",
+        ".knowledge/frameworks",
+        ".knowledge/practices",
+        ".knowledge/templates",
+        ".knowledge/scenarios",
     ]
 
     REQUIRED_FILES = [
         "index.md",
         "sage.yaml",
         "README.md",
-        "content/core/principles.md",
-        "content/core/quick_reference.md",
+        ".knowledge/core/principles.md",
+        ".knowledge/core/quick_reference.md",
     ]
 
     EXPECTED_GUIDELINES = [
@@ -204,9 +204,9 @@ class StructureChecker:
                     StructureIssue(
                         severity="warning",
                         category="missing",
-                        path=f"content/guidelines/{expected}",
+                        path=f".knowledge/guidelines/{expected}",
                         message=f"Expected guideline file missing: {expected}",
-                        suggestion=f"Create guideline: content/guidelines/{expected}",
+                        suggestion=f"Create guideline: .knowledge/guidelines/{expected}",
                     )
                 )
 

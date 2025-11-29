@@ -1,4 +1,4 @@
-# ADR-0007: Configuration Management
+﻿# ADR-0007: Configuration Management
 
 > Architecture Decision Record for SAGE Knowledge Base
 
@@ -153,7 +153,7 @@ timeout:
 
 # Knowledge configuration
 knowledge:
-  base_path: content/
+  base_path: .knowledge/
   layers:
     - name: core
       path: core/

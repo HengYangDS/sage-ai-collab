@@ -1,4 +1,4 @@
-# SAGE Project Optimizations
+﻿# SAGE Project Optimizations
 
 > SAGE-specific optimizations, shortcuts, and code patterns
 
@@ -10,11 +10,11 @@ For comprehensive guides on general development practices, see:
 
 | Topic                | Reference                                                   |
 |----------------------|-------------------------------------------------------------|
-| **Code Patterns**    | `content/practices/engineering/patterns.md`                 |
-| **Testing Strategy** | `content/practices/engineering/testing_strategy.md`         |
-| **Documentation**    | `content/practices/documentation/`                          |
-| **Performance**      | `content/frameworks/performance/optimization_strategies.md` |
-| **Caching**          | `content/frameworks/performance/caching_patterns.md`        |
+| **Code Patterns**    | `.knowledge/practices/engineering/patterns.md`                 |
+| **Testing Strategy** | `.knowledge/practices/engineering/testing_strategy.md`         |
+| **Documentation**    | `.knowledge/practices/documentation/`                          |
+| **Performance**      | `.knowledge/frameworks/performance/optimization_strategies.md` |
+| **Caching**          | `.knowledge/frameworks/performance/caching_patterns.md`        |
 
 ---
 
@@ -193,8 +193,8 @@ ruff format src/sage
 
 ## Related
 
-- `content/practices/engineering/patterns.md` — Generic code patterns
-- `content/frameworks/performance/` — Performance optimization guides
+- `.knowledge/practices/engineering/patterns.md` — Generic code patterns
+- `.knowledge/frameworks/performance/` — Performance optimization guides
 - `.context/intelligence/patterns.md` — SAGE AI interaction patterns
 - `.context/intelligence/calibration.md` — Autonomy calibration
 - `.context/conventions/` — SAGE coding conventions

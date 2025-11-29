@@ -1,4 +1,4 @@
-"""
+﻿"""
 Documentation Checker - Validate documentation against SAGE standards.
 
 This module provides:
@@ -114,7 +114,7 @@ class DocumentationChecker:
     """
     Check documentation against SAGE standards.
 
-    Implements rules from content/practices/documentation/documentation_standards.md
+    Implements rules from .knowledge/practices/documentation/documentation_standards.md
     """
 
     # Regex patterns

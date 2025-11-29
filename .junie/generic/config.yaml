@@ -1,8 +1,8 @@
-# Junie Configuration
+﻿# Junie Configuration
 # Generic settings for AI collaboration - reusable across projects
 #
 # Type: 🔄 Generic (reusable across projects)
-# Schema: config.schema.json (validation schema in same directory)
+# Schema: ../schema/config.schema.json (validation schema)
 # Schema Version: 1.0
 
 # Version information
@@ -41,7 +41,7 @@ context_loading:
   # Lazy load these directories (load on demand)
   lazy_load:
     - ".context/decisions/"         # ADRs loaded when needed
-    - "content/frameworks/"         # Frameworks loaded when needed
+    - ".knowledge/frameworks/"         # Frameworks loaded when needed
   
   # Exclude from automatic loading
   exclude:

@@ -1,4 +1,4 @@
-# SAGE Keyword Triggers Configuration
+﻿# SAGE Keyword Triggers Configuration
 #
 # Keyword triggers for context-aware content loading.
 # This file is part of the modular configuration system.
@@ -30,8 +30,8 @@ triggers:
       - 类
       - 方法
     load:
-      - content/guidelines/code_style.md
-      - content/guidelines/python.md
+      - .knowledge/guidelines/code_style.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 1                        # Lower = higher priority
 
@@ -56,8 +56,8 @@ triggers:
       - 组件
       - 结构
     load:
-      - content/guidelines/planning.md
-      - content/frameworks/design/
+      - .knowledge/guidelines/planning.md
+      - .knowledge/frameworks/design/
     timeout_ms: 3000
     priority: 2
 
@@ -81,7 +81,7 @@ triggers:
       - 校验
       - 模拟
     load:
-      - content/guidelines/engineering.md
+      - .knowledge/guidelines/engineering.md
     timeout_ms: 2000
     priority: 3
 
@@ -104,8 +104,8 @@ triggers:
       - 助手
       - 批量
     load:
-      - content/guidelines/ai_collaboration.md
-      - content/frameworks/autonomy/
+      - .knowledge/guidelines/ai_collaboration.md
+      - .knowledge/frameworks/autonomy/
     timeout_ms: 2000
     priority: 4
 
@@ -122,8 +122,8 @@ triggers:
       - 慢
       - 延迟
     load:
-      - content/frameworks/resilience/timeout_patterns.md
-      - content/frameworks/performance/
+      - .knowledge/frameworks/resilience/timeout_patterns.md
+      - .knowledge/frameworks/performance/
     timeout_ms: 2000
     priority: 5
 
@@ -140,7 +140,7 @@ triggers:
       - 评审
       - 决策
     load:
-      - content/frameworks/cognitive/
+      - .knowledge/frameworks/cognitive/
     timeout_ms: 2000
     priority: 6
 
@@ -158,8 +158,8 @@ triggers:
       - 检查
       - 审查
     load:
-      - content/guidelines/quality.md
-      - content/frameworks/patterns/decision.md
+      - .knowledge/guidelines/quality.md
+      - .knowledge/frameworks/patterns/decision.md
     timeout_ms: 2000
     priority: 7
 
@@ -182,8 +182,8 @@ triggers:
       - 注释
       - 文档字符串
     load:
-      - content/guidelines/documentation.md
-      - content/practices/documentation/
+      - .knowledge/guidelines/documentation.md
+      - .knowledge/practices/documentation/
     timeout_ms: 2000
     priority: 8
 
@@ -202,7 +202,7 @@ triggers:
       - 类型
       - 类型注解
     load:
-      - content/guidelines/python.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 9
 
@@ -226,8 +226,8 @@ triggers:
       - 冗长
       - 简洁
     load:
-      - content/practices/ai_collaboration/token_optimization.md
-      - content/frameworks/cognitive/information_density.md
+      - .knowledge/practices/ai_collaboration/token_optimization.md
+      - .knowledge/frameworks/cognitive/information_density.md
     timeout_ms: 2000
     priority: 10
 
@@ -246,7 +246,7 @@ triggers:
       - 格式检查
       - 审查文档
     load:
-      - content/practices/documentation/documentation_standards.md
-      - content/practices/ai_collaboration/token_optimization.md
+      - .knowledge/practices/documentation/documentation_standards.md
+      - .knowledge/practices/ai_collaboration/token_optimization.md
     timeout_ms: 2000
     priority: 11

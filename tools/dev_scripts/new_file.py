@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """SAGE New File Creator.
 
 Creates new files with correct placement and template.
@@ -31,7 +31,7 @@ FILE_TYPES = {
         "description": "Project convention document",
     },
     "practice": {
-        "directory": "content/practices/{category}",
+        "directory": ".knowledge/practices/{category}",
         "pattern": "{name}.md",
         "template": "practice.md",
         "description": "Generic practice/pattern document",
@@ -44,13 +44,13 @@ FILE_TYPES = {
         "description": "User guide document",
     },
     "scenario": {
-        "directory": "content/scenarios/{name}",
+        "directory": ".knowledge/scenarios/{name}",
         "pattern": "context.md",
         "template": "scenario.md",
         "description": "Usage scenario documentation",
     },
     "framework": {
-        "directory": "content/frameworks/{category}",
+        "directory": ".knowledge/frameworks/{category}",
         "pattern": "{name}.md",
         "template": "framework.md",
         "description": "Framework documentation",
@@ -207,10 +207,10 @@ def main() -> int:
 File types:
   adr         Architecture Decision Record (.context/decisions/)
   convention  Project convention (.context/conventions/)
-  practice    Generic practice/pattern (content/practices/)
+  practice    Generic practice/pattern (.knowledge/practices/)
   guide       User guide (docs/guides/)
-  scenario    Usage scenario (content/scenarios/)
-  framework   Framework documentation (content/frameworks/)
+  scenario    Usage scenario (.knowledge/scenarios/)
+  framework   Framework documentation (.knowledge/frameworks/)
 
 Examples:
   %(prog)s adr "use-event-bus"

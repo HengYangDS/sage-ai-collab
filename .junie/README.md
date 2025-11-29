@@ -29,16 +29,27 @@
 │
 ├── docs/                   # 🔄 Junie documentation
 │   ├── README.md           # Documentation index
-│   ├── 01-introduction.md
-│   ├── 02-action-allowlist.md
-│   ├── 03-mcp-integration.md
-│   ├── 04-future-vision.md
-│   ├── 05-appendix.md
-│   ├── 06-migration-guide.md
-│   ├── 07-memory-best-practices.md
-│   ├── 08-efficiency-metrics.md
-│   ├── 09-operations-guide.md
-│   └── 10-glossary.md
+│   ├── guides/             # User guides
+│   │   ├── quick-start.md
+│   │   └── action-allowlist.md
+│   ├── mcp/                # MCP integration
+│   │   ├── overview.md
+│   │   ├── configuration.md
+│   │   ├── servers.md
+│   │   ├── memory.md
+│   │   └── troubleshooting.md
+│   ├── operations/         # Operations guides
+│   │   ├── maintenance.md
+│   │   ├── migration.md
+│   │   ├── metrics.md
+│   │   └── recovery.md
+│   ├── reference/          # Reference materials
+│   │   ├── glossary.md
+│   │   ├── regex.md
+│   │   ├── rules-windows.md
+│   │   └── rules-unix.md
+│   └── vision/             # Future vision
+│       └── future-protocols.md
 │
 └── project/                # 📌 Project-specific files (must customize)
     ├── config.yaml         # Project variables definition

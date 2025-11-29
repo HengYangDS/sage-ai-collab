@@ -1,4 +1,4 @@
-# Session End Checklist - SAGE Project
+﻿# Session End Checklist - SAGE Project
 
 > Quick reference for SAGE session management
 
@@ -8,7 +8,7 @@
 
 For the comprehensive session management checklist, see:
 
-**→ `content/practices/ai_collaboration/session_checklist.md`**
+**→ `.knowledge/practices/ai_collaboration/session_checklist.md`**
 
 This includes:
 
@@ -42,9 +42,9 @@ This includes:
 
 | Template      | Location                                   |
 |---------------|--------------------------------------------|
-| Conversation  | `content/templates/conversation_record.md` |
-| Handoff       | `content/templates/task_handoff.md`        |
-| Session State | `content/templates/session_state.md`       |
+| Conversation  | `.knowledge/templates/conversation_record.md` |
+| Handoff       | `.knowledge/templates/task_handoff.md`        |
+| Session State | `.knowledge/templates/session_state.md`       |
 
 ---
 
@@ -62,8 +62,8 @@ This includes:
 
 ## Related
 
-- `content/practices/ai_collaboration/session_checklist.md` — Generic checklist
-- `content/practices/ai_collaboration/session_management.md` — Full session practices
+- `.knowledge/practices/ai_collaboration/session_checklist.md` — Generic checklist
+- `.knowledge/practices/ai_collaboration/session_management.md` — Full session practices
 - `.history/index.md` — Session history navigation
 - `.junie/guidelines.md` — Project guidelines
 

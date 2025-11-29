@@ -1,99 +1,121 @@
 # Junie Documentation
 
-> Comprehensive documentation for JetBrains Junie AI Assistant
+> Comprehensive documentation for JetBrains Junie AI Assistant configuration
 
 ---
 
-## Table of Contents
+## Overview
 
-- [1. Documentation Overview](#1-documentation-overview)
-- [2. Quick Navigation](#2-quick-navigation)
-- [3. Key Metrics](#3-key-metrics)
-- [4. Platform Reference](#4-platform-reference)
-- [5. Version Compatibility](#5-version-compatibility)
+This documentation covers everything you need to configure and optimize Junie AI Assistant for maximum productivity:
 
----
+- **Action Allowlist**: Configure 87 Terminal rules for 90%+ automatic command approval
+- **MCP Integration**: Achieve 60-75% token efficiency with intelligent context management
+- **Operations**: Maintenance, migration, metrics, and error recovery
+- **Future Vision**: Prepare for A2A multi-agent collaboration (2026+)
 
-## 1. Documentation Overview
+### Quality Principles — 信达雅 (Xin-Da-Ya)
 
-This documentation is organized into focused guides for easier navigation and maintenance:
-
-| Document                                                | Description                                     | Time      |
-|:--------------------------------------------------------|:------------------------------------------------|:----------|
-| [📋 Introduction](01-introduction.md)                   | Documentation overview and navigation           | 5 min     |
-| [📘 Action Allowlist](02-action-allowlist.md)           | 87 Terminal rules for 90%+ auto-approval        | 30 min    |
-| [🚀 MCP Integration](03-mcp-integration.md)             | 60-75% token efficiency improvement             | 1-2 hours |
-| [🔮 Future Vision](04-future-vision.md)                 | A2A multi-agent collaboration (2026+)           | 30-60 min |
-| [📎 Appendix](05-appendix.md)                           | Regex reference, complete rules list, changelog | 15 min    |
-| [🔄 Migration Guide](06-migration-guide.md)             | Version migration and breaking change handling  | 10 min    |
-| [🧠 Memory Best Practices](07-memory-best-practices.md) | Knowledge graph patterns and usage              | 15 min    |
-| [📊 Efficiency Metrics](08-efficiency-metrics.md)       | Collaboration tracking and optimization         | 10 min    |
-| [🔧 Operations Guide](09-operations-guide.md)           | Hot reload, error recovery, maintenance         | 10 min    |
-| [📚 Glossary](10-glossary.md)                           | Unified terminology definitions                 | 5 min     |
+| Principle        | Description           | Application                             |
+|:-----------------|:----------------------|:----------------------------------------|
+| **Faithfulness** | Technical correctness | All configurations tested and verified  |
+| **Clarity**      | Easy understanding    | Step-by-step instructions with examples |
+| **Elegance**     | Professional quality  | Clean formatting, consistent style      |
 
 ---
 
-## 2. Quick Navigation
+## Documentation Structure
 
-**Choose your path based on your goal**:
-
-| Your Goal                            | Go To                                                                                 | Time Required |
-|:-------------------------------------|:--------------------------------------------------------------------------------------|:--------------|
-| 🚀 **Quick Setup** (first-time user) | [Quick Start](02-action-allowlist.md#quick-start)                                     | 10-30 min     |
-| 🔧 **Add Terminal Rules**            | [Configuration Rules Explained](02-action-allowlist.md#configuration-rules-explained) | 15 min        |
-| 📋 **Copy All Rules**                | [Complete Rules List](05-appendix.md#2-complete-rules-list)                           | 5 min         |
-| 🔌 **Setup MCP Integration**         | [MCP Integration Guide](03-mcp-integration.md)                                        | 1-2 hours     |
-| 🐛 **Fix Issues**                    | [Troubleshooting](02-action-allowlist.md#troubleshooting)                             | 10-20 min     |
-| 🔮 **Learn Future Protocols**        | [Future Protocol Vision](04-future-vision.md)                                         | 30-60 min     |
-| 📖 **Understand the Mechanism**      | [Action Allowlist Mechanism](02-action-allowlist.md#action-allowlist-mechanism)       | 15 min        |
-
----
-
-## 3. Key Metrics
-
-- 📊 **87 Total Rules** (57 cross-platform + 30 platform-specific)
-- ⚡ **90%+ Auto-Approval Rate** after full configuration
-- 🔒 **Zero Security Incidents** with dangerous character exclusion
-- 💪 **5-10x Efficiency Improvement** in AI collaboration
-- 🚀 **60-75% Token Efficiency** with MCP integration
-
----
-
-## 4. Platform Reference
-
-| Platform           | Terminal Rules | Configuration File                                                             | Key Commands             |
-|:-------------------|:---------------|:-------------------------------------------------------------------------------|:-------------------------|
-| **Windows**        | 68 rules       | `%APPDATA%\JetBrains\<Product><Version>\options\junie.xml`                     | PowerShell cmdlets       |
-| **macOS**          | 76 rules       | `~/Library/Application Support/JetBrains/<Product><Version>/options/junie.xml` | Bash/Zsh commands        |
-| **Linux**          | 76 rules       | `~/.config/JetBrains/<Product><Version>/options/junie.xml`                     | Bash/Zsh commands        |
-| **Cross-Platform** | 57 rules       | Same format                                                                    | Git, Python, Docker, npm |
-
-> **Note**: Replace `<Product><Version>` with your IDE, e.g., `PyCharm2025.2`, `IntelliJIdea2025.2`
+```
+docs/
+├── README.md                 # This file - main index
+├── guides/                   # 📘 User Guides
+│   ├── quick-start.md        # First-time setup (~10 min)
+│   └── action-allowlist.md   # Terminal rules configuration (~30 min)
+├── mcp/                      # 🔌 MCP Integration
+│   ├── overview.md           # Architecture and concepts (~15 min)
+│   ├── configuration.md      # Setup and configuration (~30 min)
+│   ├── servers.md            # Server reference (~20 min)
+│   ├── memory.md             # Memory best practices (~15 min)
+│   └── troubleshooting.md    # Problem solving (~10 min)
+├── operations/               # 🔧 Operations Guide
+│   ├── maintenance.md        # Daily operations (~10 min)
+│   ├── migration.md          # Version migration (~10 min)
+│   ├── metrics.md            # Efficiency tracking (~10 min)
+│   └── recovery.md           # Error recovery (~10 min)
+├── reference/                # 📚 Reference Materials
+│   ├── glossary.md           # Terminology (~5 min)
+│   ├── regex.md              # Regex patterns (~10 min)
+│   ├── rules-windows.md      # Windows rules (copy-paste)
+│   └── rules-unix.md         # macOS/Linux rules (copy-paste)
+└── vision/                   # 🔮 Future Vision
+    └── future-protocols.md   # Protocol roadmap (~30 min)
+```
 
 ---
 
-## 5. Version Compatibility
+## Quick Navigation
 
-| Component             | Tested Versions                         | Notes                                  |
-|:----------------------|:----------------------------------------|:---------------------------------------|
-| **Junie Plugin**      | 2025.1+                                 | MCP support requires 2025.1 or later   |
-| **JetBrains IDEs**    | 2024.3+, 2025.x                         | PyCharm, IntelliJ IDEA, WebStorm, etc. |
-| **Node.js**           | v18+                                    | Required for MCP servers               |
-| **Operating Systems** | Windows 10/11, macOS 12+, Ubuntu 20.04+ | Other Linux distros should work        |
+### By Goal
 
-> **💡 Tip**: Check your Junie version via `Settings | Plugins | Junie`. For MCP features, ensure you have the latest
-> plugin version.
+| Your Goal                     | Go To                                                   | Time      |
+|:------------------------------|:--------------------------------------------------------|:----------|
+| 🚀 **First-time setup**       | [Quick Start](guides/quick-start.md)                    | 10 min    |
+| 📘 **Configure Terminal rules** | [Action Allowlist](guides/action-allowlist.md)         | 30 min    |
+| 🔌 **Setup MCP servers**      | [MCP Configuration](mcp/configuration.md)               | 30 min    |
+| 📋 **Copy all rules**         | [Windows](reference/rules-windows.md) / [Unix](reference/rules-unix.md) | 5 min |
+| 🐛 **Fix issues**             | [MCP Troubleshooting](mcp/troubleshooting.md)           | 10-20 min |
+| 🔮 **Learn future protocols** | [Future Protocols](vision/future-protocols.md)          | 30 min    |
+
+### By Role
+
+| Role              | Recommended Path                                                |
+|:------------------|:----------------------------------------------------------------|
+| **New User**      | Quick Start → Action Allowlist → MCP Overview                   |
+| **Administrator** | Operations (all) → Migration → Metrics                          |
+| **Advanced User** | MCP Configuration → Memory → Future Protocols                   |
 
 ---
 
-## Related
+## Key Metrics
 
-- `01-introduction.md` — Documentation overview and navigation
-- `02-action-allowlist.md` — Terminal rules configuration
-- `03-mcp-integration.md` — MCP setup and best practices
-- `04-future-vision.md` — Protocol roadmap
-- `05-appendix.md` — References and resources
+| Metric                   | Target    | Description                              |
+|:-------------------------|:----------|:-----------------------------------------|
+| **Terminal Rules**       | 87 rules  | Cross-platform command automation        |
+| **Auto-Approval Rate**   | 90%+      | Commands auto-approved after setup       |
+| **Token Efficiency**     | 60-75%    | Improvement with MCP integration         |
+| **Security**             | Zero risk | Dangerous character exclusion pattern    |
 
 ---
 
-*Part of the Junie Documentation*
+## Platform Reference
+
+| Platform           | Terminal Rules | Key Commands             |
+|:-------------------|:---------------|:-------------------------|
+| **Windows**        | 68 rules       | PowerShell cmdlets       |
+| **macOS**          | 76 rules       | Bash/Zsh commands        |
+| **Linux**          | 76 rules       | Bash/Zsh commands        |
+| **Cross-Platform** | 57 rules       | Git, Python, Docker, npm |
+
+---
+
+## Version Compatibility
+
+| Component             | Tested Versions   | Notes                                |
+|:----------------------|:------------------|:-------------------------------------|
+| **Junie Plugin**      | 2025.1+           | MCP support requires 2025.1+         |
+| **JetBrains IDEs**    | 2024.3+, 2025.x   | PyCharm, IntelliJ IDEA, WebStorm     |
+| **Node.js**           | v18+              | Required for MCP servers             |
+| **Operating Systems** | Win 10/11, macOS 12+, Ubuntu 20.04+ |               |
+
+---
+
+## Related Files
+
+- `../guidelines.md` — AI collaboration rules (main entry point)
+- `../generic/config.yaml` — Generic Junie settings
+- `../project/config.yaml` — Project-specific settings
+- `../mcp/mcp.json` — MCP server configuration
+
+---
+
+*Part of the Junie Configuration Template System*

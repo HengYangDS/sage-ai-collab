@@ -1,4 +1,4 @@
-# Configuration Guide
+﻿# Configuration Guide
 
 > Complete reference for SAGE Knowledge Base configuration options
 
@@ -276,7 +276,7 @@ content:
 paths:
   content: "./content"
   context: "./.context"
-  templates: "./content/templates"
+  templates: "./.knowledge/templates"
 
 # Layer definitions
 layers:
@@ -284,25 +284,25 @@ layers:
     priority: 0
     auto_load: true
     paths:
-      - content/core
+      - .knowledge/core
 
   - name: guidelines
     priority: 1
     auto_load: true
     paths:
-      - content/guidelines
+      - .knowledge/guidelines
 
   - name: frameworks
     priority: 2
     auto_load: false
     paths:
-      - content/frameworks
+      - .knowledge/frameworks
 
   - name: practices
     priority: 3
     auto_load: false
     paths:
-      - content/practices
+      - .knowledge/practices
 
 # Loading behavior
 behavior:
@@ -362,33 +362,33 @@ indexing:
 task_triggers:
   - pattern: "auth|login|security"
     load:
-      - content/practices/engineering/security.md
-      - content/frameworks/patterns/authentication.md
+      - .knowledge/practices/engineering/security.md
+      - .knowledge/frameworks/patterns/authentication.md
 
   - pattern: "test|testing"
     load:
-      - content/practices/engineering/testing_strategy.md
+      - .knowledge/practices/engineering/testing_strategy.md
 
   - pattern: "api|endpoint"
     load:
-      - content/practices/engineering/api_design.md
-      - content/templates/api_spec.md
+      - .knowledge/practices/engineering/api_design.md
+      - .knowledge/templates/api_spec.md
 
 # File-based triggers
 file_triggers:
   - pattern: "*.test.py"
     load:
-      - content/practices/engineering/testing_strategy.md
+      - .knowledge/practices/engineering/testing_strategy.md
 
   - pattern: "*.yaml"
     load:
-      - content/practices/engineering/yaml_conventions.md
+      - .knowledge/practices/engineering/yaml_conventions.md
 
 # Context triggers
 context_triggers:
   - condition: "new_session"
     load:
-      - content/core/quick_reference.md
+      - .knowledge/core/quick_reference.md
 ```
 
 ### 4.4 Token Budget Configuration
@@ -757,7 +757,7 @@ export SAGE_CONTENT_PATH=/path/to/content
 - `.context/policies/` — Project-specific config docs
 - `.context/decisions/ADR-0007-configuration.md` — Config architecture
 - `docs/guides/faq.md` — Configuration FAQ
-- `content/practices/engineering/yaml_conventions.md` — YAML best practices
+- `.knowledge/practices/engineering/yaml_conventions.md` — YAML best practices
 
 ---
 

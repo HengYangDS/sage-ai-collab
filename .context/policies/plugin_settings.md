@@ -1,4 +1,4 @@
-# Plugin System Configuration
+﻿# Plugin System Configuration
 
 > Configuration reference for the SAGE plugin system
 
@@ -300,7 +300,7 @@ plugins:
     
     # Allowed paths
     allowed_paths:
-      - content/
+      - .knowledge/
       - .cache/
     
     # Blocked plugins
@@ -408,7 +408,7 @@ sage plugin config <plugin_name>
 - `service_settings.md` — Service configuration
 - `memory_settings.md` — Memory/persistence settings
 - `.context/decisions/ADR-0008-plugin-system.md` — Plugin system ADR
-- `content/scenarios/plugin_development/` — Plugin development guide
+- `.knowledge/scenarios/plugin_development/` — Plugin development guide
 
 ---
 

@@ -1,4 +1,4 @@
-# SAGE Runtime Settings
+﻿# SAGE Runtime Settings
 
 > Runtime configuration, logging, and environment settings
 
@@ -332,7 +332,7 @@ debug:
   hot_reload:
     enabled: true
     watch_paths:
-      - content/
+      - .knowledge/
       - config/
     debounce_ms: 500
   

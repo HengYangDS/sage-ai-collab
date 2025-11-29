@@ -1,0 +1,173 @@
+# Quick Start Guide
+
+> Get Junie configured in 10 minutes for maximum productivity
+
+---
+
+## Prerequisites
+
+Before starting, ensure you have:
+
+- JetBrains IDE (2024.3+) with Junie plugin (2025.1+)
+- Node.js v18+ (for MCP servers)
+- Basic familiarity with your IDE's settings
+
+---
+
+## Step 1: Verify Junie Installation
+
+1. Open your JetBrains IDE
+2. Go to `Settings | Plugins`
+3. Search for "Junie" and verify it's installed and enabled
+4. Check version is 2025.1 or later (required for MCP support)
+
+---
+
+## Step 2: Configure Terminal Rules
+
+Terminal rules allow Junie to execute common commands without manual approval.
+
+### Method A: Auto-Configuration (Recommended)
+
+If your project includes `.junie/` configuration:
+
+1. **Restart IDE** after opening the project
+2. **Verify Configuration**:
+   - Open `Settings | Tools | Junie | Action Allowlist`
+   - Confirm you see Terminal rules listed
+
+3. **Test Execution**:
+   ```bash
+   git status  # Should execute without approval prompt
+   ```
+
+### Method B: Manual Configuration
+
+1. Open `Settings | Tools | Junie | Action Allowlist`
+2. Click "Add" to add Terminal rules
+3. Copy rules from:
+   - [Windows Rules](../reference/rules-windows.md)
+   - [macOS/Linux Rules](../reference/rules-unix.md)
+
+### Method C: Quick Copy-Paste
+
+For immediate setup, copy the essential rules:
+
+**Cross-Platform Essentials (works everywhere)**:
+
+```
+# Git commands
+^\Qgit status\E$
+^\Qgit diff\E.*$
+^\Qgit log\E.*$
+^\Qgit branch\E.*$
+^\Qgit add\E [^\s;&|<>@$]*$
+^\Qgit commit\E [^\s;&|<>@$]*$
+^\Qgit push\E [^\s;&|<>@$]*$
+^\Qgit pull\E [^\s;&|<>@$]*$
+
+# Python commands
+^\Qpython\E [^\s;&|<>@$]*$
+^\Qpython -m pytest\E.*$
+^\Qpip install\E [^\s;&|<>@$]*$
+^\Qpip list\E$
+
+# Node.js commands
+^\Qnpm\E [^\s;&|<>@$]*$
+^\Qnpx\E [^\s;&|<>@$]*$
+```
+
+---
+
+## Step 3: Enable Allowed Actions
+
+In `Settings | Tools | Junie | Action Allowlist`, enable:
+
+| Action                | Recommended | Purpose                    |
+|:----------------------|:------------|:---------------------------|
+| **RunTest**           | ✅ Enable    | Run tests automatically    |
+| **Build**             | ✅ Enable    | Build project              |
+| **ReadOutsideProject**| ✅ Enable    | Read external files        |
+| **WriteOutsideProject**| ⚠️ Optional | Modify external files      |
+
+---
+
+## Step 4: Setup MCP Servers (Optional)
+
+MCP servers provide advanced capabilities like persistent memory and external tool access.
+
+### Quick MCP Setup
+
+1. Ensure `.junie/mcp/mcp.json` exists in your project
+2. Go to `Settings | Tools | Junie | MCP Servers`
+3. Click "Reload" to load server configurations
+4. Verify servers show as "Connected"
+
+### Essential MCP Servers
+
+| Server       | Priority | Purpose                      |
+|:-------------|:---------|:-----------------------------|
+| **filesystem** | P0     | File operations within project |
+| **memory**     | P0     | Cross-session knowledge      |
+| **fetch**      | P1     | External URL access          |
+
+For detailed MCP configuration, see [MCP Configuration](../mcp/configuration.md).
+
+---
+
+## Step 5: Verify Setup
+
+### Test Terminal Rules
+
+Run these commands — they should execute without approval:
+
+```bash
+git status
+python --version
+npm --version
+```
+
+### Test MCP Connection
+
+In Junie chat, try:
+- "Read the README.md file" (tests filesystem server)
+- "Remember that we use pytest for testing" (tests memory server)
+
+---
+
+## Troubleshooting
+
+### Commands Still Require Approval
+
+1. Check rule syntax in `Settings | Tools | Junie | Action Allowlist`
+2. Verify regex patterns match your commands
+3. See [Action Allowlist Guide](action-allowlist.md) for detailed patterns
+
+### MCP Servers Not Connecting
+
+1. Verify Node.js is installed: `node --version`
+2. Check server logs in IDE's MCP panel
+3. See [MCP Troubleshooting](../mcp/troubleshooting.md)
+
+---
+
+## Next Steps
+
+| Goal                        | Document                                    |
+|:----------------------------|:--------------------------------------------|
+| Configure all 87 rules      | [Action Allowlist](action-allowlist.md)     |
+| Setup advanced MCP features | [MCP Overview](../mcp/overview.md)          |
+| Track efficiency metrics    | [Metrics](../operations/metrics.md)         |
+| Learn about future features | [Future Protocols](../vision/future-protocols.md) |
+
+---
+
+## Related
+
+- [Action Allowlist](action-allowlist.md) — Complete Terminal rules guide
+- [MCP Configuration](../mcp/configuration.md) — MCP server setup
+- [Glossary](../reference/glossary.md) — Terminology reference
+
+---
+
+*Part of the Junie Documentation*

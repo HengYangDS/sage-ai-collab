@@ -1,4 +1,4 @@
-"""
+﻿"""
 Test Configuration - Global pytest fixtures.
 
 This module provides shared fixtures for all tests following the mock strategy:
@@ -67,7 +67,7 @@ def mock_loader() -> AsyncMock:
     loader.load.return_value = LoadResult(
         content="# Mock Content\nTest principles for testing.",
         layers_loaded=[Layer.L1_CORE],
-        files_loaded=["content/core/principles.md"],
+        files_loaded=[".knowledge/core/principles.md"],
         tokens_estimate=10,
         duration_ms=50,
         complete=True,
@@ -77,7 +77,7 @@ def mock_loader() -> AsyncMock:
     loader.load_core.return_value = LoadResult(
         content="# Core Principles\nBe accurate. Be clear. Be elegant.",
         layers_loaded=[Layer.L1_CORE],
-        files_loaded=["content/core/principles.md"],
+        files_loaded=[".knowledge/core/principles.md"],
         tokens_estimate=15,
         duration_ms=30,
         complete=True,
@@ -86,7 +86,7 @@ def mock_loader() -> AsyncMock:
     )
     loader.search.return_value = [
         {
-            "path": "content/core/principles.md",
+            "path": ".knowledge/core/principles.md",
             "score": 0.95,
             "preview": "Test preview...",
             "layer": "L1_CORE",
@@ -196,13 +196,13 @@ def mock_search_results() -> list[dict[str, Any]]:
     """Mock search results for testing."""
     return [
         {
-            "path": "content/core/principles.md",
+            "path": ".knowledge/core/principles.md",
             "score": 0.95,
             "preview": "Be accurate and reliable...",
             "layer": "L1_CORE",
         },
         {
-            "path": "content/guidelines/code_style.md",
+            "path": ".knowledge/guidelines/code_style.md",
             "score": 0.72,
             "preview": "Code style standards...",
             "layer": "L2_GUIDELINES",

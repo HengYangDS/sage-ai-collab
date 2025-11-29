@@ -1,4 +1,4 @@
-# Task Handoff: History Directory Enhancement
+﻿# Task Handoff: History Directory Enhancement
 
 > **Handoff ID**: 2025-11-29-history-enhancement-handoff
 > **From**: Current session (Junie)
@@ -30,7 +30,7 @@ session history tracking.
 - [x] Created `conversation_record.md` template
 - [x] Created `session_state.md` template
 - [x] Created `task_handoff.md` template
-- [x] Updated `content/templates/index.md` with new templates
+- [x] Updated `.knowledge/templates/index.md` with new templates
 - [x] Added example files to all three subdirectories
 
 ### What's Remaining
@@ -46,10 +46,10 @@ session history tracking.
 
 | File                                       | Role                   | Current State |
 |--------------------------------------------|------------------------|---------------|
-| `content/templates/conversation_record.md` | Conversation template  | Ready         |
-| `content/templates/session_state.md`       | Session state template | Ready         |
-| `content/templates/task_handoff.md`        | Handoff template       | Ready         |
-| `content/templates/index.md`               | Template catalog       | Updated       |
+| `.knowledge/templates/conversation_record.md` | Conversation template  | Ready         |
+| `.knowledge/templates/session_state.md`       | Session state template | Ready         |
+| `.knowledge/templates/task_handoff.md`        | Handoff template       | Ready         |
+| `.knowledge/templates/index.md`               | Template catalog       | Updated       |
 | `.history/conversations/_example-*.md`     | Example conversation   | Ready         |
 | `.history/current/_example-*.md`           | Example session state  | Ready         |
 | `.history/handoffs/_example-*.md`          | Example handoff        | Ready         |
@@ -59,7 +59,7 @@ session history tracking.
 | Decision                            | Rationale                              | Reference          |
 |-------------------------------------|----------------------------------------|--------------------|
 | `_example-` prefix for examples     | Distinguishes from real records        | All example files  |
-| Templates in `content/templates/`   | Follows project knowledge organization | Template index     |
+| Templates in `.knowledge/templates/`   | Follows project knowledge organization | Template index     |
 | Comprehensive examples in templates | Reduces learning curve                 | Each template file |
 
 ---
@@ -120,7 +120,7 @@ None.
 ### Related Documents
 
 - `.history/index.md` — Directory documentation
-- `content/templates/index.md` — Template catalog
+- `.knowledge/templates/index.md` — Template catalog
 - `.context/index.md` — Project context documentation
 
 ---

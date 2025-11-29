@@ -1,4 +1,4 @@
----
+﻿---
 title: SAGE Knowledge Base - Content Structure & Knowledge Taxonomy
 version: 0.1.0
 date: 2025-11-28
@@ -49,7 +49,7 @@ sage/                          # Project root directory
 │   ├── guides/                        #    Development guides
 │   └── standards/                     #    Standards documentation
 │
-├── content/                           # 📚 Knowledge content directory
+├── .knowledge/                           # 📚 Knowledge content directory
 │   ├── core/                          # 🔸 Core principles (~500 tokens)
 │   ├── guidelines/                    # 🔸 Engineering guidelines (~1,200 tokens)
 │   ├── frameworks/                    # 🔸 Deep frameworks (~2,000 tokens)
@@ -92,7 +92,7 @@ sage/                          # Project root directory
 
 ## 6.2 Content Directory Detail
 
-### content/core/ - Core Principles (~500 tokens, Always Load)
+### .knowledge/core/ - Core Principles (~500 tokens, Always Load)
 
 | File                 | Purpose                                  |
 |----------------------|------------------------------------------|
@@ -100,7 +100,7 @@ sage/                          # Project root directory
 | `quick_reference.md` | 5 critical questions, autonomy quick ref |
 | `defaults.md`        | Default behaviors, calibration standards |
 
-### content/guidelines/ - Engineering Guidelines (~1,200 tokens, On-Demand)
+### .knowledge/guidelines/ - Engineering Guidelines (~1,200 tokens, On-Demand)
 
 | File                  | Purpose                             | Lines |
 |-----------------------|-------------------------------------|-------|
@@ -115,7 +115,7 @@ sage/                          # Project root directory
 | `quality.md`          | Quality framework                   | ~80   |
 | `success.md`          | Xin-Da-Ya mapping, success criteria | ~80   |
 
-### content/frameworks/ - Deep Frameworks (~2,000 tokens, On-Demand)
+### .knowledge/frameworks/ - Deep Frameworks (~2,000 tokens, On-Demand)
 
 | Directory        | File                  | Purpose                                         |
 |------------------|-----------------------|-------------------------------------------------|
@@ -125,7 +125,7 @@ sage/                          # Project root directory
 | `decision/`      | `quality_angles.md`   | Quality angles, expert roles                    |
 | `timeout/`       | `hierarchy.md`        | Timeout principles, strategies, recovery        |
 
-### content/practices/ - Best Practices (~1,500 tokens, On-Demand)
+### .knowledge/practices/ - Best Practices (~1,500 tokens, On-Demand)
 
 | Directory           | File                         | Purpose                         |
 |---------------------|------------------------------|---------------------------------|
@@ -133,13 +133,13 @@ sage/                          # Project root directory
 | `documentation/`    | `documentation_standards.md` | Documentation standards (SSOT)  |
 | `engineering/`      | `patterns.md`                | Design patterns, best practices |
 
-### content/scenarios/ - Scenario Presets (~500 tokens, On-Demand)
+### .knowledge/scenarios/ - Scenario Presets (~500 tokens, On-Demand)
 
 | Directory         | File         | Purpose                                    |
 |-------------------|--------------|--------------------------------------------|
 | `python_backend/` | `context.md` | Context configuration, specific guidelines |
 
-### content/templates/ - Reusable Templates (~300 tokens, On-Demand)
+### .knowledge/templates/ - Reusable Templates (~300 tokens, On-Demand)
 
 | File               | Purpose                         |
 |--------------------|---------------------------------|
@@ -153,12 +153,12 @@ sage/                          # Project root directory
 |----------------------------------|----------|---------|-----------------------------------------------|
 | Root                             | 12       | 8       | Project entry, config, dev toolchain          |
 | docs/                            | 7        | 4       | Project documentation (+standards/)           |
-| content/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)    |
-| content/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index)    |
-| content/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)               |
-| content/practices/               | 4        | 4       | Best practices (+decisions/)                  |
-| content/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                |
-| content/templates/               | 2        | 0       | Templates (+expert_committee.md)              |
+| .knowledge/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)    |
+| .knowledge/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index)    |
+| .knowledge/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)               |
+| .knowledge/practices/               | 4        | 4       | Best practices (+decisions/)                  |
+| .knowledge/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                |
+| .knowledge/templates/               | 2        | 0       | Templates (+expert_committee.md)              |
 | src/sage/interfaces/             | 2        | 0       | Protocol definitions (centralized)            |
 | src/sage/domain/                 | 3        | 0       | Business domain models                        |
 | src/sage/core/                   | 9        | 1       | Core layer (<500 lines)                       |
@@ -250,7 +250,7 @@ project-root/
 │   ├── api/                     # API documentation
 │   └── guides/                  # User guides
 │
-└── content/                     # 📚 Generic Knowledge (Distributable)
+└── .knowledge/                     # 📚 Generic Knowledge (Distributable)
     └── ... (package content)
 ```
 
@@ -263,7 +263,7 @@ project-root/
 | `.history/` | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
 | `.archive/` | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
 | `docs/`     | User-facing documentation                      | No     | Yes       | Public          |
-| `content/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
+| `.knowledge/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
 
 ---
 
@@ -276,7 +276,7 @@ project-root/
 │                                                                 │
 │  DISTRIBUTABLE (Packaged with sage)                             │
 │  ┌─────────────────────────────────────────┐                   │
-│  │ content/                                │                   │
+│  │ .knowledge/                                │                   │
 │  │ ├── core/        (principles, defaults) │                   │
 │  │ ├── guidelines/  (engineering guides)   │                   │
 │  │ ├── frameworks/  (autonomy, cognitive)  │                   │
@@ -315,12 +315,12 @@ project-root/
 | Layer | Directory             | Token Budget  | Loading         |
 |-------|-----------------------|---------------|-----------------|
 | L0    | `index.md`            | ~100 tokens   | **Always Load** |
-| L1    | `content/core/`       | ~500 tokens   | **Always Load** |
-| L2    | `content/guidelines/` | ~1,200 tokens | On-Demand       |
-| L3    | `content/frameworks/` | ~2,000 tokens | On-Demand       |
-| L4    | `content/practices/`  | ~1,500 tokens | On-Demand       |
-| L5    | `content/scenarios/`  | ~500 tokens   | On-Demand       |
-| L6    | `content/templates/`  | ~300 tokens   | On-Demand       |
+| L1    | `.knowledge/core/`       | ~500 tokens   | **Always Load** |
+| L2    | `.knowledge/guidelines/` | ~1,200 tokens | On-Demand       |
+| L3    | `.knowledge/frameworks/` | ~2,000 tokens | On-Demand       |
+| L4    | `.knowledge/practices/`  | ~1,500 tokens | On-Demand       |
+| L5    | `.knowledge/scenarios/`  | ~500 tokens   | On-Demand       |
+| L6    | `.knowledge/templates/`  | ~300 tokens   | On-Demand       |
 
 ---
 
@@ -381,7 +381,7 @@ Knowledge content follows semantic versioning principles for maintainability:
 | Aspect              | Approach                                          |
 |---------------------|---------------------------------------------------|
 | **File-level**      | YAML frontmatter with `version` and `date` fields |
-| **Package-level**   | `content/VERSION` file tracking content releases  |
+| **Package-level**   | `.knowledge/VERSION` file tracking content releases  |
 | **Change tracking** | Git history with conventional commit messages     |
 
 ### Frontmatter Template
@@ -425,13 +425,13 @@ L0: index.md (Project Overview, ~100 tokens)
 L1: .junie/guidelines.md (AI Client Entry, ~200 tokens)
     └── Tech stack, Coding standards summary, @file references
 
-L2: content/core/*.md (Core Principles, ~500 tokens)
+L2: .knowledge/core/*.md (Core Principles, ~500 tokens)
     └── principles.md, quick_reference.md, defaults.md
 
-L3: content/guidelines/*.md (On-Demand, ~100-200/file)
+L3: .knowledge/guidelines/*.md (On-Demand, ~100-200/file)
     └── Triggered by keywords in user query
 
-L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
+L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
     └── Loaded for complex decision tasks
 ```
 
@@ -441,9 +441,9 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 |-------------------|-----------------------|---------------------|
 | Project overview  | `index.md`            | Universal entry     |
 | AI client config  | `.junie/`             | Client-specific     |
-| Core philosophy   | `content/core/`       | Always needed       |
-| How-to guides     | `content/guidelines/` | Task-triggered      |
-| Deep frameworks   | `content/frameworks/` | Complex decisions   |
+| Core philosophy   | `.knowledge/core/`       | Always needed       |
+| How-to guides     | `.knowledge/guidelines/` | Task-triggered      |
+| Deep frameworks   | `.knowledge/frameworks/` | Complex decisions   |
 | Project decisions | `.context/decisions/` | Project-specific    |
 | Session history   | `.history/`           | Ephemeral           |
 | Design documents  | `docs/design/`        | Technical reference |
@@ -465,7 +465,7 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 │  └─────────┘    └─────────┘    └─────────┘    └─────────┘     │
 │       │              │              │              │           │
 │       v              v              v              v           │
-│  .history/      .context/      content/      .archive/        │
+│  .history/      .context/      .knowledge/      .archive/        │
 │  sessions/      decisions/     (generic)    design_history/   │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -474,7 +474,7 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 |---------|-------------|-----------------------|-----------------------------------|
 | CAPTURE | `.history/` | Every session         | Auto-save conversations, handoffs |
 | REFINE  | `.context/` | Sprint end, milestone | Extract ADRs, conventions         |
-| PUBLISH | `content/`  | Quarterly review      | Promote generic knowledge         |
+| PUBLISH | `.knowledge/`  | Quarterly review      | Promote generic knowledge         |
 | ARCHIVE | `.archive/` | Content superseded    | Preserve historical records       |
 
 ### Content Knowledge Lifecycle
@@ -488,7 +488,7 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 │  └──────────┘   └──────────┘   └──────────┘   └──────────┘    │
 │       │              │              │              │            │
 │       v              v              v              v            │
-│  GitHub Issue   Expert Review   content/*    PyPI Release      │
+│  GitHub Issue   Expert Review   .knowledge/*    PyPI Release      │
 │  or PR          (Level 4-5)     directory    (semver)          │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -497,10 +497,10 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 
 | Layer | Directory             | Frequency        | Governance       |
 |-------|-----------------------|------------------|------------------|
-| L1    | `content/core/`       | Rare (1-2x/year) | Expert Committee |
-| L2    | `content/guidelines/` | Quarterly        | 2+ reviewers     |
-| L3    | `content/frameworks/` | As needed        | Expert review    |
-| L4    | `content/practices/`  | Monthly          | Standard PR      |
+| L1    | `.knowledge/core/`       | Rare (1-2x/year) | Expert Committee |
+| L2    | `.knowledge/guidelines/` | Quarterly        | 2+ reviewers     |
+| L3    | `.knowledge/frameworks/` | As needed        | Expert review    |
+| L4    | `.knowledge/practices/`  | Monthly          | Standard PR      |
 
 ---
 

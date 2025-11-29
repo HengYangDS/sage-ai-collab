@@ -1,4 +1,4 @@
-# SAGE Content Configuration
+﻿# SAGE Content Configuration
 #
 # Configuration for knowledge content management.
 # This file is part of the modular configuration system.
@@ -10,13 +10,13 @@ content:
   # Content directory configuration
   directories:
     root: "content"                    # Root content directory
-    core: "content/core"               # Core principles
-    guidelines: "content/guidelines"   # Engineering guidelines
-    frameworks: "content/frameworks"   # Deep frameworks
-    practices: "content/practices"     # Best practices
-    scenarios: "content/scenarios"     # Scenario presets
-    templates: "content/templates"     # Reusable templates
-    references: "content/references"   # Quick reference documents
+    core: ".knowledge/core"               # Core principles
+    guidelines: ".knowledge/guidelines"   # Engineering guidelines
+    frameworks: ".knowledge/frameworks"   # Deep frameworks
+    practices: ".knowledge/practices"     # Best practices
+    scenarios: ".knowledge/scenarios"     # Scenario presets
+    templates: ".knowledge/templates"     # Reusable templates
+    references: ".knowledge/references"   # Quick reference documents
 
   # File type configuration
   file_types:

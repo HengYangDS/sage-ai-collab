@@ -1,4 +1,4 @@
-# SAGE Performance Tuning
+﻿# SAGE Performance Tuning
 
 > SAGE-specific performance goals, benchmarks, and monitoring
 
@@ -10,9 +10,9 @@ For comprehensive performance optimization guides, see:
 
 | Topic                       | Reference                                                   |
 |-----------------------------|-------------------------------------------------------------|
-| **Optimization Strategies** | `content/frameworks/performance/optimization_strategies.md` |
-| **Caching Patterns**        | `content/frameworks/performance/caching_patterns.md`        |
-| **Profiling Guide**         | `content/frameworks/performance/profiling_guide.md`         |
+| **Optimization Strategies** | `.knowledge/frameworks/performance/optimization_strategies.md` |
+| **Caching Patterns**        | `.knowledge/frameworks/performance/caching_patterns.md`        |
+| **Profiling Guide**         | `.knowledge/frameworks/performance/profiling_guide.md`         |
 
 ---
 
@@ -140,7 +140,7 @@ def measure_time(operation: str):
 
 ## Related
 
-- `content/frameworks/performance/` — Generic performance guides
+- `.knowledge/frameworks/performance/` — Generic performance guides
 - `.context/policies/timeout_hierarchy.md` — Timeout settings
 - `.context/intelligence/optimizations.md` — SAGE code optimizations
 - `tests/performance/` — Performance test suite

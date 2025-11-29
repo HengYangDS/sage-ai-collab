@@ -1,4 +1,4 @@
-# Lessons Learned
+﻿# Lessons Learned
 
 > Key insights and learnings from SAGE Knowledge Base development
 
@@ -221,7 +221,7 @@ alone.
 - `.context/decisions/` — Architecture Decision Records
 - `.context/intelligence/patterns.md` — Successful patterns
 - `.context/intelligence/common_pitfalls.md` — Pitfalls to avoid
-- `content/practices/engineering/incremental_improvement.md` — Incremental approach
+- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental approach
 
 ---
 

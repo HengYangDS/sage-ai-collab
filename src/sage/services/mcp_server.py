@@ -1,4 +1,4 @@
-"""
+﻿"""
 MCP Server - Model Context Protocol service for AI Collaboration Knowledge Base.
 
 This module provides:
@@ -625,7 +625,7 @@ if MCP_AVAILABLE and app is not None:
             - efficiency_score: Content efficiency metric
 
         Examples:
-            - analyze_content(path="content/core/principles.md")
+            - analyze_content(path=".knowledge/core/principles.md")
             - analyze_content(path="content")
         """
         try:

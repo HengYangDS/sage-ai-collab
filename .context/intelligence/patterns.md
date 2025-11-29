@@ -1,4 +1,4 @@
-# AI Collaboration Patterns - SAGE Project Reference
+﻿# AI Collaboration Patterns - SAGE Project Reference
 
 > Project-specific calibration and patterns for SAGE Knowledge Base
 
@@ -8,7 +8,7 @@
 
 For the comprehensive guide on AI collaboration patterns, see:
 
-**→ `content/practices/ai_collaboration/interaction_patterns.md`**
+**→ `.knowledge/practices/ai_collaboration/interaction_patterns.md`**
 
 This includes:
 
@@ -88,8 +88,8 @@ For all I/O operations in SAGE:
 
 ## Related
 
-- `content/practices/ai_collaboration/interaction_patterns.md` — Generic patterns
-- `content/frameworks/autonomy/levels.md` — Autonomy level definitions
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md` — Generic patterns
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
 - `.context/policies/timeout_hierarchy.md` — Timeout policy
 - `.context/intelligence/calibration.md` — Detailed calibration data
 - `.junie/guidelines.md` — Project collaboration guidelines

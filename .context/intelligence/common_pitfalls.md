@@ -1,4 +1,4 @@
-# Common Pitfalls - SAGE Project Reference
+﻿# Common Pitfalls - SAGE Project Reference
 
 > Project-specific pitfall notes for SAGE Knowledge Base
 
@@ -8,7 +8,7 @@
 
 For the comprehensive guide on common software development pitfalls, see:
 
-**→ `content/practices/engineering/common_pitfalls.md`**
+**→ `.knowledge/practices/engineering/common_pitfalls.md`**
 
 This includes:
 
@@ -84,7 +84,7 @@ This includes:
 
 ## Related
 
-- `content/practices/engineering/common_pitfalls.md` — Generic pitfalls guide
+- `.knowledge/practices/engineering/common_pitfalls.md` — Generic pitfalls guide
 - `.context/intelligence/lessons_learned.md` — SAGE-specific lessons
 - `.context/policies/timeout_hierarchy.md` — Timeout policy
 

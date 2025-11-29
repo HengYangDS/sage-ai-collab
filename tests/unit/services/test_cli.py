@@ -1,4 +1,4 @@
-"""
+﻿"""
 Unit tests for CLI service.
 
 Tests cover:
@@ -483,12 +483,12 @@ class TestValidateExtended:
     def test_validate_with_all_directories(self, tmp_path):
         """Test validate with all required directories present."""
         dirs = [
-            "content/core",
-            "content/guidelines",
-            "content/frameworks",
-            "content/practices",
-            "content/templates",
-            "content/scenarios",
+            ".knowledge/core",
+            ".knowledge/guidelines",
+            ".knowledge/frameworks",
+            ".knowledge/practices",
+            ".knowledge/templates",
+            ".knowledge/scenarios",
         ]
         for d in dirs:
             (tmp_path / d).mkdir(parents=True)

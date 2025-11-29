@@ -1,4 +1,4 @@
-# Migration Guide
+﻿# Migration Guide
 
 > Version upgrade procedures, configuration migration, and compatibility notes
 
@@ -73,7 +73,7 @@ mkdir -p "$BACKUP_DIR"
 
 # Backup critical directories
 cp -r config/ "$BACKUP_DIR/"
-cp -r content/ "$BACKUP_DIR/"
+cp -r .knowledge/ "$BACKUP_DIR/"
 cp -r .context/ "$BACKUP_DIR/"
 cp pyproject.toml "$BACKUP_DIR/"
 ```
@@ -237,13 +237,13 @@ sage migrate content
 
 ```bash
 # v0.1.x location
-content/guidelines/
+.knowledge/guidelines/
 
 # v0.2.x location (if changed)
-content/guidelines/  # Usually unchanged
+.knowledge/guidelines/  # Usually unchanged
 
 # Migration (if needed)
-mv content/old_location/ content/new_location/
+mv .knowledge/old_location/ .knowledge/new_location/
 sage rebuild --indices
 ```
 
@@ -385,7 +385,7 @@ pip install sage-kb==0.1.0
 cp -r .backups/20250129_120000/config/ ./config/
 
 # 3. Restore content (if needed)
-cp -r .backups/20250129_120000/content/ ./content/
+cp -r .backups/20250129_120000/.knowledge/ ./.knowledge/
 
 # 4. Validate
 sage check --all
@@ -443,7 +443,7 @@ git checkout HEAD~1 -- config/  # Restore previous config
 
 # Or reset to last known good state
 git log --oneline  # Find good commit
-git checkout <commit> -- config/ content/
+git checkout <commit> -- config/ .knowledge/
 ```
 
 ---
@@ -487,7 +487,7 @@ git checkout <commit> -- config/ content/
 ## Related
 
 - `CHANGELOG.md` — Detailed version changes
-- `content/practices/engineering/troubleshooting.md` — Troubleshooting guide
+- `.knowledge/practices/engineering/troubleshooting.md` — Troubleshooting guide
 - `docs/guides/configuration.md` — Configuration guide
 - `.context/decisions/ADR-0007-configuration.md` — Config architecture
 

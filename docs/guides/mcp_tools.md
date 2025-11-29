@@ -1,4 +1,4 @@
-# MCP Tools Guide
+﻿# MCP Tools Guide
 
 > Complete reference for SAGE Knowledge Base MCP tools
 
@@ -120,7 +120,7 @@ result = await search_knowledge(
     "query"        : "timeout patterns",
     "results"      : [
         {
-            "path"   : "content/frameworks/resilience/timeout_patterns.md",
+            "path"   : ".knowledge/frameworks/resilience/timeout_patterns.md",
             "title"  : "Timeout Patterns",
             "score"  : 0.95,
             "snippet": "..."
@@ -204,7 +204,7 @@ sections = [
     "status" : "success",
     "section": "code_style",
     "content": "...",
-    "path"   : "content/guidelines/code_style.md"
+    "path"   : ".knowledge/guidelines/code_style.md"
 }
 ```
 
@@ -287,7 +287,7 @@ templates = [
     "status"  : "success",
     "template": "adr",
     "content" : "...",
-    "path"    : "content/templates/adr.md"
+    "path"    : ".knowledge/templates/adr.md"
 }
 ```
 
@@ -359,7 +359,7 @@ Analyze content structure and metrics.
 
 ```python
 # Analyze markdown content
-result = await analyze_content(path="content/")
+result = await analyze_content(path=".knowledge/")
 
 # Response
 {
@@ -552,7 +552,7 @@ result = await check_structure(
     "success": true,
     "result" : {
         "issues"         : [
-            {"type": "missing_index", "path": "content/new_folder/"}
+            {"type": "missing_index", "path": ".knowledge/new_folder/"}
         ],
         "error_count"    : 0,
         "warning_count"  : 1,
@@ -893,8 +893,8 @@ async def get_cached_knowledge(layer: int, ttl_seconds: int = 300):
 ## Related
 
 - `docs/api/mcp.md` — MCP API reference
-- `content/frameworks/patterns/integration.md` — Integration patterns
-- `content/practices/engineering/knowledge_graph.md` — Graph guide
+- `.knowledge/frameworks/patterns/integration.md` — Integration patterns
+- `.knowledge/practices/engineering/knowledge_graph.md` — Graph guide
 - `docs/guides/configuration.md` — Configuration guide
 
 ---

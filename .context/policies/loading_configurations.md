@@ -1,4 +1,4 @@
-# SAGE Loading Configurations
+﻿# SAGE Loading Configurations
 
 > Knowledge Base loading strategies and layer configuration
 
@@ -83,7 +83,7 @@ SAGE organizes knowledge into hierarchical layers:
 ```yaml
 # sage.yaml
 knowledge:
-  base_path: content/
+  base_path: .knowledge/
   
   layers:
     - name: core
@@ -295,7 +295,7 @@ loading:
 
 # Knowledge layers
 knowledge:
-  base_path: content/
+  base_path: .knowledge/
   index_file: index.md
   
   layers:

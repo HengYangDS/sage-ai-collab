@@ -1,4 +1,4 @@
-# Advanced Usage Guide
+﻿# Advanced Usage Guide
 
 > Deep dive into SAGE Knowledge Base advanced features and customization
 
@@ -503,7 +503,7 @@ sage benchmark --iterations 100
 - [Troubleshooting](troubleshooting.md) — Common issues and solutions
 - `docs/api/` — API reference
 - `docs/design/` — Architecture documentation
-- `content/practices/engineering/` — Engineering best practices
+- `.knowledge/practices/engineering/` — Engineering best practices
 
 ---
 

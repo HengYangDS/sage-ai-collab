@@ -1,4 +1,4 @@
-"""
+﻿"""
 Unit tests for KnowledgeLoader.
 
 Tests cover:
@@ -407,25 +407,25 @@ class TestGetLayerForFile:
         assert layer == Layer.L0_INDEX
 
     def test_core_file(self):
-        """Test content/core files map to L1_CORE."""
-        layer = KnowledgeLoader._get_layer_for_file("content/core/principles.md")
+        """Test .knowledge/core files map to L1_CORE."""
+        layer = KnowledgeLoader._get_layer_for_file(".knowledge/core/principles.md")
         assert layer == Layer.L1_CORE
 
     def test_guidelines_file(self):
-        """Test content/guidelines files map to L2_GUIDELINES."""
-        layer = KnowledgeLoader._get_layer_for_file("content/guidelines/quick_start.md")
+        """Test .knowledge/guidelines files map to L2_GUIDELINES."""
+        layer = KnowledgeLoader._get_layer_for_file(".knowledge/guidelines/quick_start.md")
         assert layer == Layer.L2_GUIDELINES
 
     def test_frameworks_file(self):
-        """Test content/frameworks files map to L3_FRAMEWORKS."""
+        """Test .knowledge/frameworks files map to L3_FRAMEWORKS."""
         layer = KnowledgeLoader._get_layer_for_file(
-            "content/frameworks/autonomy/levels.md"
+            ".knowledge/frameworks/autonomy/levels.md"
         )
         assert layer == Layer.L3_FRAMEWORKS
 
     def test_practices_file(self):
-        """Test content/practices files map to L4_PRACTICES."""
-        layer = KnowledgeLoader._get_layer_for_file("content/practices/workflow.md")
+        """Test .knowledge/practices files map to L4_PRACTICES."""
+        layer = KnowledgeLoader._get_layer_for_file(".knowledge/practices/workflow.md")
         assert layer == Layer.L4_PRACTICES
 
     def test_unknown_file_defaults_to_core(self):
@@ -1059,31 +1059,31 @@ class TestGetLayerForFileExtended:
         assert KnowledgeLoader._get_layer_for_file("index.md") == Layer.L0_INDEX
 
     def test_core_directory(self):
-        """Test content/core files return L1_CORE."""
+        """Test .knowledge/core files return L1_CORE."""
         assert (
-            KnowledgeLoader._get_layer_for_file("content/core/principles.md")
+            KnowledgeLoader._get_layer_for_file(".knowledge/core/principles.md")
             == Layer.L1_CORE
         )
 
     def test_guidelines_directory(self):
-        """Test content/guidelines files return L2_GUIDELINES."""
+        """Test .knowledge/guidelines files return L2_GUIDELINES."""
         assert (
-            KnowledgeLoader._get_layer_for_file("content/guidelines/quick_start.md")
+            KnowledgeLoader._get_layer_for_file(".knowledge/guidelines/quick_start.md")
             == Layer.L2_GUIDELINES
         )
 
     def test_frameworks_directory(self):
-        """Test content/frameworks files return L3_FRAMEWORKS."""
+        """Test .knowledge/frameworks files return L3_FRAMEWORKS."""
         assert (
-            KnowledgeLoader._get_layer_for_file("content/frameworks/autonomy/levels.md")
+            KnowledgeLoader._get_layer_for_file(".knowledge/frameworks/autonomy/levels.md")
             == Layer.L3_FRAMEWORKS
         )
 
     def test_practices_directory(self):
-        """Test content/practices files return L4_PRACTICES."""
+        """Test .knowledge/practices files return L4_PRACTICES."""
         assert (
             KnowledgeLoader._get_layer_for_file(
-                "content/practices/ai_collab/workflow.md"
+                ".knowledge/practices/ai_collab/workflow.md"
             )
             == Layer.L4_PRACTICES
         )
@@ -1203,7 +1203,7 @@ class TestLoadFilesWithTimeout:
     async def test_load_multiple_files(self, loader_with_multiple_files):
         """Test loading multiple files."""
         result = await loader_with_multiple_files._load_files_with_timeout(
-            files=["content/core/file1.md", "content/core/file2.md"],
+            files=[".knowledge/core/file1.md", ".knowledge/core/file2.md"],
             total_timeout_ms=5000,
         )
         assert isinstance(result, LoadResult)
@@ -1214,7 +1214,7 @@ class TestLoadFilesWithTimeout:
     async def test_load_nonexistent_file_in_list(self, loader_with_multiple_files):
         """Test loading with nonexistent file in list."""
         result = await loader_with_multiple_files._load_files_with_timeout(
-            files=["content/core/file1.md", "nonexistent.md"],
+            files=[".knowledge/core/file1.md", "nonexistent.md"],
             total_timeout_ms=5000,
         )
         assert isinstance(result, LoadResult)
@@ -1226,9 +1226,9 @@ class TestLoadFilesWithTimeout:
         """Test loading with very short timeout."""
         result = await loader_with_multiple_files._load_files_with_timeout(
             files=[
-                "content/core/file1.md",
-                "content/core/file2.md",
-                "content/core/file3.md",
+                ".knowledge/core/file1.md",
+                ".knowledge/core/file2.md",
+                ".knowledge/core/file3.md",
             ],
             total_timeout_ms=1,  # Very short timeout
         )
@@ -1249,12 +1249,12 @@ class TestGetFilesForTaskExtended:
         trigger = LoadingTrigger(
             name="test_trigger",
             keywords=["python", "code"],
-            files=["content/guidelines/python.md"],
+            files=[".knowledge/guidelines/python.md"],
             timeout_ms=2000,
         )
         loader = KnowledgeLoader(triggers=[trigger])
         files = loader._get_files_for_task("help with python code")
-        assert "content/guidelines/python.md" in files
+        assert ".knowledge/guidelines/python.md" in files
 
 
 class TestGetFilesForLayerExtended:

@@ -1,4 +1,4 @@
-# Quick Start Guide
+﻿# Quick Start Guide
 
 > Get up and running with SAGE Knowledge Base in 5 minutes
 
@@ -253,7 +253,7 @@ Edit `config/sage.yaml` to customize:
 
 Place your own knowledge files in:
 
-- `content/` — Generic, reusable knowledge
+- `.knowledge/` — Generic, reusable knowledge
 - `.context/` — Project-specific knowledge
 
 ### 5.4 Learn More

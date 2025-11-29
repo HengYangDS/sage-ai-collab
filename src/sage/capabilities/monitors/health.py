@@ -1,4 +1,4 @@
-"""
+﻿"""
 Health Monitor - System health monitoring for AI Collaboration Knowledge Base.
 
 This module provides:
@@ -141,7 +141,7 @@ class HealthMonitor:
                 )
 
             # Check core directories
-            core_dirs = ["content/core", "content/guidelines", "tools"]
+            core_dirs = [".knowledge/core", ".knowledge/guidelines", "tools"]
             missing_dirs = []
             for dir_name in core_dirs:
                 dir_path = self.kb_path / dir_name

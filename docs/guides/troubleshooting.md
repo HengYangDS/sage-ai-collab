@@ -1,4 +1,4 @@
-# Troubleshooting Guide
+﻿# Troubleshooting Guide
 
 > Common issues and solutions for SAGE Knowledge Base
 
@@ -154,7 +154,7 @@ sage config --show
 1. **Verify content path**:
    ```bash
    # Check if content directory exists
-   ls content/  # or: dir content\
+   ls .knowledge/  # or: dir content\
    
    # Verify in config
    sage config --show | grep content_root
@@ -163,7 +163,7 @@ sage config --show
 2. **Check file permissions**:
    ```bash
    # Ensure readable
-   ls -la content/core/
+   ls -la .knowledge/core/
    ```
 
 ### 3.2 Invalid Command Arguments
@@ -343,7 +343,7 @@ sage config --show-paths
 
 1. **Verify path exists**:
    ```bash
-   ls -la content/
+   ls -la .knowledge/
    ```
 
 2. **Update configuration**:

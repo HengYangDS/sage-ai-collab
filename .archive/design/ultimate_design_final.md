@@ -1,4 +1,4 @@
-# SAGE Knowledge Base - Design Document
+﻿# SAGE Knowledge Base - Design Document
 
 ## 🏆 Level 5 Expert Committee Consolidated Design
 
@@ -239,7 +239,7 @@ sage/                          # Project root directory
 │       ├── quickstart.md              #    Quick start guide
 │       └── contributing.md            #    Contributing guide
 │
-├── content/                           # 📚 Knowledge content directory
+├── .knowledge/                           # 📚 Knowledge content directory
 │   │
 │   ├── core/                          # 🔸 Core principles (~500 tokens, Always Load)
 │   │   ├── principles.md              #    Xin-Da-Ya philosophy, core values
@@ -340,7 +340,7 @@ sage/                          # Project root directory
 │   │
 │   ├── fixtures/                      # 🆕 Test data
 │   │   ├── __init__.py
-│   │   ├── sample_content/            #    Sample knowledge content
+│   │   ├── sample_.knowledge/            #    Sample knowledge content
 │   │   │   ├── index.md
 │   │   │   └── core/
 │   │   ├── mock_responses/            #    Mock response data
@@ -407,12 +407,12 @@ sage/                          # Project root directory
 |------------------------|----------|---------|---------------------------------------------|
 | Root                   | 11       | 8       | Project entry, configuration, dev toolchain |
 | docs/                  | 6        | 3       | Project documentation                       |
-| content/core/          | 3        | 0       | Core principles                             |
-| content/guidelines/    | 10       | 0       | Engineering guidelines                      |
-| content/frameworks/    | 5        | 5       | Deep frameworks                             |
-| content/practices/     | 3        | 3       | Best practices                              |
-| content/scenarios/     | 1        | 1       | Scenario presets                            |
-| content/templates/     | 1        | 0       | Templates                                   |
+| .knowledge/core/          | 3        | 0       | Core principles                             |
+| .knowledge/guidelines/    | 10       | 0       | Engineering guidelines                      |
+| .knowledge/frameworks/    | 5        | 5       | Deep frameworks                             |
+| .knowledge/practices/     | 3        | 3       | Best practices                              |
+| .knowledge/scenarios/     | 1        | 1       | Scenario presets                            |
+| .knowledge/templates/     | 1        | 0       | Templates                                   |
 | src/sage/core/         | 5        | 1       | Core layer (Layer 1)                        |
 | src/sage/core/logging/ | 4        | 0       | Unified logging                             |
 | src/sage/services/     | 4        | 0       | Services layer (Layer 2)                    |
@@ -782,8 +782,8 @@ from pathlib import Path
 config_file = Path("../../content") / "core" / "principles.md"
 
 # ❌ WRONG: Hardcoded separators
-config_file = "../../content/core/principles.md"  # Fails on Windows
-config_file = "../../content/core/principles.md"  # Fails on Unix
+config_file = "../../.knowledge/core/principles.md"  # Fails on Windows
+config_file = "../../.knowledge/core/principles.md"  # Fails on Unix
 ```
 
 ### 2.7 Configuration Hierarchy (Zero Coupling)
@@ -1913,7 +1913,7 @@ project-root/
 │   ├── api/                     # API documentation
 │   └── guides/                  # User guides
 │
-└── content/                     # 📚 Generic Knowledge (Distributable)
+└── .knowledge/                     # 📚 Generic Knowledge (Distributable)
     └── ... (package content)
 ```
 
@@ -1926,7 +1926,7 @@ project-root/
 | `.history/` | AI session records and task handoffs           | Yes    | Partial   | Ephemeral       |
 | `.archive/` | Historical/deprecated content                  | Yes    | Yes       | Preservation    |
 | `docs/`     | User-facing documentation                      | No     | Yes       | Public          |
-| `content/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
+| `.knowledge/`  | Generic, distributable knowledge               | No     | Yes       | Package         |
 
 #### 2.12.3 Knowledge Taxonomy
 
@@ -1937,7 +1937,7 @@ project-root/
 │                                                                 │
 │  DISTRIBUTABLE (Packaged with sage)                     │
 │  ┌─────────────────────────────────────────┐                   │
-│  │ content/                                │                   │
+│  │ .knowledge/                                │                   │
 │  │ ├── core/        (principles, defaults) │                   │
 │  │ ├── guidelines/  (engineering guides)   │                   │
 │  │ ├── frameworks/  (autonomy, cognitive)  │                   │
@@ -2037,7 +2037,7 @@ Both systems work together:
 │  Key Innovations:                                               │
 │  • 4-layer knowledge taxonomy (distributable → ephemeral)       │
 │  • Multi-client AI support (.junie, .cursor, .copilot)          │
-│  • Clear separation: content/ vs .context/                      │
+│  • Clear separation: .knowledge/ vs .context/                      │
 │  • Session continuity via .history/ + MemoryStore               │
 │                                                                 │
 │  Status: APPROVED FOR IMPLEMENTATION                            │
@@ -2772,7 +2772,7 @@ class TimeoutLoader:
 
     async def _read_layer_content(self, layer: str) -> str:
         """Read layer content from filesystem."""
-        # Actual implementation would read from content/ directory
+        # Actual implementation would read from .knowledge/ directory
         raise NotImplementedError("Implement based on layer structure")
 ```
 
@@ -2808,10 +2808,10 @@ src/sage/
 | Layer  | Directory           | Tokens       | Load Timing   | Timeout |
 |--------|---------------------|--------------|---------------|---------|
 | **L0** | index.md            | ~100         | Always        | 100ms   |
-| **L1** | content/core/       | ~500         | Always        | 500ms   |
-| **L2** | content/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
-| **L3** | content/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
-| **L4** | content/practices/  | ~200-400/doc | On-demand     | 2s      |
+| **L1** | .knowledge/core/       | ~500         | Always        | 500ms   |
+| **L2** | .knowledge/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
+| **L3** | .knowledge/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
+| **L4** | .knowledge/practices/  | ~200-400/doc | On-demand     | 2s      |
 
 ### 4.2 Token Efficiency Comparison
 
@@ -2859,8 +2859,8 @@ preferred language while receiving consistent content.
 loading:
   always:
     - index.md
-    - content/core/principles.md
-    - content/core/quick_reference.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
 
 triggers:
   code:
@@ -2886,8 +2886,8 @@ triggers:
       - 类
       - 方法
     load:
-      - content/guidelines/02_code_style.md
-      - content/guidelines/05_python.md
+      - .knowledge/guidelines/02_code_style.md
+      - .knowledge/guidelines/05_python.md
     timeout_ms: 2000
     priority: 1
 
@@ -2912,8 +2912,8 @@ triggers:
       - 结构
       - 模式
     load:
-      - content/guidelines/01_planning_design.md
-      - content/frameworks/decision/
+      - .knowledge/guidelines/01_planning_design.md
+      - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 2
 
@@ -2937,7 +2937,7 @@ triggers:
       - 集成
       - 模拟
     load:
-      - content/guidelines/03_engineering.md
+      - .knowledge/guidelines/03_engineering.md
     timeout_ms: 2000
     priority: 3
 
@@ -2960,8 +2960,8 @@ triggers:
       - 助手
       - 级别
     load:
-      - content/guidelines/06_ai_collaboration.md
-      - content/frameworks/autonomy/
+      - .knowledge/guidelines/06_ai_collaboration.md
+      - .knowledge/frameworks/autonomy/
     timeout_ms: 2000
     priority: 4
 
@@ -2984,8 +2984,8 @@ triggers:
       - 评价
       - 批评
     load:
-      - content/frameworks/cognitive/expert_committee.md
-      - content/frameworks/decision/
+      - .knowledge/frameworks/cognitive/expert_committee.md
+      - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 5
 
@@ -3008,8 +3008,8 @@ triggers:
       - 注释
       - 文档字符串
     load:
-      - content/guidelines/04_documentation.md
-      - content/practices/documentation/
+      - .knowledge/guidelines/04_documentation.md
+      - .knowledge/practices/documentation/
     timeout_ms: 2000
     priority: 6
 
@@ -3028,7 +3028,7 @@ triggers:
       - 类型
       - 类型注解
     load:
-      - content/guidelines/05_python.md
+      - .knowledge/guidelines/05_python.md
     timeout_ms: 2000
     priority: 7
 
@@ -4109,7 +4109,7 @@ Parallelizable:
 | Directory Structure      | 🟡 Needs Reorganization | 86/100 | 100/100        | Implement 3-layer architecture |
 | Three-Layer Architecture | ❌ Not Implemented       | 0%     | 100%           | core/ + services/ separation   |
 | Unified Logging          | ❌ Not Implemented       | 0%     | 100%           | structlog + stdlib             |
-| Core Content             | 🟡 Partial              | 70%    | 90%            | content/core/ enhancement      |
+| Core Content             | 🟡 Partial              | 70%    | 90%            | .knowledge/core/ enhancement      |
 | Source Code              | 🟡 Needs Refactoring    | 80%    | 100%           | Move to core/ + services/      |
 | Tools                    | 🟡 Needs Reorganization | 75%    | 100%           | Merge analyzers + checkers     |
 | Tests                    | 🟡 Needs Restructuring  | 60%    | 90%            | Mirror source structure        |
@@ -4223,7 +4223,7 @@ Target: Production-ready MVP
 | Task                                               | Owner          | Priority | Status    | Deliverable         |
 |----------------------------------------------------|----------------|----------|-----------|---------------------|
 | E.1 Create tests/fixtures/ directory               | Test Architect | P0       | ⚪ Pending | Test data home      |
-| E.2 Add sample_content/, mock_responses/, configs/ | Test Architect | P0       | ⚪ Pending | Test fixtures       |
+| E.2 Add sample_.knowledge/, mock_responses/, configs/ | Test Architect | P0       | ⚪ Pending | Test fixtures       |
 | E.3 Create tests/unit/core/ directory              | Test Architect | P0       | ⚪ Pending | Core unit tests     |
 | E.4 Create tests/unit/services/ directory          | Test Architect | P0       | ⚪ Pending | Services unit tests |
 | E.5 Move existing tests to new structure           | Test Architect | P0       | ⚪ Pending | Mirrored structure  |
@@ -4781,7 +4781,7 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 |---------------------------------------|----------------------|--------------------------------------------------|------------|
 | Directory 06~08 not expanded          | Only directory names | Fully expanded to file level                     | ✅ Resolved |
 | Other subdirectories not expanded     | Partial expansion    | All 20 subdirectories fully expanded             | ✅ Resolved |
-| Design vs. actual project mismatch    | Idealized structure  | Aligned with actual `content/`, `src/`, `tools/` | ✅ Resolved |
+| Design vs. actual project mismatch    | Idealized structure  | Aligned with actual `.knowledge/`, `src/`, `tools/` | ✅ Resolved |
 | Roadmap not reflecting current status | From-scratch plan    | Incremental improvement plan (~70% complete)     | ✅ Resolved |
 
 #### 8.5.2 Expert Committee Re-Review Votes
@@ -4805,10 +4805,10 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 
 1. **Directory Structure (Part 2.1)**
     - Expanded all subdirectories to file level
-    - Added `content/frameworks/` with 5 subdirs and 5 files
-    - Added `content/practices/` with 3 subdirs and 3 files
-    - Added `content/scenarios/` with 1 subdir and 1 file
-    - Added `content/templates/` with 1 file
+    - Added `.knowledge/frameworks/` with 5 subdirs and 5 files
+    - Added `.knowledge/practices/` with 3 subdirs and 3 files
+    - Added `.knowledge/scenarios/` with 1 subdir and 1 file
+    - Added `.knowledge/templates/` with 1 file
     - Added `tools/analyzers/` with 4 files
     - Added `tools/checkers/` with 3 files
     - Added `tools/monitors/` with 3 files
@@ -4854,7 +4854,7 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 | tools/ boundaries unclear   | analyzers/ vs checkers/ confusion  | analysis/ + runtime/ + migration/         | ✅ Implemented |
 | tests/ not mirroring src/   | Flat test structure                | unit/core/, unit/services/, integration/  | ✅ Implemented |
 | No dev toolchain            | Manual commands                    | Makefile + pre-commit + .env.example      | ✅ Implemented |
-| No test fixtures            | Scattered test data                | fixtures/sample_content/, mock_responses/ | ✅ Implemented |
+| No test fixtures            | Scattered test data                | fixtures/sample_.knowledge/, mock_responses/ | ✅ Implemented |
 | No usage examples           | Limited documentation              | examples/ directory with samples          | ✅ Implemented |
 
 #### 8.6.2 Expert Committee 100-Score Enhancement Votes
@@ -4864,7 +4864,7 @@ UNIFIED Design:           100.00/100  (consolidated) ✅
 | **Architecture** | Chief Architect         | ✅ 100 | "Three-layer architecture is industry standard"      |
 | **Architecture** | Systems Engineer        | ✅ 100 | "Dependency rules prevent circular imports"          |
 | **Architecture** | Reliability Engineer    | ✅ 100 | "timeout in core layer is correct placement"         |
-| **Knowledge**    | Documentation Engineer  | ✅ 100 | "docs/ separation from content/ is crucial"          |
+| **Knowledge**    | Documentation Engineer  | ✅ 100 | "docs/ separation from .knowledge/ is crucial"          |
 | **Knowledge**    | Knowledge Manager       | ✅ 100 | "Content remains pure knowledge, no code docs mixed" |
 | **AI Collab**    | AI Collaboration Expert | ✅ 100 | "Structured logging aids AI debugging"               |
 | **AI Collab**    | Cognitive Scientist     | ✅ 100 | "Three-layer model reduces cognitive load"           |
@@ -5304,7 +5304,7 @@ Configuration Priority (highest to lowest):
 │  │KnowledgeAsset│ │Collaboration│ │LearningCycle           ││
 │  │• id          │ │Session      │ │• capture (from session)││
 │  │• content     │ │• context    │ │• refine (expert review)││
-│  │• version     │ │• progress   │ │• publish (to content/) ││
+│  │• version     │ │• progress   │ │• publish (to .knowledge/) ││
 │  │• lifecycle   │ │• handoff    │ │• archive (to .archive/)││
 │  └─────────────┘ └─────────────┘ └─────────────────────────┘│
 └─────────────────────────────────────────────────────────────┘
@@ -5335,7 +5335,7 @@ src/sage/
 **Recommended Solution**: Semantic filenames with YAML index for ordering.
 
 ```yaml
-# content/guidelines/guidelines_index.yaml
+# .knowledge/guidelines/guidelines_index.yaml
 version: "1.0"
 order:
   - quick_start          # Was 00_quick_start.md
@@ -5390,13 +5390,13 @@ L0: index.md (Project Overview, ~100 tokens)
 L1: .junie/guidelines.md (AI Client Entry, ~200 tokens)
     └── Tech stack, Coding standards summary, @file references
 
-L2: content/core/*.md (Core Principles, ~500 tokens)
+L2: .knowledge/core/*.md (Core Principles, ~500 tokens)
     └── principles.md, quick_reference.md, defaults.md
 
-L3: content/guidelines/*.md (On-Demand, ~100-200/file)
+L3: .knowledge/guidelines/*.md (On-Demand, ~100-200/file)
     └── Triggered by keywords in user query
 
-L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
+L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
     └── Loaded for complex decision tasks
 ```
 
@@ -5406,9 +5406,9 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 |-------------------|---------------------|---------------------|
 | Project overview  | index.md            | Universal entry     |
 | AI client config  | .junie/             | Client-specific     |
-| Core philosophy   | content/core/       | Always needed       |
-| How-to guides     | content/guidelines/ | Task-triggered      |
-| Deep frameworks   | content/frameworks/ | Complex decisions   |
+| Core philosophy   | .knowledge/core/       | Always needed       |
+| How-to guides     | .knowledge/guidelines/ | Task-triggered      |
+| Deep frameworks   | .knowledge/frameworks/ | Complex decisions   |
 | Project decisions | .context/decisions/ | Project-specific    |
 | Session history   | .history/           | Ephemeral           |
 | Design documents  | docs/design/        | Technical reference |
@@ -5422,19 +5422,19 @@ L4: content/frameworks/*.md (Deep Dive, ~300-500/file)
 
 ### Core Knowledge (Always Available)
 
-- @file:content/core/principles.md - Xin-Da-Ya philosophy
-- @file:content/core/quick_reference.md - 5 critical questions
-- @file:content/core/defaults.md - Default behaviors
+- @file:.knowledge/core/principles.md - Xin-Da-Ya philosophy
+- @file:.knowledge/core/quick_reference.md - 5 critical questions
+- @file:.knowledge/core/defaults.md - Default behaviors
 
 ### Engineering Guidelines (On-Demand)
 
-- @file:content/guidelines/ - 10 chapters
+- @file:.knowledge/guidelines/ - 10 chapters
 
 ### Deep Frameworks (Complex Tasks)
 
-- @file:content/frameworks/autonomy/ - Autonomy spectrum
-- @file:content/frameworks/cognitive/ - Expert committee
-- @file:content/frameworks/decision/ - Quality angles
+- @file:.knowledge/frameworks/autonomy/ - Autonomy spectrum
+- @file:.knowledge/frameworks/cognitive/ - Expert committee
+- @file:.knowledge/frameworks/decision/ - Quality angles
 
 ### Project Context
 
@@ -5506,7 +5506,7 @@ fallback:
 │  └─────────┘    └─────────┘    └─────────┘    └─────────┘     │
 │       │              │              │              │           │
 │       v              v              v              v           │
-│  .history/      .context/      content/      .archive/        │
+│  .history/      .context/      .knowledge/      .archive/        │
 │  sessions/      decisions/     (generic)    design_history/   │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -5515,7 +5515,7 @@ fallback:
 |---------|-----------|-----------------------|-----------------------------------|
 | CAPTURE | .history/ | Every session         | Auto-save conversations, handoffs |
 | REFINE  | .context/ | Sprint end, milestone | Extract ADRs, conventions         |
-| PUBLISH | content/  | Quarterly review      | Promote generic knowledge         |
+| PUBLISH | .knowledge/  | Quarterly review      | Promote generic knowledge         |
 | ARCHIVE | .archive/ | Content superseded    | Preserve historical records       |
 
 #### 8.10.9 Issue 8: Content Knowledge Lifecycle
@@ -5529,7 +5529,7 @@ fallback:
 │  └──────────┘   └──────────┘   └──────────┘   └──────────┘    │
 │       │              │              │              │            │
 │       v              v              v              v            │
-│  GitHub Issue   Expert Review   content/*    PyPI Release      │
+│  GitHub Issue   Expert Review   .knowledge/*    PyPI Release      │
 │  or PR          (Level 4-5)     directory    (semver)          │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -5538,10 +5538,10 @@ fallback:
 
 | Layer | Directory           | Frequency        | Governance       |
 |-------|---------------------|------------------|------------------|
-| L1    | content/core/       | Rare (1-2x/year) | Expert Committee |
-| L2    | content/guidelines/ | Quarterly        | 2+ reviewers     |
-| L3    | content/frameworks/ | As needed        | Expert review    |
-| L4    | content/practices/  | Monthly          | Standard PR      |
+| L1    | .knowledge/core/       | Rare (1-2x/year) | Expert Committee |
+| L2    | .knowledge/guidelines/ | Quarterly        | 2+ reviewers     |
+| L3    | .knowledge/frameworks/ | As needed        | Expert review    |
+| L4    | .knowledge/practices/  | Monthly          | Standard PR      |
 
 #### 8.10.10 Issue 9: Reusable Elements from star/.junie
 
@@ -5590,7 +5590,7 @@ sage/
 │   └── standards/                   # 🆕
 │       └── navigation_standards.md
 │
-├── content/
+├── .knowledge/
 │   ├── core/
 │   ├── guidelines/
 │   │   └── guidelines_index.yaml    # 🆕 Semantic ordering

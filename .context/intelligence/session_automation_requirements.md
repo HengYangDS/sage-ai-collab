@@ -1,4 +1,4 @@
-# Session History Automation Requirements
+﻿# Session History Automation Requirements
 
 > Long-term automation plan for AI session history management in SAGE Knowledge Base
 
@@ -239,7 +239,7 @@ session_history:
 - `.history/index.md` — Session history structure
 - `.junie/guidelines.md` — AI collaboration guidelines
 - `.history/_session-end-checklist.md` — Manual session checklist
-- `content/practices/ai_collaboration/session_management.md` — Session management practices
+- `.knowledge/practices/ai_collaboration/session_management.md` — Session management practices
 
 ---
 

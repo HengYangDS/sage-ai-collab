@@ -1,4 +1,4 @@
-"""
+﻿"""
 Tests for structure checker module.
 
 Tests cover:
@@ -182,7 +182,7 @@ class TestStructureChecker:
     def test_required_dirs_defined(self):
         """Test REQUIRED_DIRS constant is defined."""
         assert len(StructureChecker.REQUIRED_DIRS) > 0
-        assert "content/core" in StructureChecker.REQUIRED_DIRS
+        assert ".knowledge/core" in StructureChecker.REQUIRED_DIRS
 
     def test_required_files_defined(self):
         """Test REQUIRED_FILES constant is defined."""

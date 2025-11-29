@@ -1,4 +1,4 @@
-# History Completeness Review: .history Directory Analysis
+﻿# History Completeness Review: .history Directory Analysis
 
 > **Date**: 2025-11-29
 > **Participants**: Developer, Junie AI
@@ -33,7 +33,7 @@ create consistent records.
 | Decision                                 | Rationale                               | Impact                                      |
 |------------------------------------------|-----------------------------------------|---------------------------------------------|
 | Create three session templates           | Standardize documentation format        | Enables consistent AI collaboration records |
-| Store templates in `content/templates/`  | Follows existing knowledge organization | Templates accessible project-wide           |
+| Store templates in `.knowledge/templates/`  | Follows existing knowledge organization | Templates accessible project-wide           |
 | Add example files to `.history/` subdirs | Demonstrate expected usage              | Reduces ambiguity for new users             |
 
 ---
@@ -43,7 +43,7 @@ create consistent records.
 - [x] Create `conversation_record.md` template
 - [x] Create `session_state.md` template
 - [x] Create `task_handoff.md` template
-- [x] Update `content/templates/index.md`
+- [x] Update `.knowledge/templates/index.md`
 - [x] Add example files to `.history/` subdirectories
 
 ---
@@ -65,8 +65,8 @@ create consistent records.
 ## References
 
 - `.history/index.md` — Directory documentation
-- `content/templates/index.md` — Template catalog
-- `content/templates/conversation_record.md` — New template
+- `.knowledge/templates/index.md` — Template catalog
+- `.knowledge/templates/conversation_record.md` — New template
 
 ---
 

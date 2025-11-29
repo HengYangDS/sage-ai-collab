@@ -1,4 +1,4 @@
-# Configuration Design
+﻿# Configuration Design
 
 > Modular configuration system with smart loading and graceful degradation
 
@@ -150,8 +150,8 @@ triggers:
       - code, implement, fix, refactor, debug, bug, function, class, method
       - 代码, 实现, 修复, 重构, 调试, 缺陷, 函数, 类, 方法
     load:
-      - content/guidelines/code_style.md
-      - content/guidelines/python.md
+      - .knowledge/guidelines/code_style.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 1
 
@@ -286,8 +286,8 @@ loading:
 
   always: # Always pre-cached
     - index.md
-    - content/core/principles.md
-    - content/core/quick_reference.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
 ```
 
 ### 10. Quality Configuration (`config/capabilities/quality.yaml`)
@@ -322,7 +322,7 @@ logging:
 ```yaml
 guidelines:
   sections:
-    # Maps aliases to guideline files in content/guidelines/
+    # Maps aliases to guideline files in .knowledge/guidelines/
     quick_start: quick_start
     overview: quick_start
     planning: planning_design
@@ -421,8 +421,8 @@ class SAGEConfig:
 
 - `04-timeout-loading.md` — Timeout hierarchy details
 - `05-plugin-memory.md` — Plugin configuration
-- `content/frameworks/resilience/timeout_patterns.md` — Timeout framework reference
-- `content/core/defaults.md` — Default behavior documentation
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout framework reference
+- `.knowledge/core/defaults.md` — Default behavior documentation
 
 ---
 

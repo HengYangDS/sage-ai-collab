@@ -1,4 +1,4 @@
-# SAGE Knowledge Base - Project Guidelines
+﻿# SAGE Knowledge Base - Project Guidelines
 
 > Project-specific quick reference for SAGE Knowledge Base
 
@@ -60,7 +60,7 @@ sage-kb/
 ├── .outputs/        # Intermediate process files (git-ignored)
 ├── config/          # Runtime configuration (modular YAML)
 ├── docs/            # User-facing documentation
-├── content/         # Generic knowledge (distributable)
+├── .knowledge/         # Generic knowledge (distributable)
 ├── src/sage/        # Source code (3-layer architecture)
 ├── tools/           # Development tools
 └── tests/           # Test suite
@@ -76,13 +76,13 @@ sage-kb/
 | `.outputs/` | Intermediate process files                     | Hidden     |
 | `config/`   | Runtime configuration (modular YAML structure) | Visible    |
 | `docs/`     | User-facing documentation                      | Visible    |
-| `content/`  | Generic, distributable knowledge               | Visible    |
+| `.knowledge/`  | Generic, distributable knowledge               | Visible    |
 
 ---
 
 ## 4. Coding Standards
 
-> **Reference**: See `content/guidelines/python.md` and `.context/conventions/naming.md` for full details
+> **Reference**: See `.knowledge/guidelines/python.md` and `.context/conventions/naming.md` for full details
 
 **Quick Summary:**
 
@@ -163,14 +163,14 @@ mypy src/                           # Type check
 
 - **Project Variables**: `config.yaml`
 - **Design Documents**: `docs/design/00-overview.md`
-- **Documentation Standards**: `content/practices/documentation/documentation_standards.md`
+- **Documentation Standards**: `.knowledge/practices/documentation/documentation_standards.md`
 - **Documentation Index**: `docs/index.md`
 - **Configuration**: `config/sage.yaml`
 - **Project Context**: `.context/index.md`
-- **Knowledge Content**: `content/index.md`
-- **Directory Conventions**: `content/practices/documentation/project_directory_structure.md`
+- **Knowledge Content**: `.knowledge/index.md`
+- **Directory Conventions**: `.knowledge/practices/documentation/project_directory_structure.md`
 - **Timeout Hierarchy**: `.context/policies/timeout_hierarchy.md`
-- **Core Principles**: `content/core/principles.md`
+- **Core Principles**: `.knowledge/core/principles.md`
 
 ---
 
@@ -178,7 +178,7 @@ mypy src/                           # Type check
 
 ### Session History
 
-> **Generic checklist**: See `content/practices/ai_collaboration/session_checklist.md`
+> **Generic checklist**: See `.knowledge/practices/ai_collaboration/session_checklist.md`
 > **SAGE-specific**: See `.history/_session-end-checklist.md`
 
 ### Expert Committee (SAGE Context)

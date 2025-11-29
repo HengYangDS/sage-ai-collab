@@ -1,8 +1,8 @@
-# Project Variables Definition
+﻿# Project Variables Definition
 # This file centralizes project-specific values for template-based .junie configuration
 # Other files in .junie/ reference these values for consistency
 #
-# Schema: ../generic/config.schema.json (shared validation schema)
+# Schema: ../schema/config.schema.json (shared validation schema)
 # Schema version for compatibility
 schema_version: "1.0"
 
@@ -47,7 +47,7 @@ directories:
   
   # Documentation
   docs: "docs/"
-  content: "content/"
+  content: ".knowledge/"
   
   # Configuration
   config: "config/"

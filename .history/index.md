@@ -1,4 +1,4 @@
-# Session History Navigation
+﻿# Session History Navigation
 
 > AI session history and task handoffs for SAGE Knowledge Base
 
@@ -87,7 +87,7 @@ format and content structure.
 
 - `.context/` — Project-specific knowledge
 - `.archive/` — Historical archives
-- `content/` — Generic knowledge base
+- `.knowledge/` — Generic knowledge base
 
 ---
 

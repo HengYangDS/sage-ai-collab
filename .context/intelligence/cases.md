@@ -1,4 +1,4 @@
-# Technical Cases Repository
+﻿# Technical Cases Repository
 
 > Collection of problem-solving cases and lessons learned
 
@@ -7,7 +7,7 @@
 ## Overview
 
 This document records technical cases encountered during project development. Each case follows the structure defined in
-`content/templates/case_study.md`.
+`.knowledge/templates/case_study.md`.
 
 ---
 
@@ -139,14 +139,14 @@ Created 10 new documentation files:
 
 | File                                               | Lines     | Purpose               |
 |----------------------------------------------------|-----------|-----------------------|
-| `content/practices/engineering/troubleshooting.md` | 451       | Troubleshooting guide |
-| `content/frameworks/patterns/integration.md`       | 574       | Integration patterns  |
-| `content/practices/engineering/security.md`        | 592       | Security practices    |
+| `.knowledge/practices/engineering/troubleshooting.md` | 451       | Troubleshooting guide |
+| `.knowledge/frameworks/patterns/integration.md`       | 574       | Integration patterns  |
+| `.knowledge/practices/engineering/security.md`        | 592       | Security practices    |
 | `docs/guides/migration.md`                         | 477       | Version migration     |
 | `docs/guides/faq.md`                               | 472       | FAQ                   |
-| `content/templates/case_study.md`                  | 231       | Case study template   |
+| `.knowledge/templates/case_study.md`                  | 231       | Case study template   |
 | `docs/guides/configuration.md`                     | 756       | Configuration guide   |
-| `content/practices/engineering/knowledge_graph.md` | 562       | Knowledge graph guide |
+| `.knowledge/practices/engineering/knowledge_graph.md` | 562       | Knowledge graph guide |
 | `docs/guides/mcp_tools.md`                         | 861       | MCP tools guide       |
 | `.context/intelligence/cases.md`                   | This file | Cases repository      |
 
@@ -432,7 +432,7 @@ For future development:
 
 ## How to Add New Cases
 
-1. Copy the case template structure from this file or `content/templates/case_study.md`
+1. Copy the case template structure from this file or `.knowledge/templates/case_study.md`
 2. Fill in all sections with details
 3. Add entry to the Case Index table at the top
 4. Add relevant tags for searchability
@@ -442,10 +442,10 @@ For future development:
 
 ## Related
 
-- `content/templates/case_study.md` — Case study template
+- `.knowledge/templates/case_study.md` — Case study template
 - `.context/intelligence/patterns.md` — Learned patterns
 - `.context/intelligence/optimizations.md` — Optimization history
-- `content/practices/engineering/troubleshooting.md` — Troubleshooting guide
+- `.knowledge/practices/engineering/troubleshooting.md` — Troubleshooting guide
 
 ---
 

@@ -1,6 +1,6 @@
-# SAGE Guidelines Section Mapping Configuration
+﻿# SAGE Guidelines Section Mapping Configuration
 #
-# Maps section aliases to actual file names in content/guidelines/.
+# Maps section aliases to actual file names in .knowledge/guidelines/.
 # This file is part of the modular configuration system.
 
 # =============================================================================

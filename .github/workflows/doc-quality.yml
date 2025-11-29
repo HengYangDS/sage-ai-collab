@@ -1,4 +1,4 @@
-# SAGE Knowledge Base - Documentation Quality Workflow
+﻿# SAGE Knowledge Base - Documentation Quality Workflow
 # 
 # This workflow validates documentation quality on every push/PR
 # that modifies content, docs, or context files.
@@ -15,7 +15,7 @@ on:
   push:
     branches: [ main, develop ]
     paths:
-      - 'content/**'
+      - '.knowledge/**'
       - 'docs/**'
       - '.context/**'
       - '.history/**'
@@ -23,7 +23,7 @@ on:
   pull_request:
     branches: [ main, develop ]
     paths:
-      - 'content/**'
+      - '.knowledge/**'
       - 'docs/**'
       - '.context/**'
       - '.history/**'

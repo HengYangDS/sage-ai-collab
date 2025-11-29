@@ -1,4 +1,4 @@
-# SAGE Development Tools
+﻿# SAGE Development Tools
 
 > Utilities and scripts for SAGE Knowledge Base development
 
@@ -81,7 +81,7 @@ python tools/knowledge_graph/knowledge_graph_builder.py
 
 # With options
 python tools/knowledge_graph/knowledge_graph_builder.py \
-    --source content/ \
+    --source .knowledge/ \
     --output .outputs/knowledge_graph.json \
     --format json
 

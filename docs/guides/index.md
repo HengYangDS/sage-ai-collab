@@ -1,4 +1,4 @@
-# User Guides
+﻿# User Guides
 
 > SAGE Knowledge Base Guides and Tutorials
 
@@ -28,7 +28,7 @@ These guides help you get started with SAGE and explore advanced features.
 ### Beginner
 
 1. **[Quick Start](quickstart.md)** — Installation and first commands
-2. Review `content/core/principles.md` — Understand SAGE philosophy
+2. Review `.knowledge/core/principles.md` — Understand SAGE philosophy
 3. Try CLI commands — `sage get`, `sage search`
 
 ### Intermediate
@@ -84,7 +84,7 @@ These guides help you get started with SAGE and explore advanced features.
 
 - `docs/api/` — API reference documentation
 - `docs/design/` — Design documents
-- `content/` — Knowledge content
+- `.knowledge/` — Knowledge content
 
 ---
 

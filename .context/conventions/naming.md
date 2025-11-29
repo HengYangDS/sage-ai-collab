@@ -1,4 +1,4 @@
-# SAGE Naming Conventions
+﻿# SAGE Naming Conventions
 
 > Project-specific naming standards for SAGE Knowledge Base
 
@@ -18,7 +18,7 @@
 
 ## 1. Generic Python Conventions
 
-> **Reference**: See `content/guidelines/python.md` for comprehensive Python naming conventions
+> **Reference**: See `.knowledge/guidelines/python.md` for comprehensive Python naming conventions
 
 **SAGE-specific principles:**
 
@@ -271,7 +271,7 @@ format.
 ## Related
 
 - `.junie/guidelines.md` — General coding guidelines
-- `content/practices/engineering/` — Engineering practices
+- `.knowledge/practices/engineering/` — Engineering practices
 - `docs/design/01-architecture.md` — Architecture patterns
 
 ---

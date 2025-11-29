@@ -1,4 +1,4 @@
-# SAGE File Structure Conventions
+﻿# SAGE File Structure Conventions
 
 > Project-specific file organization standards for SAGE Knowledge Base
 
@@ -31,7 +31,7 @@ sage-kb/
 ├── .logs/               # Runtime log files (git-ignored)
 ├── .outputs/            # Intermediate process files (git-ignored)
 ├── config/              # Configuration files (YAML)
-├── content/             # Generic knowledge content (distributable)
+├── .knowledge/             # Generic knowledge content (distributable)
 ├── docs/                # User-facing documentation
 ├── src/sage/            # Source code
 ├── tests/               # Test suite
@@ -103,12 +103,12 @@ This section defines the rules for organizing knowledge across the project's dir
 
 | Directory   | Content Type       | Scope            | Distributable |
 |-------------|--------------------|------------------|---------------|
-| `content/`  | Generic knowledge  | Universal        | ✅ Yes         |
+| `.knowledge/`  | Generic knowledge  | Universal        | ✅ Yes         |
 | `.context/` | Project-specific   | SAGE only        | ❌ No          |
 | `docs/`     | User documentation | SAGE users       | ✅ Yes         |
 | `.history/` | Session records    | AI collaboration | ❌ No          |
 
-### 2.2 Content Directory (`content/`)
+### 2.2 Content Directory (`.knowledge/`)
 
 **Purpose**: Generic, reusable knowledge that can be distributed and used across different projects.
 
@@ -120,7 +120,7 @@ This section defines the rules for organizing knowledge across the project's dir
 | Language/technology references      | SAGE API documentation       |
 | Industry-standard conventions       | Session history or handoffs  |
 
-**Example**: `content/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any
+**Example**: `.knowledge/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any
 project.
 
 ### 2.3 Context Directory (`.context/`)
@@ -182,7 +182,7 @@ When deciding where content belongs, apply these rules in order:
    NO  → Continue to step 4
 
 4. Is it generic, reusable knowledge?
-   YES → content/ (frameworks, practices, guidelines)
+   YES → .knowledge/ (frameworks, practices, guidelines)
    NO  → Ask: Does this need to exist?
 ```
 
@@ -279,7 +279,7 @@ tests/
 ├── fixtures/            # Test data and mocks
 │   ├── configs/         # Test configurations
 │   ├── mock_responses/  # Mock API responses
-│   └── sample_content/  # Sample knowledge files
+│   └── sample_.knowledge/  # Sample knowledge files
 ├── unit/                # Unit tests (mirror src/)
 │   ├── core/
 │   ├── services/
@@ -438,7 +438,7 @@ docs/
 ### 6.2 Knowledge Content Structure
 
 ```
-content/
+.knowledge/
 ├── core/                # Core principles
 │   ├── principles.md
 │   └── defaults.md
@@ -658,7 +658,7 @@ def _helper_function() -> None:
 - `naming.md` — Naming conventions
 - `code_patterns.md` — Code patterns
 - `docs/design/01-architecture.md` — Architecture
-- `content/practices/documentation/project_directory_structure.md` — General directory practices
+- `.knowledge/practices/documentation/project_directory_structure.md` — General directory practices
 
 ---
 

@@ -1,4 +1,4 @@
-# MCP Protocol Reference
+﻿# MCP Protocol Reference
 
 > SAGE Model Context Protocol (MCP) Server Documentation
 
@@ -136,7 +136,7 @@ Search the knowledge base.
 {
   "results": [
     {
-      "path": "content/core/principles.md",
+      "path": ".knowledge/core/principles.md",
       "title": "Core Principles",
       "snippet": "...matching text...",
       "score": 0.95

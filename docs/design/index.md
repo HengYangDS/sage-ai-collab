@@ -1,4 +1,4 @@
-# Design Documents Navigation
+﻿# Design Documents Navigation
 
 > Architecture and design decisions for SAGE Knowledge Base
 
@@ -47,7 +47,7 @@
 
 - `../api/index.md` — API Reference
 - `../../.context/decisions/` — Architecture Decision Records (ADRs)
-- `../../content/frameworks/design/` — Design Framework
+- `../../.knowledge/frameworks/design/` — Design Framework
 
 ---
 

@@ -1,4 +1,4 @@
-# Autonomy Calibration Records
+﻿# Autonomy Calibration Records
 
 > Historical calibration data and effectiveness evaluation for AI collaboration
 
@@ -268,7 +268,7 @@ This document tracks:
 
 ## Related
 
-- `content/frameworks/autonomy/levels.md` — Autonomy level definitions
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
 - `.context/intelligence/patterns.md` — AI collaboration patterns
 - `.context/intelligence/optimizations.md` — Project optimizations
 - `.junie/guidelines.md` — Project guidelines

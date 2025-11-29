@@ -1,4 +1,4 @@
-# Knowledge Reorganization - 2025-11-30
+﻿# Knowledge Reorganization - 2025-11-30
 
 ## Context
 
@@ -18,21 +18,21 @@ User requested analysis and execution of knowledge reorganization across the pro
 
 **Actions**:
 
-- Created `content/practices/engineering/common_pitfalls.md` (539 lines) - generic pitfalls guide
-- Created `content/practices/ai_collaboration/interaction_patterns.md` (283 lines) - generic AI patterns
+- Created `.knowledge/practices/engineering/common_pitfalls.md` (539 lines) - generic pitfalls guide
+- Created `.knowledge/practices/ai_collaboration/interaction_patterns.md` (283 lines) - generic AI patterns
 - Updated `.context/intelligence/common_pitfalls.md` to slim reference (88 lines) with SAGE-specific pitfalls only
 - Updated `.context/intelligence/patterns.md` to slim reference (100 lines) with SAGE-specific calibration data only
 - Kept `optimizations.md` and `performance_tuning.md` in `.context/` (SAGE-specific conventions)
 
 ### Decision 2: Project-Specific Content Migration (content → docs)
 
-**Rationale**: `content/references/` contained SAGE-specific API documentation that doesn't belong in distributable
+**Rationale**: `.knowledge/references/` contained SAGE-specific API documentation that doesn't belong in distributable
 content
 
 **Actions**:
 
-- Moved `content/references/mcp_api.md` → `docs/api/mcp_quick_ref.md`
-- Moved `content/references/plugin_api.md` → `docs/api/plugin_quick_ref.md`
+- Moved `.knowledge/references/mcp_api.md` → `docs/api/mcp_quick_ref.md`
+- Moved `.knowledge/references/plugin_api.md` → `docs/api/plugin_quick_ref.md`
 - Updated `docs/api/index.md` with new Quick References section
 
 ### Decision 3: Cross-References Between Design Docs and ADRs
@@ -62,8 +62,8 @@ content
 
 ### Files Created
 
-- `content/practices/engineering/common_pitfalls.md`
-- `content/practices/ai_collaboration/interaction_patterns.md`
+- `.knowledge/practices/engineering/common_pitfalls.md`
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md`
 - `.history/_session-end-checklist.md`
 - `.context/intelligence/session_automation_requirements.md`
 - `.history/conversations/2025-11-30-knowledge-reorganization.md` (this file)
@@ -80,8 +80,8 @@ content
 
 ### Files Moved
 
-- `content/references/mcp_api.md` → `docs/api/mcp_quick_ref.md`
-- `content/references/plugin_api.md` → `docs/api/plugin_quick_ref.md`
+- `.knowledge/references/mcp_api.md` → `docs/api/mcp_quick_ref.md`
+- `.knowledge/references/plugin_api.md` → `docs/api/plugin_quick_ref.md`
 
 ## Session Continuation: Configuration Verification
 
@@ -96,8 +96,8 @@ content
 | `config/knowledge/loading.yaml`  | ✓ Valid | `always` list files exist                           |
 | `config/sage.yaml`               | ✓ Valid | Abstract paths, no direct file refs                 |
 
-**Configuration Status**: All configuration files use abstract directory references (`content/references/`) rather than
-specific file paths. The `content/references/` directory still exists with `knowledge_quick_ref.md` and
+**Configuration Status**: All configuration files use abstract directory references (`.knowledge/references/`) rather than
+specific file paths. The `.knowledge/references/` directory still exists with `knowledge_quick_ref.md` and
 `performance_checklist.md`, so no configuration changes were needed.
 
 ### Broken Reference Fixes
@@ -106,8 +106,8 @@ specific file paths. The `content/references/` directory still exists with `know
 
 | File                                              | Old Reference                      | New Reference                  |
 |---------------------------------------------------|------------------------------------|--------------------------------|
-| `content/scenarios/mcp_integration/context.md`    | `content/references/mcp_api.md`    | `docs/api/mcp_quick_ref.md`    |
-| `content/scenarios/plugin_development/context.md` | `content/references/plugin_api.md` | `docs/api/plugin_quick_ref.md` |
+| `.knowledge/scenarios/mcp_integration/context.md`    | `.knowledge/references/mcp_api.md`    | `docs/api/mcp_quick_ref.md`    |
+| `.knowledge/scenarios/plugin_development/context.md` | `.knowledge/references/plugin_api.md` | `docs/api/plugin_quick_ref.md` |
 
 **Ignored references (historical/temporary):**
 
@@ -120,7 +120,7 @@ specific file paths. The `content/references/` directory still exists with `know
 
 1. **Knowledge Classification Principle**:
     - `.context/` = Project-specific (ADRs, conventions, calibration data)
-    - `content/` = Generic, distributable (patterns, practices, frameworks)
+    - `.knowledge/` = Generic, distributable (patterns, practices, frameworks)
     - `docs/` = User-facing documentation (guides, API references)
 
 2. **Session History Gap**: The `.history/` system was well-designed but lacked integration with AI collaboration
@@ -134,7 +134,7 @@ specific file paths. The `content/references/` directory still exists with `know
 - `.junie/guidelines.md` — Updated AI collaboration guidelines
 - `.history/index.md` — Session history structure
 - `.context/intelligence/session_automation_requirements.md` — Automation roadmap
-- `content/practices/ai_collaboration/interaction_patterns.md` — Generic AI patterns
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md` — Generic AI patterns
 
 ---
 
@@ -153,11 +153,11 @@ generic content mixed with SAGE-specific data.
 **Actions**:
 
 - Refactored `.context/intelligence/optimizations.md`: 489 → 201 lines
-    - Extracted generic code patterns to reference `content/practices/engineering/`
+    - Extracted generic code patterns to reference `.knowledge/practices/engineering/`
     - Kept SAGE-specific: import organization, test coverage goals, loading optimizations, common patterns (singleton,
       config, events), project shortcuts
 - Refactored `.context/intelligence/performance_tuning.md`: 391 → 149 lines
-    - Extracted generic performance patterns to reference `content/frameworks/performance/`
+    - Extracted generic performance patterns to reference `.knowledge/frameworks/performance/`
     - Kept SAGE-specific: performance goals with actual measurements, benchmarks (P50/P95/P99), monitoring thresholds,
       tuning checklist
 
@@ -170,7 +170,7 @@ generic content mixed with SAGE-specific data.
 - Updated `.context/index.md`:
     - Added `session_automation_requirements.md` to intelligence section
     - Updated file count from 7 to 8
-- Updated `content/index.md`:
+- Updated `.knowledge/index.md`:
     - Added References layer (2 files: `knowledge_quick_ref.md`, `performance_checklist.md`)
     - Updated total file count from ~114 to ~116
     - Added References section to Complete File List
@@ -182,14 +182,14 @@ generic content mixed with SAGE-specific data.
 
 **Cross-reference validation**:
 
-- All references to old paths (`content/references/mcp_api.md`, `content/references/plugin_api.md`) only in
+- All references to old paths (`.knowledge/references/mcp_api.md`, `.knowledge/references/plugin_api.md`) only in
   historical/temporary files
 - All new references in refactored files point to existing files:
-    - `content/practices/engineering/patterns.md` ✓
-    - `content/practices/engineering/testing_strategy.md` ✓
-    - `content/frameworks/performance/optimization_strategies.md` ✓
-    - `content/frameworks/performance/caching_patterns.md` ✓
-    - `content/frameworks/performance/profiling_guide.md` ✓
+    - `.knowledge/practices/engineering/patterns.md` ✓
+    - `.knowledge/practices/engineering/testing_strategy.md` ✓
+    - `.knowledge/frameworks/performance/optimization_strategies.md` ✓
+    - `.knowledge/frameworks/performance/caching_patterns.md` ✓
+    - `.knowledge/frameworks/performance/profiling_guide.md` ✓
 
 **Session history status**:
 
@@ -213,7 +213,7 @@ generic content mixed with SAGE-specific data.
     - SAGE-specific content only in body
     - Related section pointing to both generic and project-specific docs
 
-2. **Index Maintenance**: After reorganization, all three index files (`.context/`, `content/`, `docs/`) need updates
+2. **Index Maintenance**: After reorganization, all three index files (`.context/`, `.knowledge/`, `docs/`) need updates
    for file counts and listings.
 
 3. **Validation Importance**: Cross-reference validation ensures no broken links after moves/refactors.
@@ -244,7 +244,7 @@ established during optimization sessions into permanent, referenceable guideline
 | Rule Category           | Location                     | Content                                             |
 |-------------------------|------------------------------|-----------------------------------------------------|
 | **Document Format**     | `.junie/guidelines.md`       | Header, TOC, sections, related, footer rules        |
-| **Knowledge Placement** | `.junie/guidelines.md`       | `.context/` vs `content/` vs `docs/` vs `.history/` |
+| **Knowledge Placement** | `.junie/guidelines.md`       | `.context/` vs `.knowledge/` vs `docs/` vs `.history/` |
 | **Index Maintenance**   | `.junie/guidelines.md`       | Update counts, listings, cross-refs after changes   |
 | **Full Standards**      | `documentation_standards.md` | Complete SSOT for documentation                     |
 
@@ -266,7 +266,7 @@ established during optimization sessions into permanent, referenceable guideline
 
 User requested deep optimization focusing on:
 
-1. Identifying knowledge/norms that should be consolidated into `content/` as generic standards
+1. Identifying knowledge/norms that should be consolidated into `.knowledge/` as generic standards
 2. Making `.junie/guidelines.md` reference generic standards instead of duplicating
 3. Deep restructuring based on token efficiency and role clarity
 4. Solidifying rules into appropriate locations
@@ -278,12 +278,12 @@ User requested deep optimization focusing on:
 **Actions**:
 
 - Refactored Coding Standards section: 25 lines → 8 lines
-    - Added references to `content/guidelines/python.md` and `.context/conventions/naming.md`
+    - Added references to `.knowledge/guidelines/python.md` and `.context/conventions/naming.md`
     - Kept quick summary for immediate reference
 - Condensed Session History Management: 25 lines → 6 lines
     - Added reference to `.history/index.md` and `.history/_session-end-checklist.md`
 - Condensed Expert Committee Pattern: 8 lines → 5 lines
-    - Added reference to `content/frameworks/cognitive/expert_committee.md`
+    - Added reference to `.knowledge/frameworks/cognitive/expert_committee.md`
 - Added reference to Timeout Hierarchy section
     - Linked to `.context/policies/timeout_hierarchy.md`
 
@@ -294,7 +294,7 @@ User requested deep optimization focusing on:
 **Actions**:
 
 - Refactored `.context/conventions/naming.md`: 306 → 271 lines (12% reduction)
-    - Replaced detailed Python conventions (sections 1-2) with reference to `content/guidelines/python.md`
+    - Replaced detailed Python conventions (sections 1-2) with reference to `.knowledge/guidelines/python.md`
     - Kept SAGE-specific principles and quick reference summary
     - Renumbered all sections (7 sections total now)
 
@@ -321,12 +321,12 @@ User requested deep optimization focusing on:
    duplicating content, keeping only project-specific customizations and quick summaries inline.
 
 2. **Token Efficiency Principle**: Each file should have a clear role - either be the source of truth for generic
-   content (in `content/`) or reference it (in `.context/` and `.junie/`).
+   content (in `.knowledge/`) or reference it (in `.context/` and `.junie/`).
 
 3. **Quick Summary Value**: Even when referencing external files, keeping a 2-3 line quick summary provides immediate
    value without context-switching.
 
-4. **Audit Methodology**: Systematic audit of all directories (`.junie/`, `.context/`, `content/`, `docs/`) reveals
+4. **Audit Methodology**: Systematic audit of all directories (`.junie/`, `.context/`, `.knowledge/`, `docs/`) reveals
    duplication patterns that can be systematically addressed.
 
 ---
@@ -337,14 +337,14 @@ User requested deep optimization focusing on:
 
 User asked "session history management 难道不应该沉淀到 content?" (Shouldn't session history management be consolidated
 into content?) - questioning whether the session management practices in `.history/` should be generic reusable
-knowledge in `content/`.
+knowledge in `.knowledge/`.
 
 ### Analysis
 
 **Found existing structure**:
 
-- `content/practices/ai_collaboration/session_management.md` (321 lines) — Full session management practices ✓
-- `content/templates/` — Session templates (conversation_record, session_state, task_handoff) ✓
+- `.knowledge/practices/ai_collaboration/session_management.md` (321 lines) — Full session management practices ✓
+- `.knowledge/templates/` — Session templates (conversation_record, session_state, task_handoff) ✓
 - `.history/_session-end-checklist.md` (143 lines) — Workflow checklist with templates
 
 **Issue identified**: `.history/_session-end-checklist.md` contained generic content (quality checks, cleanup actions,
@@ -357,7 +357,7 @@ theory.
 
 **Actions**:
 
-- Created `content/practices/ai_collaboration/session_checklist.md` (159 lines)
+- Created `.knowledge/practices/ai_collaboration/session_checklist.md` (159 lines)
     - Session Start checklist
     - During Session checklist
     - Pre-Completion checks (work verification, quality, code review)
@@ -370,19 +370,19 @@ theory.
     - Keeps only SAGE-specific additions (timeout levels, EventBus, DI)
     - Includes project paths and template locations
 
-- Updated `content/practices/index.md`: Added session_checklist.md (7 → 8 files in AI Collaboration)
+- Updated `.knowledge/practices/index.md`: Added session_checklist.md (7 → 8 files in AI Collaboration)
 
 - Updated `.junie/guidelines.md` Session History section:
-    - Now references generic checklist in `content/`
+    - Now references generic checklist in `.knowledge/`
     - References project-specific checklist in `.history/`
-    - Points to templates in `content/templates/`
+    - Points to templates in `.knowledge/templates/`
 
 ### Knowledge Structure Clarified
 
 | Content Type                | Location                              | Example                                         |
 |-----------------------------|---------------------------------------|-------------------------------------------------|
-| **Generic practices**       | `content/practices/ai_collaboration/` | `session_management.md`, `session_checklist.md` |
-| **Generic templates**       | `content/templates/`                  | `conversation_record.md`, `task_handoff.md`     |
+| **Generic practices**       | `.knowledge/practices/ai_collaboration/` | `session_management.md`, `session_checklist.md` |
+| **Generic templates**       | `.knowledge/templates/`                  | `conversation_record.md`, `task_handoff.md`     |
 | **Project-specific config** | `.history/`                           | `_session-end-checklist.md` (SAGE additions)    |
 | **Instance data**           | `.history/`                           | Actual conversation records, handoffs           |
 
@@ -390,22 +390,22 @@ theory.
 
 | File                                                      | Action     | Lines    |
 |-----------------------------------------------------------|------------|----------|
-| `content/practices/ai_collaboration/session_checklist.md` | Created    | 159      |
+| `.knowledge/practices/ai_collaboration/session_checklist.md` | Created    | 159      |
 | `.history/_session-end-checklist.md`                      | Refactored | 143 → 72 |
-| `content/practices/index.md`                              | Updated    | +1 line  |
+| `.knowledge/practices/index.md`                              | Updated    | +1 line  |
 | `.junie/guidelines.md`                                    | Updated    | ~4 lines |
 
 ### Learnings (Iteration 5)
 
 1. **Checklist vs Practice**: Checklists (quick reference workflow) are distinct from practices (comprehensive
-   guidance). Both are generic and belong in `content/`.
+   guidance). Both are generic and belong in `.knowledge/`.
 
 2. **Three-Layer Pattern for Session Management**:
-    - Practices (`content/practices/`) — Theory and comprehensive guidance
-    - Templates (`content/templates/`) — Document structure blueprints
-    - Checklists (`content/practices/`) — Quick-reference workflows
+    - Practices (`.knowledge/practices/`) — Theory and comprehensive guidance
+    - Templates (`.knowledge/templates/`) — Document structure blueprints
+    - Checklists (`.knowledge/practices/`) — Quick-reference workflows
 
-3. **Instance vs Pattern**: `.history/` stores instance data (actual records) while `content/` stores patterns (how to
+3. **Instance vs Pattern**: `.history/` stores instance data (actual records) while `.knowledge/` stores patterns (how to
    create records).
 
 ---
@@ -440,7 +440,7 @@ all previous optimizations are complete and properly implemented.
 
 #### Cross-Reference Validation
 
-- ✓ No broken references to old paths (`content/references/mcp_api.md`, `content/references/plugin_api.md`)
+- ✓ No broken references to old paths (`.knowledge/references/mcp_api.md`, `.knowledge/references/plugin_api.md`)
 - ✓ All scenario context files updated with new paths
 - ✓ Index files accurate
 
@@ -448,7 +448,7 @@ all previous optimizations are complete and properly implemented.
 
 | Directory             | Status    | Notes                                                         |
 |-----------------------|-----------|---------------------------------------------------------------|
-| `content/references/` | ✓ 2 files | Generic: `knowledge_quick_ref.md`, `performance_checklist.md` |
+| `.knowledge/references/` | ✓ 2 files | Generic: `knowledge_quick_ref.md`, `performance_checklist.md` |
 | `docs/guides/`        | ✓ 9 files | User-facing SAGE documentation                                |
 | `docs/api/`           | ✓ 6 files | Includes migrated quick refs                                  |
 
@@ -457,14 +457,14 @@ all previous optimizations are complete and properly implemented.
 **All optimizations verified complete:**
 
 1. **Knowledge Placement** — All content in appropriate directories
-    - Generic → `content/`
+    - Generic → `.knowledge/`
     - Project-specific → `.context/`
     - User documentation → `docs/`
     - Session records → `.history/`
 
 2. **Reference Pattern** — Project-specific files reference generic standards
-    - `.context/intelligence/` files reference `content/practices/`
-    - `.context/policies/timeout_hierarchy.md` references `content/frameworks/resilience/`
+    - `.context/intelligence/` files reference `.knowledge/practices/`
+    - `.context/policies/timeout_hierarchy.md` references `.knowledge/frameworks/resilience/`
     - `.junie/guidelines.md` references all relevant generic standards
 
 3. **No Remaining Issues** — Audit found no further optimization opportunities
@@ -656,7 +656,7 @@ accepted all proposed automation recommendations.
 | `report` | PR only | Generate quality report summary |
 | `metrics` | main push | Collect metrics for tracking |
 
-**Triggers**: Push/PR to main/develop when content/docs/.context changes
+**Triggers**: Push/PR to main/develop when .knowledge/docs/.context changes
 
 #### Phase 5: Index Maintainer Tool
 
@@ -708,7 +708,7 @@ python tools/index_maintainer.py validate
 python tools/index_maintainer.py update
 
 # CI/CD (automatic on push/PR)
-# Triggers on content/docs/.context changes
+# Triggers on .knowledge/docs/.context changes
 ```
 
 ### Learnings (Iteration 8)
@@ -747,7 +747,7 @@ This work is documented in a separate, detailed record:
 |-----------------------------|------------------------------------------------------------------------------|
 | **Directory Restructuring** | Reorganized `.junie/` into `generic/`, `mcp/`, `configuration/`, `project/`  |
 | **Content Separation**      | Clear 🔄 Generic vs 📌 Project-specific categorization                       |
-| **Template Documentation**  | Created `content/practices/ai_collaboration/junie_configuration_template.md` |
+| **Template Documentation**  | Created `.knowledge/practices/ai_collaboration/junie_configuration_template.md` |
 | **Reusability**             | Generic files can be copied to new projects without modification             |
 
 ### Files Changed

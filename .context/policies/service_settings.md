@@ -1,4 +1,4 @@
-# Service Layer Configuration
+﻿# Service Layer Configuration
 
 > Configuration reference for CLI, MCP, and API services
 
@@ -295,7 +295,7 @@ services:
     checks:
       - name: knowledge_base
         type: path_exists
-        path: content/
+        path: .knowledge/
       - name: config
         type: file_valid
         path: config/sage.yaml

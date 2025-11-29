@@ -1,4 +1,4 @@
-# Documentation Navigation
+﻿# Documentation Navigation
 
 > User-facing documentation for SAGE Knowledge Base
 
@@ -99,7 +99,7 @@ Tutorials and guides for users and developers:
 
 ## Related
 
-- `content/` — Knowledge base content
+- `.knowledge/` — Knowledge base content
 - `.context/` — Project-specific context
 - `config/` — Runtime configuration files
 - `README.md` — Project overview

@@ -1,4 +1,4 @@
-# Contributing to SAGE Knowledge Base
+﻿# Contributing to SAGE Knowledge Base
 
 Thank you for your interest in contributing to SAGE! This document provides guidelines and instructions for
 contributing.
@@ -97,7 +97,7 @@ sage-kb/
 │   ├── core/          # Core functionality
 │   ├── services/      # CLI, MCP, API services
 │   └── capabilities/  # Analyzers, checkers
-├── content/           # Knowledge content
+├── .knowledge/           # Knowledge content
 ├── docs/              # Documentation
 ├── tests/             # Test suite
 └── config/            # Configuration files
@@ -285,7 +285,7 @@ class TestLoader:
 | API docs | `docs/api/`    | API reference     |
 | Guides   | `docs/guides/` | How-to guides     |
 | Design   | `docs/design/` | Architecture docs |
-| Content  | `content/`     | Knowledge content |
+| Content  | `.knowledge/`     | Knowledge content |
 
 ### Documentation Style
 
@@ -298,7 +298,7 @@ class TestLoader:
 
 ```bash
 # Add to appropriate layer
-content/
+.knowledge/
 ├── core/          # Fundamental principles
 ├── guidelines/    # Standards and rules
 ├── practices/     # How-to guides

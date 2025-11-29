@@ -1,4 +1,4 @@
-# Session State: History Directory Completeness Enhancement
+﻿# Session State: History Directory Completeness Enhancement
 
 > **Session ID**: session-20251129-2214
 > **Started**: 2025-11-29 22:14
@@ -22,7 +22,7 @@ examples.
 ### Success Criteria
 
 - [x] All missing templates identified
-- [x] Templates created in `content/templates/`
+- [x] Templates created in `.knowledge/templates/`
 - [x] Template index updated
 - [x] Example files added to each subdirectory
 - [x] Documentation verified for completeness
@@ -39,7 +39,7 @@ examples.
 4. Created `conversation_record.md` template ✓
 5. Created `session_state.md` template ✓
 6. Created `task_handoff.md` template ✓
-7. Updated `content/templates/index.md` ✓
+7. Updated `.knowledge/templates/index.md` ✓
 
 ### Current Step
 
@@ -64,10 +64,10 @@ None - all tasks completed successfully:
 
 | File                                       | Purpose                | Status |
 |--------------------------------------------|------------------------|--------|
-| `content/templates/conversation_record.md` | Conversation template  | Done   |
-| `content/templates/session_state.md`       | Session state template | Done   |
-| `content/templates/task_handoff.md`        | Handoff template       | Done   |
-| `content/templates/index.md`               | Template catalog       | Done   |
+| `.knowledge/templates/conversation_record.md` | Conversation template  | Done   |
+| `.knowledge/templates/session_state.md`       | Session state template | Done   |
+| `.knowledge/templates/task_handoff.md`        | Handoff template       | Done   |
+| `.knowledge/templates/index.md`               | Template catalog       | Done   |
 | `.history/conversations/_example-*.md`     | Example conversation   | Done   |
 | `.history/current/_example-*.md`           | Example session state  | Done   |
 | `.history/handoffs/_example-*.md`          | Example handoff        | Done   |

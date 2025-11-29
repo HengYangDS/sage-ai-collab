@@ -1,4 +1,4 @@
----
+﻿---
 title: SAGE Knowledge Base - Architecture Design
 version: 0.1.0
 date: 2025-11-28
@@ -227,7 +227,7 @@ sage/                                  # 📁 Project root directory
 │   └── standards/                     # 🆕 Standards documentation
 │       └── navigation_standards.md    #    Navigation hierarchy (L0-L4)
 │
-├── content/                           # 📚 Knowledge content directory
+├── .knowledge/                           # 📚 Knowledge content directory
 │   │
 │   ├── core/                          # 🔸 Core principles (~500 tokens, Always Load)
 │   │   ├── principles.md              #    Xin-Da-Ya philosophy, core values
@@ -353,7 +353,7 @@ sage/                                  # 📁 Project root directory
 │   │
 │   ├── fixtures/                      # 🆕 Test data
 │   │   ├── __init__.py
-│   │   ├── sample_content/            #    Sample knowledge content
+│   │   ├── sample_.knowledge/            #    Sample knowledge content
 │   │   │   ├── index.md
 │   │   │   └── core/
 │   │   ├── mock_responses/            #    Mock response data
@@ -418,12 +418,12 @@ sage/                                  # 📁 Project root directory
 | .history/                        | 0        | 3       | AI session history (current/conversations/handoffs)   |
 | .archive/                        | 0        | 1       | Historical archives (monthly: 202511/)                |
 | docs/                            | 7        | 4       | Project documentation (+standards/)                   |
-| content/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)            |
-| content/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index.yaml)       |
-| content/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)                       |
-| content/practices/               | 4        | 4       | Best practices (+decisions/)                          |
-| content/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                        |
-| content/templates/               | 2        | 0       | Templates (+expert_committee.md)                      |
+| .knowledge/core/                    | 3        | 0       | Core principles (~500 tokens, Always Load)            |
+| .knowledge/guidelines/              | 11       | 0       | Engineering guidelines (+guidelines_index.yaml)       |
+| .knowledge/frameworks/              | 5        | 5       | Deep frameworks (~2,000 tokens)                       |
+| .knowledge/practices/               | 4        | 4       | Best practices (+decisions/)                          |
+| .knowledge/scenarios/               | 1        | 1       | Scenario presets (~500 tokens)                        |
+| .knowledge/templates/               | 2        | 0       | Templates (+expert_committee.md)                      |
 | src/sage/interfaces/             | 2        | 0       | Protocol definitions (centralized)                    |
 | src/sage/domain/                 | 3        | 0       | Business domain models                                |
 | src/sage/core/                   | 9        | 1       | Core layer (Layer 1, <500 lines)                      |
@@ -945,7 +945,7 @@ from pathlib import Path
 config_file = Path("content") / "core" / "principles.md"
 
 # ⚠️ AVOID: Hardcoded string paths (works but not recommended)
-config_file = "content/core/principles.md"  # Works in Python, but not explicit
+config_file = ".knowledge/core/principles.md"  # Works in Python, but not explicit
 config_file = "content\\core\\principles.md"  # Windows-only, fails on Unix
 
 # Note: Python's pathlib and open() handle forward slashes on all platforms.
@@ -1003,7 +1003,7 @@ export SAGE_LOADING_CACHE_ENABLED=false
 |--------|---------|------------------|------------------------|----------------------------|
 | **T1** | 100ms   | Cache lookup     | Return cached/fallback | Memory cache, index lookup |
 | **T2** | 500ms   | Single file read | Use partial/fallback   | Individual markdown file   |
-| **T3** | 2s      | Layer load       | Load partial + warning | `content/core/` directory  |
+| **T3** | 2s      | Layer load       | Load partial + warning | `.knowledge/core/` directory  |
 | **T4** | 5s      | Full KB load     | Emergency core only    | All layers requested       |
 | **T5** | 10s     | Complex analysis | Abort + summary        | Search, graph building     |
 
@@ -1095,8 +1095,8 @@ State Transitions:
 loading:
   always: # Always loaded (pre-cached)
     - index.md
-    - content/core/principles.md
-    - content/core/quick_reference.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
 
 triggers:
   code:
@@ -1114,8 +1114,8 @@ triggers:
       - 重构
       - 调试
     load:
-      - content/guidelines/code_style.md
-      - content/guidelines/python.md
+      - .knowledge/guidelines/code_style.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 1                        # Lower = higher priority
 
@@ -1132,8 +1132,8 @@ triggers:
       - 系统
       - 模式
     load:
-      - content/guidelines/planning_design.md
-      - content/frameworks/decision/
+      - .knowledge/guidelines/planning_design.md
+      - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 2
 
@@ -1150,7 +1150,7 @@ triggers:
       - 单元
       - 集成
     load:
-      - content/guidelines/engineering.md
+      - .knowledge/guidelines/engineering.md
     timeout_ms: 2000
     priority: 3
 
@@ -1167,8 +1167,8 @@ triggers:
       - 人工智能
       - 级别
     load:
-      - content/guidelines/ai_collaboration.md
-      - content/frameworks/autonomy/
+      - .knowledge/guidelines/ai_collaboration.md
+      - .knowledge/frameworks/autonomy/
     timeout_ms: 2000
     priority: 4
 ```
@@ -1401,7 +1401,7 @@ print(result.content)
 loading:
   always:
     - index.md
-    - content/core/principles.md
+    - .knowledge/core/principles.md
 
 timeout:
   default: 5s
@@ -1574,7 +1574,7 @@ result = await get_knowledge(task="implement authentication API")
 
 ### Autonomy Level Mapping
 
-> **Reference**: See `content/frameworks/autonomy/levels.md` for full 6-level autonomy framework
+> **Reference**: See `.knowledge/frameworks/autonomy/levels.md` for full 6-level autonomy framework
 
 | Autonomy Level                           | Tool Usage Pattern                                                   |
 |------------------------------------------|----------------------------------------------------------------------|
@@ -1618,7 +1618,7 @@ Decision Factors:
 
 > **Calibration Examples**: For practical scenarios demonstrating autonomy level selection
 > (database migrations, unit tests, refactoring, production config), see Section 10 of
-> `content/frameworks/autonomy/levels.md`.
+> `.knowledge/frameworks/autonomy/levels.md`.
 
 ---
 

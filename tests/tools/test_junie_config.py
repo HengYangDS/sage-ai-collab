@@ -240,25 +240,58 @@ class TestDirectoryStructure:
             dir_path = JUNIE_DIR / dir_name
             assert dir_path.is_dir(), f"Directory '{dir_name}' not found in .junie/"
 
-    def test_docs_exist(self) -> None:
-        """Verify documentation files exist."""
+    def test_docs_structure_exist(self) -> None:
+        """Verify documentation directory structure exists."""
         docs_dir = JUNIE_DIR / "docs"
-        expected_files = [
-            "README.md",
-            "01-introduction.md",
-            "02-action-allowlist.md",
-            "03-mcp-integration.md",
-            "04-future-vision.md",
-            "05-appendix.md",
-            "06-migration-guide.md",
-            "07-memory-best-practices.md",
-            "08-efficiency-metrics.md",
-            "09-operations-guide.md",
-            "10-glossary.md",
-        ]
+        
+        # Check main README
+        assert (docs_dir / "README.md").exists(), "docs/README.md not found"
+        
+        # Check subdirectories exist
+        expected_subdirs = ["guides", "mcp", "operations", "reference", "vision"]
+        for subdir in expected_subdirs:
+            subdir_path = docs_dir / subdir
+            assert subdir_path.is_dir(), f"docs/{subdir}/ directory not found"
+
+    def test_docs_guides_exist(self) -> None:
+        """Verify guides documentation files exist."""
+        guides_dir = JUNIE_DIR / "docs" / "guides"
+        expected_files = ["quick-start.md", "action-allowlist.md"]
         for filename in expected_files:
-            file_path = docs_dir / filename
-            assert file_path.exists(), f"Doc '{filename}' not found"
+            file_path = guides_dir / filename
+            assert file_path.exists(), f"guides/{filename} not found"
+
+    def test_docs_mcp_exist(self) -> None:
+        """Verify MCP documentation files exist."""
+        mcp_dir = JUNIE_DIR / "docs" / "mcp"
+        expected_files = ["overview.md", "configuration.md", "servers.md", "memory.md", "troubleshooting.md"]
+        for filename in expected_files:
+            file_path = mcp_dir / filename
+            assert file_path.exists(), f"mcp/{filename} not found"
+
+    def test_docs_operations_exist(self) -> None:
+        """Verify operations documentation files exist."""
+        ops_dir = JUNIE_DIR / "docs" / "operations"
+        expected_files = ["maintenance.md", "migration.md", "metrics.md", "recovery.md"]
+        for filename in expected_files:
+            file_path = ops_dir / filename
+            assert file_path.exists(), f"operations/{filename} not found"
+
+    def test_docs_reference_exist(self) -> None:
+        """Verify reference documentation files exist."""
+        ref_dir = JUNIE_DIR / "docs" / "reference"
+        expected_files = ["glossary.md", "regex.md", "rules-windows.md", "rules-unix.md"]
+        for filename in expected_files:
+            file_path = ref_dir / filename
+            assert file_path.exists(), f"reference/{filename} not found"
+
+    def test_docs_vision_exist(self) -> None:
+        """Verify vision documentation files exist."""
+        vision_dir = JUNIE_DIR / "docs" / "vision"
+        expected_files = ["future-protocols.md"]
+        for filename in expected_files:
+            file_path = vision_dir / filename
+            assert file_path.exists(), f"vision/{filename} not found"
 
 
 if __name__ == "__main__":

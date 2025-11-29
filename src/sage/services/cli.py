@@ -1,4 +1,4 @@
-"""
+﻿"""
 CLI - Rich Command Line Interface for AI Collaboration Knowledge Base.
 
 This module provides:
@@ -439,12 +439,12 @@ def validate(
 
     # Check required directories
     required_dirs = [
-        "content/core",
-        "content/guidelines",
-        "content/frameworks",
-        "content/practices",
-        "content/templates",
-        "content/scenarios",
+        ".knowledge/core",
+        ".knowledge/guidelines",
+        ".knowledge/frameworks",
+        ".knowledge/practices",
+        ".knowledge/templates",
+        ".knowledge/scenarios",
     ]
 
     for dir_name in required_dirs:
@@ -462,8 +462,8 @@ def validate(
     # Check required files
     required_files = [
         "index.md",
-        "content/core/principles.md",
-        "content/core/quick_reference.md",
+        ".knowledge/core/principles.md",
+        ".knowledge/core/quick_reference.md",
     ]
 
     for file_name in required_files:
