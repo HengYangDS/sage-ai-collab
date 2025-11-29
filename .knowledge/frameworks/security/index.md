@@ -33,12 +33,12 @@ This framework provides security guidelines and patterns for:
 
 ## 2. Contents
 
-| Document                                    | Purpose                        | When to Use                        |
-|---------------------------------------------|--------------------------------|------------------------------------|
-| [Authentication](authentication.md)         | Identity verification patterns | Implementing login, tokens, SSO    |
-| [Authorization](authorization.md)           | Access control strategies      | Role-based, attribute-based access |
-| [Secrets Management](secrets_management.md) | Secure data handling           | API keys, passwords, certificates  |
-| [Security Checklist](security_checklist.md) | Security review guide          | Code review, deployment, audit     |
+| Document                                                                      | Purpose                        | When to Use                        |
+|-------------------------------------------------------------------------------|--------------------------------|------------------------------------|
+| [Authentication](.knowledge/frameworks/security/authentication.md)            | Identity verification patterns | Implementing login, tokens, SSO    |
+| [Authorization](.knowledge/frameworks/security/authorization.md)              | Access control strategies      | Role-based, attribute-based access |
+| [Secrets Management](.knowledge/frameworks/security/secrets_management.md)    | Secure data handling           | API keys, passwords, certificates  |
+| [Security Checklist](.knowledge/frameworks/security/security_checklist.md)    | Security review guide          | Code review, deployment, audit     |
 
 ---
 

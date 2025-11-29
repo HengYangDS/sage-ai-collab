@@ -32,11 +32,11 @@ This framework provides performance optimization guidelines for:
 
 ## 2. Contents
 
-| Document                                              | Purpose                 | When to Use               |
-|-------------------------------------------------------|-------------------------|---------------------------|
-| [Caching Patterns](caching_patterns.md)               | Data caching strategies | Reducing latency, load    |
-| [Optimization Strategies](optimization_strategies.md) | Performance improvement | Scaling, efficiency       |
-| [Profiling Guide](profiling_guide.md)                 | Performance analysis    | Bottleneck identification |
+| Document                                                                                  | Purpose                 | When to Use               |
+|-------------------------------------------------------------------------------------------|-------------------------|---------------------------|
+| [Caching Patterns](.knowledge/frameworks/performance/caching_patterns.md)                 | Data caching strategies | Reducing latency, load    |
+| [Optimization Strategies](.knowledge/frameworks/performance/optimization_strategies.md)   | Performance improvement | Scaling, efficiency       |
+| [Profiling Guide](.knowledge/frameworks/performance/profiling_guide.md)                   | Performance analysis    | Bottleneck identification |
 
 ---
 

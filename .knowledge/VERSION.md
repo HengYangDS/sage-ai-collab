@@ -15,10 +15,10 @@ tokens: ~150
 
 | Field | Value |
 |:------|:------|
-| **Version** | 1.0.0 |
+| **Version** | 1.0.1 |
 | **Release Date** | 2025-11-30 |
 | **Status** | Stable |
-| **Files** | ~125 |
+| **Files** | 132 |
 
 ---
 
@@ -43,6 +43,22 @@ tokens: ~150
 ---
 
 ## Changelog
+
+### v1.0.1 (2025-11-30)
+
+**Link Fixes & Validation Improvements**
+
+- Recreated `scripts/validate_knowledge.py` (file recovery)
+- Fixed 7 broken links in framework index files:
+  - `frameworks/performance/index.md`: Updated 3 links to use project-root-relative paths
+  - `frameworks/security/index.md`: Updated 4 links to use project-root-relative paths
+- Improved validation script link checking logic to correctly handle `.knowledge/`, `.context/`, `.junie/` paths
+
+Metrics:
+- Errors: 7 → 0
+- Warnings: 39 (file length, acceptable)
+
+---
 
 ### v1.0.0 (2025-11-30)
 
