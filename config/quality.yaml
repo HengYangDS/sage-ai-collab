@@ -14,7 +14,7 @@ quality:
   max_complexity: 10                   # Maximum cyclomatic complexity
 
   # Code style thresholds
-  max_line_length: 100                 # Maximum line length (characters)
+  max_line_length: 88                  # Maximum line length (characters)
   min_type_hint_coverage: 50           # Minimum type hint coverage percentage
 
   # Documentation thresholds

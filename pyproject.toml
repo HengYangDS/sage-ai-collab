@@ -94,21 +94,21 @@ target-version = "py312"
 
 [tool.ruff.lint]
 select = [
-    "E",   # pycodestyle errors
-    "W",   # pycodestyle warnings
-    "F",   # pyflakes
-    "I",   # isort
-    "B",   # flake8-bugbear
-    "C4",  # flake8-comprehensions
-    "UP",  # pyupgrade
+    "E", # pycodestyle errors
+    "W", # pycodestyle warnings
+    "F", # pyflakes
+    "I", # isort
+    "B", # flake8-bugbear
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
 ]
 ignore = [
-    "E501",  # line too long (handled by ruff format)
-    "E402",  # module level import not at top of file (intentional in some modules)
-    "B008",  # don't perform function calls in argument defaults
-    "B027",  # empty method in abstract base class (intentional for optional hooks)
-    "E741",  # ambiguous variable name (allow 'l' in list comprehensions)
-    "F841",  # local variable assigned but never used (allow in some cases)
+    "E501", # line too long (handled by ruff format)
+    "E402", # module level import not at top of file (intentional in some modules)
+    "B008", # don't perform function calls in argument defaults
+    "B027", # empty method in abstract base class (intentional for optional hooks)
+    "E741", # ambiguous variable name (allow 'l' in list comprehensions)
+    "F841", # local variable assigned but never used (allow in some cases)
 ]
 
 [tool.ruff.lint.isort]
