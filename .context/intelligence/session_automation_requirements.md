@@ -6,7 +6,8 @@
 
 ## Overview
 
-This document outlines requirements for automating session history creation and management, addressing the gap between the designed `.history/` system and its actual usage.
+This document outlines requirements for automating session history creation and management, addressing the gap between
+the designed `.history/` system and its actual usage.
 
 ### Current State
 
@@ -40,12 +41,12 @@ class SessionHooks:
         """Called when a new AI session begins."""
         # Create session state file in .history/current/
         pass
-    
+
     async def on_session_end(self, context: SessionContext, summary: SessionSummary) -> None:
         """Called when AI session ends."""
         # Generate appropriate record based on session type
         pass
-    
+
     async def on_significant_decision(self, decision: Decision) -> None:
         """Called when significant decision is made."""
         # Queue for conversation record
@@ -56,12 +57,12 @@ class SessionHooks:
 
 Add MCP tools for session management:
 
-| Tool | Purpose | Parameters |
-|------|---------|------------|
-| `sage_start_session` | Initialize session tracking | `task_type`, `description` |
-| `sage_end_session` | Finalize and create records | `summary`, `next_steps` |
-| `sage_record_decision` | Log significant decision | `decision`, `rationale`, `alternatives` |
-| `sage_create_handoff` | Create handoff document | `pending_tasks`, `context` |
+| Tool                   | Purpose                     | Parameters                              |
+|------------------------|-----------------------------|-----------------------------------------|
+| `sage_start_session`   | Initialize session tracking | `task_type`, `description`              |
+| `sage_end_session`     | Finalize and create records | `summary`, `next_steps`                 |
+| `sage_record_decision` | Log significant decision    | `decision`, `rationale`, `alternatives` |
+| `sage_create_handoff`  | Create handoff document     | `pending_tasks`, `context`              |
 
 #### 1.3 CLI Commands
 
@@ -94,14 +95,14 @@ class SessionAnalyzer:
         # - Decision points encountered
         # - Duration and complexity
         return SessionType.SIGNIFICANT  # or ROUTINE, EXPLORATION, etc.
-    
+
     def suggest_record_type(self, session_type: SessionType) -> RecordType:
         """Suggest appropriate record type."""
         mapping = {
             SessionType.SIGNIFICANT: RecordType.CONVERSATION,
-            SessionType.INCOMPLETE: RecordType.HANDOFF,
+            SessionType.INCOMPLETE : RecordType.HANDOFF,
             SessionType.EXPLORATION: RecordType.SESSION_STATE,
-            SessionType.ROUTINE: RecordType.NONE,
+            SessionType.ROUTINE    : RecordType.NONE,
         }
         return mapping.get(session_type, RecordType.NONE)
 ```
@@ -191,14 +192,14 @@ Implement as optional plugin for flexibility:
 ```python
 class SessionHistoryPlugin(PluginBase):
     """Plugin for automated session history management."""
-    
+
     name = "session-history"
     version = "1.0.0"
-    
+
     @hookimpl
     def on_startup(self, context):
         self._start_session_tracking()
-    
+
     @hookimpl
     def on_shutdown(self, context):
         self._finalize_session()
@@ -224,12 +225,12 @@ session_history:
 
 ## Success Metrics
 
-| Metric | Target | Measurement |
-|--------|--------|-------------|
+| Metric                       | Target                       | Measurement                            |
+|------------------------------|------------------------------|----------------------------------------|
 | Session record creation rate | >80% of significant sessions | Records created / significant sessions |
-| Handoff completion rate | >90% | Handoffs that led to task completion |
-| Context recovery time | <2 min | Time to resume from handoff |
-| Knowledge capture | >70% of decisions | Documented decisions / total decisions |
+| Handoff completion rate      | >90%                         | Handoffs that led to task completion   |
+| Context recovery time        | <2 min                       | Time to resume from handoff            |
+| Knowledge capture            | >70% of decisions            | Documented decisions / total decisions |
 
 ---
 

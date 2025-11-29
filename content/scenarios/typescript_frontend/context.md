@@ -1,4 +1,4 @@
-﻿# TypeScript Frontend Scenario Context
+# TypeScript Frontend Scenario Context
 
 > Pre-configured context for TypeScript frontend development (React/Vue)
 

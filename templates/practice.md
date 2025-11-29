@@ -1,4 +1,4 @@
-﻿# {TITLE}
+# {TITLE}
 
 > {PURPOSE}
 
@@ -22,8 +22,8 @@
 
 Use this pattern when:
 
-- 
-- 
+-
+-
 
 ## 3. Pattern
 
@@ -35,9 +35,9 @@ Use this pattern when:
 
 ### Key Principles
 
-1. 
-2. 
-3. 
+1.
+2.
+3.
 
 ## 4. Examples
 

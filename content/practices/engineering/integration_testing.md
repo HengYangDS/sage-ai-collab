@@ -1,4 +1,4 @@
-﻿# Integration Testing
+# Integration Testing
 
 > Best practices for testing component interactions and system integration
 

@@ -1,4 +1,4 @@
-﻿# Session History Navigation
+# Session History Navigation
 
 > AI session history and task handoffs for SAGE Knowledge Base
 

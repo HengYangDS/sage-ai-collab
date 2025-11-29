@@ -1,4 +1,4 @@
-﻿# Best Practices
+# Best Practices
 
 > Practical guides for implementation
 

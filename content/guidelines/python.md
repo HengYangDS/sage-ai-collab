@@ -1,4 +1,4 @@
-﻿# Python-Specific Guidelines
+# Python-Specific Guidelines
 
 > Python best practices, type hints, decorators, patterns
 

@@ -11,6 +11,7 @@ For the comprehensive guide on AI collaboration patterns, see:
 **→ `content/practices/ai_collaboration/interaction_patterns.md`**
 
 This includes:
+
 - Interaction Patterns (Session Start, Progressive Disclosure, Clarification Request, Batch Operation)
 - Knowledge Capture Patterns (Decision Point, Convention Discovery, Session Handoff, Problem-Solution)
 - Optimization Strategies (Context Window, Token Budget, Parallel Task, Error Recovery)

@@ -1,4 +1,4 @@
-﻿# Junie Configuration Template System
+# Junie Configuration Template System
 
 > A reusable template system for JetBrains Junie AI collaboration configuration.
 
@@ -18,7 +18,8 @@
 
 ## 1. Overview
 
-The `.junie/` directory serves as a **thin layer** configuration system for JetBrains Junie AI collaboration. It provides:
+The `.junie/` directory serves as a **thin layer** configuration system for JetBrains Junie AI collaboration. It
+provides:
 
 - **Generic AI collaboration rules** that apply to any project
 - **Project-specific variables** centralized in one location
@@ -26,12 +27,12 @@ The `.junie/` directory serves as a **thin layer** configuration system for JetB
 
 ### Key Principles
 
-| Principle | Description |
-|-----------|-------------|
-| **Thin Layer** | Minimal configuration that delegates to deeper knowledge |
-| **Separation** | Generic rules vs. project-specific content clearly divided |
-| **Reusability** | Generic files can be copied to new projects without changes |
-| **Single Source** | Project variables defined once, referenced everywhere |
+| Principle         | Description                                                 |
+|-------------------|-------------------------------------------------------------|
+| **Thin Layer**    | Minimal configuration that delegates to deeper knowledge    |
+| **Separation**    | Generic rules vs. project-specific content clearly divided  |
+| **Reusability**   | Generic files can be copied to new projects without changes |
+| **Single Source** | Project variables defined once, referenced everywhere       |
 
 ---
 
@@ -41,10 +42,10 @@ The `.junie/` directory serves as a **thin layer** configuration system for JetB
 
 All files in `.junie/` are categorized as either:
 
-| Category | Symbol | Description | Examples |
-|----------|--------|-------------|----------|
-| **Generic** | 🔄 | Reusable across projects | `guidelines.md`, `generic/config.yaml` |
-| **Project** | 📌 | Must be customized per project | `project/config.yaml`, `project/quickref.md` |
+| Category    | Symbol | Description                    | Examples                                     |
+|-------------|--------|--------------------------------|----------------------------------------------|
+| **Generic** | 🔄     | Reusable across projects       | `guidelines.md`, `generic/config.yaml`       |
+| **Project** | 📌     | Must be customized per project | `project/config.yaml`, `project/quickref.md` |
 
 ### 2.2 Variable Centralization
 
@@ -72,11 +73,11 @@ Other files reference `project/config.yaml` instead of duplicating values.
 
 The `.junie/` thin layer delegates detailed knowledge to:
 
-| Target | Content Type |
-|--------|--------------|
+| Target      | Content Type                                   |
+|-------------|------------------------------------------------|
 | `.context/` | Project-specific knowledge (ADRs, conventions) |
-| `content/` | Generic, reusable knowledge |
-| `docs/` | User-facing documentation |
+| `content/`  | Generic, reusable knowledge                    |
+| `docs/`     | User-facing documentation                      |
 
 ---
 
@@ -220,9 +221,15 @@ MCP server configuration with profiles:
 ```json
 {
   "mcpServers": {
-    "filesystem": { ... },
-    "memory": { ... },
-    "github": { ... }
+    "filesystem": {
+      ...
+    },
+    "memory": {
+      ...
+    },
+    "github": {
+      ...
+    }
   }
 }
 ```
@@ -326,11 +333,11 @@ To migrate an existing project:
 
 ### 6.1 Keep the Thin Layer Thin
 
-| Do | Don't |
-|----|-------|
-| Reference detailed docs | Duplicate detailed content |
-| Use short summaries | Include full specifications |
-| Link to `.context/` | Copy from `.context/` |
+| Do                        | Don't                         |
+|---------------------------|-------------------------------|
+| Reference detailed docs   | Duplicate detailed content    |
+| Use short summaries       | Include full specifications   |
+| Link to `.context/`       | Copy from `.context/`         |
 | Keep files ~100-250 lines | Create large monolithic files |
 
 ### 6.2 Variable Naming in project/config.yaml
@@ -353,12 +360,14 @@ cmd_test: "pytest"
 ### 6.3 Separation Discipline
 
 **Never include in generic files:**
+
 - Project names or identifiers
 - Specific file paths (use placeholders like `src/`)
 - Technology-specific commands
 - Team or organization names
 
 **Always include in project files:**
+
 - All project-specific identifiers
 - Actual commands and paths
 - Technology choices and versions
@@ -372,6 +381,7 @@ schema_version: "1.0"
 ```
 
 This enables:
+
 - Compatibility checking
 - Migration scripts
 - Breaking change detection
@@ -436,9 +446,9 @@ mcp:
 
 ## Version History
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.0 | 2025-11-30 | Initial template system design |
+| Version | Date       | Changes                        |
+|---------|------------|--------------------------------|
+| 1.0     | 2025-11-30 | Initial template system design |
 
 ---
 

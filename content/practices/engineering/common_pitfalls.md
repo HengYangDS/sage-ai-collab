@@ -1,4 +1,4 @@
-﻿# Common Pitfalls
+# Common Pitfalls
 
 > Known pitfalls and how to avoid them in software development
 
@@ -17,7 +17,8 @@
 
 ## 1. Overview
 
-This document catalogs common pitfalls encountered during software development. Each pitfall includes symptoms, root cause, and prevention strategies.
+This document catalogs common pitfalls encountered during software development. Each pitfall includes symptoms, root
+cause, and prevention strategies.
 
 ### 1.1 Pitfall Severity
 
@@ -50,21 +51,30 @@ This document catalogs common pitfalls encountered during software development. 
 # ❌ Bad - Circular import
 # module_a.py
 from module_b import B
+
+
 class A:
     def use_b(self): return B()
 
+
 # module_b.py
 from module_a import A  # Circular!
+
+
 class B:
     def use_a(self): return A()
+
 
 # ✅ Good - Use protocol/interface
 # protocols.py
 class AProtocol(Protocol):
     def method(self) -> None: ...
 
+
 # module_b.py
 from protocols import AProtocol
+
+
 class B:
     def __init__(self, a: AProtocol):
         self.a = a
@@ -121,6 +131,7 @@ class Service:
     def __init__(self):
         self.loader = FileLoader()  # Tight coupling
 
+
 # ✅ Good - Dependency injection
 class Service:
     def __init__(self, loader: LoaderProtocol):
@@ -150,6 +161,7 @@ class Service:
 def process(items: list = []):
     items.append("new")
     return items
+
 
 # ✅ Good - None default
 def process(items: list | None = None):
@@ -213,9 +225,11 @@ except ValueError as e:
 def get_content():
     return loader.load("file.md")  # Returns coroutine!
 
+
 # ✅ Good - Proper await
 async def get_content():
     return await loader.load("file.md")
+
 
 # ✅ Good - Or explicitly sync
 def get_content():
@@ -304,11 +318,11 @@ if len(content) > config.get("max_content_length", 10000):
 # config/app.yaml
 defaults:
   timeout_ms: 5000
-  
+
 development:
   debug: true
   log_level: DEBUG
-  
+
 production:
   debug: false
   log_level: INFO
@@ -367,6 +381,7 @@ def test_user_service():
     service._cache["user1"] = user  # Testing internal
     assert service._cache["user1"] == user
 
+
 # ✅ Good - Testing behavior
 def test_user_service():
     service = UserService()
@@ -398,6 +413,7 @@ def test_timeout():
     result = slow_operation()
     assert time.time() - start < 1.0  # Flaky!
 
+
 # ✅ Good - Mock time
 def test_timeout(mocker):
     mock_time = mocker.patch("time.time")
@@ -426,12 +442,19 @@ def test_timeout(mocker):
 # Test edge cases
 class TestLoadContent:
     def test_normal_file(self): ...
+
     def test_empty_file(self): ...
+
     def test_missing_file(self): ...
+
     def test_permission_denied(self): ...
+
     def test_very_large_file(self): ...
+
     def test_binary_file(self): ...
+
     def test_unicode_content(self): ...
+
     def test_special_characters_in_path(self): ...
 ```
 
@@ -475,11 +498,13 @@ class TestLoadContent:
 
 ```markdown
 # ❌ Bad - Too broad
+
 "Fix the loading issues"
 
 # ✅ Good - Specific
-"In src/core/loader.py, add timeout handling to the 
-load_file method. Use 500ms timeout. Return None on 
+
+"In src/core/loader.py, add timeout handling to the
+load_file method. Use 500ms timeout. Return None on
 timeout instead of raising exception."
 ```
 

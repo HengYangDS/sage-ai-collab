@@ -1,4 +1,4 @@
-﻿# Documentation Navigation
+# Documentation Navigation
 
 > User-facing documentation for SAGE Knowledge Base
 
@@ -47,14 +47,14 @@ Comprehensive design documentation for SAGE architecture and implementation:
 
 API documentation for different interfaces:
 
-| Document               | Description                      |
-|------------------------|----------------------------------|
-| `api/index.md`         | API overview and quick reference |
-| `api/cli.md`           | Command-line interface reference |
-| `api/mcp.md`           | MCP (Model Context Protocol) API |
-| `api/mcp_quick_ref.md` | MCP quick reference guide        |
-| `api/plugin_quick_ref.md` | Plugin API quick reference    |
-| `api/python.md`        | Python SDK reference             |
+| Document                  | Description                      |
+|---------------------------|----------------------------------|
+| `api/index.md`            | API overview and quick reference |
+| `api/cli.md`              | Command-line interface reference |
+| `api/mcp.md`              | MCP (Model Context Protocol) API |
+| `api/mcp_quick_ref.md`    | MCP quick reference guide        |
+| `api/plugin_quick_ref.md` | Plugin API quick reference       |
+| `api/python.md`           | Python SDK reference             |
 
 ---
 

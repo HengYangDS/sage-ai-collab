@@ -1,4 +1,4 @@
-﻿# Core Knowledge
+# Core Knowledge
 
 > Foundational principles and defaults — always loaded
 

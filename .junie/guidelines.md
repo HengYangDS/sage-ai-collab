@@ -1,4 +1,4 @@
-﻿# Project Guidelines
+# Project Guidelines
 
 > Primary entry point for JetBrains Junie AI collaboration
 
@@ -51,7 +51,8 @@ Generic configuration files are located in:
 1. **Follow existing patterns** in the codebase
 2. **Run tests** before committing changes
 3. **Update relevant documentation** when modifying features
-4. **Output files to designated temp directory** — All temporary/intermediate files must go to the configured output directory (typically `.outputs/`), never project root
+4. **Output files to designated temp directory** — All temporary/intermediate files must go to the configured output
+   directory (typically `.outputs/`), never project root
 5. **Create session records** for significant work sessions (see Session History below)
 6. **Use English** for code and documentation (unless project specifies otherwise)
 7. **Respect timeout limits** when applicable
@@ -60,13 +61,14 @@ Generic configuration files are located in:
 
 At session end, create records in the designated history directory (typically `.history/`):
 
-| Directory | Purpose |
-|-----------|---------|
+| Directory        | Purpose                    |
+|------------------|----------------------------|
 | `conversations/` | Key decisions and outcomes |
-| `handoffs/` | Task continuation context |
-| `current/` | Active work state |
+| `handoffs/`      | Task continuation context  |
+| `current/`       | Active work state          |
 
 **Naming Conventions**:
+
 - Conversations: `YYYY-MM-DD-topic.md`
 - Handoffs: `YYYY-MM-DD-task-handoff.md`
 - Sessions: `session-YYYYMMDD-HHMM.md`
@@ -75,24 +77,25 @@ At session end, create records in the designated history directory (typically `.
 
 Use these MCP tools to automate session tracking:
 
-| Tool | When to Call | Purpose |
-|------|--------------|---------|
-| `session_start` | Beginning of significant work (>30 min expected) | Creates session state file |
-| `session_end` | Work completed or session ending | Creates conversation/handoff record |
-| `session_status` | Start of new session, or to check state | Shows active sessions and recent records |
+| Tool             | When to Call                                     | Purpose                                  |
+|------------------|--------------------------------------------------|------------------------------------------|
+| `session_start`  | Beginning of significant work (>30 min expected) | Creates session state file               |
+| `session_end`    | Work completed or session ending                 | Creates conversation/handoff record      |
+| `session_status` | Start of new session, or to check state          | Shows active sessions and recent records |
 
 **Automatic Trigger Rules**:
 
-| Trigger Condition | Action |
-|-------------------|--------|
+| Trigger Condition                | Action                                                          |
+|----------------------------------|-----------------------------------------------------------------|
 | Session begins with complex task | Call `session_status()` then `session_start(task, description)` |
-| Important decision made | Document in current session file |
-| Session duration > 30 minutes | Ensure session tracking is active |
-| Work completed successfully | Call `session_end(summary)` |
-| Work incomplete/interrupted | Call `session_end(summary, next_steps="...")` for handoff |
-| Resuming after break | Call `session_status()` to check for active sessions |
+| Important decision made          | Document in current session file                                |
+| Session duration > 30 minutes    | Ensure session tracking is active                               |
+| Work completed successfully      | Call `session_end(summary)`                                     |
+| Work incomplete/interrupted      | Call `session_end(summary, next_steps="...")` for handoff       |
+| Resuming after break             | Call `session_status()` to check for active sessions            |
 
 **Usage Examples**:
+
 ```
 # Start tracking a session
 session_start(task="Implement authentication", description="Add JWT-based auth to API")
@@ -122,13 +125,13 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with multi
 
 When implementing time-sensitive operations, consider a tiered timeout approach:
 
-| Tier | Duration | Use Case |
-|------|----------|----------|
-| T1 | ~100ms | Cache lookup, in-memory operations |
-| T2 | ~500ms | Single file read, simple queries |
-| T3 | ~2s | Layer/module loading |
-| T4 | ~5s | Full system initialization |
-| T5 | ~10s | Complex analysis, external calls |
+| Tier | Duration | Use Case                           |
+|------|----------|------------------------------------|
+| T1   | ~100ms   | Cache lookup, in-memory operations |
+| T2   | ~500ms   | Single file read, simple queries   |
+| T3   | ~2s      | Layer/module loading               |
+| T4   | ~5s      | Full system initialization         |
+| T5   | ~10s     | Complex analysis, external calls   |
 
 **Principle**: Always have fallback strategies for timeout scenarios.
 
@@ -163,13 +166,13 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 
 ### Documentation Locations
 
-| Type | Typical Location |
-|------|------------------|
-| User-facing docs | `docs/` |
-| API documentation | `docs/api/` |
-| Design documents | `docs/design/` |
-| Project context | `.context/` |
-| Generic knowledge | `content/` |
+| Type              | Typical Location |
+|-------------------|------------------|
+| User-facing docs  | `docs/`          |
+| API documentation | `docs/api/`      |
+| Design documents  | `docs/design/`   |
+| Project context   | `.context/`      |
+| Generic knowledge | `content/`       |
 
 ---
 
@@ -192,12 +195,12 @@ project-root/
 
 ### Hidden Directories
 
-| Directory | Purpose |
-|-----------|---------|
-| `.junie/` | Junie AI configuration |
+| Directory   | Purpose                         |
+|-------------|---------------------------------|
+| `.junie/`   | Junie AI configuration          |
 | `.context/` | Project-specific knowledge base |
-| `.history/` | AI session records |
-| `.outputs/` | Temporary/intermediate files |
+| `.history/` | AI session records              |
+| `.outputs/` | Temporary/intermediate files    |
 
 ---
 
@@ -223,28 +226,29 @@ This `.junie/` configuration follows the **Thin Layer** principle with clear sep
 
 ### Root Files (🔄 Generic)
 
-| File | Purpose |
-|------|---------|
-| `README.md` | Directory documentation |
+| File            | Purpose                                    |
+|-----------------|--------------------------------------------|
+| `README.md`     | Directory documentation                    |
 | `guidelines.md` | Generic AI collaboration rules (this file) |
 
 ### Root Directories
 
-| Directory | Type | Purpose |
-|-----------|------|---------|
-| `generic/` | 🔄 | Generic settings (config.yaml, quickref.md) |
-| `mcp/` | 🔄 | MCP server configuration |
-| `configuration/` | 🔄 | Junie configuration guides |
-| `project/` | 📌 | Project-specific files |
+| Directory        | Type | Purpose                                     |
+|------------------|------|---------------------------------------------|
+| `generic/`       | 🔄   | Generic settings (config.yaml, quickref.md) |
+| `mcp/`           | 🔄   | MCP server configuration                    |
+| `configuration/` | 🔄   | Junie configuration guides                  |
+| `project/`       | 📌   | Project-specific files                      |
 
 ### Project Directory (`project/`) — 📌 Customize
 
-| File | Purpose |
-|------|---------|
-| `config.yaml` | Project variables definition |
+| File          | Purpose                          |
+|---------------|----------------------------------|
+| `config.yaml` | Project variables definition     |
 | `quickref.md` | Project-specific quick reference |
 
-**Reusability**: 
+**Reusability**:
+
 - 🔄 Generic files can be copied to new projects without modification
 - 📌 Project files must be customized for each project
 

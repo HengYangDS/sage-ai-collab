@@ -59,12 +59,12 @@
 
 ### 1.3 TOC Rules
 
-| Condition                   | Action                                 |
-|-----------------------------|----------------------------------------|
-| >60 lines OR >3 H2 headings | Add TOC                                |
+| Condition                   | Action                                    |
+|-----------------------------|-------------------------------------------|
+| >60 lines OR >3 H2 headings | Add TOC                                   |
 | Format                      | Vertical list with `- [Section](#anchor)` |
-| Content                     | H2 sections only                       |
-| Anchor                      | `#N-section-name` (lowercase, hyphens) |
+| Content                     | H2 sections only                          |
+| Anchor                      | `#N-section-name` (lowercase, hyphens)    |
 
 ---
 
@@ -155,6 +155,7 @@
 # ✓ Good: focused, shows input/output
 def greet(name: str) -> str:
     return f"Hello, {name}"
+
 
 print(greet("World"))  # Output: Hello, World
 ```

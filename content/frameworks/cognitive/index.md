@@ -1,4 +1,4 @@
-﻿# Cognitive Framework
+# Cognitive Framework
 
 > Cognitive patterns for AI reasoning and decision-making
 
@@ -14,7 +14,8 @@
 
 ## 1. Overview
 
-The Cognitive Framework provides structured approaches to complex problem-solving, including expert committee simulation and information density optimization for AI-human collaboration.
+The Cognitive Framework provides structured approaches to complex problem-solving, including expert committee simulation
+and information density optimization for AI-human collaboration.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base
+# SAGE Knowledge Base
 
 > **Smart AI-Guided Expertise** — Navigation Entry
 

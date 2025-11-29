@@ -1,4 +1,4 @@
-﻿# Security Guidelines
+# Security Guidelines
 
 > Security best practices for SAGE Knowledge Base development
 

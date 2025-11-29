@@ -1,4 +1,4 @@
-﻿# AI Collaboration Guidelines
+# AI Collaboration Guidelines
 
 > Human-AI interaction patterns, autonomy levels, execution modes
 

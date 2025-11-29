@@ -1,4 +1,4 @@
-﻿# Patterns Framework
+# Patterns Framework
 
 > Reusable patterns for AI-human collaboration and system design
 
@@ -14,7 +14,8 @@
 
 ## 1. Overview
 
-The Patterns Framework provides battle-tested patterns for collaboration, decision-making, integration, and data persistence in AI-human collaborative systems.
+The Patterns Framework provides battle-tested patterns for collaboration, decision-making, integration, and data
+persistence in AI-human collaborative systems.
 
 ---
 

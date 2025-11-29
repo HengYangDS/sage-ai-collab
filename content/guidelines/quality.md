@@ -1,4 +1,4 @@
-﻿# Quality Assurance Guidelines
+# Quality Assurance Guidelines
 
 > Quality metrics, review processes, continuous improvement
 

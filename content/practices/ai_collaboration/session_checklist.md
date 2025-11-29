@@ -1,4 +1,4 @@
-﻿# Session Checklist
+# Session Checklist
 
 > Quick reference checklist for AI collaboration session management
 
@@ -78,11 +78,11 @@
 
 ### 4.1 Documentation
 
-| Record Type        | When to Create                        | Location                 |
-|--------------------|---------------------------------------|--------------------------|
-| Conversation       | Important decisions, notable learnings| `.history/conversations/`|
-| Handoff            | Work incomplete, will continue        | `.history/handoffs/`     |
-| Session State      | Pausing mid-task                      | `.history/current/`      |
+| Record Type   | When to Create                         | Location                  |
+|---------------|----------------------------------------|---------------------------|
+| Conversation  | Important decisions, notable learnings | `.history/conversations/` |
+| Handoff       | Work incomplete, will continue         | `.history/handoffs/`      |
+| Session State | Pausing mid-task                       | `.history/current/`       |
 
 ### 4.2 Cleanup Actions
 
@@ -104,30 +104,30 @@
 
 ### 5.1 When to Create Records
 
-| Situation                     | Action                    |
-|-------------------------------|---------------------------|
-| Significant decisions made    | Create conversation record|
-| Work incomplete, will continue| Create handoff document   |
-| Pausing mid-task              | Create session state      |
-| Routine completion, no decisions | No record needed       |
-| Bug fix or minor change       | Commit message sufficient |
+| Situation                        | Action                     |
+|----------------------------------|----------------------------|
+| Significant decisions made       | Create conversation record |
+| Work incomplete, will continue   | Create handoff document    |
+| Pausing mid-task                 | Create session state       |
+| Routine completion, no decisions | No record needed           |
+| Bug fix or minor change          | Commit message sufficient  |
 
 ### 5.2 Record Depth Guide
 
-| Session Type | Duration   | Documentation Level       |
-|--------------|------------|---------------------------|
-| Quick        | < 30 min   | Commit message only       |
-| Standard     | 30min - 2hr| Session state if paused   |
-| Extended     | > 2 hr     | Full documentation        |
-| Multi-day    | Days+      | Handoff required          |
+| Session Type | Duration    | Documentation Level     |
+|--------------|-------------|-------------------------|
+| Quick        | < 30 min    | Commit message only     |
+| Standard     | 30min - 2hr | Session state if paused |
+| Extended     | > 2 hr      | Full documentation      |
+| Multi-day    | Days+       | Handoff required        |
 
 ### 5.3 Autonomy Level Reminders
 
-| Level | Before Acting                              |
-|-------|--------------------------------------------|
-| L1-L2 | Ask for approval                           |
-| L3-L4 | Proceed, report after (default)            |
-| L5-L6 | Act independently, summarize at end        |
+| Level | Before Acting                       |
+|-------|-------------------------------------|
+| L1-L2 | Ask for approval                    |
+| L3-L4 | Proceed, report after (default)     |
+| L5-L6 | Act independently, summarize at end |
 
 ---
 

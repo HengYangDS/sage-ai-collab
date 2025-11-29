@@ -90,17 +90,13 @@ class IndexMaintainer:
             indexes.append(index_path)
         return indexes
 
-    def count_files_in_directory(
-        self, dir_path: Path, pattern: str = "*.md"
-    ) -> int:
+    def count_files_in_directory(self, dir_path: Path, pattern: str = "*.md") -> int:
         """Count files matching pattern in a directory (non-recursive)."""
         if not dir_path.exists():
             return 0
         return len([f for f in dir_path.glob(pattern) if f.is_file()])
 
-    def count_files_recursive(
-        self, dir_path: Path, pattern: str = "**/*.md"
-    ) -> int:
+    def count_files_recursive(self, dir_path: Path, pattern: str = "**/*.md") -> int:
         """Count files matching pattern recursively."""
         if not dir_path.exists():
             return 0
@@ -341,12 +337,12 @@ def cmd_validate() -> int:
     maintainer = IndexMaintainer()
     report = maintainer.validate_all()
 
-    print(f"\n📊 Results:")
+    print("\n📊 Results:")
     print(f"   Index files checked: {report.indexes_checked}")
     print(f"   Issues found: {len(report.issues)}")
 
     if report.issues:
-        print(f"\n⚠️  Issues:")
+        print("\n⚠️  Issues:")
         for issue in report.issues:
             icon = "🔧" if issue.auto_fixable else "❌"
             print(f"   {icon} [{issue.issue_type}] {issue.file}")

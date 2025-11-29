@@ -1,4 +1,4 @@
-﻿# Knowledge Base Navigation
+# Knowledge Base Navigation
 
 > Entry point for SAGE knowledge content
 
@@ -109,10 +109,10 @@ Context-specific project guides:
 
 Quick reference guides and checklists:
 
-| File                       | Purpose                          |
-|----------------------------|----------------------------------|
-| `knowledge_quick_ref.md`   | Knowledge organization patterns  |
-| `performance_checklist.md` | Performance optimization checks  |
+| File                       | Purpose                         |
+|----------------------------|---------------------------------|
+| `knowledge_quick_ref.md`   | Knowledge organization patterns |
+| `performance_checklist.md` | Performance optimization checks |
 
 ### 2.7 Templates (14 files)
 

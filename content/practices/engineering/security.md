@@ -1,4 +1,4 @@
-﻿# Security Practices
+# Security Practices
 
 > Security best practices for Python applications and knowledge systems
 

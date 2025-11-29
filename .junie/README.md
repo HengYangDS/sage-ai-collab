@@ -1,4 +1,4 @@
-﻿# .junie Configuration
+# .junie Configuration
 
 > JetBrains Junie AI collaboration configuration directory
 
@@ -54,14 +54,14 @@
 1. **Copy the entire `.junie/` directory** to your project
 
 2. **Keep generic files unchanged**:
-   - `guidelines.md` (root)
-   - `generic/` directory
-   - `mcp/` directory
-   - `configuration/` directory
+    - `guidelines.md` (root)
+    - `generic/` directory
+    - `mcp/` directory
+    - `configuration/` directory
 
 3. **Customize project-specific files**:
-   - `project/config.yaml` — Define your project variables
-   - `project/quickref.md` — Add project-specific quick reference
+    - `project/config.yaml` — Define your project variables
+    - `project/quickref.md` — Add project-specific quick reference
 
 ### File Relationships
 
@@ -99,13 +99,13 @@
 
 ## 3. Customization Guidelines
 
-| Directory/File | When to Modify |
-|----------------|----------------|
+| Directory/File         | When to Modify                                       |
+|------------------------|------------------------------------------------------|
 | `guidelines.md` (root) | Only when changing generic AI collaboration patterns |
-| `generic/*` | Only when adding new generic features |
-| `mcp/*` | Only when changing MCP server configuration |
-| `configuration/*` | Only when updating configuration guides |
-| `project/*` | Freely customize for your specific project |
+| `generic/*`            | Only when adding new generic features                |
+| `mcp/*`                | Only when changing MCP server configuration          |
+| `configuration/*`      | Only when updating configuration guides              |
+| `project/*`            | Freely customize for your specific project           |
 
 ---
 

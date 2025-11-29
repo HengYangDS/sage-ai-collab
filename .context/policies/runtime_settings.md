@@ -1,4 +1,4 @@
-﻿# SAGE Runtime Settings
+# SAGE Runtime Settings
 
 > Runtime configuration, logging, and environment settings
 

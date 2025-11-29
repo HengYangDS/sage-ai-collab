@@ -11,6 +11,7 @@ For the comprehensive guide on common software development pitfalls, see:
 **→ `content/practices/engineering/common_pitfalls.md`**
 
 This includes:
+
 - Architecture Pitfalls (Circular Dependencies, Timeout Protection, Coupling)
 - Implementation Pitfalls (Mutable Defaults, Exception Handling, Async Context)
 - Configuration Pitfalls (Hardcoded Values, Environment Config, Secrets)
@@ -28,11 +29,13 @@ This includes:
 **Context**: SAGE uses a strict timeout hierarchy (T1-T5).
 
 **Common Mistakes**:
+
 - Using T4 timeout for cache operations (should be T1)
 - Missing timeout on plugin hooks
 - Not implementing graceful degradation
 
 **Prevention**:
+
 - Reference `.context/policies/timeout_hierarchy.md`
 - Use `TimeoutManager` for all I/O operations
 - Implement fallback for each timeout level
@@ -46,11 +49,13 @@ This includes:
 **Context**: Multiple plugins may hook the same event.
 
 **Common Mistakes**:
+
 - Not considering hook execution order
 - Assuming hook results are isolated
 - Missing error handling in hooks
 
 **Prevention**:
+
 - Document plugin priorities in metadata
 - Use `tryfirst`/`trylast` appropriately
 - Wrap hooks in try/except
@@ -64,11 +69,13 @@ This includes:
 **Context**: SAGE loads knowledge in priority order.
 
 **Common Mistakes**:
+
 - Assuming all layers are loaded
 - Not checking loading status
 - Missing fallback content
 
 **Prevention**:
+
 - Always check `loading_status` before use
 - Implement graceful degradation
 - Use smart loading triggers

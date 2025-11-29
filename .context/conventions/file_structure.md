@@ -1,4 +1,4 @@
-﻿# SAGE File Structure Conventions
+# SAGE File Structure Conventions
 
 > Project-specific file organization standards for SAGE Knowledge Base
 
@@ -101,38 +101,39 @@ This section defines the rules for organizing knowledge across the project's dir
 
 ### 2.1 Directory Purpose Matrix
 
-| Directory   | Content Type            | Scope            | Distributable |
-|-------------|-------------------------|------------------|---------------|
-| `content/`  | Generic knowledge       | Universal        | ✅ Yes         |
-| `.context/` | Project-specific        | SAGE only        | ❌ No          |
-| `docs/`     | User documentation      | SAGE users       | ✅ Yes         |
-| `.history/` | Session records         | AI collaboration | ❌ No          |
+| Directory   | Content Type       | Scope            | Distributable |
+|-------------|--------------------|------------------|---------------|
+| `content/`  | Generic knowledge  | Universal        | ✅ Yes         |
+| `.context/` | Project-specific   | SAGE only        | ❌ No          |
+| `docs/`     | User documentation | SAGE users       | ✅ Yes         |
+| `.history/` | Session records    | AI collaboration | ❌ No          |
 
 ### 2.2 Content Directory (`content/`)
 
 **Purpose**: Generic, reusable knowledge that can be distributed and used across different projects.
 
-| Should Include                        | Should NOT Include                  |
-|---------------------------------------|-------------------------------------|
-| Universal best practices              | SAGE-specific configurations        |
-| Generic frameworks (autonomy, etc.)   | Project ADRs                        |
-| Reusable patterns and guidelines      | Internal calibration data           |
-| Language/technology references        | SAGE API documentation              |
-| Industry-standard conventions         | Session history or handoffs         |
+| Should Include                      | Should NOT Include           |
+|-------------------------------------|------------------------------|
+| Universal best practices            | SAGE-specific configurations |
+| Generic frameworks (autonomy, etc.) | Project ADRs                 |
+| Reusable patterns and guidelines    | Internal calibration data    |
+| Language/technology references      | SAGE API documentation       |
+| Industry-standard conventions       | Session history or handoffs  |
 
-**Example**: `content/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any project.
+**Example**: `content/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any
+project.
 
 ### 2.3 Context Directory (`.context/`)
 
 **Purpose**: Project-specific knowledge, conventions, and decisions unique to SAGE.
 
-| Should Include                        | Should NOT Include                  |
-|---------------------------------------|-------------------------------------|
-| Architecture Decision Records (ADRs)  | Generic best practices              |
-| SAGE-specific coding conventions      | Universal frameworks                |
-| Project policies (timeout hierarchy)  | Reusable patterns                   |
-| AI calibration data for SAGE          | Content meant for distribution      |
-| Internal optimization notes           | User-facing documentation           |
+| Should Include                       | Should NOT Include             |
+|--------------------------------------|--------------------------------|
+| Architecture Decision Records (ADRs) | Generic best practices         |
+| SAGE-specific coding conventions     | Universal frameworks           |
+| Project policies (timeout hierarchy) | Reusable patterns              |
+| AI calibration data for SAGE         | Content meant for distribution |
+| Internal optimization notes          | User-facing documentation      |
 
 **Example**: `.context/decisions/ADR-0001-architecture.md` — SAGE-specific architecture decisions.
 
@@ -140,13 +141,13 @@ This section defines the rules for organizing knowledge across the project's dir
 
 **Purpose**: User-facing documentation for SAGE users and contributors.
 
-| Should Include                        | Should NOT Include                  |
-|---------------------------------------|-------------------------------------|
-| Design documents                      | Internal conventions                |
-| API documentation                     | AI session records                  |
-| User guides and tutorials             | Generic knowledge (belongs in content) |
-| Architecture overviews                | ADRs (belong in .context)           |
-| Quick reference guides                | Calibration data                    |
+| Should Include            | Should NOT Include                     |
+|---------------------------|----------------------------------------|
+| Design documents          | Internal conventions                   |
+| API documentation         | AI session records                     |
+| User guides and tutorials | Generic knowledge (belongs in content) |
+| Architecture overviews    | ADRs (belong in .context)              |
+| Quick reference guides    | Calibration data                       |
 
 **Example**: `docs/design/01-architecture.md` — SAGE architecture design document.
 
@@ -154,12 +155,12 @@ This section defines the rules for organizing knowledge across the project's dir
 
 **Purpose**: AI collaboration records, session history, and task handoffs.
 
-| Should Include                        | Should NOT Include                  |
-|---------------------------------------|-------------------------------------|
-| Session state records                 | Permanent documentation             |
-| Conversation summaries                | Code or configuration               |
-| Task handoff documents                | Design decisions (use ADRs)         |
-| Lessons learned                       | Generic knowledge                   |
+| Should Include         | Should NOT Include          |
+|------------------------|-----------------------------|
+| Session state records  | Permanent documentation     |
+| Conversation summaries | Code or configuration       |
+| Task handoff documents | Design decisions (use ADRs) |
+| Lessons learned        | Generic knowledge           |
 
 **Example**: `.history/conversations/2025-11-30-knowledge-reorganization.md`
 
@@ -306,6 +307,7 @@ tests/
 import pytest
 from sage.core.config import SAGEConfig, get_config
 
+
 # --- Fixtures ---
 
 @pytest.fixture
@@ -313,22 +315,24 @@ def sample_config():
     """Create sample configuration."""
     return SAGEConfig(...)
 
+
 # --- Test Classes (grouped by feature) ---
 
 class TestSAGEConfig:
     """Tests for SAGEConfig class."""
-    
+
     def test_default_values(self):
         """Test default configuration values."""
         ...
-    
+
     def test_env_override(self):
         """Test environment variable override."""
         ...
 
+
 class TestGetConfig:
     """Tests for get_config function."""
-    
+
     def test_singleton_behavior(self):
         """Test singleton pattern."""
         ...
@@ -604,15 +608,18 @@ MAX_RETRIES = 3
 # --- Module Logger ---
 logger = structlog.get_logger(__name__)
 
+
 # --- Classes ---
 class MyClass:
     """Class docstring."""
     ...
 
+
 # --- Functions ---
 def my_function() -> None:
     """Function docstring."""
     ...
+
 
 # --- Private Helpers ---
 def _helper_function() -> None:

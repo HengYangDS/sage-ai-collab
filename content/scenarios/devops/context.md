@@ -1,4 +1,4 @@
-﻿# DevOps Scenario Context
+# DevOps Scenario Context
 
 > Pre-configured context for CI/CD, infrastructure, and operations
 

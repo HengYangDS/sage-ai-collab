@@ -1,4 +1,4 @@
-﻿# Appendix
+# Appendix
 
 > Reference materials: regex patterns, complete rules list, and changelog (~15 min)
 
@@ -101,7 +101,8 @@ Matches: `git log`, `git log --oneline`, `git log -p`
 | **Save as text file**       | Copy rules → Save as `.txt` file          | Team sharing        |
 | **Export IDE settings**     | `File                                     | Manage IDE Settings | Export Settings` | Backup & migration |
 
-> **💡 Tip**: After configuring, export your IDE settings as backup. This allows quick restoration after IDE updates or when setting up new machines.
+> **💡 Tip**: After configuring, export your IDE settings as backup. This allows quick restoration after IDE updates or
+> when setting up new machines.
 
 ---
 
@@ -348,7 +349,8 @@ Copy-paste the complete rule block below:
 
 ---
 
-> **💡 Note**: Include conda virtual environment rules if using conda instead of venv (see [Python Virtual Environments](#11-python-virtual-environments-6-rules---v20-added) in Configuration Rules)
+> **💡 Note**: Include conda virtual environment rules if using conda instead of venv (
+> see [Python Virtual Environments](#11-python-virtual-environments-6-rules---v20-added) in Configuration Rules)
 
 ---
 

@@ -1,4 +1,4 @@
-﻿# Configuration Design
+# Configuration Design
 
 > Modular configuration system with smart loading and graceful degradation
 
@@ -26,7 +26,7 @@ directory, with `sage.yaml` serving as the main entry point.
 ```yaml
 configuration:
   philosophy: "Modular, overridable, fail-safe"
-  
+
   principles:
     - name: "Single Source of Truth"
       description: "Each setting defined in exactly one place"
@@ -213,7 +213,7 @@ services:
     port: 8080
     cors:
       enabled: true
-      origins: ["*"]
+      origins: [ "*" ]
     docs:
       enabled: true
       path: /docs
@@ -284,7 +284,7 @@ loading:
   default_layers:
     - core                             # Always start with core
 
-  always:                              # Always pre-cached
+  always: # Always pre-cached
     - index.md
     - content/core/principles.md
     - content/core/quick_reference.md
@@ -377,7 +377,7 @@ config_dict = load_config()
 # Get typed configuration object
 config = get_config()
 print(config.timeouts.t1_instant)  # 100
-print(config.logging.level)        # "INFO"
+print(config.logging.level)  # "INFO"
 ```
 
 ### Configuration Dataclasses

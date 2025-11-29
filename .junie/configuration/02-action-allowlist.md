@@ -1,4 +1,4 @@
-﻿# Action Allowlist Configuration
+# Action Allowlist Configuration
 
 > Configure 87 Terminal rules for 90%+ automatic command approval (~30 min)
 
@@ -22,7 +22,8 @@
 
 ### 1.1 Goals
 
-Configure **maximum autonomy** (Level 5 Autonomy) for Junie AI Assistant through precise Terminal rules that enable seamless AI collaboration.
+Configure **maximum autonomy** (Level 5 Autonomy) for Junie AI Assistant through precise Terminal rules that enable
+seamless AI collaboration.
 
 **🎯 Core Goal**: Eliminate 90%+ manual approvals, achieve seamless batch execution mode
 
@@ -87,7 +88,8 @@ If you need to reconfigure or set up on another machine:
 
 ### 3.1 Core Concepts
 
-**Action Allowlist** is Junie's permission management mechanism that controls which sensitive operations can be executed automatically.
+**Action Allowlist** is Junie's permission management mechanism that controls which sensitive operations can be executed
+automatically.
 
 #### Security Classification
 
@@ -192,21 +194,26 @@ The following diagram shows how Junie decides whether to execute a command autom
 
 ### Terminal Rules Classification (87 rules)
 
-> **Note**: This section shows representative examples from each category. For the complete list of all 87 rules, see [Appendix B: Complete Rules List](#appendix-b-complete-rules-list-plain-text).
+> **Note**: This section shows representative examples from each category. For the complete list of all 87 rules,
+> see [Appendix B: Complete Rules List](#appendix-b-complete-rules-list-plain-text).
 
-> **🌐 Cross-Platform Note**: All Terminal rules in this section are classified into two categories by cross-platform compatibility:
+> **🌐 Cross-Platform Note**: All Terminal rules in this section are classified into two categories by cross-platform
+> compatibility:
 >
-> **📘 Cross-Platform Universal Commands (57 rules)**: These commands have identical syntax across Windows/macOS/Linux, no platform distinction needed.
+> **📘 Cross-Platform Universal Commands (57 rules)**: These commands have identical syntax across Windows/macOS/Linux,
+> no platform distinction needed.
 > - Includes: Python, Git, Docker/K8s, npm/yarn, Maven/Gradle, code quality tools, database clients, etc.
 >
-> **🔧 Platform-Specific Commands (30 rules)**: These commands have different equivalents on different platforms. This document provides complete dual-platform versions for each function.
+> **🔧 Platform-Specific Commands (30 rules)**: These commands have different equivalents on different platforms. This
+> document provides complete dual-platform versions for each function.
 > - **Windows (PowerShell)**: Uses PowerShell cmdlets and Windows-specific commands
 > - **macOS/Linux (Bash/Zsh)**: Uses Unix/Linux standard commands
 >
 > **Usage Recommendations**:
 > - ✅ Cross-platform universal commands can be copied directly
 > - ✅ For platform-specific commands, select the version for your operating system
-> - ✅ For team collaboration, recommend including all platform versions in configuration files to support cross-platform development
+> - ✅ For team collaboration, recommend including all platform versions in configuration files to support cross-platform
+    development
 
 ---
 
@@ -432,7 +439,8 @@ The following diagram shows how Junie decides whether to execute a command autom
 - **Security Model**: Dangerous character exclusion pattern `[^\s;&|<>@$]`
 - **Coverage**: Development, operations, quality assurance, and diagnostics
 
-> **💡 Tip**: For the complete list of all 87 rules with full regex patterns, refer to [Appendix B](#appendix-b-complete-rules-list-plain-text) where you can copy-paste the entire configuration.
+> **💡 Tip**: For the complete list of all 87 rules with full regex patterns, refer
+> to [Appendix B](#appendix-b-complete-rules-list-plain-text) where you can copy-paste the entire configuration.
 
 ---
 
@@ -440,7 +448,8 @@ The following diagram shows how Junie decides whether to execute a command autom
 
 ### Configuration Approach Selection
 
-This project uses **automated configuration scripts** that directly generate and apply the optimized configuration to ensure consistency and accuracy.
+This project uses **automated configuration scripts** that directly generate and apply the optimized configuration to
+ensure consistency and accuracy.
 
 ### Execution Steps
 
@@ -531,6 +540,7 @@ Here are configuration patterns for common project types:
 ```
 
 **Configuration Focus**:
+
 - ✅ Enable all Python and pip rules
 - ✅ Add Jupyter notebook commands
 - ✅ Consider DVC for data version control
@@ -552,6 +562,7 @@ Here are configuration patterns for common project types:
 ```
 
 **Configuration Focus**:
+
 - ✅ Enable all npm/yarn rules
 - ✅ Enable Docker inspection commands
 - ✅ Add project-specific build scripts
@@ -573,6 +584,7 @@ Here are configuration patterns for common project types:
 ```
 
 **Configuration Focus**:
+
 - ✅ Enable read-only Kubernetes commands
 - ✅ Add Terraform plan/validate (not apply!)
 - ✅ Add Ansible dry-run commands
@@ -594,6 +606,7 @@ Here are configuration patterns for common project types:
 ```
 
 **Configuration Focus**:
+
 - ✅ Enable experiment tracking tools (MLflow, W&B)
 - ✅ Enable TensorBoard for visualization
 - ✅ Add model evaluation scripts
@@ -601,7 +614,8 @@ Here are configuration patterns for common project types:
 
 ---
 
-> **💡 Tip**: Start with the base 87 rules, then add project-specific rules gradually based on your workflow. Monitor which commands you manually approve frequently—those are candidates for new rules.
+> **💡 Tip**: Start with the base 87 rules, then add project-specific rules gradually based on your workflow. Monitor
+> which commands you manually approve frequently—those are candidates for new rules.
 
 ---
 
@@ -631,10 +645,13 @@ pip list
 ```powershell
 # Check configuration file exists and count Terminal rules
 $configPath = "$env:APPDATA\JetBrains\PyCharm2025.2\options\junie.xml"
-if (Test-Path $configPath) {
+if (Test-Path $configPath)
+{
     $ruleCount = (Select-String -Path $configPath -Pattern "Terminal" -AllMatches).Matches.Count
     Write-Host "✅ Config file found. Terminal rules: $ruleCount"
-} else {
+}
+else
+{
     Write-Host "❌ Config file not found at: $configPath"
 }
 ```
@@ -667,6 +684,7 @@ import os
 import platform
 import subprocess
 
+
 def get_config_path():
     """Get Junie config path based on OS."""
     system = platform.system()
@@ -678,10 +696,11 @@ def get_config_path():
     else:  # Linux
         return os.path.expanduser("~/.config/JetBrains/PyCharm2025.2/options/junie.xml")
 
+
 def validate():
     """Run validation checks."""
     print("🔍 Junie Configuration Validator\n" + "=" * 40)
-    
+
     # Check 1: Config file exists
     config_path = get_config_path()
     if os.path.exists(config_path):
@@ -693,7 +712,7 @@ def validate():
     else:
         print(f"❌ Config file NOT found: {config_path}")
         return
-    
+
     # Check 2: Test commands
     test_commands = ["git --version", "python --version"]
     print("\n🧪 Command availability:")
@@ -703,8 +722,9 @@ def validate():
             print(f"  ✅ {cmd.split()[0]} available")
         except Exception:
             print(f"  ⚠️ {cmd.split()[0]} not available")
-    
+
     print("\n✨ Validation complete!")
+
 
 if __name__ == "__main__":
     validate()
@@ -712,7 +732,8 @@ if __name__ == "__main__":
 
 Run with: `python validate_junie_config.py`
 
-> **💡 Tip**: Adjust the IDE version in the path (e.g., `PyCharm2025.2` → `IntelliJIdea2025.2`) to match your installation.
+> **💡 Tip**: Adjust the IDE version in the path (e.g., `PyCharm2025.2` → `IntelliJIdea2025.2`) to match your
+> installation.
 
 ### Maintenance Recommendations
 
@@ -742,13 +763,13 @@ Run with: `python validate_junie_config.py`
 
 **Use this checklist to quickly identify common issues**:
 
-| Step | Check | Action if Failed |
-|:-----|:------|:-----------------|
-| 1️⃣ | **IDE Restarted?** | Restart IDE after any configuration change |
-| 2️⃣ | **Rules Visible?** | `Settings | Tools | Junie | Action Allowlist` → Should show 87 rules |
-| 3️⃣ | **Test Command?** | Run `git status` → Should execute without approval prompt |
-| 4️⃣ | **Check Syntax?** | Blocked command contains `;` `&` `|` `<` `>` `@` `$`? → Expected behavior |
-| 5️⃣ | **Config File Exists?** | Check `junie.xml` in IDE options directory |
+| Step | Check                   | Action if Failed                                          |
+|:-----|:------------------------|:----------------------------------------------------------|
+| 1️⃣  | **IDE Restarted?**      | Restart IDE after any configuration change                |
+| 2️⃣  | **Rules Visible?**      | `Settings                                                 | Tools | Junie | Action Allowlist` → Should show 87 rules |
+| 3️⃣  | **Test Command?**       | Run `git status` → Should execute without approval prompt |
+| 4️⃣  | **Check Syntax?**       | Blocked command contains `;` `&` `                        |` `<` `>` `@` `$`? → Expected behavior |
+| 5️⃣  | **Config File Exists?** | Check `junie.xml` in IDE options directory                |
 
 **Quick Fixes** (in order of likelihood):
 
@@ -861,21 +882,25 @@ Run with: `python validate_junie_config.py`
 
 ## 9. FAQ
 
-> **Scope**: This FAQ covers Action Allowlist configuration questions only. For MCP-related questions, see [MCP FAQ](#mcp-faq) in Part 3.
+> **Scope**: This FAQ covers Action Allowlist configuration questions only. For MCP-related questions,
+> see [MCP FAQ](#mcp-faq) in Part 3.
 
 ### General Questions
 
 #### Q1: How long does configuration take?
 
-**A**: First-time setup takes 10-30 minutes. Experienced users can complete it in under 10 minutes using the copy-paste rules from [Appendix B](#appendix-b-complete-rules-list-plain-text).
+**A**: First-time setup takes 10-30 minutes. Experienced users can complete it in under 10 minutes using the copy-paste
+rules from [Appendix B](#appendix-b-complete-rules-list-plain-text).
 
 #### Q2: Do I need to configure separately for each project?
 
-**A**: No. Action Allowlist rules are configured at the IDE level (global), not per-project. Once configured, rules apply to all projects in that IDE installation.
+**A**: No. Action Allowlist rules are configured at the IDE level (global), not per-project. Once configured, rules
+apply to all projects in that IDE installation.
 
 #### Q3: Is this configuration safe?
 
-**A**: Yes. All rules use dangerous character exclusion patterns `[^\s;&|<>@$]` which prevent command injection. High-risk operations like `rm -rf` are intentionally excluded.
+**A**: Yes. All rules use dangerous character exclusion patterns `[^\s;&|<>@$]` which prevent command injection.
+High-risk operations like `rm -rf` are intentionally excluded.
 
 ---
 
@@ -914,7 +939,8 @@ Replace `my-script.sh` with your script name. The `.*` allows arguments.
 
 #### Q7: Will adding many rules slow down Junie?
 
-**A**: No. The regex matching is highly optimized. Even with 100+ rules, the performance impact is negligible (< 1ms per command check).
+**A**: No. The regex matching is highly optimized. Even with 100+ rules, the performance impact is negligible (< 1ms per
+command check).
 
 ---
 

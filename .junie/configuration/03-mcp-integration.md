@@ -1,4 +1,4 @@
-﻿# MCP Integration Guide
+# MCP Integration Guide
 
 > Achieve 60-75% token efficiency improvement with intelligent context management (~1-2 hours)
 
@@ -19,7 +19,8 @@
 
 ## 1. MCP Overview
 
-**Model Context Protocol (MCP)** is an open protocol developed by Anthropic to establish standardized connections between AI applications and external data sources and tools.
+**Model Context Protocol (MCP)** is an open protocol developed by Anthropic to establish standardized connections
+between AI applications and external data sources and tools.
 
 **Official Resources**:
 
@@ -131,7 +132,8 @@ The following diagram illustrates how Junie integrates with MCP servers to acces
 
 #### MCP Requirements for Junie Configuration Repository
 
-Based on the project's `.junie` configuration repository architecture (three-tier configuration, intelligent layered loading, dynamic knowledge persistence), core requirements include:
+Based on the project's `.junie` configuration repository architecture (three-tier configuration, intelligent layered
+loading, dynamic knowledge persistence), core requirements include:
 
 1. **Configuration Document Management**: Read and search configuration files in `.junie/` directory
 2. **Intelligent Context Selection**: Dynamically load relevant configuration modules based on task type
@@ -397,12 +399,15 @@ Here are the recommended MCP tools prioritized for implementation.
 
 **✅ JetBrains Junie Officially Supports MCP Integration**
 
-JetBrains has released official Junie MCP documentation, indicating MCP functionality is officially supported. Please refer to the following official documentation for the latest configuration methods:
+JetBrains has released official Junie MCP documentation, indicating MCP functionality is officially supported. Please
+refer to the following official documentation for the latest configuration methods:
 
-- **Official MCP Documentation**: [Model Context Protocol (MCP)](https://www.jetbrains.com/help/junie/model-context-protocol-mcp.html)
+- **Official MCP Documentation
+  **: [Model Context Protocol (MCP)](https://www.jetbrains.com/help/junie/model-context-protocol-mcp.html)
 - **MCP Settings Guide**: [MCP Settings](https://www.jetbrains.com/help/junie/mcp-settings.html)
 
-The following provides generic configuration methods based on MCP standard protocol. **It's recommended to prioritize the official documentation above for the most accurate configuration steps**.
+The following provides generic configuration methods based on MCP standard protocol. **It's recommended to prioritize
+the official documentation above for the most accurate configuration steps**.
 
 ---
 
@@ -418,7 +423,8 @@ The following provides generic configuration methods based on MCP standard proto
 4. Click toolbar button to edit `mcp.json` file
 5. Add MCP server configuration (JSON format)
 
-**Important**: Specific configuration interface and options may vary by Junie version, please refer to official documentation: https://www.jetbrains.com/help/junie/mcp-settings.html
+**Important**: Specific configuration interface and options may vary by Junie version, please refer to official
+documentation: https://www.jetbrains.com/help/junie/mcp-settings.html
 
 ---
 
@@ -510,7 +516,8 @@ The following provides generic configuration methods based on MCP standard proto
 
 - ⚠️ Directly modifying configuration files has risks, Settings UI (Method 1) is recommended
 - ⚠️ Backup configuration file before modification
-- ⚠️ Refer to official documentation for specific configuration format: https://www.jetbrains.com/help/junie/mcp-settings.html
+- ⚠️ Refer to official documentation for specific configuration
+  format: https://www.jetbrains.com/help/junie/mcp-settings.html
 - ✅ Settings UI is recommended for configuration
 - 📁 Global configuration for personal common tools, project-level configuration for team sharing
 
@@ -608,7 +615,8 @@ The following provides generic configuration methods based on MCP standard proto
 
 #### Problem 1A: Windows Platform npx Command Not Working ⚠️
 
-**Symptoms**: Windows system reports error after MCP configuration, indicating `npx` command not found or execution failed
+**Symptoms**: Windows system reports error after MCP configuration, indicating `npx` command not found or execution
+failed
 
 **Typical Error Messages**:
 
@@ -618,7 +626,8 @@ The following provides generic configuration methods based on MCP standard proto
 
 **Root Cause**:
 
-Windows PowerShell requires explicit `.cmd` extension to correctly execute npm scripts. Using `npx` directly on Windows will fail.
+Windows PowerShell requires explicit `.cmd` extension to correctly execute npm scripts. Using `npx` directly on Windows
+will fail.
 
 **Solution 1: Use npx.cmd (Recommended)**
 
@@ -755,7 +764,8 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 ## 7. FAQ
 
-> **Scope**: This FAQ covers MCP integration questions. For Action Allowlist questions, see [Action Allowlist FAQ](#action-allowlist-faq) in Part 2.
+> **Scope**: This FAQ covers MCP integration questions. For Action Allowlist questions,
+> see [Action Allowlist FAQ](#action-allowlist-faq) in Part 2.
 
 #### Q1: How do I verify MCP is working after configuration?
 

@@ -18,11 +18,11 @@
 
 ## 1. Autonomy Levels
 
-| Level | Action | Examples |
-|-------|--------|----------|
-| **L1-L2** | Ask first | Breaking changes, new deps |
-| **L3-L4** ⭐ | Proceed, report | Bug fixes, refactoring |
-| **L5-L6** | High autonomy | Docs, formatting |
+| Level       | Action          | Examples                   |
+|-------------|-----------------|----------------------------|
+| **L1-L2**   | Ask first       | Breaking changes, new deps |
+| **L3-L4** ⭐ | Proceed, report | Bug fixes, refactoring     |
+| **L5-L6**   | High autonomy   | Docs, formatting           |
 
 **Default**: L4 (Medium-High)
 
@@ -30,13 +30,13 @@
 
 ## 2. Timeout Tiers
 
-| Tier | Duration | Use Case |
-|------|----------|----------|
-| T1 | ~100ms | Cache lookup |
-| T2 | ~500ms | Single file |
-| T3 | ~2s | Layer load |
-| T4 | ~5s | Full init |
-| T5 | ~10s | Complex analysis |
+| Tier | Duration | Use Case         |
+|------|----------|------------------|
+| T1   | ~100ms   | Cache lookup     |
+| T2   | ~500ms   | Single file      |
+| T3   | ~2s      | Layer load       |
+| T4   | ~5s      | Full init        |
+| T5   | ~10s     | Complex analysis |
 
 ---
 
@@ -52,27 +52,27 @@
 
 ## 4. Standard Paths
 
-| Category | Typical Path | Purpose |
-|----------|--------------|---------|
-| **AI Config** | `.junie/` | Junie configuration |
-| **Context** | `.context/` | Project knowledge |
-| **History** | `.history/` | Session records |
-| **Outputs** | `.outputs/` | Temporary files |
-| **Docs** | `docs/` | Documentation |
-| **Source** | `src/` | Source code |
-| **Tests** | `tests/` | Test suite |
+| Category      | Typical Path | Purpose             |
+|---------------|--------------|---------------------|
+| **AI Config** | `.junie/`    | Junie configuration |
+| **Context**   | `.context/`  | Project knowledge   |
+| **History**   | `.history/`  | Session records     |
+| **Outputs**   | `.outputs/`  | Temporary files     |
+| **Docs**      | `docs/`      | Documentation       |
+| **Source**    | `src/`       | Source code         |
+| **Tests**     | `tests/`     | Test suite          |
 
 ---
 
 ## 5. Quick Links
 
-| Document | Purpose |
-|----------|---------|
-| `../guidelines.md` | Full AI collaboration rules |
-| `config.yaml` | Junie settings |
-| `../project/config.yaml` | Project variables |
-| `../project/quickref.md` | Project-specific info |
-| `../mcp/mcp.json` | MCP server config |
+| Document                 | Purpose                     |
+|--------------------------|-----------------------------|
+| `../guidelines.md`       | Full AI collaboration rules |
+| `config.yaml`            | Junie settings              |
+| `../project/config.yaml` | Project variables           |
+| `../project/quickref.md` | Project-specific info       |
+| `../mcp/mcp.json`        | MCP server config           |
 
 ---
 
@@ -80,23 +80,25 @@
 
 ### Session History Files
 
-| Type | Format | Example |
-|------|--------|---------|
-| Conversation | `YYYY-MM-DD-topic.md` | `2025-01-15-api-design.md` |
-| Handoff | `YYYY-MM-DD-task-handoff.md` | `2025-01-15-refactor-handoff.md` |
-| Session | `session-YYYYMMDD-HHMM.md` | `session-20250115-1430.md` |
+| Type         | Format                       | Example                          |
+|--------------|------------------------------|----------------------------------|
+| Conversation | `YYYY-MM-DD-topic.md`        | `2025-01-15-api-design.md`       |
+| Handoff      | `YYYY-MM-DD-task-handoff.md` | `2025-01-15-refactor-handoff.md` |
+| Session      | `session-YYYYMMDD-HHMM.md`   | `session-20250115-1430.md`       |
 
 ---
 
 ## 7. Project Commands
 
 See `../project/quickref.md` for:
+
 - Build commands
 - Test commands
 - Service commands
 - Development scripts
 
 See `../project/config.yaml` for:
+
 - Project identity
 - Tech stack
 - Directory structure

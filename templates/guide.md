@@ -1,4 +1,4 @@
-﻿# {TITLE}
+# {TITLE}
 
 > {PURPOSE}
 
@@ -44,8 +44,8 @@ Description of third step.
 
 Key configuration options:
 
-| Option | Default | Description |
-|--------|---------|-------------|
+| Option    | Default | Description |
+|-----------|---------|-------------|
 | `option1` | `value` | Description |
 | `option2` | `value` | Description |
 

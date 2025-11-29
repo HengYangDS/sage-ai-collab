@@ -1,4 +1,4 @@
-﻿# Project Setup Templates
+# Project Setup Templates
 
 > Ready-to-use templates for project initialization
 

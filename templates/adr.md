@@ -1,4 +1,4 @@
-﻿# {TITLE}
+# {TITLE}
 
 > {PURPOSE}
 
@@ -31,15 +31,15 @@ We will...
 
 ### Positive
 
-- 
+-
 
 ### Negative
 
-- 
+-
 
 ### Neutral
 
-- 
+-
 
 ---
 

@@ -8,7 +8,8 @@
 
 ## Summary
 
-Comprehensive optimization of the `.junie/` thin layer template system across multiple iterations, culminating in a clean separation between generic (reusable) and project-specific content.
+Comprehensive optimization of the `.junie/` thin layer template system across multiple iterations, culminating in a
+clean separation between generic (reusable) and project-specific content.
 
 ---
 
@@ -17,11 +18,13 @@ Comprehensive optimization of the `.junie/` thin layer template system across mu
 ### Phase 1: Initial Review & Analysis
 
 **Identified Issues**:
+
 - `guidelines.md` contained both generic and project-specific content
 - No clear separation between reusable and customizable files
 - MCP config had hardcoded paths
 
 **Initial Structure**:
+
 ```
 .junie/
 ├── guidelines.md    (mixed content)
@@ -32,12 +35,14 @@ Comprehensive optimization of the `.junie/` thin layer template system across mu
 ### Phase 2: Content Extraction & Generalization
 
 **Actions**:
+
 1. Extracted project variables into `project.yaml`
 2. Created `config.yaml` for Junie settings
 3. Created `quickref.md` for quick reference
 4. Optimized MCP config with environment variables
 
 **Intermediate Structure**:
+
 ```
 .junie/
 ├── guidelines.md
@@ -54,6 +59,7 @@ Comprehensive optimization of the `.junie/` thin layer template system across mu
 **Goal**: Clear physical separation of generic vs project-specific files.
 
 **Final Structure**:
+
 ```
 .junie/
 ├── guidelines.md           # 🔄 Main entry point
@@ -83,31 +89,37 @@ Comprehensive optimization of the `.junie/` thin layer template system across mu
 
 ## Key Decisions
 
-| Decision | Rationale |
-|----------|-----------|
-| `guidelines.md` at root | Main entry point, Junie reads this first |
-| `generic/` subdirectory | Clear grouping of reusable settings |
-| `project/` subdirectory | Isolates customization needs |
-| `configuration/` at root | MCP requirement for config path |
-| No project names in generic files | Ensures true reusability |
+| Decision                          | Rationale                                |
+|-----------------------------------|------------------------------------------|
+| `guidelines.md` at root           | Main entry point, Junie reads this first |
+| `generic/` subdirectory           | Clear grouping of reusable settings      |
+| `project/` subdirectory           | Isolates customization needs             |
+| `configuration/` at root          | MCP requirement for config path          |
+| No project names in generic files | Ensures true reusability                 |
 
 ---
 
 ## Lessons Learned
 
 ### 1. Thin Layer Principle
+
 Keep `.junie/` minimal—delegate detailed knowledge to `.context/` and `content/`.
 
 ### 2. Variable Centralization
+
 All project-specific values in one file (`project/config.yaml`) prevents duplication and inconsistency.
 
 ### 3. Physical Separation > Comments
+
 Putting generic and project files in separate directories is clearer than just marking them with comments.
 
 ### 4. Iterative Refinement
-Three phases of optimization were needed to reach the optimal structure. Initial designs rarely capture all requirements.
+
+Three phases of optimization were needed to reach the optimal structure. Initial designs rarely capture all
+requirements.
 
 ### 5. Cross-Reference Consistency
+
 When restructuring, update ALL references (guidelines.md, README.md, index files, knowledge docs).
 
 ---
@@ -116,20 +128,20 @@ When restructuring, update ALL references (guidelines.md, README.md, index files
 
 ### Generic Files (🔄) — Copy without changes
 
-| File | Purpose | Lines |
-|------|---------|-------|
-| `guidelines.md` | AI collaboration rules | ~243 |
-| `README.md` | Directory documentation | ~100 |
-| `generic/config.yaml` | Junie settings | ~104 |
-| `generic/quickref.md` | Quick reference | ~98 |
-| `mcp/mcp.json` | MCP servers | ~72 |
-| `configuration/*.md` | Configuration guides | varies |
+| File                  | Purpose                 | Lines  |
+|-----------------------|-------------------------|--------|
+| `guidelines.md`       | AI collaboration rules  | ~243   |
+| `README.md`           | Directory documentation | ~100   |
+| `generic/config.yaml` | Junie settings          | ~104   |
+| `generic/quickref.md` | Quick reference         | ~98    |
+| `mcp/mcp.json`        | MCP servers             | ~72    |
+| `configuration/*.md`  | Configuration guides    | varies |
 
 ### Project Files (📌) — Must customize
 
-| File | Purpose | Customization |
-|------|---------|---------------|
-| `project/config.yaml` | Project variables | Name, stack, commands |
+| File                  | Purpose           | Customization           |
+|-----------------------|-------------------|-------------------------|
+| `project/config.yaml` | Project variables | Name, stack, commands   |
 | `project/quickref.md` | Project reference | Paths, tips, philosophy |
 
 ---
@@ -137,12 +149,15 @@ When restructuring, update ALL references (guidelines.md, README.md, index files
 ## Artifacts Created
 
 ### Knowledge Documents
+
 - `content/practices/ai_collaboration/junie_configuration_template.md` — Comprehensive template guide
 
 ### Session Records
+
 - This file — Optimization journey and lessons learned
 
 ### Updated Files
+
 - `content/practices/index.md` — Added template reference
 - `.context/index.md` — Updated if needed
 

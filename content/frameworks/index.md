@@ -1,4 +1,4 @@
-﻿# Frameworks Reference
+# Frameworks Reference
 
 > Deep conceptual frameworks and patterns
 

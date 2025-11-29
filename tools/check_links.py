@@ -37,7 +37,7 @@ def main() -> int:
         report = checker.check_all()
 
         # Print summary
-        print(f"📊 Link Check Results")
+        print("📊 Link Check Results")
         print(f"   Files checked: {report.files_checked}")
         print(f"   Total links: {report.total_links}")
         print(f"   Valid: {report.valid_count}")

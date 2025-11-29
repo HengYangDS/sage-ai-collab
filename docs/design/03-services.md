@@ -1072,7 +1072,6 @@ Tests properties that should hold for ANY valid input.
 from hypothesis import given, strategies as st, settings
 import pytest
 
-
 # Strategy: Generate valid layer names
 valid_layers = st.sampled_from(["core", "guidelines", "scenarios", "practices"])
 layer_lists = st.lists(valid_layers, min_size=1, max_size=4, unique=True)
@@ -1083,10 +1082,10 @@ layer_lists = st.lists(valid_layers, min_size=1, max_size=4, unique=True)
 def test_loader_always_returns_content(layers: list[str]):
     """Property: Loader ALWAYS returns non-empty content for valid layers."""
     from sage.core.loader import TimeoutLoader
-    
+
     loader = TimeoutLoader()
     result = loader.load_sync(layers=layers)
-    
+
     # Properties that must ALWAYS hold:
     assert result.content, "Content should never be empty"
     assert result.status in ("success", "partial", "fallback")
@@ -1097,10 +1096,10 @@ def test_loader_always_returns_content(layers: list[str]):
 def test_loader_respects_timeout(timeout: int):
     """Property: Loader never exceeds timeout (with margin)."""
     from sage.core.loader import TimeoutLoader
-    
+
     loader = TimeoutLoader(timeout_ms=timeout)
     result = loader.load_sync(layers=["core"])
-    
+
     # Allow 10% margin for system overhead
     assert result.duration_ms <= timeout * 1.1
 
@@ -1110,7 +1109,7 @@ def test_loader_respects_timeout(timeout: int):
 def source_requests(draw):
     """Generate valid SourceRequest objects."""
     from sage.core.models import SourceRequest
-    
+
     return SourceRequest(
         layers=draw(layer_lists),
         timeout_ms=draw(st.integers(100, 5000)),
@@ -1175,15 +1174,15 @@ from sage.core.models import SourceRequest, SourceResult, KnowledgeItem
 
 class SourceRequestFactory(factory.Factory):
     """Factory for SourceRequest objects."""
-    
+
     class Meta:
         model = SourceRequest
-    
+
     layers = ["core"]
     timeout_ms = 5000
     include_metadata = True
     context = factory.LazyFunction(dict)
-    
+
     class Params:
         # Traits for common scenarios
         quick = factory.Trait(timeout_ms=100, layers=["core"])
@@ -1192,16 +1191,16 @@ class SourceRequestFactory(factory.Factory):
 
 class SourceResultFactory(factory.Factory):
     """Factory for SourceResult objects."""
-    
+
     class Meta:
         model = SourceResult
-    
+
     content = Faker("paragraph", nb_sentences=5)
     tokens = Faker("random_int", min=10, max=1000)
     status = "success"
     duration_ms = Faker("random_int", min=10, max=500)
     layers_loaded = ["core"]
-    
+
     class Params:
         failed = factory.Trait(status="error", content="", tokens=0)
         partial = factory.Trait(status="partial", layers_loaded=["core"])
@@ -1209,17 +1208,16 @@ class SourceResultFactory(factory.Factory):
 
 class KnowledgeItemFactory(factory.Factory):
     """Factory for KnowledgeItem objects."""
-    
+
     class Meta:
         model = KnowledgeItem
-    
+
     id = Faker("uuid4")
     title = Faker("sentence", nb_words=4)
     content = Faker("paragraph", nb_sentences=3)
     layer = Faker("random_element", elements=["core", "guidelines", "practices"])
     tags = Faker("words", nb=3)
     created_at = Faker("date_time_this_year")
-
 
 # Usage in tests:
 # request = SourceRequestFactory()                    # Default
@@ -1263,12 +1261,12 @@ def fake_knowledge_content():
 def fake_config_yaml():
     """Generate realistic YAML configuration."""
     return {
-        "name": fake.slug(),
-        "version": fake.numerify("#.#.#"),
+        "name"      : fake.slug(),
+        "version"   : fake.numerify("#.#.#"),
         "timeout_ms": fake.random_int(100, 5000),
-        "layers": fake.random_elements(
-            ["core", "guidelines", "practices"], 
-            length=2, 
+        "layers"    : fake.random_elements(
+            ["core", "guidelines", "practices"],
+            length=2,
             unique=True
         ),
     }
@@ -1347,20 +1345,22 @@ import pytest
 @allure.story("Graceful Degradation")
 class TestLoaderTimeout:
     """Loader timeout behavior tests."""
-    
+
     @allure.severity(allure.severity_level.CRITICAL)
     @allure.title("Loader returns fallback on timeout")
-    @allure.description("""
-        When the loader exceeds its timeout threshold,
-        it should return cached/fallback content instead of failing.
-    """)
+    @allure.description(
+        """
+                When the loader exceeds its timeout threshold,
+                it should return cached/fallback content instead of failing.
+            """
+    )
     def test_timeout_returns_fallback(self):
         with allure.step("Create loader with 1ms timeout"):
             loader = TimeoutLoader(timeout_ms=1)
-        
+
         with allure.step("Request content that will timeout"):
             result = loader.load_sync(layers=["core", "guidelines"])
-        
+
         with allure.step("Verify fallback behavior"):
             assert result.status in ("fallback", "partial")
             allure.attach(
@@ -1368,7 +1368,7 @@ class TestLoaderTimeout:
                 name="Fallback Content",
                 attachment_type=allure.attachment_type.TEXT
             )
-    
+
     @allure.severity(allure.severity_level.NORMAL)
     @allure.title("Loader respects configured timeout")
     @pytest.mark.parametrize("timeout_ms", [100, 500, 1000, 5000])
@@ -1376,14 +1376,14 @@ class TestLoaderTimeout:
         with allure.step(f"Test with {timeout_ms}ms timeout"):
             loader = TimeoutLoader(timeout_ms=timeout_ms)
             result = loader.load_sync(layers=["core"])
-            
+
             # Attach timing info
             allure.attach(
                 str(result.duration_ms),
                 name="Actual Duration (ms)",
                 attachment_type=allure.attachment_type.TEXT
             )
-            
+
             assert result.duration_ms <= timeout_ms * 1.1
 ```
 
@@ -1452,18 +1452,18 @@ jobs:
     steps:
       - name: Run Tests with Allure
         run: pytest tests/ --alluredir=allure-results
-      
+
       - name: Generate Allure Report
         if: always()
         run: allure generate allure-results -o allure-report --clean
-      
+
       - name: Upload Allure Report
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: allure-report
           path: allure-report/
-      
+
       - name: Publish to GitHub Pages
         if: github.ref == 'refs/heads/main'
         uses: peaceiris/actions-gh-pages@v3

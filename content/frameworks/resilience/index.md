@@ -1,4 +1,4 @@
-﻿# Resilience Framework
+# Resilience Framework
 
 > Fault tolerance and graceful degradation patterns
 
@@ -14,7 +14,8 @@
 
 ## 1. Overview
 
-The Resilience Framework provides patterns for building fault-tolerant systems that gracefully handle failures, timeouts, and degraded conditions while maintaining useful functionality.
+The Resilience Framework provides patterns for building fault-tolerant systems that gracefully handle failures,
+timeouts, and degraded conditions while maintaining useful functionality.
 
 ---
 

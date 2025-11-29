@@ -1,4 +1,4 @@
-﻿# AI Collaboration Workflow Practices
+# AI Collaboration Workflow Practices
 
 > Practical workflows for effective human-AI collaboration
 

@@ -354,7 +354,7 @@ class DocumentationChecker:
                             file=file_str,
                             line=0,
                             rule="NAMING-001",
-                            message=f"ADR file should match pattern 'ADR-NNNN-title.md'",
+                            message="ADR file should match pattern 'ADR-NNNN-title.md'",
                             severity=Severity.WARNING,
                             suggestion="Rename to ADR-0001-description.md format",
                         )
@@ -368,7 +368,7 @@ class DocumentationChecker:
                             file=file_str,
                             line=0,
                             rule="NAMING-001",
-                            message=f"Session file should match pattern 'YYYY-MM-DD-topic.md'",
+                            message="Session file should match pattern 'YYYY-MM-DD-topic.md'",
                             severity=Severity.INFO,
                             suggestion="Rename to 2025-11-30-topic.md format",
                         )
@@ -382,7 +382,7 @@ class DocumentationChecker:
                                 file=file_str,
                                 line=0,
                                 rule="NAMING-001",
-                                message=f"File name should be snake_case",
+                                message="File name should be snake_case",
                                 severity=Severity.INFO,
                                 suggestion=f"Rename to {file_name.lower().replace('-', '_')}",
                             )

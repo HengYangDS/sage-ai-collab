@@ -1,4 +1,4 @@
-﻿# SAGE Test Suite
+# SAGE Test Suite
 
 > Comprehensive testing guide for SAGE Knowledge Base
 

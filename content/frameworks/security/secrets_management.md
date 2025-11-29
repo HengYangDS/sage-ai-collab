@@ -1,4 +1,4 @@
-﻿# Secrets Management
+# Secrets Management
 
 > Secure handling of sensitive data, credentials, and encryption keys
 

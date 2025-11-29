@@ -1,4 +1,4 @@
-﻿# Shell Script Guidelines
+# Shell Script Guidelines
 
 > Best practices for Bash and shell scripting
 

@@ -1,4 +1,4 @@
-﻿# SAGE Project Optimizations
+# SAGE Project Optimizations
 
 > SAGE-specific optimizations, shortcuts, and code patterns
 
@@ -8,13 +8,13 @@
 
 For comprehensive guides on general development practices, see:
 
-| Topic | Reference |
-|-------|-----------|
-| **Code Patterns** | `content/practices/engineering/patterns.md` |
-| **Testing Strategy** | `content/practices/engineering/testing_strategy.md` |
-| **Documentation** | `content/practices/documentation/` |
-| **Performance** | `content/frameworks/performance/optimization_strategies.md` |
-| **Caching** | `content/frameworks/performance/caching_patterns.md` |
+| Topic                | Reference                                                   |
+|----------------------|-------------------------------------------------------------|
+| **Code Patterns**    | `content/practices/engineering/patterns.md`                 |
+| **Testing Strategy** | `content/practices/engineering/testing_strategy.md`         |
+| **Documentation**    | `content/practices/documentation/`                          |
+| **Performance**      | `content/frameworks/performance/optimization_strategies.md` |
+| **Caching**          | `content/frameworks/performance/caching_patterns.md`        |
 
 ---
 
@@ -55,12 +55,12 @@ if TYPE_CHECKING:
 
 ### 1.2 Test Coverage Goals
 
-| Layer        | Target | Focus                            |
-|--------------|--------|----------------------------------|
-| Core         | 90%+   | All public APIs, error paths     |
-| Services     | 80%+   | Integration points, CLI commands |
-| Capabilities | 80%+   | Analyzer logic, edge cases       |
-| Integration  | Key paths | End-to-end workflows          |
+| Layer        | Target    | Focus                            |
+|--------------|-----------|----------------------------------|
+| Core         | 90%+      | All public APIs, error paths     |
+| Services     | 80%+      | Integration points, CLI commands |
+| Capabilities | 80%+      | Analyzer logic, edge cases       |
+| Integration  | Key paths | End-to-end workflows             |
 
 ---
 
@@ -96,12 +96,14 @@ async def search(query: str, layer: str | None = None) -> list[Knowledge]:
 # Preferred: Module-level singleton with lazy init
 _instance: EventBus | None = None
 
+
 def get_event_bus() -> EventBus:
     """Get the global EventBus instance."""
     global _instance
     if _instance is None:
         _instance = EventBus()
     return _instance
+
 
 def reset_event_bus() -> None:
     """Reset for testing."""

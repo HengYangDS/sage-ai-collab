@@ -1,4 +1,4 @@
-﻿# AI Collaboration Patterns
+# AI Collaboration Patterns
 
 > Successful interaction patterns for human-AI collaboration
 
@@ -16,7 +16,8 @@
 
 ## 1. Overview
 
-This document captures successful AI collaboration patterns that help maintain consistency and efficiency in human-AI interactions. These patterns are applicable across projects and AI tools.
+This document captures successful AI collaboration patterns that help maintain consistency and efficiency in human-AI
+interactions. These patterns are applicable across projects and AI tools.
 
 ### 1.1 Purpose
 
@@ -261,16 +262,16 @@ Please confirm or adjust.
 
 ### Pattern Selection Guide
 
-| Situation | Recommended Pattern |
-|-----------|---------------------|
-| Starting work | Session Start Pattern (2.1) |
-| Complex task | Progressive Disclosure (2.2) |
-| Unclear requirements | Clarification Request (2.3) |
-| Multiple file changes | Batch Operation (2.4) |
-| Major decision | Decision Point (3.1) |
-| New pattern found | Convention Discovery (3.2) |
-| Ending session | Session Handoff (3.3) |
-| Problem solved | Problem-Solution (3.4) |
+| Situation             | Recommended Pattern          |
+|-----------------------|------------------------------|
+| Starting work         | Session Start Pattern (2.1)  |
+| Complex task          | Progressive Disclosure (2.2) |
+| Unclear requirements  | Clarification Request (2.3)  |
+| Multiple file changes | Batch Operation (2.4)        |
+| Major decision        | Decision Point (3.1)         |
+| New pattern found     | Convention Discovery (3.2)   |
+| Ending session        | Session Handoff (3.3)        |
+| Problem solved        | Problem-Solution (3.4)       |
 
 ---
 

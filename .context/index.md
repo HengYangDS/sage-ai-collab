@@ -1,4 +1,4 @@
-﻿# Project Context Navigation
+# Project Context Navigation
 
 > Project-specific knowledge base for SAGE Knowledge Base
 

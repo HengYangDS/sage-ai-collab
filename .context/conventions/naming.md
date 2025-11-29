@@ -1,4 +1,4 @@
-﻿# SAGE Naming Conventions
+# SAGE Naming Conventions
 
 > Project-specific naming standards for SAGE Knowledge Base
 
@@ -28,6 +28,7 @@
 | Domain alignment     | Use SAGE terminology (Source, Analyze, Generate, Evolve) |
 
 **Quick reference** (from generic Python guidelines):
+
 - Modules/packages: `snake_case`
 - Classes: `PascalCase` (Protocols: `*Protocol`, Exceptions: `*Error`)
 - Functions/methods: `snake_case` (private: `_snake_case`)
@@ -213,13 +214,13 @@ class TimeoutOccurredEvent:
 
 The project version follows [Semantic Versioning](https://semver.org/):
 
-| Component | Format      | Example | Meaning             |
-|-----------|-------------|---------|---------------------|
-| Version   | `X.Y.Z`     | `0.1.0` | MAJOR.MINOR.PATCH   |
-| Pre-alpha | `0.x.y`     | `0.1.0` | Initial development |
-| Alpha     | `0.x.y`     | `0.5.0` | Feature incomplete  |
-| Beta      | `0.x.y`     | `0.9.0` | Feature complete    |
-| Release   | `1.0.0`+    | `1.0.0` | Production ready    |
+| Component | Format   | Example | Meaning             |
+|-----------|----------|---------|---------------------|
+| Version   | `X.Y.Z`  | `0.1.0` | MAJOR.MINOR.PATCH   |
+| Pre-alpha | `0.x.y`  | `0.1.0` | Initial development |
+| Alpha     | `0.x.y`  | `0.5.0` | Feature incomplete  |
+| Beta      | `0.x.y`  | `0.9.0` | Feature complete    |
+| Release   | `1.0.0`+ | `1.0.0` | Production ready    |
 
 **Source of Truth**: `pyproject.toml` → `[project].version`
 
@@ -227,12 +228,12 @@ The project version follows [Semantic Versioning](https://semver.org/):
 
 Internal development milestones use **M-prefix** format to avoid confusion with release versions:
 
-| Milestone | Format | Description                     | Example Reference    |
-|-----------|--------|---------------------------------|----------------------|
-| MVP       | `M1`   | Minimum Viable Product          | "M1 complete"        |
-| Phase 2   | `M2`   | Second major milestone          | "M2 in progress"     |
-| Phase 3   | `M3`   | Third major milestone           | "M3 planned"         |
-| Phase N   | `MN`   | Nth milestone                   | "M4 future"          |
+| Milestone | Format | Description            | Example Reference |
+|-----------|--------|------------------------|-------------------|
+| MVP       | `M1`   | Minimum Viable Product | "M1 complete"     |
+| Phase 2   | `M2`   | Second major milestone | "M2 in progress"  |
+| Phase 3   | `M3`   | Third major milestone  | "M3 planned"      |
+| Phase N   | `MN`   | Nth milestone          | "M4 future"       |
 
 **Why M-prefix?**
 
@@ -241,15 +242,16 @@ Internal development milestones use **M-prefix** format to avoid confusion with 
 
 ### 6.3 Version References in Documentation
 
-| Context              | Format               | Example                        |
-|----------------------|----------------------|--------------------------------|
-| Code/config version  | `"X.Y.Z"`            | `version: "0.1.0"`             |
-| Milestone reference  | `MN`                 | "Completed in M2"              |
-| Roadmap phases       | `MN` or `Phase N`    | "M3 Phases:", "Phase I:"       |
-| Future features      | `MN+`                | "Available in M2+"             |
-| External tool ver.   | Keep original format | `rev: v1.11.0` (pre-commit)    |
+| Context             | Format               | Example                     |
+|---------------------|----------------------|-----------------------------|
+| Code/config version | `"X.Y.Z"`            | `version: "0.1.0"`          |
+| Milestone reference | `MN`                 | "Completed in M2"           |
+| Roadmap phases      | `MN` or `Phase N`    | "M3 Phases:", "Phase I:"    |
+| Future features     | `MN+`                | "Available in M2+"          |
+| External tool ver.  | Keep original format | `rev: v1.11.0` (pre-commit) |
 
-**Important**: External tool versions (e.g., pre-commit hooks, dependencies) should retain their original version format.
+**Important**: External tool versions (e.g., pre-commit hooks, dependencies) should retain their original version
+format.
 
 ---
 

@@ -977,14 +977,14 @@ if MCP_AVAILABLE and app is not None:
             # Generate session ID
             now = datetime.now()
             session_id = f"session-{now.strftime('%Y%m%d-%H%M')}"
-            
+
             # Determine project root and history path
             project_root = Path.cwd()
             history_current = project_root / ".history" / "current"
             history_current.mkdir(parents=True, exist_ok=True)
-            
+
             session_file = history_current / f"{session_id}.md"
-            
+
             # Create session state content
             content = f"""# Session State: {task}
 
@@ -1030,10 +1030,10 @@ To continue: Review objective and progress above, then proceed with task.
 
 *Session state from SAGE Knowledge Base*
 """
-            
+
             session_file.write_text(content, encoding="utf-8")
             logger.info("session_started", session_id=session_id, task=task)
-            
+
             return {
                 "success": True,
                 "result": {
@@ -1081,7 +1081,7 @@ To continue: Review objective and progress above, then proceed with task.
             now = datetime.now()
             project_root = Path.cwd()
             history_current = project_root / ".history" / "current"
-            
+
             # Find active session
             active_sessions = list(history_current.glob("session-*.md"))
             if not active_sessions:
@@ -1089,21 +1089,21 @@ To continue: Review objective and progress above, then proceed with task.
                     "success": False,
                     "error": "No active session found in .history/current/",
                 }
-            
+
             # Use most recent session
             active_session = max(active_sessions, key=lambda p: p.stat().st_mtime)
             session_id = active_session.stem
-            
+
             # Determine record type
             if record_type == "auto":
                 record_type = "handoff" if next_steps else "conversation"
-            
+
             # Create appropriate record
             if record_type == "handoff":
                 record_dir = project_root / ".history" / "handoffs"
                 record_dir.mkdir(parents=True, exist_ok=True)
                 record_file = record_dir / f"{now.strftime('%Y-%m-%d')}-handoff.md"
-                
+
                 content = f"""# Task Handoff: {summary[:50]}
 
 > **From**: {session_id}
@@ -1137,7 +1137,7 @@ To continue: Review objective and progress above, then proceed with task.
                 record_dir = project_root / ".history" / "conversations"
                 record_dir.mkdir(parents=True, exist_ok=True)
                 record_file = record_dir / f"{now.strftime('%Y-%m-%d')}-session.md"
-                
+
                 content = f"""# Session Record: {summary[:50]}
 
 > **Date**: {now.strftime('%Y-%m-%d')}
@@ -1166,14 +1166,14 @@ To continue: Review objective and progress above, then proceed with task.
 
 *Conversation record from SAGE Knowledge Base*
 """
-            
+
             record_file.write_text(content, encoding="utf-8")
-            
+
             # Archive the session state (move to indicate completion)
             active_session.unlink()
-            
+
             logger.info("session_ended", session_id=session_id, record_type=record_type)
-            
+
             return {
                 "success": True,
                 "result": {
@@ -1210,19 +1210,23 @@ To continue: Review objective and progress above, then proceed with task.
             current_path = history_path / "current"
             conversations_path = history_path / "conversations"
             handoffs_path = history_path / "handoffs"
-            
+
             # Get active sessions
             active_sessions = []
             if current_path.exists():
                 for session_file in current_path.glob("session-*.md"):
                     stat = session_file.stat()
-                    active_sessions.append({
-                        "session_id": session_file.stem,
-                        "file": str(session_file),
-                        "modified": datetime.fromtimestamp(stat.st_mtime).isoformat(),
-                        "size_bytes": stat.st_size,
-                    })
-            
+                    active_sessions.append(
+                        {
+                            "session_id": session_file.stem,
+                            "file": str(session_file),
+                            "modified": datetime.fromtimestamp(
+                                stat.st_mtime
+                            ).isoformat(),
+                            "size_bytes": stat.st_size,
+                        }
+                    )
+
             # Get recent records (last 5)
             recent_records = []
             for record_path in [conversations_path, handoffs_path]:
@@ -1233,12 +1237,14 @@ To continue: Review objective and progress above, then proceed with task.
                         reverse=True,
                     )[:5]:
                         if not record_file.name.startswith("_example"):
-                            recent_records.append({
-                                "type": record_path.name,
-                                "file": record_file.name,
-                                "path": str(record_file),
-                            })
-            
+                            recent_records.append(
+                                {
+                                    "type": record_path.name,
+                                    "file": record_file.name,
+                                    "path": str(record_file),
+                                }
+                            )
+
             return {
                 "success": True,
                 "result": {

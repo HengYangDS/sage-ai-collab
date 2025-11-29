@@ -1,4 +1,4 @@
-﻿# Integration Patterns
+# Integration Patterns
 
 > Patterns for integrating SAGE with AI tools, IDEs, and CI/CD systems
 
@@ -124,7 +124,7 @@ class ContextSync:
                 "type": change_event.type,
                 "path": change_event.path
             }
-            )
+        )
 
     async def get_full_context(self):
         """Pull: Client requests full context."""
@@ -412,7 +412,7 @@ class WebhookIntegration:
                 "timestamp": event.timestamp,
                 "changes"  : event.changes
             }
-            )
+        )
 ```
 
 ---

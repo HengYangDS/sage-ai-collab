@@ -1,4 +1,4 @@
-﻿# Configuration Directory
+# Configuration Directory
 
 > SAGE Knowledge Base runtime configuration files
 

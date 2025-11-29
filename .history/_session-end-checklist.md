@@ -11,6 +11,7 @@ For the comprehensive session management checklist, see:
 **→ `content/practices/ai_collaboration/session_checklist.md`**
 
 This includes:
+
 - Session Start checklist
 - During Session checklist
 - Pre-Completion checks (work verification, quality, code review)
@@ -39,23 +40,23 @@ This includes:
 
 ### SAGE Templates
 
-| Template | Location |
-|----------|----------|
-| Conversation | `content/templates/conversation_record.md` |
-| Handoff | `content/templates/task_handoff.md` |
-| Session State | `content/templates/session_state.md` |
+| Template      | Location                                   |
+|---------------|--------------------------------------------|
+| Conversation  | `content/templates/conversation_record.md` |
+| Handoff       | `content/templates/task_handoff.md`        |
+| Session State | `content/templates/session_state.md`       |
 
 ---
 
 ## Quick Decision Guide
 
-| Situation | Action |
-|-----------|--------|
-| Significant decisions made | Create conversation record |
-| Work incomplete, will continue | Create handoff document |
-| Pausing mid-task | Create session state |
-| Routine completion, no decisions | No record needed |
-| Bug fix or minor change | Commit message sufficient |
+| Situation                        | Action                     |
+|----------------------------------|----------------------------|
+| Significant decisions made       | Create conversation record |
+| Work incomplete, will continue   | Create handoff document    |
+| Pausing mid-task                 | Create session state       |
+| Routine completion, no decisions | No record needed           |
+| Bug fix or minor change          | Commit message sufficient  |
 
 ---
 

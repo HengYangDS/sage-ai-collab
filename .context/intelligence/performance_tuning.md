@@ -1,4 +1,4 @@
-﻿# SAGE Performance Tuning
+# SAGE Performance Tuning
 
 > SAGE-specific performance goals, benchmarks, and monitoring
 
@@ -8,11 +8,11 @@
 
 For comprehensive performance optimization guides, see:
 
-| Topic | Reference |
-|-------|-----------|
+| Topic                       | Reference                                                   |
+|-----------------------------|-------------------------------------------------------------|
 | **Optimization Strategies** | `content/frameworks/performance/optimization_strategies.md` |
-| **Caching Patterns** | `content/frameworks/performance/caching_patterns.md` |
-| **Profiling Guide** | `content/frameworks/performance/profiling_guide.md` |
+| **Caching Patterns**        | `content/frameworks/performance/caching_patterns.md`        |
+| **Profiling Guide**         | `content/frameworks/performance/profiling_guide.md`         |
 
 ---
 
@@ -48,13 +48,13 @@ For comprehensive performance optimization guides, see:
 
 ### 1.3 Token Budget Allocation
 
-| Layer      | Budget  | Priority |
-|------------|---------|----------|
-| Core       | 2000    | Always   |
-| Guidelines | 2000    | High     |
-| Frameworks | 2000    | Medium   |
-| Practices  | 1500    | Low      |
-| Scenarios  | 500     | On-demand|
+| Layer      | Budget | Priority  |
+|------------|--------|-----------|
+| Core       | 2000   | Always    |
+| Guidelines | 2000   | High      |
+| Frameworks | 2000   | Medium    |
+| Practices  | 1500   | Low       |
+| Scenarios  | 500    | On-demand |
 
 ---
 
@@ -105,6 +105,7 @@ from contextlib import contextmanager
 import structlog
 
 log = structlog.get_logger()
+
 
 @contextmanager
 def measure_time(operation: str):

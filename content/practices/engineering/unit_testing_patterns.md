@@ -1,4 +1,4 @@
-﻿# Unit Testing Patterns
+# Unit Testing Patterns
 
 > Best practices and patterns for writing effective unit tests
 
@@ -460,7 +460,7 @@ import pytest
         ("world", "WORLD"),
         ("", ""),
     ]
-    )
+)
 def test_uppercase(input, expected):
     assert input.upper() == expected
 ```
@@ -475,7 +475,7 @@ def test_uppercase(input, expected):
         (-1, 1, 0),
         (100, 200, 300),
     ]
-    )
+)
 def test_add(a, b, expected):
     assert add(a, b) == expected
 ```
@@ -490,7 +490,7 @@ def test_add(a, b, expected):
         pytest.param("@example.com", False, id="no_local_part"),
         pytest.param("user@", False, id="no_domain"),
     ]
-    )
+)
 def test_validate_email(email, valid):
     assert validate_email(email) == valid
 ```
