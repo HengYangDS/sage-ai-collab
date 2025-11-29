@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -509,9 +509,9 @@ py-spy record -o profile.svg -- python script.py
 
 ## Related
 
-- `practices/engineering/testing_strategy.md` — Performance testing
-- `frameworks/resilience/timeout_patterns.md` — Timeout handling
-- `.context/intelligence/optimizations.md` — Project optimizations
+- `.knowledge/practices/engineering/testing_strategy.md` — Performance testing
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.context/intelligence/optimization/optimizations.md` — Project optimizations
 - `.context/policies/timeout_hierarchy.md` — Timeout config
 
 ---

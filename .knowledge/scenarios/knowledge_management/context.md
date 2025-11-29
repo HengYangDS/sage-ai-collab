@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -41,7 +41,7 @@ autonomy_default: L3
 | Priority      | Files                                                                                                                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Auto-Load** | `core/principles.md` · `.knowledge/references/knowledge_quick_ref.md`                                                                                                                    |
-| **On-Demand** | `practices/documentation/knowledge_organization.md` · `frameworks/design/` · `practices/documentation/documentation_standards.md` · `practices/ai_collaboration/knowledge_extraction.md` |
+| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/documentation_standards.md` · `.knowledge/practices/ai_collaboration/knowledge_extraction.md` |
 
 ---
 
@@ -189,7 +189,7 @@ Content...
 ### Internal
 
 - `.knowledge/core/principles.md` — Core principles
-- `.knowledge/practices/workflow.md` — Implementation guide
+- `.knowledge/practices/ai_collaboration/workflow.md` — Implementation guide
 
 ### External
 

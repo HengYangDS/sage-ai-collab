@@ -81,4 +81,12 @@ tokens: ~400
 
 ---
 
+## Related
+
+- `.knowledge/scenarios/typescript_frontend/context.md` — TypeScript frontend context
+- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+
+---
+
 *SAGE Knowledge Base - TypeScript Frontend Checklist*

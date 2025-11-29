@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -39,8 +39,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                                   |
 |---------------|---------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/engineering.md` · `practices/engineering/incremental_improvement.md` |
-| **On-Demand** | `practices/engineering/testing_strategy.md` · `practices/engineering/code_review.md`                    |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/incremental_improvement.md` |
+| **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.knowledge/practices/engineering/code_review.md`                    |
 
 ---
 

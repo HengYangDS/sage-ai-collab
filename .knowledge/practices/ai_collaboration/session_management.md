@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -325,7 +325,7 @@ git log --oneline -10
 - `.knowledge/templates/session_state.md` — Session state template
 - `.knowledge/templates/task_handoff.md` — Handoff template
 - `.knowledge/practices/ai_collaboration/context_management.md` — Context strategies
-- `.context/intelligence/patterns.md` — AI collaboration patterns
+- `.context/intelligence/calibration/patterns.md` — AI collaboration patterns
 
 ---
 

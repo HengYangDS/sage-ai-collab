@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -40,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                      |
 |---------------|--------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/engineering.md` · `practices/engineering/api_design.md` |
-| **On-Demand** | `guidelines/security.md` · `practices/engineering/error_handling.md`                       |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/api_design.md` |
+| **On-Demand** | `.knowledge/guidelines/security.md` · `.knowledge/practices/engineering/error_handling.md`                       |
 
 ---
 

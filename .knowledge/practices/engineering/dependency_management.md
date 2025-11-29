@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -333,9 +333,9 @@ pipdeptree
 
 ## Related
 
-- `practices/engineering/ci_cd.md` — CI/CD pipeline with dependency checks
-- `practices/engineering/testing_strategy.md` — Testing after updates
-- `guidelines/python.md` — Python coding standards
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD pipeline with dependency checks
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing after updates
+- `.knowledge/guidelines/python.md` — Python coding standards
 
 ---
 

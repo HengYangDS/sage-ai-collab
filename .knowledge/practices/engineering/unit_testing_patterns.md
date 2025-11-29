@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -541,9 +541,9 @@ def test_endpoints(method, path):
 
 ## Related
 
-- `practices/engineering/integration_testing.md` — Integration testing
-- `practices/engineering/testing_strategy.md` — Testing strategy
-- `guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/integration_testing.md` — Integration testing
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
+- `.knowledge/guidelines/python.md` — Python guidelines
 
 ---
 

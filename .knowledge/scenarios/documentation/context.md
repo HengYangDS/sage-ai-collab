@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -41,8 +41,8 @@ autonomy_default: L4
 
 | Priority      | Files                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/documentation.md` · `practices/documentation/documentation_standards.md` |
-| **On-Demand** | `practices/documentation/knowledge_organization.md` · `templates/index.md`                                  |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/documentation.md` · `.knowledge/practices/documentation/documentation_standards.md` |
+| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/templates/index.md`                                  |
 
 ---
 
@@ -75,10 +75,10 @@ autonomy_default: L4
 
 | Document Type | Template                  | Use Case               |
 |---------------|---------------------------|------------------------|
-| API Reference | `templates/api_spec.md`   | Endpoint documentation |
-| Architecture  | `templates/adr.md`        | Design decisions       |
-| Runbook       | `templates/runbook.md`    | Operational guides     |
-| Postmortem    | `templates/postmortem.md` | Incident reports       |
+| API Reference | `.knowledge/templates/api_spec.md`   | Endpoint documentation |
+| Architecture  | `.knowledge/templates/adr.md`        | Design decisions       |
+| Runbook       | `.knowledge/templates/runbook.md`    | Operational guides     |
+| Postmortem    | `.knowledge/templates/postmortem.md` | Incident reports       |
 
 ---
 

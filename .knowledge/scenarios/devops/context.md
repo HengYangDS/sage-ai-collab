@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -41,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `practices/engineering/error_handling.md` · `templates/runbook.md` |
-| **On-Demand** | `practices/engineering/logging.md` · `frameworks/resilience/timeout_patterns.md`          |
+| **Auto-Load** | `core/principles.md` · `.knowledge/practices/engineering/error_handling.md` · `.knowledge/templates/runbook.md` |
+| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/frameworks/resilience/timeout_patterns.md`          |
 
 ---
 

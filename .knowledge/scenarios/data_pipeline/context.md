@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -41,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/python.md` · `practices/engineering/error_handling.md` |
-| **On-Demand** | `practices/engineering/logging.md` · `practices/engineering/testing_strategy.md`          |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/error_handling.md` |
+| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/practices/engineering/testing_strategy.md`          |
 
 ---
 

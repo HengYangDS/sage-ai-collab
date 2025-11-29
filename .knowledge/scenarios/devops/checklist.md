@@ -103,4 +103,12 @@ tokens: ~500
 
 ---
 
+## Related
+
+- `.knowledge/scenarios/devops/context.md` — DevOps context
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
+- `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
+
+---
+
 *SAGE Knowledge Base - DevOps Checklist*

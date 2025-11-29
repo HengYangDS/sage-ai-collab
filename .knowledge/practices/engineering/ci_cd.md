@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -414,10 +414,10 @@ gh run download <run-id>
 
 ## Related
 
-- `practices/engineering/git_workflow.md` — Git workflow and versioning
-- `practices/engineering/testing_strategy.md` — Testing best practices
-- `scenarios/devops/context.md` — DevOps scenario context
-- `templates/runbook.md` — Operational runbook template
+- `.knowledge/practices/engineering/git_workflow.md` — Git workflow and versioning
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing best practices
+- `.knowledge/scenarios/devops/context.md` — DevOps scenario context
+- `.knowledge/templates/runbook.md` — Operational runbook template
 
 ---
 

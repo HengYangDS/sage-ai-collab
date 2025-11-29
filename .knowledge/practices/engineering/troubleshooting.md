@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -478,8 +478,8 @@ export SAGE_PROFILE=1
 
 ## Related
 
-- `practices/engineering/logging.md` — Logging best practices
-- `practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/logging.md` — Logging best practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 - `.context/policies/timeout_hierarchy.md` — Timeout configuration
 - `docs/guides/configuration.md` — Configuration guide
 

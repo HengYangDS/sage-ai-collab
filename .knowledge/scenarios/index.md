@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -103,7 +103,7 @@ scenarios/[name]/
 
 ## 4. Creating New Scenarios
 
-1. Create directory: `scenarios/[name]/`
+1. Create directory: `.knowledge/scenarios/[name]/`
 2. Add `context.md` with scenario context
 3. Define auto-load triggers in `config/knowledge/triggers.yaml`
 4. Update this index

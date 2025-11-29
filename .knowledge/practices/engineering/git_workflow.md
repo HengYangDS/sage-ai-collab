@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -397,8 +397,8 @@ fi
 
 ## Related
 
-- `practices/engineering/ci_cd.md` — CI/CD configuration
-- `practices/engineering/code_review.md` — Code review guidelines
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD configuration
+- `.knowledge/practices/engineering/code_review.md` — Code review guidelines
 - `.context/conventions/` — Coding conventions
 
 ---

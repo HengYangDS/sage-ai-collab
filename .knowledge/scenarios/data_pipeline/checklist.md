@@ -93,4 +93,12 @@ tokens: ~450
 
 ---
 
+## Related
+
+- `.knowledge/scenarios/data_pipeline/context.md` — Data pipeline context
+- `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+
+---
+
 *SAGE Knowledge Base - Data Pipeline Checklist*

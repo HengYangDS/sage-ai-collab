@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -40,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `docs/api/mcp_quick_ref.md` · `practices/engineering/api_design.md`                  |
-| **On-Demand** | `docs/api/mcp.md` · `frameworks/resilience/timeout_patterns.md` · `practices/engineering/error_handling.md` |
+| **Auto-Load** | `core/principles.md` · `docs/api/mcp_quick_ref.md` · `.knowledge/practices/engineering/api_design.md`                  |
+| **On-Demand** | `docs/api/mcp.md` · `.knowledge/frameworks/resilience/timeout_patterns.md` · `.knowledge/practices/engineering/error_handling.md` |
 
 ---
 

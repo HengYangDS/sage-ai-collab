@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -51,7 +51,7 @@ autonomy (always ask) to full autonomy (act independently).
 
 ## Related
 
-- `.context/intelligence/calibration.md` — Autonomy calibration settings
+- `.context/intelligence/calibration/calibration.md` — Autonomy calibration settings
 - `config/capabilities/autonomy.yaml` — Autonomy configuration
 - `.junie/guidelines.md` — AI collaboration guidelines
 

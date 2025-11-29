@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -451,10 +451,10 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 ## Related
 
-- `practices/engineering/error_handling.md` — Secure error handling
-- `practices/engineering/logging.md` — Secure logging practices
-- `guidelines/python.md` — Python coding standards
-- `scenarios/devops/context.md` — DevOps security
+- `.knowledge/practices/engineering/error_handling.md` — Secure error handling
+- `.knowledge/practices/engineering/logging.md` — Secure logging practices
+- `.knowledge/guidelines/python.md` — Python coding standards
+- `.knowledge/scenarios/devops/context.md` — DevOps security
 
 ---
 

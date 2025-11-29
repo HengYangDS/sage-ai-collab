@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -40,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                    |
 |---------------|------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/engineering.md` · `practices/engineering/patterns.md` |
-| **On-Demand** | `practices/documentation/project_directory_structure.md` · `guidelines/code_style.md`    |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/patterns.md` |
+| **On-Demand** | `.knowledge/practices/documentation/project_directory_structure.md` · `.knowledge/guidelines/code_style.md`    |
 
 ---
 

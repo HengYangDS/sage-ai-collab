@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -41,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/principles.md` · `guidelines/python.md` · `practices/engineering/patterns.md`            |
-| **On-Demand** | `guidelines/engineering.md` · `frameworks/timeout/hierarchy.md` · `templates/project_setup.md` |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/patterns.md`            |
+| **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/frameworks/timeout/hierarchy.md` · `.knowledge/templates/project_setup.md` |
 
 ---
 

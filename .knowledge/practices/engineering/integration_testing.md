@@ -1,4 +1,4 @@
----
+﻿---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -515,9 +515,8 @@ tests/
 
 ## Related
 
-- `practices/engineering/unit_testing_patterns.md` — Unit testing
-- `practices/engineering/performance_testing.md` — Performance testing
-- `practices/engineering/testing_strategy.md` — Testing strategy
+- `.knowledge/practices/engineering/unit_testing_patterns.md` — Unit testing
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
 
 ---
 
