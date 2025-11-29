@@ -141,6 +141,38 @@ class TestYamlConfiguration:
         schema_file = JUNIE_DIR / "generic" / "config.schema.json"
         assert schema_file.exists(), f"config.schema.json not found at {schema_file}"
 
+    def test_schema_versions_synchronized(self) -> None:
+        """Verify schema_version is synchronized across config files."""
+        generic_config = JUNIE_DIR / "generic" / "config.yaml"
+        project_config = JUNIE_DIR / "project" / "config.yaml"
+
+        with open(generic_config, encoding="utf-8") as f:
+            generic_data = yaml.safe_load(f)
+        with open(project_config, encoding="utf-8") as f:
+            project_data = yaml.safe_load(f)
+
+        generic_version = generic_data.get("schema_version")
+        project_version = project_data.get("schema_version")
+
+        assert (
+            generic_version == project_version
+        ), f"Schema versions mismatch: generic={generic_version}, project={project_version}"
+
+    def test_schema_version_format_valid(self) -> None:
+        """Verify schema_version matches expected format (MAJOR.MINOR or MAJOR.MINOR.PATCH)."""
+        import re
+
+        version_pattern = re.compile(r"^\d+\.\d+(\.\d+)?$")
+
+        generic_config = JUNIE_DIR / "generic" / "config.yaml"
+        with open(generic_config, encoding="utf-8") as f:
+            data = yaml.safe_load(f)
+
+        schema_version = data.get("schema_version", "")
+        assert version_pattern.match(
+            schema_version
+        ), f"Invalid schema_version format: {schema_version}"
+
 
 class TestGuidelinesAndDocs:
     """Tests for guidelines and documentation files."""

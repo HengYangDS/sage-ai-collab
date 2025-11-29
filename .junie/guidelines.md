@@ -75,7 +75,11 @@ At session end, create records in the designated history directory (typically `.
 
 ### Session Automation (MCP Tools)
 
-Use these MCP tools to automate session tracking:
+Use these MCP tools to automate session tracking.
+
+> **Note**: These session management tools require a custom MCP server implementation or can be
+> simulated manually by creating files in `.history/`. If no session MCP server is configured,
+> use manual file creation as the fallback approach (see Session History Management above).
 
 | Tool             | When to Call                                     | Purpose                                  |
 |------------------|--------------------------------------------------|------------------------------------------|

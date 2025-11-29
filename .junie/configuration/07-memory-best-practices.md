@@ -58,7 +58,7 @@ Junie to remember decisions, patterns, and context across multiple sessions.
   "type": "entity_type",
   "content": "Human-readable description and details",
   "metadata": {
-    "created": "2025-01-15",
+    "created": "YYYY-MM-DD",
     "confidence": "high",
     "source": "user_decision"
   }
@@ -250,7 +250,7 @@ memory.create_relations([{
 ```javascript
 // 1. Summarize session learnings
 memory.create_entities([{
-    name: "session_2025_01_15_summary",
+    name: "session_YYYYMMDD_summary",
     type: "session",
     content: "Implemented caching layer with Redis. Key decisions: TTL strategy, cache invalidation patterns."
 }])

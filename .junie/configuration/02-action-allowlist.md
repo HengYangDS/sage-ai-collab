@@ -46,10 +46,10 @@ seamless AI collaboration.
 - **Allowed Actions**: 3 (RunTest, Build, ReadOutsideProject)
 - **Configuration File**: See [Platform Quick Reference](#platform-quick-reference) for your platform's path
 
-> 📜 For complete version history, see [Changelog](#changelog) at the end of this document.
+> 📜 For complete version history, see [Changelog](05-appendix.md#3-changelog) in the Appendix.
 >
-> 💡 For MCP Integration goals and statistics, see [MCP Integration Guide](#mcp-integration-guide).
-> For Future Protocol Vision, see [Part 4: Future Protocol Vision](#future-protocol-vision).
+> 💡 For MCP Integration goals and statistics, see [MCP Integration Guide](03-mcp-integration.md).
+> For Future Protocol Vision, see [Future Vision](04-future-vision.md).
 
 ---
 

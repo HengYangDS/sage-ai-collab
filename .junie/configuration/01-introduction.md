@@ -28,7 +28,7 @@ and future protocol preparation.
 
 ## 2. Quality Principles
 
-This guide adheres to three core standards aligned with the **信達雅 (Faithfulness-Clarity-Elegance)** philosophy:
+This guide adheres to three core standards aligned with the **信达雅 (Xin-Da-Ya)** philosophy:
 
 | Principle    | Description           | Application                             |
 |:-------------|:----------------------|:----------------------------------------|

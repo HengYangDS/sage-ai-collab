@@ -29,9 +29,9 @@ MAJOR.MINOR.PATCH
 
 | Component      | Version | Last Updated |
 |:---------------|:--------|:-------------|
-| **Schema**     | 1.0     | 2025-01-15   |
-| **MCP Config** | 1.0     | 2025-01-15   |
-| **Guidelines** | 1.0     | 2025-01-15   |
+| **Schema**     | 1.0     | 2025-11-30   |
+| **MCP Config** | 1.0     | 2025-11-30   |
+| **Guidelines** | 1.0     | 2025-11-30   |
 
 ### Version Compatibility Matrix
 
