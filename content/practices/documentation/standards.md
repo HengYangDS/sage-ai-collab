@@ -83,17 +83,22 @@ content/
 | Line count    | > 60      | Add TOC |
 | Heading count | > 3       | Add TOC |
 
-**TOC Format** (inline links preferred):
+**TOC Format** (inline with `·` separator for token efficiency):
 
 ```markdown
 ## Table of Contents
 
-[Section 1](#1-section)
-[Section 2](#2-section)
-[Section 3](#3-section)
+[1. Section](#1-section) · [2. Section](#2-section) · [3. Section](#3-section)
 
 ---
 ```
+
+**Rules**:
+
+- List only H2 sections (not H3 subsections)
+- Use `·` separator between links
+- Include section numbers in link text
+- Anchor format: `#N-section-name` (lowercase, hyphens)
 
 ---
 

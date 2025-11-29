@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Core Philosophy](#1-core-philosophy) · [2. Five Critical Questions](#2-five-critical-questions) · [3. Autonomy Levels](#3-autonomy-levels) · [4. Response Format](#4-response-format) · [5. Key Commands](#5-key-commands) · [6. Next Steps](#6-next-steps)
+
+---
+
 ## 1. Core Philosophy
 
 **信达雅 (Xin-Da-Ya)**: Faithful → Clear → Elegant

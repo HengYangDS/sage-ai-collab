@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Five-Level Hierarchy](#1-five-level-hierarchy) · [2. Implementation Rules](#2-implementation-rules) · [3. Fallback Strategies](#3-fallback-strategies) · [4. Circuit Breaker](#4-circuit-breaker) · [5. Quick Reference](#5-quick-reference)
+
+---
+
 ## 1. Five-Level Hierarchy
 
 | Level  | Name    | Timeout | Scope        | Fallback        |
@@ -87,7 +93,7 @@ timeout:
     layer_load: 2s         # T3
     full_load: 5s          # T4
     analysis: 10s          # T5
-    
+
   fallback:
     strategy: graceful     # graceful | strict | none
     cache_stale_ms: 60000  # Use stale cache up to 60s

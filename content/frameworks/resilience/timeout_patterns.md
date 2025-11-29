@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Core Patterns](#1-core-patterns) · [2. Timeout Pattern](#2-timeout-pattern) · [3. Retry Pattern](#3-retry-pattern) · [4. Circuit Breaker Pattern](#4-circuit-breaker-pattern) · [5. Fallback Pattern](#5-fallback-pattern) · [6. Bulkhead Pattern](#6-bulkhead-pattern) · [7. Combined Pattern](#7-combined-pattern)
+
+---
+
 ## 1. Core Patterns
 
 | Pattern             | Purpose                   | Use Case           |

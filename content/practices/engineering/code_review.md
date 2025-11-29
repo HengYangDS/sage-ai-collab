@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Review Goals](#1-review-goals) · [2. Review Checklist](#2-review-checklist) · [3. Review Process](#3-review-process) · [4. Feedback Guidelines](#4-feedback-guidelines) · [5. Author Responsibilities](#5-author-responsibilities) · [6. Reviewer Responsibilities](#6-reviewer-responsibilities) · [7. Review Size Guidelines](#7-review-size-guidelines)
+
+---
+
 ## 1. Review Goals
 
 | Goal        | Focus                            |

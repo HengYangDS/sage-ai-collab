@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Xin-Da-Ya Framework](#1-xin-da-ya-framework-信达雅) · [2. Shu-Fa-Dao Framework](#2-shu-fa-dao-framework-术法道) · [3. Integration](#3-integration) · [4. Daily Application](#4-daily-application)
+
+---
+
 ## 1. Xin-Da-Ya Framework (信达雅)
 
 Classical translation principles adapted for software and AI collaboration.

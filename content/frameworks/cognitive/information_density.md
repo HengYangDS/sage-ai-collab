@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Density Spectrum](#1-density-spectrum) · [2. Density Techniques](#2-density-techniques) · [3. Context-Based Selection](#3-context-based-selection) · [4. Compression Strategies](#4-compression-strategies) · [5. Quality Balance](#5-quality-balance) · [6. Application Matrix](#6-application-matrix)
+
+---
+
 ## 1. Density Spectrum
 
 | Level  | Density | Use Case             | Example           |

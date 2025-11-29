@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Code Changes](#1-code-changes) · [2. File Operations](#2-file-operations) · [3. Documentation](#3-documentation) · [4. Testing](#4-testing) · [5. Infrastructure](#5-infrastructure) · [6. Decision Matrix](#6-decision-matrix)
+
+---
+
 ## 1. Code Changes
 
 | Change Type       | Level | Rationale           |

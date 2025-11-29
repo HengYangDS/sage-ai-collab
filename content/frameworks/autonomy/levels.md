@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Level Spectrum](#1-level-spectrum) · [2. Level Details](#2-level-details) · [3. Level Selection](#3-level-selection) · [4. Calibration](#4-calibration) · [5. Override Conditions](#5-override-conditions) · [6. Implementation](#6-implementation)
+
+---
+
 ## 1. Level Spectrum
 
 | Level  | Name        | Range   | Behavior                       |

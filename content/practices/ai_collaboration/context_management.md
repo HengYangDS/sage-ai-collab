@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Context Types](#1-context-types) · [2. Context Building](#2-context-building) · [3. Context Efficiency](#3-context-efficiency) · [4. Context Maintenance](#4-context-maintenance) · [5. Context Templates](#5-context-templates) · [6. Best Practices](#6-best-practices)
+
+---
+
 ## 1. Context Types
 
 | Type        | Purpose            | Example                   |

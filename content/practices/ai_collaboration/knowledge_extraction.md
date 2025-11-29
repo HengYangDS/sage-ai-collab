@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Extraction Types](#1-extraction-types) · [2. Extraction Process](#2-extraction-process) · [3. Pattern Extraction](#3-pattern-extraction) · [4. Decision Extraction](#4-decision-extraction) · [5. Learning Extraction](#5-learning-extraction) · [6. Best Practices](#6-best-practices)
+
+---
+
 ## 1. Extraction Types
 
 | Type         | Source             | Output            |

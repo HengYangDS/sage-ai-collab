@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Communication Patterns](#1-communication-patterns) · [2. Execution Patterns](#2-execution-patterns) · [3. Context Patterns](#3-context-patterns) · [4. Feedback Patterns](#4-feedback-patterns) · [5. Anti-Patterns](#5-anti-patterns)
+
+---
+
 ## 1. Communication Patterns
 
 ### 1.1 Request Patterns

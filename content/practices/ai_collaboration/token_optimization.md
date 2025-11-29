@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Core Principles](#1-core-principles) · [2. High-Efficiency Patterns](#2-high-efficiency-patterns) · [3. Content Compression](#3-content-compression) · [4. Anti-Patterns](#4-anti-patterns) · [5. Document Optimization](#5-document-optimization) · [6. Tiered Loading](#6-tiered-loading) · [7. Quick Reference](#7-quick-reference)
+
+---
+
 ## 1. Core Principles
 
 | Principle                 | Application         |

@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. General Principles](#1-general-principles) · [2. Naming Conventions](#2-naming-conventions) · [3. Code Structure](#3-code-structure) · [4. Documentation](#4-documentation) · [5. Error Handling](#5-error-handling) · [6. Quality Checklist](#6-quality-checklist)
+
+---
+
 ## 1. General Principles
 
 | Principle               | Description              |

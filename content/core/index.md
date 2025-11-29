@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Contents](#1-contents) · [2. Philosophy Summary](#2-philosophy-summary) · [3. Quick Reference](#3-quick-reference)
+
+---
+
 ## 1. Contents
 
 | File                 | Purpose                                | Priority |

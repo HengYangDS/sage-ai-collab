@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Core Principles](#1-core-principles) · [2. Exception Hierarchy](#2-exception-hierarchy) · [3. Error Handling Patterns](#3-error-handling-patterns) · [4. Error Context](#4-error-context) · [5. Logging Strategy](#5-logging-strategy) · [6. Recovery Patterns](#6-recovery-patterns) · [7. Anti-Patterns](#7-anti-patterns)
+
+---
+
 ## 1. Core Principles
 
 | Principle          | Description                       |

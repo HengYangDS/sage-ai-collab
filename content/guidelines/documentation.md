@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Documentation Philosophy](#1-documentation-philosophy) · [2. Document Types](#2-document-types) · [3. Structure Standards](#3-structure-standards) · [4. Writing Style](#4-writing-style) · [5. Code Examples](#5-code-examples) · [6. Maintenance](#6-maintenance)
+
+---
+
 ## 1. Documentation Philosophy
 
 | Principle              | Application              |

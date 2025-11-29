@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Chain-of-Thought Reasoning](#1-chain-of-thought-reasoning) · [2. Self-Reflection](#2-self-reflection) · [3. Uncertainty Handling](#3-uncertainty-handling) · [4. Error Recovery](#4-error-recovery) · [5. Knowledge Integration](#5-knowledge-integration) · [6. Metacognitive Checklist](#6-metacognitive-checklist)
+
+---
+
 ## 1. Chain-of-Thought Reasoning
 
 ### 1.1 When to Use
