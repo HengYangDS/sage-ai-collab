@@ -98,7 +98,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/legacy_modernization/context.md` — Scenario context and guidance
+- `.knowledge/scenarios/legacy_modernization/context.md` — Legacy modernization context
+- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental improvement
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
 ---
 
