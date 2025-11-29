@@ -140,4 +140,15 @@ For major decisions, check core + extended + domain angles.
 
 **Golden Rule**: Start with core 10, add extended/domain as needed.
 
+---
+
+## Related
+
+- `.knowledge/frameworks/cognitive/expert_committee.md` — Expert committee pattern
+- `.knowledge/templates/expert_committee.md` — Decision templates
+- `.knowledge/guidelines/quality.md` — Quality assurance guidelines
+- `.knowledge/practices/decisions/autonomy_cases.md` — Autonomy decision cases
+
+---
+
 *Part of SAGE Knowledge Base*

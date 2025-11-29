@@ -237,4 +237,13 @@ builder.export_to_json(output_path)
 
 ---
 
+## Related
+
+- `.knowledge/templates/index.md` — Templates index
+- `.knowledge/templates/postmortem.md` — Incident postmortem template
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md` — Interaction patterns
+- `.knowledge/practices/ai_collaboration/knowledge_capture.md` — Knowledge capture
+
+---
+
 *Template version: 1.0 — Part of SAGE Knowledge Base*

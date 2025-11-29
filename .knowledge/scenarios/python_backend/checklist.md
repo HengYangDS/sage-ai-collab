@@ -71,4 +71,12 @@ tokens: ~300
 
 ---
 
+## Related
+
+- `.knowledge/scenarios/python_backend/context.md` — Python backend context
+- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+
+---
+
 *SAGE Knowledge Base - Python Backend Checklist*

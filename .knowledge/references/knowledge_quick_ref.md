@@ -81,4 +81,13 @@ tokens: ~500
 
 ---
 
-**Full Guide**: `.knowledge/practices/documentation/knowledge_organization.md`
+## Related
+
+- `.knowledge/practices/documentation/knowledge_organization.md` — Full organization guide
+- `.knowledge/index.md` — Knowledge base navigation
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/references/glossary.md` — Terminology glossary
+
+---
+
+*Part of SAGE Knowledge Base*

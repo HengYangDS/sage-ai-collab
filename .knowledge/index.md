@@ -26,13 +26,13 @@ tokens: ~800
 |----------------|---------------|-------------------------------------------|-------|
 | **Core**       | `core/`       | Principles, defaults, quick reference     | 4     |
 | **Guidelines** | `guidelines/` | Code style, engineering, AI collaboration | 15    |
-| **Frameworks** | `frameworks/` | Autonomy, timeout, cognitive patterns     | 23    |
-| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 35    |
+| **Frameworks** | `frameworks/` | Autonomy, timeout, cognitive patterns     | 24    |
+| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 43    |
 | **References** | `references/` | Quick reference guides and checklists     | 4     |
 | **Scenarios**  | `scenarios/`  | Context-specific guides                   | 23    |
 | **Templates**  | `templates/`  | Reusable document templates               | 17    |
 
-**Total**: ~125 knowledge files
+**Total**: ~132 knowledge files
 
 ---
 
@@ -69,7 +69,7 @@ Code style and collaboration standards:
 | `planning.md`         | Planning guidelines           |
 | `success.md`          | Success metrics               |
 
-### 2.3 Frameworks (23 files)
+### 2.3 Frameworks (24 files)
 
 Reusable patterns and strategies across 7 categories:
 
@@ -83,15 +83,15 @@ Reusable patterns and strategies across 7 categories:
 | `resilience/`  | 2     | Timeout patterns, fallbacks      |
 | `security/`    | 5     | Auth, secrets, security checks   |
 
-### 2.4 Practices (35 files)
+### 2.4 Practices (43 files)
 
 Real-world implementation guidance:
 
 | Subdirectory        | Files | Purpose                      |
 |---------------------|-------|------------------------------|
-| `ai_collaboration/` | 7     | Context, session, token mgmt |
+| `ai_collaboration/` | 11    | Context, session, token mgmt |
 | `decisions/`        | 1     | Autonomy case studies        |
-| `documentation/`    | 4     | Knowledge org, standards     |
+| `documentation/`    | 7     | Knowledge org, standards     |
 | `engineering/`      | 23    | API, testing, CI/CD, logging |
 
 ### 2.5 Scenarios (23 files)

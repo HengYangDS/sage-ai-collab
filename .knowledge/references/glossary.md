@@ -44,4 +44,13 @@ tokens: ~200
 
 ---
 
+## Related
+
+- `.knowledge/index.md` — Knowledge base navigation
+- `.knowledge/core/principles.md` — Core philosophy definitions
+- `.knowledge/references/index.md` — References layer index
+- `.knowledge/guidelines/quick_start.md` — Quick start guide
+
+---
+
 *Part of SAGE Knowledge Base*

@@ -78,7 +78,6 @@ def expensive_fn(n): ...
 def process_large(items):
     for item in items:
         yield transform(item)
-
 # Async I/O
 async def read_files(paths):
     return await asyncio.gather(*[read(p) for p in paths])
@@ -86,4 +85,13 @@ async def read_files(paths):
 
 ---
 
-**Full Guide**: `.knowledge/practices/engineering/performance.md`
+## Related
+
+- `.knowledge/practices/engineering/performance.md` — Full performance guide
+- `.knowledge/frameworks/performance/index.md` — Performance framework
+- `.knowledge/frameworks/performance/caching_patterns.md` — Caching strategies
+- `.knowledge/frameworks/performance/profiling_guide.md` — Profiling guide
+
+---
+
+*Part of SAGE Knowledge Base*

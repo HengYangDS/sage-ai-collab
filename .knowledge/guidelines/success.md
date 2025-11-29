@@ -113,4 +113,13 @@ Do → Reflect → Learn → Apply → Do
 
 ---
 
+## Related
+
+- `.knowledge/core/principles.md` — Core philosophy (信达雅 · 术法道)
+- `.knowledge/guidelines/quality.md` — Quality assurance guidelines
+- `.knowledge/frameworks/patterns/decision.md` — Decision quality framework
+- `.knowledge/practices/ai_collaboration/effectiveness_metrics.md` — Effectiveness metrics
+
+---
+
 *Part of SAGE Knowledge Base*
