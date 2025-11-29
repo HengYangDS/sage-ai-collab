@@ -88,7 +88,7 @@ Session Start
 ### Autonomy Levels
 
 | Level | Name                        | Description           | Example Tasks                                        |
-|-------|-----------------------------|-----------------------|------------------------------------------------------|
+|:------|:----------------------------|:----------------------|:-----------------------------------------------------|
 | L1-L2 | Minimal/Low (0-40%)         | Ask before changes    | Breaking changes, new dependencies, critical systems |
 | L3-L4 | Medium/Medium-High (40-80%) | Proceed, report after | Bug fixes, refactoring, routine development ⭐        |
 | L5-L6 | High/Full (80-100%)         | High autonomy         | Formatting, comments, docs, trusted patterns         |
@@ -98,7 +98,7 @@ Session Start
 **Detailed Examples by Level**:
 
 | Level | Example Commands/Actions                                                       |
-|-------|--------------------------------------------------------------------------------|
+|:------|:-------------------------------------------------------------------------------|
 | L1    | `rm -rf`, `DROP TABLE`, adding new external dependencies, API breaking changes |
 | L2    | Database schema changes, modifying CI/CD pipelines, updating auth logic        |
 | L3    | Adding new test files, refactoring single functions, updating error messages   |
@@ -122,7 +122,7 @@ Session Start
 At session end, create records in the designated history directory (typically `.history/`):
 
 | Directory        | Purpose                    |
-|------------------|----------------------------|
+|:-----------------|:---------------------------|
 | `conversations/` | Key decisions and outcomes |
 | `handoffs/`      | Task continuation context  |
 | `current/`       | Active work state          |
@@ -142,7 +142,7 @@ Use these MCP tools to automate session tracking.
 > use manual file creation as the fallback approach (see Session History Management above).
 
 | Tool             | When to Call                                     | Purpose                                  |
-|------------------|--------------------------------------------------|------------------------------------------|
+|:-----------------|:-------------------------------------------------|:-----------------------------------------|
 | `session_start`  | Beginning of significant work (>30 min expected) | Creates session state file               |
 | `session_end`    | Work completed or session ending                 | Creates conversation/handoff record      |
 | `session_status` | Start of new session, or to check state          | Shows active sessions and recent records |
@@ -150,7 +150,7 @@ Use these MCP tools to automate session tracking.
 **Automatic Trigger Rules**:
 
 | Trigger Condition                | Action                                                          |
-|----------------------------------|-----------------------------------------------------------------|
+|:---------------------------------|:----------------------------------------------------------------|
 | Session begins with complex task | Call `session_status()` then `session_start(task, description)` |
 | Important decision made          | Document in current session file                                |
 | Session duration > 30 minutes    | Ensure session tracking is active                               |
@@ -190,7 +190,7 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with multi
 When implementing time-sensitive operations, consider a tiered timeout approach:
 
 | Tier | Duration | Use Case                           |
-|------|----------|------------------------------------|
+|:-----|:---------|:-----------------------------------|
 | T1   | ~100ms   | Cache lookup, in-memory operations |
 | T2   | ~500ms   | Single file read, simple queries   |
 | T3   | ~2s      | Layer/module loading               |
@@ -231,7 +231,7 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 ### Documentation Locations
 
 | Type              | Typical Location |
-|-------------------|------------------|
+|:------------------|:-----------------|
 | User-facing docs  | `docs/`          |
 | API documentation | `docs/api/`      |
 | Design documents  | `docs/design/`   |
@@ -260,7 +260,7 @@ project-root/
 ### Hidden Directories
 
 | Directory   | Purpose                         |
-|-------------|---------------------------------|
+|:------------|:--------------------------------|
 | `.junie/`   | Junie AI configuration          |
 | `.context/` | Project-specific knowledge base |
 | `.history/` | AI session records              |
@@ -291,14 +291,14 @@ This `.junie/` configuration follows the **Thin Layer** principle with clear sep
 ### Root Files (🔄 Generic)
 
 | File            | Purpose                                    |
-|-----------------|--------------------------------------------|
+|:----------------|:-------------------------------------------|
 | `README.md`     | Directory documentation                    |
 | `guidelines.md` | Generic AI collaboration rules (this file) |
 
 ### Root Directories
 
 | Directory  | Type | Purpose                                     |
-|------------|------|---------------------------------------------|
+|:-----------|:-----|:--------------------------------------------|
 | `generic/` | 🔄   | Generic settings (config.yaml, quickref.md) |
 | `mcp/`     | 🔄   | MCP server configuration                    |
 | `schema/`  | 🔄   | JSON Schema validation files                |
@@ -308,7 +308,7 @@ This `.junie/` configuration follows the **Thin Layer** principle with clear sep
 ### Project Directory (`project/`) — 📌 Customize
 
 | File          | Purpose                          |
-|---------------|----------------------------------|
+|:--------------|:---------------------------------|
 | `config.yaml` | Project variables definition     |
 | `quickref.md` | Project-specific quick reference |
 
