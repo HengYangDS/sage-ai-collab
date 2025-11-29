@@ -1,7 +1,12 @@
 # Feature Flag Patterns
 
-> **Load Time**: On-demand (~100 tokens)  
-> **Purpose**: Feature flag design principles and best practices
+> Feature flag design principles and best practices
+
+---
+
+## Table of Contents
+
+[1. Overview](#1-overview) · [2. Flag Types](#2-flag-types) · [3. Naming Conventions](#3-naming-conventions) · [4. Configuration Structure](#4-configuration-structure) · [5. Code Implementation](#5-code-implementation) · [6. Gradual Rollout](#6-gradual-rollout) · [7. Lifecycle Management](#7-lifecycle-management) · [8. Monitoring & Alerting](#8-monitoring--alerting) · [9. Best Practices](#9-best-practices) · [10. Quick Checklist](#10-quick-checklist)
 
 ---
 

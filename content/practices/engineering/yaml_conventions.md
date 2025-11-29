@@ -1,7 +1,12 @@
 # YAML Configuration Conventions
 
-> **Load Time**: On-demand (~100 tokens)  
-> **Purpose**: Universal standards for writing YAML configuration files
+> Universal standards for writing YAML configuration files
+
+---
+
+## Table of Contents
+
+[1. File Structure](#1-file-structure) · [2. Naming Conventions](#2-naming-conventions) · [3. Comment Standards](#3-comment-standards) · [4. Hierarchy Structure](#4-hierarchy-structure) · [5. List Formats](#5-list-formats) · [6. Multi-line Strings](#6-multi-line-strings) · [7. Environment Variables](#7-environment-variables) · [8. File Organization](#8-file-organization) · [9. Quick Checklist](#9-quick-checklist)
 
 ---
 

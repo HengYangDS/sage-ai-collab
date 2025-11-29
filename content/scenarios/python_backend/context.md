@@ -1,11 +1,16 @@
 # Python Backend Scenario Context
 
-> **Load Time**: Scenario-specific (~120 tokens)  
-> **Purpose**: Pre-configured context for Python backend development
+> Pre-configured context for Python backend development
 
 ---
 
-## Scenario Profile
+## Table of Contents
+
+[1. Scenario Profile](#1-scenario-profile) · [2. Relevant Knowledge](#2-relevant-knowledge) · [3. Project Structure](#3-project-structure-fastapi) · [4. Common Patterns](#4-common-patterns) · [5. Testing Patterns](#5-testing-patterns) · [6. Configuration](#6-configuration) · [7. Common Tasks](#7-common-tasks) · [8. Autonomy Calibration](#8-autonomy-calibration) · [9. Quick Commands](#9-quick-commands)
+
+---
+
+## 1. Scenario Profile
 
 ```yaml
 scenario: python_backend
@@ -17,7 +22,7 @@ autonomy_default: L2
 
 ---
 
-## Relevant Knowledge
+## 2. Relevant Knowledge
 
 | Priority      | Files                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------|
@@ -26,7 +31,7 @@ autonomy_default: L2
 
 ---
 
-## Project Structure (FastAPI)
+## 3. Project Structure (FastAPI)
 
 | Directory               | Purpose                  |
 |-------------------------|--------------------------|
@@ -43,9 +48,9 @@ autonomy_default: L2
 
 ---
 
-## Common Patterns
+## 4. Common Patterns
 
-### Endpoint Pattern
+### 4.1 Endpoint Pattern
 
 ```python
 @router.get("/{id}", response_model=UserResponse)
@@ -56,7 +61,7 @@ async def get_user(id: str, service: UserService = Depends(get_service)) -> User
     return user
 ```
 
-### Service Layer
+### 4.2 Service Layer
 
 ```python
 class UserService:
@@ -69,7 +74,7 @@ class UserService:
         return await self._repo.save(User(email=data.email, password_hash=hash(data.password)))
 ```
 
-### Repository
+### 4.3 Repository
 
 ```python
 class UserRepository:
@@ -83,9 +88,9 @@ class UserRepository:
 
 ---
 
-## Testing Patterns
+## 5. Testing Patterns
 
-### Fixtures
+### 5.1 Fixtures
 
 ```python
 @pytest.fixture
@@ -99,7 +104,7 @@ def user_factory():
     return lambda **kw: User(**{"email": "test@example.com", "name": "Test", **kw})
 ```
 
-### API Test
+### 5.2 API Test
 
 ```python
 @pytest.mark.asyncio
@@ -111,7 +116,7 @@ async def test_create_user(client: AsyncClient):
 
 ---
 
-## Configuration
+## 6. Configuration
 
 ```python
 class Settings(BaseSettings):

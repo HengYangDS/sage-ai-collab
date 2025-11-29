@@ -1,12 +1,16 @@
 # Scenario Presets
 
-> **Load Time**: On-demand (~30 tokens)  
-> **Budget**: ~500 tokens  
-> **Purpose**: Context-specific knowledge presets
+> Context-specific knowledge presets for common development scenarios
 
 ---
 
-## Available Scenarios
+## Table of Contents
+
+[1. Available Scenarios](#1-available-scenarios) · [2. Python Backend Scenario](#2-python-backend-scenario) · [3. Scenario Structure](#3-scenario-structure) · [4. Creating New Scenarios](#4-creating-new-scenarios)
+
+---
+
+## 1. Available Scenarios
 
 | Scenario           | Path              | Tokens | Context                        |
 |--------------------|-------------------|--------|--------------------------------|
@@ -14,7 +18,7 @@
 
 ---
 
-## Python Backend Scenario
+## 2. Python Backend Scenario
 
 **Path**: `python_backend/context.md`
 
@@ -42,7 +46,7 @@
 
 ---
 
-## Scenario Structure
+## 3. Scenario Structure
 
 Each scenario contains:
 
@@ -80,7 +84,7 @@ scenarios/[name]/
 
 ---
 
-## Creating New Scenarios
+## 4. Creating New Scenarios
 
 1. Create directory: `scenarios/[name]/`
 2. Add `context.md` with scenario context
@@ -105,4 +109,4 @@ scenarios/[name]/
 
 ---
 
-*Scenarios layer — Context-aware knowledge loading*
+*Part of SAGE Knowledge Base*

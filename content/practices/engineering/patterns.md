@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+[1. Pattern Quick Reference](#1-pattern-quick-reference) · [2. Repository Pattern](#2-repository-pattern) · [3. Service Layer Pattern](#3-service-layer-pattern) · [4. Factory Pattern](#4-factory-pattern) · [5. Strategy Pattern](#5-strategy-pattern) · [6. Observer Pattern](#6-observer-pattern) · [7. Anti-Patterns](#7-anti-patterns)
+
+---
+
 ## 1. Pattern Quick Reference
 
 | Pattern         | Purpose                    | Use When               |
