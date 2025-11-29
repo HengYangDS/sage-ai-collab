@@ -4,7 +4,23 @@
 
 ---
 
-## Basic Patterns
+## Table of Contents
+
+1. [Basic Patterns](#1-basic-patterns)
+2. [Character Classes](#2-character-classes)
+3. [Special Sequences](#3-special-sequences)
+4. [Security Pattern](#4-security-pattern)
+5. [Common Patterns](#5-common-patterns)
+6. [Pattern Templates](#6-pattern-templates)
+7. [Examples by Category](#7-examples-by-category)
+8. [Testing Patterns](#8-testing-patterns)
+9. [Common Mistakes](#9-common-mistakes)
+10. [Best Practices](#10-best-practices)
+11. [Related](#11-related)
+
+---
+
+## 1. Basic Patterns
 
 | Pattern | Meaning              | Example | Matches               |
 |:--------|:---------------------|:--------|:----------------------|
@@ -17,7 +33,7 @@
 
 ---
 
-## Character Classes
+## 2. Character Classes
 
 | Pattern  | Meaning                          | Example                    |
 |:---------|:---------------------------------|:---------------------------|
@@ -30,7 +46,7 @@
 
 ---
 
-## Special Sequences
+## 3. Special Sequences
 
 | Pattern   | Meaning                   | Usage                               |
 |:----------|:--------------------------|:------------------------------------|
@@ -39,7 +55,7 @@
 
 ---
 
-## Security Pattern
+## 4. Security Pattern
 
 ### `[^\s;&|<>@$]*`
 
@@ -66,7 +82,7 @@ This is the **critical security pattern** used in all Terminal rules. It matches
 
 ---
 
-## Common Patterns
+## 5. Common Patterns
 
 ### Exact Command Match
 
@@ -113,7 +129,7 @@ Allows command with optional parts:
 
 ---
 
-## Pattern Templates
+## 6. Pattern Templates
 
 ### Template 1: Exact Match
 
@@ -149,7 +165,7 @@ Use for: Commands with specific allowed subcommands
 
 ---
 
-## Examples by Category
+## 7. Examples by Category
 
 ### Git Commands
 
@@ -196,7 +212,7 @@ Use for: Commands with specific allowed subcommands
 
 ---
 
-## Testing Patterns
+## 8. Testing Patterns
 
 ### Online Tools
 
@@ -230,7 +246,7 @@ Should NOT MATCH:
 
 ---
 
-## Common Mistakes
+## 9. Common Mistakes
 
 | Mistake                    | Problem                       | Fix                          |
 |:---------------------------|:------------------------------|:-----------------------------|
@@ -242,7 +258,7 @@ Should NOT MATCH:
 
 ---
 
-## Best Practices
+## 10. Best Practices
 
 ### Do's ✅
 
@@ -262,7 +278,7 @@ Should NOT MATCH:
 
 ---
 
-## Related
+## 11. Related
 
 - [Action Allowlist](../guides/action-allowlist.md) — Configuration guide
 - [Windows Rules](rules-windows.md) — Complete Windows rule list

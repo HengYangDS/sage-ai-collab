@@ -113,7 +113,7 @@ Phase 4: Completion
 
 ---
 
-## Migration Procedures
+## 4. Migration Procedures
 
 ### Patch Update (x.x.1)
 
@@ -199,7 +199,7 @@ git merge migrate-to-v2
 
 ---
 
-## Rollback Procedures
+## 5. Rollback Procedures
 
 ### Quick Rollback
 
@@ -253,7 +253,7 @@ cp -r .junie.backup-YYYYMMDD .junie
 
 ---
 
-## Version Checking
+## 6. Version Checking
 
 ### Check Current Version
 
@@ -282,7 +282,7 @@ git diff origin/main -- .junie/generic/config.yaml | grep schema_version
 
 ---
 
-## Migration Checklist
+## 7. Migration Checklist
 
 ### Pre-Migration
 
@@ -316,7 +316,7 @@ git diff origin/main -- .junie/generic/config.yaml | grep schema_version
 
 ---
 
-## Related
+## 8. Related
 
 - [Maintenance](maintenance.md) — Daily operations
 - [Recovery](recovery.md) — Error recovery

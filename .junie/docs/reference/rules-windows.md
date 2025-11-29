@@ -4,7 +4,18 @@
 
 ---
 
-## Quick Setup
+## Table of Contents
+
+1. [Quick Setup](#1-quick-setup)
+2. [Cross-Platform Rules](#2-cross-platform-rules-57-rules)
+3. [Windows-Specific Rules](#3-windows-specific-rules-11-rules)
+4. [All Rules](#4-all-rules-copy-paste-block)
+5. [Summary](#5-summary)
+6. [Related](#6-related)
+
+---
+
+## 1. Quick Setup
 
 1. Open `Settings | Tools | Junie | Action Allowlist`
 2. Copy rules from below
@@ -13,7 +24,7 @@
 
 ---
 
-## Cross-Platform Rules (57 Rules)
+## 2. Cross-Platform Rules (57 Rules)
 
 These rules work on all platforms.
 
@@ -106,7 +117,7 @@ These rules work on all platforms.
 
 ---
 
-## Windows-Specific Rules (11 Rules)
+## 3. Windows-Specific Rules (11 Rules)
 
 These rules are for Windows PowerShell.
 
@@ -128,7 +139,7 @@ These rules are for Windows PowerShell.
 
 ---
 
-## All Rules (Copy-Paste Block)
+## 4. All Rules (Copy-Paste Block)
 
 Copy this entire block for quick setup:
 
@@ -205,7 +216,7 @@ Copy this entire block for quick setup:
 
 ---
 
-## Summary
+## 5. Summary
 
 | Category         | Count  |
 |:-----------------|:-------|
@@ -215,7 +226,7 @@ Copy this entire block for quick setup:
 
 ---
 
-## Related
+## 6. Related
 
 - [Unix Rules](rules-unix.md) — macOS/Linux rules
 - [Regex Reference](regex.md) — Pattern syntax

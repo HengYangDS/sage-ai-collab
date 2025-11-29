@@ -4,7 +4,22 @@
 
 ---
 
-## AI Agent Protocol Ecosystem
+## Table of Contents
+
+1. [AI Agent Protocol Ecosystem](#1-ai-agent-protocol-ecosystem)
+2. [Protocol Ecosystem Diagram](#2-protocol-ecosystem-diagram)
+3. [MCP Current Capabilities](#3-mcp-current-capabilities)
+4. [A2A Protocol Integration Vision](#4-a2a-protocol-integration-vision)
+5. [ACP Protocol Evaluation](#5-acp-protocol-evaluation)
+6. [Protocol Evolution Timeline](#6-protocol-evolution-timeline)
+7. [Practical Recommendations](#7-practical-recommendations)
+8. [Summary](#8-summary)
+9. [Reference Resources](#9-reference-resources)
+10. [Related](#10-related)
+
+---
+
+## 1. AI Agent Protocol Ecosystem
 
 The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
@@ -39,7 +54,7 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ---
 
-## Protocol Ecosystem Diagram
+## 2. Protocol Ecosystem Diagram
 
 ```
 +=======================================================================+
@@ -101,7 +116,7 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ---
 
-## MCP Current Capabilities
+## 3. MCP Current Capabilities
 
 ### What MCP Provides Today
 
@@ -123,7 +138,7 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ---
 
-## A2A Protocol Integration Vision
+## 4. A2A Protocol Integration Vision
 
 ### What A2A Will Enable
 
@@ -175,7 +190,7 @@ User Request: "Review and deploy this feature"
 
 ---
 
-## ACP Protocol Evaluation
+## 5. ACP Protocol Evaluation
 
 ### What ACP Addresses
 
@@ -200,7 +215,7 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-## Protocol Evolution Timeline
+## 6. Protocol Evolution Timeline
 
 ### Current State (2024-2025)
 
@@ -237,7 +252,7 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-## Practical Recommendations
+## 7. Practical Recommendations
 
 ### For Today
 
@@ -258,7 +273,7 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-## Summary
+## 8. Summary
 
 ### Key Insights
 

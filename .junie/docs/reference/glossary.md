@@ -4,7 +4,20 @@
 
 ---
 
-## Core Concepts
+## Table of Contents
+
+1. [Core Concepts](#1-core-concepts)
+2. [Design Philosophy](#2-design-philosophy)
+3. [MCP Terminology](#3-mcp-terminology)
+4. [Configuration Terms](#4-configuration-terms)
+5. [Collaboration Terms](#5-collaboration-terms)
+6. [Regex Terminology](#6-regex-terminology)
+7. [File Paths](#7-file-paths)
+8. [Related](#8-related)
+
+---
+
+## 1. Core Concepts
 
 | Term                 | Definition                                                                     |
 |:---------------------|:-------------------------------------------------------------------------------|
@@ -16,7 +29,7 @@
 
 ---
 
-## Design Philosophy
+## 2. Design Philosophy
 
 ### 信达雅 (Xin-Da-Ya)
 
@@ -32,7 +45,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## MCP Terminology
+## 3. MCP Terminology
 
 | Term           | Definition                                                       |
 |:---------------|:-----------------------------------------------------------------|
@@ -53,7 +66,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## Configuration Terms
+## 4. Configuration Terms
 
 | Term               | Definition                                                                       |
 |:-------------------|:---------------------------------------------------------------------------------|
@@ -71,7 +84,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## Collaboration Terms
+## 5. Collaboration Terms
 
 ### Autonomy Levels
 
@@ -104,7 +117,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## Regex Terminology
+## 6. Regex Terminology
 
 | Term                | Definition                                         |
 |:--------------------|:---------------------------------------------------|
@@ -116,7 +129,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## File Paths
+## 7. File Paths
 
 | Path        | Purpose                                    |
 |:------------|:-------------------------------------------|
@@ -127,7 +140,7 @@ The guiding design philosophy for this configuration system, derived from Chines
 
 ---
 
-## Related
+## 8. Related
 
 - [Quick Start](../guides/quick-start.md) — Get started guide
 - [Action Allowlist](../guides/action-allowlist.md) — Terminal rules

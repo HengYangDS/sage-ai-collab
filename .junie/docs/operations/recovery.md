@@ -4,7 +4,20 @@
 
 ---
 
-## Quick Reference
+## Table of Contents
+
+1. [Quick Reference](#1-quick-reference)
+2. [MCP Recovery](#2-mcp-recovery)
+3. [Configuration Recovery](#3-configuration-recovery)
+4. [IDE Recovery](#4-ide-recovery)
+5. [Full Reset Procedure](#5-full-reset-procedure)
+6. [Prevention Strategies](#6-prevention-strategies)
+7. [Recovery Checklist](#7-recovery-checklist)
+8. [Related](#8-related)
+
+---
+
+## 1. Quick Reference
 
 ### Recovery Decision Tree
 
@@ -35,7 +48,7 @@ Issue Detected
 
 ---
 
-## MCP Recovery
+## 2. MCP Recovery
 
 ### Server Won't Start
 
@@ -122,7 +135,7 @@ Remove-Item -Recurse "$env:LOCALAPPDATA\npm-cache\_npx"  # Windows
 
 ---
 
-## Configuration Recovery
+## 3. Configuration Recovery
 
 ### Corrupted JSON/YAML
 
@@ -184,7 +197,7 @@ grep "schema_version" .junie/project/config.yaml
 
 ---
 
-## IDE Recovery
+## 4. IDE Recovery
 
 ### Junie Plugin Not Responding
 
@@ -243,7 +256,7 @@ grep "schema_version" .junie/project/config.yaml
 
 ---
 
-## Full Reset Procedure
+## 5. Full Reset Procedure
 
 When all else fails, perform a complete reset:
 
@@ -322,7 +335,7 @@ pytest tests/tools/test_junie_config.py -v
 
 ---
 
-## Prevention Strategies
+## 6. Prevention Strategies
 
 ### Regular Backups
 
@@ -349,7 +362,7 @@ pytest tests/tools/test_junie_config.py -v --tb=short
 
 ---
 
-## Recovery Checklist
+## 7. Recovery Checklist
 
 ### Post-Recovery Verification
 
@@ -373,7 +386,7 @@ After recovery, document:
 
 ---
 
-## Related
+## 8. Related
 
 - [Maintenance](maintenance.md) — Regular operations
 - [Migration](migration.md) — Version updates
