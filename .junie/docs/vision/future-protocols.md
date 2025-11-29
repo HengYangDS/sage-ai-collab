@@ -290,7 +290,7 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-## Reference Resources
+## 9. Reference Resources
 
 ### Official Documentation
 
@@ -307,7 +307,7 @@ For Junie, ACP is **lower priority** because:
 
 ---
 
-## Related
+## 10. Related
 
 - [MCP Overview](../mcp/overview.md) — Current MCP architecture
 - [MCP Configuration](../mcp/configuration.md) — Server setup

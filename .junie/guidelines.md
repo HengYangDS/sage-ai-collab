@@ -7,13 +7,14 @@
 ## Table of Contents
 
 - [1. About This File](#1-about-this-file)
-- [2. AI Collaboration Rules](#2-ai-collaboration-rules)
-- [3. Timeout Hierarchy](#3-timeout-hierarchy)
-- [4. Coding Standards](#4-coding-standards)
-- [5. Documentation Standards](#5-documentation-standards)
-- [6. Directory Structure](#6-directory-structure)
-- [7. References](#7-references)
-- [8. Template Information](#8-template-information)
+- [2. AI Reading Order](#2-ai-reading-order)
+- [3. AI Collaboration Rules](#3-ai-collaboration-rules)
+- [4. Timeout Hierarchy](#4-timeout-hierarchy)
+- [5. Coding Standards](#5-coding-standards)
+- [6. Documentation Standards](#6-documentation-standards)
+- [7. Directory Structure](#7-directory-structure)
+- [8. References](#8-references)
+- [9. Template Information](#9-template-information)
 
 ---
 
@@ -34,7 +35,55 @@ Generic configuration files are located in:
 
 ---
 
-## 2. AI Collaboration Rules
+## 2. AI Reading Order
+
+When starting a new session, load files in this priority order:
+
+### Priority 1: Essential (Always Load)
+
+| File                  | Purpose                        | When          |
+|:----------------------|:-------------------------------|:--------------|
+| `guidelines.md`       | Core AI rules, autonomy levels | Every session |
+| `project/config.yaml` | Project identity, tech stack   | Every session |
+
+### Priority 2: Context (Load as Needed)
+
+| File                  | Purpose                   | When             |
+|:----------------------|:--------------------------|:-----------------|
+| `project/quickref.md` | Project-specific patterns | Complex tasks    |
+| `generic/quickref.md` | Quick lookup card         | Reference needed |
+| `mcp/mcp.json`        | MCP server configuration  | MCP operations   |
+
+### Priority 3: Reference (On Demand)
+
+| File               | Purpose             | When                |
+|:-------------------|:--------------------|:--------------------|
+| `docs/README.md`   | Documentation index | Finding docs        |
+| `docs/guides/*`    | How-to guides       | Specific guidance   |
+| `docs/mcp/*`       | MCP documentation   | MCP troubleshooting |
+| `docs/reference/*` | Technical reference | Detailed lookup     |
+
+### Loading Strategy
+
+```
+Session Start
+    │
+    ├─► Load guidelines.md (this file)
+    │
+    ├─► Load project/config.yaml
+    │
+    ├─► Check task complexity
+    │       │
+    │       ├─► Simple task → Proceed
+    │       │
+    │       └─► Complex task → Load quickref.md files
+    │
+    └─► MCP needed? → Load mcp/mcp.json
+```
+
+---
+
+## 3. AI Collaboration Rules
 
 ### Autonomy Levels
 
@@ -136,7 +185,7 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with multi
 
 ---
 
-## 3. Timeout Hierarchy
+## 4. Timeout Hierarchy
 
 When implementing time-sensitive operations, consider a tiered timeout approach:
 
@@ -152,7 +201,7 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 
 ---
 
-## 4. Coding Standards
+## 5. Coding Standards
 
 ### General Principles
 
@@ -170,7 +219,7 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 
 ---
 
-## 5. Documentation Standards
+## 6. Documentation Standards
 
 ### Key Principles
 
@@ -191,7 +240,7 @@ When implementing time-sensitive operations, consider a tiered timeout approach:
 
 ---
 
-## 6. Directory Structure
+## 7. Directory Structure
 
 A well-organized project typically includes:
 
@@ -219,7 +268,7 @@ project-root/
 
 ---
 
-## 7. References
+## 8. References
 
 For project-specific information, see:
 
@@ -235,7 +284,7 @@ For generic configuration, see:
 
 ---
 
-## 8. Template Information
+## 9. Template Information
 
 This `.junie/` configuration follows the **Thin Layer** principle with clear separation:
 
