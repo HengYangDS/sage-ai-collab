@@ -309,10 +309,10 @@ metrics:
 
 ## Related
 
-- `guidelines/engineering.md` — Engineering practices
-- `practices/engineering/incremental_improvement.md` — Incremental approach
-- `practices/engineering/testing_strategy.md` — Testing practices
-- `frameworks/patterns/decision.md` — Decision framework
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental approach
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing practices
+- `.knowledge/frameworks/patterns/decision.md` — Decision framework
 
 ---
 

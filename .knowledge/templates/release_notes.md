@@ -304,8 +304,8 @@ performance:
 
 ## Related
 
-- `templates/adr.md` — Architecture Decision Record
-- `practices/engineering/git_workflow.md` — Release process
+- `.knowledge/templates/adr.md` — Architecture Decision Record
+- `.knowledge/practices/engineering/git_workflow.md` — Release process
 - `CHANGELOG.md` — Project changelog
 
 ---

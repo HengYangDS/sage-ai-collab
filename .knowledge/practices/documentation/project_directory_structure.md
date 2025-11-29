@@ -230,8 +230,8 @@ Is this an intermediate/generated file?
 
 ## Related
 
-- `knowledge_organization.md` — Knowledge content layer architecture
-- `documentation_standards.md` — Documentation format standards (SSOT)
+- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge content layer architecture
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation format standards (SSOT)
 - `.knowledge/frameworks/design/axioms.md` — Design principles (MECE, SSOT)
 
 ---

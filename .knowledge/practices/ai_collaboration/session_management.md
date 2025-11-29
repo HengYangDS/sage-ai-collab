@@ -315,9 +315,9 @@ git log --oneline -10
 
 ## Related
 
-- `templates/session_state.md` — Session state template
-- `templates/task_handoff.md` — Handoff template
-- `practices/ai_collaboration/context_management.md` — Context strategies
+- `.knowledge/templates/session_state.md` — Session state template
+- `.knowledge/templates/task_handoff.md` — Handoff template
+- `.knowledge/practices/ai_collaboration/context_management.md` — Context strategies
 - `.context/intelligence/patterns.md` — AI collaboration patterns
 
 ---

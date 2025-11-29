@@ -275,8 +275,8 @@ sage serve --port 8081
 ## Related
 
 - `docs/guides/troubleshooting.md` — Main troubleshooting guide
-- `templates/runbook.md` — Operational runbook template
-- `templates/postmortem.md` — Incident postmortem template
+- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/templates/postmortem.md` — Incident postmortem template
 
 ---
 

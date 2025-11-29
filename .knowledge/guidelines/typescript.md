@@ -550,9 +550,9 @@ mockFetch.mockResolvedValue({id: '1', name: 'Test'});
 
 ## Related
 
-- `guidelines/code_style.md` — General code style
-- `practices/engineering/testing_strategy.md` — Testing practices
-- `scenarios/typescript_frontend/context.md` — Frontend scenario
+- `.knowledge/guidelines/code_style.md` — General code style
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing practices
+- `.knowledge/scenarios/typescript_frontend/context.md` — Frontend scenario
 
 ---
 

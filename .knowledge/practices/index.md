@@ -88,9 +88,9 @@
 
 ## Related
 
-- `guidelines/index.md` — Guidelines reference
-- `frameworks/index.md` — Conceptual frameworks
-- `templates/index.md` — Document templates
+- `.knowledge/guidelines/index.md` — Guidelines reference
+- `.knowledge/frameworks/index.md` — Conceptual frameworks
+- `.knowledge/templates/index.md` — Document templates
 
 ---
 

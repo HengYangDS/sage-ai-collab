@@ -499,9 +499,9 @@ result = session.execute(
 
 ## Related
 
-- `guidelines/engineering.md` — Engineering practices
-- `practices/engineering/api_design.md` — API patterns
-- `guidelines/security.md` — Security guidelines
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/api_design.md` — API patterns
+- `.knowledge/guidelines/security.md` — Security guidelines
 
 ---
 

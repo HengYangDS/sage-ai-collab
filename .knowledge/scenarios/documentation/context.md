@@ -299,10 +299,10 @@ def process_data(
 
 ## Related
 
-- `guidelines/documentation.md` — Documentation guidelines
-- `practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
-- `practices/documentation/knowledge_organization.md` — Knowledge organization
-- `frameworks/cognitive/information_density.md` — Information density
+- `.knowledge/guidelines/documentation.md` — Documentation guidelines
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge organization
+- `.knowledge/frameworks/cognitive/information_density.md` — Information density
 
 ---
 

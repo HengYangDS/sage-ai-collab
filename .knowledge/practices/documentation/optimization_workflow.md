@@ -169,8 +169,8 @@
 
 ## Related
 
-- `documentation_standards.md` — Documentation format standards (SSOT)
-- `knowledge_organization.md` — Knowledge hierarchy patterns
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation format standards (SSOT)
+- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge hierarchy patterns
 - `.knowledge/guidelines/documentation.md` — Documentation guidelines
 
 ---

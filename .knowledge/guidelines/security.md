@@ -572,9 +572,9 @@ def secure_temp_file(suffix: str = ".tmp"):
 
 ## Related
 
-- `guidelines/engineering.md` — Engineering practices
-- `practices/engineering/error_handling.md` — Error handling patterns
-- `practices/engineering/logging.md` — Logging practices
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/logging.md` — Logging practices
 - `config/core/security.yaml` — Security configuration
 
 ---

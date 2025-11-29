@@ -72,9 +72,9 @@
 
 ## Related
 
-- `core/index.md` — Core principles
-- `guidelines/index.md` — Practical guidelines
-- `practices/index.md` — Implementation practices
+- `.knowledge/core/index.md` — Core principles
+- `.knowledge/guidelines/index.md` — Practical guidelines
+- `.knowledge/practices/index.md` — Implementation practices
 
 ---
 

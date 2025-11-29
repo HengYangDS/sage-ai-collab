@@ -34,6 +34,9 @@
 | **Release Notes**         | `release_notes.md`         | ~350   | Software release documentation     |
 | **Meeting Notes**         | `meeting_notes.md`         | ~300   | Meeting records and action items   |
 | **Case Study**            | `case_study.md`            | ~230   | Problem-solving case documentation |
+| **Convention**            | `convention.md`            | ~80    | Code/project convention template   |
+| **Guide**                 | `guide.md`                 | ~80    | Step-by-step guide template        |
+| **Practice**              | `practice.md`              | ~75    | Best practice pattern template     |
 
 ---
 
@@ -212,9 +215,9 @@ All templates follow this structure:
 
 ## Related
 
-- `practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
-- `frameworks/cognitive/expert_committee.md` — Expert committee framework
-- `guidelines/documentation.md` — Documentation guidelines
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/frameworks/cognitive/expert_committee.md` — Expert committee framework
+- `.knowledge/guidelines/documentation.md` — Documentation guidelines
 
 ---
 

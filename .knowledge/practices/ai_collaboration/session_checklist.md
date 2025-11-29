@@ -151,8 +151,8 @@ SESSION END
 
 ## Related
 
-- `session_management.md` — Full session management practices
-- `context_management.md` — Context preservation strategies
+- `.knowledge/practices/ai_collaboration/session_management.md` — Full session management practices
+- `.knowledge/practices/ai_collaboration/context_management.md` — Context preservation strategies
 - `.knowledge/templates/conversation_record.md` — Conversation template
 - `.knowledge/templates/task_handoff.md` — Handoff template
 - `.knowledge/templates/session_state.md` — Session state template

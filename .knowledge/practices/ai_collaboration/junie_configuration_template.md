@@ -437,10 +437,10 @@ mcp:
 
 ## Related Documents
 
-- `session_management.md` — Session history practices
-- `interaction_patterns.md` — AI interaction patterns
-- `context_management.md` — Context loading strategies
-- `workflow.md` — AI collaboration workflow
+- `.knowledge/practices/ai_collaboration/session_management.md` — Session history practices
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md` — AI interaction patterns
+- `.knowledge/practices/ai_collaboration/context_management.md` — Context loading strategies
+- `.knowledge/practices/ai_collaboration/workflow.md` — AI collaboration workflow
 
 ---
 

@@ -310,10 +310,10 @@ sage search "new topic"
 
 ## Related
 
-- `practices/documentation/knowledge_organization.md` — Organization patterns
-- `practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
-- `practices/ai_collaboration/knowledge_extraction.md` — Extraction techniques
-- `frameworks/design/` — Design patterns
+- `.knowledge/practices/documentation/knowledge_organization.md` — Organization patterns
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/practices/ai_collaboration/knowledge_capture.md` — Extraction techniques
+- `.knowledge/frameworks/design/index.md` — Design patterns
 
 ---
 

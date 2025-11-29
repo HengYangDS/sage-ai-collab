@@ -390,10 +390,10 @@ validator = (
 
 ## Related
 
-- `guidelines/python.md` — Python guidelines
-- `practices/engineering/error_handling.md` — Error handling
-- `practices/engineering/logging.md` — Logging practices
-- `frameworks/resilience/timeout_patterns.md` — Timeout patterns
+- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/logging.md` — Logging practices
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

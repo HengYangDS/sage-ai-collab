@@ -134,8 +134,8 @@
 
 ## Related
 
-- `token_optimization.md` — Token efficiency
-- `workflow.md` — Collaboration workflows
+- `.knowledge/practices/ai_collaboration/token_optimization.md` — Token efficiency
+- `.knowledge/practices/ai_collaboration/workflow.md` — Collaboration workflows
 
 ---
 

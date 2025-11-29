@@ -718,8 +718,8 @@ spinner $!
 
 ## Related
 
-- `guidelines/code_style.md` — General code style
-- `practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/guidelines/code_style.md` — General code style
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
 ---
 

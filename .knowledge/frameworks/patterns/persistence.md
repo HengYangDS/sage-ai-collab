@@ -131,8 +131,8 @@ def cleanup(store: DataStore, policy: RetentionPolicy):
 
 ## Related
 
-- `resilience/timeout_patterns.md` — Timeout handling
-- `practices/engineering/patterns.md` — Engineering patterns
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.knowledge/practices/engineering/patterns.md` — Engineering patterns
 
 ---
 

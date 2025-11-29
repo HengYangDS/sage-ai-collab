@@ -267,9 +267,9 @@
 
 ## Related
 
-- `templates/runbook.md` — Operational runbook template
-- `practices/engineering/error_handling.md` — Error handling patterns
-- `frameworks/resilience/timeout_patterns.md` — Resilience patterns
+- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
 
 ---
 

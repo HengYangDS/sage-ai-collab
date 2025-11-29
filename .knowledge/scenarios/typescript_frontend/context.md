@@ -294,10 +294,10 @@ describe('useFetch', () => {
 
 ## Related
 
-- `guidelines/code_style.md` — Code style guidelines
-- `practices/engineering/patterns.md` — Design patterns
-- `practices/engineering/testing_strategy.md` — Testing strategies
-- `frameworks/autonomy/levels.md` — Autonomy framework
+- `.knowledge/guidelines/code_style.md` — Code style guidelines
+- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

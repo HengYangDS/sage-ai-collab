@@ -424,10 +424,10 @@ groups:
 
 ## Related
 
-- `templates/runbook.md` — Operational runbook template
-- `templates/postmortem.md` — Incident postmortem template
-- `practices/engineering/error_handling.md` — Error handling
-- `frameworks/resilience/timeout_patterns.md` — Resilience patterns
+- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/templates/postmortem.md` — Incident postmortem template
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
 
 ---
 

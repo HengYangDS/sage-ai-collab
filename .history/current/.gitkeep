@@ -1,3 +1,0 @@
-# This file ensures the directory is tracked by git even when empty
-# Store session state files here: session-YYYYMMDD-HHMM.md
-# See: content/templates/session_state.md

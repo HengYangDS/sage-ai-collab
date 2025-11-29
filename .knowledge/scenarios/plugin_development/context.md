@@ -437,8 +437,8 @@ class MyPlugin(PluginBase):
 
 - `docs/design/05-plugin-memory.md` — Plugin system design
 - `.context/decisions/ADR-0008-plugin-system.md` — Architecture decision
-- `practices/engineering/patterns.md` — Design patterns
-- `practices/engineering/testing_strategy.md` — Testing guide
+- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing guide
 
 ---
 

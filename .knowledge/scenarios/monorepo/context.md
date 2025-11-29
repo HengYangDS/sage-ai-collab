@@ -386,9 +386,9 @@ pnpm init
 
 ## Related
 
-- `guidelines/engineering.md` — Engineering practices
-- `practices/documentation/project_directory_structure.md` — Directory patterns
-- `guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/documentation/project_directory_structure.md` — Directory patterns
+- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
 
 ---
 

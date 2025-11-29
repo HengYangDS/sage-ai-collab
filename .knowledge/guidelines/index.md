@@ -55,9 +55,9 @@ quick_start.md → code_style.md → engineering.md → [specific topic]
 
 ## Related
 
-- `core/index.md` — Core principles
-- `frameworks/index.md` — Deep frameworks
-- `practices/index.md` — Practical guides
+- `.knowledge/core/index.md` — Core principles
+- `.knowledge/frameworks/index.md` — Deep frameworks
+- `.knowledge/practices/index.md` — Practical guides
 
 ---
 

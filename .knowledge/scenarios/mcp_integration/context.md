@@ -386,9 +386,9 @@ mcp:
 ## Related
 
 - `docs/api/mcp.md` — MCP API documentation
-- `practices/engineering/api_design.md` — API design patterns
-- `frameworks/resilience/timeout_patterns.md` — Timeout handling
-- `practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
 
 ---
 

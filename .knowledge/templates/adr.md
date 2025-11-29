@@ -214,9 +214,9 @@ FastMCP provides the right balance of simplicity and capability.
 
 ## Related
 
-- `frameworks/patterns/decision.md` — Decision quality framework
-- `practices/decisions/autonomy_cases.md` — Autonomy level examples
-- `guidelines/planning.md` — Architecture planning
+- `.knowledge/frameworks/patterns/decision.md` — Decision quality framework
+- `.knowledge/practices/decisions/autonomy_cases.md` — Autonomy level examples
+- `.knowledge/guidelines/planning.md` — Architecture planning
 
 ---
 

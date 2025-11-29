@@ -149,9 +149,9 @@ schedule reviews) · **Adapt** (customize for domain)
 
 ## Related
 
-- `frameworks/cognitive/expert_committee.md` — Full theory
-- `frameworks/decision/quality_angles.md` — Quality dimensions
-- `frameworks/autonomy/levels.md` — Decision authority
+- `.knowledge/frameworks/cognitive/expert_committee.md` — Full theory
+- `.knowledge/frameworks/patterns/decision.md` — Quality dimensions
+- `.knowledge/frameworks/autonomy/levels.md` — Decision authority
 
 ---
 

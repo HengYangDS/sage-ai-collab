@@ -252,9 +252,9 @@ Rate limit headers:
 
 ## Related
 
-- `practices/engineering/api_design.md` — API design patterns
-- `guidelines/engineering.md` — Engineering standards
-- `frameworks/patterns/persistence.md` — Data patterns
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/guidelines/engineering.md` — Engineering standards
+- `.knowledge/frameworks/patterns/persistence.md` — Data patterns
 
 ---
 

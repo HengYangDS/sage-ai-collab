@@ -278,9 +278,9 @@ Always include:
 
 ## Related
 
-- `templates/postmortem.md` — Incident postmortem template
-- `practices/engineering/error_handling.md` — Error handling patterns
-- `practices/engineering/logging.md` — Logging practices
+- `.knowledge/templates/postmortem.md` — Incident postmortem template
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/logging.md` — Logging practices
 
 ---
 

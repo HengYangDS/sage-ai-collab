@@ -303,10 +303,10 @@ Order Service          Payment Service       Inventory Service
 
 ## Related
 
-- `guidelines/engineering.md` — Engineering practices
-- `practices/engineering/api_design.md` — API design patterns
-- `guidelines/security.md` — Security guidelines
-- `frameworks/patterns/collaboration.md` — Collaboration patterns
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/guidelines/security.md` — Security guidelines
+- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
 
 ---
 

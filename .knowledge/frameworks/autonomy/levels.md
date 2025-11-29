@@ -128,9 +128,9 @@ autonomy:
 
 ## Related
 
-- `core/quick_reference.md` — Quick autonomy reference
-- `practices/decisions/autonomy_cases.md` — Concrete examples
-- `guidelines/ai_collaboration.md` — Collaboration guidelines
+- `.knowledge/core/quick_reference.md` — Quick autonomy reference
+- `.knowledge/practices/decisions/autonomy_cases.md` — Concrete examples
+- `.knowledge/guidelines/ai_collaboration.md` — Collaboration guidelines
 
 ---
 
