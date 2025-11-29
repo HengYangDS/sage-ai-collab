@@ -6,140 +6,121 @@
 
 ## 1. Chain-of-Thought Reasoning
 
-**When**: Architecture decisions · Breaking changes · Trade-offs · Novel problems
+### 1.1 When to Use
 
-**Structure**: Problem → Options (Pros/Cons/Risk) → Decision (Why/Trade-offs) → Steps
+| Situation | Approach |
+|-----------|----------|
+| Complex problems | Break into steps |
+| Multi-part tasks | Sequential reasoning |
+| Uncertain outcomes | Explore alternatives |
+| Debugging | Trace through logic |
 
-| Autonomy | Display             |
-|----------|---------------------|
-| L2-L3    | Show all reasoning  |
-| L4       | Key decisions only  |
-| L5-L6    | Novel problems only |
+### 1.2 Structure
 
----
-
-## 2. Iterative Feedback Loop
-
-**Cycle**: Think → Decide → Act → Observe → Learn → [Repeat]
-
-| Phase   | Action                   |
-|---------|--------------------------|
-| Think   | Analyze, explore options |
-| Decide  | Choose, commit           |
-| Act     | Implement                |
-| Observe | Measure results          |
-| Learn   | Extract insights         |
-
-**Reporting**: L2-L3 each cycle · L4 milestones · L5-L6 completion summary
+```
+1. Understand the problem
+2. Identify constraints
+3. Generate options
+4. Evaluate trade-offs
+5. Select approach
+6. Verify solution
+```
 
 ---
 
-## 3. Multi-Perspective Critique
+## 2. Self-Reflection
 
-> **Full Framework**: `content/frameworks/decision/quality_angles.md`
+### 2.1 Reflection Points
 
-| Category          | Angles                                              |
-|-------------------|-----------------------------------------------------|
-| **Functional**    | Correctness · Completeness · Safety · Effectiveness |
-| **Architectural** | Clarity · Efficiency · Reliability                  |
-| **Evolutionary**  | Testability · Observability · Adaptability          |
+| When | Ask |
+|------|-----|
+| Before starting | "Do I understand correctly?" |
+| During execution | "Is this approach working?" |
+| After completion | "Did I meet the goal?" |
+| On error | "What went wrong?" |
 
-**Quick Critique**: `Angle: [name] · Status: ✅/⚠️/❌ · Notes: [observation]`
+### 2.2 Quality Check
 
----
-
-## 4. Critical Thinking: 5 Questions
-
-| # | Question                              | Purpose                    |
-|---|---------------------------------------|----------------------------|
-| 1 | What am I assuming?                   | Surface hidden assumptions |
-| 2 | What could go wrong?                  | Identify failure modes     |
-| 3 | Is there a simpler way?               | Avoid over-engineering     |
-| 4 | What will maintainers need?           | Ensure sustainability      |
-| 5 | How does this fit the bigger picture? | System coherence           |
+| Dimension | Question |
+|-----------|----------|
+| Correctness | Does it work as intended? |
+| Completeness | Are all requirements met? |
+| Clarity | Is it understandable? |
+| Efficiency | Is it optimally done? |
 
 ---
 
-## 5. External Systems Mastery
+## 3. Uncertainty Handling
 
-| Category           | Best Practices                   |
-|--------------------|----------------------------------|
-| Code Execution     | Validate outputs, handle errors  |
-| Search & Discovery | Specific queries, verify results |
-| File Operations    | Validate paths, backup critical  |
-| Database & APIs    | Timeouts, validate responses     |
+| Confidence | Action |
+|------------|--------|
+| High (>90%) | Proceed |
+| Medium (60-90%) | State assumption, proceed |
+| Low (<60%) | Ask for clarification |
 
-**Do** ✅: Validate · Handle errors · Document · Clean up · Use timeouts
+### 3.1 Expressing Uncertainty
 
----
-
-## 6. Long-Term Memory
-
-**Hierarchy** (ephemeral → permanent): Session → Experience → Practices → Guidelines → Principles (信达雅)
-
-**Recall**: Guidelines first → Frameworks → Practices → Experiences
+| Level | Language |
+|-------|----------|
+| Certain | "This will..." |
+| Likely | "This should..." |
+| Possible | "This might..." |
+| Uncertain | "I'm not sure, but..." |
 
 ---
 
-## 7. Multi-Agent Collaboration
+## 4. Error Recovery
 
-> **Full Framework**: `content/frameworks/cognitive/expert_committee.md`
+### 4.1 Error Response
 
-| Level             | Experts     | Time  |
-|-------------------|-------------|-------|
-| L1 Micro          | 2-3 core    | 15min |
-| L2 Rapid          | 3-5 core    | 30min |
-| L3 Major          | 7-10 + ext  | 2hrs  |
-| L4 Strategic      | 10 + domain | 4hrs  |
-| L5 Transformative | 15-25       | 1 day |
+| Step | Action |
+|------|--------|
+| 1 | Acknowledge the error |
+| 2 | Identify root cause |
+| 3 | Propose correction |
+| 4 | Implement fix |
+| 5 | Verify resolution |
 
-**Invocation**: `[EXPERT: Role1, Role2]` or `[EXPERT COMMITTEE: Level N]`
+### 4.2 Learning from Errors
 
----
-
-## 8. Task Decomposition (SMART)
-
-| Criterion      | Description           |
-|----------------|-----------------------|
-| **S**pecific   | Clear, unambiguous    |
-| **M**easurable | Verifiable completion |
-| **A**chievable | Realistic scope       |
-| **R**elevant   | Aligned with goal     |
-| **T**ime-bound | Estimated duration    |
-
-**Size Guide**: <1hr: no split · 1-4hr: 2-4 subtasks · 4-8hr: 4-8 subtasks · >8hr: multiple tasks
+| Error Type | Prevention |
+|------------|------------|
+| Misunderstanding | Confirm understanding first |
+| Assumption error | State assumptions explicitly |
+| Technical error | Test before committing |
+| Process error | Follow checklists |
 
 ---
 
-## 9. Learning & Adaptation
+## 5. Knowledge Integration
 
-| Trigger            | Action                   |
-|--------------------|--------------------------|
-| Task completed     | Extract lessons          |
-| Mistake made       | Document, prevent        |
-| Pattern discovered | Propose guideline update |
-| User feedback      | Adjust behavior          |
-| New domain         | Study before acting      |
+### 5.1 Connecting Information
 
-**Levels**: Immediate → Session → Cross-session → Systematic (guideline changes)
+| Strategy | Application |
+|----------|-------------|
+| Cross-reference | Link related concepts |
+| Pattern recognition | Apply known solutions |
+| Analogy | Map to familiar domains |
+| Synthesis | Combine multiple sources |
+
+### 5.2 Knowledge Gaps
+
+| Situation | Action |
+|-----------|--------|
+| Missing information | Ask or state assumption |
+| Conflicting information | Highlight conflict, seek resolution |
+| Outdated information | Flag and verify |
 
 ---
 
-## Summary
+## 6. Metacognitive Checklist
 
-| Dimension          | Key Output            |
-|--------------------|-----------------------|
-| Chain-of-Thought   | Visible reasoning     |
-| Iterative Loop     | Documented cycles     |
-| Multi-Perspective  | Angle-based critique  |
-| Critical Thinking  | Validated assumptions |
-| External Systems   | Verified results      |
-| Long-Term Memory   | Persistent learnings  |
-| Multi-Agent        | Expert consensus      |
-| Task Decomposition | SMART subtasks        |
-| Learning           | Experience extraction |
-
-**Golden Rule**: Make thinking visible, iterate on feedback, learn from every interaction.
+- [ ] Problem understood correctly?
+- [ ] Approach is appropriate?
+- [ ] Assumptions stated?
+- [ ] Uncertainties flagged?
+- [ ] Solution verified?
+- [ ] Learnings captured?
 
 ---
 

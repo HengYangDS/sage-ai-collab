@@ -1,172 +1,108 @@
-# API Design Guidelines
+# API Design Patterns
 
-> **Load Time**: On-demand (~120 tokens)  
-> **Purpose**: RESTful API design principles and best practices
-
----
-
-## 1. URL Design
-
-### Resource Naming
-
-| ✓ Good              | ✗ Bad            |
-|---------------------|------------------|
-| `/users`            | `/getUsers`      |
-| `/users/123`        | `/user?id=123`   |
-| `/users/123/orders` | `/getUserOrders` |
-| `/search?q=keyword` | `/doSearch`      |
-
-### Naming Rules
-
-- Use **nouns** to represent resources
-- Use **plural** forms
-- Use **lowercase** + **hyphens**
-- Keep hierarchy to 3 levels max
-
-```
-/users                    # User collection
-/users/{id}               # Single user
-/users/{id}/orders        # User's orders
-/users/{id}/orders/{oid}  # User's single order
-```
+> Principles and patterns for designing clean, consistent APIs
 
 ---
 
-## 2. HTTP Methods
+## 1. Design Principles
 
-| Method   | Purpose           | Idempotent | Safe |
-|----------|-------------------|------------|------|
-| `GET`    | Retrieve resource | ✓          | ✓    |
-| `POST`   | Create resource   | ✗          | ✗    |
-| `PUT`    | Full update       | ✓          | ✗    |
-| `PATCH`  | Partial update    | ✗          | ✗    |
-| `DELETE` | Delete resource   | ✓          | ✗    |
-
-### Operation Mapping
-
-| Operation | Method    | URL             | Example           |
-|-----------|-----------|-----------------|-------------------|
-| List      | GET       | /resources      | GET /users        |
-| Detail    | GET       | /resources/{id} | GET /users/123    |
-| Create    | POST      | /resources      | POST /users       |
-| Update    | PUT/PATCH | /resources/{id} | PUT /users/123    |
-| Delete    | DELETE    | /resources/{id} | DELETE /users/123 |
+| Principle | Description |
+|-----------|-------------|
+| Consistency | Same patterns throughout |
+| Predictability | Behavior matches expectations |
+| Simplicity | Easy to understand and use |
+| Discoverability | Self-documenting structure |
 
 ---
 
-## 3. Status Codes
+## 2. Naming Conventions
 
-### Success Responses
+### 2.1 Resources
 
-| Code  | Meaning    | Use Case              |
-|-------|------------|-----------------------|
-| `200` | OK         | GET/PUT/PATCH success |
-| `201` | Created    | POST creation success |
-| `204` | No Content | DELETE success        |
+| Type | Convention | Example |
+|------|------------|---------|
+| Collection | Plural nouns | `/users`, `/orders` |
+| Single item | Singular with ID | `/users/{id}` |
+| Nested | Parent/child | `/users/{id}/orders` |
+| Actions | Verb suffix | `/orders/{id}/cancel` |
 
-### Client Errors
+### 2.2 Parameters
 
-| Code  | Meaning           | Use Case                        |
-|-------|-------------------|---------------------------------|
-| `400` | Bad Request       | Parameter validation failed     |
-| `401` | Unauthorized      | Not authenticated               |
-| `403` | Forbidden         | No permission                   |
-| `404` | Not Found         | Resource doesn't exist          |
-| `409` | Conflict          | Resource conflict               |
-| `422` | Unprocessable     | Business rule validation failed |
-| `429` | Too Many Requests | Rate limited                    |
-
-### Server Errors
-
-| Code  | Meaning             | Use Case               |
-|-------|---------------------|------------------------|
-| `500` | Internal Error      | Server error           |
-| `502` | Bad Gateway         | Upstream service error |
-| `503` | Service Unavailable | Service unavailable    |
-| `504` | Gateway Timeout     | Upstream timeout       |
+| Type | Convention | Example |
+|------|------------|---------|
+| Path | snake_case | `/users/{user_id}` |
+| Query | snake_case | `?page_size=10` |
+| Body | snake_case | `{"first_name": "..."}` |
 
 ---
 
-## 4. Request Format
+## 3. HTTP Methods
 
-### Request Body (JSON)
-
-```json
-{
-  "name": "John Doe",
-  "email": "john@example.com",
-  "role": "admin"
-}
-```
-
-### Query Parameters
-
-| Purpose         | Parameter       | Example                       |
-|-----------------|-----------------|-------------------------------|
-| Pagination      | `page`, `limit` | `?page=2&limit=20`            |
-| Sorting         | `sort`, `order` | `?sort=created_at&order=desc` |
-| Filtering       | field name      | `?status=active&role=admin`   |
-| Search          | `q`             | `?q=keyword`                  |
-| Field selection | `fields`        | `?fields=id,name,email`       |
+| Method | Purpose | Idempotent |
+|--------|---------|------------|
+| GET | Read resource | Yes |
+| POST | Create resource | No |
+| PUT | Replace resource | Yes |
+| PATCH | Partial update | Yes |
+| DELETE | Remove resource | Yes |
 
 ---
 
-## 5. Response Format
+## 4. Response Patterns
 
-### Success Response
+### 4.1 Success Responses
 
-```json
-{
-  "data": {
-    "id": 123,
-    "name": "John Doe",
-    "email": "john@example.com"
-  },
-  "meta": {
-    "request_id": "abc-123"
-  }
-}
-```
+| Status | Use For |
+|--------|---------|
+| 200 | Successful GET, PUT, PATCH |
+| 201 | Successful POST (created) |
+| 204 | Successful DELETE (no content) |
 
-### List Response
+### 4.2 Error Responses
 
-```json
-{
-  "data": [
-    {
-      "id": 1,
-      "name": "User 1"
-    },
-    {
-      "id": 2,
-      "name": "User 2"
-    }
-  ],
-  "meta": {
-    "total": 100,
-    "page": 1,
-    "limit": 20,
-    "pages": 5
-  }
-}
-```
+| Status | Use For |
+|--------|---------|
+| 400 | Bad request (validation) |
+| 401 | Unauthorized |
+| 403 | Forbidden |
+| 404 | Not found |
+| 409 | Conflict |
+| 500 | Server error |
 
-### Error Response
+### 4.3 Error Format
 
 ```json
 {
   "error": {
     "code": "VALIDATION_ERROR",
-    "message": "Validation failed",
+    "message": "Invalid input",
     "details": [
-      {
-        "field": "email",
-        "message": "Invalid email format"
-      }
+      {"field": "email", "message": "Invalid format"}
     ]
-  },
-  "meta": {
-    "request_id": "abc-123"
+  }
+}
+```
+
+---
+
+## 5. Pagination
+
+### 5.1 Request
+
+```
+GET /users?page=2&page_size=20
+```
+
+### 5.2 Response
+
+```json
+{
+  "data": [...],
+  "pagination": {
+    "page": 2,
+    "page_size": 20,
+    "total": 150,
+    "total_pages": 8
   }
 }
 ```
@@ -175,108 +111,31 @@
 
 ## 6. Versioning
 
-### URL Path (Recommended)
-
-```
-/api/v1/users
-/api/v2/users
-```
-
-### Header
-
-```
-Accept: application/vnd.api+json;version=1
-```
-
-### Version Strategy
-
-| Strategy    | Pros                | Cons                 |
-|-------------|---------------------|----------------------|
-| URL path    | Clear, easy to test | URL changes          |
-| Header      | Clean URLs          | Hidden, hard to test |
-| Query param | Flexible            | Easy to miss         |
+| Strategy | Example | Use When |
+|----------|---------|----------|
+| URL path | `/v1/users` | Major versions |
+| Header | `API-Version: 1` | Fine control |
+| Query | `?version=1` | Simple cases |
 
 ---
 
-## 7. Pagination
+## 7. Best Practices
 
-### Offset-based
-
-```
-GET /users?page=2&limit=20
-```
-
-Response meta:
-
-```json
-{
-  "meta": {
-    "total": 100,
-    "page": 2,
-    "limit": 20,
-    "pages": 5
-  }
-}
-```
-
-### Cursor-based
-
-```
-GET /users?cursor=abc123&limit=20
-```
-
-Response meta:
-
-```json
-{
-  "meta": {
-    "next_cursor": "def456",
-    "has_more": true
-  }
-}
-```
-
-| Type   | Use Case                        |
-|--------|---------------------------------|
-| Offset | Small datasets, need page jumps |
-| Cursor | Large datasets, real-time data  |
-
----
-
-## 8. Authentication
-
-### Bearer Token
-
-```
-Authorization: Bearer <token>
-```
-
-### API Key
-
-```
-X-API-Key: <key>
-```
-
----
-
-## 9. Quick Checklist
-
-| ✓ Do                            | ✗ Don't                 |
-|---------------------------------|-------------------------|
-| Use nouns for resources         | Use verbs in URLs       |
-| Use plural forms                | Mix singular/plural     |
-| Return appropriate status codes | Always return 200       |
-| Include request_id in responses | Omit tracking info      |
-| Version your API                | Break existing clients  |
-| Use consistent response format  | Mix response structures |
+| Practice | Benefit |
+|----------|---------|
+| Use nouns for resources | RESTful clarity |
+| Return created resource | Immediate access |
+| Include pagination | Handle large sets |
+| Version from start | Future compatibility |
+| Document thoroughly | Developer experience |
 
 ---
 
 ## Related
 
-- `content/practices/engineering/error_handling.md` — Error handling patterns
-- `content/guidelines/code_style.md` — Code style guidelines
+- `../../guidelines/code_style.md` — Code conventions
+- `error_handling.md` — Error handling patterns
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

@@ -4,116 +4,108 @@
 
 ---
 
-## 8.1 Quality Dimensions
+## 1. Quality Dimensions
 
-| Dimension           | Metrics                      | Target                          |
-|---------------------|------------------------------|---------------------------------|
-| **Correctness**     | Test coverage, bug rate      | >80% coverage, <1 bug/KLOC      |
-| **Maintainability** | Complexity, duplication      | <10 cyclomatic, <3% duplication |
-| **Performance**     | Response time, throughput    | <200ms P95, >1000 RPS           |
-| **Security**        | Vulnerabilities, audit score | 0 critical, >90% score          |
-| **Reliability**     | Uptime, MTTR                 | >99.9%, <15min MTTR             |
-
----
-
-## 8.2 Code Review Standards
-
-### Review Checklist
-
-| Category        | Items                                           |
-|-----------------|-------------------------------------------------|
-| **Correctness** | Logic correct · Edge cases · Error handling     |
-| **Quality**     | Style guidelines · No duplication · Clear names |
-| **Testing**     | New functionality · Edge cases · All pass       |
-| **Security**    | No secrets · Input validation · No injection    |
-| **Docs**        | APIs documented · Complex logic explained       |
-
-### Feedback Prefixes
-
-| Prefix         | Meaning       | Example                |
-|----------------|---------------|------------------------|
-| `[REQUIRED]`   | Must fix      | Security vulnerability |
-| `[SUGGESTION]` | Should fix    | Better approach        |
-| `[NIT]`        | Nice to have  | Style preference       |
-| `[QUESTION]`   | Clarification | Seeking understanding  |
+| Dimension | Description | Measure |
+|-----------|-------------|---------|
+| Correctness | Works as intended | Tests pass |
+| Completeness | All requirements met | Coverage |
+| Clarity | Understandable | Review feedback |
+| Efficiency | Optimal performance | Benchmarks |
+| Maintainability | Easy to modify | Complexity metrics |
 
 ---
 
-## 8.3 Testing Strategy
+## 2. Code Quality Metrics
 
-### Coverage Goals
+| Metric | Target | Tool |
+|--------|--------|------|
+| Test coverage | > 80% | pytest-cov |
+| Cyclomatic complexity | < 10 | radon |
+| Function length | < 50 lines | pylint |
+| File length | < 500 lines | wc |
+| Type hint coverage | > 80% | mypy |
 
-| Type        | Target         | Focus                  |
-|-------------|----------------|------------------------|
-| Unit        | >80%           | Business logic         |
-| Integration | >60%           | Component interactions |
-| E2E         | Critical paths | User journeys          |
+---
 
-### Test Quality
+## 3. Review Process
+
+### 3.1 Self-Review Checklist
+
+- [ ] Code compiles/runs without errors
+- [ ] Tests pass
+- [ ] No obvious bugs
+- [ ] Names are clear
+- [ ] Logic is understandable
+- [ ] Edge cases handled
+
+### 3.2 Peer Review Focus
+
+| Reviewer Checks | Author Prepares |
+|-----------------|-----------------|
+| Logic correctness | Clear PR description |
+| Edge cases | Test coverage |
+| Code style | Self-review completed |
+| Performance | Context for decisions |
+
+---
+
+## 4. Testing Strategy
+
+### 4.1 Test Pyramid
+
+| Level | Coverage | Focus |
+|-------|----------|-------|
+| Unit | 80%+ | Individual functions |
+| Integration | Key paths | Component interaction |
+| E2E | Critical flows | User journeys |
+
+### 4.2 Test Quality
 
 ```python
-# ✅ Clear, focused, AAA pattern
-def test_user_creation_with_valid_data():
-    service = UserService(mock_repo)  # Arrange
-    result = service.create({"name": "Alice"})  # Act
-    assert result.name == "Alice"  # Assert
-
-
-# ❌ Multiple concerns, unclear
-def test_user():
-# Tests creation, update, delete all in one
+# ✓ Good: Arrange-Act-Assert
+def test_user_creation():
+    # Arrange
+    data = {"name": "Alice"}
+    
+    # Act
+    result = service.create(data)
+    
+    # Assert
+    assert result.name == "Alice"
 ```
 
 ---
 
-## 8.4 Quality Gates
+## 5. Continuous Improvement
 
-| Stage           | Requirements                                                                |
-|-----------------|-----------------------------------------------------------------------------|
-| **Pre-Commit**  | Lint · Format · Type check · Unit tests                                     |
-| **Pre-Merge**   | All tests · Review approved · Coverage maintained · No vulns · Docs updated |
-| **Pre-Release** | E2E pass · Performance OK · Security scan · Changelog · Version bump        |
+### 5.1 Feedback Loops
 
----
+| Loop | Frequency | Action |
+|------|-----------|--------|
+| Tests | Every commit | Fix failures immediately |
+| Reviews | Every PR | Address feedback |
+| Retrospectives | Weekly | Process improvements |
+| Metrics | Monthly | Trend analysis |
 
-## 8.5 Continuous Improvement
+### 5.2 Technical Debt
 
-**Retrospective**: What went well? · What to improve? · What to try differently?
-
-### Quality Debt
-
-| Category                  | Priority |
-|---------------------------|----------|
-| Security (unpatched)      | High     |
-| Technical (missing tests) | Medium   |
-| Performance (slow query)  | Medium   |
-| Documentation (outdated)  | Low      |
-
-**Track**: Defect escape rate · MTTR · Review turnaround · Coverage trend · Debt ratio
+| Priority | Timeline | Action |
+|----------|----------|--------|
+| Critical | This sprint | Fix immediately |
+| High | This month | Schedule fix |
+| Medium | This quarter | Plan fix |
+| Low | Backlog | Track |
 
 ---
 
-## 8.6 Quality Culture
+## 6. Quality Checklist
 
-**Principles**: Everyone's responsibility · Prevention > Detection · Continuous improvement · Measure what matters
-
-### Anti-Patterns
-
-| ❌ Anti-Pattern       | ✅ Better             |
-|----------------------|----------------------|
-| "Ship and fix"       | Build quality in     |
-| "Not my code"        | Collective ownership |
-| "Tests slow us down" | Tests enable speed   |
-| "Good enough"        | Maintain standards   |
-
----
-
-## 8.7 Quick Reference
-
-| Frequency  | Habits                                                                       |
-|------------|------------------------------------------------------------------------------|
-| **Daily**  | Tests before commit · Self-review before PR · Update docs · Address feedback |
-| **Weekly** | Coverage reports · Dependency updates · Technical debt · Share learnings     |
+| Phase | Actions |
+|-------|---------|
+| **Daily** | Tests before commit, self-review, update docs |
+| **Weekly** | Coverage reports, dependency updates, share learnings |
+| **Monthly** | Complexity analysis, performance review, debt assessment |
 
 ---
 

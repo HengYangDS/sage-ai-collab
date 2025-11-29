@@ -4,104 +4,75 @@
 
 ---
 
-## 🚀 30-Second Summary
+## 1. Core Philosophy
 
-**AI Collaboration KB** provides knowledge for human-AI collaboration:
+**信达雅 (Xin-Da-Ya)**: Faithful → Clear → Elegant
 
-1. **Core Principles** (01_core/) - Always loaded, ~500 tokens
-2. **Guidelines** (02_guidelines/) - 10 chapters, load on demand
-3. **Frameworks** (03_frameworks/) - Deep theory for complex tasks
-4. **Tools** (05_tools/) - CLI, MCP server, plugins
+| Principle | Question |
+|-----------|----------|
+| 信 (Faithful) | Is it correct? |
+| 达 (Clear) | Is it understandable? |
+| 雅 (Elegant) | Is it simple? |
 
 ---
 
-## ⚡ Quick Commands
+## 2. Five Critical Questions
 
-```bash
-# Get core principles
-sage get
+Ask before every task:
 
-# Get specific guidelines
-sage guidelines code_style
-sage guidelines ai_collaboration
+1. What assumptions am I making?
+2. What could go wrong?
+3. Is there a simpler approach?
+4. Will this be maintainable?
+5. How does this fit the big picture?
 
-# Search knowledge
-sage search "autonomy levels"
+---
 
-# Start MCP server
-sage serve
+## 3. Autonomy Levels
+
+| Level | When to Use |
+|-------|-------------|
+| L1-L2 | New collaboration, sensitive tasks |
+| L3-L4 | Established trust, routine work |
+| L5-L6 | Explicitly granted, sandbox environments |
+
+**Default**: Start at L3, calibrate based on success rate.
+
+---
+
+## 4. Response Format
+
+```markdown
+## Summary
+[What was done]
+
+## Changes Made
+[List of changes]
+
+## Verification
+[How to verify]
 ```
 
 ---
 
-## 🎯 Core Philosophy
+## 5. Key Commands
 
-### Xin-Da-Ya (信达雅)
-
-- **信 (Xin)**: Faithfulness - accurate, reliable
-- **达 (Da)**: Clarity - clear, maintainable
-- **雅 (Ya)**: Elegance - refined, balanced
-
-### 5 Critical Questions
-
-1. What am I assuming?
-2. What could go wrong?
-3. Is there a simpler way?
-4. What will future maintainers need?
-5. How does this fit the bigger picture?
+```bash
+sage get core          # Load core knowledge
+sage search "keyword"  # Search knowledge base
+sage serve             # Start MCP server
+```
 
 ---
 
-## 🎚️ Autonomy Levels (Quick Ref)
+## 6. Next Steps
 
-| Level | Name                 | When to Use                               |
-|-------|----------------------|-------------------------------------------|
-| L1    | Minimal (0-20%)      | Critical/unfamiliar tasks, onboarding     |
-| L2    | Low (20-40%)         | New project phases, learning codebase     |
-| L3    | Medium (40-60%)      | Routine development, clear guidelines     |
-| L4    | Medium-High (60-80%) | Mature collaboration, proactive partner ⭐ |
-| L5    | High (80-95%)        | Strategic partnership, trusted systems    |
-| L6    | Full (95-100%)       | Autonomous agent (rarely recommended)     |
-
-**Default**: Start at L4 for mature collaboration, L2-L3 for new projects.
-
----
-
-## 📚 Guidelines Overview (10 Chapters)
-
-| #  | Chapter           | Focus                        |
-|----|-------------------|------------------------------|
-| 00 | Quick Start       | This guide                   |
-| 01 | Planning & Design | Architecture, modularity     |
-| 02 | Code Style        | Formatting, naming           |
-| 03 | Engineering       | Config, testing, performance |
-| 04 | Documentation     | Standards, templates         |
-| 05 | Python            | Python-specific practices    |
-| 06 | AI Collaboration  | Human-AI interaction         |
-| 07 | Cognitive         | Enhancement frameworks       |
-| 08 | Quality           | Quality assurance            |
-| 09 | Success           | Philosophy mapping           |
-
----
-
-## ⏱️ Timeout Guarantees
-
-| Operation | Timeout | Fallback  |
-|-----------|---------|-----------|
-| Cache     | 100ms   | Embedded  |
-| File      | 500ms   | Partial   |
-| Layer     | 2s      | Core only |
-| Full      | 5s      | Emergency |
-
-**Rule**: Always returns something, never hangs.
-
----
-
-## 🔗 Next Steps
-
-1. **Explore**: `sage info` - See full KB structure
-2. **Search**: `sage search "<topic>"` - Find specific content
-3. **Deep Dive**: `sage framework autonomy` - Load frameworks
+| Goal | Read |
+|------|------|
+| Code standards | `code_style.md` |
+| Architecture | `planning.md` |
+| AI patterns | `ai_collaboration.md` |
+| Full reference | `core/quick_reference.md` |
 
 ---
 

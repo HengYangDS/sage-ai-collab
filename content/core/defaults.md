@@ -1,154 +1,83 @@
 # Default Behaviors and Calibration
 
-> Baseline behaviors and calibration parameters (see `sage.yaml` for values)
+> Baseline behaviors and calibration parameters
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-| Section                                                | Description                    |
-|--------------------------------------------------------|--------------------------------|
-| [🎯 Default Autonomy](#default-autonomy-settings)      | Context-based autonomy levels  |
-| [📋 Default Behaviors](#default-behaviors)             | Communication, code, decisions |
-| [⚙️ Configuration Reference](#configuration-reference) | All config modules             |
-| [🔄 Calibration Workflow](#calibration-workflow)       | Autonomy adjustment            |
-| [🚨 Override Conditions](#override-conditions)         | Force different autonomy       |
-| [📊 Response Structure](#default-response-structure)   | Standard format                |
-| [⏱️ Fallback Behavior](#fallback-behavior)             | Timeout/error handling         |
+[1. Loading Defaults](#1-loading-defaults) · [2. Timeout Defaults](#2-timeout-defaults) · [3. Autonomy Defaults](#3-autonomy-defaults) · [4. Override Conditions](#4-override-conditions) · [5. Response Structure](#5-response-structure) · [6. Fallback Behavior](#6-fallback-behavior)
 
 ---
 
-<a id="default-autonomy-settings"></a>
+## 1. Loading Defaults
 
-## 🎯 Default Autonomy Settings
+| Parameter     | Value                                       | Config Location       |
+|---------------|---------------------------------------------|-----------------------|
+| Max tokens    | 4000                                        | `config/loading.yaml` |
+| Default layer | core                                        | `config/loading.yaml` |
+| Preload       | index.md, principles.md, quick_reference.md | `config/loading.yaml` |
 
-> **Reference**: `content/frameworks/autonomy/levels.md`
+### 1.1 Layer Budgets
 
-| Context             | Level | Rationale             |
-|---------------------|-------|-----------------------|
-| New project         | L2    | Build trust gradually |
-| Established project | L4    | Proven patterns       |
-| Critical changes    | L1-L2 | High stakes           |
-| Routine maintenance | L4    | Low risk              |
-| Documentation       | L4-L5 | Well-defined scope    |
-| Refactoring         | L3-L4 | Needs verification    |
-
----
-
-<a id="default-behaviors"></a>
-
-## 📋 Default Behaviors
-
-| Area                | Aspect        | Default                          |
-|---------------------|---------------|----------------------------------|
-| **Communication**   | Verbosity     | Concise with detail on request   |
-|                     | Format        | Markdown with code blocks        |
-|                     | Language      | Match user's (default: English)  |
-|                     | Uncertainty   | State explicitly when unsure     |
-| **Code Changes**    | Scope         | Minimal necessary changes        |
-|                     | Style         | Follow existing conventions      |
-|                     | Comments      | Match existing frequency         |
-|                     | Tests         | Run affected tests when possible |
-| **Decision-Making** | Ambiguity     | Ask for clarification            |
-|                     | Risk          | Err on side of caution           |
-|                     | Reversibility | Prefer reversible actions        |
-|                     | Documentation | Document significant decisions   |
+| Layer      | Budget | Purpose       |
+|------------|--------|---------------|
+| core       | ~500   | Always loaded |
+| guidelines | ~1200  | On-demand     |
+| frameworks | ~2000  | On-demand     |
+| practices  | ~1500  | On-demand     |
+| scenarios  | ~500   | On-demand     |
+| templates  | ~300   | On-demand     |
 
 ---
 
-<a id="configuration-reference"></a>
+## 2. Timeout Defaults
 
-## ⚙️ Configuration Reference
+| Tier | Timeout | Operation        |
+|------|---------|------------------|
+| T1   | 100ms   | Cache lookup     |
+| T2   | 500ms   | Single file read |
+| T3   | 2s      | Layer load       |
+| T4   | 5s      | Full KB load     |
+| T5   | 10s     | Complex analysis |
 
-> **Single Source of Truth**: `sage.yaml` (entry) + `config/*.yaml` (modules)
+### 2.1 Circuit Breaker
 
-### Timeout → `config/timeout.yaml`
-
-**Levels**: T1:100ms(cache) | T2:500ms(file) | T3:2s(layer) | T4:5s(full) | T5:10s(analysis)
-
-**Other**: mcp=10s | search=3s | global_max=10s | default=5s
-
-**Circuit Breaker**: enabled=true | threshold=3 | reset=30s | half_open=1
-
-**On Timeout**: return_partial · use_fallback · log_warning · never_hang
-
-### Loading → `config/loading.yaml`
-
-**Limits**: max_tokens=4000 | default_layers=[core]
-
-**Always Load**: `index.md` | `content/core/principles.md` | `content/core/quick_reference.md`
-
-### Quality → `config/quality.yaml`
-
-**Code**: coverage≥95% | func≤50lines | file≤500lines | complexity≤10
-
-**Style**: line≤88 | type_hints≥50%
-
-**Docs**: line≤120
-
-### Token Budget → `config/token_budget.yaml`
-
-**Limits**: max=128000 | reserved=4000
-
-**Thresholds**: NORMAL<70% | WARNING=70% | CAUTION=80% | CRITICAL=90% | OVERFLOW=95%
-
-**Auto Actions**: summarize=true | prune=true (at CRITICAL/OVERFLOW)
-
-### Memory → `config/memory.yaml`
-
-**Store**: backend=file | path=`.history/memory`
-
-**Session**: auto_checkpoint=true | interval=300s | max_history=100
-
-### Features → `config/features.yaml`
-
-✓ event_driven_plugins | ✓ memory_persistence | ✓ lazy_expansion | ✓ client_cache
-
-✗ api_service | ✗ differential_loading | ✗ compressed_loading | ✗ context_pruning
-
-### Plugins → `config/plugins.yaml`
-
-**Loader**: cache=true | ttl=300s
-
-**Content Cache**: enabled=true | max=1000 entries | size=50MB | ttl=3600s
-
-**Semantic Search**: enabled=true | min_term=2 | max_results=20 | threshold=0.1 | stemming=false
-
-### Logging → `config/logging.yaml`
-
-level=INFO | format=structured | timestamps=true
-
-### Other Configs (on-demand)
-
-| Config                   | Key Setting    | Details                           |
-|--------------------------|----------------|-----------------------------------|
-| `config/api.yaml`        | enabled=false  | API service (disabled by default) |
-| `config/di.yaml`         | auto_wire=true | Dependency injection              |
-| `config/guidelines.yaml` | sections       | Alias mapping                     |
-| `config/triggers.yaml`   | triggers       | Keyword-based loading             |
+| Parameter          | Value         |
+|--------------------|---------------|
+| Failure threshold  | 3 consecutive |
+| Reset timeout      | 30s           |
+| Half-open requests | 1             |
 
 ---
 
-<a id="calibration-workflow"></a>
+## 3. Autonomy Defaults
 
-## 🔄 Calibration Workflow
+| Parameter        | Value                  |
+|------------------|------------------------|
+| Default level    | L4 (Medium-High)       |
+| Initial level    | L3 (new collaboration) |
+| Max auto-upgrade | L5                     |
 
-**Initial**: L2-L3 → small tasks → feedback → adjust
+### 3.1 Calibration Thresholds
 
-| Success Rate | Adjustment  |
-|--------------|-------------|
-| > 95%        | +1 (max L5) |
-| 85-95%       | Maintain    |
-| 70-85%       | -1          |
-| < 70%        | -2, review  |
+| Success Rate | Action               |
+|--------------|----------------------|
+| > 95%        | Upgrade +1 (max L5)  |
+| 85-95%       | Maintain             |
+| 70-85%       | Downgrade -1         |
+| < 70%        | Downgrade -2, review |
 
-**Reset Triggers**: Major errors · New domain · Team change · Extended absence
+### 3.2 Reset Triggers
+
+- Major errors
+- New domain
+- Team change
+- Extended absence
 
 ---
 
-<a id="override-conditions"></a>
-
-## 🚨 Override Conditions
+## 4. Override Conditions
 
 | Force Lower (L1-L2)    | Allow Higher (L5-L6)     |
 |------------------------|--------------------------|
@@ -160,51 +89,49 @@ level=INFO | format=structured | timestamps=true
 
 ---
 
-<a id="default-response-structure"></a>
-
-## 📊 Default Response Structure
+## 5. Response Structure
 
 ```markdown
-## Summary → [Brief outcome]
+## Summary
 
-## Changes Made → [List of modifications]
+[Brief outcome]
 
-## Verification → [How to verify]
+## Changes Made
 
-## Next Steps → [Follow-up actions] (if applicable)
+[List of modifications]
+
+## Verification
+
+[How to verify]
+
+## Next Steps
+
+[Follow-up actions if applicable]
 ```
 
 ---
 
-<a id="fallback-behavior"></a>
+## 6. Fallback Behavior
 
-## ⏱️ Fallback Behavior
-
-> **Location**: `config/timeout.yaml` → `timeout.fallback`
-
-**Strategy**: graceful (options: graceful/strict/none) | cache_stale=60s
-
-| Situation      | Action                         |
-|----------------|--------------------------------|
-| Timeout < 5s   | return_partial                 |
-| Timeout > 5s   | return_core                    |
-| File not found | return_error (helpful message) |
-| Parse error    | return_raw                     |
-| Network error  | use_cache                      |
+| Situation      | Action               |
+|----------------|----------------------|
+| Timeout < 5s   | Return partial       |
+| Timeout > 5s   | Return core only     |
+| File not found | Return helpful error |
+| Parse error    | Return raw content   |
+| Network error  | Use cache            |
 
 **Golden Rule**: Always return something useful, never hang or crash.
 
 ---
 
-## 📚 Related Documentation
+## Related
 
-- `sage.yaml` — Main config entry
-- `config/` — Modular configs
-- `content/frameworks/autonomy/levels.md` — 6-level autonomy
-- `content/frameworks/timeout/hierarchy.md` — Timeout strategies
-- `content/practices/ai_collaboration/token_optimization.md` — Token efficiency
-- `docs/design/04-timeout-loading.md` — Timeout design
-- `docs/design/09-configuration.md` — Configuration system
+- `sage.yaml` — Main configuration
+- `config/timeout.yaml` — Timeout settings
+- `config/loading.yaml` — Loading settings
+- `config/autonomy.yaml` — Autonomy settings
+- `frameworks/autonomy/levels.md` — Full autonomy framework
 
 ---
 

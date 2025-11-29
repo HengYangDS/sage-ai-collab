@@ -4,78 +4,88 @@
 
 ---
 
-## 1.1 Execution Principles
+## 1. Execution Principles
 
-**Think Before Acting**: Understand scope → Plan with milestones → Validate assumptions → Iterate on feedback
-
-**Scope**: ✅ "Implement user auth with JWT" · ❌ "Make the app secure"
-
-**Task Decomposition**: Break into 2-4 hour subtasks · Clear acceptance criteria · Identify dependencies · Track
-progress
-
----
-
-## 1.2 Architecture Patterns
-
-**Layered Architecture**: Presentation (UI/API) → Business Logic (Domain) → Data Access (Repository) → Infrastructure
-
-### SOLID Principles
-
-| Principle | Description           | Example                   |
-|-----------|-----------------------|---------------------------|
-| **SRP**   | Single Responsibility | One class = one purpose   |
-| **OCP**   | Open/Closed           | Extend, don't modify      |
-| **LSP**   | Liskov Substitution   | Subtypes substitutable    |
-| **ISP**   | Interface Segregation | Small, focused interfaces |
-| **DIP**   | Dependency Inversion  | Depend on abstractions    |
+| Principle | Description |
+|-----------|-------------|
+| Incremental | Small, verified steps over big-bang changes |
+| Reversible | Prefer changes that can be undone |
+| Observable | Make system state visible |
+| Testable | Design for verification |
 
 ---
 
-## 1.3 Modularity Guidelines
+## 2. Architecture Principles
 
-```python
-# ✅ Clear boundaries, DI
-class UserService:
-    def __init__(self, repository: UserRepository):
-        self._repository = repository
+### 2.1 SOLID
 
-    def create_user(self, data: UserCreate) -> User:
-        return self._repository.save(data)
+| Principle | Meaning |
+|-----------|---------|
+| **S**ingle Responsibility | One reason to change |
+| **O**pen/Closed | Open for extension, closed for modification |
+| **L**iskov Substitution | Subtypes substitutable for base types |
+| **I**nterface Segregation | Small, focused interfaces |
+| **D**ependency Inversion | Depend on abstractions |
 
+### 2.2 Design Axioms
 
-# ❌ Mixed concerns
-class UserService:
-    def create_user(self, data):
-        conn = sqlite3.connect('db.sqlite')  # Direct DB, email, logging mixed
+| Axiom | Application |
+|-------|-------------|
+| MECE | Mutually exclusive, collectively exhaustive |
+| SSOT | Single source of truth |
+| Separation of concerns | Content, code, config separated |
+| Progressive disclosure | Overview → detail |
+| Fail-fast | No operation hangs indefinitely |
+
+---
+
+## 3. Decision Framework
+
+### 3.1 Before Deciding
+
+| Question | Purpose |
+|----------|---------|
+| What problem does this solve? | Validate need |
+| What are the alternatives? | Ensure best choice |
+| What are the trade-offs? | Understand costs |
+| Is this reversible? | Assess risk |
+
+### 3.2 Decision Record
+
+```markdown
+## Context
+[Why decision needed]
+
+## Decision
+[What was decided]
+
+## Consequences
+[+] Benefits
+[-] Drawbacks
+[~] Trade-offs
 ```
 
-**Dependency Management**: Explicit (constructor) · Interface-based (protocols) · Minimal coupling · Testable (mockable)
+---
+
+## 4. Complexity Management
+
+| Strategy | Application |
+|----------|-------------|
+| Decompose | Break into smaller parts |
+| Abstract | Hide implementation details |
+| Standardize | Use consistent patterns |
+| Document | Capture decisions and rationale |
 
 ---
 
-## 1.4 Design Checklist
+## 5. Anti-Patterns
 
-| ✓   | Item                              |
-|-----|-----------------------------------|
-| [ ] | Requirements clear and complete   |
-| [ ] | Edge cases identified             |
-| [ ] | Error handling strategy defined   |
-| [ ] | Performance requirements known    |
-| [ ] | Security considerations addressed |
-| [ ] | Testing approach determined       |
-| [ ] | Documentation plan in place       |
-
----
-
-## 1.5 Anti-Patterns
-
-| ❌ Anti-Pattern         | Problem                 | ✅ Solution              |
-|------------------------|-------------------------|-------------------------|
-| God Class              | Does everything         | Split by responsibility |
-| Spaghetti Code         | No structure            | Apply SOLID             |
-| Premature Optimization | Complexity without need | Profile first           |
-| Copy-Paste             | Duplication             | Extract to shared       |
-| Magic Numbers          | Unclear intent          | Named constants         |
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| God Object | Does everything | Split responsibilities |
+| Premature Optimization | Complexity without need | Profile first |
+| Copy-Paste | Duplication | Extract to shared |
+| Magic Numbers | Unclear intent | Named constants |
 
 ---
 

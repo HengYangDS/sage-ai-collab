@@ -1,149 +1,116 @@
 # Token Optimization Principles
 
-> **Load Priority**: On Demand  
-> **Purpose**: Maximize knowledge density per token in AI collaboration
+> Maximize knowledge density per token in AI collaboration
 
 ---
 
-## Core Principles
+## 1. Core Principles
 
-| Principle                  | Description                            | Example                             |
-|----------------------------|----------------------------------------|-------------------------------------|
-| **Shared Vocabulary**      | Establish mutually understood terms    | T1-T5, L1-L6                        |
-| **Information Layering**   | Core → Details → Examples              | quick_ref → defaults → full docs    |
-| **Structure First**        | Tables > Paragraphs, Symbols > Text    | ✓✗⚠️ replace yes/no/warning         |
-| **Precision Conservation** | Compression without accuracy loss      | 信达雅                                 |
-| **Reference over Repeat**  | Link to detailed docs, don't duplicate | `See frameworks/autonomy/levels.md` |
-
----
-
-## High-Density Patterns
-
-### Effective Compression
-
-| Pattern         | Before            | After                       | Savings |
-|-----------------|-------------------|-----------------------------|---------|
-| Pipe separation | Table with 5 rows | `T1:100ms\|T2:500ms\|T3:2s` | ~60%    |
-| Symbol lists    | Checkbox lists    | ✓ item1 · ✓ item2 · ✗ item3 | ~40%    |
-| Inline flow     | Multi-step list   | A → B → C → D               | ~50%    |
-| Merged tables   | 2 separate tables | Single 2-column comparison  | ~30%    |
-
-### Anti-Patterns
-
-- ❌ Self-invented abbreviations without shared semantics
-- ❌ Over-nested abstractions
-- ❌ Sacrificing accuracy for brevity
-- ❌ Duplicating content across files (use references)
-- ❌ ASCII art diagrams (use text descriptions or tables)
+| Principle | Application |
+|-----------|-------------|
+| Density over verbosity | Tables > paragraphs |
+| Structure over prose | Bullets > sentences |
+| Reference over repeat | Links > duplication |
+| Progressive over complete | Load as needed |
 
 ---
 
-## Optimal Compression Point
+## 2. High-Efficiency Patterns
 
-| Compression  | Tokens | Fidelity | Efficiency |
-|--------------|--------|----------|------------|
-| None         | 100    | 100%     | 1.0        |
-| **Moderate** | 40     | 95%      | **2.4** ⭐  |
-| Excessive    | 15     | 60%      | 1.7*       |
-
-*Excessive compression may trigger clarification roundtrips
-
----
-
-## Document Optimization Techniques
-
-### Proven Transformations (30-50% reduction)
-
-| Technique                | Description                      | Example                               |
-|--------------------------|----------------------------------|---------------------------------------|
-| **Remove TOC links**     | AI doesn't need click navigation | Delete `<p align="right">↑ TOC</p>`   |
-| **Remove ASCII art**     | Convert to text or tables        | Pyramid → "Unit → Integration → E2E"  |
-| **Merge checklists**     | Combine phase-based lists        | Before/During/After → Single table    |
-| **Inline principles**    | Single-line summaries            | List of 4 items → `A · B · C · D`     |
-| **Reference frameworks** | Link instead of repeat           | `> See frameworks/autonomy/levels.md` |
-| **Compress examples**    | Good/Bad pairs only              | Remove verbose explanations           |
-
-### Before/After Examples
-
-```
-# Before (verbose)
-### When to Comment
-- When implementing complex algorithms
-- When making non-obvious decisions  
-- When working around bugs
-- When documenting public APIs
-
-# After (compressed)
-**When to Comment**: Complex algorithms · Non-obvious decisions · Workarounds · Public APIs
-```
-
-```
-# Before (separate tables)
-| Pre-Commit | ... |
-| Pre-Merge | ... |
-| Pre-Release | ... |
-
-# After (merged)
-| Stage | Requirements |
-| Pre-Commit | Lint · Format · Tests |
-| Pre-Merge | Review · Coverage · Docs |
-| Pre-Release | E2E · Performance · Changelog |
-```
+| Pattern | Token Savings | Use Case |
+|---------|---------------|----------|
+| Tables | ~40% | Structured data |
+| Bullet lists | ~30% | Enumerations |
+| Code blocks | ~20% | Examples |
+| Abbreviations | ~15% | Common terms |
+| References | ~70% | Repeated content |
 
 ---
 
-## Task-Based Adaptation
+## 3. Content Compression
 
-| Scenario              | Recommended Density | Rationale             |
-|-----------------------|---------------------|-----------------------|
-| Repetitive operations | High                | Patterns established  |
-| Complex reasoning     | Medium              | Needs reasoning chain |
-| First collaboration   | Low                 | Build consensus first |
-| Documentation files   | High                | Reference material    |
-| Code examples         | Medium              | Preserve clarity      |
+### 3.1 Text Compression
 
----
+| Before | After | Savings |
+|--------|-------|---------|
+| "In order to" | "To" | 75% |
+| "It is important to note that" | "Note:" | 80% |
+| "There are several ways to" | "Ways to:" | 70% |
+| Passive voice | Active voice | 20% |
 
-## Format Selection Guide
+### 3.2 Structure Compression
 
-| Information Type | Best Format     | Example                |
-|------------------|-----------------|------------------------|
-| Key-value pairs  | `k:v` or `k=v`  | `timeout=5s`           |
-| Boolean lists    | ✓/✗ symbols     | ✓ enabled · ✗ disabled |
-| Sequences/Levels | Pipe: `a\|b\|c` | `T1:100ms\|T2:500ms`   |
-| Comparisons      | Tables          | Side-by-side columns   |
-| Procedures       | Flow arrows     | A → B → C              |
-| Checklists       | Inline dots     | ✓ A · ✓ B · ✓ C        |
+| Technique | Application |
+|-----------|-------------|
+| Headers as summaries | Key info in heading |
+| Tables for comparisons | Replace paragraphs |
+| Code for examples | Replace descriptions |
+| Links for details | Replace repetition |
 
 ---
 
-## Density Calibration
+## 4. Anti-Patterns
 
-| Context Window | Action                |
-|----------------|-----------------------|
-| < 30%          | Normal density OK     |
-| 30-60%         | Prefer high-density   |
-| 60-80%         | Compress non-critical |
-| > 80%          | Maximum compression   |
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Long paragraphs | High token cost | Use tables/bullets |
+| Repeated information | Waste | Cross-reference |
+| Verbose explanations | Inefficient | Compress |
+| Unnecessary context | Noise | Filter |
+| Embedded images | No AI benefit | Remove or describe |
 
 ---
 
-## Optimization Results Summary
+## 5. Document Optimization
 
-| Category   | Files  | Avg Reduction | Key Techniques                  |
-|------------|--------|---------------|---------------------------------|
-| Frameworks | 6      | -30%          | Remove TOC links, merge tables  |
-| Guidelines | 9      | -41%          | Remove ASCII, compress examples |
-| **Total**  | **15** | **-37%**      | Combined techniques             |
+### 5.1 Target Metrics
+
+| Metric | Target |
+|--------|--------|
+| Tokens per section | < 500 |
+| Lines per file | < 300 |
+| Info density | High |
+
+### 5.2 Optimization Process
+
+| Step | Action |
+|------|--------|
+| 1 | Identify verbose sections |
+| 2 | Convert to tables/bullets |
+| 3 | Remove redundancy |
+| 4 | Add cross-references |
+| 5 | Validate completeness |
+
+---
+
+## 6. Tiered Loading
+
+| Tier | Content | When to Load |
+|------|---------|--------------|
+| Always | Core principles | Every session |
+| On-demand | Guidelines | When relevant |
+| Deep | Frameworks | Complex decisions |
+| Reference | Full details | Specific queries |
+
+---
+
+## 7. Quick Reference
+
+| ✓ Do | ❌ Don't |
+|------|---------|
+| Use tables | Write paragraphs |
+| Reference files | Repeat content |
+| Load progressively | Dump everything |
+| Compress text | Be verbose |
+| Structure clearly | Use prose for data |
 
 ---
 
 ## Related
 
-- `content/core/quick_reference.md` — Symbol conventions
-- `content/core/defaults.md` — Configuration defaults
-- `content/frameworks/cognitive/expert_committee.md` — Decision framework
+- `context_management.md` — Context efficiency
+- `../../frameworks/cognitive/information_density.md` — Density framework
 
 ---
 
-*信达雅: Elegance (雅) serves efficiency, but always with Faithfulness (信) and Clarity (达) as prerequisites*
+*Part of SAGE Knowledge Base*

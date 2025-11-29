@@ -4,158 +4,119 @@
 
 ---
 
-## Overview
+## 1. Core Axioms
 
-| # | Axiom                      | Principle                        |
-|---|----------------------------|----------------------------------|
-| 1 | **MECE**                   | No overlap, no gaps              |
-| 2 | **SSOT**                   | One source, many references      |
-| 3 | **Progressive Disclosure** | Overview first, detail on demand |
-| 4 | **Separation of Concerns** | Content, code, config apart      |
-| 5 | **Fail-Fast**              | Always return, never hang        |
-| 6 | **Plugin Extensibility**   | 15 hooks for customization       |
-| 7 | **Zero Cross-Import**      | EventBus for communication       |
-| 8 | **On-Demand Loading**      | Load only what's needed          |
-
----
-
-## 1. MECE Principle
-
-**Mutually Exclusive, Collectively Exhaustive** — No overlap, all cases covered
-
-| Area             | Implementation                     |
-|------------------|------------------------------------|
-| Directory        | Each file in exactly one directory |
-| Config           | Each setting defined once          |
-| Responsibilities | Clear, non-overlapping duties      |
-| Documentation    | One authoritative location         |
-
-**Anti-patterns**: Duplicate content · Overlapping responsibilities · Config in multiple locations
+| # | Axiom | Description |
+|---|-------|-------------|
+| 1 | MECE | Mutually Exclusive, Collectively Exhaustive |
+| 2 | SSOT | Single Source of Truth |
+| 3 | Progressive Disclosure | Overview → detail |
+| 4 | Separation of Concerns | Content, code, config separated |
+| 5 | Fail-Fast | No operation hangs indefinitely |
+| 6 | Plugin Extensibility | Extension points for customization |
+| 7 | Zero Cross-Import | Layers communicate via EventBus |
+| 8 | On-Demand Loading | Minimal core, features loaded as needed |
 
 ---
 
-## 2. Single Source of Truth (SSOT)
+## 2. Axiom Details
 
-**Each knowledge piece exists in exactly one place** — Update once, reflect everywhere
+### 2.1 MECE Principle
 
-| Domain          | Single Source                   |
-|-----------------|---------------------------------|
-| Configuration   | `sage.yaml` + `config/*.yaml`   |
-| Timeouts        | `config/timeout.yaml`           |
-| Quality         | `config/quality.yaml`           |
-| Autonomy Levels | `frameworks/autonomy/levels.md` |
+| Aspect | Application |
+|--------|-------------|
+| Categories | Non-overlapping, complete coverage |
+| Responsibilities | Clear boundaries |
+| Testing | No gaps, no duplicates |
 
-**Before adding**: Exists elsewhere? → Reference. Right location? Needs sync? → Consolidate.
+### 2.2 Single Source of Truth
 
----
+| Aspect | Application |
+|--------|-------------|
+| Configuration | One place per setting |
+| Data | Canonical source defined |
+| Documentation | No duplication |
 
-## 3. Progressive Disclosure
+### 2.3 Progressive Disclosure
 
-**From overview to detail** — Start with summary, expand on request
+| Level | Content |
+|-------|---------|
+| L1 | Quick summary |
+| L2 | Key details |
+| L3 | Full reference |
+| L4 | Deep dive |
 
-| Level | Location      | Depth           |
-|-------|---------------|-----------------|
-| L0    | `index.md`    | Navigation      |
-| L1    | `core/`       | Principles      |
-| L2    | `guidelines/` | Guidelines      |
-| L3    | `frameworks/` | Deep frameworks |
-| L4    | `practices/`  | Best practices  |
+### 2.4 Separation of Concerns
 
----
-
-## 4. Separation of Concerns
-
-**Content, code, configuration separated**
-
-| Layer        | Responsibility            | Cannot Import          |
-|--------------|---------------------------|------------------------|
-| Core         | Infrastructure, protocols | Services, Capabilities |
-| Services     | CLI, MCP, API             | Each other             |
-| Capabilities | Analyzers, Checkers       | Services               |
-
-| Type    | Location    |
-|---------|-------------|
-| Content | `content/`  |
-| Code    | `src/sage/` |
-| Config  | `config/`   |
-| Tests   | `tests/`    |
-| Docs    | `docs/`     |
+| Layer | Responsibility |
+|-------|----------------|
+| Content | Knowledge, documentation |
+| Code | Logic, processing |
+| Config | Settings, parameters |
 
 ---
 
-## 5. Fail-Fast with Timeout
+## 3. Architecture Application
 
-**No operation hangs** — Return partial or fallback
+### 3.1 Layer Rules
 
-| Level | Timeout | Scope    |
-|-------|---------|----------|
-| T1    | 100ms   | Cache    |
-| T2    | 500ms   | File     |
-| T3    | 2s      | Layer    |
-| T4    | 5s      | Full KB  |
-| T5    | 10s     | Analysis |
+| Layer | Depends On | Never Depends On |
+|-------|------------|------------------|
+| Core | Nothing | Services, Plugins |
+| Services | Core | Other Services |
+| Plugins | Core | Services |
 
-**Strategy**: Timeout → Partial → Fallback → Log → Never hang
+### 3.2 Communication
 
----
-
-## 6. Plugin Extensibility
-
-**15 extension points** — Well-defined hooks without core modification
-
-| Category    | Hooks                                       |
-|-------------|---------------------------------------------|
-| Loader      | `pre_load`, `post_load`, `on_timeout`       |
-| Search      | `pre_search`, `post_search`                 |
-| Format      | `pre_format`, `post_format`                 |
-| Analyzer    | `pre_analyze`, `analyze`, `post_analyze`    |
-| Lifecycle   | `on_startup`, `on_shutdown`                 |
-| Error/Cache | `on_error`, `on_cache_hit`, `on_cache_miss` |
+```
+Components → EventBus → Components
+(No direct imports between layers)
+```
 
 ---
 
-## 7. Zero Cross-Import
+## 4. Timeout Axiom
 
-**Layers communicate via EventBus**
-
-**Allowed**: Services → Core · Services → Capabilities · Capabilities → Core
-
-**Forbidden**: Core → Services · Core → Capabilities · Services ↔ Services
-
-**Via**: EventBus (async) · DI Container · Protocol interfaces
+| Principle | Implementation |
+|-----------|----------------|
+| Fail-fast | Every operation has timeout |
+| Graceful degradation | Return partial over nothing |
+| User feedback | Always inform of status |
 
 ---
 
-## 8. On-Demand Loading
+## 5. Extensibility Axiom
 
-**Minimal core, features loaded as needed**
-
-| Content         | Load Trigger      |
-|-----------------|-------------------|
-| Core principles | Always            |
-| Guidelines      | Keyword-triggered |
-| Frameworks      | Task-specific     |
-| Practices       | On request        |
-
-**Benefits**: Reduced load · Lower tokens · Faster response
+| Hook Point | Purpose |
+|------------|---------|
+| pre_load | Before content loading |
+| post_load | After content loading |
+| on_timeout | Timeout handling |
+| pre_search | Before search |
+| post_search | After search |
 
 ---
 
-## 📊 Axiom Application Matrix
+## 6. Philosophy Mapping
 
-| Axiom                  | Code | Config | Content | Arch |
-|------------------------|:----:|:------:|:-------:|:----:|
-| MECE                   |  ✓   |   ✓    |    ✓    |  ✓   |
-| SSOT                   |  ✓   |   ✓    |    ✓    |  ✓   |
-| Progressive Disclosure |      |        |    ✓    |  ✓   |
-| Separation of Concerns |  ✓   |   ✓    |    ✓    |  ✓   |
-| Fail-Fast              |  ✓   |   ✓    |         |      |
-| Plugin Extensibility   |  ✓   |   ✓    |         |  ✓   |
-| Zero Cross-Import      |  ✓   |        |         |  ✓   |
-| On-Demand Loading      |  ✓   |   ✓    |    ✓    |      |
+| Axiom | 信达雅 Alignment |
+|-------|------------------|
+| MECE | 信 (Faithful) — Complete, accurate |
+| SSOT | 信 (Faithful) — Single truth |
+| Progressive Disclosure | 达 (Clear) — Accessible |
+| Separation of Concerns | 达 (Clear) — Organized |
+| Fail-Fast | 雅 (Elegant) — Robust |
+| Plugin Extensibility | 雅 (Elegant) — Flexible |
+| Zero Cross-Import | 雅 (Elegant) — Clean |
+| On-Demand Loading | 雅 (Elegant) — Efficient |
 
 ---
 
-**Related**: `docs/design/00-overview.md` · `docs/design/01-architecture.md` · `content/core/principles.md`
+## Related
+
+- `core/principles.md` — 信达雅 philosophy
+- `docs/design/01-architecture.md` — Architecture design
+
+---
 
 *Part of SAGE Knowledge Base*

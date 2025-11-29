@@ -1,92 +1,112 @@
 # Timeout Hierarchy Framework
 
-> **Load Priority**: On-demand  
-> **Purpose**: Guarantee response times, prevent hangs, graceful degradation  
-> **Principle**: Always return something, never hang
+> Guarantee response times, prevent hangs, graceful degradation
 
 ---
 
-## ⏱️ 5-Level Hierarchy
+## 1. Five-Level Hierarchy
 
-| Level            | Timeout | Source      | Use Case            | Fallback        |
-|------------------|---------|-------------|---------------------|-----------------|
-| **L0** Cache     | 100ms   | Memory      | Hot paths           | → L1            |
-| **L1** File      | 500ms   | Local disk  | Single file, config | → L2            |
-| **L2** Layer     | 2s      | Multi-file  | Chapter, framework  | → L3            |
-| **L3** Full      | 5s      | Complete KB | Full search         | → L4            |
-| **L4** Emergency | 10s     | Degraded    | System stress       | → L∞            |
-| **L∞** Embedded  | 0ms     | Compiled    | Hard fallback       | Always succeeds |
-
-**Flow**: Cache → File → Layer → Full → Emergency → Embedded
+| Level | Name | Timeout | Scope | Fallback |
+|-------|------|---------|-------|----------|
+| **T1** | Cache | 100ms | Cache lookup | Skip cache |
+| **T2** | File | 500ms | Single file | Use fallback |
+| **T3** | Layer | 2s | Full layer | Partial load |
+| **T4** | Full | 5s | Complete KB | Core only |
+| **T5** | Complex | 10s | Analysis | Abort + summary |
 
 ---
 
-## ⚙️ Configuration
+## 2. Timeout Flow
 
-> **Source**: `config/timeout.yaml`
-
-### Operations
-
-| Operation    | Timeout | Operation  | Timeout |
-|--------------|---------|------------|---------|
-| cache_lookup | 100ms   | analysis   | 10s     |
-| file_read    | 500ms   | mcp_call   | 10s     |
-| layer_load   | 2s      | search     | 3s      |
-| full_load    | 5s      | global_max | 10s     |
-
-**Dynamic**: Adjusts for `is_remote` (network) · `system_load > 0.8` (stress) · Capped at `max_timeout_ms`
-
----
-
-## 🔌 Circuit Breaker
-
-**States**: CLOSED → (failures ≥ threshold) → OPEN → (reset expires) → HALF_OPEN → (test passes) → CLOSED
-
-| Setting       | Default | Setting            | Default |
-|---------------|---------|--------------------|---------|
-| enabled       | true    | failure_threshold  | 3       |
-| reset_timeout | 30s     | half_open_requests | 1       |
-
----
-
-## 🛡️ Fallback Strategy
-
-> **Source**: `config/timeout.yaml` → `timeout.fallback`
-
-**Strategy**: graceful (graceful/strict/none) · **Cache Stale**: 60s
-
-| Situation      | Action         | Level Failed  | Response          |
-|----------------|----------------|---------------|-------------------|
-| Timeout < 5s   | return_partial | Cache miss    | Load from file    |
-| Timeout > 5s   | return_core    | File timeout  | Cached subset     |
-| File not found | return_error   | Layer timeout | Core only         |
-| Parse error    | return_raw     | Full timeout  | Index + error     |
-| Network error  | use_cache      | Emergency     | Embedded fallback |
+```
+Request
+    │
+    ▼
+┌─────────────┐
+│ T1: Cache   │──timeout──▶ Skip, proceed
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ T2: File    │──timeout──▶ Use fallback
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ T3: Layer   │──timeout──▶ Return partial
+└──────┬──────┘
+       │
+       ▼
+┌─────────────┐
+│ T4: Full    │──timeout──▶ Core only
+└──────┬──────┘
+       │
+       ▼
+    Result
+```
 
 ---
 
-## 📊 Monitoring
+## 3. Fallback Strategies
 
-**Metrics**: timeout_count_by_level · fallback_trigger_count · avg_response_time · cache_hit_rate · emergency_rate
-
-| Metric              | Warning | Critical |
-|---------------------|---------|----------|
-| L2+ timeouts        | >5%     | >15%     |
-| Emergency fallbacks | >1%     | >5%      |
-| Cache hit rate      | <80%    | <60%     |
-| Avg response time   | >1s     | >3s      |
+| Situation | Action |
+|-----------|--------|
+| Cache miss | Proceed to file |
+| File timeout | Use embedded fallback |
+| Layer timeout | Return loaded portion |
+| Full timeout | Return core principles |
+| Analysis timeout | Return summary |
 
 ---
 
-## 💡 Best Practices
+## 4. Circuit Breaker
 
-**Do** ✅: Fallback at each level · Log timeouts · Cache hot paths · Return partial over nothing · Include completeness
-metadata
+| Parameter | Value | Purpose |
+|-----------|-------|---------|
+| Failure threshold | 3 | Open after N failures |
+| Reset timeout | 30s | Try again after |
+| Half-open requests | 1 | Test recovery |
 
-**Don't** ❌: Unbounded operations · Fail silently · Empty without explanation · Retry infinitely · Block on slow ops
+### 4.1 States
+
+| State | Behavior |
+|-------|----------|
+| **Closed** | Normal operation |
+| **Open** | Fail fast, use fallback |
+| **Half-Open** | Test with single request |
+
+---
+
+## 5. Configuration
+
+```yaml
+timeout:
+  operations:
+    cache_lookup: 100ms    # T1
+    file_read: 500ms       # T2
+    layer_load: 2s         # T3
+    full_load: 5s          # T4
+    analysis: 10s          # T5
+    
+  fallback:
+    strategy: graceful     # graceful | strict | none
+    cache_stale_ms: 60000  # Use stale cache up to 60s
+```
+
+---
+
+## 6. Implementation Guidelines
+
+| Guideline | Application |
+|-----------|-------------|
+| Always set timeouts | Every external call |
+| Use appropriate tier | Match operation scope |
+| Implement fallbacks | Every timeout path |
+| Log timeouts | For monitoring |
+| Test timeouts | Include in test suite |
 
 ---
 
 **Golden Rule**: Always return something, never hang.
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

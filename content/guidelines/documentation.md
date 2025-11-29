@@ -4,131 +4,112 @@
 
 ---
 
-## 4.1 Documentation Philosophy
+## 1. Documentation Philosophy
 
-**Core Principles**: Accuracy · Clarity · Completeness · Accessibility
-
-**信达雅 Applied**: 信 (accurate, no misleading) · 达 (clear structure) · 雅 (well-formatted, consistent)
-
----
-
-## 4.2 Documentation Types
-
-### README.md Structure
-
-```
-# Project Name → Brief description
-## Features → Key features list
-## Quick Start → Install + basic usage
-## Installation → Detailed steps
-## Usage → Common patterns + examples
-## Configuration → Options + env vars
-## Contributing → How to contribute
-## License → License info
-```
-
-### API Documentation (Google Style)
-
-```python
-def fetch_user(user_id: str, include_profile: bool = False) -> User:
-    """Fetch a user by unique identifier.
-    
-    Args:
-        user_id: Unique identifier (UUID format).
-        include_profile: If True, includes profile data.
-        
-    Returns:
-        User object with requested data.
-        
-    Raises:
-        UserNotFoundError: If no user matches ID.
-    """
-```
+| Principle | Application |
+|-----------|-------------|
+| Audience-first | Write for the reader |
+| Progressive disclosure | Overview → details |
+| DRY | Single source of truth |
+| Up-to-date | Update with code changes |
 
 ---
 
-## 4.3 Code Comments
+## 2. Document Types
 
-### When to Comment
-
-| Scenario             | Example                                |
-|----------------------|----------------------------------------|
-| Complex algorithm    | `# Using Dijkstra's for shortest path` |
-| Non-obvious decision | `# JSON preferred for browser compat`  |
-| Workaround           | `# HACK: API bug requires retry`       |
-| Public API           | Full docstring                         |
-
-### When NOT to Comment
-
-```python
-# ❌ Obvious
-counter = 0  # Initialize counter
-
-# ✅ Self-documenting
-user_count = 0
-```
+| Type | Purpose | Update Frequency |
+|------|---------|------------------|
+| README | Project entry point | Per release |
+| API Reference | Function/class docs | Per API change |
+| Guides | How-to content | As needed |
+| ADRs | Architecture decisions | Per decision |
+| Changelog | Release history | Per release |
 
 ---
 
-## 4.4 Changelog Format
+## 3. Structure Standards
+
+### 3.1 File Format
 
 ```markdown
-## [Unreleased]
+# Title
 
-### Added / Changed / Deprecated / Removed / Fixed / Security
+> Single-line purpose
 
-## [2.0.0] - 2024-01-15
+---
 
-### Added
+## 1. Section
 
-- Major new feature
+### 1.1 Subsection
 
-### Changed
+---
 
-- Breaking change (migration guide: ...)
+## Related
+
+- `path/file.md` — Description
+
+---
+
+*Part of SAGE Knowledge Base*
+```
+
+### 3.2 Heading Rules
+
+| Level | Use For | Numbering |
+|-------|---------|-----------|
+| H1 | Document title | None |
+| H2 | Main sections | 1., 2., 3. |
+| H3 | Subsections | 1.1, 1.2 |
+| H4 | Details (sparingly) | 1.1.1 |
+
+---
+
+## 4. Writing Style
+
+| Rule | ❌ Avoid | ✓ Prefer |
+|------|---------|----------|
+| Active voice | "File is read" | "Loader reads file" |
+| Present tense | "This will create" | "This creates" |
+| Specific | "Configure system" | "Set `MAX=100`" |
+| Concise | "In order to" | "To" |
+
+---
+
+## 5. Code Examples
+
+**Good examples are**: Complete · Minimal · Commented · Runnable
+
+```python
+# ✓ Shows input and output
+result = process("input")
+print(result)  # Output: "processed"
 ```
 
 ---
 
-## 4.5 Architecture Decision Record (ADR)
+## 6. Maintenance
 
-```markdown
-# ADR-001: [Title]
+### 6.1 Update Triggers
 
-## Status: Accepted/Rejected/Superseded
+| Event | Action |
+|-------|--------|
+| Code change | Update affected docs |
+| API change | Update reference |
+| User question | Improve clarity |
 
-## Context: [Problem/need]
+### 6.2 Quality Checklist
 
-## Decision: [What we chose]
-
-## Consequences: [Positive] · [Negative] · [Risks]
-```
-
----
-
-## 4.6 Documentation Maintenance
-
-**Keep Current**: Update with code changes · Review in code review · Test examples · Remove outdated
-
-**Debt Signs**: Outdated examples · Missing docs · Inconsistent terminology · Broken links
+- [ ] Links verified
+- [ ] Examples tested
+- [ ] Sections numbered
+- [ ] Footer present
 
 ---
 
-## 4.7 Quick Reference
+## Related
 
-### Markdown Best Practices
-
-| Element      | Usage                  |
-|--------------|------------------------|
-| `# H1`       | Document title only    |
-| `## H2`      | Major sections         |
-| `### H3`     | Subsections            |
-| `` `code` `` | Inline code, filenames |
-| `**bold**`   | Important terms        |
-
-### Checklist
-
-✓ README complete · ✓ API docstrings · ✓ Complex code commented · ✓ Changelog maintained · ✓ Examples tested
+- `practices/documentation/standards.md` — Full standards
+- `config/documentation.yaml` — TOC configuration
 
 ---
 

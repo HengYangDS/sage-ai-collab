@@ -4,125 +4,113 @@
 
 ---
 
-## 3.1 Configuration Management
+## 1. Configuration Management
 
-**Priority** (high→low): CLI args → Env vars → Local config → Project config → Code defaults
+| Principle | Application |
+|-----------|-------------|
+| Environment separation | dev/staging/prod configs |
+| Secrets management | Never in code, use env vars |
+| Validation | Validate config at startup |
+| Defaults | Sensible defaults, explicit overrides |
 
-```python
-# ✅ Typed configuration with defaults
-from pydantic_settings import BaseSettings
+### 1.1 Config Priority
 
-
-class Settings(BaseSettings):
-    database_url: str = "sqlite:///default.db"
-    debug: bool = False
-    max_connections: int = 10
-
-    class Config:
-        env_prefix = "APP_"
 ```
-
-**Secrets**: ❌ Never commit · ✅ Env vars or secret managers · ✅ Document required vars · ✅ Provide `.env.example`
-
----
-
-## 3.2 Testing Practices
-
-**Test Pyramid**: Unit (many, fast) → Integration (moderate) → E2E (few, slow)
-
-**Structure**: `tests/unit/` · `tests/integration/` · `tests/e2e/` · `tests/fixtures/` · `conftest.py`
-
-| Criterion           | Description      |
-|---------------------|------------------|
-| **Fast**            | Unit < 100ms     |
-| **Isolated**        | No external deps |
-| **Repeatable**      | Same result      |
-| **Self-validating** | Pass/fail only   |
-
-```python
-# AAA Pattern
-def test_user_creation():
-    # Arrange
-    service = UserService(mock_repository)
-    # Act
-    result = service.create_user({"name": "Alice"})
-    # Assert
-    assert result.name == "Alice"
+Environment vars > Config files > Defaults
 ```
 
 ---
 
-## 3.3 Performance Guidelines
+## 2. Testing Strategy
 
-**Principles**: Measure first → Optimize hot paths (20/80) → Cache wisely → Async for I/O
+### 2.1 Test Pyramid
 
-```python
-# ✅ Batch operations (1 query)
-users = repository.get_many(user_ids)
+| Level | Coverage | Speed | Focus |
+|-------|----------|-------|-------|
+| Unit | 80%+ | Fast | Logic |
+| Integration | Key paths | Medium | Contracts |
+| E2E | Critical flows | Slow | User journeys |
 
-# ❌ N+1 queries
-users = [repository.get(id) for id in user_ids]
-```
+### 2.2 Test Principles
 
-**Checklist**: Optimized queries · Pagination · Timeouts · Caching · Bounded memory
-
----
-
-## 3.4 Change Control
-
-### Commit Format
-
-```
-<type>(<scope>): <subject>
-```
-
-**Types**: `feat` · `fix` · `docs` · `style` · `refactor` · `test` · `chore`
-
-### Branch Strategy
-
-`main` (prod) → `develop` (integration) → `feature/*` · `bugfix/*`
-
-### Code Review
-
-✓ Style · ✓ Tests pass · ✓ Docs updated · ✓ Security · ✓ Performance · ✓ Breaking changes documented
+| Principle | Description |
+|-----------|-------------|
+| Isolation | Tests don't affect each other |
+| Deterministic | Same input → same result |
+| Fast | Quick feedback loop |
+| Readable | Test as documentation |
 
 ---
 
-## 3.5 Maintainability
+## 3. Performance
 
-### Technical Debt Priority
+### 3.1 Guidelines
 
-| Priority | Timeline       |
-|----------|----------------|
-| Critical | Immediate      |
-| High     | Next sprint    |
-| Medium   | Roadmap        |
-| Low      | As time allows |
+| Area | Target |
+|------|--------|
+| Response time | < 200ms (p95) |
+| Memory | Monitor growth |
+| Caching | Cache expensive operations |
+| Async | Use for I/O-bound tasks |
 
-### Code Health
+### 3.2 Optimization Process
 
-```python
-# ✅ Low complexity, clear flow
-def process_order(order: Order) -> Result:
-    if not order.is_valid():
-        return Result.invalid("Validation failed")
-    if not check_inventory(order.items).available:
-        return Result.unavailable()
-    return complete_order(order)
+```
+Measure → Profile → Optimize → Verify
 ```
 
-**Refactoring Triggers**: Duplicate code · Long methods (>50 lines) · Large classes (>300 lines) · Complex
-conditionals · Feature envy
+**Rule**: Never optimize without profiling first.
 
 ---
 
-## 3.6 Engineering Checklist
+## 4. Change Control
 
-| Phase      | Checks                                                       |
-|------------|--------------------------------------------------------------|
-| **Before** | Requirements · Design reviewed · Dependencies identified     |
-| **During** | Tests alongside code · Style guide · Incremental changes     |
-| **Merge**  | Tests pass · Review approved · Docs updated · Performance OK |
+### 4.1 Change Categories
+
+| Category | Process |
+|----------|---------|
+| Trivial | Direct commit, self-review |
+| Standard | PR, single reviewer |
+| Significant | PR, multiple reviewers |
+| Critical | PR, team review, staged rollout |
+
+### 4.2 PR Checklist
+
+- [ ] Tests pass
+- [ ] Documentation updated
+- [ ] No breaking changes (or noted)
+- [ ] Performance impact assessed
+
+---
+
+## 5. Maintainability
+
+### 5.1 Technical Debt
+
+| Priority | Action |
+|----------|--------|
+| High | Fix in current sprint |
+| Medium | Schedule within month |
+| Low | Track, address opportunistically |
+
+### 5.2 Code Health
+
+| Metric | Target |
+|--------|--------|
+| Test coverage | > 80% |
+| Cyclomatic complexity | < 10 |
+| File length | < 500 lines |
+| Function length | < 50 lines |
+
+---
+
+## 6. Workflow Checklist
+
+| Phase | Actions |
+|-------|---------|
+| **Start** | Understand requirements, identify risks |
+| **During** | Tests alongside code, incremental changes |
+| **Merge** | Tests pass, review approved, docs updated |
 
 ---
 

@@ -4,141 +4,94 @@
 
 ---
 
-## 9.1 Xin-Da-Ya (信达雅) Framework
+## 1. Xin-Da-Ya Success Mapping
 
-> **Full Reference**: `content/core/principles.md`
+| Principle | Success Indicator | Failure Sign |
+|-----------|-------------------|--------------|
+| **信 (Faithful)** | Works correctly, tests pass | Bugs, incorrect behavior |
+| **达 (Clear)** | Easy to understand, maintain | Confusing, hard to modify |
+| **雅 (Elegant)** | Simple, minimal complexity | Over-engineered, bloated |
 
-| Principle | Meaning      | Application                       |
-|-----------|--------------|-----------------------------------|
-| **信 Xin** | Faithfulness | Accurate, reliable, trustworthy   |
-| **达 Da**  | Clarity      | Clear, comprehensible, accessible |
-| **雅 Ya**  | Elegance     | Refined, balanced, harmonious     |
+### 1.1 Priority Application
 
-**Hierarchy**: 信 (Foundation) → 达 (Build clarity) → 雅 (Refine elegance)
+```
+信 (Correct) → 达 (Clear) → 雅 (Elegant)
+```
+
+Never sacrifice correctness for elegance.
 
 ---
 
-## 9.2 Xin (信) - Faithfulness
+## 2. Success Criteria Framework
 
-**Definition**: Code that does exactly what it claims, reliably.
+### 2.1 Task Success
 
-**Checklist**: Behavior matches docs · Edge cases handled · No hidden side effects · Contracts honored
+| Dimension | Question | Measure |
+|-----------|----------|---------|
+| Functional | Does it work? | Tests pass |
+| Quality | Is it well done? | Metrics met |
+| Timeliness | On schedule? | Delivery time |
+| Alignment | Meets intent? | Stakeholder approval |
 
-```python
-# ✅ HIGH XIN: Clear contract
-def divide(a: float, b: float) -> float:
-    if b == 0:
-        raise ZeroDivisionError("Cannot divide by zero")
-    return a / b
+### 2.2 Collaboration Success
 
+| Metric | Indicator |
+|--------|-----------|
+| Communication | Clear, efficient exchanges |
+| Autonomy calibration | Right level for context |
+| Error recovery | Quick, effective corrections |
+| Learning | Improved performance over time |
 
-# ❌ LOW XIN: Silent failure
-def divide(a, b):
-    try:
-        return a / b
-    except:
-        return 0  # Wrong result silently
+---
+
+## 3. Excellence Dimensions
+
+| Dimension | Description | Target |
+|-----------|-------------|--------|
+| Technical | Code quality, architecture | High standards |
+| Process | Workflow efficiency | Continuous improvement |
+| Communication | Clear, effective exchange | Minimal friction |
+| Learning | Knowledge growth | Ongoing development |
+
+---
+
+## 4. Anti-Patterns
+
+| Anti-Pattern | Problem | Solution |
+|--------------|---------|----------|
+| Perfectionism | Delays delivery | Good enough, iterate |
+| Over-engineering | Unnecessary complexity | YAGNI principle |
+| Under-communication | Misalignment | Confirm understanding |
+| Assumption errors | Wrong direction | State assumptions |
+
+---
+
+## 5. Continuous Improvement
+
+### 5.1 Feedback Integration
+
+| Source | Action |
+|--------|--------|
+| Task outcome | Adjust approach |
+| User feedback | Improve quality |
+| Metrics | Optimize process |
+| Retrospectives | Systemic improvements |
+
+### 5.2 Learning Cycle
+
+```
+Do → Reflect → Learn → Apply → Do
 ```
 
 ---
 
-## 9.3 Da (达) - Clarity
+## 6. Success Checklist
 
-**Definition**: Code that communicates intent clearly.
-
-**Checklist**: Names reveal intent · Structure follows logic · Complexity minimized · Flow easy to follow
-
-```python
-# ✅ HIGH DA: Clear intent
-def calculate_order_total(items: List[Item], discount_percent: float) -> Money:
-    subtotal = sum(item.price for item in items)
-    return subtotal * (1 - discount_percent / 100)
-
-
-# ❌ LOW DA: Cryptic
-def calc(i, d):
-    return sum(x.p for x in i) * (1 - d / 100)
-```
-
----
-
-## 9.4 Ya (雅) - Elegance
-
-**Definition**: Code that achieves purpose with grace and balance.
-
-**Checklist**: No unnecessary complexity · Proportional to problem · Consistent · Natural to use
-
-```python
-# ✅ HIGH YA: Elegant, proportional
-def is_palindrome(text: str) -> bool:
-    cleaned = ''.join(c.lower() for c in text if c.isalnum())
-    return cleaned == cleaned[::-1]
-
-
-# ❌ LOW YA: Over-engineered
-class PalindromeChecker:
-    def __init__(self, config, preprocessor, comparator): ...
-    # 50 lines of unnecessary abstraction
-```
-
----
-
-## 9.5 Shu-Fa-Dao (术法道) Framework
-
-| Level     | Meaning   | Focus                                      |
-|-----------|-----------|--------------------------------------------|
-| **术 Shu** | Technique | Syntax, patterns, tools, best practices    |
-| **法 Fa**  | Method    | Why patterns exist, trade-offs, strategies |
-| **道 Dao** | Way       | Simplicity, clarity, sustainability, value |
-
-**Progression**: Learn Shu → Understand Fa → Embody Dao
-
----
-
-## 9.6 Success Criteria Matrix
-
-### Project Success
-
-| Dimension  | Criteria      | Measure                      |
-|------------|---------------|------------------------------|
-| Functional | Does it work? | Tests pass, requirements met |
-| Technical  | Well-built?   | Code quality metrics         |
-| Process    | Efficient?    | Time, resources used         |
-| Learning   | Did we grow?  | Skills gained, shared        |
-
-### Code Success
-
-| Criterion    | Question        | Indicator         |
-|--------------|-----------------|-------------------|
-| Correct      | Right thing?    | Tests, validation |
-| Clear        | Understandable? | Review feedback   |
-| Maintainable | Can evolve?     | Change cost       |
-| Performant   | Fast enough?    | Benchmarks        |
-
----
-
-## 9.7 Trade-offs
-
-> "The best solution balances competing concerns for the context."
-
-| Trade-off                  | Lean A When        | Lean B When          |
-|----------------------------|--------------------|----------------------|
-| Speed vs Quality           | Prototype          | Production           |
-| Simple vs Flexible         | Clear requirements | Uncertain future     |
-| DRY vs Clarity             | Pattern stable     | Abstraction obscures |
-| Performance vs Readability | Proven bottleneck  | General code         |
-
-**Framework**: Identify trade-off → Understand context → Choose → Document → Revisit
-
----
-
-## 9.8 Quick Reference
-
-| Phase      | Checklist                                  |
-|------------|--------------------------------------------|
-| **Before** | Success criteria · Trade-offs · Priorities |
-| **During** | 信 Correct? · 达 Clear? · 雅 Elegant?         |
-| **After**  | Criteria met? · Learnings? · Improvements? |
+| Phase | Questions |
+|-------|-----------|
+| **Before** | Goal clear? Constraints known? Success defined? |
+| **During** | 信 Correct? 达 Clear? 雅 Elegant? |
+| **After** | Criteria met? Learnings? Improvements? |
 
 ---
 

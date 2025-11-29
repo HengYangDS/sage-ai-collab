@@ -1,162 +1,207 @@
-# Documentation Standards Practice Guide
+# Documentation Standards
 
-> **Load Time**: On-demand (~150 tokens)  
-> **Purpose**: Practical standards for effective documentation
+> Unified standards for token-efficient, AI-friendly documentation
 
 ---
 
-## 1. Document Structure
+## 1. Document Format
 
-### File Naming
+### 1.1 Header Format
 
-`[category]_[topic]_[qualifier].md` — e.g., `api_authentication_guide.md`, `architecture_decision_001.md`
+```markdown
+# Document Title
 
-### Standard Header
+> Single-line purpose statement
 
-```
-# Title
-> **Load Time**: [timing] (~[tokens] tokens)  
-> **Purpose**: [brief statement]  
-> **Version**: [semver]
 ---
 ```
 
-### Heading Hierarchy
+**Rules**:
 
-`# Title (H1)` → `## Section (H2)` → `### Subsection (H3)` → `#### Detail (H4, sparingly)`
+- H1 title only (no emojis in production docs)
+- One-line blockquote for purpose
+- Horizontal rule separator
+- No token estimates, load priorities, or version in header
+
+### 1.2 Footer Format
+
+```markdown
+---
+
+*Part of SAGE Knowledge Base*
+```
+
+**Rules**:
+
+- Horizontal rule before footer
+- Italic tagline only
+- No custom messages or signatures
+
+### 1.3 Section Numbering
+
+| Level | Format               | Example                     |
+|-------|----------------------|-----------------------------|
+| H2    | `## 1. Section`      | `## 1. Overview`            |
+| H3    | `### 1.1 Subsection` | `### 1.1 Core Concepts`     |
+| H4    | `#### 1.1.1 Detail`  | `#### 1.1.1 Implementation` |
+
+**Rules**:
+
+- All H2 sections numbered (1., 2., 3.)
+- H3 subsections use decimal notation (1.1, 1.2)
+- H4 for deeper nesting (1.1.1) — use sparingly
+- Related/References section unnumbered at end
 
 ---
 
-## 2. Content Types
+## 2. Content Structure
 
-| Type               | Key Sections                                          | Use For                |
-|--------------------|-------------------------------------------------------|------------------------|
-| **API Reference**  | Signature, Parameters, Returns, Raises, Example       | Functions/Classes      |
-| **Tutorial/Guide** | Prerequisites, Steps, Verification, Troubleshooting   | How-to content         |
-| **ADR**            | Status, Context, Decision, Consequences (+/-/neutral) | Architecture decisions |
-| **README**         | Features, Quick Start, Documentation links, License   | Project entry          |
-| **Changelog**      | Added, Changed, Fixed, Removed (per version)          | Release history        |
+### 2.1 File Organization
 
-### API Reference Format
+```
+content/
+├── [layer]/
+│   ├── index.md          # Layer navigation
+│   └── [topic]/
+│       └── [file].md     # Topic content
+```
 
-`## [Name]` → `Signature` (code) → `Parameters` (table) → `Returns` → `Raises` → `Example` (code)
+**Naming**: `lowercase_with_underscores.md`
 
-### ADR Format
+### 2.2 Section Order
 
-`Status: Proposed|Accepted|Deprecated` → `Context` → `Decision` → `Consequences: +/-/neutral`
+1. Title + Purpose (header)
+2. TOC (if > 100 lines or > 5 headings)
+3. Numbered content sections
+4. Related/References (unnumbered)
+5. Footer
+
+### 2.3 TOC Rules
+
+| Condition     | Threshold | Action  |
+|---------------|-----------|---------|
+| Line count    | > 60      | Add TOC |
+| Heading count | > 3       | Add TOC |
+
+**TOC Format** (inline links preferred):
+
+```markdown
+## Table of Contents
+
+[Section 1](#1-section) · [Section 2](#2-section) · [Section 3](#3-section)
+
+---
+```
 
 ---
 
-## 3. Writing Standards
+## 3. Token Efficiency
 
-| Guideline     | ❌ Bad                            | ✓ Good                                     |
-|---------------|----------------------------------|--------------------------------------------|
-| Be specific   | "Configure the system"           | "Set `MAX_CONNECTIONS=100` in config.yaml" |
-| Active voice  | "The file is read by the loader" | "The loader reads the file"                |
-| Present tense | "This will create a user"        | "This creates a user"                      |
-| Avoid jargon  | "Utilize the endpoint"           | "Use the endpoint"                         |
+### 3.1 High-Efficiency Patterns
 
-### Code Examples
+| Pattern      | Use For                | Token Impact       |
+|--------------|------------------------|--------------------|
+| Tables       | Structured comparisons | -40% vs paragraphs |
+| Inline code  | Commands, values       | Precise, scannable |
+| Bullet lists | Enumerations           | -30% vs paragraphs |
+| Code blocks  | Examples               | Clear boundaries   |
 
-**Good**: Complete · Minimal · Commented · Shows output · Handles errors
+### 3.2 Avoid
 
-### Tables vs Lists
+| Anti-Pattern         | Problem         | Alternative     |
+|----------------------|-----------------|-----------------|
+| Long paragraphs      | High token cost | Tables/bullets  |
+| Redundant headers    | Noise           | Merge sections  |
+| Repeated info        | Waste           | Cross-reference |
+| Excessive formatting | Token overhead  | Minimal markup  |
 
-| Use Tables      | Use Lists           |
-|-----------------|---------------------|
-| Comparing items | Sequential steps    |
-| Structured data | Simple enumerations |
-| Reference info  | Hierarchical info   |
+### 3.3 Target Metrics
 
----
-
-## 4. AI-Friendly Documentation
-
-### Token Efficiency
-
-| High Efficiency            | Low Efficiency (Avoid) |
-|----------------------------|------------------------|
-| Tables for structured data | Long paragraphs        |
-| Concise headers            | Repeated information   |
-| Code blocks for examples   | Excessive formatting   |
-| Bullet points for lists    | Embedded images        |
-
-### Scannable Structure
-
-`## Section` → `**Key Point**: summary` → `### Details` (bullets) → `### Example` (code)
-
-### Cross-References
-
-`See [Title](path)` or `Related: path/file.md (description)`
+| Metric             | Target |
+|--------------------|--------|
+| Tokens per section | < 500  |
+| Lines per file     | < 300  |
+| Headings per file  | 5-15   |
 
 ---
 
-## 5. Maintenance
+## 4. Writing Standards
 
-### Review Checklist
+### 4.1 Style Rules
 
-✓ Code examples tested · ✓ Links verified · ✓ Versions current · ✓ No outdated info · ✓ Consistent terms · ✓ Proper
-formatting
+| Rule          | ❌ Avoid                  | ✓ Prefer                       |
+|---------------|--------------------------|--------------------------------|
+| Active voice  | "File is read by loader" | "Loader reads file"            |
+| Present tense | "This will create"       | "This creates"                 |
+| Specific      | "Configure system"       | "Set `MAX=100` in config.yaml" |
+| Concise       | "In order to"            | "To"                           |
 
-### Update Triggers
+### 4.2 Code Examples
 
-| Trigger       | Action                       |
-|---------------|------------------------------|
-| Code change   | Update affected docs         |
-| API change    | Update reference + changelog |
-| New feature   | Add guide + reference        |
-| Bug found     | Add troubleshooting          |
-| User question | Improve clarity              |
+**Good examples are**: Complete · Minimal · Commented · Runnable
 
-### Deprecation Notice
+```python
+# ✓ Good: focused, complete
+def greet(name: str) -> str:
+    return f"Hello, {name}"
 
-`> ⚠️ **Deprecated**: [feature] deprecated in v[X]. Use [alternative]. Removed in v[Y].`
 
----
+# Usage
+print(greet("World"))  # Output: Hello, World
+```
 
-## 6. Documentation Types Matrix
+### 4.3 Cross-References
 
-| Type          | Audience   | Update Frequency | Token Priority |
-|---------------|------------|------------------|----------------|
-| README        | All        | Per release      | High           |
-| API Reference | Developers | Per API change   | Medium         |
-| Tutorials     | New users  | Quarterly        | Low            |
-| ADRs          | Team       | Per decision     | Low            |
-| Changelog     | All        | Per release      | High           |
+**Format**: `[Display Text](relative/path.md)` or in Related section:
 
----
+```markdown
+## Related
 
-## 7. Quality Metrics
-
-| Metric           | Target                      | Measurement        |
-|------------------|-----------------------------|--------------------|
-| Completeness     | 100% public API             | API coverage check |
-| Accuracy         | 100% examples work          | Automated testing  |
-| Freshness        | < 1 month since code change | Git diff analysis  |
-| Readability      | Grade 8 level               | Readability score  |
-| Token Efficiency | < 500 tokens/section        | Token counter      |
+- `path/file.md` — Brief description
+```
 
 ---
 
-## 8. Quick Reference
+## 5. Content Types
 
-| ✓ Do                      | ❌ Don't                       |
-|---------------------------|-------------------------------|
-| Keep documents focused    | Duplicate information         |
-| Use consistent formatting | Use screenshots for code      |
-| Include working examples  | Leave TODOs in published docs |
-| Update with code changes  | Assume reader knowledge       |
-| Link to related documents | Use inconsistent terminology  |
+| Type          | Structure                            | Use For            |
+|---------------|--------------------------------------|--------------------|
+| **Index**     | Navigation table + descriptions      | Layer entry points |
+| **Guide**     | Numbered steps + examples            | How-to content     |
+| **Reference** | Tables + code blocks                 | API, config docs   |
+| **Framework** | Concepts + patterns + examples       | Conceptual models  |
+| **Practice**  | Patterns + anti-patterns + checklist | Best practices     |
+
+---
+
+## 6. Maintenance
+
+### 6.1 Update Triggers
+
+| Event         | Action               |
+|---------------|----------------------|
+| Code change   | Update affected docs |
+| API change    | Update reference     |
+| New feature   | Add guide            |
+| User question | Improve clarity      |
+
+### 6.2 Quality Checklist
+
+- [ ] Header follows format
+- [ ] Sections numbered correctly
+- [ ] Footer present
+- [ ] Links verified
+- [ ] Examples tested
+- [ ] Token-efficient (tables over paragraphs)
 
 ---
 
 ## Related
 
-- `content/practices/documentation/toc.md` — TOC specification
-- `content/practices/ai_collaboration/token_optimization.md` — Token efficiency
 - `content/guidelines/documentation.md` — Documentation guidelines
-- `content/templates/` — Document templates
+- `content/practices/ai_collaboration/token_optimization.md` — Token efficiency
+- `config/documentation.yaml` — TOC configuration
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

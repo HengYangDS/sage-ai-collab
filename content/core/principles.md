@@ -4,66 +4,74 @@
 
 ---
 
-## 🎯 Xin-Da-Ya Framework (信达雅)
+## 1. Xin-Da-Ya Framework (信达雅)
 
-### 信 (Xin) - Faithfulness · *Accurate, Reliable, Testable*
+Classical translation principles adapted for software and AI collaboration.
 
-Execute precisely · Preserve intent · Verify results · Maintain consistency
+| Principle | Chinese | Meaning | Application |
+|-----------|---------|---------|-------------|
+| **Faithfulness** | 信 (Xin) | True to intent | Accurate, reliable, testable, complete |
+| **Clarity** | 达 (Da) | Clear expression | Readable, maintainable, well-structured |
+| **Elegance** | 雅 (Ya) | Refined beauty | Minimal, balanced, sustainable |
 
-### 达 (Da) - Clarity · *Clear, Maintainable, Structured*
+### 1.1 Priority Order
 
-Communicate simply · Organize logically · Make implicit explicit · Ensure maintainability
+**信 → 达 → 雅** (Faithfulness before Clarity before Elegance)
 
-### 雅 (Ya) - Elegance · *Refined, Balanced, Sustainable*
+- Never sacrifice correctness for beauty
+- Never sacrifice clarity for brevity
+- Elegance emerges from faithful, clear solutions
 
-Seek simplicity · Balance concerns · Create evolvable designs · Minimize cognitive load
+### 1.2 Application Examples
 
----
-
-## 🛠️ Shu-Fa-Dao Framework (术法道)
-
-### 术 (Shu) - Technique · *Specific skills and methods*
-
-Code patterns · Testing strategies · Documentation formats · Tool usage
-
-### 法 (Fa) - Method · *Systematic approaches*
-
-Design principles · Process workflows · Quality frameworks · Decision protocols
-
-### 道 (Dao) - Tao · *Underlying philosophy*
-
-First principles · Value alignment · Long-term sustainability · Holistic perspective
+| Context | 信 (Faithful) | 达 (Clear) | 雅 (Elegant) |
+|---------|---------------|------------|--------------|
+| Code | Correct logic | Readable names | Minimal complexity |
+| Docs | Accurate info | Well-organized | Concise expression |
+| Design | Meets requirements | Intuitive structure | Clean architecture |
 
 ---
 
-## 🔗 Framework Integration
+## 2. Shu-Fa-Dao Framework (术法道)
 
-| Level       | Xin-Da-Ya  | Shu-Fa-Dao  | Focus |
-|-------------|------------|-------------|-------|
-| Strategic   | 雅 Elegance | 道 Tao       | Why   |
-| Tactical    | 达 Clarity  | 法 Method    | How   |
-| Operational | 信 Faithful | 术 Technique | What  |
+Three levels of mastery from technique to wisdom.
+
+| Level | Chinese | Focus | Description |
+|-------|---------|-------|-------------|
+| **Technique** | 术 (Shu) | How | Tools, syntax, commands, mechanics |
+| **Method** | 法 (Fa) | What | Patterns, principles, best practices |
+| **Philosophy** | 道 (Dao) | Why | Wisdom, intuition, contextual mastery |
+
+### 2.1 Growth Path
+
+```
+术 (Learn tools) → 法 (Apply patterns) → 道 (Develop wisdom)
+```
+
+### 2.2 Balance
+
+- **术 without 法**: Mechanical, inflexible
+- **法 without 道**: Rigid, context-blind
+- **道 without 术/法**: Abstract, impractical
 
 ---
 
-## ⚡ Application Guidelines
+## 3. Integration
 
-| Situation             | Principle      | Action                          |
-|-----------------------|----------------|---------------------------------|
-| Ambiguous requirement | 信 Faithfulness | Clarify before proceeding       |
-| Complex problem       | 达 Clarity      | Break down, structure, document |
-| Multiple solutions    | 雅 Elegance     | Choose simplest that works      |
-| Learning new domain   | 术 Technique    | Master fundamentals first       |
-| Process improvement   | 法 Method       | Systematize, then optimize      |
-| Strategic decision    | 道 Tao          | Consider long-term impact       |
+Both frameworks work together:
+
+| Xin-Da-Ya | Shu-Fa-Dao | Combined Focus |
+|-----------|------------|----------------|
+| 信 (Faithful) | 术 (Technique) | Correct implementation |
+| 达 (Clear) | 法 (Method) | Structured approach |
+| 雅 (Elegant) | 道 (Philosophy) | Wise simplicity |
 
 ---
 
-## 🎯 The Ultimate Test
+## 4. Daily Application
 
-Before any significant action, ask:
-
-1. **信**: Is this faithful to the intent?
+Before any task, ask:
+1. **信**: Is this accurate and complete?
 2. **达**: Is this clear and maintainable?
 3. **雅**: Is this the elegant solution?
 

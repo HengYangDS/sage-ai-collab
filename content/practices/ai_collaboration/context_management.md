@@ -1,213 +1,128 @@
 # Context Management Practices
 
-> **Load Priority**: On-demand
-> **Purpose**: Strategies for building and managing shared context in AI collaboration
+> Strategies for building and managing shared context in AI collaboration
 
 ---
 
-## Overview
+## 1. Context Types
 
-| Aspect        | Description                                                   |
-|---------------|---------------------------------------------------------------|
-| **Goal**      | Maximize effective collaboration within context window limits |
-| **Challenge** | Limited window, infinite potential context                    |
-| **Solution**  | Strategic context building, layering, and pruning             |
-
----
-
-## Context Window Model
-
-### Capacity Allocation
-
-| Zone          | Allocation | Content                            |
-|---------------|------------|------------------------------------|
-| **System**    | 5-15%      | Instructions, persona, constraints |
-| **Reference** | 20-40%     | Knowledge, docs, code              |
-| **Working**   | 30-50%     | Current task, conversation         |
-| **Reserved**  | 10-20%     | Response generation buffer         |
-
-### Budget Formula
-
-```
-Available Context = Total Window - System - Reserved
-Effective Capacity = Available × Utilization Rate (~80%)
-```
+| Type | Purpose | Example |
+|------|---------|---------|
+| **Task** | Current work | "Refactor auth module" |
+| **Project** | Broader scope | Architecture, conventions |
+| **Domain** | Subject knowledge | Business rules |
+| **Session** | Conversation state | Previous decisions |
 
 ---
 
-## Context Building Strategies
+## 2. Context Building
 
-### Layered Loading
+### 2.1 Essential Elements
 
-| Layer      | Priority  | Load Trigger     | Content Type         |
-|------------|-----------|------------------|----------------------|
-| **Core**   | Always    | Session start    | Principles, key refs |
-| **Task**   | On-demand | Task detection   | Relevant guides      |
-| **Detail** | Lazy      | Explicit request | Deep documentation   |
+| Element | When to Include |
+|---------|-----------------|
+| Goal | Always |
+| Constraints | When applicable |
+| Background | Complex tasks |
+| Examples | Unclear requirements |
+| References | Related files |
 
-### Progressive Disclosure
+### 2.2 Progressive Loading
 
-```
-Overview (always) → Framework (on topic) → Detail (on request)
-```
-
-| Level            | When             | Content Depth             |
-|------------------|------------------|---------------------------|
-| **L1 Overview**  | Always loaded    | 1-2 sentences per concept |
-| **L2 Framework** | Topic triggered  | Structure + key points    |
-| **L3 Detail**    | Explicit request | Full documentation        |
-
----
-
-## Context Optimization Techniques
-
-### Front-Loading Critical Info
-
-| Position           | Content Priority | Retention   |
-|--------------------|------------------|-------------|
-| **Early context**  | Highest priority | Best recall |
-| **Middle context** | Supporting info  | Good recall |
-| **Late context**   | Recent exchanges | Best recall |
-
-**Strategy**: Place critical references early, let conversation flow naturally.
-
-### Selective Inclusion
-
-| Include                | Exclude                |
-|------------------------|------------------------|
-| Directly relevant code | Unrelated modules      |
-| Active constraints     | Historical decisions   |
-| Current task context   | Completed task details |
-| Exception cases        | Happy path (if known)  |
-
-### Reference vs Inline
-
-| Approach      | When to Use                 | Trade-off                     |
-|---------------|-----------------------------|-------------------------------|
-| **Inline**    | Frequently referenced       | Uses tokens, fast access      |
-| **Reference** | Occasionally needed         | Saves tokens, requires lookup |
-| **Summary**   | Context needed, not details | Balanced                      |
+| Phase | Context Level |
+|-------|---------------|
+| Start | Minimal (goal + constraints) |
+| Working | Add as needed |
+| Complex | Full context |
+| Handoff | Summary + key decisions |
 
 ---
 
-## Context Pruning
+## 3. Context Efficiency
 
-### When to Prune
+### 3.1 Compression Techniques
 
-| Trigger                      | Action                      |
-|------------------------------|-----------------------------|
-| **Approaching limit** (>70%) | Remove low-priority content |
-| **Task transition**          | Clear previous task details |
-| **Redundant info**           | Deduplicate similar content |
-| **Stale context**            | Remove outdated references  |
+| Technique | Savings | Use Case |
+|-----------|---------|----------|
+| Summarize history | ~50% | Long sessions |
+| Reference files | ~70% | Code context |
+| Use tables | ~40% | Structured info |
+| Abbreviate | ~20% | Common terms |
 
-### Pruning Priority (Remove First → Last)
+### 3.2 Anti-Patterns
 
-```
-1. Completed task details
-2. Verbose explanations (keep summaries)
-3. Redundant confirmations
-4. Historical context (keep decisions)
-5. Supporting references (keep core)
-```
-
-### Pruning Techniques
-
-| Technique              | Compression | Use Case                      |
-|------------------------|-------------|-------------------------------|
-| **Summarize**          | 60-80%      | Long discussions              |
-| **Extract key points** | 70-90%      | Detailed explanations         |
-| **Remove examples**    | 40-60%      | After understanding confirmed |
-| **Collapse history**   | 80-95%      | Multi-turn exchanges          |
+| Pattern | Problem | Solution |
+|---------|---------|----------|
+| Dump everything | Token waste | Progressive loading |
+| Repeat info | Redundancy | Reference previous |
+| Verbose explanations | Inefficient | Use tables |
+| Include irrelevant | Noise | Filter context |
 
 ---
 
-## Shared Context Building
+## 4. Context Maintenance
 
-### Vocabulary Establishment
+### 4.1 During Session
 
-| Phase             | Action                 | Example                     |
-|-------------------|------------------------|-----------------------------|
-| **Introduction**  | Define term explicitly | "Let's call this pattern X" |
-| **Reinforcement** | Use consistently       | Reference X in context      |
-| **Compression**   | Abbreviate safely      | "X" alone sufficient        |
+| Action | When |
+|--------|------|
+| Summarize | Every 5-10 exchanges |
+| Prune | When context grows |
+| Checkpoint | Before major changes |
+| Reset | When switching topics |
 
-### Context Anchors
+### 4.2 Across Sessions
 
-| Anchor Type        | Purpose            | Example                 |
-|--------------------|--------------------|-------------------------|
-| **Named concepts** | Quick reference    | "the 3-layer pattern"   |
-| **Numbered items** | Precise reference  | "option 2 from earlier" |
-| **File markers**   | Location reference | "in the config section" |
+| Strategy | Purpose |
+|----------|---------|
+| Handoff summary | Transfer knowledge |
+| Decision log | Track choices |
+| Progress checkpoint | Resume work |
 
 ---
 
-## Context Recovery
+## 5. Context Templates
 
-### After Window Reset
+### 5.1 Task Start
 
-| Priority | Action                               |
-|----------|--------------------------------------|
-| **1**    | Re-establish critical constraints    |
-| **2**    | Summarize completed work             |
-| **3**    | State current task clearly           |
-| **4**    | Provide minimal necessary references |
+```markdown
+## Context
+- **Goal**: [What to achieve]
+- **Constraints**: [Limits to respect]
+- **Files**: [Relevant files]
 
-### Handoff Template
-
+## Background
+[Brief context if needed]
 ```
-## Context Recovery
 
-### Completed
-- [Key accomplishments]
+### 5.2 Session Summary
 
-### Current State  
-- [Where we are now]
-
-### Next Steps
-- [Immediate actions needed]
-
-### Key References
-- [Essential docs/code to reload]
+```markdown
+## Session Summary
+- **Completed**: [What was done]
+- **Decisions**: [Key choices made]
+- **Next**: [What's pending]
 ```
 
 ---
 
-## Context Quality Metrics
+## 6. Best Practices
 
-| Metric          | Good          | Warning    | Action |
-|-----------------|---------------|------------|--------|
-| **Utilization** | 60-80%        | >85%       | Prune  |
-| **Relevance**   | >90% relevant | <70%       | Filter |
-| **Freshness**   | Current task  | Stale refs | Update |
-| **Redundancy**  | <10% overlap  | >20%       | Dedupe |
-
----
-
-## Anti-Patterns
-
-| Anti-Pattern         | Problem                 | Fix                 |
-|----------------------|-------------------------|---------------------|
-| **Context dumping**  | Loading everything      | Layer selectively   |
-| **No pruning**       | Window overflow         | Prune proactively   |
-| **Implicit context** | Assumed knowledge fails | Make explicit       |
-| **Stale references** | Outdated info misleads  | Refresh on change   |
-| **Flat structure**   | No priority signal      | Layer by importance |
-
----
-
-## Integration with 信达雅
-
-| Principle            | Context Application                         |
-|----------------------|---------------------------------------------|
-| **信 (Faithfulness)** | Context accurately represents current state |
-| **达 (Clarity)**      | Context organized for easy navigation       |
-| **雅 (Elegance)**     | Minimal context for maximum effectiveness   |
+| Practice | Benefit |
+|----------|---------|
+| Start minimal | Reduce noise |
+| Add progressively | Efficient tokens |
+| Summarize regularly | Maintain clarity |
+| Reference, don't repeat | Save tokens |
+| Checkpoint decisions | Preserve knowledge |
 
 ---
 
 ## Related
 
-- `information_density.md` — Compression within context
-- `token_optimization.md` — Efficient token usage
-- `workflow.md` — Collaboration workflow patterns
+- `token_optimization.md` — Token efficiency
+- `workflow.md` — Collaboration workflows
+
+---
+
+*Part of SAGE Knowledge Base*

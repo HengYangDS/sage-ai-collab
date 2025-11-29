@@ -4,126 +4,100 @@
 
 ---
 
-## 6.1 Instruction Types
+## 1. Instruction Types
 
-| Type            | Description        | Example                              |
-|-----------------|--------------------|--------------------------------------|
-| **Direct**      | Explicit command   | "Create user registration endpoint"  |
-| **Contextual**  | Implied by context | Fixing similar bugs                  |
-| **Conditional** | With constraints   | "Refactor only if tests pass"        |
-| **Exploratory** | Open-ended         | "Investigate performance bottleneck" |
-
-**Quality Checklist**: Clear objective · Scope boundaries · Success criteria · Constraints · Priority
+| Type | Format | Example |
+|------|--------|---------|
+| **Direct** | Specific command | "Create file X with content Y" |
+| **Goal-based** | Outcome desired | "Make the tests pass" |
+| **Exploratory** | Investigation | "Analyze why X fails" |
+| **Iterative** | Refinement | "Improve the solution" |
 
 ---
 
-## 6.2 Autonomy Levels
+## 2. Execution Modes
 
-> **Full Reference**: `content/frameworks/autonomy/levels.md`
-
-| Level   | Authority | When to Use                               |
-|---------|-----------|-------------------------------------------|
-| L1-L2   | 0-40%     | Critical/production, new features         |
-| L3-L4 ⭐ | 40-80%    | Bug fixes, refactoring, routine [DEFAULT] |
-| L5-L6   | 80-100%   | Docs, formatting, trusted patterns        |
-
-**Increase**: Well-understood · Low risk · Clear rollback · Past success
-
-**Decrease**: Novel/complex · High-stakes · Uncertain requirements · Previous errors
+| Mode | Description | Use When |
+|------|-------------|----------|
+| **Single** | One task, one response | Simple, isolated tasks |
+| **Batch** | Multiple related tasks | Refactoring, migrations |
+| **Iterative** | Refine through feedback | Complex, uncertain scope |
+| **Autonomous** | Self-directed execution | Routine, well-defined tasks |
 
 ---
 
-## 6.3 Execution Modes
+## 3. Autonomy Levels
 
-| Mode        | Behavior                    | Use Case        |
-|-------------|-----------------------------|-----------------|
-| **Plan**    | Create plan, await approval | Complex tasks   |
-| **Execute** | Run with progress updates   | Standard tasks  |
-| **Review**  | Analyze without changes     | Code review     |
-| **Explain** | Teach concepts              | Learning        |
-| **Debug**   | Investigate issues          | Troubleshooting |
+| Level | Range | Behavior |
+|-------|-------|----------|
+| L1 | 0-20% | Ask before all changes |
+| L2 | 20-40% | Ask before significant changes |
+| L3 | 40-60% | Proceed routine, ask novel |
+| L4 | 60-80% | Proceed, report after |
+| L5 | 80-95% | High autonomy, minimal checks |
+| L6 | 95-100% | Full autonomy |
 
-**Flow**: Plan → Analyze → Create steps → Present → Await | Execute → Confirm → Run → Report → Summarize
+### 3.1 Level Selection
 
----
-
-## 6.4 Communication Patterns
-
-### Status Update Template
-
-```
-Status: [In Progress/Blocked/Complete] ([N]/[M] steps)
-Completed: [list] | In Progress: [current] | Remaining: [list]
-Blockers: [None/description] | ETA: [time]
-```
-
-### Error Report Template
-
-```
-Type: [class] · Location: [file:line] · Severity: [L/M/H/C]
-Description: [what] · Root Cause: [why] · Proposed Fix: [how]
-Action: [ ] Approve [ ] Alternative [ ] More context
-```
+| Context | Recommended |
+|---------|-------------|
+| New collaboration | L2-L3 |
+| Established trust | L4-L5 |
+| Production/sensitive | L1-L2 |
+| Routine tasks | L4-L5 |
 
 ---
 
-## 6.5 Default Behaviors
+## 4. Communication Patterns
 
-| Behavior        | Default            | Rationale                  |
-|-----------------|--------------------|----------------------------|
-| Autonomy        | L2-L3              | Balance control/efficiency |
-| Error Handling  | Stop and report    | Prevent cascading          |
-| Scope Expansion | Ask first          | Avoid scope creep          |
-| Assumptions     | State explicitly   | Ensure alignment           |
-| Testing         | Run affected tests | Verify changes             |
+### 4.1 Effective Instructions
 
-### Override Syntax
+| ✓ Good | ❌ Avoid |
+|--------|---------|
+| Specific, measurable | Vague, ambiguous |
+| Context provided | Assumed knowledge |
+| Success criteria clear | Open-ended |
+| Constraints stated | Implicit limits |
 
-```
-[L4] Complete all formatting fixes in src/
-[MODE:REVIEW] Check this PR for security issues
-[IF tests pass] Merge to develop branch
-```
+### 4.2 Feedback Types
 
----
-
-## 6.6 Anti-Patterns
-
-| ❌ Anti-Pattern      | Problem              | ✅ Better            |
-|---------------------|----------------------|---------------------|
-| Vague instructions  | Misaligned execution | Specific goals      |
-| No success criteria | Unknown completion   | Define "done"       |
-| Implicit scope      | Over/under delivery  | Explicit boundaries |
-| Ignoring warnings   | Cascading errors     | Address concerns    |
-| Micro-management    | Inefficient          | Trust autonomy      |
+| Type | When | Example |
+|------|------|---------|
+| Approval | Work correct | "Good, proceed" |
+| Correction | Work incorrect | "Change X to Y" |
+| Clarification | Need more info | "What about Z?" |
+| Redirect | Wrong direction | "Focus on A instead" |
 
 ---
 
-## 6.7 Calibration Signals
+## 5. Context Management
 
-| Positive ✅                  | Negative ⚠️                |
-|-----------------------------|----------------------------|
-| Tasks completed as expected | Frequent misunderstandings |
-| Few clarifications needed   | Unexpected changes         |
-| Results match intent        | Missed requirements        |
-| Efficient execution         | Excessive back-and-forth   |
+### 5.1 Context Building
 
-**Actions**:
+| Element | Purpose |
+|---------|---------|
+| Background | Why this task matters |
+| Constraints | Limitations to respect |
+| Examples | Illustrate expectations |
+| References | Related information |
 
-- Too many assumptions → Lower autonomy, more checkpoints
-- Too many questions → More context, raise autonomy
-- Consistently good → Higher autonomy for similar tasks
-- Repeated errors → Update guidelines, add rules
+### 5.2 Context Efficiency
+
+| Strategy | Benefit |
+|----------|---------|
+| Progressive disclosure | Load info as needed |
+| Summarize history | Reduce token usage |
+| Reference files | Don't repeat content |
 
 ---
 
-## 6.8 Quick Reference
+## 6. Collaboration Workflow
 
-| Phase      | Actions                                               |
-|------------|-------------------------------------------------------|
-| **Start**  | Objective · Scope · Autonomy · Priority · Constraints |
-| **During** | Monitor · Respond · Approve/reject · Feedback         |
-| **After**  | Review · Feedback · Update calibration · Document     |
+| Phase | Human Actions | AI Actions |
+|-------|---------------|------------|
+| **Start** | Define task, set level | Confirm understanding |
+| **During** | Monitor, respond, feedback | Execute, report, ask |
+| **After** | Review, feedback, calibrate | Document, learn |
 
 ---
 

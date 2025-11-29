@@ -4,136 +4,117 @@
 
 ---
 
-## 2.1 General Principles
+## 1. General Principles
 
-**Readability First**: Self-documenting code over cryptic shortcuts
+| Principle | Description |
+|-----------|-------------|
+| Clarity over cleverness | Readable > compact |
+| Consistency | Follow existing patterns |
+| Explicit over implicit | Make intent obvious |
+| Self-documenting | Code explains itself |
+
+---
+
+## 2. Naming Conventions
+
+| Element | Style | Example |
+|---------|-------|---------|
+| Variables | snake_case | `user_count` |
+| Constants | UPPER_SNAKE | `MAX_RETRIES` |
+| Functions | snake_case | `get_user()` |
+| Classes | PascalCase | `UserService` |
+| Private | _prefix | `_internal_state` |
+
+### 2.1 Naming Rules
+
+| Rule | ❌ Bad | ✓ Good |
+|------|--------|--------|
+| Descriptive | `d`, `tmp` | `days_elapsed`, `temp_file` |
+| No abbreviations | `usr_cnt` | `user_count` |
+| Verb for functions | `user()` | `get_user()` |
+| Noun for variables | `running` | `is_running` |
+
+---
+
+## 3. Code Structure
+
+### 3.1 File Organization
 
 ```python
-# ✅ Self-documenting
-def calculate_monthly_payment(principal: float, rate: float, months: int) -> float:
-    monthly_rate = rate / 12
-    return principal * monthly_rate / (1 - (1 + monthly_rate) ** -months)
-
-# ❌ Cryptic
-def calc(p, r, m):
-    return p * r/12 / (1 - (1 + r/12) ** -m)
-```
-
-**Consistency**: Follow project style · Use formatters (black, prettier) · Configure linters
-
----
-
-## 2.2 Naming Conventions
-
-| Element     | Style            | Example                           |
-|-------------|------------------|-----------------------------------|
-| Classes     | PascalCase       | `UserAccount`, `HttpClient`       |
-| Functions   | snake_case       | `get_user()`, `calculate_total()` |
-| Variables   | snake_case       | `user_count`, `max_retries`       |
-| Constants   | SCREAMING_SNAKE  | `MAX_CONNECTIONS`, `API_URL`      |
-| Private     | _prefix          | `_internal_state`, `_helper()`    |
-| Type Params | Single uppercase | `T`, `K`, `V`                     |
-
-**Quality**: Reveals intent · Avoids abbreviations · Uses domain language · Searchable
-
----
-
-## 2.3 Code Formatting
-
-| Aspect      | Python   | JS/TS    | Markdown |
-|-------------|----------|----------|----------|
-| Line length | 88       | 100      | 120      |
-| Indent      | 4 spaces | 2 spaces | 2 spaces |
-
-**Blank Lines**: 2 before top-level definitions · 1 between methods
-
----
-
-## 2.4 Import Organization
-
-```python
-# 1. Standard library
-import os
-from typing import Optional, List
-
-# 2. Third-party
-from pydantic import BaseModel
-
-# 3. Local
-from .models import User
-```
-
-**Best Practices**: Absolute imports · No wildcards · Group related · Sort alphabetically
-
----
-
-## 2.5 Comments and Documentation
-
-```python
-# ✅ Explain WHY
-# Using binary search for O(log n) lookup
-index = bisect.bisect_left(sorted_items, target)
-
-# ❌ Stating the obvious
-counter += 1  # Increment counter
-```
-
-**Docstrings**: See `guidelines/python.md` for Google style
-
----
-
-## 2.6 Error Handling
-
-```python
-# ✅ Specific exceptions with context
-try:
-    user = repository.get(user_id)
-except UserNotFoundError:
-    logger.warning(f"User {user_id} not found")
-    raise
-except DatabaseError as e:
-    raise ServiceUnavailableError("Unable to fetch user") from e
-
-# ❌ Silent failure
-try:
-    user = repository.get(user_id)
-except Exception:
-    pass
-```
-
----
-
-## 2.7 File Structure
-
-```python
-"""Module docstring."""
-
-# 1. Imports (organized)
+# 1. Imports (stdlib → third-party → local)
 # 2. Constants
-MAX_RETRIES = 3
+# 3. Classes/Functions
+# 4. Main block (if applicable)
+```
 
-# 3. Type definitions
-# 4. Classes
-# 5. Functions
-# 6. Entry point
-if __name__ == "__main__":
-    main()
+### 3.2 Function Guidelines
+
+| Metric | Target |
+|--------|--------|
+| Lines per function | < 50 |
+| Parameters | ≤ 5 |
+| Nesting depth | ≤ 3 |
+| Cyclomatic complexity | ≤ 10 |
+
+---
+
+## 4. Documentation
+
+### 4.1 When to Comment
+
+| Comment | Don't Comment |
+|---------|---------------|
+| Why (rationale) | What (obvious code) |
+| Complex algorithms | Simple operations |
+| Workarounds | Self-explanatory names |
+| Public API | Internal implementation |
+
+### 4.2 Docstring Format
+
+```python
+def function(param: str) -> bool:
+    """Brief description.
+
+    Args:
+        param: Parameter description.
+
+    Returns:
+        Return value description.
+
+    Raises:
+        ValueError: When param is invalid.
+    """
 ```
 
 ---
 
-## 2.8 Quick Checklist
+## 5. Error Handling
 
-| ✓   | Item                              |
-|-----|-----------------------------------|
-| [ ] | Names descriptive and consistent  |
-| [ ] | Formatting follows standards      |
-| [ ] | Imports organized and minimal     |
-| [ ] | Comments explain "why" not "what" |
-| [ ] | Error handling explicit           |
-| [ ] | No magic numbers/strings          |
-| [ ] | Functions focused (<50 lines)     |
-| [ ] | Classes single responsibility     |
+| Pattern | Use For |
+|---------|---------|
+| Specific exceptions | Known error conditions |
+| Early return | Guard clauses |
+| Context managers | Resource cleanup |
+| Logging | Debugging, monitoring |
+
+```python
+# ✓ Good: specific, early return
+def process(data: str) -> Result:
+    if not data:
+        raise ValueError("Data required")
+    return Result(data.strip())
+```
+
+---
+
+## 6. Quality Checklist
+
+- [ ] Names are descriptive
+- [ ] Functions are focused (< 50 lines)
+- [ ] No magic numbers
+- [ ] Errors handled appropriately
+- [ ] Public API documented
+- [ ] Tests written
 
 ---
 

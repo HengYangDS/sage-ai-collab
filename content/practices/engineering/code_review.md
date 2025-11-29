@@ -1,173 +1,125 @@
-# Code Review Checklist
+# Code Review Practices
 
-> **Load Time**: On-demand (~130 tokens)  
-> **Purpose**: Universal code review checkpoints and best practices
-
----
-
-## 1. Review Principles
-
-| Principle        | Description                                                  |
-|------------------|--------------------------------------------------------------|
-| **Constructive** | Provide improvement suggestions, not just point out problems |
-| **Specific**     | Reference specific code lines, avoid vague criticism         |
-| **Prioritized**  | Distinguish must-fix from suggestions                        |
-| **Respectful**   | Focus on code not person, maintain professionalism           |
+> Effective code review patterns for quality and knowledge sharing
 
 ---
 
-## 2. Correctness Checks
+## 1. Review Goals
 
-| Item                | Focus Areas                                   |
-|---------------------|-----------------------------------------------|
-| Logic correct       | Edge cases, null handling, loop termination   |
-| Type safe           | Complete type annotations, static checks pass |
-| Exception handling  | Catch specific exceptions, provide fallbacks  |
-| Resource management | File close, connection release, memory leaks  |
-| Concurrency safe    | Race conditions, deadlocks, data consistency  |
-
----
-
-## 3. Readability Checks
-
-| Item                 | Standard                                     |
-|----------------------|----------------------------------------------|
-| Clear naming         | Variable/function names are self-explanatory |
-| Function length      | ≤50 lines (single responsibility)            |
-| File length          | ≤500 lines (consider splitting)              |
-| Nesting depth        | ≤3 levels                                    |
-| Appropriate comments | Explain "why" not "what"                     |
+| Goal | Focus |
+|------|-------|
+| Correctness | Logic, edge cases, bugs |
+| Quality | Style, patterns, maintainability |
+| Security | Vulnerabilities, data handling |
+| Learning | Knowledge transfer, mentoring |
 
 ---
 
-## 4. Consistency Checks
+## 2. Review Checklist
 
-| Item               | Standard                           |
-|--------------------|------------------------------------|
-| Code style         | Follows project formatting tools   |
-| Naming conventions | Consistent snake_case / PascalCase |
-| Import order       | Standard lib → Third party → Local |
-| Project patterns   | Follows existing code patterns     |
-| Error handling     | Unified error handling approach    |
+### 2.1 Functionality
 
----
+- [ ] Logic is correct
+- [ ] Edge cases handled
+- [ ] Error cases covered
+- [ ] Requirements met
 
-## 5. Performance Checks
+### 2.2 Code Quality
 
-| Item                 | Focus Areas                          |
-|----------------------|--------------------------------------|
-| Timeout protection   | I/O operations have timeout settings |
-| Cache usage          | Repeated computations are cached     |
-| Batch operations     | Avoid N+1 query problems             |
-| Memory efficiency    | Large datasets processed in batches  |
-| Algorithm complexity | Avoid unnecessary O(n²)              |
+- [ ] Names are clear
+- [ ] Functions are focused
+- [ ] No duplication
+- [ ] Appropriate abstraction
 
----
+### 2.3 Testing
 
-## 6. Security Checks
+- [ ] Tests exist
+- [ ] Tests are meaningful
+- [ ] Edge cases tested
+- [ ] Coverage adequate
 
-| Item                | Risk                           |
-|---------------------|--------------------------------|
-| Input validation    | SQL/command injection          |
-| Sensitive info      | Keys/passwords leaked in logs  |
-| Path handling       | Directory traversal attacks    |
-| Dependency versions | Known security vulnerabilities |
-| Permission checks   | Unauthorized access            |
+### 2.4 Documentation
+
+- [ ] Public API documented
+- [ ] Complex logic explained
+- [ ] README updated if needed
 
 ---
 
-## 7. Testing Checks
+## 3. Review Process
 
-| Item             | Standard                                |
-|------------------|-----------------------------------------|
-| Test coverage    | New code has corresponding tests        |
-| Boundary tests   | Null, extreme values, exceptional input |
-| Test isolation   | No external service dependencies        |
-| Test naming      | `test_<function>_<scenario>`            |
-| Test readability | Test intent is clear                    |
-
----
-
-## 8. Documentation Checks
-
-| Item             | Requirement                        |
-|------------------|------------------------------------|
-| Function docs    | Public functions have docstrings   |
-| Type annotations | Parameters and return values typed |
-| README           | New features documented            |
-| CHANGELOG        | Change records updated             |
-| API docs         | Interface changes synchronized     |
+| Step | Action |
+|------|--------|
+| 1 | Understand context (PR description) |
+| 2 | Review high-level design |
+| 3 | Check implementation details |
+| 4 | Run/test if needed |
+| 5 | Provide constructive feedback |
 
 ---
 
-## 9. AI-Generated Code Review
+## 4. Feedback Guidelines
 
-### Special Focus Areas
+### 4.1 Effective Feedback
 
-| Item              | Common Issues                            |
-|-------------------|------------------------------------------|
-| Hallucinated code | Calls to non-existent APIs or methods    |
-| Over-engineering  | Unnecessary abstractions and complexity  |
-| Style deviation   | Inconsistent with project existing style |
-| Missing tests     | Implementation only, no tests            |
-| Hardcoded values  | Values that should come from config      |
-| Copyright issues  | Copied code snippets                     |
+| ✓ Do | ❌ Don't |
+|------|---------|
+| Be specific | Be vague |
+| Explain why | Just say "wrong" |
+| Suggest alternatives | Only criticize |
+| Ask questions | Assume intent |
+| Be respectful | Be dismissive |
 
----
+### 4.2 Comment Types
 
-## 10. Feedback Templates
-
-### Must Fix (MUST)
-
-```
-🔴 MUST [file:line]
-Issue: [specific problem description]
-Suggestion: [fix approach]
-```
-
-### Should Improve (SHOULD)
-
-```
-🟡 SHOULD [file:line]
-Issue: [problem description]
-Suggestion: [improvement approach]
-```
-
-### Could Enhance (COULD)
-
-```
-🟢 COULD [file:line]
-Suggestion: [enhancement idea]
-```
+| Prefix | Meaning |
+|--------|---------|
+| `nit:` | Minor, optional |
+| `suggestion:` | Consider this |
+| `question:` | Need clarification |
+| `issue:` | Must address |
+| `praise:` | Good work |
 
 ---
 
-## 11. Quick Checklists
+## 5. Author Responsibilities
 
-### Pre-Commit Self-Check
+| Before Review | During Review |
+|---------------|---------------|
+| Self-review first | Respond to all comments |
+| Clear PR description | Explain decisions |
+| Small, focused changes | Be open to feedback |
+| Tests included | Update as needed |
 
-- [ ] Code formatting passes
-- [ ] Static type checking passes
-- [ ] All tests pass
-- [ ] No hardcoded sensitive info
-- [ ] Documentation updated
+---
 
-### Reviewer Checklist
+## 6. Reviewer Responsibilities
 
-- [ ] Understand change purpose
-- [ ] Verify logic correctness
-- [ ] Check edge cases
-- [ ] Confirm test coverage
-- [ ] Check documentation completeness
+| Responsibility | Action |
+|----------------|--------|
+| Timely review | Within 24 hours |
+| Thorough review | Check all aspects |
+| Constructive | Help improve |
+| Available | Answer follow-ups |
+
+---
+
+## 7. Review Size Guidelines
+
+| Size | Lines | Review Time |
+|------|-------|-------------|
+| Small | < 100 | 15 min |
+| Medium | 100-300 | 30 min |
+| Large | 300-500 | 1 hour |
+| Too Large | > 500 | Split PR |
 
 ---
 
 ## Related
 
-- `content/guidelines/code_style.md` — Code style guidelines
-- `content/practices/engineering/testing_strategy.md` — Testing strategy
-- `content/practices/engineering/error_handling.md` — Error handling
+- `../../guidelines/quality.md` — Quality standards
+- `../../guidelines/code_style.md` — Code style
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

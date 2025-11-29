@@ -1,133 +1,127 @@
 # AI Collaboration Workflow Practices
 
-> **Load Time**: On-demand (~120 tokens)  
-> **Purpose**: Practical workflows for effective human-AI collaboration
+> Practical workflows for effective human-AI collaboration
 
 ---
 
-## Daily Workflow Pattern
+## 1. Daily Workflow
 
-### Session Start (3 steps)
-
-| Step       | Action                                              | Duration |
-|------------|-----------------------------------------------------|----------|
-| 1. Context | State project/task, recent changes, autonomy level  | 2 min    |
-| 2. Goal    | Clear objective, success criteria, time constraints | 1 min    |
-| 3. Begin   | AI confirms understanding, work proceeds per level  | —        |
-
-**Example**:
-
-```
-Project: AI Collaboration KB | Recent: Completed guidelines 01-09 | Autonomy: L3
-Goal: Create framework docs (autonomy/levels.md, cognitive/expert_committee.md)
-Success: All files created | Time: 2 hours
-```
+| Phase | Actions |
+|-------|---------|
+| **Start** | Load context, set autonomy, define goals |
+| **Work** | Execute tasks, checkpoint progress |
+| **End** | Summarize, document decisions, handoff |
 
 ---
 
-## Task Handoff Patterns
+## 2. Task Workflow
 
-| Type         | Format                                | Use Case               |
-|--------------|---------------------------------------|------------------------|
-| **Simple**   | "Create X" → AI executes → Reports    | Clear, small tasks     |
-| **Detailed** | Requirements + Constraints + Autonomy | Complex features       |
-| **Batch**    | Task list + Completion criteria       | Multiple related tasks |
+### 2.1 Task Start
 
-**Detailed Handoff Template**:
+| Step | Action |
+|------|--------|
+| 1 | Define goal clearly |
+| 2 | Set autonomy level |
+| 3 | Provide constraints |
+| 4 | Reference relevant files |
 
-```
-Task: [Name] | Autonomy: L[n]
-Requirements: [bullet list]
-Constraints: [bullet list]
-Success: [criteria]
-```
+### 2.2 During Task
 
----
+| Step | Action |
+|------|--------|
+| 1 | Monitor progress |
+| 2 | Provide feedback |
+| 3 | Checkpoint on milestones |
+| 4 | Adjust autonomy if needed |
 
-## Progress Reporting
+### 2.3 Task End
 
-### Report Types
-
-| Type           | When        | Key Fields                                                       |
-|----------------|-------------|------------------------------------------------------------------|
-| **Checkpoint** | Mid-task    | Progress (n/m), Status, Completed, Current, Remaining, Questions |
-| **Completion** | Task done   | Summary, Changes Made, Testing, Notes, Next Steps                |
-| **Error**      | Issue found | Type, Severity, Location, Analysis, Proposed Solutions           |
-
-**Checkpoint Format**: `Progress: n/m | Status: [On track/Blocked/Delayed] | Current: [item] | Questions: [if any]`
-
-**Completion Format**: `Summary → Changes → Testing (pass/fail) → Next Steps`
-
-**Error Format**:
-`Type: [X] | Severity: [H/M/L] | Location: [path] | Root Cause: [X] | Solutions: [1,2,3] | Recommendation: [n]`
+| Step | Action |
+|------|--------|
+| 1 | Verify completion |
+| 2 | Review changes |
+| 3 | Document decisions |
+| 4 | Update calibration |
 
 ---
 
-## Error Handling Workflow
+## 3. Session Management
 
-**Steps**: Stop → Document → Analyze → Propose → Wait (unless L4+)
+### 3.1 New Session
 
-| Severity | Action                      | Autonomy Override |
-|----------|-----------------------------|-------------------|
-| High     | Stop, report immediately    | Always wait       |
-| Medium   | Document, propose solutions | L4+ may proceed   |
-| Low      | Note, continue if clear fix | L3+ may proceed   |
+```markdown
+## Context
+- Previous: [summary of last session]
+- Goal: [today's objective]
+- Autonomy: L[X]
 
----
-
-## Context Preservation
-
-### Session Summary (End of Day)
-
-```
-Date: [YYYY-MM-DD]
-Accomplished: [list] | In Progress: [list] | Pending: [list]
-Key Decisions: [list] | Tomorrow: [priorities] | Notes: [if any]
+## Constraints
+- [List any constraints]
 ```
 
-### Context for New Session
+### 3.2 Session Handoff
 
-```
-Project: [name, version, % complete]
-Recent Changes: [list]
-Branch: [name] | Known Issues: [list]
+```markdown
+## Session Summary
+- Completed: [what was done]
+- Decisions: [key choices]
+- Pending: [what's next]
+- Issues: [any blockers]
 ```
 
 ---
 
-## Collaboration Anti-Patterns
+## 4. Communication Patterns
 
-| Pattern          | Problem               | Better Approach       |
-|------------------|-----------------------|-----------------------|
-| Vague requests   | "Make it better"      | Specific criteria     |
-| No context       | Starting from scratch | Provide background    |
-| Micro-managing   | Approving every line  | Trust autonomy levels |
-| Ignoring updates | Missed important info | Review checkpoints    |
-| Scope creep      | Endless expansion     | Define boundaries     |
+### 4.1 Effective Requests
 
-**Warning Signs**: Frequent misunderstandings · Repeated clarifications · Unexpected changes · Slow progress
+| Type | Format |
+|------|--------|
+| Direct | "Do X" |
+| Goal-based | "Achieve Y" |
+| Exploratory | "Analyze Z" |
+| Iterative | "Improve W" |
 
-**Recovery**: Pause → Align goals → Adjust autonomy → Add context → Simplify scope
+### 4.2 Feedback Types
+
+| Type | When | Example |
+|------|------|---------|
+| Approval | Correct | "Good, continue" |
+| Correction | Wrong | "Change X to Y" |
+| Clarification | Unclear | "What about Z?" |
+| Redirect | Off-track | "Focus on A" |
 
 ---
 
-## Quick Reference Checklists
+## 5. Error Recovery
 
-| Session Start        | Task Handoff           | Review                |
-|----------------------|------------------------|-----------------------|
-| ✓ Context provided   | ✓ Requirements clear   | ✓ Results match goals |
-| ✓ Goals defined      | ✓ Success criteria set | ✓ Quality acceptable  |
-| ✓ Autonomy set       | ✓ Time expectations    | ✓ Tests included      |
-| ✓ Constraints stated | ✓ Questions answered   | ✓ Docs updated        |
+| Situation | Response |
+|-----------|----------|
+| Misunderstanding | Clarify, retry |
+| Wrong approach | Reset, new direction |
+| Partial failure | Salvage, complete |
+| Complete failure | Analyze, restart |
+
+---
+
+## 6. Best Practices
+
+| Practice | Benefit |
+|----------|---------|
+| Clear goals | Aligned execution |
+| Set autonomy | Right balance |
+| Regular checkpoints | Catch issues early |
+| Document decisions | Preserve knowledge |
+| Provide feedback | Improve calibration |
 
 ---
 
 ## Related
 
-- `content/frameworks/autonomy/levels.md` — Autonomy framework
-- `content/core/quick_reference.md` — Quick reference card
-- `token_optimization.md` — Token efficiency principles
+- `context_management.md` — Context strategies
+- `token_optimization.md` — Token efficiency
+- `../../core/quick_reference.md` — Quick reference
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

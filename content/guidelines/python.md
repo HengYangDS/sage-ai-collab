@@ -4,257 +4,193 @@
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
-| Section                                     | Topics                               |
-|---------------------------------------------|--------------------------------------|
-| [Type Hints](#type-hints)                   | Basic, advanced, generics, protocols |
-| [Docstrings](#docstrings)                   | Google-style format                  |
-| [Import Organization](#import-organization) | Order and anti-patterns              |
-| [Decorator Patterns](#decorator-patterns)   | Basic, with args, registry           |
-| [Context Managers](#context-managers)       | Function and class-based             |
-| [Async Patterns](#async-patterns)           | Concurrent I/O                       |
+[1. Type Hints](#1-type-hints) · [2. Decorators](#2-decorators) · [3. Context Managers](#3-context-managers) · [4. Async Patterns](#4-async-patterns) · [5. Data Classes](#5-data-classes) · [6. Common Patterns](#6-common-patterns)
 
 ---
 
-<a id="type-hints"></a>
+## 1. Type Hints
 
-## Type Hints
+### 1.1 Basic Types
 
 ```python
-from typing import Optional, List, Dict, TypeVar, Generic, Protocol
+from typing import Optional, List, Dict, Callable
 
+def process(name: str, count: int = 1) -> List[str]:
+    return [name] * count
 
-# Basic
-def greet(name: str) -> str:
-    ...
+def find_user(user_id: int) -> Optional[User]:
+    return db.get(user_id)
+```
 
+### 1.2 Complex Types
 
-def find_user(user_id: str) -> Optional[User]:
-    ...
+```python
+from typing import TypeVar, Generic, Protocol
 
+T = TypeVar("T")
 
-def process(items: List[str]) -> Dict[str, int]:
-    ...
-
-
-# Generic Repository
-T = TypeVar('T')
-
-
-class Repository(Generic[T]):
+class Repository(Generic[T], Protocol):
     def get(self, id: str) -> Optional[T]: ...
-
     def save(self, entity: T) -> T: ...
-
-
-# Protocol (structural typing)
-class Comparable(Protocol):
-    def __lt__(self, other: Self) -> bool: ...
 ```
 
-**Best Practices**: ✅ Type hints on all public APIs · ✅ `Optional[X]` for Python 3.9 compatibility · ✅ `TypeVar` for
-generics · ❌ Avoid `Any`
+### 1.3 Type Hint Rules
 
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
+| Rule | Example |
+|------|---------|
+| All public functions | `def func(x: int) -> str:` |
+| Optional for nullable | `Optional[str]` not `str | None` |
+| Use TypeVar for generics | `T = TypeVar("T")` |
 
 ---
 
-<a id="docstrings"></a>
+## 2. Decorators
 
-## Docstrings (Google Style)
-
-```python
-def calculate_total(items: List[Item], discount: float = 0.0) -> float:
-    """Calculate total price with discount and tax.
-    
-    Args:
-        items: List of items to calculate total for.
-        discount: Discount percentage (0.0 to 1.0).
-        
-    Returns:
-        Final total amount after discount and tax.
-        
-    Raises:
-        ValueError: If discount is negative or > 1.0.
-        
-    Example:
-        >>> calculate_total([Item(100), Item(50)], discount=0.1)
-        148.5
-    """
-
-
-class UserService:
-    """Service for user management operations.
-    
-    Attributes:
-        repository: User data repository.
-        cache: Optional cache backend.
-    """
-```
-
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
-
----
-
-<a id="import-organization"></a>
-
-## Import Organization
+### 2.1 Common Decorators
 
 ```python
-# Order: 1. Future → 2. Stdlib → 3. Third-party → 4. Local absolute → 5. Local relative
-from __future__ import annotations
+from functools import wraps
+import logging
 
-import os
-from typing import Optional, List
-
-import httpx
-from pydantic import BaseModel
-
-from myproject.models import User
-from .utils import helper_function
-```
-
-**Anti-patterns**: ❌ Wildcard imports (`from x import *`) · ❌ Unused imports · ❌ Circular imports
-
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
-
----
-
-<a id="decorator-patterns"></a>
-
-## Decorator Patterns
-
-### Basic (with functools.wraps)
-
-```python
-import functools
-from typing import Callable, TypeVar, ParamSpec
-
-P, R = ParamSpec('P'), TypeVar('R')
-
-
-def log_calls(func: Callable[P, R]) -> Callable[P, R]:
-    @functools.wraps(func)
-    def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-        print(f"Calling {func.__name__}")
+def log_calls(func: Callable) -> Callable:
+    @wraps(func)
+    def wrapper(*args, **kwargs):
+        logging.info(f"Calling {func.__name__}")
         return func(*args, **kwargs)
-
     return wrapper
+
+@log_calls
+def process(data: str) -> str:
+    return data.upper()
 ```
 
-### With Arguments
+### 2.2 Class Decorators
 
-```python
-def retry(max_attempts: int = 3, delay: float = 1.0):
-    def decorator(func: Callable[P, R]) -> Callable[P, R]:
-        @functools.wraps(func)
-        def wrapper(*args: P.args, **kwargs: P.kwargs) -> R:
-            for attempt in range(max_attempts):
-                try:
-                    return func(*args, **kwargs)
-                except Exception as e:
-                    if attempt == max_attempts - 1:
-                        raise
-                    time.sleep(delay)
-
-        return wrapper
-
-    return decorator
-```
-
-### Registry Pattern
-
-```python
-class HandlerRegistry:
-    _handlers: Dict[str, Type] = {}
-
-    @classmethod
-    def register(cls, name: str):
-        def decorator(handler_class: Type[T]) -> Type[T]:
-            cls._handlers[name] = handler_class
-            return handler_class
-
-        return decorator
-
-
-@HandlerRegistry.register("json")
-class JsonHandler:
-    pass
-```
-
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
+| Decorator | Use For |
+|-----------|---------|
+| `@dataclass` | Data containers |
+| `@property` | Computed attributes |
+| `@classmethod` | Alternative constructors |
+| `@staticmethod` | Utility functions |
 
 ---
 
-<a id="context-managers"></a>
-
-## Context Managers
+## 3. Context Managers
 
 ```python
 from contextlib import contextmanager
 
-
-# Function-based
 @contextmanager
-def timed_operation(name: str):
-    start = time.perf_counter()
+def timer(name: str):
+    start = time.time()
     try:
         yield
     finally:
-        print(f"{name} took {time.perf_counter() - start:.3f}s")
+        print(f"{name}: {time.time() - start:.2f}s")
 
-
-# Class-based
-class DatabaseConnection:
-    def __enter__(self) -> 'DatabaseConnection':
-        self._connection = create_connection(self.connection_string)
-        return self
-
-    def __exit__(self, exc_type, exc_val, exc_tb) -> bool:
-        if self._connection:
-            self._connection.close()
-        return False  # Don't suppress exceptions
+# Usage
+with timer("process"):
+    do_work()
 ```
-
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
 
 ---
 
-<a id="async-patterns"></a>
+## 4. Async Patterns
 
-## Async Patterns
+### 4.1 Basic Async
 
 ```python
 import asyncio
 
+async def fetch_data(url: str) -> dict:
+    async with aiohttp.ClientSession() as session:
+        async with session.get(url) as response:
+            return await response.json()
 
 async def fetch_all(urls: List[str]) -> List[dict]:
-    """Fetch multiple URLs concurrently."""
-    async with httpx.AsyncClient() as client:
-        tasks = [client.get(url) for url in urls]
-        responses = await asyncio.gather(*tasks)
-        return [r.json() for r in responses]
-
-
-async def fetch_with_timeout(url: str, timeout: float = 30.0) -> dict:
-    async with httpx.AsyncClient(timeout=timeout) as client:
-        return (await client.get(url)).json()
+    return await asyncio.gather(*[fetch_data(u) for u in urls])
 ```
 
-<p align="right"><sub><a href="#📑-table-of-contents">↑ TOC</a></sub></p>
+### 4.2 Async Guidelines
+
+| Pattern | Use For |
+|---------|---------|
+| `async/await` | I/O-bound operations |
+| `asyncio.gather` | Concurrent execution |
+| `asyncio.timeout` | Timeout protection |
 
 ---
 
-## ✅ Python Checklist
+## 5. Data Classes
 
-- [ ] Type hints on all public functions
-- [ ] Google-style docstrings
-- [ ] Imports organized (stdlib → third-party → local)
-- [ ] Decorators use `functools.wraps`
-- [ ] Context managers for resource cleanup
-- [ ] Async for I/O-bound operations
+```python
+from dataclasses import dataclass, field
+from typing import List
+
+@dataclass
+class User:
+    name: str
+    email: str
+    roles: List[str] = field(default_factory=list)
+    
+    def __post_init__(self):
+        self.email = self.email.lower()
+
+@dataclass(frozen=True)
+class Config:
+    host: str
+    port: int = 8080
+```
+
+---
+
+## 6. Common Patterns
+
+### 6.1 Factory Pattern
+
+```python
+class HandlerFactory:
+    _handlers: Dict[str, Type[Handler]] = {}
+    
+    @classmethod
+    def register(cls, name: str):
+        def decorator(handler_cls):
+            cls._handlers[name] = handler_cls
+            return handler_cls
+        return decorator
+    
+    @classmethod
+    def create(cls, name: str) -> Handler:
+        return cls._handlers[name]()
+```
+
+### 6.2 Repository Pattern
+
+```python
+class UserRepository:
+    def __init__(self, session: Session):
+        self._session = session
+    
+    def get(self, id: str) -> Optional[User]:
+        return self._session.query(User).get(id)
+    
+    def save(self, user: User) -> User:
+        self._session.add(user)
+        self._session.commit()
+        return user
+```
+
+---
+
+## 7. Quality Checklist
+
+- [ ] Type hints on public functions
+- [ ] Docstrings on public API
 - [ ] No mutable default arguments
+- [ ] Context managers for resources
+- [ ] Async for I/O-bound operations
 
 ---
 

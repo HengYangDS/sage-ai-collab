@@ -1,59 +1,56 @@
 # Core Knowledge
 
-> Foundational principles and defaults
+> Foundational principles and defaults — always loaded
 
 ---
 
-## Contents
+## 1. Contents
 
-| File                 | Tokens | Purpose                                  |
-|----------------------|--------|------------------------------------------|
-| `principles.md`      | ~100   | 信达雅, 术法道 philosophy frameworks           |
-| `quick_reference.md` | ~150   | 5 critical questions, autonomy quick ref |
-| `defaults.md`        | ~250   | Default behaviors, calibration standards |
+| File | Purpose | Priority |
+|------|---------|----------|
+| `principles.md` | 信达雅 + 术法道 philosophy | Always |
+| `quick_reference.md` | 5 critical questions + autonomy levels | Always |
+| `defaults.md` | Default behaviors + calibration | Always |
 
 ---
 
-## Quick Reference
+## 2. Philosophy Summary
 
-### 信达雅 (Xin-Da-Ya) — Quality Framework
+### 2.1 Xin-Da-Ya (信达雅)
 
-| Principle | Meaning      | Focus                           |
-|-----------|--------------|---------------------------------|
-| 信 (Xin)   | Faithfulness | Accurate, reliable, testable    |
-| 达 (Da)    | Clarity      | Clear, maintainable, structured |
-| 雅 (Ya)    | Elegance     | Refined, balanced, sustainable  |
+| Principle | Meaning | Application |
+|-----------|---------|-------------|
+| **信 (Xin)** | Faithfulness | Accurate, reliable, testable |
+| **达 (Da)** | Clarity | Clear, maintainable, accessible |
+| **雅 (Ya)** | Elegance | Refined, balanced, sustainable |
 
-### 术法道 (Shu-Fa-Dao) — Abstraction Levels
+### 2.2 Shu-Fa-Dao (术法道)
 
-| Level   | Meaning   | Scope                     |
-|---------|-----------|---------------------------|
-| 术 (Shu) | Technique | Specific skills, patterns |
-| 法 (Fa)  | Method    | Systematic approaches     |
-| 道 (Dao) | Tao       | Underlying philosophy     |
+| Level | Meaning | Focus |
+|-------|---------|-------|
+| **术 (Shu)** | Technique | Tools, syntax, mechanics |
+| **法 (Fa)** | Method | Patterns, principles, practices |
+| **道 (Dao)** | Philosophy | Wisdom, intuition, mastery |
 
-### 5 Critical Questions
+---
 
+## 3. Quick Reference
+
+**5 Critical Questions** (ask before every task):
 1. What assumptions am I making?
 2. What could go wrong?
 3. Is there a simpler approach?
 4. Will this be maintainable?
-5. Does this fit the bigger picture?
+5. How does this fit the big picture?
 
----
-
-## Loading Strategy
-
-- **Always Load**: All core files pre-cached on startup
-- **Priority**: Highest — loaded before any other layer
-- **Fallback**: Emergency core content embedded in system
+**Autonomy Levels**: L1 (ask all) → L6 (full autonomy)
 
 ---
 
 ## Related
 
-- `guidelines/quick_start.md` — Getting started guide
-- `frameworks/autonomy.md` — Autonomy level details
+- `guidelines/quick_start.md` — 3-minute guide
+- `frameworks/autonomy/levels.md` — Full autonomy framework
 - `config/loading.yaml` — Loading configuration
 
 ---

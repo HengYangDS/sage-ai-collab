@@ -4,183 +4,111 @@
 
 ---
 
-## Overview
+## 1. Density Spectrum
 
-| Aspect        | Description                                                   |
-|---------------|---------------------------------------------------------------|
-| **Goal**      | Maximize knowledge transfer per unit of communication         |
-| **Challenge** | Higher density risks ambiguity; lower density wastes capacity |
-| **Solution**  | Context-aware density optimization with quality preservation  |
-
----
-
-## Density Spectrum
-
-| Level          | Density | Fidelity | Use Case                         |
-|----------------|---------|----------|----------------------------------|
-| **Raw**        | 1x      | 100%     | First-time explanation, teaching |
-| **Standard**   | 2x      | 95%      | Regular communication            |
-| **Optimal**    | 2.5x    | 92%      | Established collaboration ⭐      |
-| **Compressed** | 4x      | 80%      | Quick reference, checklists      |
-| **Extreme**    | 8x      | 50%      | Mnemonics, abbreviations only    |
-
-### Density Formula
-
-```
-Effective Density = (Information Transferred) / (Tokens Used × Clarification Rounds)
-```
-
-**Key insight**: Over-compression triggers clarification, reducing effective density.
+| Level | Density | Use Case | Example |
+|-------|---------|----------|---------|
+| **L1** | Minimal | Tutorials, beginners | Full explanations |
+| **L2** | Low | Documentation | Moderate detail |
+| **L3** | Medium | Technical docs | Balanced |
+| **L4** | High | Reference | Concise |
+| **L5** | Maximum | Quick reference | Tables, bullets |
 
 ---
 
-## Compression Techniques
+## 2. Density Techniques
 
-### Lossless Compression (Fidelity ~100%)
+### 2.1 High-Density Patterns
 
-| Technique                | Compression | Example                          |
-|--------------------------|-------------|----------------------------------|
-| **Tables vs Paragraphs** | 40-60%      | Convert prose to structured data |
-| **Symbols** (✓✗→⚠️)      | 20-30%      | Replace yes/no/warning text      |
-| **Inline flow**          | 30-50%      | `A → B → C` vs numbered list     |
-| **Pipe separation**      | 50-70%      | `L1:100ms\|L2:500ms\|L3:2s`      |
+| Technique | Token Savings | Example |
+|-----------|---------------|---------|
+| Tables | ~40% | Structured comparisons |
+| Bullet lists | ~30% | Enumerations |
+| Code blocks | ~20% | Examples |
+| Abbreviations | ~15% | Common terms |
 
-### Lossy Compression (Fidelity 80-95%)
+### 2.2 Low-Density Patterns
 
-| Technique             | Compression | Fidelity Loss | When to Use       |
-|-----------------------|-------------|---------------|-------------------|
-| **Shared vocabulary** | 30-50%      | ~0%*          | Established terms |
-| **Abbreviations**     | 40-60%      | 5-15%         | Domain experts    |
-| **Omission**          | 50-80%      | 10-30%        | Known context     |
-| **Summarization**     | 60-80%      | 15-25%        | Overview needs    |
-
-*Requires established shared context
+| Pattern | When to Use |
+|---------|-------------|
+| Full sentences | Complex explanations |
+| Step-by-step | Tutorials |
+| Examples first | Teaching concepts |
+| Redundancy | Critical information |
 
 ---
 
-## Optimal Point Theory
+## 3. Context-Based Selection
 
-### The Compression Curve
-
-```
-Efficiency
-    │
-    │      ┌── Optimal Zone (2-3x)
-    │     /│\
-    │    / │ \
-    │   /  │  \──── Diminishing Returns
-    │  /   │
-    │ /    │
-    │/     │
-    └──────┴────────────────► Compression
-         2x    4x    8x
-```
-
-### Key Thresholds
-
-| Threshold        | Compression | Effect                            |
-|------------------|-------------|-----------------------------------|
-| **Sweet Spot**   | 2-3x        | <5% fidelity loss, max efficiency |
-| **Warning Zone** | 3-4x        | 5-15% loss, monitor comprehension |
-| **Danger Zone**  | >4x         | >15% loss, expect clarifications  |
+| Audience | Recommended Density |
+|----------|---------------------|
+| Beginners | L1-L2 |
+| Intermediate | L2-L3 |
+| Experts | L4-L5 |
+| AI assistants | L4-L5 |
+| Quick reference | L5 |
 
 ---
 
-## Context-Dependent Density
+## 4. Compression Strategies
 
-### Collaboration Maturity
+### 4.1 Content Compression
 
-| Stage                 | Recommended Density | Reason                     |
-|-----------------------|---------------------|----------------------------|
-| **New collaboration** | 1-1.5x              | Building shared context    |
-| **Established**       | 2-2.5x              | Shared vocabulary exists   |
-| **Mature**            | 2.5-3x              | Deep shared understanding  |
-| **Expert pair**       | 3-4x                | Minimal explanation needed |
+| Strategy | Before | After |
+|----------|--------|-------|
+| Remove filler | "In order to" | "To" |
+| Active voice | "is processed by" | "processes" |
+| Implicit subjects | "You should use" | "Use" |
+| Tables over prose | Paragraph | Table |
 
-### Content Type
+### 4.2 Structure Compression
 
-| Content        | Density        | Reason                |
-|----------------|----------------|-----------------------|
-| **Principles** | Low (1.5x)     | Nuance matters        |
-| **Procedures** | Medium (2x)    | Clarity for execution |
-| **Reference**  | High (3x)      | Lookup, not learning  |
-| **Checklists** | Very High (4x) | Verification only     |
-
----
-
-## Density Optimization Process
-
-### Three-Phase Approach
-
-```
-Draft (1x) → Optimize (2-3x) → Validate (adjust as needed)
-```
-
-| Phase        | Action                       | Output                 |
-|--------------|------------------------------|------------------------|
-| **Draft**    | Write complete content       | Full fidelity baseline |
-| **Optimize** | Apply compression techniques | Target density         |
-| **Validate** | Test comprehension           | Adjusted final         |
-
-### Optimization Checklist
-
-1. ✓ Convert paragraphs to tables where possible
-2. ✓ Replace text with symbols for binary states
-3. ✓ Use shared vocabulary for known concepts
-4. ✓ Apply inline flow for sequences
-5. ✓ Remove redundant context (reader knows)
-6. ✓ Verify no critical information lost
+| Strategy | Application |
+|----------|-------------|
+| Headers as summaries | Key info in heading |
+| Progressive disclosure | Details on demand |
+| Cross-references | Link, don't repeat |
+| Layered content | Summary → details |
 
 ---
 
-## Anti-Patterns
+## 5. Quality Balance
 
-| Anti-Pattern                   | Problem                     | Fix                           |
-|--------------------------------|-----------------------------|-------------------------------|
-| **Uniform density**            | Same compression everywhere | Adapt to content type         |
-| **Invented abbreviations**     | No shared meaning           | Use standard terms            |
-| **Over-omission**              | Critical info removed       | Validate with fresh eyes      |
-| **Density for density's sake** | Clarity sacrificed          | Prioritize understanding      |
-| **Ignoring audience**          | Wrong density for reader    | Adjust to collaboration stage |
+### 5.1 Compression Limits
 
----
+| Preserve | Can Compress |
+|----------|--------------|
+| Accuracy | Verbose explanations |
+| Completeness | Redundant examples |
+| Clarity | Filler words |
+| Context | Obvious information |
 
-## Measurement
+### 5.2 Warning Signs
 
-### Density Metrics
-
-| Metric                      | Formula                         | Target   |
-|-----------------------------|---------------------------------|----------|
-| **Token Efficiency**        | Info units / tokens             | Maximize |
-| **Comprehension Rate**      | Correct interpretations / total | >95%     |
-| **Clarification Frequency** | Questions / exchanges           | <5%      |
-| **Effective Density**       | Efficiency × Comprehension      | Maximize |
-
-### Quality Indicators
-
-| Indicator               | Good Sign               | Warning Sign             |
-|-------------------------|-------------------------|--------------------------|
-| **Response accuracy**   | Direct, correct action  | Questions, wrong actions |
-| **Follow-up questions** | Rare, edge-case only    | Frequent, basic concepts |
-| **Execution speed**     | Immediate understanding | Multiple re-reads needed |
+| Sign | Problem | Solution |
+|------|---------|----------|
+| Ambiguity | Over-compressed | Add context |
+| Confusion | Missing info | Expand |
+| Questions | Unclear | Clarify |
 
 ---
 
-## Integration with 信达雅
+## 6. Application Matrix
 
-| Principle            | Density Application                    |
-|----------------------|----------------------------------------|
-| **信 (Faithfulness)** | Compression preserves meaning accuracy |
-| **达 (Clarity)**      | Density appropriate for audience       |
-| **雅 (Elegance)**     | Efficient without being cryptic        |
+| Content Type | Target Density | Key Technique |
+|--------------|----------------|---------------|
+| API Reference | L5 | Tables |
+| Tutorials | L2 | Step-by-step |
+| Guidelines | L3-L4 | Bullets + tables |
+| Quick Reference | L5 | Tables only |
+| Explanations | L2-L3 | Prose + examples |
 
 ---
 
 ## Related
 
-- `token_optimization.md` — Practical compression techniques
-- `knowledge_extraction.md` — Abstraction for reusability
-- `context_management.md` — Managing shared context
+- `practices/ai_collaboration/token_optimization.md` — Token efficiency
+- `practices/documentation/standards.md` — Documentation standards
 
 ---
 

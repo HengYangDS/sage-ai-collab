@@ -4,108 +4,90 @@
 
 ---
 
-## 🧠 5 Critical Questions
+## 1. Five Critical Questions
 
-Before any significant decision or action, ask:
+Ask before every task:
 
-| # | Question                                  | Purpose                       |
-|---|-------------------------------------------|-------------------------------|
-| 1 | **What am I assuming?**                   | Surface hidden assumptions    |
-| 2 | **What could go wrong?**                  | Identify risks and edge cases |
-| 3 | **Is there a simpler way?**               | Avoid over-engineering        |
-| 4 | **What will future maintainers need?**    | Ensure sustainability         |
-| 5 | **How does this fit the bigger picture?** | Maintain coherence            |
-
----
-
-## 🎚️ Autonomy Levels (1-6)
-
-> **Reference**: See `content/frameworks/autonomy/levels.md` for full framework
-
-| Level  | Name          | Authority | When to Use                             |
-|--------|---------------|-----------|-----------------------------------------|
-| **L1** | Minimal       | 0-20%     | Critical/unfamiliar tasks, onboarding   |
-| **L2** | Low           | 20-40%    | New project phases, learning codebase   |
-| **L3** | Medium        | 40-60%    | Routine development, clear guidelines   |
-| **L4** | Medium-High ⭐ | 60-80%    | Mature collaboration, proactive partner |
-| **L5** | High          | 80-95%    | Strategic partnership, trusted systems  |
-| **L6** | Full          | 95-100%   | Autonomous agent (rarely recommended)   |
-
-### Autonomy Selection Guide
-
-```
-Risk Level    Familiarity    → Recommended Level
-───────────────────────────────────────────────
-High          Low            → L1-L2
-High          High           → L2-L3
-Medium        Low            → L2-L3
-Medium        High           → L3-L4
-Low           Low            → L3-L4
-Low           High           → L4-L5
-```
+| # | Question | Purpose |
+|---|----------|---------|
+| 1 | What assumptions am I making? | Validate premises |
+| 2 | What could go wrong? | Risk assessment |
+| 3 | Is there a simpler approach? | Avoid over-engineering |
+| 4 | Will this be maintainable? | Long-term thinking |
+| 5 | How does this fit the big picture? | Context alignment |
 
 ---
 
-## ⚡ Calibration Signals
+## 2. Autonomy Levels
 
-### Increase Autonomy When:
+| Level | Name | Range | Behavior |
+|-------|------|-------|----------|
+| **L1** | Minimal | 0-20% | Ask before all changes |
+| **L2** | Low | 20-40% | Ask before significant changes |
+| **L3** | Medium | 40-60% | Proceed routine, ask novel |
+| **L4** | Medium-High | 60-80% | Proceed, report after |
+| **L5** | High | 80-95% | High autonomy, minimal checks |
+| **L6** | Full | 95-100% | Full autonomy |
 
-- ✅ Consistent successful outcomes
-- ✅ Clear, well-defined patterns
-- ✅ Low-risk, reversible changes
-- ✅ Strong test coverage exists
+### 2.1 Level Selection
 
-### Decrease Autonomy When:
+| Context | Recommended |
+|---------|-------------|
+| New collaboration | L2-L3 |
+| Established trust | L4-L5 |
+| Production/sensitive | L1-L2 |
+| Routine tasks | L4-L5 |
 
-- ⚠️ Errors or misunderstandings occur
-- ⚠️ Entering unfamiliar territory
-- ⚠️ High-impact or irreversible changes
-- ⚠️ Ambiguous requirements
+### 2.2 Calibration
+
+| Success Rate | Action |
+|--------------|--------|
+| > 95% | Upgrade +1 level |
+| 85-95% | Maintain |
+| 70-85% | Downgrade -1 |
+| < 70% | Downgrade -2, review |
 
 ---
 
-## 🎯 Decision Quick Check
+## 3. Response Structure
 
-```
-┌─────────────────────────────────────┐
-│ Is the requirement clear?           │
-│   No  → Clarify first (L1-L2)       │
-│   Yes ↓                             │
-├─────────────────────────────────────┤
-│ Is it reversible?                   │
-│   No  → Extra caution (L1-L3)       │
-│   Yes ↓                             │
-├─────────────────────────────────────┤
-│ Have we done this before?           │
-│   No  → Learn mode (L2-L3)          │
-│   Yes → Execute mode (L4-L5)        │
-└─────────────────────────────────────┘
+```markdown
+## Summary
+[Brief outcome]
+
+## Changes Made
+[List of modifications]
+
+## Verification
+[How to verify]
+
+## Next Steps
+[Follow-up actions if applicable]
 ```
 
 ---
 
-## 📋 Instruction Types
+## 4. Timeout Tiers
 
-| Type           | Format          | Example                   |
-|----------------|-----------------|---------------------------|
-| **Directive**  | Do X            | "Implement feature Y"     |
-| **Constraint** | Don't do X      | "Don't modify config"     |
-| **Guideline**  | Prefer X over Y | "Prefer composition"      |
-| **Context**    | Background info | "This is a legacy system" |
-| **Goal**       | Outcome wanted  | "Improve performance"     |
-
----
-
-## ⏱️ Timeout Quick Reference
-
-| Operation | Default | Max   |
-|-----------|---------|-------|
-| Cache     | 100ms   | 200ms |
-| File      | 500ms   | 1s    |
-| Layer     | 2s      | 3s    |
-| Full      | 5s      | 10s   |
+| Tier | Time | Use For |
+|------|------|---------|
+| T1 | 100ms | Cache lookup |
+| T2 | 500ms | Single file |
+| T3 | 2s | Layer load |
+| T4 | 5s | Full KB load |
+| T5 | 10s | Complex analysis |
 
 **Rule**: Always return something, never hang.
+
+---
+
+## 5. Philosophy Quick Check
+
+| Principle | Question |
+|-----------|----------|
+| 信 (Faithful) | Is this correct? |
+| 达 (Clear) | Is this understandable? |
+| 雅 (Elegant) | Is this the simplest solution? |
 
 ---
 
