@@ -18,13 +18,17 @@
 
 This guide has been split into focused documents for easier navigation and maintenance:
 
-| Document                                      | Description                                     | Time      |
-|:----------------------------------------------|:------------------------------------------------|:----------|
-| [📋 Introduction](01-introduction.md)         | Document overview, navigation, key metrics      | 5 min     |
-| [📘 Action Allowlist](02-action-allowlist.md) | 87 Terminal rules for 90%+ auto-approval        | 30 min    |
-| [🚀 MCP Integration](03-mcp-integration.md)   | 60-75% token efficiency improvement             | 1-2 hours |
-| [🔮 Future Vision](04-future-vision.md)       | A2A multi-agent collaboration (2026+)           | 30-60 min |
-| [📎 Appendix](05-appendix.md)                 | Regex reference, complete rules list, changelog | 15 min    |
+| Document                                                | Description                                     | Time      |
+|:--------------------------------------------------------|:------------------------------------------------|:----------|
+| [📋 Introduction](01-introduction.md)                   | Document overview, navigation, key metrics      | 5 min     |
+| [📘 Action Allowlist](02-action-allowlist.md)           | 87 Terminal rules for 90%+ auto-approval        | 30 min    |
+| [🚀 MCP Integration](03-mcp-integration.md)             | 60-75% token efficiency improvement             | 1-2 hours |
+| [🔮 Future Vision](04-future-vision.md)                 | A2A multi-agent collaboration (2026+)           | 30-60 min |
+| [📎 Appendix](05-appendix.md)                           | Regex reference, complete rules list, changelog | 15 min    |
+| [🔄 Migration Guide](06-migration-guide.md)             | Version migration and breaking change handling  | 10 min    |
+| [🧠 Memory Best Practices](07-memory-best-practices.md) | Knowledge graph patterns and usage              | 15 min    |
+| [📊 Efficiency Metrics](08-efficiency-metrics.md)       | Collaboration tracking and optimization         | 10 min    |
+| [🔧 Operations Guide](09-operations-guide.md)           | Hot reload, error recovery, maintenance         | 10 min    |
 
 ---
 

@@ -1,0 +1,109 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sage-kb.dev/schemas/mcp.schema.json",
+  "title": "MCP Server Configuration",
+  "description": "JSON Schema for validating MCP server configuration files",
+  "type": "object",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "JSON Schema reference for validation"
+    },
+    "$comment": {
+      "type": "string",
+      "description": "Configuration file description and notes"
+    },
+    "mcpServers": {
+      "type": "object",
+      "description": "Map of MCP server configurations",
+      "additionalProperties": {
+        "$ref": "#/definitions/mcpServer"
+      }
+    }
+  },
+  "required": [
+    "mcpServers"
+  ],
+  "definitions": {
+    "mcpServer": {
+      "type": "object",
+      "description": "Configuration for a single MCP server",
+      "properties": {
+        "command": {
+          "type": "string",
+          "description": "Command to execute the MCP server",
+          "examples": [
+            "npx.cmd",
+            "uvx",
+            "node"
+          ]
+        },
+        "args": {
+          "type": "array",
+          "description": "Arguments to pass to the command",
+          "items": {
+            "type": "string"
+          }
+        },
+        "env": {
+          "type": "object",
+          "description": "Environment variables for the server",
+          "additionalProperties": {
+            "type": "string"
+          }
+        },
+        "_meta": {
+          "$ref": "#/definitions/serverMeta"
+        }
+      },
+      "required": [
+        "command",
+        "args"
+      ],
+      "additionalProperties": false
+    },
+    "serverMeta": {
+      "type": "object",
+      "description": "Metadata for documentation and usage guidance",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Human-readable description of the server's purpose"
+        },
+        "priority": {
+          "type": "string",
+          "enum": [
+            "P0",
+            "P1",
+            "P2",
+            "P3"
+          ],
+          "description": "Priority level: P0 (critical), P1 (important), P2 (useful), P3 (optional)"
+        },
+        "triggers": {
+          "type": "array",
+          "description": "Scenarios that trigger use of this server",
+          "items": {
+            "type": "string"
+          }
+        },
+        "examples": {
+          "type": "array",
+          "description": "Example usage patterns",
+          "items": {
+            "type": "string"
+          }
+        },
+        "fallback": {
+          "type": "string",
+          "description": "Alternative approach if server is unavailable"
+        }
+      },
+      "required": [
+        "description",
+        "priority"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

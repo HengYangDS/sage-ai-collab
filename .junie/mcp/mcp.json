@@ -1,12 +1,14 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$schema": "./mcp.schema.json",
   "$comment": "MCP Server Configuration. Profiles defined in ../generic/config.yaml: minimal (filesystem, memory), standard (+github, fetch), full (all)",
   "mcpServers": {
     "filesystem": {
       "command": "npx.cmd",
       "args": [
         "-y",
-        "@modelcontextprotocol/server-filesystem"
+        "@modelcontextprotocol/server-filesystem",
+        ".",
+        ".junie"
       ],
       "_meta": {
         "description": "File system operations within project scope - read, write, search, and list files",

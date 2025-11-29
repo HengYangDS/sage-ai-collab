@@ -1,0 +1,309 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://sage-kb.dev/schemas/junie-config.schema.json",
+  "title": "Junie Configuration Schema",
+  "description": "JSON Schema for validating Junie YAML configuration files (generic/config.yaml and project/config.yaml)",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "description": "Schema version for compatibility tracking",
+      "pattern": "^\\d+\\.\\d+(\\.\\d+)?$",
+      "examples": [
+        "1.0",
+        "1.0.0"
+      ]
+    },
+    "collaboration": {
+      "$ref": "#/definitions/collaborationSettings"
+    },
+    "context_loading": {
+      "$ref": "#/definitions/contextLoadingSettings"
+    },
+    "output": {
+      "$ref": "#/definitions/outputSettings"
+    },
+    "timeouts": {
+      "$ref": "#/definitions/timeoutSettings"
+    },
+    "mcp": {
+      "$ref": "#/definitions/mcpSettings"
+    },
+    "project": {
+      "$ref": "#/definitions/projectSettings"
+    },
+    "tech_stack": {
+      "$ref": "#/definitions/techStackSettings"
+    },
+    "directories": {
+      "$ref": "#/definitions/directorySettings"
+    },
+    "commands": {
+      "$ref": "#/definitions/commandSettings"
+    },
+    "key_files": {
+      "$ref": "#/definitions/keyFilesSettings"
+    },
+    "ai_collaboration": {
+      "$ref": "#/definitions/aiCollaborationSettings"
+    }
+  },
+  "definitions": {
+    "collaborationSettings": {
+      "type": "object",
+      "description": "AI collaboration settings",
+      "properties": {
+        "default_autonomy_level": {
+          "type": "string",
+          "enum": [
+            "L1",
+            "L2",
+            "L3",
+            "L4",
+            "L5",
+            "L6"
+          ],
+          "description": "Default autonomy level for AI operations"
+        },
+        "preferred_language": {
+          "type": "string",
+          "description": "Preferred language for code and documentation",
+          "examples": [
+            "en",
+            "zh"
+          ]
+        },
+        "session_history": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "auto_record": {
+              "type": "boolean"
+            },
+            "location": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "contextLoadingSettings": {
+      "type": "object",
+      "description": "Context loading configuration",
+      "properties": {
+        "priority": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Priority order for loading context directories"
+        },
+        "lazy_load": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Directories to load on demand"
+        },
+        "exclude": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Directories to exclude from automatic loading"
+        }
+      }
+    },
+    "outputSettings": {
+      "type": "object",
+      "description": "Output and temporary file settings",
+      "properties": {
+        "temp_directory": {
+          "type": "string",
+          "description": "Directory for temporary/intermediate files"
+        },
+        "protected_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Paths that should never receive temporary files"
+        }
+      }
+    },
+    "timeoutSettings": {
+      "type": "object",
+      "description": "Timeout configuration",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "tiers": {
+          "type": "object",
+          "properties": {
+            "T1": {
+              "type": "string",
+              "description": "Cache lookup (~100ms)"
+            },
+            "T2": {
+              "type": "string",
+              "description": "Single file read (~500ms)"
+            },
+            "T3": {
+              "type": "string",
+              "description": "Layer/module loading (~2s)"
+            },
+            "T4": {
+              "type": "string",
+              "description": "Full system initialization (~5s)"
+            },
+            "T5": {
+              "type": "string",
+              "description": "Complex analysis (~10s)"
+            }
+          }
+        }
+      }
+    },
+    "mcpSettings": {
+      "type": "object",
+      "description": "MCP server configuration",
+      "properties": {
+        "config_file": {
+          "type": "string"
+        },
+        "default_profile": {
+          "type": "string"
+        },
+        "profiles": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "projectSettings": {
+      "type": "object",
+      "description": "Project identity and metadata",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "short_name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string"
+        },
+        "status": {
+          "type": "string",
+          "enum": [
+            "Planning",
+            "Alpha",
+            "Beta",
+            "RC",
+            "Stable",
+            "Maintenance",
+            "Deprecated"
+          ]
+        },
+        "config_file": {
+          "type": "string"
+        },
+        "quickref_file": {
+          "type": "string"
+        },
+        "philosophy": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string"
+            },
+            "principles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "techStackSettings": {
+      "type": "object",
+      "description": "Technology stack definitions",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "directorySettings": {
+      "type": "object",
+      "description": "Project directory structure",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "commandSettings": {
+      "type": "object",
+      "description": "Project commands",
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        ]
+      }
+    },
+    "keyFilesSettings": {
+      "type": "object",
+      "description": "Key file paths",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "aiCollaborationSettings": {
+      "type": "object",
+      "description": "AI collaboration specific settings",
+      "properties": {
+        "default_autonomy": {
+          "type": "string"
+        },
+        "preferred_language": {
+          "type": "string"
+        },
+        "session_history": {
+          "type": "object",
+          "properties": {
+            "enabled": {
+              "type": "boolean"
+            },
+            "location": {
+              "type": "string"
+            },
+            "auto_record": {
+              "type": "boolean"
+            }
+          }
+        },
+        "timeout_reference": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

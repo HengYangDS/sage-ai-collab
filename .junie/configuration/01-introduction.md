@@ -1,34 +1,18 @@
 # Introduction
 
-> Document overview, navigation guide, and key metrics (~5 min read)
+> Document overview and guide purpose (~5 min read)
 
 ---
 
 ## Table of Contents
 
-- [1. Quick Navigation](#1-quick-navigation)
-- [2. About This Guide](#2-about-this-guide)
-- [3. Platform Quick Reference](#3-platform-quick-reference)
+- [1. About This Guide](#1-about-this-guide)
+- [2. Quality Principles](#2-quality-principles)
+- [3. Getting Started](#3-getting-started)
 
 ---
 
-## 1. Quick Navigation
-
-**Choose your path based on your goal**:
-
-| Your Goal                            | Go To                                                                                       | Time Required |
-|:-------------------------------------|:--------------------------------------------------------------------------------------------|:--------------|
-| 🚀 **Quick Setup** (first-time user) | [Quick Start](02-action-allowlist.md#quick-start)                                           | 10-30 min     |
-| 🔧 **Add Terminal Rules**            | [Configuration Rules Explained](02-action-allowlist.md#configuration-rules-explained)       | 15 min        |
-| 📋 **Copy All Rules**                | [Appendix B: Complete Rules List](05-appendix.md#appendix-b-complete-rules-list-plain-text) | 5 min         |
-| 🔌 **Setup MCP Integration**         | [MCP Integration Guide](03-mcp-integration.md)                                              | 1-2 hours     |
-| 🐛 **Fix Configuration Issues**      | [Troubleshooting](02-action-allowlist.md#troubleshooting)                                   | 10-20 min     |
-| 🔮 **Learn Future Protocols**        | [Future Protocol Vision](04-future-vision.md)                                               | 30-60 min     |
-| 📖 **Understand the Mechanism**      | [Action Allowlist Mechanism](02-action-allowlist.md#action-allowlist-mechanism)             | 15 min        |
-
----
-
-## 2. About This Guide
+## 1. About This Guide
 
 This is the comprehensive configuration guide for Junie AI Assistant, covering Action Allowlist setup, MCP integration,
 and future protocol preparation.
@@ -40,50 +24,52 @@ and future protocol preparation.
 - 🔮 **Future Protocols**: Prepare for A2A multi-agent collaboration (2026+)
 - 🎯 **Best Practices**: Production-ready configuration patterns and troubleshooting guides
 
-**Quality Principles**: This guide adheres to three core standards—**Accuracy** (technical correctness), **Clarity** (
-easy understanding), and **Elegance** (professional quality).
+---
 
-**Version Compatibility**:
+## 2. Quality Principles
 
-| Component             | Tested Versions                         | Notes                                  |
-|:----------------------|:----------------------------------------|:---------------------------------------|
-| **Junie Plugin**      | 2025.1+                                 | MCP support requires 2025.1 or later   |
-| **JetBrains IDEs**    | 2024.3+, 2025.x                         | PyCharm, IntelliJ IDEA, WebStorm, etc. |
-| **Node.js**           | v18+                                    | Required for MCP servers               |
-| **Operating Systems** | Windows 10/11, macOS 12+, Ubuntu 20.04+ | Other Linux distros should work        |
+This guide adheres to three core standards aligned with the **信達雅 (Faithfulness-Clarity-Elegance)** philosophy:
 
-> **💡 Tip**: Check your Junie version via `Settings | Plugins | Junie`. For MCP features, ensure you have the latest
-> plugin version.
+| Principle    | Description           | Application                             |
+|:-------------|:----------------------|:----------------------------------------|
+| **Accuracy** | Technical correctness | All configurations tested and verified  |
+| **Clarity**  | Easy understanding    | Step-by-step instructions with examples |
+| **Elegance** | Professional quality  | Clean formatting, consistent style      |
 
 ---
 
-## 3. Platform Quick Reference
+## 3. Getting Started
 
-| Platform           | Terminal Rules | Configuration File                                                             | Key Commands             |
-|:-------------------|:---------------|:-------------------------------------------------------------------------------|:-------------------------|
-| **Windows**        | 68 rules       | `%APPDATA%\JetBrains\<Product><Version>\options\junie.xml`                     | PowerShell cmdlets       |
-| **macOS**          | 76 rules       | `~/Library/Application Support/JetBrains/<Product><Version>/options/junie.xml` | Bash/Zsh commands        |
-| **Linux**          | 76 rules       | `~/.config/JetBrains/<Product><Version>/options/junie.xml`                     | Bash/Zsh commands        |
-| **Cross-Platform** | 57 rules       | Same format                                                                    | Git, Python, Docker, npm |
+### Quick Navigation
 
-> **Note**: Replace `<Product><Version>` with your IDE, e.g., `PyCharm2025.2`, `IntelliJIdea2025.2`
+For navigation by goal, key metrics, platform references, and version compatibility, see:
 
-**Key Metrics at a Glance**:
+📋 **[README.md](README.md)** — Configuration Guide Index
 
-- 📊 **87 Total Rules** (57 cross-platform + 30 platform-specific)
-- ⚡ **90%+ Auto-Approval Rate** after full configuration
-- 🔒 **Zero Security Incidents** with dangerous character exclusion
-- 💪 **5-10x Efficiency Improvement** in AI collaboration
+### Recommended Reading Order
+
+| Step | Document                                   | Purpose                     |
+|:-----|:-------------------------------------------|:----------------------------|
+| 1    | [Action Allowlist](02-action-allowlist.md) | Configure Terminal rules    |
+| 2    | [MCP Integration](03-mcp-integration.md)   | Setup MCP servers           |
+| 3    | [Future Vision](04-future-vision.md)       | Understand protocol roadmap |
+| 4    | [Appendix](05-appendix.md)                 | Reference materials         |
+| 5    | [Migration Guide](06-migration-guide.md)   | Version management          |
+
+### First-Time Users
+
+Start with the **Quick Start** section in [Action Allowlist](02-action-allowlist.md#quick-start) for immediate setup.
 
 ---
 
 ## Related
 
-- `README.md` — Configuration guide index
+- `README.md` — Quick navigation, key metrics, platform reference, version compatibility
 - `02-action-allowlist.md` — Terminal rules configuration (next)
 - `03-mcp-integration.md` — MCP setup and best practices
 - `04-future-vision.md` — Protocol roadmap
 - `05-appendix.md` — References and resources
+- `06-migration-guide.md` — Version migration strategies
 
 ---
 

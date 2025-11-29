@@ -190,7 +190,32 @@ Here are the recommended MCP tools prioritized for implementation.
 
 **Configuration Example**:
 
-**Windows Configuration**:
+**✅ Recommended: Portable Configuration (All Platforms)**
+
+Use relative path `"."` for portable, Git-committable configuration:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ]
+    }
+  }
+}
+```
+
+> **💡 Note**: Use `npx.cmd` on Windows, `npx` on macOS/Linux. The `"."` path resolves to the project root directory.
+
+**Alternative: Absolute Path Configuration**
+
+If you need to specify an absolute path (e.g., for accessing directories outside the project):
+
+**Windows**:
 
 ```json
 {
@@ -207,7 +232,7 @@ Here are the recommended MCP tools prioritized for implementation.
 }
 ```
 
-**macOS/Linux Configuration**:
+**macOS/Linux**:
 
 ```json
 {
@@ -225,9 +250,10 @@ Here are the recommended MCP tools prioritized for implementation.
 ```
 
 > **⚠️ Cross-Platform Notes**:
-> - **Windows**: Must use `npx.cmd`, paths use double backslashes `\\\\`
+> - **Windows**: Must use `npx.cmd`, paths use double backslashes `\\`
 > - **macOS/Linux**: Use `npx`, paths use forward slashes `/`
 > - **Verification**: Run `npx.cmd --version` (Windows) or `npx --version` (Unix) to confirm installation
+> - **Portability**: Prefer relative path `"."` for configurations committed to Git
 
 ---
 
@@ -443,6 +469,47 @@ documentation: https://www.jetbrains.com/help/junie/mcp-settings.html
 - `<project-root>/.junie/mcp/mcp.json`
 
 **Standard mcp.json Configuration Format**:
+
+**✅ Recommended: Portable Configuration**
+
+Use relative path `"."` for configurations that can be committed to Git and shared across machines:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ]
+    },
+    "memory": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ]
+    },
+    "git": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-git",
+        "--repository",
+        "."
+      ]
+    }
+  }
+}
+```
+
+> **💡 Note**: Use `npx.cmd` on Windows, `npx` on macOS/Linux.
+
+**Alternative: Absolute Path Configuration**
+
+For specific use cases requiring absolute paths:
 
 **Windows Example**:
 
@@ -753,6 +820,74 @@ sequential_thinking.decompose(task = 'Implement authentication system')
 4. ✅ Evaluate before adding P1/P2 tools
 5. ✅ Avoid integrating too many services at once (affects performance)
 
+#### 5. Path Configuration Best Practices ⭐
+
+**Use Relative Paths for Portability**:
+
+Junie MCP configuration **does not support** environment variable substitution like `${PROJECT_ROOT}` or
+`${GITHUB_PERSONAL_ACCESS_TOKEN}`. Instead, use relative paths for portable, Git-committable configurations.
+
+**✅ Recommended: Use "." for Project Root**
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "."
+      ]
+    }
+  }
+}
+```
+
+**Benefits**:
+
+- ✅ No hardcoded absolute paths
+- ✅ Configuration can be committed to Git
+- ✅ Works on any machine that clones the repository
+- ✅ Automatically resolves to project root when Junie starts the MCP server
+
+**Multiple Directories**:
+
+To allow access to multiple directories, add them as separate arguments:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        ".",
+        ".junie"
+      ]
+    }
+  }
+}
+```
+
+**❌ Avoid These Patterns**:
+
+| Pattern               | Problem                                    |
+|-----------------------|--------------------------------------------|
+| `${PROJECT_ROOT}`     | Variable substitution not supported        |
+| `${ENV_VAR}`          | Environment variables in args not expanded |
+| `C:\\hardcoded\\path` | Not portable across machines               |
+| Missing path argument | Results in empty allowed directories       |
+
+**Verification**:
+
+After configuring, verify the allowed directories are correctly set:
+
+1. Open `Settings | Tools | Junie | MCP Settings`
+2. Check that filesystem server shows "Connected" status
+3. Test by asking Junie to read a file from the project
+
 ---
 
 ## 7. Troubleshooting
@@ -900,19 +1035,31 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 #### Problem 2: Filesystem Server Access Denied
 
-**Symptoms**: Cannot read `.junie/` directory files
+**Symptoms**: Cannot read `.junie/` directory files, error message "path is outside allowed directories"
 
 **Possible Causes**:
 
 - Path configuration error
 - Insufficient permissions
 - Path contains special characters
+- Allowed directories not configured or empty
 
 **Solutions**:
 
-1. **Verify Path Format**:
-    - Windows: Use double backslashes `C:\\\\path\\\\to\\\\.junie`
-    - Unix: Use forward slashes `/path/to/.junie`
+1. **Use Relative Path "." (Recommended)** ⭐:
+
+   The most portable and reliable solution is to use `"."` as the path argument:
+   ```json
+   {
+     "mcpServers": {
+       "filesystem": {
+         "command": "npx.cmd",
+         "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+       }
+     }
+   }
+   ```
+   This resolves to the project root directory when Junie starts the MCP server.
 
 2. **Check Permissions**:
    ```bash
@@ -923,9 +1070,126 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
    icacls .junie /grant Everyone:(OI)(CI)F
    ```
 
-3. **Use Absolute Paths**:
-    - Avoid relative paths
-    - Use full absolute paths for reliability
+3. **Verify Allowed Directories**:
+
+   If using absolute paths, ensure the path format is correct:
+    - Windows: Use double backslashes `C:\\path\\to\\.junie`
+    - Unix: Use forward slashes `/path/to/.junie`
+
+> **💡 Tip**: See [Path Configuration Best Practices](#5-path-configuration-best-practices-) for detailed guidance.
+
+---
+
+#### Problem 3: Environment Variables Not Supported ⚠️
+
+**Symptoms**: MCP server fails to start or cannot access directories when using variables like `${PROJECT_ROOT}`
+
+**Typical Configuration Error**:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${PROJECT_ROOT}"
+      ]
+    }
+  }
+}
+```
+
+**Root Cause**:
+
+Junie MCP configuration **does not support** environment variable substitution in `args`. The string `${PROJECT_ROOT}`
+is passed literally to the MCP server, which then fails to find that directory.
+
+**Solution**:
+
+Use relative path `"."` instead of environment variables:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    }
+  }
+}
+```
+
+**For Environment Variables in `env` Section**:
+
+If you need to pass sensitive values (like API tokens), set them as system environment variables first, then reference
+them without the `${}` syntax:
+
+```json
+{
+  "mcpServers": {
+    "github": {
+      "command": "npx.cmd",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_PERSONAL_ACCESS_TOKEN": "your-actual-token-here"
+      }
+    }
+  }
+}
+```
+
+> **⚠️ Security Note**: Avoid committing actual tokens to Git. For team projects, each developer should configure
+> tokens locally or use a secrets management solution.
+
+---
+
+#### Problem 4: Filesystem Server Shows Empty Allowed Directories
+
+**Symptoms**:
+
+- MCP filesystem server starts successfully (shows "Connected")
+- But all file read operations fail with "access denied"
+- `list_allowed_directories` returns an empty list
+
+**Root Cause**:
+
+The path argument is missing from the `args` array in the configuration:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem"]
+    }
+  }
+}
+```
+
+**Solution**:
+
+Add the directory path as an argument. Use `"."` for project root:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    }
+  }
+}
+```
+
+**Verification**:
+
+After fixing, restart the IDE and verify:
+
+1. Check `Settings | Tools | Junie | MCP Settings` - server should show "Connected"
+2. Ask Junie to read a file from the project
+3. The file should be accessible without "access denied" errors
 
 ---
 
@@ -962,6 +1226,51 @@ npx.cmd -y @modelcontextprotocol/server-filesystem --help
 
 - **40-50% improvement** in Phase 1 (basic integration)
 - **60-75% improvement** after optimization and knowledge persistence
+
+#### Q5: How do I configure portable MCP paths that work across different machines?
+
+**A**: Use relative paths instead of absolute paths or environment variables:
+
+```json
+{
+  "mcpServers": {
+    "filesystem": {
+      "command": "npx.cmd",
+      "args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+    }
+  }
+}
+```
+
+**Key points**:
+
+- ✅ Use `"."` to represent the project root directory
+- ✅ The path resolves when Junie starts the MCP server
+- ✅ Configuration can be committed to Git and shared with the team
+- ❌ Avoid `${PROJECT_ROOT}` or other variables (not supported)
+- ❌ Avoid hardcoded absolute paths like `C:\\path\\to\\project`
+
+See [Path Configuration Best Practices](#5-path-configuration-best-practices-) for more details.
+
+#### Q6: Why does `${PROJECT_ROOT}` or `${ENV_VAR}` not work in MCP configuration?
+
+**A**: Junie's MCP configuration does **not** support environment variable substitution in the `args` array.
+The string is passed literally to the MCP server without expansion.
+
+**Instead of**:
+
+```json
+"args": ["-y", "@modelcontextprotocol/server-filesystem", "${PROJECT_ROOT}"]
+```
+
+**Use**:
+
+```json
+"args": ["-y", "@modelcontextprotocol/server-filesystem", "."]
+```
+
+See [Problem 3: Environment Variables Not Supported](#problem-3-environment-variables-not-supported-) for detailed
+explanation.
 
 ---
 
