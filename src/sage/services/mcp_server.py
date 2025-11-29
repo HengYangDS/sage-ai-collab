@@ -669,7 +669,7 @@ if MCP_AVAILABLE and app is not None:
         Args:
             path: Root path of knowledge base
             include_content: Whether to include content in nodes
-            output_file: Optional path to export graph as JSON
+            output_file: Optional filename to export graph as JSON (saved to .outputs/)
 
         Returns:
             Dictionary with:
@@ -680,7 +680,7 @@ if MCP_AVAILABLE and app is not None:
 
         Examples:
             - build_knowledge_graph(path="content")
-            - build_knowledge_graph(output_file="graph.json")
+            - build_knowledge_graph(output_file="graph.json")  # Saved to .outputs/graph.json
         """
         try:
             # Dev tool: import from tools/ directory
@@ -697,7 +697,15 @@ if MCP_AVAILABLE and app is not None:
             graph = builder.build_from_directory(include_content=include_content)
 
             if output_file:
-                builder.export_to_json(Path(output_file))
+                # Ensure output files go to .outputs/ directory
+                project_root = Path(__file__).parent.parent.parent.parent
+                outputs_dir = project_root / ".outputs"
+                outputs_dir.mkdir(parents=True, exist_ok=True)
+                
+                # Use just the filename if a path is provided
+                output_filename = Path(output_file).name
+                output_path = outputs_dir / output_filename
+                builder.export_to_json(output_path)
 
             return {"success": True, "result": builder.get_statistics()}
         except Exception as e:

@@ -1,0 +1,171 @@
+# SAGE Production Environment Configuration
+#
+# Production environment overrides for deployment.
+# This file is loaded when SAGE_ENV=production.
+# =============================================================================
+# Environment Identifier
+# =============================================================================
+environment: production
+
+# =============================================================================
+# Logging Overrides (structured for log aggregation)
+# =============================================================================
+logging:
+  level: INFO
+  format: structured                   # JSON format for log aggregation
+  include_timestamps: true
+  output:
+    console: true
+    file: true
+    file_path: "/var/log/sage/sage.log"
+    max_size_mb: 100
+    backup_count: 10
+  # Production-specific: log sampling for high traffic
+  sampling:
+    enabled: true
+    rate: 0.1                          # Sample 10% of debug logs
+
+# =============================================================================
+# Feature Flags (optimized for production)
+# =============================================================================
+features:
+  event_driven_plugins: true
+  memory_persistence: true
+  api_service: true
+  differential_loading: true           # Enable for performance
+  compressed_loading: true             # Enable for bandwidth
+  client_cache: true
+  lazy_expansion: true
+  context_pruning: true                # Enable for memory efficiency
+
+# =============================================================================
+# Timeout Overrides (strict for production)
+# =============================================================================
+timeout:
+  global_max: 10s
+  default: 5s
+  operations:
+    cache_lookup: 100ms
+    file_read: 500ms
+    layer_load: 2s
+    full_load: 5s
+    analysis: 10s
+  # Circuit breaker enabled
+  circuit_breaker:
+    enabled: true
+    failure_threshold: 3
+    reset_timeout: 30s
+
+# =============================================================================
+# Plugin Overrides
+# =============================================================================
+plugins:
+  loader:
+    cache_enabled: true
+    cache_ttl: 3600                    # 1 hour cache
+  bundled:
+    content_cache:
+      enabled: true
+      max_entries: 5000
+      max_size_bytes: 104857600        # 100MB for production
+      ttl_seconds: 7200                # 2 hours
+
+# =============================================================================
+# Memory Overrides
+# =============================================================================
+memory:
+  store:
+    backend: file                      # Consider redis for distributed
+    path: /var/lib/sage/memory
+  session:
+    auto_checkpoint: true
+    checkpoint_interval: 300           # 5 minutes
+    max_history: 200
+  cleanup:
+    enabled: true
+    max_age_days: 30
+
+# =============================================================================
+# Security Overrides (strict for production)
+# =============================================================================
+security:
+  authentication:
+    enabled: true
+    type: api_key
+  authorization:
+    enabled: true
+    default_role: reader
+  input_validation:
+    sanitize_input: true
+    max_query_length: 1000
+    max_path_depth: 10
+  rate_limiting:
+    global:
+      enabled: true
+      requests_per_minute: 1000
+      burst_size: 100
+    per_client:
+      enabled: true
+      requests_per_minute: 60
+      burst_size: 10
+  headers:
+    enabled: true
+
+# =============================================================================
+# Services Overrides
+# =============================================================================
+services:
+  api:
+    enabled: true
+    host: "0.0.0.0"
+    port: 8080
+    cors:
+      enabled: true
+      origins:                         # Restrict to known origins
+        - "https://your-domain.com"
+    docs:
+      enabled: false                   # Disable docs in production
+    rate_limit:
+      enabled: true
+      requests_per_minute: 60
+    ssl:
+      enabled: true
+      cert_file: "/etc/ssl/certs/sage.crt"
+      key_file: "/etc/ssl/private/sage.key"
+    health:
+      enabled: true
+      include_details: false           # Hide details in production
+
+# =============================================================================
+# MCP Overrides
+# =============================================================================
+mcp:
+  server:
+    host: "0.0.0.0"
+    port: 8000
+  tools:
+    timeout_ms: 10000
+    include_metadata: false            # No debug metadata in production
+
+# =============================================================================
+# Metrics (enabled for production monitoring)
+# =============================================================================
+metrics:
+  enabled: true
+  prometheus:
+    enabled: true
+    endpoint: /metrics
+    port: 9090
+  performance:
+    track_response_time: true
+    track_timeout_rate: true
+    track_cache_hit_rate: true
+
+# =============================================================================
+# Tracing (optional, enable for distributed tracing)
+# =============================================================================
+tracing:
+  enabled: false                       # Enable when needed
+  opentelemetry:
+    enabled: false
+    service_name: sage-kb-prod

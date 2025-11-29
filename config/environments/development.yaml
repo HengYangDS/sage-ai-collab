@@ -1,0 +1,107 @@
+# SAGE Development Environment Configuration
+#
+# Development environment overrides for local development.
+# This file is loaded when SAGE_ENV=development or by default.
+# =============================================================================
+# Environment Identifier
+# =============================================================================
+environment: development
+
+# =============================================================================
+# Logging Overrides (verbose for debugging)
+# =============================================================================
+logging:
+  level: DEBUG
+  format: plain                        # Human-readable format
+  include_timestamps: true
+  output:
+    console: true
+    file: true
+    file_path: ".logs/sage-dev.log"
+
+# =============================================================================
+# Feature Flags (enable all for development)
+# =============================================================================
+features:
+  event_driven_plugins: true
+  memory_persistence: true
+  api_service: true                    # Enable API in dev
+  differential_loading: false
+  compressed_loading: false
+  client_cache: false                  # Disable cache for fresh content
+  lazy_expansion: true
+  context_pruning: false
+
+# =============================================================================
+# Timeout Overrides (more lenient for debugging)
+# =============================================================================
+timeout:
+  global_max: 30s                      # More time for debugging
+  default: 10s
+  operations:
+    cache_lookup: 500ms
+    file_read: 2s
+    layer_load: 5s
+    full_load: 15s
+    analysis: 30s
+
+# =============================================================================
+# Plugin Overrides
+# =============================================================================
+plugins:
+  loader:
+    cache_enabled: false               # Disable cache for dev
+    cache_ttl: 60                      # Short TTL if cache is enabled
+
+# =============================================================================
+# Memory Overrides
+# =============================================================================
+memory:
+  store:
+    backend: file
+    path: .history/memory/dev
+  session:
+    auto_checkpoint: false             # Manual checkpoint in dev
+    max_history: 50
+
+# =============================================================================
+# Security Overrides (relaxed for development)
+# =============================================================================
+security:
+  authentication:
+    enabled: false
+  authorization:
+    enabled: false
+  rate_limiting:
+    global:
+      enabled: false
+    per_client:
+      enabled: false
+
+# =============================================================================
+# Services Overrides
+# =============================================================================
+services:
+  api:
+    enabled: true
+    host: "127.0.0.1"                  # Localhost only
+    port: 8080
+    cors:
+      enabled: true
+      origins:
+        - "*"                          # Allow all origins in dev
+    docs:
+      enabled: true                    # Enable API docs
+    rate_limit:
+      enabled: false
+
+# =============================================================================
+# MCP Overrides
+# =============================================================================
+mcp:
+  server:
+    host: "localhost"
+    port: 8000
+  tools:
+    timeout_ms: 30000                  # Longer timeout for debugging
+    include_metadata: true             # Include debug metadata

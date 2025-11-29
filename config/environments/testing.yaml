@@ -1,0 +1,148 @@
+# SAGE Testing Environment Configuration
+#
+# Testing environment overrides for automated tests.
+# This file is loaded when SAGE_ENV=testing or during pytest runs.
+# =============================================================================
+# Environment Identifier
+# =============================================================================
+environment: testing
+
+# =============================================================================
+# Logging Overrides (minimal for test output)
+# =============================================================================
+logging:
+  level: WARNING                       # Reduce noise in test output
+  format: plain
+  include_timestamps: false
+  output:
+    console: true
+    file: false                        # No file logging in tests
+
+# =============================================================================
+# Feature Flags (minimal for fast tests)
+# =============================================================================
+features:
+  event_driven_plugins: true
+  memory_persistence: false            # In-memory only for tests
+  api_service: false                   # Disable unless testing API
+  differential_loading: false
+  compressed_loading: false
+  client_cache: false                  # No caching for deterministic tests
+  lazy_expansion: false
+  context_pruning: false
+
+# =============================================================================
+# Timeout Overrides (short for fast tests)
+# =============================================================================
+timeout:
+  global_max: 5s
+  default: 2s
+  operations:
+    cache_lookup: 50ms
+    file_read: 200ms
+    layer_load: 1s
+    full_load: 2s
+    analysis: 5s
+  # Circuit breaker disabled for predictable tests
+  circuit_breaker:
+    enabled: false
+
+# =============================================================================
+# Plugin Overrides
+# =============================================================================
+plugins:
+  loader:
+    cache_enabled: false               # Disable for deterministic tests
+    cache_ttl: 0
+  bundled:
+    content_cache:
+      enabled: false
+    semantic_search:
+      enabled: true
+      max_results: 10
+
+# =============================================================================
+# Memory Overrides (in-memory for isolation)
+# =============================================================================
+memory:
+  store:
+    backend: memory                    # In-memory for test isolation
+    path: ""                           # Not used for memory backend
+  session:
+    auto_checkpoint: false
+    checkpoint_interval: 0
+    max_history: 10
+  cleanup:
+    enabled: false                     # No cleanup in tests
+
+# =============================================================================
+# Security Overrides (disabled for tests)
+# =============================================================================
+security:
+  authentication:
+    enabled: false
+  authorization:
+    enabled: false
+  input_validation:
+    sanitize_input: false              # Allow test inputs
+  rate_limiting:
+    global:
+      enabled: false
+    per_client:
+      enabled: false
+
+# =============================================================================
+# Services Overrides
+# =============================================================================
+services:
+  api:
+    enabled: false                     # Enable per-test if needed
+    host: "127.0.0.1"
+    port: 0                            # Random port for tests
+    cors:
+      enabled: false
+    docs:
+      enabled: false
+    rate_limit:
+      enabled: false
+
+# =============================================================================
+# MCP Overrides
+# =============================================================================
+mcp:
+  server:
+    host: "127.0.0.1"
+    port: 0                            # Random port for tests
+  tools:
+    timeout_ms: 5000
+    include_metadata: true             # Include for test assertions
+
+# =============================================================================
+# Test-Specific Configuration
+# =============================================================================
+testing:
+  # Fixture paths
+  fixtures:
+    root: "tests/fixtures"
+    configs: "tests/fixtures/configs"
+    sample_content: "tests/fixtures/sample_content"
+    mock_responses: "tests/fixtures/mock_responses"
+
+  # Test isolation
+  isolation:
+    reset_state_between_tests: true
+    use_temp_directories: true
+
+  # Mock configuration
+  mocks:
+    external_services: true            # Mock external services
+    file_system: false                 # Use real filesystem by default
+    network: true                      # Mock network calls
+
+  # Coverage configuration
+  coverage:
+    min_coverage: 80
+    fail_under: true
+    exclude_patterns:
+      - "tests/*"
+      - "*/__pycache__/*"

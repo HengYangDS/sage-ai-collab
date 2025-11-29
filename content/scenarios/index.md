@@ -12,9 +12,13 @@
 
 ## 1. Available Scenarios
 
-| Scenario           | Path              | Tokens | Context                        |
-|--------------------|-------------------|--------|--------------------------------|
-| **Python Backend** | `python_backend/` | ~200   | Python web service development |
+| Scenario                | Path                    | Tokens | Context                          |
+|-------------------------|-------------------------|--------|----------------------------------|
+| **Python Backend**      | `python_backend/`       | ~200   | Python web service development   |
+| **TypeScript Frontend** | `typescript_frontend/`  | ~300   | React/Vue frontend development   |
+| **Data Pipeline**       | `data_pipeline/`        | ~400   | ETL and data processing workflows|
+| **DevOps**              | `devops/`               | ~400   | CI/CD and infrastructure         |
+| **Documentation**       | `documentation/`        | ~300   | Technical writing projects       |
 
 ---
 
@@ -91,20 +95,13 @@ scenarios/[name]/
 3. Define auto-load triggers in `config/knowledge/triggers.yaml`
 4. Update this index
 
-### Recommended Scenarios (Future)
-
-- `typescript_frontend/` — React/Vue development
-- `data_pipeline/` — Data processing workflows
-- `devops/` — CI/CD and infrastructure
-- `documentation/` — Technical writing projects
-
 ---
 
 ## Related
 
-- `guidelines/index.md` — General guidelines
-- `practices/index.md` — Implementation practices
-- `templates/index.md` — Document templates
+- `content/guidelines/index.md` — General guidelines
+- `content/practices/index.md` — Implementation practices
+- `content/templates/index.md` — Document templates
 - `config/knowledge/triggers.yaml` — Trigger configuration
 
 ---

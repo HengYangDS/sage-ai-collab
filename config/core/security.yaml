@@ -1,0 +1,88 @@
+# SAGE Security Configuration
+#
+# Configuration for authentication, authorization, and security controls.
+# This file is part of the modular configuration system.
+# =============================================================================
+# Security Configuration
+# =============================================================================
+security:
+  # Authentication configuration
+  authentication:
+    enabled: false                     # Enable authentication
+    type: api_key                      # api_key | jwt | oauth2
+    api_key_header: "X-API-Key"        # Header name for API key
+    jwt:
+      secret_env: "SAGE_JWT_SECRET"    # Environment variable for JWT secret
+      algorithm: "HS256"               # JWT signing algorithm
+      expiry_hours: 24                 # Token expiry time
+    oauth2:
+      provider: ""                     # OAuth2 provider (google, github, etc.)
+      client_id_env: "SAGE_OAUTH_CLIENT_ID"
+      client_secret_env: "SAGE_OAUTH_CLIENT_SECRET"
+
+  # Authorization configuration
+  authorization:
+    enabled: false
+    default_role: reader               # reader | editor | admin
+    roles:
+      reader:
+        permissions:
+          - read_knowledge
+          - search
+      editor:
+        permissions:
+          - read_knowledge
+          - search
+          - write_knowledge
+      admin:
+        permissions:
+          - read_knowledge
+          - search
+          - write_knowledge
+          - manage_config
+          - manage_users
+
+  # Secrets management
+  secrets:
+    backend: env                       # env | vault | aws_secrets
+    env_prefix: "SAGE_SECRET_"
+    vault:
+      enabled: false
+      address: "http://localhost:8200"
+      token_env: "VAULT_TOKEN"
+      path: "secret/data/sage"
+    aws_secrets:
+      enabled: false
+      region: "us-east-1"
+      secret_name: "sage-kb-secrets"
+
+  # Input validation
+  input_validation:
+    max_query_length: 1000             # Maximum query string length
+    max_path_depth: 10                 # Maximum path traversal depth
+    sanitize_input: true               # Enable input sanitization
+    allowed_characters: "a-zA-Z0-9_\\-./\\s"  # Allowed characters pattern
+    block_patterns:                    # Patterns to block
+      - "../"                          # Path traversal
+      - "<script"                      # XSS attempt
+      - "javascript:"                  # XSS attempt
+
+  # Rate limiting (additional to API service rate limiting)
+  rate_limiting:
+    global:
+      enabled: false
+      requests_per_minute: 100
+      burst_size: 20
+    per_client:
+      enabled: false
+      requests_per_minute: 60
+      burst_size: 10
+
+  # Security headers
+  headers:
+    enabled: true
+    x_content_type_options: "nosniff"
+    x_frame_options: "DENY"
+    x_xss_protection: "1; mode=block"
+    content_security_policy: "default-src 'self'"
+    strict_transport_security: "max-age=31536000; includeSubDomains"
