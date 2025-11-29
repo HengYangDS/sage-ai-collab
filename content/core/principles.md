@@ -84,4 +84,12 @@ Before any task, ask:
 
 ---
 
+## Related
+
+- `core/quick_reference.md` — Quick reference card
+- `core/defaults.md` — Default behaviors
+- `guidelines/success.md` — Success principles
+
+---
+
 *Part of SAGE Knowledge Base*

@@ -1,11 +1,16 @@
 # Project Setup Templates
 
-> **Load Time**: On-demand (~80 tokens)  
-> **Purpose**: Ready-to-use templates for project initialization
+> Ready-to-use templates for project initialization
 
 ---
 
-## Template Overview
+## Table of Contents
+
+[1. Template Overview](#1-template-overview) · [2. Thin Layer](#2-thin-layer-junieguidelines-md) · [3. Python Project](#3-python-project) · [4. README Template](#4-readme-template) · [5. .gitignore Template](#5-gitignore-template) · [6. Docker Template](#6-docker-template) · [7. CI/CD Template](#7-cicd-template) · [8. Quick Setup Script](#8-quick-setup-script)
+
+---
+
+## 1. Template Overview
 
 | Template                                     | Purpose               | Lines |
 |----------------------------------------------|-----------------------|-------|
@@ -18,7 +23,7 @@
 
 ---
 
-## Thin Layer .junie/guidelines.md
+## 2. Thin Layer .junie/guidelines.md
 
 ```markdown
 # Project Guidelines
@@ -46,9 +51,9 @@ Default: L4 | Elevated: [routine tasks → L5] | Lowered: [sensitive areas → L
 
 ---
 
-## Python Project
+## 3. Python Project
 
-### pyproject.toml
+### 3.1 pyproject.toml
 
 ```toml
 [project]
@@ -72,7 +77,7 @@ testpaths = ["tests"]
 addopts = "-v --cov=src"
 ```
 
-### Directory Structure
+### 3.2 Directory Structure
 
 | Path                   | Purpose                                       |
 |------------------------|-----------------------------------------------|
@@ -84,7 +89,7 @@ addopts = "-v --cov=src"
 
 ---
 
-## README Template
+## 4. README Template
 
 ```markdown
 # Project Name
@@ -118,7 +123,7 @@ MIT
 
 ---
 
-## .gitignore Template
+## 5. .gitignore Template
 
 ```gitignore
 # Python
@@ -139,9 +144,9 @@ __pycache__/ | *.py[cod] | *.egg-info/ | dist/ | build/ | .eggs/
 
 ---
 
-## Docker Template
+## 6. Docker Template
 
-### Dockerfile
+### 6.1 Dockerfile
 
 ```dockerfile
 FROM python:3.11-slim
@@ -152,7 +157,7 @@ COPY src/ src/
 CMD ["python", "-m", "project_name"]
 ```
 
-### docker-compose.yml
+### 6.2 docker-compose.yml
 
 ```yaml
 services:
@@ -171,9 +176,9 @@ volumes:
 
 ---
 
-## CI/CD Template
+## 7. CI/CD Template
 
-### .github/workflows/ci.yml
+### 7.1 .github/workflows/ci.yml
 
 ```yaml
 name: CI
@@ -198,7 +203,7 @@ jobs:
 
 ---
 
-## Quick Setup Script
+## 8. Quick Setup Script
 
 ```bash
 #!/bin/bash
@@ -221,4 +226,4 @@ echo "Created $PROJECT! Next: cd $PROJECT && sage get"
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

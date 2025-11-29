@@ -205,9 +205,10 @@ print(greet("World"))  # Output: Hello, World
 
 ## Related
 
-- `content/guidelines/documentation.md` — Documentation guidelines
-- `content/practices/ai_collaboration/token_optimization.md` — Token efficiency
-- `config/documentation.yaml` — TOC configuration
+- `optimization_workflow.md` — Batch optimization process
+- `knowledge_organization.md` — Knowledge hierarchy patterns
+- `../../guidelines/documentation.md` — Documentation guidelines
+- `../ai_collaboration/token_optimization.md` — Token efficiency
 
 ---
 

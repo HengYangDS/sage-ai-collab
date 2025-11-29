@@ -153,4 +153,12 @@ Each expert provides:
 
 ---
 
+## Related
+
+- `templates/expert_committee.md` — Decision templates
+- `frameworks/patterns/decision.md` — Quality angles
+- `guidelines/cognitive.md` — Cognitive guidelines
+
+---
+
 *Part of SAGE Knowledge Base*

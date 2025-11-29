@@ -1,12 +1,16 @@
 # Document Templates
 
-> **Load Time**: On-demand (~30 tokens)  
-> **Budget**: ~300 tokens  
-> **Purpose**: Reusable templates for common documents
+> Reusable templates for common documents
 
 ---
 
-## Available Templates
+## Table of Contents
+
+[1. Available Templates](#1-available-templates) · [2. Expert Committee Template](#2-expert-committee-template) · [3. Project Setup Template](#3-project-setup-template) · [4. Template Format Standard](#4-template-format-standard) · [5. Creating New Templates](#5-creating-new-templates)
+
+---
+
+## 1. Available Templates
 
 | Template             | File                  | Tokens | Purpose                          |
 |----------------------|-----------------------|--------|----------------------------------|
@@ -15,7 +19,7 @@
 
 ---
 
-## Expert Committee Template
+## 2. Expert Committee Template
 
 **File**: `expert_committee.md`
 
@@ -51,7 +55,7 @@
 
 ---
 
-## Project Setup Template
+## 3. Project Setup Template
 
 **File**: `project_setup.md`
 
@@ -71,7 +75,7 @@
 
 ---
 
-## Template Format Standard
+## 4. Template Format Standard
 
 All templates follow this structure:
 
@@ -105,7 +109,7 @@ All templates follow this structure:
 
 ---
 
-## Creating New Templates
+## 5. Creating New Templates
 
 1. Identify repeated documentation patterns
 2. Create template with `[PLACEHOLDER]` markers
@@ -130,4 +134,4 @@ All templates follow this structure:
 
 ---
 
-*Templates layer — Reusable document structures*
+*Part of SAGE Knowledge Base*

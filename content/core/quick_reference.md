@@ -101,4 +101,12 @@ Ask before every task:
 
 ---
 
+## Related
+
+- `core/principles.md` — Full philosophy
+- `core/defaults.md` — Default behaviors
+- `frameworks/autonomy/levels.md` — Autonomy framework
+
+---
+
 *Part of SAGE Knowledge Base*

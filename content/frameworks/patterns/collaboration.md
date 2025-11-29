@@ -127,4 +127,12 @@ Attempt → Uncertain? → Escalate → Guidance → Continue
 
 ---
 
+## Related
+
+- `guidelines/ai_collaboration.md` — Collaboration guidelines
+- `practices/ai_collaboration/workflow.md` — Workflow practices
+- `frameworks/autonomy/levels.md` — Autonomy framework
+
+---
+
 *Part of SAGE Knowledge Base*

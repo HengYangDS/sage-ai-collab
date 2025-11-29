@@ -135,7 +135,7 @@ def get_settings() -> Settings:
 
 ---
 
-## Common Tasks
+## 7. Common Tasks
 
 | Task                | Steps                                                                         |
 |---------------------|-------------------------------------------------------------------------------|
@@ -145,7 +145,7 @@ def get_settings() -> Settings:
 
 ---
 
-## Autonomy Calibration
+## 8. Autonomy Calibration
 
 | Task Type               | Level | Notes                |
 |-------------------------|-------|----------------------|
@@ -158,7 +158,7 @@ def get_settings() -> Settings:
 
 ---
 
-## Quick Commands
+## 9. Quick Commands
 
 | Category | Commands                                                |
 |----------|---------------------------------------------------------|
@@ -177,4 +177,4 @@ def get_settings() -> Settings:
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

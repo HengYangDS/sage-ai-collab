@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-[1. Five-Level Hierarchy](#1-five-level-hierarchy) · [2. Implementation Rules](#2-implementation-rules) · [3. Fallback Strategies](#3-fallback-strategies) · [4. Circuit Breaker](#4-circuit-breaker) · [5. Quick Reference](#5-quick-reference)
+[1. Five-Level Hierarchy](#1-five-level-hierarchy) · [2. Timeout Flow](#2-timeout-flow) · [3. Fallback Strategies](#3-fallback-strategies) · [4. Configuration](#4-configuration) · [5. Implementation Guidelines](#5-implementation-guidelines) · [6. Related Patterns](#6-related-patterns)
 
 ---
 
@@ -65,25 +65,7 @@ Request
 
 ---
 
-## 4. Circuit Breaker
-
-| Parameter          | Value | Purpose               |
-|--------------------|-------|-----------------------|
-| Failure threshold  | 3     | Open after N failures |
-| Reset timeout      | 30s   | Try again after       |
-| Half-open requests | 1     | Test recovery         |
-
-### 4.1 States
-
-| State         | Behavior                 |
-|---------------|--------------------------|
-| **Closed**    | Normal operation         |
-| **Open**      | Fail fast, use fallback  |
-| **Half-Open** | Test with single request |
-
----
-
-## 5. Configuration
+## 4. Configuration
 
 ```yaml
 timeout:
@@ -101,7 +83,7 @@ timeout:
 
 ---
 
-## 6. Implementation Guidelines
+## 5. Implementation Guidelines
 
 | Guideline            | Application           |
 |----------------------|-----------------------|
@@ -110,6 +92,19 @@ timeout:
 | Implement fallbacks  | Every timeout path    |
 | Log timeouts         | For monitoring        |
 | Test timeouts        | Include in test suite |
+
+---
+
+## 6. Related Patterns
+
+For detailed implementation patterns, see `timeout_patterns.md`:
+
+| Pattern             | Description               | Reference                                      |
+|---------------------|---------------------------|------------------------------------------------|
+| **Circuit Breaker** | Prevent cascade failures  | `timeout_patterns.md#4-circuit-breaker-pattern` |
+| **Retry**           | Handle transient failures | `timeout_patterns.md#3-retry-pattern`           |
+| **Bulkhead**        | Isolate failures          | `timeout_patterns.md#6-bulkhead-pattern`        |
+| **Fallback**        | Provide alternatives      | `timeout_patterns.md#5-fallback-pattern`        |
 
 ---
 

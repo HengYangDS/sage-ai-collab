@@ -119,4 +119,14 @@ autonomy:
 
 **Golden Rule**: Start conservative (L2-L3), increase gradually based on demonstrated success.
 
+---
+
+## Related
+
+- `core/quick_reference.md` — Quick autonomy reference
+- `practices/decisions/autonomy_cases.md` — Concrete examples
+- `guidelines/ai_collaboration.md` — Collaboration guidelines
+
+---
+
 *Part of SAGE Knowledge Base*

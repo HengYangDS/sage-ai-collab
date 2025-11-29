@@ -1,0 +1,3 @@
+# .logs Directory
+# This directory contains runtime log files.
+# Files here are ignored by git (see .gitignore).

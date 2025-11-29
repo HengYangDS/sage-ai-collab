@@ -1,12 +1,16 @@
 # Expert Committee Decision Templates
 
-> **Load Time**: On-demand (~100 tokens)  
-> **Purpose**: Ready-to-use decision prompts for multi-perspective analysis  
-> **Reference**: See `frameworks/cognitive/expert_committee.md` for theory
+> Ready-to-use decision prompts for multi-perspective analysis
 
 ---
 
-## Decision Level Selection
+## Table of Contents
+
+[1. Decision Level Selection](#1-decision-level-selection) · [2. L1 Quick Check](#2-l1-quick-check-2-3-experts) · [3. L2 Standard Review](#3-l2-standard-review-4-5-experts) · [4. L3 Deep Analysis](#4-l3-deep-analysis-6-8-experts) · [5. L4 Comprehensive Review](#5-l4-comprehensive-review-10-12-experts) · [6. L5 Full Committee](#6-l5-full-committee-24-experts) · [7. Usage Tips](#7-usage-tips)
+
+---
+
+## 1. Decision Level Selection
 
 | Level                 | Risk      | Reversibility | Impact     | Time     | Experts |
 |-----------------------|-----------|---------------|------------|----------|---------|
@@ -18,7 +22,7 @@
 
 ---
 
-## L1: Quick Check (2-3 Experts)
+## 2. L1: Quick Check (2-3 Experts)
 
 **Use for**: Routine decisions, low-risk changes, quick validations
 
@@ -37,7 +41,7 @@ Recommendation: [Go/No-Go + rationale]
 
 ---
 
-## L2: Standard Review (4-5 Experts)
+## 3. L2: Standard Review (4-5 Experts)
 
 **Use for**: Feature decisions, moderate complexity, cross-team impact
 
@@ -54,7 +58,7 @@ Recommendation: [Approve/Revise/Reject] | Conditions: [if any] | Next Steps: [ac
 
 ---
 
-## L3: Deep Analysis (6-8 Experts)
+## 4. L3: Deep Analysis (6-8 Experts)
 
 **Use for**: Architecture decisions, significant refactoring, new technology
 
@@ -77,7 +81,7 @@ Conditions: [required] | Action Items: [with owners]
 
 ---
 
-## L4: Comprehensive Review (10-12 Experts)
+## 5. L4: Comprehensive Review (10-12 Experts)
 
 **Use for**: Major architecture changes, critical system decisions
 
@@ -100,7 +104,7 @@ Implementation: Phase 1 [timeline] → Phase 2 [timeline] → Validation checkpo
 
 ---
 
-## L5: Full Committee (24 Experts)
+## 6. L5: Full Committee (24 Experts)
 
 **Use for**: Critical decisions, major pivots, organization-wide impact
 
@@ -130,7 +134,7 @@ Post-Decision: Document rationale · Communicate · Set checkpoints · Plan roll
 
 ---
 
-## Usage Tips
+## 7. Usage Tips
 
 **Start Low** (escalate if needed) · **Time-Box** (set limits) · **Document** (capture rationale) · **Revisit** (
 schedule reviews) · **Adapt** (customize for domain)
@@ -145,4 +149,4 @@ schedule reviews) · **Adapt** (customize for domain)
 
 ---
 
-*Part of AI Collaboration Knowledge Base*
+*Part of SAGE Knowledge Base*

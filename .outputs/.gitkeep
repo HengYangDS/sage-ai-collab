@@ -1,0 +1,3 @@
+# .outputs Directory
+# This directory contains intermediate process files.
+# Most files here are ignored by git (see .gitignore).

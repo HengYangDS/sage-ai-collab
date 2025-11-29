@@ -29,9 +29,11 @@
 
 ### 1.3 Documentation
 
-| File                         | Purpose                 |
-|------------------------------|-------------------------|
-| `documentation/standards.md` | Documentation standards |
+| File                                     | Purpose                          |
+|------------------------------------------|----------------------------------|
+| `documentation/standards.md`             | Documentation format standards   |
+| `documentation/optimization_workflow.md` | Batch optimization process       |
+| `documentation/knowledge_organization.md`| Knowledge hierarchy patterns     |
 
 ### 1.4 Engineering
 
