@@ -219,8 +219,8 @@ alone.
 ## Related
 
 - `.context/decisions/` — Architecture Decision Records
-- `.context/intelligence/patterns.md` — Successful patterns
-- `.context/intelligence/common_pitfalls.md` — Pitfalls to avoid
+- `.context/intelligence/calibration/patterns.md` — Successful patterns
+- `.context/intelligence/learning/common_pitfalls.md` — Pitfalls to avoid
 - `.knowledge/practices/engineering/incremental_improvement.md` — Incremental approach
 
 ---

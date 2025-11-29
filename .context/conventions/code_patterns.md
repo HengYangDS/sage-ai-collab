@@ -499,8 +499,8 @@ async def test_async_load():
 
 ## Related
 
-- `naming.md` — Naming conventions
-- `file_structure.md` — File organization
+- `.context/conventions/naming.md` — Naming conventions
+- `.context/conventions/file_structure.md` — File organization
 - `docs/design/01-architecture.md` — Architecture details
 - `src/sage/core/` — Core implementations
 

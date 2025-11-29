@@ -488,9 +488,9 @@ sage config --show --section memory.cache
 
 ## Related
 
-- `timeout_hierarchy.md` — Timeout configuration
-- `service_settings.md` — Service configuration
-- `runtime_settings.md` — Runtime settings
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/service_settings.md` — Service configuration
+- `.context/policies/runtime_settings.md` — Runtime settings
 - `.context/decisions/ADR-0003-timeout-hierarchy.md` — Timeout ADR
 
 ---

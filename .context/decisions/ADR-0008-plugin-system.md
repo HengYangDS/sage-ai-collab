@@ -321,9 +321,9 @@ src/sage/plugins/
 
 ## Related
 
-- `ADR-0001-architecture.md` — Capabilities layer
-- `ADR-0004-dependency-injection.md` — DI integration
-- `ADR-0006-protocol-first.md` — Protocol contracts
+- `.context/decisions/ADR-0001-architecture.md` — Capabilities layer
+- `.context/decisions/ADR-0004-dependency-injection.md` — DI integration
+- `.context/decisions/ADR-0006-protocol-first.md` — Protocol contracts
 - `docs/design/05-plugin-memory.md` — Full plugin design
 - `src/sage/plugins/` — Implementation
 

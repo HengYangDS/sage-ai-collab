@@ -460,9 +460,9 @@ debug:
 
 ## Related
 
-- `timeout_hierarchy.md` — Timeout configuration
-- `loading_configurations.md` — Loading configuration
-- `ADR-0007-configuration.md` — Configuration design decision
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/loading_configurations.md` — Loading configuration
+- `.context/decisions/ADR-0007-configuration.md` — Configuration design decision
 - `docs/design/09-configuration.md` — Full configuration design
 
 ---

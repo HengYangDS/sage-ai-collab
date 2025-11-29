@@ -99,7 +99,7 @@ For all I/O operations in SAGE:
 - `.knowledge/practices/ai_collaboration/interaction_patterns.md` — Generic patterns
 - `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
 - `.context/policies/timeout_hierarchy.md` — Timeout policy
-- `.context/intelligence/calibration.md` — Detailed calibration data
+- `.context/intelligence/calibration/calibration.md` — Detailed calibration data
 - `.junie/guidelines.md` — Project collaboration guidelines
 
 ---

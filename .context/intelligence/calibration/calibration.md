@@ -269,8 +269,8 @@ This document tracks:
 ## Related
 
 - `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
-- `.context/intelligence/patterns.md` — AI collaboration patterns
-- `.context/intelligence/optimizations.md` — Project optimizations
+- `.context/intelligence/calibration/patterns.md` — AI collaboration patterns
+- `.context/intelligence/optimization/optimizations.md` — Project optimizations
 - `.junie/guidelines.md` — Project guidelines
 
 ---

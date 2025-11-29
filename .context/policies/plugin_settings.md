@@ -405,8 +405,8 @@ sage plugin config <plugin_name>
 
 ## Related
 
-- `service_settings.md` — Service configuration
-- `memory_settings.md` — Memory/persistence settings
+- `.context/policies/service_settings.md` — Service configuration
+- `.context/policies/memory_settings.md` — Memory/persistence settings
 - `.context/decisions/ADR-0008-plugin-system.md` — Plugin system ADR
 - `.knowledge/scenarios/plugin_development/` — Plugin development guide
 

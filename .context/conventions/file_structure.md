@@ -655,8 +655,8 @@ def _helper_function() -> None:
 
 ## Related
 
-- `naming.md` — Naming conventions
-- `code_patterns.md` — Code patterns
+- `.context/conventions/naming.md` — Naming conventions
+- `.context/conventions/code_patterns.md` — Code patterns
 - `docs/design/01-architecture.md` — Architecture
 - `.knowledge/practices/documentation/project_directory_structure.md` — General directory practices
 

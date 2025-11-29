@@ -85,7 +85,7 @@ This includes:
 ## Related
 
 - `.knowledge/practices/engineering/common_pitfalls.md` — Generic pitfalls guide
-- `.context/intelligence/lessons_learned.md` — SAGE-specific lessons
+- `.context/intelligence/learning/lessons_learned.md` — SAGE-specific lessons
 - `.context/policies/timeout_hierarchy.md` — Timeout policy
 
 ---

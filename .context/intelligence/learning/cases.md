@@ -452,8 +452,8 @@ For future development:
 ## Related
 
 - `.knowledge/templates/case_study.md` — Case study template
-- `.context/intelligence/patterns.md` — Learned patterns
-- `.context/intelligence/optimizations.md` — Optimization history
+- `.context/intelligence/calibration/patterns.md` — Learned patterns
+- `.context/intelligence/optimization/optimizations.md` — Optimization history
 - `.knowledge/practices/engineering/troubleshooting.md` — Troubleshooting guide
 
 ---

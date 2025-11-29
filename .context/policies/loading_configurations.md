@@ -361,9 +361,9 @@ export SAGE__CACHE__ENABLED=false
 
 ## Related
 
-- `timeout_hierarchy.md` — Timeout configuration
-- `runtime_settings.md` — Runtime settings
-- `ADR-0003-timeout-hierarchy.md` — Timeout design decision
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/runtime_settings.md` — Runtime settings
+- `.context/decisions/ADR-0003-timeout-hierarchy.md` — Timeout design decision
 - `docs/design/04-timeout-loading.md` — Full loading design
 
 ---

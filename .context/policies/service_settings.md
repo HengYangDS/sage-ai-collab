@@ -343,8 +343,8 @@ sage config --show --section services.mcp
 
 ## Related
 
-- `runtime_settings.md` — Runtime configuration
-- `timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/runtime_settings.md` — Runtime configuration
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
 - `docs/api/` — API documentation
 - `docs/api/mcp.md` — MCP protocol reference
 

@@ -283,9 +283,9 @@ def test_processor():
 
 ## Related
 
-- `ADR-0001-architecture.md` — Layer architecture
-- `ADR-0002-sage-protocol.md` — SAGE protocols
-- `ADR-0004-dependency-injection.md` — DI with protocols
+- `.context/decisions/ADR-0001-architecture.md` — Layer architecture
+- `.context/decisions/ADR-0002-sage-protocol.md` — SAGE protocols
+- `.context/decisions/ADR-0004-dependency-injection.md` — DI with protocols
 - `.context/conventions/code_patterns.md` — Protocol patterns
 - `src/sage/core/protocols.py` — Core protocol definitions
 

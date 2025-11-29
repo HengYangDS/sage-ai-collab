@@ -142,7 +142,7 @@ def measure_time(operation: str):
 
 - `.knowledge/frameworks/performance/` — Generic performance guides
 - `.context/policies/timeout_hierarchy.md` — Timeout settings
-- `.context/intelligence/optimizations.md` — SAGE code optimizations
+- `.context/intelligence/optimization/optimizations.md` — SAGE code optimizations
 - `tests/performance/` — Performance test suite
 - `config/core/memory.yaml` — Memory configuration
 
