@@ -1,0 +1,122 @@
+# Project Variables Definition
+# This file centralizes project-specific values for template-based .junie configuration
+# Other files in .junie/ reference these values for consistency
+
+# Schema version for compatibility
+schema_version: "1.0"
+
+# ============================================================================
+# PROJECT IDENTITY
+# ============================================================================
+project:
+  name: "SAGE Knowledge Base"
+  short_name: "sage-kb"
+  description: "Production-grade knowledge management system for AI-human collaboration"
+  version: "0.1.0"
+  status: "Alpha"
+  
+  # Design philosophy
+  philosophy:
+    name: "信达雅 (Xin-Da-Ya)"
+    principles:
+      - "信 (Xin/Faithfulness): Accurate, reliable, testable"
+      - "达 (Da/Clarity): Clear, maintainable, structured"
+      - "雅 (Ya/Elegance): Refined, balanced, sustainable"
+
+# ============================================================================
+# TECH STACK
+# ============================================================================
+tech_stack:
+  language: "Python 3.12+"
+  cli: "Typer + Rich"
+  mcp: "FastMCP"
+  api: "FastAPI + Uvicorn"
+  config: "PyYAML + Pydantic-Settings"
+  logging: "structlog + stdlib logging"
+  testing: "pytest + pytest-asyncio"
+  linting: "Ruff + MyPy"
+
+# ============================================================================
+# DIRECTORY STRUCTURE
+# ============================================================================
+directories:
+  # Source code
+  source: "src/sage/"
+  tests: "tests/"
+  
+  # Documentation
+  docs: "docs/"
+  content: "content/"
+  
+  # Configuration
+  config: "config/"
+  
+  # AI collaboration (optional directories)
+  junie: ".junie/"           # Junie configuration (this directory)
+  context: ".context/"       # Project-specific knowledge
+  history: ".history/"       # Session history
+  
+  # Runtime (git-ignored)
+  outputs: ".outputs/"       # Temporary/intermediate files
+  logs: ".logs/"             # Runtime logs
+  backups: ".backups/"       # Backup files
+  archive: ".archive/"       # Historical archives
+
+# ============================================================================
+# COMMANDS
+# ============================================================================
+commands:
+  # Testing
+  test: "pytest tests/ -v"
+  test_unit: "pytest tests/unit/ -v"
+  test_integration: "pytest tests/integration/ -v"
+  
+  # Code quality
+  lint: "ruff check src/"
+  format: "ruff format src/"
+  typecheck: "mypy src/"
+  
+  # Services
+  serve: "sage serve"
+  cli_get: "sage get --layer core"
+  cli_search: "sage search \"timeout\""
+  cli_info: "sage info"
+
+# ============================================================================
+# KEY FILES
+# ============================================================================
+key_files:
+  # Configuration
+  main_config: "config/sage.yaml"
+  pyproject: "pyproject.toml"
+  
+  # Documentation
+  readme: "README.md"
+  changelog: "CHANGELOG.md"
+  index: "index.md"
+  
+  # Design
+  design_overview: "docs/design/00-overview.md"
+  
+  # Entry points
+  core_layer: "src/sage/core/"
+  services_layer: "src/sage/services/"
+
+# ============================================================================
+# AI COLLABORATION SETTINGS
+# ============================================================================
+ai_collaboration:
+  # Default autonomy level
+  default_autonomy: "L4"  # Medium-High
+  
+  # Language preference
+  preferred_language: "en"
+  
+  # Session management
+  session_history:
+    enabled: true
+    location: ".history/"
+    auto_record: false
+  
+  # Timeout awareness
+  timeout_reference: ".context/policies/timeout_hierarchy.md"

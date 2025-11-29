@@ -20,6 +20,7 @@
 | `ai_collaboration/interaction_patterns.md` | AI collaboration patterns          |
 | `ai_collaboration/knowledge_capture.md`    | When and how to capture knowledge  |
 | `ai_collaboration/knowledge_extraction.md` | Extracting reusable knowledge      |
+| `ai_collaboration/session_checklist.md`    | Session management quick checklist |
 | `ai_collaboration/session_management.md`   | Managing AI collaboration sessions |
 | `ai_collaboration/token_optimization.md`   | Token efficiency                   |
 | `ai_collaboration/workflow.md`             | Collaboration workflows            |

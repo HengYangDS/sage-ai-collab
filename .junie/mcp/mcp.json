@@ -1,11 +1,13 @@
 {
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$comment": "MCP Server Configuration. Profiles defined in ../config.yaml: minimal (filesystem, memory), standard (+github, fetch), full (all)",
   "mcpServers": {
     "filesystem": {
       "command": "npx.cmd",
       "args": [
         "-y",
         "@modelcontextprotocol/server-filesystem",
-        "C:\\Users\\Administrator\\projects"
+        "${PROJECT_ROOT}"
       ]
     },
     "fetch": {

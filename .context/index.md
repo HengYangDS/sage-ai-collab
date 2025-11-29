@@ -17,7 +17,7 @@
 | `policies/`     | Project-specific policies            | 6     |
 | `conventions/`  | Project-specific coding conventions  | 3     |
 | `decisions/`    | Architecture Decision Records (ADRs) | 8     |
-| `intelligence/` | AI intelligence patterns             | 7     |
+| `intelligence/` | AI intelligence patterns             | 8     |
 
 ---
 
@@ -65,15 +65,16 @@ Architecture Decision Records documenting significant technical decisions:
 
 AI collaboration patterns and learned behaviors:
 
-| Document                | Description                                       |
-|-------------------------|---------------------------------------------------|
-| `patterns.md`           | Successful interaction patterns and templates     |
-| `optimizations.md`      | Code generation preferences, testing, performance |
-| `calibration.md`        | Autonomy level calibration (L1-L6)                |
-| `cases.md`              | Case studies and real-world examples              |
-| `common_pitfalls.md`    | Common mistakes and how to avoid them             |
-| `lessons_learned.md`    | Key learnings from project development            |
-| `performance_tuning.md` | Performance optimization strategies               |
+| Document                             | Description                                       |
+|--------------------------------------|---------------------------------------------------|
+| `patterns.md`                        | Successful interaction patterns and templates     |
+| `optimizations.md`                   | Code generation preferences, testing, performance |
+| `calibration.md`                     | Autonomy level calibration (L1-L6)                |
+| `cases.md`                           | Case studies and real-world examples              |
+| `common_pitfalls.md`                 | Common mistakes and how to avoid them             |
+| `lessons_learned.md`                 | Key learnings from project development            |
+| `performance_tuning.md`              | Performance optimization strategies               |
+| `session_automation_requirements.md` | Long-term automation plan for session history     |
 
 ---
 
@@ -127,6 +128,7 @@ AI collaboration patterns and learned behaviors:
 - `intelligence/common_pitfalls.md` — Common mistakes to avoid
 - `intelligence/lessons_learned.md` — Key project learnings
 - `intelligence/performance_tuning.md` — Performance optimization
+- `intelligence/session_automation_requirements.md` — Session history automation plan
 
 ---
 

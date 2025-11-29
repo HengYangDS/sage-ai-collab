@@ -1,129 +1,49 @@
-# Session End Checklist
+# Session End Checklist - SAGE Project
 
-> Template for AI session conclusion - Copy relevant sections when ending a session
-
----
-
-## Quick Reference
-
-Use this checklist at the end of significant work sessions to ensure proper documentation and handoff.
+> Quick reference for SAGE session management
 
 ---
 
-## Pre-Completion Checks
+## Generic Checklist Reference
 
-### Work Verification
-- [ ] All planned tasks completed or documented as pending
-- [ ] Code changes tested (if applicable)
-- [ ] No broken functionality introduced
-- [ ] Documentation updated for changed features
+For the comprehensive session management checklist, see:
 
-### Quality Checks
-- [ ] Code follows project conventions (`.context/conventions/`)
-- [ ] No temporary debug code left in place
-- [ ] Error handling implemented appropriately
-- [ ] Timeout limits respected (T1-T5)
+**→ `content/practices/ai_collaboration/session_checklist.md`**
 
----
-
-## Session Documentation
-
-### For Conversation Record (`.history/conversations/`)
-
-Create when: Important decisions made, significant problems solved, or notable learnings
-
-```markdown
-# [Topic] - YYYY-MM-DD
-
-## Context
-[What prompted this session/discussion]
-
-## Key Decisions
-- Decision 1: [description] - Rationale: [why]
-- Decision 2: [description] - Rationale: [why]
-
-## Outcomes
-- [What was accomplished]
-- [What changed]
-
-## Learnings
-- [Insights gained]
-- [Patterns discovered]
-
-## References
-- [Related files/docs]
-```
+This includes:
+- Session Start checklist
+- During Session checklist
+- Pre-Completion checks (work verification, quality, code review)
+- Session End checklist (documentation, cleanup, handoff)
+- Decision Guide (when to create which records)
 
 ---
 
-### For Handoff Document (`.history/handoffs/`)
+## SAGE-Specific Additions
 
-Create when: Work needs to continue in future session
+### Quality Checks (SAGE-specific)
 
-```markdown
-# [Task] Handoff - YYYY-MM-DD
+- [ ] Code follows `.context/conventions/` patterns
+- [ ] Timeout limits respected (T1:100ms → T5:10s)
+- [ ] EventBus events properly published
+- [ ] DI Container registrations correct
 
-## Current State
-[Where things stand now]
+### Project Paths
 
-## Completed
-- [x] Task 1
-- [x] Task 2
+| Record Type   | Location                    |
+|---------------|-----------------------------|
+| Conversation  | `.history/conversations/`   |
+| Handoff       | `.history/handoffs/`        |
+| Session State | `.history/current/`         |
+| Temp Files    | `.outputs/` (delete on end) |
 
-## Pending
-- [ ] Remaining task 1
-- [ ] Remaining task 2
+### SAGE Templates
 
-## Blockers
-- [Any issues preventing progress]
-
-## Context Needed
-- [Files to review]
-- [Decisions to understand]
-- [Dependencies to be aware of]
-
-## Next Steps
-1. [First action to take]
-2. [Second action to take]
-
-## Notes
-[Any additional context for the next session]
-```
-
----
-
-### For Session State (`.history/current/`)
-
-Create when: Pausing mid-task, need to preserve state
-
-```markdown
-# Session State - YYYYMMDD-HHMM
-
-## Active Task
-[What's being worked on]
-
-## Progress
-- [Current step in process]
-- [What's been done so far]
-
-## Open Files/Context
-- [Files being edited]
-- [Relevant references]
-
-## Immediate Next Action
-[Exactly what to do when resuming]
-```
-
----
-
-## Cleanup Actions
-
-After creating appropriate records:
-
-1. [ ] Move completed session files from `.history/current/` to appropriate location
-2. [ ] Archive old conversations (>30 days) to `.archive/`
-3. [ ] Delete temporary working files from `.outputs/`
-4. [ ] Commit changes if significant milestone reached
+| Template | Location |
+|----------|----------|
+| Conversation | `content/templates/conversation_record.md` |
+| Handoff | `content/templates/task_handoff.md` |
+| Session State | `content/templates/session_state.md` |
 
 ---
 
@@ -136,6 +56,15 @@ After creating appropriate records:
 | Pausing mid-task | Create session state |
 | Routine completion, no decisions | No record needed |
 | Bug fix or minor change | Commit message sufficient |
+
+---
+
+## Related
+
+- `content/practices/ai_collaboration/session_checklist.md` — Generic checklist
+- `content/practices/ai_collaboration/session_management.md` — Full session practices
+- `.history/index.md` — Session history navigation
+- `.junie/guidelines.md` — Project guidelines
 
 ---
 

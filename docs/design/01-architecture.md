@@ -32,7 +32,7 @@ status: production-ready
 > | Interfaces | Protocol re-exports | interfaces/__init__.py | ✅ Complete |
 > | Entry point | python -m sage | __main__.py | ✅ Complete |
 >
-> **Status**: v1.2 complete. 841+ tests passing, 89% coverage.
+> **Status**: M3 complete. 841+ tests passing, 89% coverage.
 >
 > For detailed implementation status and roadmap, see `07-roadmap.md`.
 

@@ -4,16 +4,35 @@
 > **Last Updated**: 2025-11-30
 > **Version**: 0.1.0
 > **Status**: Alpha - Under active development and testing
+> **Compatibility**: Junie v2024.3+, MCP v1.0+
+> **Schema Version**: 1.0
 
 ---
 
+<!-- ========================================================================
+     TEMPLATE USAGE NOTES
+     
+     This file follows a template structure for cross-project reusability.
+     
+     📌 PROJECT-SPECIFIC sections: Must be customized per project
+     🔄 GENERIC sections: Can be reused across projects with minimal changes
+     
+     Project variables are centralized in: project.yaml
+     ======================================================================== -->
+
 ## 📋 Project Overview
+
+<!-- 📌 PROJECT-SPECIFIC: Customize for your project -->
+<!-- Reference: project.yaml → project.name, project.description -->
 
 **SAGE Knowledge Base (sage-kb)** is a production-grade knowledge management system designed for
 AI-human collaboration. It provides structured knowledge via CLI, MCP, and API services with built-in timeout protection
 and smart loading.
 
 ### Design Philosophy
+
+<!-- 📌 PROJECT-SPECIFIC: Your project's guiding principles -->
+<!-- Reference: project.yaml → project.philosophy -->
 
 - **信 (Xin/Faithfulness)**: Accurate, reliable, testable
 - **达 (Da/Clarity)**: Clear, maintainable, structured
@@ -22,6 +41,9 @@ and smart loading.
 ---
 
 ## 🛠️ Tech Stack
+
+<!-- 📌 PROJECT-SPECIFIC: Your project's technology choices -->
+<!-- Reference: project.yaml → tech_stack -->
 
 | Category     | Technology                 |
 |--------------|----------------------------|
@@ -38,14 +60,14 @@ and smart loading.
 
 ## 📁 Project Structure
 
+<!-- 📌 PROJECT-SPECIFIC: Your project's directory layout -->
+<!-- Reference: project.yaml → directories -->
+
 ```
 sage-kb/
-├── .backups/        # Backup files (git-ignored)
 ├── .junie/          # JetBrains Junie configuration (this directory)
 ├── .context/        # Project-specific knowledge base
 ├── .history/        # AI session history and handoffs
-├── .archive/        # Historical archives
-├── .logs/           # Runtime log files (git-ignored)
 ├── .outputs/        # Intermediate process files (git-ignored)
 ├── config/          # Runtime configuration (modular YAML)
 ├── docs/            # User-facing documentation
@@ -59,12 +81,9 @@ sage-kb/
 
 | Directory   | Purpose                                        | Visibility |
 |-------------|------------------------------------------------|------------|
-| `.backups/` | Backup files                                   | Hidden     |
 | `.junie/`   | AI client config for JetBrains Junie           | Hidden     |
 | `.context/` | Project-specific knowledge (ADRs, conventions) | Hidden     |
 | `.history/` | AI session records and task handoffs           | Hidden     |
-| `.archive/` | Historical/deprecated content                  | Hidden     |
-| `.logs/`    | Runtime log files                              | Hidden     |
 | `.outputs/` | Intermediate process files                     | Hidden     |
 | `config/`   | Runtime configuration (modular YAML structure) | Visible    |
 | `docs/`     | User-facing documentation                      | Visible    |
@@ -74,32 +93,29 @@ sage-kb/
 
 ## 📐 Coding Standards
 
-### Python Style
+<!-- 🔄 GENERIC: Structure is reusable; update references per project -->
 
-- **Formatter**: Ruff (line-length: 88)
-- **Type Hints**: Required for all public functions
-- **Docstrings**: Google style
-- **Imports**: Sorted by ruff (isort compatible)
+> **Reference**: See `content/guidelines/python.md` and `.context/conventions/naming.md` for full details
 
-### Naming Conventions
+**Quick Summary:**
+- **Formatter**: Ruff (line-length: 88) | **Type Hints**: Required | **Docstrings**: Google style
+- **Naming**: Files `snake_case.py`, Classes `PascalCase`, Constants `UPPER_SNAKE_CASE`
+- **Architecture**: Core → Services → Capabilities (see `.context/conventions/code_patterns.md`)
 
-| Element   | Convention         | Example              |
-|-----------|--------------------|----------------------|
-| Files     | `snake_case.py`    | `timeout_manager.py` |
-| Classes   | `PascalCase`       | `TimeoutLoader`      |
-| Functions | `snake_case`       | `load_with_timeout`  |
-| Constants | `UPPER_SNAKE_CASE` | `DEFAULT_TIMEOUT_MS` |
+---
 
-### Architecture Rules
+## 📝 Documentation Standards
 
-- **Three-Layer Model**: Core → Services → Capabilities
-- **Dependency Direction**: Services depend on Core, never reverse
-- **Protocol-First**: Use `typing.Protocol` for interfaces
-- **Zero Cross-Import**: Layers communicate via EventBus
+<!-- 🔄 GENERIC: Reference pattern is reusable -->
+
+> **Reference**: See `content/practices/documentation/DOCUMENTATION_STANDARDS.md` for full SSOT (format rules, knowledge placement, index maintenance)
 
 ---
 
 ## 📄 Important Files
+
+<!-- 📌 PROJECT-SPECIFIC: Your project's key files -->
+<!-- Reference: project.yaml → key_files -->
 
 | File                 | Purpose                                          |
 |----------------------|--------------------------------------------------|
@@ -113,6 +129,8 @@ sage-kb/
 ---
 
 ## 🤖 AI Collaboration Rules
+
+<!-- 🔄 GENERIC: This entire section is reusable across projects -->
 
 ### Autonomy Levels
 
@@ -128,6 +146,8 @@ sage-kb/
 
 ### Key Behaviors
 
+<!-- 🔄 GENERIC: These behaviors apply to any project -->
+
 1. **Always respect timeout limits** (T1:100ms → T5:10s)
 2. **Use English** for code and documentation
 3. **Follow existing patterns** in the codebase
@@ -138,56 +158,41 @@ sage-kb/
 
 ### Session History Management
 
-At the end of significant work sessions, create appropriate records in `.history/`:
+<!-- 🔄 GENERIC: Pattern is reusable; directory names may vary -->
 
-| Record Type | When to Create | Location | Template |
-|-------------|----------------|----------|----------|
-| **Session State** | Active work in progress | `.history/current/` | `_example-session-*.md` |
-| **Conversation** | Important decisions/outcomes | `.history/conversations/` | `_example-*-review.md` |
-| **Handoff** | Task continuation needed | `.history/handoffs/` | `_example-*-handoff.md` |
+> **Reference**: See `content/practices/ai_collaboration/session_checklist.md` for generic checklist
+> **Project-specific**: See `.history/_session-end-checklist.md` for SAGE-specific additions
 
-**Session End Checklist:**
-
-1. ☐ Summarize completed tasks and key decisions
-2. ☐ Document any pending items or blockers
-3. ☐ Note important findings or lessons learned
-4. ☐ If work continues: create handoff document
-5. ☐ If significant decisions made: create conversation record
-6. ☐ Clear `.history/current/` of completed session files
-
-**Naming Convention:**
-- Conversations: `YYYY-MM-DD-topic.md` (e.g., `2025-11-30-knowledge-reorganization.md`)
-- Handoffs: `YYYY-MM-DD-task-handoff.md` (e.g., `2025-11-30-api-refactor-handoff.md`)
-- Sessions: `session-YYYYMMDD-HHMM.md` (e.g., `session-20251130-0010.md`)
-
-> **Reference**: See `.history/index.md` for detailed usage guidelines and retention policies.
+At session end, create records in `.history/`: **conversations/** (decisions), **handoffs/** (continuation), **current/** (active work).
+Templates available in `content/templates/` (conversation_record, task_handoff, session_state).
 
 ### Expert Committee Pattern
 
-For complex decisions, simulate a **Level 5 Expert Committee** review with:
+<!-- 🔄 GENERIC: Reusable cognitive framework -->
 
-- **Architecture Group** (6 experts): System design, scalability
-- **Knowledge Engineering Group** (6 experts): Content structure, taxonomy
-- **AI Collaboration Group** (6 experts): Human-AI interaction patterns
-- **Engineering Practice Group** (6 experts): Code quality, testing
+> **Reference**: See `content/frameworks/cognitive/expert_committee.md` for full methodology
+
+For complex decisions, simulate a **Level 5 Expert Committee** review with 4 groups (Architecture, Knowledge Engineering, AI Collaboration, Engineering Practice).
 
 ---
 
 ## ⏱️ Timeout Hierarchy
 
-| Level | Timeout | Scope            | Action on Timeout      |
-|-------|---------|------------------|------------------------|
-| T1    | 100ms   | Cache lookup     | Return cached/fallback |
-| T2    | 500ms   | Single file      | Use partial/fallback   |
-| T3    | 2s      | Layer load       | Load partial + warning |
-| T4    | 5s      | Full KB load     | Emergency core only    |
-| T5    | 10s     | Complex analysis | Abort + summary        |
+<!-- 🔄 GENERIC: Timeout concept is reusable; values may vary -->
+
+> **Reference**: See `.context/policies/timeout_hierarchy.md` for full details and implementation guidelines
+
+**Quick Reference**: T1:100ms (cache) → T2:500ms (file) → T3:2s (layer) → T4:5s (full KB) → T5:10s (analysis)
 
 ---
 
 ## 🔗 References
 
+<!-- 📌 PROJECT-SPECIFIC: Update paths per project -->
+
+- **Project Variables**: @file:project.yaml
 - **Design Documents**: @file:docs/design/00-overview.md
+- **Documentation Standards**: @file:content/practices/documentation/DOCUMENTATION_STANDARDS.md
 - **Documentation Index**: @file:docs/index.md
 - **Configuration**: @file:config/sage.yaml
 - **Project Context**: @file:.context/index.md
@@ -199,6 +204,9 @@ For complex decisions, simulate a **Level 5 Expert Committee** review with:
 ---
 
 ## 📝 Quick Commands
+
+<!-- 📌 PROJECT-SPECIFIC: Your project's commands -->
+<!-- Reference: project.yaml → commands -->
 
 ```bash
 # Run tests
@@ -212,6 +220,23 @@ sage get --layer core
 sage search "timeout"
 sage info
 ```
+
+---
+
+## 📋 Template Information
+
+<!-- 🔄 GENERIC: Template metadata -->
+
+This `.junie/` configuration follows the **薄层 (Thin Layer)** principle:
+
+- **Entry Point**: `guidelines.md` (this file)
+- **Project Variables**: `project.yaml` — centralized project-specific values
+- **AI Configuration**: `config.yaml` — Junie-specific settings
+- **Quick Reference**: `quickref.md` — instant lookup card
+- **MCP Configuration**: `mcp/mcp.json` — MCP server settings
+
+**Reusability**: Sections marked with 🔄 GENERIC can be copied to new projects with minimal changes.
+Sections marked with 📌 PROJECT-SPECIFIC should be customized using values from `project.yaml`.
 
 ---
 

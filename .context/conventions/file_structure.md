@@ -6,7 +6,7 @@
 
 ## Table of Contents
 
-[1. Directory Layout](#1-directory-layout) · [2. Source Code Organization](#2-source-code-organization) · [3. Test Organization](#3-test-organization) · [4. Configuration Files](#4-configuration-files) · [5. Documentation](#5-documentation) · [6. Module Structure](#6-module-structure)
+[1. Directory Layout](#1-directory-layout) · [2. Knowledge Organization](#2-knowledge-organization) · [3. Source Code Organization](#3-source-code-organization) · [4. Test Organization](#4-test-organization) · [5. Configuration Files](#5-configuration-files) · [6. Documentation](#6-documentation) · [7. Source Code Packages](#7-source-code-packages) · [8. Module Structure](#8-module-structure) · [9. Special Files](#9-special-files)
 
 ---
 
@@ -87,9 +87,101 @@ still be avoided.
 
 ---
 
-## 2. Source Code Organization
+## 2. Knowledge Organization
 
-### 2.1 Package Structure
+This section defines the rules for organizing knowledge across the project's directories.
+
+### 2.1 Directory Purpose Matrix
+
+| Directory   | Content Type            | Scope            | Distributable |
+|-------------|-------------------------|------------------|---------------|
+| `content/`  | Generic knowledge       | Universal        | ✅ Yes         |
+| `.context/` | Project-specific        | SAGE only        | ❌ No          |
+| `docs/`     | User documentation      | SAGE users       | ✅ Yes         |
+| `.history/` | Session records         | AI collaboration | ❌ No          |
+
+### 2.2 Content Directory (`content/`)
+
+**Purpose**: Generic, reusable knowledge that can be distributed and used across different projects.
+
+| Should Include                        | Should NOT Include                  |
+|---------------------------------------|-------------------------------------|
+| Universal best practices              | SAGE-specific configurations        |
+| Generic frameworks (autonomy, etc.)   | Project ADRs                        |
+| Reusable patterns and guidelines      | Internal calibration data           |
+| Language/technology references        | SAGE API documentation              |
+| Industry-standard conventions         | Session history or handoffs         |
+
+**Example**: `content/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any project.
+
+### 2.3 Context Directory (`.context/`)
+
+**Purpose**: Project-specific knowledge, conventions, and decisions unique to SAGE.
+
+| Should Include                        | Should NOT Include                  |
+|---------------------------------------|-------------------------------------|
+| Architecture Decision Records (ADRs)  | Generic best practices              |
+| SAGE-specific coding conventions      | Universal frameworks                |
+| Project policies (timeout hierarchy)  | Reusable patterns                   |
+| AI calibration data for SAGE          | Content meant for distribution      |
+| Internal optimization notes           | User-facing documentation           |
+
+**Example**: `.context/decisions/ADR-0001-architecture.md` — SAGE-specific architecture decisions.
+
+### 2.4 Documentation Directory (`docs/`)
+
+**Purpose**: User-facing documentation for SAGE users and contributors.
+
+| Should Include                        | Should NOT Include                  |
+|---------------------------------------|-------------------------------------|
+| Design documents                      | Internal conventions                |
+| API documentation                     | AI session records                  |
+| User guides and tutorials             | Generic knowledge (belongs in content) |
+| Architecture overviews                | ADRs (belong in .context)           |
+| Quick reference guides                | Calibration data                    |
+
+**Example**: `docs/design/01-architecture.md` — SAGE architecture design document.
+
+### 2.5 History Directory (`.history/`)
+
+**Purpose**: AI collaboration records, session history, and task handoffs.
+
+| Should Include                        | Should NOT Include                  |
+|---------------------------------------|-------------------------------------|
+| Session state records                 | Permanent documentation             |
+| Conversation summaries                | Code or configuration               |
+| Task handoff documents                | Design decisions (use ADRs)         |
+| Lessons learned                       | Generic knowledge                   |
+
+**Example**: `.history/conversations/2025-11-30-knowledge-reorganization.md`
+
+### 2.6 Migration Decision Rules
+
+When deciding where content belongs, apply these rules in order:
+
+```
+1. Is it SAGE-specific implementation/decision?
+   YES → .context/ (ADRs, conventions, policies)
+   NO  → Continue to step 2
+
+2. Is it user-facing documentation?
+   YES → docs/ (design, API, guides)
+   NO  → Continue to step 3
+
+3. Is it AI session/collaboration record?
+   YES → .history/ (sessions, handoffs)
+   NO  → Continue to step 4
+
+4. Is it generic, reusable knowledge?
+   YES → content/ (frameworks, practices, guidelines)
+   NO  → Ask: Does this need to exist?
+```
+
+---
+
+## 3. Source Code Organization
+
+### 3.1 Package Structure
 
 ```
 src/sage/
@@ -104,7 +196,7 @@ src/sage/
 └── data/                # Static data files
 ```
 
-### 2.2 Core Layer (`core/`)
+### 3.2 Core Layer (`core/`)
 
 ```
 core/
@@ -136,7 +228,7 @@ core/
     └── token_budget.py  # Token budget
 ```
 
-### 2.3 Services Layer (`services/`)
+### 3.3 Services Layer (`services/`)
 
 ```
 services/
@@ -146,7 +238,7 @@ services/
 └── api.py               # API service (FastAPI)
 ```
 
-### 2.4 Capabilities Layer (`capabilities/`)
+### 3.4 Capabilities Layer (`capabilities/`)
 
 ```
 capabilities/
@@ -167,9 +259,9 @@ capabilities/
 
 ---
 
-## 3. Test Organization
+## 4. Test Organization
 
-### 3.1 Test Directory Structure
+### 4.1 Test Directory Structure
 
 ```
 tests/
@@ -188,7 +280,7 @@ tests/
     └── benchmarks/
 ```
 
-### 3.2 Test File Naming
+### 4.2 Test File Naming
 
 | Source File                     | Test File                              |
 |---------------------------------|----------------------------------------|
@@ -196,7 +288,7 @@ tests/
 | `src/sage/services/cli.py`      | `tests/unit/services/test_cli.py`      |
 | `src/sage/core/di/container.py` | `tests/unit/core/di/test_container.py` |
 
-### 3.3 Test File Structure
+### 4.3 Test File Structure
 
 ```python
 # tests/unit/core/test_config.py
@@ -236,9 +328,9 @@ class TestGetConfig:
 
 ---
 
-## 4. Configuration Files
+## 5. Configuration Files
 
-### 4.1 Config Directory Structure
+### 5.1 Config Directory Structure
 
 The configuration system uses a modular YAML structure organized by functional area:
 
@@ -270,7 +362,7 @@ config/
     └── documentation.yaml # Documentation standards
 ```
 
-### 4.2 Main Config Location
+### 5.2 Main Config Location
 
 The main `sage.yaml` is located inside the `config/` directory:
 
@@ -287,7 +379,7 @@ sage-kb/
 
 The `sage.yaml` file includes references to all modular config files via the `includes:` directive.
 
-### 4.3 Config Precedence
+### 5.3 Config Precedence
 
 1. Environment variables (`SAGE_*`)
 2. Command-line arguments
@@ -295,7 +387,7 @@ The `sage.yaml` file includes references to all modular config files via the `in
 4. `config/<category>/*.yaml` (modular configs)
 5. Default values in code
 
-### 4.4 Config Include Pattern
+### 5.4 Config Include Pattern
 
 The main `sage.yaml` uses an `includes:` directive to load modular configs:
 
@@ -315,9 +407,9 @@ This pattern enables:
 
 ---
 
-## 5. Documentation
+## 6. Documentation
 
-### 5.1 Documentation Structure
+### 6.1 Documentation Structure
 
 ```
 docs/
@@ -331,7 +423,7 @@ docs/
 └── examples/            # Example usage
 ```
 
-### 5.2 Knowledge Content Structure
+### 6.2 Knowledge Content Structure
 
 ```
 content/
@@ -355,7 +447,7 @@ content/
 └── templates/           # Document templates
 ```
 
-### 5.3 Context Directory Structure
+### 6.3 Context Directory Structure
 
 ```
 .context/
@@ -378,9 +470,9 @@ content/
 
 ---
 
-## 6. Source Code Packages
+## 7. Source Code Packages
 
-### 6.1 Package Responsibilities
+### 7.1 Package Responsibilities
 
 The `src/sage/` directory contains several packages with distinct responsibilities:
 
@@ -393,7 +485,7 @@ The `src/sage/` directory contains several packages with distinct responsibiliti
 | `capabilities/` | Runtime features       | Analyzers, checkers, monitors          |
 | `plugins/`      | Extension system       | Plugin base, registry, bundled plugins |
 
-### 6.2 Domain vs Core Distinction
+### 7.2 Domain vs Core Distinction
 
 **Domain Package** (`domain/`):
 
@@ -421,7 +513,7 @@ domain/                     core/
     └── HandoffPackage      └── memory/        (infrastructure)
 ```
 
-### 6.3 Interfaces Package
+### 7.3 Interfaces Package
 
 The `interfaces/` package provides a convenience layer for importing protocols and models:
 
@@ -438,9 +530,9 @@ This supports the **Protocol-First** design principle (ADR-0006).
 
 ---
 
-## 7. Module Structure
+## 8. Module Structure
 
-### 7.1 `__init__.py` Pattern
+### 8.1 `__init__.py` Pattern
 
 ```python
 # src/sage/core/__init__.py
@@ -463,7 +555,7 @@ __all__ = [
 ]
 ```
 
-### 6.2 Module File Order
+### 8.2 Module File Order
 
 Within each module directory, files should be organized:
 
@@ -474,7 +566,7 @@ Within each module directory, files should be organized:
 5. Feature files (alphabetically)
 6. `utils.py` - Utility functions (if any)
 
-### 6.3 Single Module File Structure
+### 8.3 Single Module File Structure
 
 ```python
 """Module docstring with brief description.
@@ -522,9 +614,9 @@ def _helper_function() -> None:
 
 ---
 
-## 7. Special Files
+## 9. Special Files
 
-### 7.1 Project Root Files
+### 9.1 Project Root Files
 
 | File              | Purpose                      |
 |-------------------|------------------------------|
@@ -535,7 +627,7 @@ def _helper_function() -> None:
 | `environment.yml` | Conda environment            |
 | `index.md`        | Knowledge base entry point   |
 
-### 7.2 Hidden Configuration
+### 9.2 Hidden Configuration
 
 | File/Directory    | Purpose                   |
 |-------------------|---------------------------|

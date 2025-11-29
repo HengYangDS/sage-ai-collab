@@ -1,4 +1,4 @@
-# SAGE Naming Conventions
+﻿# SAGE Naming Conventions
 
 > Project-specific naming standards for SAGE Knowledge Base
 
@@ -6,66 +6,32 @@
 
 ## Table of Contents
 
-[1. General Rules](#1-general-rules) · [2. Python Elements](#2-python-elements) · [3. SAGE-Specific Patterns](#3-sage-specific-patterns) · [4. Configuration Keys](#4-configuration-keys) · [5. Events](#5-events) · [6. Files & Directories](#6-files--directories)
+[1. Generic Python Conventions](#1-generic-python-conventions) · [2. SAGE-Specific Patterns](#2-sage-specific-patterns) · [3. Configuration Keys](#3-configuration-keys) · [4. Events](#4-events) · [5. Files & Directories](#5-files--directories) · [6. Versioning & Milestones](#6-versioning--milestones) · [7. Anti-Patterns](#7-anti-patterns-to-avoid)
 
 ---
 
-## 1. General Rules
+## 1. Generic Python Conventions
+
+> **Reference**: See `content/guidelines/python.md` for comprehensive Python naming conventions
+
+**SAGE-specific principles:**
 
 | Principle            | Description                                              |
 |----------------------|----------------------------------------------------------|
 | Clarity over brevity | Prefer `knowledge_loader` over `kb_ldr`                  |
-| Consistency          | Follow existing patterns in the codebase                 |
-| Self-documenting     | Names should reveal intent                               |
 | Domain alignment     | Use SAGE terminology (Source, Analyze, Generate, Evolve) |
 
----
-
-## 2. Python Elements
-
-### 2.1 Modules & Packages
-
-| Element     | Convention      | Example                     |
-|-------------|-----------------|-----------------------------|
-| Package     | `snake_case`    | `sage`, `core`, `services`  |
-| Module      | `snake_case.py` | `timeout.py`, `config.py`   |
-| Sub-package | `snake_case/`   | `di/`, `events/`, `memory/` |
-
-### 2.2 Classes
-
-| Type          | Convention                       | Example                              |
-|---------------|----------------------------------|--------------------------------------|
-| Regular class | `PascalCase`                     | `TimeoutManager`, `KnowledgeLoader`  |
-| Protocol      | `PascalCase` + `Protocol` suffix | `SourceProtocol`, `AnalyzeProtocol`  |
-| Exception     | `PascalCase` + `Error` suffix    | `TimeoutError`, `ConfigurationError` |
-| Abstract base | `Base` prefix                    | `BaseAnalyzer`, `BaseChecker`        |
-| Mixin         | `Mixin` suffix                   | `LoggingMixin`, `EventMixin`         |
-
-### 2.3 Functions & Methods
-
-| Type             | Convention               | Example                              |
-|------------------|--------------------------|--------------------------------------|
-| Public function  | `snake_case`             | `load_knowledge()`, `get_config()`   |
-| Private function | `_snake_case`            | `_parse_yaml()`, `_validate_input()` |
-| Async function   | `snake_case` (no prefix) | `async def load_async()`             |
-| Property         | `snake_case`             | `@property def is_loaded()`          |
-| Factory method   | `create_*` or `from_*`   | `create_loader()`, `from_config()`   |
-
-### 2.4 Variables & Constants
-
-| Type               | Convention          | Example                             |
-|--------------------|---------------------|-------------------------------------|
-| Local variable     | `snake_case`        | `file_path`, `timeout_ms`           |
-| Instance attribute | `snake_case`        | `self.config`, `self._cache`        |
-| Private attribute  | `_snake_case`       | `self._internal_state`              |
-| Constant           | `UPPER_SNAKE_CASE`  | `DEFAULT_TIMEOUT_MS`, `MAX_RETRIES` |
-| Type variable      | `PascalCase` or `T` | `T`, `KnowledgeT`, `ConfigT`        |
+**Quick reference** (from generic Python guidelines):
+- Modules/packages: `snake_case`
+- Classes: `PascalCase` (Protocols: `*Protocol`, Exceptions: `*Error`)
+- Functions/methods: `snake_case` (private: `_snake_case`)
+- Constants: `UPPER_SNAKE_CASE`
 
 ---
 
-## 3. SAGE-Specific Patterns
+## 2. SAGE-Specific Patterns
 
-### 3.1 Protocol Names
+### 2.1 Protocol Names
 
 SAGE protocols follow the Source-Analyze-Generate-Evolve pattern:
 
@@ -87,7 +53,7 @@ class EvolveProtocol(Protocol):
     ...  # E - Metrics & optimization
 ```
 
-### 3.2 Service Names
+### 2.2 Service Names
 
 | Service | Class Name   | Module            |
 |---------|--------------|-------------------|
@@ -95,7 +61,7 @@ class EvolveProtocol(Protocol):
 | MCP     | `MCPService` | `services/mcp.py` |
 | API     | `APIService` | `services/api.py` |
 
-### 3.3 Capability Names
+### 2.3 Capability Names
 
 | Type     | Class Pattern | Example                              |
 |----------|---------------|--------------------------------------|
@@ -103,7 +69,7 @@ class EvolveProtocol(Protocol):
 | Checker  | `*Checker`    | `HealthChecker`, `ConfigChecker`     |
 | Monitor  | `*Monitor`    | `PerformanceMonitor`, `UsageMonitor` |
 
-### 3.4 Domain Models
+### 2.4 Domain Models
 
 ```python
 # Knowledge domain
@@ -130,9 +96,9 @@ class SessionContext:
 
 ---
 
-## 4. Configuration Keys
+## 3. Configuration Keys
 
-### 4.1 YAML Configuration
+### 3.1 YAML Configuration
 
 ```yaml
 # Top-level sections: lowercase
@@ -155,7 +121,7 @@ features:
   is_debug_mode: false
 ```
 
-### 4.2 Environment Variables
+### 3.2 Environment Variables
 
 | Pattern                | Example                       |
 |------------------------|-------------------------------|
@@ -165,9 +131,9 @@ features:
 
 ---
 
-## 5. Events
+## 4. Events
 
-### 5.1 Event Topics
+### 4.1 Event Topics
 
 Events follow the pattern: `{domain}.{action}` or `{domain}.{entity}.{action}`
 
@@ -186,7 +152,7 @@ Events follow the pattern: `{domain}.{action}` or `{domain}.{entity}.{action}`
 "system.shutdown"  # System shutting down
 ```
 
-### 5.2 Event Classes
+### 4.2 Event Classes
 
 ```python
 # Event class naming
@@ -204,9 +170,9 @@ class TimeoutOccurredEvent:
 
 ---
 
-## 6. Files & Directories
+## 5. Files & Directories
 
-### 6.1 Source Files
+### 5.1 Source Files
 
 | Type         | Pattern             | Example              |
 |--------------|---------------------|----------------------|
@@ -215,7 +181,7 @@ class TimeoutOccurredEvent:
 | Test file    | `test_*.py`         | `test_timeout.py`    |
 | Config file  | `*.yaml` or `*.yml` | `sage.yaml`          |
 
-### 6.2 Documentation Files
+### 5.2 Documentation Files
 
 | Type       | Pattern                            | Example                    |
 |------------|------------------------------------|----------------------------|
@@ -223,7 +189,7 @@ class TimeoutOccurredEvent:
 | ADR        | `ADR-NNNN-title.md`                | `ADR-0001-architecture.md` |
 | Design doc | `NN-title.md`                      | `01-architecture.md`       |
 
-### 6.3 Directory Structure
+### 5.3 Directory Structure
 
 | Directory   | Purpose         | Naming         |
 |-------------|-----------------|----------------|
@@ -232,6 +198,52 @@ class TimeoutOccurredEvent:
 | `docs/`     | Documentation   | Categorical    |
 | `config/`   | Configuration   | By function    |
 | `.context/` | Project context | By type        |
+
+---
+
+## 6. Versioning & Milestones
+
+### 6.1 Project Version
+
+The project version follows [Semantic Versioning](https://semver.org/):
+
+| Component | Format      | Example | Meaning             |
+|-----------|-------------|---------|---------------------|
+| Version   | `X.Y.Z`     | `0.1.0` | MAJOR.MINOR.PATCH   |
+| Pre-alpha | `0.x.y`     | `0.1.0` | Initial development |
+| Alpha     | `0.x.y`     | `0.5.0` | Feature incomplete  |
+| Beta      | `0.x.y`     | `0.9.0` | Feature complete    |
+| Release   | `1.0.0`+    | `1.0.0` | Production ready    |
+
+**Source of Truth**: `pyproject.toml` → `[project].version`
+
+### 6.2 Milestone Naming
+
+Internal development milestones use **M-prefix** format to avoid confusion with release versions:
+
+| Milestone | Format | Description                     | Example Reference    |
+|-----------|--------|---------------------------------|----------------------|
+| MVP       | `M1`   | Minimum Viable Product          | "M1 complete"        |
+| Phase 2   | `M2`   | Second major milestone          | "M2 in progress"     |
+| Phase 3   | `M3`   | Third major milestone           | "M3 planned"         |
+| Phase N   | `MN`   | Nth milestone                   | "M4 future"          |
+
+**Why M-prefix?**
+
+- ❌ `v1.0`, `v1.1`, `v1.2` — Confuses with release versions
+- ✅ `M1`, `M2`, `M3` — Clearly internal milestones
+
+### 6.3 Version References in Documentation
+
+| Context              | Format               | Example                        |
+|----------------------|----------------------|--------------------------------|
+| Code/config version  | `"X.Y.Z"`            | `version: "0.1.0"`             |
+| Milestone reference  | `MN`                 | "Completed in M2"              |
+| Roadmap phases       | `MN` or `Phase N`    | "M3 Phases:", "Phase I:"       |
+| Future features      | `MN+`                | "Available in M2+"             |
+| External tool ver.   | Keep original format | `rev: v1.11.0` (pre-commit)    |
+
+**Important**: External tool versions (e.g., pre-commit hooks, dependencies) should retain their original version format.
 
 ---
 

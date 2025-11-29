@@ -1,0 +1,85 @@
+# Junie Configuration
+# This file contains Junie-specific settings for AI collaboration
+#
+# TEMPLATE NOTES:
+# - 🔄 GENERIC: Structure and most settings are reusable across projects
+# - 📌 PROJECT-SPECIFIC: Values should match project.yaml definitions
+# - Reference: project.yaml for centralized project variables
+
+# Version information (📌 PROJECT-SPECIFIC: match project.yaml)
+version: "0.1.0"
+schema_version: "1.0"
+
+# Collaboration settings
+collaboration:
+  # Default autonomy level (L1-L6)
+  # L1-L2: Ask before changes (breaking changes, new deps)
+  # L3-L4: Proceed, report after (bug fixes, refactoring) ⭐ DEFAULT
+  # L5-L6: High autonomy (docs, formatting)
+  default_autonomy_level: L4
+  
+  # Preferred language for code and documentation
+  preferred_language: en
+  
+  # Session history tracking
+  session_history:
+    enabled: true
+    auto_record: false  # Manual record creation recommended
+    location: ".history/"
+
+# Context loading configuration
+context_loading:
+  # Priority order for loading context (first = highest priority)
+  priority:
+    - ".context/intelligence/"      # AI patterns first
+    - ".context/conventions/"       # Then conventions
+    - ".context/policies/"          # Then policies
+  
+  # Lazy load these directories (load on demand)
+  lazy_load:
+    - ".context/decisions/"         # ADRs loaded when needed
+    - "content/frameworks/"         # Frameworks loaded when needed
+  
+  # Exclude from automatic loading
+  exclude:
+    - ".archive/"
+    - ".backups/"
+    - ".logs/"
+    - ".outputs/"
+
+# Output settings
+output:
+  # Directory for temporary/intermediate files
+  temp_directory: ".outputs/"
+  
+  # Never write to these locations
+  protected_paths:
+    - "/"                           # Project root (no temp files)
+    - "src/"                        # Source code directory
+    - "config/"                     # Configuration directory
+
+# Timeout awareness (reference only, actual values in .context/policies/)
+timeouts:
+  reference: ".context/policies/timeout_hierarchy.md"
+  quick_lookup:
+    T1: "100ms"   # Cache lookup
+    T2: "500ms"   # Single file
+    T3: "2s"      # Layer load
+    T4: "5s"      # Full KB load
+    T5: "10s"     # Complex analysis
+
+# MCP configuration
+mcp:
+  config_file: "mcp/mcp.json"
+  default_profile: "standard"
+  profiles:
+    minimal:
+      - filesystem
+      - memory
+    standard:
+      - filesystem
+      - memory
+      - github
+      - fetch
+    full:
+      - all

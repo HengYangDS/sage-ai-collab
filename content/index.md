@@ -18,10 +18,11 @@
 | **Guidelines** | `guidelines/` | Code style, engineering, AI collaboration | 15    |
 | **Frameworks** | `frameworks/` | Autonomy, timeout, cognitive patterns     | 23    |
 | **Practices**  | `practices/`  | Documentation, engineering, decisions     | 35    |
+| **References** | `references/` | Quick reference guides and checklists     | 2     |
 | **Scenarios**  | `scenarios/`  | Context-specific guides                   | 23    |
 | **Templates**  | `templates/`  | Reusable document templates               | 14    |
 
-**Total**: ~114 knowledge files
+**Total**: ~116 knowledge files
 
 ---
 
@@ -101,7 +102,16 @@ Context-specific project guides:
 | `python_backend/`       | 2     | Python backend projects    |
 | `typescript_frontend/`  | 2     | TypeScript frontend        |
 
-### 2.6 Templates (14 files)
+### 2.6 References (2 files)
+
+Quick reference guides and checklists:
+
+| File                       | Purpose                          |
+|----------------------------|----------------------------------|
+| `knowledge_quick_ref.md`   | Knowledge organization patterns  |
+| `performance_checklist.md` | Performance optimization checks  |
+
+### 2.7 Templates (14 files)
 
 Reusable document templates:
 
@@ -176,6 +186,13 @@ Reusable document templates:
 - `frameworks/security/authorization.md` — Authorization
 - `frameworks/security/secrets_management.md` — Secrets management
 - `frameworks/security/security_checklist.md` — Security checklist
+
+### References
+
+- `references/knowledge_quick_ref.md` — Knowledge organization patterns
+- `references/performance_checklist.md` — Performance optimization checks
+
+*Note: Practices, Scenarios, and Templates files are listed in their respective index.md files.*
 
 ---
 

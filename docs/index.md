@@ -15,7 +15,7 @@
 | Directory | Purpose                               | Files |
 |-----------|---------------------------------------|-------|
 | `design/` | Architecture and design documentation | 10    |
-| `api/`    | API reference documentation           | 4     |
+| `api/`    | API reference documentation           | 6     |
 | `guides/` | User guides and tutorials             | 9     |
 
 ---
@@ -43,12 +43,14 @@ Comprehensive design documentation for SAGE architecture and implementation:
 
 API documentation for different interfaces:
 
-| Document        | Description                      |
-|-----------------|----------------------------------|
-| `api/index.md`  | API overview and quick reference |
-| `api/cli.md`    | Command-line interface reference |
-| `api/mcp.md`    | MCP (Model Context Protocol) API |
-| `api/python.md` | Python SDK reference             |
+| Document               | Description                      |
+|------------------------|----------------------------------|
+| `api/index.md`         | API overview and quick reference |
+| `api/cli.md`           | Command-line interface reference |
+| `api/mcp.md`           | MCP (Model Context Protocol) API |
+| `api/mcp_quick_ref.md` | MCP quick reference guide        |
+| `api/plugin_quick_ref.md` | Plugin API quick reference    |
+| `api/python.md`        | Python SDK reference             |
 
 ---
 

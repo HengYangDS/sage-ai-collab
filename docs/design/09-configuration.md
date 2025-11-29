@@ -1,15 +1,16 @@
----
-title: SAGE Knowledge Base - Configuration Design
-version: 0.1.0
-date: 2025-11-29
-status: production-ready
----
-
 # Configuration Design
 
-> **Modular configuration system with smart loading and graceful degradation**
+> Modular configuration system with smart loading and graceful degradation
 
-## Overview
+---
+
+## Table of Contents
+
+[1. Overview](#1-overview) · [2. Configuration Priority](#2-configuration-priority) · [3. Configuration Files](#3-configuration-files) · [4. Configuration Sections](#4-configuration-sections) · [5. Fallback Content](#5-fallback-content) · [6. Configuration Loading](#6-configuration-loading) · [7. Best Practices](#7-best-practices)
+
+---
+
+## 1. Overview
 
 SAGE uses a modular configuration system where settings are organized into focused YAML files in the `config/`
 directory, with `sage.yaml` serving as the main entry point.
@@ -33,7 +34,7 @@ configuration:
 
 ---
 
-## Configuration Priority
+## 2. Configuration Priority
 
 Configuration values are resolved in the following order (highest priority first):
 
@@ -62,7 +63,7 @@ SAGE_TIMEOUTS__T1_INSTANT=200
 
 ---
 
-## Configuration Files
+## 3. Configuration Files
 
 ### Main Entry Point
 
@@ -95,7 +96,7 @@ SAGE_TIMEOUTS__T1_INSTANT=200
 
 ---
 
-## Configuration Sections
+## 4. Configuration Sections
 
 ### 1. Timeout Configuration (`config/core/timeout.yaml`)
 
@@ -166,7 +167,7 @@ features:
   compressed_loading: false            # Compressed/summarized content
   client_cache: true                   # Client-side caching
   lazy_expansion: true                 # Headers-only with expand-on-demand
-  context_pruning: false               # Auto-remove irrelevant sections (v1.1+)
+  context_pruning: false               # Auto-remove irrelevant sections (M2+)
 ```
 
 ### 4. DI Container Configuration (`config/core/di.yaml`)
@@ -193,7 +194,7 @@ di:
       lifetime: singleton
       implementation: TokenBudget
 
-    # v1.1 Placeholders: KnowledgeProtocol, OutputProtocol, RefineProtocol
+    # M2 Placeholders: KnowledgeProtocol, OutputProtocol, RefineProtocol
 ```
 
 ### 5. API Service Configuration (`config/services/api.yaml`)
@@ -333,7 +334,7 @@ guidelines:
 
 ---
 
-## Fallback Content (`src/sage/data/fallback_core.yaml`)
+## 5. Fallback Content
 
 Emergency fallback content loaded when all else fails:
 
@@ -357,7 +358,7 @@ fallback:
 
 ---
 
-## Configuration Loading
+## 6. Configuration Loading
 
 ### Python API
 
@@ -391,7 +392,7 @@ class SAGEConfig:
 
 ---
 
-## Best Practices
+## 7. Best Practices
 
 ### Do
 
@@ -410,15 +411,13 @@ class SAGEConfig:
 
 ---
 
-## Related Documentation
+## Related
 
-| Document                                  | Purpose                        |
-|-------------------------------------------|--------------------------------|
-| `docs/design/04-timeout-loading.md`       | Timeout hierarchy details      |
-| `docs/design/05-plugin-memory.md`         | Plugin configuration           |
-| `content/frameworks/timeout/hierarchy.md` | Timeout framework reference    |
-| `content/core/defaults.md`                | Default behavior documentation |
+- `04-timeout-loading.md` — Timeout hierarchy details
+- `05-plugin-memory.md` — Plugin configuration
+- `content/frameworks/resilience/timeout_patterns.md` — Timeout framework reference
+- `content/core/defaults.md` — Default behavior documentation
 
 ---
 
-*Part of SAGE Knowledge Base v0.1.0 - Configuration Design*
+*Part of SAGE Knowledge Base*

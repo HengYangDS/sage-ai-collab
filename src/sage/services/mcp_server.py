@@ -13,6 +13,7 @@ Version: 0.1.0
 """
 
 import time
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -939,6 +940,318 @@ if MCP_AVAILABLE and app is not None:
             logger.error(f"Error in list_backups: {e}")
             return {"success": False, "error": str(e)}
 
+    # ========================================================================
+    # Session Management Tools
+    # ========================================================================
+
+    @app.tool()
+    async def session_start(
+        task: str,
+        description: str = "",
+        autonomy_level: str = "L4",
+    ) -> dict[str, Any]:
+        """
+        Start a new AI collaboration session with tracking.
+
+        Creates a session state file in .history/current/ to track the session.
+        Call this at the beginning of significant work sessions.
+
+        Args:
+            task: Brief task name (e.g., "Implement authentication")
+            description: Detailed description of the task objective
+            autonomy_level: Autonomy level L1-L6 (default: L4)
+
+        Returns:
+            Dictionary with:
+            - session_id: Unique session identifier
+            - session_file: Path to session state file
+            - started_at: Session start timestamp
+
+        Examples:
+            - session_start(task="Fix timeout bug", description="Resolve T2 timeout in loader")
+            - session_start(task="Documentation update", autonomy_level="L5")
+        """
+        try:
+            from datetime import datetime
+
+            # Generate session ID
+            now = datetime.now()
+            session_id = f"session-{now.strftime('%Y%m%d-%H%M')}"
+            
+            # Determine project root and history path
+            project_root = Path.cwd()
+            history_current = project_root / ".history" / "current"
+            history_current.mkdir(parents=True, exist_ok=True)
+            
+            session_file = history_current / f"{session_id}.md"
+            
+            # Create session state content
+            content = f"""# Session State: {task}
+
+> **Session ID**: {session_id}
+> **Started**: {now.strftime('%Y-%m-%d %H:%M')}
+> **Last Updated**: {now.strftime('%Y-%m-%d %H:%M')}
+> **Status**: Active
+> **Autonomy Level**: {autonomy_level}
+
+---
+
+## Current Task
+
+### Objective
+
+{description if description else task}
+
+### Progress
+
+- [ ] Task in progress
+
+### Files Modified
+
+| File | Changes | Status |
+|------|---------|--------|
+| (none yet) | | |
+
+### Decisions
+
+(No decisions recorded yet)
+
+### Blockers
+
+- None currently
+
+---
+
+## Quick Resume
+
+To continue: Review objective and progress above, then proceed with task.
+
+---
+
+*Session state from SAGE Knowledge Base*
+"""
+            
+            session_file.write_text(content, encoding="utf-8")
+            logger.info("session_started", session_id=session_id, task=task)
+            
+            return {
+                "success": True,
+                "result": {
+                    "session_id": session_id,
+                    "session_file": str(session_file),
+                    "started_at": now.isoformat(),
+                    "task": task,
+                    "autonomy_level": autonomy_level,
+                },
+            }
+        except Exception as e:
+            logger.error(f"Error in session_start: {e}")
+            return {"success": False, "error": str(e)}
+
+    @app.tool()
+    async def session_end(
+        summary: str,
+        next_steps: str = "",
+        record_type: str = "auto",
+    ) -> dict[str, Any]:
+        """
+        End the current session and create appropriate records.
+
+        Finalizes the active session, creates conversation record or handoff
+        document based on session outcome.
+
+        Args:
+            summary: Brief summary of what was accomplished
+            next_steps: Remaining tasks or follow-up items (triggers handoff if provided)
+            record_type: "conversation", "handoff", or "auto" (auto-detect)
+
+        Returns:
+            Dictionary with:
+            - session_id: Ended session ID
+            - record_created: Type of record created
+            - record_file: Path to created record
+
+        Examples:
+            - session_end(summary="Completed timeout refactoring")
+            - session_end(summary="Partial completion", next_steps="Finish tests", record_type="handoff")
+        """
+        try:
+            from datetime import datetime
+
+            now = datetime.now()
+            project_root = Path.cwd()
+            history_current = project_root / ".history" / "current"
+            
+            # Find active session
+            active_sessions = list(history_current.glob("session-*.md"))
+            if not active_sessions:
+                return {
+                    "success": False,
+                    "error": "No active session found in .history/current/",
+                }
+            
+            # Use most recent session
+            active_session = max(active_sessions, key=lambda p: p.stat().st_mtime)
+            session_id = active_session.stem
+            
+            # Determine record type
+            if record_type == "auto":
+                record_type = "handoff" if next_steps else "conversation"
+            
+            # Create appropriate record
+            if record_type == "handoff":
+                record_dir = project_root / ".history" / "handoffs"
+                record_dir.mkdir(parents=True, exist_ok=True)
+                record_file = record_dir / f"{now.strftime('%Y-%m-%d')}-handoff.md"
+                
+                content = f"""# Task Handoff: {summary[:50]}
+
+> **From**: {session_id}
+> **Date**: {now.strftime('%Y-%m-%d')}
+> **Status**: Partial completion
+
+---
+
+## Summary
+
+{summary}
+
+## Completed Work
+
+(Refer to session for details)
+
+## Pending Items
+
+{next_steps}
+
+## Recommended Next Steps
+
+1. Review pending items above
+2. Continue from where session left off
+
+---
+
+*Handoff from SAGE Knowledge Base*
+"""
+            else:
+                record_dir = project_root / ".history" / "conversations"
+                record_dir.mkdir(parents=True, exist_ok=True)
+                record_file = record_dir / f"{now.strftime('%Y-%m-%d')}-session.md"
+                
+                content = f"""# Session Record: {summary[:50]}
+
+> **Date**: {now.strftime('%Y-%m-%d')}
+> **Session**: {session_id}
+> **Status**: Completed
+
+---
+
+## Summary
+
+{summary}
+
+## Key Outcomes
+
+(Add specific outcomes)
+
+## Decisions Made
+
+(Add decisions if any)
+
+## Learnings
+
+(Add learnings if any)
+
+---
+
+*Conversation record from SAGE Knowledge Base*
+"""
+            
+            record_file.write_text(content, encoding="utf-8")
+            
+            # Archive the session state (move to indicate completion)
+            active_session.unlink()
+            
+            logger.info("session_ended", session_id=session_id, record_type=record_type)
+            
+            return {
+                "success": True,
+                "result": {
+                    "session_id": session_id,
+                    "record_type": record_type,
+                    "record_file": str(record_file),
+                    "ended_at": now.isoformat(),
+                    "summary": summary,
+                },
+            }
+        except Exception as e:
+            logger.error(f"Error in session_end: {e}")
+            return {"success": False, "error": str(e)}
+
+    @app.tool()
+    async def session_status() -> dict[str, Any]:
+        """
+        Get current session status and active sessions.
+
+        Checks .history/current/ for active sessions and returns their status.
+
+        Returns:
+            Dictionary with:
+            - active: Whether there's an active session
+            - sessions: List of active session details
+            - recent_records: Recent conversation/handoff records
+
+        Examples:
+            - session_status()
+        """
+        try:
+            project_root = Path.cwd()
+            history_path = project_root / ".history"
+            current_path = history_path / "current"
+            conversations_path = history_path / "conversations"
+            handoffs_path = history_path / "handoffs"
+            
+            # Get active sessions
+            active_sessions = []
+            if current_path.exists():
+                for session_file in current_path.glob("session-*.md"):
+                    stat = session_file.stat()
+                    active_sessions.append({
+                        "session_id": session_file.stem,
+                        "file": str(session_file),
+                        "modified": datetime.fromtimestamp(stat.st_mtime).isoformat(),
+                        "size_bytes": stat.st_size,
+                    })
+            
+            # Get recent records (last 5)
+            recent_records = []
+            for record_path in [conversations_path, handoffs_path]:
+                if record_path.exists():
+                    for record_file in sorted(
+                        record_path.glob("*.md"),
+                        key=lambda p: p.stat().st_mtime,
+                        reverse=True,
+                    )[:5]:
+                        if not record_file.name.startswith("_example"):
+                            recent_records.append({
+                                "type": record_path.name,
+                                "file": record_file.name,
+                                "path": str(record_file),
+                            })
+            
+            return {
+                "success": True,
+                "result": {
+                    "active": len(active_sessions) > 0,
+                    "active_count": len(active_sessions),
+                    "sessions": active_sessions,
+                    "recent_records": recent_records[:5],
+                },
+            }
+        except Exception as e:
+            logger.error(f"Error in session_status: {e}")
+            return {"success": False, "error": str(e)}
+
     @app.tool()
     async def list_tools() -> dict[str, Any]:
         """
@@ -1015,6 +1328,20 @@ if MCP_AVAILABLE and app is not None:
                     "description": "Create a backup of the knowledge base",
                 },
                 {"name": "list_backups", "description": "List all available backups"},
+            ],
+            "session_tools": [
+                {
+                    "name": "session_start",
+                    "description": "Start a new AI collaboration session with tracking",
+                },
+                {
+                    "name": "session_end",
+                    "description": "End session and create conversation/handoff record",
+                },
+                {
+                    "name": "session_status",
+                    "description": "Get current session status and active sessions",
+                },
             ],
         }
 
