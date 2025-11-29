@@ -113,7 +113,7 @@ The final design was consolidated from multiple expert-reviewed documents:
 ### Architecture & Systems Group (6/6 Approve)
 
 > "The 3-layer architecture is cleanly implemented with proper separation of concerns. Core infrastructure (EventBus,
-> Memory, Logging, DI Container) exceeds expectations. DI Container with lifetime management is a significant v1.2
+> Memory, Logging, DI Container) exceeds expectations. DI Container with lifetime management is a significant M3
 > addition."
 
 ### Knowledge Engineering Group (6/6 Approve)
