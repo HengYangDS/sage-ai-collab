@@ -14,10 +14,10 @@
 
 | Directory         | Purpose                              | Files |
 |-------------------|--------------------------------------|-------|
-| `configurations/` | Project-specific configurations      | 3     |
+| `configurations/` | Project-specific configurations      | 6     |
 | `conventions/`    | Project-specific coding conventions  | 3     |
 | `decisions/`      | Architecture Decision Records (ADRs) | 8     |
-| `intelligence/`   | AI intelligence patterns             | 3     |
+| `intelligence/`   | AI intelligence patterns             | 7     |
 
 ---
 
@@ -32,6 +32,9 @@ Project-specific configuration documentation:
 | `timeout_hierarchy.md`      | T1-T5 timeout levels and fallback strategies  |
 | `loading_configurations.md` | Knowledge loading strategies and layer config |
 | `runtime_settings.md`       | Environment variables, logging, services      |
+| `memory_settings.md`        | Memory persistence and caching configuration  |
+| `plugin_settings.md`        | Plugin system settings and extension points   |
+| `service_settings.md`       | Service layer configuration (CLI, MCP, API)   |
 
 ### 2.2 Conventions
 
@@ -62,11 +65,15 @@ Architecture Decision Records documenting significant technical decisions:
 
 AI collaboration patterns and learned behaviors:
 
-| Document           | Description                                       |
-|--------------------|---------------------------------------------------|
-| `patterns.md`      | Successful interaction patterns and templates     |
-| `optimizations.md` | Code generation preferences, testing, performance |
-| `calibration.md`   | Autonomy level calibration (L1-L6)                |
+| Document              | Description                                       |
+|-----------------------|---------------------------------------------------|
+| `patterns.md`         | Successful interaction patterns and templates     |
+| `optimizations.md`    | Code generation preferences, testing, performance |
+| `calibration.md`      | Autonomy level calibration (L1-L6)                |
+| `cases.md`            | Case studies and real-world examples              |
+| `common_pitfalls.md`  | Common mistakes and how to avoid them             |
+| `lessons_learned.md`  | Key learnings from project development            |
+| `performance_tuning.md` | Performance optimization strategies             |
 
 ---
 
@@ -90,6 +97,9 @@ AI collaboration patterns and learned behaviors:
 - `configurations/timeout_hierarchy.md` — SAGE T1-T5 timeout levels
 - `configurations/loading_configurations.md` — Loading strategies and layers
 - `configurations/runtime_settings.md` — Environment and runtime config
+- `configurations/memory_settings.md` — Memory persistence and caching
+- `configurations/plugin_settings.md` — Plugin system settings
+- `configurations/service_settings.md` — Service layer configuration
 
 #### Conventions
 
@@ -113,6 +123,10 @@ AI collaboration patterns and learned behaviors:
 - `intelligence/patterns.md` — AI interaction patterns
 - `intelligence/optimizations.md` — Project optimizations
 - `intelligence/calibration.md` — Autonomy calibration
+- `intelligence/cases.md` — Case studies and examples
+- `intelligence/common_pitfalls.md` — Common mistakes to avoid
+- `intelligence/lessons_learned.md` — Key project learnings
+- `intelligence/performance_tuning.md` — Performance optimization
 
 ---
 
