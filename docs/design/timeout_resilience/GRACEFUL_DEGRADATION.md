@@ -1,4 +1,4 @@
-﻿# Graceful Degradation
+# Graceful Degradation
 
 > Strategies for maintaining partial functionality during failures
 

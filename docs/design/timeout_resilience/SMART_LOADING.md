@@ -1,4 +1,4 @@
-﻿# Smart Loading
+# Smart Loading
 
 > Intelligent content loading strategies for optimal performance
 

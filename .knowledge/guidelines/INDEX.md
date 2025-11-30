@@ -1,4 +1,4 @@
-﻿# Engineering Guidelines
+# Engineering Guidelines
 
 > Standards for code, documentation, and AI collaboration
 

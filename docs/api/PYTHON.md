@@ -1,4 +1,4 @@
-﻿
+
 # Python API Reference
 
 > SAGE Knowledge Base Python Library Documentation

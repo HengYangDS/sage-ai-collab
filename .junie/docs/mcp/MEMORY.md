@@ -1,4 +1,4 @@
-﻿
+
 # Memory Server Best Practices
 
 > Knowledge graph persistence patterns and usage guidelines (~15 min read)

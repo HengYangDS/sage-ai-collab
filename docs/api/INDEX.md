@@ -1,4 +1,4 @@
-﻿
+
 # API Reference
 
 > SAGE Knowledge Base API Documentation

@@ -1,4 +1,4 @@
-﻿# Cognitive Enhancement Guidelines
+# Cognitive Enhancement Guidelines
 
 > Enhanced metacognitive capabilities for AI collaboration
 

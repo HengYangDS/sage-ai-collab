@@ -1,4 +1,4 @@
-﻿# Data Persistence Patterns
+# Data Persistence Patterns
 
 > Universal patterns for data lifecycle, retention, and cleanup
 

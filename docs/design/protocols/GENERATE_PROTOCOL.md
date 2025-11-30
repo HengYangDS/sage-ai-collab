@@ -1,4 +1,4 @@
-﻿# Generate Protocol
+# Generate Protocol
 
 > Output formatting, rendering, and multi-channel delivery
 

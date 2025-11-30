@@ -1,4 +1,4 @@
-﻿# ADR-0008: Plugin System Design
+# ADR-0008: Plugin System Design
 
 > Architecture Decision Record for SAGE Knowledge Base
 

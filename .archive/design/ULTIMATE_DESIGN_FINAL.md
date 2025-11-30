@@ -1,4 +1,4 @@
-﻿
+
 # SAGE Knowledge Base - Design Document
 
 ## 🏆 Level 5 Expert Committee Consolidated Design

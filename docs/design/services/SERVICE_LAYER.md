@@ -1,4 +1,4 @@
-﻿# Service Layer
+# Service Layer
 
 > Multi-channel service architecture for SAGE
 

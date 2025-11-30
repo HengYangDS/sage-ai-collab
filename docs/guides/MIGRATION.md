@@ -1,4 +1,4 @@
-﻿
+
 # Migration Guide
 
 > Version upgrade procedures and compatibility notes

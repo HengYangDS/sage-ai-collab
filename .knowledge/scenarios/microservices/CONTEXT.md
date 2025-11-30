@@ -1,4 +1,4 @@
-﻿# Microservices Scenario Context
+# Microservices Scenario Context
 
 > Pre-configured context for microservices architecture development
 

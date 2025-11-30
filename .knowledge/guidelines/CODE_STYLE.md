@@ -1,4 +1,4 @@
-﻿# Code Style Guidelines
+# Code Style Guidelines
 
 > Consistent, readable, maintainable code
 

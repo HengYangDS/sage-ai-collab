@@ -1,4 +1,4 @@
-﻿# Core Principles - Test Fixture
+# Core Principles - Test Fixture
 
 > Test fixture for core principles content.
 

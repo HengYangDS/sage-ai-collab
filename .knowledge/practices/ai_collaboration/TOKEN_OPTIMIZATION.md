@@ -1,4 +1,4 @@
-﻿# Token Optimization Principles
+# Token Optimization Principles
 
 > Maximize knowledge density per token in AI collaboration
 

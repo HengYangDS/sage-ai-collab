@@ -1,4 +1,4 @@
-﻿# Services
+# Services
 
 > Service layer design for SAGE interfaces
 

@@ -1,4 +1,4 @@
-﻿
+
 # Regex Reference
 
 > Regular expression patterns for Terminal rules (~10 min reference)

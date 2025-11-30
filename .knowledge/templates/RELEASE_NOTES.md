@@ -1,4 +1,4 @@
-﻿# Release Notes Template
+# Release Notes Template
 
 > **Purpose**: Template for documenting software releases
 > **Use When**: Publishing a new version of software or documentation

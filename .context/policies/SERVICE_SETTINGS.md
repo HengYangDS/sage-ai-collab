@@ -1,4 +1,4 @@
-﻿# Service Layer Configuration
+# Service Layer Configuration
 
 > Configuration reference for CLI, MCP, and API services
 

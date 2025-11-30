@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base - Test Fixture
+# SAGE Knowledge Base - Test Fixture
 
 > Sample knowledge base index for testing purposes.
 

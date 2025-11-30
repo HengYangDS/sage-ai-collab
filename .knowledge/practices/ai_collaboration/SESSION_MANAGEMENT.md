@@ -1,4 +1,4 @@
-﻿# Session Management
+# Session Management
 
 > Best practices for managing AI collaboration sessions effectively
 

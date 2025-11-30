@@ -1,4 +1,4 @@
-﻿# {TITLE}
+# {TITLE}
 
 > {PURPOSE}
 

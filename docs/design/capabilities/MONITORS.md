@@ -1,4 +1,4 @@
-﻿# Monitors
+# Monitors
 
 > Monitoring, observation, and alerting capabilities
 

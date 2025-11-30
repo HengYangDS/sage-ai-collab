@@ -1,4 +1,4 @@
-﻿
+
 # Plugin Development Guide
 
 > How to create and publish plugins for SAGE Knowledge Base

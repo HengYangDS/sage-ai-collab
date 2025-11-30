@@ -1,4 +1,4 @@
-﻿
+
 # MCP Configuration
 
 > Setup and configure MCP servers for Junie (~30 min)

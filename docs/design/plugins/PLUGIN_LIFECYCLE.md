@@ -1,4 +1,4 @@
-﻿# Plugin Lifecycle
+# Plugin Lifecycle
 
 > Plugin states and lifecycle management
 

@@ -1,4 +1,4 @@
-﻿
+
 # Frequently Asked Questions
 
 > Common questions and answers about SAGE Knowledge Base

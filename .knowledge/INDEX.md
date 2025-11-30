@@ -1,4 +1,4 @@
-﻿# Knowledge Base Navigation
+# Knowledge Base Navigation
 
 > Entry point for AI collaboration knowledge content
 

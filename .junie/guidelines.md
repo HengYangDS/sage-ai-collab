@@ -1,4 +1,4 @@
-﻿# Junie Guidelines
+# Junie Guidelines
 
 > Primary entry point for JetBrains Junie AI collaboration
 

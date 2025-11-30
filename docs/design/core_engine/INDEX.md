@@ -1,4 +1,4 @@
-﻿# Core Engine
+# Core Engine
 
 > Core components and infrastructure for SAGE
 

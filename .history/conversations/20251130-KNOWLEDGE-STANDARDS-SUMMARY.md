@@ -1,4 +1,4 @@
-﻿# Knowledge Standards Summary
+# Knowledge Standards Summary
 
 > Session record: Documentation and Configuration Standards extracted from .knowledge/
 

@@ -1,4 +1,4 @@
-﻿# Layer Hierarchy
+# Layer Hierarchy
 
 > Knowledge layer structure and priority system for AI context management
 

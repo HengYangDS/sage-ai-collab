@@ -1,4 +1,4 @@
-﻿# Plugin Architecture
+# Plugin Architecture
 
 > Extensible plugin system design for SAGE
 

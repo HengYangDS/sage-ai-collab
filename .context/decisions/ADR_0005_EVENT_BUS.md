@@ -1,4 +1,4 @@
-﻿# ADR-0005: Event Bus Architecture
+# ADR-0005: Event Bus Architecture
 
 > Architecture Decision Record for SAGE Knowledge Base
 

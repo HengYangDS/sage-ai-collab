@@ -1,4 +1,4 @@
-﻿# Code Block Standards
+# Code Block Standards
 
 > Single source of truth for code blocks, quote blocks, and callout standards
 

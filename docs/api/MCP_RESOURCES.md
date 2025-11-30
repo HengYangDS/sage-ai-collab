@@ -1,4 +1,4 @@
-﻿
+
 # MCP Resources and Advanced Features
 
 > Resources, prompts, error handling, and client integration for SAGE MCP server

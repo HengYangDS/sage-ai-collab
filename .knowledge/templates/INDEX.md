@@ -1,4 +1,4 @@
-﻿# Document Templates
+# Document Templates
 
 > Reusable templates for common documents
 

@@ -1,4 +1,4 @@
-﻿
+
 # Collaboration Efficiency Metrics
 
 > Track and optimize AI collaboration effectiveness (~10 min read)

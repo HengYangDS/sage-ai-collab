@@ -1,4 +1,4 @@
-﻿# Knowledge Capture
+# Knowledge Capture
 
 > When and how to document knowledge during AI collaboration
 

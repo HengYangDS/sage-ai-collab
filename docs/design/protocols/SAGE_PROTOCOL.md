@@ -1,4 +1,4 @@
-﻿# SAGE Protocol
+# SAGE Protocol
 
 > Source, Analyze, Generate, Evolve — the core operational pattern
 

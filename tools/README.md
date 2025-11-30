@@ -1,4 +1,4 @@
-﻿# SAGE Development Tools
+# SAGE Development Tools
 
 > Utilities and scripts for SAGE Knowledge Base development
 

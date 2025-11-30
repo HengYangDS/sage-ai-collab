@@ -1,4 +1,4 @@
-﻿---
+---
 name: Feature Request
 about: Suggest an idea for SAGE Knowledge Base
 title: '[FEATURE] '

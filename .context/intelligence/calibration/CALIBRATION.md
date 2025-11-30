@@ -1,4 +1,4 @@
-﻿# Autonomy Calibration Records
+# Autonomy Calibration Records
 
 > Historical calibration data and effectiveness evaluation for AI collaboration in SAGE project
 

@@ -1,4 +1,4 @@
-﻿# Secrets Management Framework
+# Secrets Management Framework
 
 > Conceptual framework for secure handling of sensitive data and credentials
 

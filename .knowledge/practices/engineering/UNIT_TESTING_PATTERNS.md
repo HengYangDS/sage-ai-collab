@@ -1,4 +1,4 @@
-﻿# Unit Testing Patterns
+# Unit Testing Patterns
 
 > Best practices and patterns for writing effective unit tests
 

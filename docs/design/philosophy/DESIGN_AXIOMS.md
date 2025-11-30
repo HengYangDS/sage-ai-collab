@@ -1,4 +1,4 @@
-﻿# Design Axioms
+# Design Axioms
 
 > Core design principles that guide all SAGE decisions
 

@@ -1,4 +1,4 @@
-﻿# SAGE Project Overview
+# SAGE Project Overview
 
 > Quick introduction to SAGE Knowledge Base for new contributors and AI assistants
 

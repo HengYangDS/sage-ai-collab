@@ -1,4 +1,4 @@
-﻿# Plugin Development Scenario Context
+# Plugin Development Scenario Context
 
 > Pre-configured context for SAGE plugin development
 

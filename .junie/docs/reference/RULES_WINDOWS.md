@@ -1,4 +1,4 @@
-﻿
+
 # Windows Terminal Rules
 
 > Complete rule list for Windows PowerShell (68 Rules)

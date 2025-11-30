@@ -1,4 +1,4 @@
-﻿# Diagram Standards
+# Diagram Standards
 
 > Single source of truth for diagram creation standards using Mermaid
 

@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base
+# SAGE Knowledge Base
 
 > Production-grade knowledge management system for AI-human collaboration
 

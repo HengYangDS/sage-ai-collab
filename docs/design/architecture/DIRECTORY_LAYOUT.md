@@ -1,4 +1,4 @@
-﻿# Directory Layout
+# Directory Layout
 
 > Canonical project structure for SAGE Knowledge Base
 

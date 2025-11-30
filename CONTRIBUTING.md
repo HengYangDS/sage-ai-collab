@@ -1,4 +1,4 @@
-﻿# Contributing to SAGE Knowledge Base
+# Contributing to SAGE Knowledge Base
 
 > Guidelines and instructions for contributing to SAGE Knowledge Base
 

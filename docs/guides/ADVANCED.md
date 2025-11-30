@@ -1,4 +1,4 @@
-﻿
+
 # Advanced Usage Guide
 
 > Deep dive into SAGE Knowledge Base advanced features

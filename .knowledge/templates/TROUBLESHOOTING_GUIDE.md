@@ -1,4 +1,4 @@
-﻿# Troubleshooting Guide Template
+# Troubleshooting Guide Template
 
 > **Purpose**: Template for creating troubleshooting documentation
 > **Use When**: Documenting solutions to common problems or error scenarios

@@ -1,4 +1,4 @@
-﻿# Dependency Injection Container
+# Dependency Injection Container
 
 > Centralized dependency management for SAGE
 

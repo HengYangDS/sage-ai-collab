@@ -1,4 +1,4 @@
-﻿# SAGE Knowledge Base
+# SAGE Knowledge Base
 
 > Source, Analyze, Generate, Evolve — Navigation entry point
 

@@ -1,4 +1,4 @@
-﻿# MCP Overview
+# MCP Overview
 
 > Model Context Protocol architecture and concepts (~15 min read)
 >

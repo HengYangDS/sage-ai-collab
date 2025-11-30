@@ -1,4 +1,4 @@
-﻿# CLI Service
+# CLI Service
 
 > Command-line interface service using Typer and Rich
 

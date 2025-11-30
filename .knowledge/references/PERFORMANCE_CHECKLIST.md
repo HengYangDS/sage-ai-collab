@@ -1,4 +1,4 @@
-﻿# Performance Quick Reference
+# Performance Quick Reference
 
 > Essential performance checks and commands for DevOps workflows
 

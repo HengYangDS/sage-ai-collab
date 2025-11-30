@@ -1,4 +1,4 @@
-﻿# Engineering Patterns Practice Guide
+# Engineering Patterns Practice Guide
 
 > Common engineering patterns and their practical application
 

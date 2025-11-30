@@ -1,4 +1,4 @@
-﻿# Core Principles - 信达雅 · 术法道
+# Core Principles - 信达雅 · 术法道
 
 > Foundational philosophy for AI collaboration
 

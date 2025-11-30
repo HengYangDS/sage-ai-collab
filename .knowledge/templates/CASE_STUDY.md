@@ -1,4 +1,4 @@
-﻿# Case Study Template
+# Case Study Template
 
 > Template for documenting problem-solving cases and lessons learned
 

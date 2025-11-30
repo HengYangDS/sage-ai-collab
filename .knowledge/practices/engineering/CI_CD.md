@@ -1,4 +1,4 @@
-﻿# CI/CD Practices
+# CI/CD Practices
 
 > Continuous Integration and Continuous Deployment best practices for the projects
 

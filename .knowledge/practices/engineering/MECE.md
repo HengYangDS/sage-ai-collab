@@ -1,4 +1,4 @@
-﻿# MECE Principle
+# MECE Principle
 
 > Mutually Exclusive, Collectively Exhaustive — the foundation of clear categorization
 

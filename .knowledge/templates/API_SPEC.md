@@ -1,4 +1,4 @@
-﻿# API Specification Template
+# API Specification Template
 
 > **Purpose**: Document API endpoints, request/response schemas, and behaviors
 > **Use When**: Designing new APIs or documenting existing endpoints

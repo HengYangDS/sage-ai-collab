@@ -1,4 +1,4 @@
-﻿# Authentication Patterns
+# Authentication Patterns
 
 > Identity verification mechanisms and best practices
 

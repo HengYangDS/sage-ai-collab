@@ -1,4 +1,4 @@
-﻿
+
 # macOS/Linux Terminal Rules
 
 > Complete rule list for Bash/Zsh (76 Rules)

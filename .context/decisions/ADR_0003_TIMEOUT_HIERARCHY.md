@@ -1,4 +1,4 @@
-﻿# ADR-0003: Timeout Hierarchy Design
+# ADR-0003: Timeout Hierarchy Design
 
 > Architecture Decision Record for SAGE Knowledge Base
 

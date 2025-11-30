@@ -1,4 +1,4 @@
-﻿# SAGE File Structure Conventions
+# SAGE File Structure Conventions
 
 > Project-specific file organization standards for SAGE Knowledge Base
 
