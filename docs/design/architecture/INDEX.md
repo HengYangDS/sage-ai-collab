@@ -1,4 +1,4 @@
-# Architecture
+﻿# Architecture
 
 > System architecture and structural design for SAGE
 
@@ -53,4 +53,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

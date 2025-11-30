@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~300
----
-
+﻿
 # MCP Protocol Reference
 
 > SAGE Model Context Protocol (MCP) Server Documentation
@@ -109,4 +103,4 @@ MCP tools respect the 5-level timeout hierarchy (T1-T5).
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

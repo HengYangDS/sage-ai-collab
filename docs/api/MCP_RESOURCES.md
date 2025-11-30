@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
+﻿
 # MCP Resources and Advanced Features
 
 > Resources, prompts, error handling, and client integration for SAGE MCP server
@@ -210,4 +204,4 @@ async with Client("localhost", 8000) as client:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

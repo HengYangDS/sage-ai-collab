@@ -1,4 +1,4 @@
-# Design Axioms
+﻿# Design Axioms
 
 > Core design principles that guide all SAGE decisions
 
@@ -206,4 +206,4 @@ Axioms may be violated when:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
+﻿
 # Documentation Navigation
 
 > User-facing documentation for SAGE Knowledge Base
@@ -113,4 +107,4 @@ Tutorials and guides for users and developers:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

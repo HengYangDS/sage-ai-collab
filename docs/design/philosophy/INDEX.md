@@ -1,4 +1,4 @@
-# Philosophy
+﻿# Philosophy
 
 > Design philosophy and foundational principles for SAGE
 
@@ -50,4 +50,4 @@ Core principles that cannot be compromised:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

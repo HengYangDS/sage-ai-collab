@@ -1,4 +1,4 @@
-# Converters
+﻿# Converters
 
 > Conversion, migration, and adaptation capabilities
 
@@ -278,4 +278,4 @@ class CustomConverter(Capability[MyInput, MyOutput]):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

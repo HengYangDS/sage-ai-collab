@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~300
----
-
+﻿
 # API Reference
 
 > SAGE Knowledge Base API Documentation
@@ -107,4 +101,4 @@ All interfaces respect the 5-level timeout hierarchy (T1-T5).
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

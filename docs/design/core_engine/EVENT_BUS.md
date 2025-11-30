@@ -1,4 +1,4 @@
-# Event Bus
+﻿# Event Bus
 
 > Decoupled communication through publish-subscribe pattern
 
@@ -265,4 +265,4 @@ event_bus:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

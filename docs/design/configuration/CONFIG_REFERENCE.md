@@ -1,4 +1,4 @@
-# Configuration Reference
+﻿# Configuration Reference
 
 > Complete reference for all SAGE configuration options
 
@@ -305,4 +305,4 @@ sage:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

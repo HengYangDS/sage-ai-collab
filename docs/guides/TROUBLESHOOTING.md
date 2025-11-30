@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
+﻿
 # Troubleshooting Guide
 
 > Common issues and solutions for SAGE Knowledge Base
@@ -274,4 +268,4 @@ Include in bug reports:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

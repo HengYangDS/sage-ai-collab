@@ -1,4 +1,4 @@
-# Data Models
+﻿# Data Models
 
 > Core data structures and types for SAGE
 
@@ -324,4 +324,4 @@ class KnowledgeAssetModel(BaseModel):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

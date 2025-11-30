@@ -1,4 +1,4 @@
-# 信达雅 (Xìn Dá Yǎ)
+﻿# 信达雅 (Xìn Dá Yǎ)
 
 > SAGE design philosophy: Faithfulness, Expressiveness, Elegance
 >
@@ -111,4 +111,4 @@ This section describes how 信达雅 applies specifically to SAGE's design decis
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

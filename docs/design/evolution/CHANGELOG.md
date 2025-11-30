@@ -1,4 +1,4 @@
-# Changelog
+﻿# Changelog
 
 > All notable changes to SAGE Knowledge Base
 
@@ -165,4 +165,4 @@ cli = container.resolve(CLIService)
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -1,4 +1,4 @@
-# Capabilities
+﻿# Capabilities
 
 > Capability families and extensibility model for SAGE
 
@@ -74,4 +74,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

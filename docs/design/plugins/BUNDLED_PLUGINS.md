@@ -1,4 +1,4 @@
-# Bundled Plugins
+﻿# Bundled Plugins
 
 > Built-in plugins shipped with SAGE
 
@@ -224,4 +224,4 @@ class MyExtension(Plugin):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

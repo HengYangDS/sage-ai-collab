@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
+﻿
 # Python API Reference
 
 > SAGE Knowledge Base Python Library Documentation
@@ -217,4 +211,4 @@ For advanced features, see [Python API Advanced Reference](python_advanced.md):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

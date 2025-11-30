@@ -1,4 +1,4 @@
-# Token Budget
+﻿# Token Budget
 
 > Token allocation and management for AI context
 
@@ -250,4 +250,4 @@ token_budget:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

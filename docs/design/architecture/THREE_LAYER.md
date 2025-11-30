@@ -1,4 +1,4 @@
-# Three-Layer Architecture
+﻿# Three-Layer Architecture
 
 > Core, Services, and Capabilities — the foundation of SAGE
 
@@ -228,4 +228,4 @@ graph LR
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

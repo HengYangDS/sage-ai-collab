@@ -1,4 +1,4 @@
-# API Service
+﻿# API Service
 
 > HTTP REST API service using FastAPI
 
@@ -314,4 +314,4 @@ def test_health():
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~700
----
-
+﻿
 # Python API Advanced Reference
 
 > Search, events, enums, exceptions, and usage examples for SAGE Python API
@@ -294,4 +288,4 @@ result = await loader.load("core")
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

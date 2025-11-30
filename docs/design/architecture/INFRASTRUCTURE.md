@@ -1,4 +1,4 @@
-# Infrastructure
+﻿# Infrastructure
 
 > Deployment, operations, and runtime infrastructure for SAGE
 
@@ -279,4 +279,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

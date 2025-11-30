@@ -1,4 +1,4 @@
-# Bootstrap
+﻿# Bootstrap
 
 > Application startup and initialization process
 
@@ -275,4 +275,4 @@ def shutdown(app: Application) -> None:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

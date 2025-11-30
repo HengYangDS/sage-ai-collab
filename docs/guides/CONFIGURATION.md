@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
+﻿
 # Configuration Guide
 
 > Complete reference for SAGE Knowledge Base configuration options
@@ -276,4 +270,4 @@ export SAGE_CACHE_ENABLED=false
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

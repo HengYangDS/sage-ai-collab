@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
+﻿
 # MCP Tools Guide
 
 > Complete reference for SAGE Knowledge Base MCP tools
@@ -170,4 +164,4 @@ tokens: ~800
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

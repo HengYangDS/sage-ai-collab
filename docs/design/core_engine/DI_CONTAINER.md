@@ -1,4 +1,4 @@
-# Dependency Injection Container
+﻿# Dependency Injection Container
 
 > Centralized dependency management for SAGE
 
@@ -228,4 +228,4 @@ def container():
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

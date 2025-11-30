@@ -1,4 +1,4 @@
-# Session Management
+﻿# Session Management
 
 > Session lifecycle and state management
 
@@ -307,4 +307,4 @@ session:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

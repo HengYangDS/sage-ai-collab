@@ -1,4 +1,4 @@
-# Smart Loading
+﻿# Smart Loading
 
 > Intelligent content loading strategies for optimal performance
 
@@ -313,4 +313,4 @@ loading:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

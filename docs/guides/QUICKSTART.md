@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
+﻿
 # Quick Start Guide
 
 > Get up and running with SAGE Knowledge Base in 5 minutes
@@ -303,4 +297,4 @@ sage get --help
 
 ---
 
-*SAGE Knowledge Base - Quick Start Guide*
+*AI Collaboration Knowledge Base*

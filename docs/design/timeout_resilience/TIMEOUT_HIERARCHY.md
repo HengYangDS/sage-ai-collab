@@ -1,4 +1,4 @@
-# Timeout Hierarchy
+﻿# Timeout Hierarchy
 
 > T1-T5 timeout levels design documentation
 >
@@ -254,4 +254,4 @@ timeout:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

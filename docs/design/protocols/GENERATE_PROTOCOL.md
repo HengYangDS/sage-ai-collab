@@ -1,4 +1,4 @@
-# Generate Protocol
+﻿# Generate Protocol
 
 > Output formatting, rendering, and multi-channel delivery
 
@@ -246,4 +246,4 @@ generate:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

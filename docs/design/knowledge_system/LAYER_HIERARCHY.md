@@ -1,4 +1,4 @@
-# Layer Hierarchy
+﻿# Layer Hierarchy
 
 > Knowledge layer structure and priority system
 
@@ -182,4 +182,4 @@ Example:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

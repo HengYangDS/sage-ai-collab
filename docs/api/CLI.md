@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
+﻿
 # CLI Reference
 
 > SAGE Command-Line Interface Documentation
@@ -264,4 +258,4 @@ cli:
 
 ---
 
-*SAGE Knowledge Base - CLI Reference*
+*AI Collaboration Knowledge Base*

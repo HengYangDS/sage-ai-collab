@@ -1,4 +1,4 @@
-# Roadmap
+﻿# Roadmap
 
 > SAGE development roadmap and feature planning
 
@@ -166,4 +166,4 @@ SAGE aims to be the definitive knowledge management system for AI-assisted devel
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

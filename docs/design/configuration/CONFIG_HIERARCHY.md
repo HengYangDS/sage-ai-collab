@@ -1,4 +1,4 @@
-# Configuration Hierarchy
+﻿# Configuration Hierarchy
 
 > Multi-level configuration system for SAGE
 
@@ -318,4 +318,4 @@ config:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

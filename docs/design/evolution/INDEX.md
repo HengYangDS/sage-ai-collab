@@ -1,4 +1,4 @@
-# Evolution
+﻿# Evolution
 
 > Roadmap, milestones, and project evolution for SAGE
 
@@ -64,4 +64,4 @@ This directory tracks SAGE's evolution, including roadmap, milestones, and evalu
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

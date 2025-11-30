@@ -1,4 +1,4 @@
-# Cross-Task Memory
+﻿# Cross-Task Memory
 
 > Persistent memory across sessions and tasks
 
@@ -305,4 +305,4 @@ cross_task_memory:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

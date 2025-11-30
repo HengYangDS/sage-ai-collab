@@ -1,4 +1,4 @@
-# MCP Service
+﻿# MCP Service
 
 > Model Context Protocol service for AI assistant integration
 
@@ -286,4 +286,4 @@ def test_search_knowledge():
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

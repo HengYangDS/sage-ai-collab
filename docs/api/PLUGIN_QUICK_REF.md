@@ -1,9 +1,4 @@
----
-title: Plugin API Reference
-type: reference
-tags: [plugin, api, hooks]
----
-
+﻿
 # Plugin API Reference
 
 ## Core Classes

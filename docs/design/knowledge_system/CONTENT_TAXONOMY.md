@@ -1,4 +1,4 @@
-# Content Taxonomy
+﻿# Content Taxonomy
 
 > Classification system for knowledge content
 
@@ -184,4 +184,4 @@ stateDiagram-v2
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

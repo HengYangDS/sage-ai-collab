@@ -1,4 +1,4 @@
-# docs/design 深度重构战略规划方案（最终版 v9.0）
+﻿# docs/design 深度重构战略规划方案（最终版 v9.0）
 
 > Level-5 专家委员会全票通过的终局重构方案
 
@@ -429,4 +429,4 @@ git branch -D refactor/docs-design-v9
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

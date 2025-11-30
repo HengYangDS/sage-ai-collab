@@ -1,4 +1,4 @@
-# Protocols
+﻿# Protocols
 
 > SAGE protocol specifications and interfaces
 
@@ -52,4 +52,4 @@ graph LR
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

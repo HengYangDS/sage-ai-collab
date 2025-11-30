@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~600
----
-
+﻿
 # MCP Tools Reference
 
 > Detailed reference for SAGE MCP server tools
@@ -224,4 +218,4 @@ Get system information and status.
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

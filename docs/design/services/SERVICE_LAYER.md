@@ -1,4 +1,4 @@
-# Service Layer
+﻿# Service Layer
 
 > Multi-channel service architecture for SAGE
 
@@ -148,4 +148,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

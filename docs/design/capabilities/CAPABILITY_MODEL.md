@@ -1,4 +1,4 @@
-# Capability Model
+﻿# Capability Model
 
 > MECE capability families defining what SAGE can do
 
@@ -252,4 +252,4 @@ class CapabilityMetadata:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

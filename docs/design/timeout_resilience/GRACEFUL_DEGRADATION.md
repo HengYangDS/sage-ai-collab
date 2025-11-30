@@ -1,4 +1,4 @@
-# Graceful Degradation
+﻿# Graceful Degradation
 
 > Strategies for maintaining partial functionality during failures
 
@@ -262,4 +262,4 @@ degradation:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

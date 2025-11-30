@@ -1,4 +1,4 @@
-# Checkers
+﻿# Checkers
 
 > Validation, verification, and compliance capabilities
 
@@ -283,4 +283,4 @@ class ValidationReport:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

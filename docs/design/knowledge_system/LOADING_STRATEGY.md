@@ -1,4 +1,4 @@
-# Loading Strategy
+﻿# Loading Strategy
 
 > Smart loading patterns for efficient context management
 
@@ -242,4 +242,4 @@ loading:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

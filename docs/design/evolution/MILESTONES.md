@@ -1,4 +1,4 @@
-# Milestones
+﻿# Milestones
 
 > Project milestones and deliverables
 
@@ -208,4 +208,4 @@ graph LR
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

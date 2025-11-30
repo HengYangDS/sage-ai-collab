@@ -1,4 +1,4 @@
-# Extending Capabilities
+﻿# Extending Capabilities
 
 > Guide to creating and registering custom capabilities
 
@@ -296,4 +296,4 @@ class TestSentimentAnalyzer:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

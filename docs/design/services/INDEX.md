@@ -1,4 +1,4 @@
-# Services
+﻿# Services
 
 > Service layer design for SAGE interfaces
 
@@ -71,4 +71,4 @@ All services share:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

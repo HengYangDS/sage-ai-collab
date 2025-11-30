@@ -1,4 +1,4 @@
-# Exceptions
+﻿# Exceptions
 
 > Exception hierarchy and error handling for SAGE
 
@@ -294,4 +294,4 @@ async def sage_error_handler(request: Request, exc: SAGEError):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

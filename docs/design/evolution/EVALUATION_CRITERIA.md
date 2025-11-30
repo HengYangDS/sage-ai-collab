@@ -1,4 +1,4 @@
-# Evaluation Criteria
+﻿# Evaluation Criteria
 
 > Quality and success criteria for SAGE
 
@@ -201,4 +201,4 @@ Where:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

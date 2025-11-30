@@ -1,4 +1,4 @@
-# Circuit Breaker
+﻿# Circuit Breaker
 
 > Fail-fast pattern for handling repeated failures
 
@@ -250,4 +250,4 @@ event_bus.publish(Event(
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

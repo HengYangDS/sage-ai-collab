@@ -1,4 +1,4 @@
-# Memory & State
+﻿# Memory & State
 
 > State persistence and session management for SAGE
 
@@ -65,4 +65,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

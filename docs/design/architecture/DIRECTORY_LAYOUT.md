@@ -1,4 +1,4 @@
-# Directory Layout
+﻿# Directory Layout
 
 > Canonical project structure for SAGE Knowledge Base
 
@@ -251,4 +251,4 @@ tests/
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

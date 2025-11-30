@@ -1,4 +1,4 @@
-# Plugin Lifecycle
+﻿# Plugin Lifecycle
 
 > Plugin states and lifecycle management
 
@@ -244,4 +244,4 @@ plugins:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

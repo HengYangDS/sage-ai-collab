@@ -1,4 +1,4 @@
-# Evolve Protocol
+﻿# Evolve Protocol
 
 > Measurement, learning, and continuous optimization
 
@@ -236,4 +236,4 @@ evolve:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

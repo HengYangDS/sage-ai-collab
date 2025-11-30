@@ -1,4 +1,4 @@
-# Plugins
+﻿# Plugins
 
 > Plugin system architecture for SAGE extensibility
 
@@ -68,4 +68,4 @@ graph LR
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

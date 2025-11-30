@@ -1,4 +1,4 @@
-# Analyzers
+﻿# Analyzers
 
 > Analysis, diagnosis, and understanding capabilities
 
@@ -252,4 +252,4 @@ class CustomAnalyzer(Capability[MyInput, MyOutput]):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

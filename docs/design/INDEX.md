@@ -1,4 +1,4 @@
-# Design Documents Index
+﻿# Design Documents Index
 
 > Navigation hub for SAGE Knowledge Base design documentation
 
@@ -89,4 +89,4 @@ docs/design/
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

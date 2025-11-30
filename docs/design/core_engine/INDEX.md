@@ -1,4 +1,4 @@
-# Core Engine
+﻿# Core Engine
 
 > Core components and infrastructure for SAGE
 
@@ -57,4 +57,4 @@ graph TD
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

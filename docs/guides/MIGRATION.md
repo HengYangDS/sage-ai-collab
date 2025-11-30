@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~700
----
-
+﻿
 # Migration Guide
 
 > Version upgrade procedures and compatibility notes
@@ -252,4 +246,4 @@ pip install sage-kb==<previous-version>
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

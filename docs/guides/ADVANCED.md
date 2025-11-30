@@ -1,10 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
+﻿
 # Advanced Usage Guide
 
 > Deep dive into SAGE Knowledge Base advanced features
@@ -304,4 +298,4 @@ SAGE_LOGGING_LEVEL=DEBUG sage serve    # Debug logs
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

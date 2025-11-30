@@ -1,4 +1,4 @@
-# Dependency Rules
+﻿# Dependency Rules
 
 > Strict dependency boundaries for maintainable architecture
 
@@ -255,4 +255,4 @@ python -m scripts.check.check_architecture --module sage.core
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

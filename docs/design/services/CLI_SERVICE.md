@@ -1,4 +1,4 @@
-# CLI Service
+﻿# CLI Service
 
 > Command-line interface service using Typer and Rich
 
@@ -254,4 +254,4 @@ def test_get_with_timeout():
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

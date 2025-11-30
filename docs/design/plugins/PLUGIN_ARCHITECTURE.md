@@ -1,4 +1,4 @@
-# Plugin Architecture
+﻿# Plugin Architecture
 
 > Extensible plugin system design for SAGE
 
@@ -270,4 +270,4 @@ plugins:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -1,4 +1,4 @@
-# Source Protocol
+﻿# Source Protocol
 
 > Knowledge collection, validation, and normalization
 
@@ -192,4 +192,4 @@ source:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

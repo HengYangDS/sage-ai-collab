@@ -1,4 +1,4 @@
-# SAGE Protocol
+﻿# SAGE Protocol
 
 > Source, Analyze, Generate, Evolve — the core operational pattern
 
@@ -154,4 +154,4 @@ Each phase handles errors according to the resilience pattern:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

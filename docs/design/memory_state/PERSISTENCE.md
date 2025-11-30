@@ -1,4 +1,4 @@
-# Persistence
+﻿# Persistence
 
 > State persistence mechanisms for SAGE
 
@@ -274,4 +274,4 @@ persistence:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

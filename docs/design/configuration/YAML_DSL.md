@@ -1,4 +1,4 @@
-# YAML DSL
+﻿# YAML DSL
 
 > Domain-specific language for SAGE configuration
 
@@ -340,4 +340,4 @@ sage:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*
