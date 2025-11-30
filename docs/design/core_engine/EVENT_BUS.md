@@ -156,20 +156,17 @@ event_bus.subscribe("*", audit_handler)
 
 ## 8. Event Flow
 
-```
-Publisher                EventBus                 Subscribers
-    │                        │                         │
-    │  publish(event)        │                         │
-    │───────────────────────►│                         │
-    │                        │                         │
-    │                        │  match topic            │
-    │                        │  ──────────►            │
-    │                        │                         │
-    │                        │  dispatch to handlers   │
-    │                        │────────────────────────►│
-    │                        │────────────────────────►│
-    │                        │────────────────────────►│
-    │                        │                         │
+```mermaid
+sequenceDiagram
+    participant Publisher
+    participant EventBus
+    participant Subscribers
+    
+    Publisher->>EventBus: publish(event)
+    EventBus->>EventBus: match topic
+    EventBus->>Subscribers: dispatch to handler 1
+    EventBus->>Subscribers: dispatch to handler 2
+    EventBus->>Subscribers: dispatch to handler 3
 ```
 
 ---

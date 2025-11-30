@@ -24,14 +24,16 @@ The core engine provides foundational infrastructure including dependency inject
 
 ## 3. Component Overview
 
-```
-┌─────────────────────────────────────────────────┐
-│                Core Engine                       │
-├──────────────┬──────────────┬──────────────────┤
-│ DI Container │  Event Bus   │   Data Models    │
-├──────────────┼──────────────┼──────────────────┤
-│  Exceptions  │  Bootstrap   │     Config       │
-└──────────────┴──────────────┴──────────────────┘
+```mermaid
+graph TD
+    subgraph CoreEngine["Core Engine"]
+        DI[DI Container]
+        EventBus[Event Bus]
+        DataModels[Data Models]
+        Exceptions[Exceptions]
+        Bootstrap[Bootstrap]
+        Config[Config]
+    end
 ```
 
 ---

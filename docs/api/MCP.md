@@ -84,13 +84,9 @@ mcp:
 
 ### 3.3 Timeout Levels
 
-| Level | Timeout | Use Case               |
-|-------|---------|------------------------|
-| T1    | 100ms   | Cache-only responses   |
-| T2    | 500ms   | Single file operations |
-| T3    | 2s      | Standard tool calls    |
-| T4    | 5s      | Full knowledge load    |
-| T5    | 10s     | Complex analysis       |
+MCP tools respect the 5-level timeout hierarchy (T1-T5).
+
+> **See**: `.context/policies/TIMEOUT_HIERARCHY.md` for authoritative timeout values and fallback strategies.
 
 ---
 

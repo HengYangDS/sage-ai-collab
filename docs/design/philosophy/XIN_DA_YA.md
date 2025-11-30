@@ -1,178 +1,113 @@
 # 信达雅 (Xìn Dá Yǎ)
 
-> The three pillars of SAGE design philosophy: Faithfulness, Expressiveness, Elegance
+> SAGE design philosophy: Faithfulness, Expressiveness, Elegance
+>
+> **Authoritative Definition**: `.knowledge/core/PRINCIPLES.md`
 
 ---
 
-## 1. Origin
+## 1. Overview
 
-信达雅 originates from Yan Fu's (严复) translation principles, now adapted as SAGE's core design philosophy:
+信达雅 originates from Yan Fu's (严复) translation principles, now adapted as SAGE's core design philosophy.
 
-| Chinese | Pinyin | English | SAGE Interpretation |
-|---------|--------|---------|---------------------|
+> **See**: `.knowledge/core/PRINCIPLES.md` for the authoritative definition of 信达雅 and 术法道 frameworks.
+
+| Chinese | Pinyin | English | SAGE Application |
+|---------|--------|---------|------------------|
 | 信 | Xìn | Faithfulness | Accurate, truthful representation |
 | 达 | Dá | Expressiveness | Clear, effective communication |
 | 雅 | Yǎ | Elegance | Refined, maintainable design |
 
 ---
 
-## 2. 信 (Faithfulness)
+## 2. Priority Order
 
-### 2.1 Definition
+**信 → 达 → 雅** (Faithfulness before Clarity before Elegance)
 
-**Faithfulness** means the system accurately represents knowledge without distortion or loss.
+- Never sacrifice correctness for beauty
+- Never sacrifice clarity for brevity
+- Elegance emerges from faithful, clear solutions
 
-### 2.2 Principles
+---
 
-| Principle | Description |
-|-----------|-------------|
-| **Accuracy** | Information is correct and verified |
-| **Completeness** | No important details omitted |
-| **Traceability** | Source and provenance are clear |
-| **Consistency** | Same input yields same output |
+## 3. SAGE-Specific Applications
 
-### 2.3 Application
+This section describes how 信达雅 applies specifically to SAGE's design decisions.
 
-```
-Knowledge Source → SAGE Processing → Output
-      ↓                  ↓              ↓
-  Original          Preserved       Faithful
-  meaning           integrity       representation
-```
+### 3.1 Knowledge Representation (信)
 
-### 2.4 Anti-Patterns
+| Principle | Application in SAGE |
+|-----------|---------------------|
+| Accuracy | Knowledge content verified before inclusion |
+| Completeness | All relevant context preserved |
+| Traceability | Source and version tracked |
+| Consistency | Same query yields same result |
+
+### 3.2 User Interface (达)
+
+| Principle | Application in SAGE |
+|-----------|---------------------|
+| Clarity | CLI output easy to understand |
+| Accessibility | Multiple interfaces (CLI, MCP, Python) |
+| Directness | Minimal steps to get knowledge |
+| Actionability | Results directly usable |
+
+### 3.3 Architecture (雅)
+
+| Principle | Application in SAGE |
+|-----------|---------------------|
+| Simplicity | Minimal dependencies |
+| Consistency | Uniform patterns across modules |
+| Maintainability | Clear separation of concerns |
+| Beauty | Clean, readable codebase |
+
+---
+
+## 4. Design Decision Examples
+
+### 4.1 Timeout Hierarchy Design
+
+| Aspect | 信 (Faithful) | 达 (Clear) | 雅 (Elegant) |
+|--------|---------------|------------|--------------|
+| Design | 5 distinct levels | Named levels (T1-T5) | Progressive fallback |
+| Outcome | Predictable behavior | Easy to configure | Graceful degradation |
+
+### 4.2 Knowledge Layer Design
+
+| Aspect | 信 (Faithful) | 达 (Clear) | 雅 (Elegant) |
+|--------|---------------|------------|--------------|
+| Design | Priority hierarchy | Named layers | Single responsibility |
+| Outcome | Correct precedence | Easy navigation | Clean architecture |
+
+---
+
+## 5. Anti-Patterns
+
+### 5.1 Violating 信 (Faithfulness)
 
 - ❌ Summarizing away critical details
 - ❌ Adding information not in source
 - ❌ Changing meaning during transformation
-- ❌ Losing context or attribution
 
----
-
-## 3. 达 (Expressiveness)
-
-### 3.1 Definition
-
-**Expressiveness** means the system communicates clearly and effectively to its audience.
-
-### 3.2 Principles
-
-| Principle | Description |
-|-----------|-------------|
-| **Clarity** | Easy to understand |
-| **Accessibility** | Appropriate for audience |
-| **Directness** | No unnecessary complexity |
-| **Actionability** | Enables user action |
-
-### 3.3 Application
-
-```
-User Need → SAGE Response → User Understanding
-    ↓            ↓               ↓
-  Question    Clear           Actionable
-  or task     answer          outcome
-```
-
-### 3.4 Anti-Patterns
+### 5.2 Violating 达 (Expressiveness)
 
 - ❌ Using jargon without explanation
 - ❌ Providing irrelevant information
 - ❌ Burying important points
-- ❌ Being verbose without value
 
----
-
-## 4. 雅 (Elegance)
-
-### 4.1 Definition
-
-**Elegance** means the system is refined, maintainable, and aesthetically pleasing in design.
-
-### 4.2 Principles
-
-| Principle | Description |
-|-----------|-------------|
-| **Simplicity** | No unnecessary complexity |
-| **Consistency** | Uniform patterns throughout |
-| **Maintainability** | Easy to understand and modify |
-| **Beauty** | Pleasing structure and form |
-
-### 4.3 Application
-
-```
-Requirements → SAGE Design → Implementation
-      ↓            ↓              ↓
-   Complex      Elegant        Maintainable
-   needs        solution       codebase
-```
-
-### 4.4 Anti-Patterns
+### 5.3 Violating 雅 (Elegance)
 
 - ❌ Over-engineering solutions
 - ❌ Inconsistent patterns
 - ❌ Clever but unreadable code
-- ❌ Ignoring established conventions
-
----
-
-## 5. Balance and Trade-offs
-
-### 5.1 Priority Order
-
-When principles conflict, prioritize:
-
-```
-信 (Faithfulness) > 达 (Expressiveness) > 雅 (Elegance)
-```
-
-**Rationale:**
-1. Truth must never be sacrificed for clarity
-2. Clarity must never be sacrificed for beauty
-3. Beauty emerges from truth and clarity
-
-### 5.2 Trade-off Examples
-
-| Scenario | Resolution |
-|----------|------------|
-| Accurate but unclear | Add explanation, keep accuracy |
-| Clear but inaccurate | Fix accuracy, adjust clarity |
-| Elegant but incomplete | Add completeness, simplify later |
-
----
-
-## 6. Practical Guidelines
-
-### 6.1 For Documentation
-
-| Principle | Guideline |
-|-----------|-----------|
-| 信 | Cite sources, verify facts |
-| 达 | Use clear language, provide examples |
-| 雅 | Follow templates, maintain consistency |
-
-### 6.2 For Code
-
-| Principle | Guideline |
-|-----------|-----------|
-| 信 | Correct behavior, tested thoroughly |
-| 达 | Clear naming, good documentation |
-| 雅 | Clean architecture, consistent style |
-
-### 6.3 For APIs
-
-| Principle | Guideline |
-|-----------|-----------|
-| 信 | Accurate responses, proper errors |
-| 达 | Intuitive interface, good docs |
-| 雅 | Consistent design, RESTful patterns |
 
 ---
 
 ## Related
 
-- `DESIGN_AXIOMS.md` — Core design axioms
-- `../protocols/SAGE_PROTOCOL.md` — SAGE protocol
-- `.knowledge/frameworks/design/AXIOMS.md` — Design framework
+- `.knowledge/core/PRINCIPLES.md` — **Authoritative 信达雅 definition**
+- `DESIGN_AXIOMS.md` — Design axioms derived from 信达雅
+- `../INDEX.md` — Design documentation index
 
 ---
 

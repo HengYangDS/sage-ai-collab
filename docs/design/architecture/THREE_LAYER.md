@@ -18,45 +18,51 @@ SAGE uses a three-layer architecture that separates concerns and enables modular
 
 ## 2. Architecture Diagram
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     External World                          │
-│           (Users, AI Assistants, Applications)              │
-└─────────────────────────────┬───────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                    SERVICES LAYER                           │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐        │
-│  │     CLI     │  │     MCP     │  │     API     │        │
-│  │   Service   │  │   Service   │  │   Service   │        │
-│  └──────┬──────┘  └──────┬──────┘  └──────┬──────┘        │
-│         └─────────────────┼─────────────────┘              │
-└───────────────────────────┼─────────────────────────────────┘
-                            │
-                            ▼
-┌─────────────────────────────────────────────────────────────┐
-│                  CAPABILITIES LAYER                         │
-│  ┌───────────┐ ┌───────────┐ ┌───────────┐ ┌───────────┐  │
-│  │ Analyzers │ │ Checkers  │ │ Monitors  │ │ Converters│  │
-│  └─────┬─────┘ └─────┬─────┘ └─────┬─────┘ └─────┬─────┘  │
-│        │             │             │             │         │
-│  ┌─────┴─────────────┴─────────────┴─────────────┴─────┐  │
-│  │                    Generators                        │  │
-│  └──────────────────────────┬───────────────────────────┘  │
-└─────────────────────────────┼───────────────────────────────┘
-                              │
-                              ▼
-┌─────────────────────────────────────────────────────────────┐
-│                      CORE LAYER                             │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐      │
-│  │    DI    │ │  Event   │ │   Data   │ │  Plugin  │      │
-│  │Container │ │   Bus    │ │  Models  │ │  System  │      │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────┘      │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐                   │
-│  │  Config  │ │Bootstrap │ │Exceptions│                   │
-│  └──────────┘ └──────────┘ └──────────┘                   │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph External["External World"]
+        Users["Users, AI Assistants, Applications"]
+    end
+    
+    subgraph Services["SERVICES LAYER"]
+        CLI[CLI Service]
+        MCP[MCP Service]
+        API[API Service]
+    end
+    
+    subgraph Capabilities["CAPABILITIES LAYER"]
+        Analyzers[Analyzers]
+        Checkers[Checkers]
+        Monitors[Monitors]
+        Converters[Converters]
+        Generators[Generators]
+    end
+    
+    subgraph Core["CORE LAYER"]
+        DI[DI Container]
+        EventBus[Event Bus]
+        DataModels[Data Models]
+        PluginSystem[Plugin System]
+        Config[Config]
+        Bootstrap[Bootstrap]
+        Exceptions[Exceptions]
+    end
+    
+    Users --> CLI
+    Users --> MCP
+    Users --> API
+    
+    CLI --> Analyzers
+    CLI --> Checkers
+    MCP --> Monitors
+    MCP --> Converters
+    API --> Generators
+    
+    Analyzers --> Core
+    Checkers --> Core
+    Monitors --> Core
+    Converters --> Core
+    Generators --> Core
 ```
 
 ---
@@ -166,12 +172,11 @@ src/sage/capabilities/
 
 ### 6.1 Allowed Dependencies
 
-```
-Services → Capabilities → Core
-    │           │          │
-    ▼           ▼          ▼
-  Uses       Uses       Uses
-Capabilities   Core      Nothing
+```mermaid
+graph LR
+    Services -->|Uses| Capabilities
+    Capabilities -->|Uses| Core
+    Core -->|Uses| Nothing[Nothing]
 ```
 
 ### 6.2 Forbidden Dependencies

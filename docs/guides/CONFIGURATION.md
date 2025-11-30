@@ -104,18 +104,21 @@ knowledge:
 
 ### 3.1 Timeout Configuration
 
+SAGE uses a 5-level timeout hierarchy (T1-T5). See `.context/policies/TIMEOUT_HIERARCHY.md` for authoritative values.
+
 ```yaml
 # config/core/timeout.yaml
+# See .context/policies/TIMEOUT_HIERARCHY.md for T1-T5 definitions
 timeout:
   global_max: 10s
   default: 5s
   
   operations:
-    cache_lookup: 100ms    # T1
-    file_read: 500ms       # T2
-    layer_load: 2s         # T3
-    full_load: 5s          # T4
-    analysis: 10s          # T5
+    cache_lookup: 100ms    # T1 - Cache
+    file_read: 500ms       # T2 - File
+    layer_load: 2s         # T3 - Layer
+    full_load: 5s          # T4 - Full
+    analysis: 10s          # T5 - Complex
 ```
 
 ### 3.2 Logging Configuration

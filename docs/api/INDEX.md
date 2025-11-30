@@ -90,15 +90,9 @@ coding, debugging, reviewing, planning
 
 ### 4.2 Timeout Behavior
 
-All interfaces respect the 5-level timeout hierarchy:
+All interfaces respect the 5-level timeout hierarchy (T1-T5).
 
-| Level | Timeout | Scope            |
-|-------|---------|------------------|
-| T1    | 100ms   | Cache lookup     |
-| T2    | 500ms   | Single file      |
-| T3    | 2s      | Layer load       |
-| T4    | 5s      | Full KB          |
-| T5    | 10s     | Complex analysis |
+> **See**: `.context/policies/TIMEOUT_HIERARCHY.md` for authoritative timeout values and fallback strategies.
 
 ---
 

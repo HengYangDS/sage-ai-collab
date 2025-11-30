@@ -23,34 +23,28 @@ The plugin system provides a standardized way to extend SAGE functionality witho
 
 ## 3. Plugin Architecture
 
-```
-┌─────────────────────────────────────────────────┐
-│              Plugin Registry                     │
-├─────────────────────────────────────────────────┤
-│  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
-│  │ Plugin A │  │ Plugin B │  │ Plugin C │      │
-│  └────┬─────┘  └────┬─────┘  └────┬─────┘      │
-│       │             │             │             │
-│       ▼             ▼             ▼             │
-│  ┌─────────────────────────────────────────┐   │
-│  │         Extension Points                 │   │
-│  │  (hooks, events, capabilities)          │   │
-│  └─────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    subgraph Registry["Plugin Registry"]
+        PluginA[Plugin A]
+        PluginB[Plugin B]
+        PluginC[Plugin C]
+        ExtPoints["Extension Points<br/>(hooks, events, capabilities)"]
+        
+        PluginA --> ExtPoints
+        PluginB --> ExtPoints
+        PluginC --> ExtPoints
+    end
 ```
 
 ---
 
 ## 4. Plugin Lifecycle
 
-```
-┌─────────┐    ┌──────────┐    ┌─────────┐    ┌──────────┐
-│ Discover│ ─► │ Register │ ─► │ Enable  │ ─► │ Execute  │
-└─────────┘    └──────────┘    └─────────┘    └──────────┘
-                                                    │
-┌─────────┐    ┌──────────┐                        │
-│ Cleanup │ ◄─ │ Disable  │ ◄──────────────────────┘
-└─────────┘    └──────────┘
+```mermaid
+graph LR
+    Discover --> Register --> Enable --> Execute
+    Execute --> Disable --> Cleanup
 ```
 
 ---

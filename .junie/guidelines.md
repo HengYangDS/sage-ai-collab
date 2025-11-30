@@ -1,11 +1,11 @@
 ---
-version: "1.1"
+version: "1.3"
 last_updated: "2025-11-30"
 status: published
-tokens: ~400
+tokens: ~320
 ---
 
-# Project Guidelines
+# Junie Guidelines
 
 > Primary entry point for JetBrains Junie AI collaboration
 
@@ -26,28 +26,20 @@ tokens: ~400
 
 ## 1. About This File
 
-This file contains **Junie-specific AI collaboration rules**.
-For detailed knowledge, refer to the appropriate knowledge sources:
+This file contains **generic Junie AI collaboration rules**.
+For project-specific rules, refer to `project/GUIDELINES.md`.
 
-| Topic | Location |
-|:------|:---------|
+### Knowledge Sources (SSOT)
+
+> All knowledge is maintained in `.knowledge/` as the Single Source of Truth.
+> This section lists key references — see [7. References](#7-references) for the complete list.
+
+| Topic | Authoritative Source |
+|:------|:---------------------|
 | Autonomy Levels (L1-L6) | `.knowledge/frameworks/autonomy/LEVELS.md` |
-| Timeout Hierarchy (T1-T5) | `.context/policies/TIMEOUT_HIERARCHY.md` |
-| Documentation Standards | `.knowledge/guidelines/DOCUMENTATION.md` |
-| AI Collaboration Patterns | `.knowledge/guidelines/AI_COLLABORATION.md` |
-| Project Calibration Data | `.context/intelligence/calibration/CALIBRATION.md` |
-
-**Project-specific configuration**:
-
-- **Project Config**: `project/config.yaml` — Project identity, tech stack, commands
-- **Project Quick Reference**: `project/QUICKREF.md` — Project-specific documentation
-
-**Generic configuration**:
-
-- **Settings**: `generic/config.yaml` — Junie settings
-- **Quick Reference**: `generic/QUICKREF.md` — Quick lookup card
-- **MCP Config**: `mcp/mcp.json` — MCP server configuration
-- **Documentation**: `docs/` — Junie documentation
+| Timeout Patterns | `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` |
+| Code Style | `.knowledge/guidelines/CODE_STYLE.md` |
+| AI Collaboration | `.knowledge/guidelines/AI_COLLABORATION.md` |
 
 ---
 
@@ -57,20 +49,19 @@ When starting a new session, load files in this priority order:
 
 ### Priority 1: Essential (Always Load)
 
-| File | Purpose | When |
-|:-----|:--------|:-----|
-| `guidelines.md` | Core Junie rules | Every session |
-| `project/config.yaml` | Project identity, tech stack | Every session |
+| File | Purpose |
+|:-----|:--------|
+| `guidelines.md` | Core Junie rules (this file) |
+| `project/config.yaml` | Project identity |
+| `project/GUIDELINES.md` | Project-specific AI rules and patterns |
 
 ### Priority 2: Context (Load as Needed)
 
 | File | Purpose | When |
 |:-----|:--------|:-----|
-| `project/QUICKREF.md` | Project-specific patterns | Complex tasks |
 | `generic/QUICKREF.md` | Quick lookup card | Reference needed |
-| `mcp/mcp.json` | MCP server configuration | MCP operations |
-| `.knowledge/frameworks/autonomy/LEVELS.md` | Autonomy level details | Autonomy decisions |
-| `.context/policies/TIMEOUT_HIERARCHY.md` | Timeout configuration | Timeout-sensitive ops |
+| `mcp/mcp.json` | MCP configuration | MCP operations |
+| `.knowledge/frameworks/autonomy/LEVELS.md` | Autonomy details | Autonomy decisions |
 
 ### Priority 3: Reference (On Demand)
 
@@ -78,7 +69,6 @@ When starting a new session, load files in this priority order:
 |:-----|:--------|:-----|
 | `docs/README.md` | Documentation index | Finding docs |
 | `docs/guides/*` | How-to guides | Specific guidance |
-| `docs/mcp/*` | MCP documentation | MCP troubleshooting |
 | `.knowledge/guidelines/*` | Detailed standards | Deep reference |
 
 ### Loading Strategy
@@ -88,7 +78,7 @@ Session Start
     │
     ├─► Load guidelines.md (this file)
     │
-    ├─► Load project/config.yaml
+    ├─► Load project/config.yaml + project/GUIDELINES.md
     │
     ├─► Check task complexity
     │       │
@@ -103,76 +93,46 @@ Session Start
 
 ## 3. AI Collaboration Rules
 
-### Autonomy Levels (Quick Reference)
+> **Project-specific rules**: See `project/GUIDELINES.md`
+
+### Autonomy Levels
 
 > **Full Definition**: `.knowledge/frameworks/autonomy/LEVELS.md`
 
-| Level | Name | Autonomy | Typical Use |
-|:------|:-----|:---------|:------------|
-| L1-L2 | Minimal/Low | 0-40% | Breaking changes, critical systems |
-| L3-L4 | Medium | 40-80% | Bug fixes, routine development ⭐ |
-| L5-L6 | High/Full | 80-100% | Formatting, docs, trusted patterns |
+| Level | Autonomy | Typical Use |
+|:------|:---------|:------------|
+| L1-L2 | 0-40% | Breaking changes, critical systems |
+| L3-L4 | 40-80% | Bug fixes, routine development ⭐ |
+| L5-L6 | 80-100% | Formatting, docs, trusted patterns |
 
 **Default**: L4 (Medium-High) for mature collaboration.
 
-### Key Behaviors
+### Generic Behaviors
 
-1. **Follow existing patterns** in the codebase
-2. **Run tests** before committing changes
-3. **Update relevant documentation** when modifying features
-4. **Output files to designated temp directory** (typically `.outputs/`)
-5. **Create session records** for significant work sessions
-6. **Use English** for code and documentation (unless project specifies otherwise)
-7. **Respect timeout limits** — See `.context/policies/TIMEOUT_HIERARCHY.md`
-
-### Session History Management
-
-At session end, create records in `.history/`:
-
-| Directory | Purpose |
-|:----------|:--------|
-| `conversations/` | Key decisions and outcomes |
-| `handoffs/` | Task continuation context |
-| `current/` | Active work state |
-
-**Naming**: `YYYYMMDD-TOPIC.md`, `YYYYMMDD-TASK-HANDOFF.md`
-
-### Session Automation (MCP Tools)
-
-| Tool | When | Purpose |
-|:-----|:-----|:--------|
-| `session_start` | Beginning of significant work | Creates session state |
-| `session_end` | Work completed/ending | Creates record |
-| `session_status` | Start of new session | Check state |
-
-### Expert Committee Pattern
-
-For complex decisions, simulate **Level 5 Expert Committee** review:
-
-- **Architecture** — System design, scalability
-- **Engineering Practice** — Code quality, testing
-- **Domain Knowledge** — Business logic alignment
-- **AI Collaboration** — Human-AI interaction
+| Behavior | Description |
+|:---------|:------------|
+| Follow patterns | Maintain consistency with existing codebase |
+| Run tests | Verify changes before committing |
+| Update docs | Keep documentation in sync with code |
+| Use English | Default language for code and docs |
 
 ---
 
 ## 4. Coding Standards
 
-> **Full Standards**: `.knowledge/guidelines/CODE_STYLE.md`, `.knowledge/guidelines/PYTHON.md`
+> **Project-specific standards**: See `project/GUIDELINES.md`
+> **Full Standards**: `.knowledge/guidelines/CODE_STYLE.md`
 
 ### General Principles
 
-- **Formatter**: Use project's configured formatter
-- **Type Hints**: Required for statically-typed languages
-- **Docstrings**: Follow project's documentation style
-- **Naming**: Follow project's naming conventions
-
-### Architecture Patterns
-
-- Follow project's established patterns
-- Maintain layer separation
-- Use dependency injection where applicable
-- Implement proper error handling and logging
+| Aspect | Guideline |
+|:-------|:----------|
+| Formatter | Use project's configured formatter |
+| Type Hints | Required for statically-typed languages |
+| Docstrings | Follow project's documentation style |
+| Naming | Follow project's naming conventions |
+| Architecture | Maintain layer separation |
+| Error Handling | Implement proper error handling and logging |
 
 ---
 
@@ -184,7 +144,7 @@ Optimize token usage for better AI performance.
 
 | Priority | Files | Budget | Strategy |
 |:---------|:------|:-------|:---------|
-| P1 | `guidelines.md`, `project/config` | ~2000 | Always load |
+| P1 | `guidelines.md`, `project/*` | ~2000 | Always load |
 | P2 | `QUICKREF.md` files | ~500 each | Load for complex |
 | P3 | `docs/*`, `.knowledge/*` | ~1000 | On demand |
 
@@ -251,20 +211,19 @@ python -c "import json; json.load(open('.junie/mcp/mcp.json'))"
 |:------|:---------------------|
 | Autonomy Levels | `.knowledge/frameworks/autonomy/LEVELS.md` |
 | Timeout Patterns | `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` |
-| Timeout Config (T1-T5) | `.context/policies/TIMEOUT_HIERARCHY.md` |
 | Documentation Standards | `.knowledge/guidelines/DOCUMENTATION.md` |
 | Code Style | `.knowledge/guidelines/CODE_STYLE.md` |
 | AI Collaboration | `.knowledge/guidelines/AI_COLLABORATION.md` |
-| Project Calibration | `.context/intelligence/calibration/CALIBRATION.md` |
 
 ### Configuration Files
 
 | File | Purpose | Priority |
 |:-----|:--------|:---------|
 | `project/config.yaml` | Project identity | P1 |
+| `project/GUIDELINES.md` | Project-specific rules | P1 |
 | `mcp/mcp.json` | MCP configuration | P1 |
 | `generic/config.yaml` | Generic settings | P2 |
-| `project/QUICKREF.md` | Project patterns | P2 |
+| `generic/QUICKREF.md` | Quick lookup card | P2 |
 
 ### Key Documentation
 
@@ -273,7 +232,6 @@ python -c "import json; json.load(open('.junie/mcp/mcp.json'))"
 | `docs/README.md` | Documentation index |
 | `docs/guides/QUICK-START.md` | First-time setup |
 | `docs/mcp/CONFIGURATION.md` | MCP setup |
-| `docs/mcp/TROUBLESHOOTING.md` | Problem solving |
 
 ### Version Compatibility
 
@@ -293,24 +251,17 @@ This `.junie/` configuration follows the **Thin Layer** principle:
 
 | Directory | Type | Purpose |
 |:----------|:-----|:--------|
+| `project/` | 📌 Customize | Project-specific files |
 | `generic/` | 🔄 Generic | Settings, QUICKREF |
 | `mcp/` | 🔄 Generic | MCP server config |
 | `schema/` | 🔄 Generic | JSON Schema files |
 | `docs/` | 🔄 Generic | Junie documentation |
-| `project/` | 📌 Customize | Project-specific files |
 
-### Reusability
+### Customization
 
-- 🔄 **Generic**: Copy to new projects without modification
-- 📌 **Project**: Must customize for each project
-
----
-
-## Related
-
-- `.knowledge/INDEX.md` — Generic knowledge navigation
-- `.context/INDEX.md` — Project-specific context
-- `docs/README.md` — Junie documentation index
+- **Customize**: Files in `project/` — edit freely
+- **Override**: Copy generic files to `project/` to override
+- **Extend**: Add new files in `project/` as needed
 
 ---
 

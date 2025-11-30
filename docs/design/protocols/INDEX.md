@@ -24,15 +24,11 @@ SAGE follows the **Source → Analyze → Generate → Evolve** protocol pattern
 
 ## 3. Protocol Pattern
 
-```
-┌─────────┐    ┌─────────┐    ┌──────────┐    ┌────────┐
-│ SOURCE  │ ─► │ ANALYZE │ ─► │ GENERATE │ ─► │ EVOLVE │
-│   (S)   │    │   (A)   │    │    (G)   │    │   (E)  │
-└─────────┘    └─────────┘    └──────────┘    └────────┘
-     │              │               │              │
-     ▼              ▼               ▼              ▼
-  Collect       Process         Output        Improve
-  knowledge     & analyze      content       metrics
+```mermaid
+graph LR
+    S["SOURCE (S)<br/>Collect knowledge"] --> A["ANALYZE (A)<br/>Process & analyze"]
+    A --> G["GENERATE (G)<br/>Output content"]
+    G --> E["EVOLVE (E)<br/>Improve metrics"]
 ```
 
 ---

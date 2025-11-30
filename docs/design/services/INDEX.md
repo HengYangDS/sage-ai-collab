@@ -14,32 +14,29 @@ The services layer provides multiple interfaces (CLI, MCP, API) for interacting 
 
 | Document | Description | Status |
 |----------|-------------|--------|
-| `SERVICE_LAYER.md` | Service layer architecture | Planned |
-| `CLI_SERVICE.md` | Command-line interface | Planned |
-| `MCP_SERVICE.md` | Model Context Protocol service | Planned |
-| `API_SERVICE.md` | REST/HTTP API service | Planned |
+| `SERVICE_LAYER.md` | Service layer architecture | Active |
+| `CLI_SERVICE.md` | Command-line interface | Active |
+| `MCP_SERVICE.md` | Model Context Protocol service | Active |
+| `API_SERVICE.md` | REST/HTTP API service | Active |
 
 ---
 
 ## 3. Service Architecture
 
-```
-                    ┌─────────────────┐
-                    │     Users       │
-                    └────────┬────────┘
-                             │
-         ┌───────────────────┼───────────────────┐
-         │                   │                   │
-         ▼                   ▼                   ▼
-    ┌─────────┐        ┌─────────┐        ┌─────────┐
-    │   CLI   │        │   MCP   │        │   API   │
-    └────┬────┘        └────┬────┘        └────┬────┘
-         │                   │                   │
-         └───────────────────┼───────────────────┘
-                             │
-                    ┌────────▼────────┐
-                    │  Core Engine    │
-                    └─────────────────┘
+```mermaid
+graph TD
+    Users[Users]
+    CLI[CLI]
+    MCP[MCP]
+    API[API]
+    Core[Core Engine]
+    
+    Users --> CLI
+    Users --> MCP
+    Users --> API
+    CLI --> Core
+    MCP --> Core
+    API --> Core
 ```
 
 ---

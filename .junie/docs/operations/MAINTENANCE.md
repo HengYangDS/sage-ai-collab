@@ -154,7 +154,7 @@ For changes to:
 
 ### Documentation
 
-- [ ] Review and update project/quickref.md
+- [ ] Review and update project/GUIDELINES.md
 - [ ] Check cross-references are valid
 - [ ] Update version numbers if needed
 ```

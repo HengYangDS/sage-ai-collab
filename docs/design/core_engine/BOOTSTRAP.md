@@ -24,33 +24,29 @@ The bootstrap process initializes SAGE, loading configuration, registering compo
 
 ## 3. Bootstrap Flow
 
-```
-Application Start
-       │
-       ▼
-┌──────────────┐
-│ Load Config  │ ─── Read sage.yaml, env vars
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Init Core    │ ─── DI container, event bus
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Load Plugins │ ─── Discover, validate, register
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ Start Services│ ─── CLI, MCP, API
-└──────┬───────┘
-       │
-       ▼
-┌──────────────┐
-│ System Ready │ ─── Publish "system.initialized"
-└──────────────┘
+```mermaid
+flowchart LR
+    subgraph PHASE1 [Phase 1: Config]
+        B1["sage.yaml + env vars"]
+    end
+    
+    subgraph PHASE2 [Phase 2: Core]
+        C1["DI Container + EventBus"]
+    end
+    
+    subgraph PHASE3 [Phase 3: Plugins]
+        D1["Discover - Validate - Register"]
+    end
+    
+    subgraph PHASE4 [Phase 4: Services]
+        E1["CLI | MCP | API"]
+    end
+
+    START(["Application Start"]) --> PHASE1
+    PHASE1 --> PHASE2
+    PHASE2 --> PHASE3
+    PHASE3 --> PHASE4
+    PHASE4 --> READY(["System Ready"])
 ```
 
 ---

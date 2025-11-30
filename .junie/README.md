@@ -88,7 +88,7 @@ tokens: ~500
 
 3. **Customize project-specific files**:
     - `project/config.yaml` — Define your project variables
-    - `project/QUICKREF.md` — Add project-specific quick reference
+    - `project/GUIDELINES.md` — Add project-specific guidelines
 
 ### File Relationships
 

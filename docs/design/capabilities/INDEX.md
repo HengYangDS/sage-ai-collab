@@ -14,13 +14,13 @@ Capabilities are organized into 5 MECE families that define what SAGE can do.
 
 | Document | Description | Status |
 |----------|-------------|--------|
-| `CAPABILITY_MODEL.md` | Capability system overview | Planned |
-| `ANALYZERS.md` | Analysis capabilities | Planned |
-| `CHECKERS.md` | Validation capabilities | Planned |
-| `MONITORS.md` | Monitoring capabilities | Planned |
-| `CONVERTERS.md` | Conversion capabilities | Planned |
-| `GENERATORS.md` | Generation capabilities | Planned |
-| `EXTENDING.md` | How to extend capabilities | Planned |
+| `CAPABILITY_MODEL.md` | Capability system overview | Active |
+| `ANALYZERS.md` | Analysis capabilities | Active |
+| `CHECKERS.md` | Validation capabilities | Active |
+| `MONITORS.md` | Monitoring capabilities | Active |
+| `CONVERTERS.md` | Conversion capabilities | Active |
+| `GENERATORS.md` | Generation capabilities | Active |
+| `EXTENDING.md` | How to extend capabilities | Active |
 
 ---
 
