@@ -1,4 +1,4 @@
-﻿# API Service
+# API Service
 
 > HTTP REST API service using FastAPI
 

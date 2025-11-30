@@ -1,4 +1,4 @@
-﻿
+
 # Version Migration Guide
 
 > Version migration strategies and breaking change handling (~10 min read)

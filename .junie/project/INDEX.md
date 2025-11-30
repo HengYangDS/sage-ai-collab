@@ -1,4 +1,4 @@
-﻿# Project
+# Project
 
 > Index of project documents
 

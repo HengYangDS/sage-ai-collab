@@ -1,4 +1,4 @@
-﻿# Extension Points
+# Extension Points
 
 > Where and how plugins can extend SAGE functionality
 

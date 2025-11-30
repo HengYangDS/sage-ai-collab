@@ -1,4 +1,4 @@
-﻿# Loading Strategy
+# Loading Strategy
 
 > Smart loading patterns for efficient context management
 

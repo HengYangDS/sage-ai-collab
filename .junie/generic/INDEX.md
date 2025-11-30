@@ -1,4 +1,4 @@
-﻿# Generic
+# Generic
 
 > Index of generic documents
 

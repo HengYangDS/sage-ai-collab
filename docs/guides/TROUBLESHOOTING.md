@@ -1,4 +1,4 @@
-﻿
+
 # Troubleshooting Guide
 
 > Common issues and solutions for SAGE Knowledge Base

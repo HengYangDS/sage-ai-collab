@@ -1,4 +1,4 @@
-﻿
+
 # MCP API Quick Reference
 
 > Essential MCP tools and resources for SAGE integration

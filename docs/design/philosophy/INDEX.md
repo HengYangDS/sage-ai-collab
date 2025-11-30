@@ -1,4 +1,4 @@
-﻿# Philosophy
+# Philosophy
 
 > Design philosophy and foundational principles for SAGE
 

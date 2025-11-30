@@ -1,4 +1,4 @@
-﻿# ADR-0001: Three-Layer Architecture
+# ADR-0001: Three-Layer Architecture
 
 > Architecture Decision Record for SAGE Knowledge Base
 

@@ -1,4 +1,4 @@
-﻿# Checkers
+# Checkers
 
 > Validation, verification, and compliance capabilities
 

@@ -1,4 +1,4 @@
-﻿# Conventions
+# Conventions
 
 > Index of conventions documents
 

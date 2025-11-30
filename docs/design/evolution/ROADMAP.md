@@ -1,4 +1,4 @@
-﻿# Roadmap
+# Roadmap
 
 > SAGE development roadmap and feature planning
 

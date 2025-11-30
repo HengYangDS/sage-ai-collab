@@ -1,4 +1,4 @@
-﻿
+
 # Python API Advanced Reference
 
 > Search, events, enums, exceptions, and usage examples for SAGE Python API

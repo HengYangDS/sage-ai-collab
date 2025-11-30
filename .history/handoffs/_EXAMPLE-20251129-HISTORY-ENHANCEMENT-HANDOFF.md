@@ -1,4 +1,4 @@
-﻿# Task Handoff: History Directory Enhancement
+# Task Handoff: History Directory Enhancement
 
 > **Handoff ID**: 2025-11-29-history-enhancement-handoff
 > **From**: Current session (Junie)

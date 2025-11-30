@@ -1,4 +1,4 @@
-﻿# Content Taxonomy
+# Content Taxonomy
 
 > Classification system for knowledge content
 

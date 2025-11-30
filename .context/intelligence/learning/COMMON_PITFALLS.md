@@ -1,4 +1,4 @@
-﻿# Common Pitfalls - SAGE Project Reference
+# Common Pitfalls - SAGE Project Reference
 
 > Project-specific pitfall notes for SAGE Knowledge Base
 

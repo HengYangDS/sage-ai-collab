@@ -1,4 +1,4 @@
-﻿# AI Collaboration Patterns - SAGE Project Reference
+# AI Collaboration Patterns - SAGE Project Reference
 
 > Project-specific calibration and patterns for SAGE Knowledge Base
 

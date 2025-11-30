@@ -1,4 +1,4 @@
-﻿# SAGE Loading Configurations
+# SAGE Loading Configurations
 
 > Knowledge Base loading strategies and layer configuration
 

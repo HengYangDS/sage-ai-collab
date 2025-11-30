@@ -1,4 +1,4 @@
-﻿# Source Protocol
+# Source Protocol
 
 > Knowledge collection, validation, and normalization
 

@@ -1,4 +1,4 @@
-﻿# Overview
+# Overview
 
 > Index of overview documents
 

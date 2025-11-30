@@ -1,4 +1,4 @@
-﻿# Optimization
+# Optimization
 
 > Index of optimization documents
 

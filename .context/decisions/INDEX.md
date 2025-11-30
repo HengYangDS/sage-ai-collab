@@ -1,4 +1,4 @@
-﻿# Decisions
+# Decisions
 
 > Index of decisions documents
 

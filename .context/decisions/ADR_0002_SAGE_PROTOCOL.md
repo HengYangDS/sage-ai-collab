@@ -1,4 +1,4 @@
-﻿# ADR-0002: SAGE Protocol Design
+# ADR-0002: SAGE Protocol Design
 
 > Architecture Decision Record for SAGE Knowledge Base
 

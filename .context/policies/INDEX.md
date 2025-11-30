@@ -1,4 +1,4 @@
-﻿# Policies
+# Policies
 
 > Index of policies documents
 

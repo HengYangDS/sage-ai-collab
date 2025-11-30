@@ -1,4 +1,4 @@
-﻿# Automation
+# Automation
 
 > Index of automation documents
 

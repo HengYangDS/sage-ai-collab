@@ -1,4 +1,4 @@
-﻿# Bootstrap
+# Bootstrap
 
 > Application startup and initialization process
 

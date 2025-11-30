@@ -1,4 +1,4 @@
-﻿# Exceptions
+# Exceptions
 
 > Exception hierarchy and error handling for SAGE
 

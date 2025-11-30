@@ -1,4 +1,4 @@
-﻿
+
 # Glossary
 
 > Unified terminology definitions for Junie configuration (~5 min reference)

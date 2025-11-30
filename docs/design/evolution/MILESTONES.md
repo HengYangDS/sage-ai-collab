@@ -1,4 +1,4 @@
-﻿# Milestones
+# Milestones
 
 > Project milestones and deliverables
 

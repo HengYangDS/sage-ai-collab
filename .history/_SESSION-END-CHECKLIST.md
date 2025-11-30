@@ -1,4 +1,4 @@
-﻿# Session End Checklist - SAGE Project
+# Session End Checklist - SAGE Project
 
 > Quick reference for SAGE session management
 

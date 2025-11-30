@@ -1,4 +1,4 @@
-﻿# Configuration
+# Configuration
 
 > Configuration system design for SAGE
 

@@ -1,4 +1,4 @@
-﻿
+
 # Plugin API Reference
 
 ## Core Classes

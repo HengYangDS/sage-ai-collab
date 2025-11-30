@@ -1,4 +1,4 @@
-﻿# YAML DSL
+# YAML DSL
 
 > Domain-specific language for SAGE configuration
 

@@ -1,4 +1,4 @@
-﻿# Event Bus
+# Event Bus
 
 > Decoupled communication through publish-subscribe pattern
 

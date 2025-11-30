@@ -1,4 +1,4 @@
-﻿# Calibration
+# Calibration
 
 > Index of calibration documents
 

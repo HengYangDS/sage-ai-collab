@@ -1,4 +1,4 @@
-﻿
+
 # Quick Reference Card
 
 > Instant lookup for AI collaboration essentials

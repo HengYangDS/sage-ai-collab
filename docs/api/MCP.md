@@ -1,4 +1,4 @@
-﻿
+
 # MCP Protocol Reference
 
 > SAGE Model Context Protocol (MCP) Server Documentation

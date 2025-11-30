@@ -1,4 +1,4 @@
-﻿# Architecture
+# Architecture
 
 > System architecture and structural design for SAGE
 

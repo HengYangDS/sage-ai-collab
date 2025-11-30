@@ -1,4 +1,4 @@
-﻿# Session State: History Directory Completeness Enhancement
+# Session State: History Directory Completeness Enhancement
 
 > **Session ID**: session-20251129-2214
 > **Started**: 2025-11-29 22:14

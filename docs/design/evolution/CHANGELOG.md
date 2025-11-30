@@ -1,4 +1,4 @@
-﻿# Changelog
+# Changelog
 
 > All notable changes to SAGE Knowledge Base
 

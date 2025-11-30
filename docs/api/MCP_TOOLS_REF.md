@@ -1,4 +1,4 @@
-﻿
+
 # MCP Tools Reference
 
 > Detailed reference for SAGE MCP server tools

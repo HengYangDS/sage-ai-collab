@@ -1,4 +1,4 @@
-﻿
+
 # Future Protocol Vision
 
 > Prepare architecture for future multi-agent collaboration (~30 min read)

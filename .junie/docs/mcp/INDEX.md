@@ -1,4 +1,4 @@
-﻿# Mcp
+# Mcp
 
 > Index of mcp documents
 

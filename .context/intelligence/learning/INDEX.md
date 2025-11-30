@@ -1,4 +1,4 @@
-﻿# Learning
+# Learning
 
 > Index of learning documents
 

@@ -1,4 +1,4 @@
-﻿
+
 # Archive Navigation
 
 > Historical and deprecated content for SAGE Knowledge Base

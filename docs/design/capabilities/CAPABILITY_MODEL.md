@@ -1,4 +1,4 @@
-﻿# Capability Model
+# Capability Model
 
 > MECE capability families defining what SAGE can do
 

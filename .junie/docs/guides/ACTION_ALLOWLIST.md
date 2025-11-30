@@ -1,4 +1,4 @@
-﻿
+
 # Action Allowlist Configuration
 
 > Configure 87 Terminal rules for 90%+ automatic command approval (~30 min)

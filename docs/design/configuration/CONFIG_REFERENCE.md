@@ -1,4 +1,4 @@
-﻿# Configuration Reference
+# Configuration Reference
 
 > Complete reference for all SAGE configuration options
 

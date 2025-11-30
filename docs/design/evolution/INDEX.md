@@ -1,4 +1,4 @@
-﻿# Evolution
+# Evolution
 
 > Roadmap, milestones, and project evolution for SAGE
 

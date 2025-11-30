@@ -1,4 +1,4 @@
-﻿# 信达雅 (Xìn Dá Yǎ)
+# 信达雅 (Xìn Dá Yǎ)
 
 > SAGE design philosophy: Faithfulness, Expressiveness, Elegance
 >

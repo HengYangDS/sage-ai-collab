@@ -1,4 +1,4 @@
-﻿# Session Management
+# Session Management
 
 > Session lifecycle and state management
 
