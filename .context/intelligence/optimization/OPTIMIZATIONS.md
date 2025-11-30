@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -16,11 +16,11 @@ For comprehensive guides on general development practices, see:
 
 | Topic                | Reference                                                      |
 |:---------------------|:---------------------------------------------------------------|
-| **Code Patterns**    | `.knowledge/practices/engineering/PATTERNS.md`                 |
-| **Testing Strategy** | `.knowledge/practices/engineering/TESTING_STRATEGY.md`         |
+| **Code Patterns**    | `.knowledge/practices/engineering/patterns.md`                 |
+| **Testing Strategy** | `.knowledge/practices/engineering/testing_strategy.md`         |
 | **Documentation**    | `.knowledge/practices/documentation/`                          |
-| **Performance**      | `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` |
-| **Caching**          | `.knowledge/frameworks/performance/CACHING_PATTERNS.md`        |
+| **Performance**      | `.knowledge/frameworks/performance/optimization_strategies.md` |
+| **Caching**          | `.knowledge/frameworks/performance/caching_patterns.md`        |
 
 ---
 
@@ -199,10 +199,10 @@ ruff format src/sage
 
 ## Related
 
-- `.knowledge/practices/engineering/PATTERNS.md` — Generic code patterns
+- `.knowledge/practices/engineering/patterns.md` — Generic code patterns
 - `.knowledge/frameworks/performance/` — Performance optimization guides
-- `.context/intelligence/calibration/PATTERNS.md` — SAGE AI interaction patterns
-- `.context/intelligence/calibration/CALIBRATION.md` — Autonomy calibration
+- `.context/intelligence/calibration/patterns.md` — SAGE AI interaction patterns
+- `.context/intelligence/calibration/calibration.md` — Autonomy calibration
 - `.context/conventions/` — SAGE coding conventions
 
 ---

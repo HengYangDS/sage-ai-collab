@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -421,10 +414,10 @@ gh run download <run-id>
 
 ## Related
 
-- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Git workflow and versioning
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing best practices
-- `.knowledge/scenarios/devops/CONTEXT.md` — DevOps scenario context
-- `.knowledge/templates/RUNBOOK.md` — Operational runbook template
+- `.knowledge/practices/engineering/git_workflow.md` — Git workflow and versioning
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing best practices
+- `.knowledge/scenarios/devops/context.md` — DevOps scenario context
+- `.knowledge/templates/runbook.md` — Operational runbook template
 
 ---
 

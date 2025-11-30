@@ -29,10 +29,10 @@ This document is part of the Services Design series:
 
 | Document                    | Content                                |
 |-----------------------------|----------------------------------------|
-| **03-SERVICES.MD** (this)   | Overview, comparison, shared components|
-| `03A-CLI-SERVICE.md`        | CLI service with Typer + Rich          |
-| `03B-MCP-SERVICE.md`        | MCP service with FastMCP               |
-| `03C-API-SERVICE.md`        | HTTP API with FastAPI                  |
+| **03-services.md** (this)   | Overview, comparison, shared components|
+| `03a-cli-service.md`        | CLI service with Typer + Rich          |
+| `03b-mcp-service.md`        | MCP service with FastMCP               |
+| `03c-api-service.md`        | HTTP API with FastAPI                  |
 
 ---
 
@@ -188,11 +188,11 @@ All services use a unified error handling approach:
 
 ## Related
 
-- `docs/design/03A-CLI-SERVICE.md` — CLI service implementation
-- `docs/design/03B-MCP-SERVICE.md` — MCP service implementation
-- `docs/design/03C-API-SERVICE.md` — HTTP API implementation
-- `docs/design/01-ARCHITECTURE.md` — Architecture overview
-- `docs/design/04-TIMEOUT-LOADING.md` — Timeout patterns
+- `docs/design/03a-cli-service.md` — CLI service implementation
+- `docs/design/03b-mcp-service.md` — MCP service implementation
+- `docs/design/03c-api-service.md` — HTTP API implementation
+- `docs/design/01-architecture.md` — Architecture overview
+- `docs/design/04-timeout-loading.md` — Timeout patterns
 
 ---
 

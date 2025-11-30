@@ -17,8 +17,8 @@ This document is part of the Content Structure series:
 
 | Document                   | Content                                    |
 |----------------------------|--------------------------------------------|
-| **06-CONTENT-STRUCTURE.MD** (this) | Directory structure, content organization |
-| `06A-KNOWLEDGE-TAXONOMY.md` | Knowledge taxonomy, navigation, lifecycle |
+| **06-content-structure.md** (this) | Directory structure, content organization |
+| `06a-knowledge-taxonomy.md` | Knowledge taxonomy, navigation, lifecycle |
 
 ---
 
@@ -40,7 +40,7 @@ This document covers:
 2. **Content Organization** - Knowledge content hierarchy
 3. **Chapter Consolidation** - Guidelines restructuring (16 → 10)
 
-For AI collaboration directories, knowledge taxonomy, and lifecycle management, see `06A-KNOWLEDGE-TAXONOMY.md`.
+For AI collaboration directories, knowledge taxonomy, and lifecycle management, see `06a-knowledge-taxonomy.md`.
 
 ---
 
@@ -57,7 +57,7 @@ sage/                              # Project root directory
 ├── pyproject.toml                 # Python project configuration
 ├── Makefile                       # Make development commands
 ├── sage.yaml                      # Smart loading configuration
-├── INDEX.md                       # Navigation entry (~100 tokens)
+├── index.md                       # Navigation entry (~100 tokens)
 │
 ├── docs/                          # Project documentation
 │   ├── design/                    # Design documents (00-09)
@@ -108,42 +108,42 @@ sage/                              # Project root directory
 
 | File                 | Purpose                                  |
 |----------------------|------------------------------------------|
-| `PRINCIPLES.md`      | Xin-Da-Ya philosophy, core values        |
-| `QUICK_REFERENCE.md` | 5 critical questions, autonomy quick ref |
-| `DEFAULTS.md`        | Default behaviors, calibration standards |
+| `principles.md`      | Xin-Da-Ya philosophy, core values        |
+| `quick_reference.md` | 5 critical questions, autonomy quick ref |
+| `defaults.md`        | Default behaviors, calibration standards |
 
 ### 3.2 .knowledge/guidelines/ (~1,200 tokens, On-Demand)
 
 | File                  | Purpose                             |
 |-----------------------|-------------------------------------|
-| `QUICK_START.md`      | 3-minute quick start                |
-| `PLANNING_DESIGN.md`  | Planning and architecture           |
-| `CODE_STYLE.md`       | Code style standards                |
-| `ENGINEERING.md`      | Config/test/perf/change/maintain    |
-| `DOCUMENTATION.md`    | Documentation standards             |
-| `PYTHON.md`           | Python best practices               |
-| `AI_COLLABORATION.md` | AI collaboration and autonomy       |
-| `COGNITIVE.md`        | Cognitive enhancement core          |
-| `QUALITY.md`          | Quality framework                   |
-| `SUCCESS.md`          | Xin-Da-Ya mapping, success criteria |
+| `quick_start.md`      | 3-minute quick start                |
+| `planning_design.md`  | Planning and architecture           |
+| `code_style.md`       | Code style standards                |
+| `engineering.md`      | Config/test/perf/change/maintain    |
+| `documentation.md`    | Documentation standards             |
+| `python.md`           | Python best practices               |
+| `ai_collaboration.md` | AI collaboration and autonomy       |
+| `cognitive.md`        | Cognitive enhancement core          |
+| `quality.md`          | Quality framework                   |
+| `success.md`          | Xin-Da-Ya mapping, success criteria |
 
 ### 3.3 .knowledge/frameworks/ (~2,000 tokens, On-Demand)
 
 | Directory        | File                  | Purpose                               |
 |------------------|-----------------------|---------------------------------------|
-| `autonomy/`      | `LEVELS.md`           | 6-level autonomy spectrum definition  |
-| `cognitive/`     | `EXPERT_COMMITTEE.md` | Expert committee, chain-of-thought    |
-| `collaboration/` | `PATTERNS.md`         | Collaboration patterns                |
-| `decision/`      | `QUALITY_ANGLES.md`   | Quality angles, expert roles          |
-| `timeout/`       | `HIERARCHY.md`        | Timeout principles, strategies        |
+| `autonomy/`      | `levels.md`           | 6-level autonomy spectrum definition  |
+| `cognitive/`     | `expert_committee.md` | Expert committee, chain-of-thought    |
+| `collaboration/` | `patterns.md`         | Collaboration patterns                |
+| `decision/`      | `quality_angles.md`   | Quality angles, expert roles          |
+| `timeout/`       | `hierarchy.md`        | Timeout principles, strategies        |
 
 ### 3.4 .knowledge/practices/ (~1,500 tokens, On-Demand)
 
 | Directory           | File                         | Purpose                         |
 |---------------------|------------------------------|---------------------------------|
-| `ai_collaboration/` | `WORKFLOW.md`                | Workflow, interaction patterns  |
-| `documentation/`    | `DOCUMENTATION_STANDARDS.md` | Documentation standards (SSOT)  |
-| `engineering/`      | `PATTERNS.md`                | Design patterns, best practices |
+| `ai_collaboration/` | `workflow.md`                | Workflow, interaction patterns  |
+| `documentation/`    | `documentation_standards.md` | Documentation standards (SSOT)  |
+| `engineering/`      | `patterns.md`                | Design patterns, best practices |
 
 ### 3.5 .knowledge/scenarios/ & templates/
 
@@ -178,16 +178,16 @@ The guidelines were consolidated from 16 chapters to 10 for better organization:
 
 | Original Chapters                     | New Chapter         | Lines | Rationale     |
 |---------------------------------------|---------------------|-------|---------------|
-| 0. Quick Reference                    | QUICK_START.md      | ~60   | Keep as-is    |
-| 1. Planning + 2. Design               | PLANNING_DESIGN.md  | ~80   | Merge short   |
-| 3. Code Style                         | CODE_STYLE.md       | ~150  | Keep as-is    |
-| 4-8. Config/Test/Perf/Change/Maintain | ENGINEERING.md      | ~120  | Merge 5 mini  |
-| 9. Documentation                      | DOCUMENTATION.md    | ~100  | Keep as-is    |
-| 10. Python + 11. Decorator            | PYTHON.md           | ~130  | Merge overlap |
-| 12. AI Collab + 13. Autonomy          | AI_COLLABORATION.md | ~200  | Unify AI      |
-| 14. Cognitive (core)                  | COGNITIVE.md        | ~100  | Extract core  |
-| (new) Quality                         | QUALITY.md          | ~80   | From 14       |
-| 15. Success                           | SUCCESS.md          | ~80   | Streamline    |
+| 0. Quick Reference                    | quick_start.md      | ~60   | Keep as-is    |
+| 1. Planning + 2. Design               | planning_design.md  | ~80   | Merge short   |
+| 3. Code Style                         | code_style.md       | ~150  | Keep as-is    |
+| 4-8. Config/Test/Perf/Change/Maintain | engineering.md      | ~120  | Merge 5 mini  |
+| 9. Documentation                      | documentation.md    | ~100  | Keep as-is    |
+| 10. Python + 11. Decorator            | python.md           | ~130  | Merge overlap |
+| 12. AI Collab + 13. Autonomy          | ai_collaboration.md | ~200  | Unify AI      |
+| 14. Cognitive (core)                  | cognitive.md        | ~100  | Extract core  |
+| (new) Quality                         | quality.md          | ~80   | From 14       |
+| 15. Success                           | success.md          | ~80   | Streamline    |
 
 **Result**: 16 → 10 chapters, ~1,100 lines (from ~1,464, -25%)
 
@@ -195,10 +195,10 @@ The guidelines were consolidated from 16 chapters to 10 for better organization:
 
 ## Related
 
-- `docs/design/06A-KNOWLEDGE-TAXONOMY.md` — Knowledge taxonomy and lifecycle
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
-- `docs/design/05-PLUGIN-MEMORY.md` — Plugin and memory design
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Organization guide
+- `docs/design/06a-knowledge-taxonomy.md` — Knowledge taxonomy and lifecycle
+- `docs/design/01-architecture.md` — Architecture design
+- `docs/design/05-plugin-memory.md` — Plugin and memory design
+- `.knowledge/practices/documentation/knowledge_organization.md` — Organization guide
 
 ---
 

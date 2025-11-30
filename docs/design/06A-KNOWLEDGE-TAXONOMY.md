@@ -17,8 +17,8 @@ This document is part of the Content Structure series:
 
 | Document                       | Content                                |
 |--------------------------------|----------------------------------------|
-| `06-CONTENT-STRUCTURE.md`      | Directory structure, content organization |
-| **06A-KNOWLEDGE-TAXONOMY.MD** (this) | Knowledge taxonomy, navigation, lifecycle |
+| `06-content-structure.md`      | Directory structure, content organization |
+| **06a-knowledge-taxonomy.md** (this) | Knowledge taxonomy, navigation, lifecycle |
 
 ---
 
@@ -39,7 +39,7 @@ This document is part of the Content Structure series:
 ```
 project-root/
 ├── .junie/                      # AI Client: JetBrains Junie
-│   ├── GUIDELINES.md            # PRIMARY ENTRY POINT
+│   ├── guidelines.md            # PRIMARY ENTRY POINT
 │   ├── mcp/mcp.json             # MCP server configurations
 │   └── config.yaml              # Client-specific settings
 │
@@ -48,11 +48,11 @@ project-root/
 ├── .claude/                     # AI Client: Claude Desktop (future)
 │
 ├── .context/                    # Project Knowledge Base (Local)
-│   ├── INDEX.md                 # Project KB navigation
+│   ├── index.md                 # Project KB navigation
 │   ├── project.yaml             # Project metadata
 │   ├── decisions/               # Architecture Decision Records
 │   ├── conventions/             # Project-specific conventions
-│   └── ACTIVE.md                # Current focus, tasks
+│   └── active.md                # Current focus, tasks
 │
 ├── .history/                    # AI Session Management
 │   ├── current/state.json       # Active session state
@@ -132,7 +132,7 @@ project-root/
 
 | Layer | Directory                | Token Budget  | Loading         |
 |-------|--------------------------|---------------|-----------------|
-| L0    | `INDEX.md`               | ~100 tokens   | **Always Load** |
+| L0    | `index.md`               | ~100 tokens   | **Always Load** |
 | L1    | `.knowledge/core/`       | ~500 tokens   | **Always Load** |
 | L2    | `.knowledge/guidelines/` | ~1,200 tokens | On-Demand       |
 | L3    | `.knowledge/frameworks/` | ~2,000 tokens | On-Demand       |
@@ -144,7 +144,7 @@ project-root/
 
 ## 3. Entry Points
 
-### 3.1 `.junie/GUIDELINES.md` Template
+### 3.1 `.junie/guidelines.md` Template
 
 ```markdown
 # Project Guidelines for AI Collaboration
@@ -173,7 +173,7 @@ project-root/
 | Aspect | Approach |
 |--------|----------|
 | File-level | YAML frontmatter with `version` and `date` |
-| Package-level | `.knowledge/VERSION.md` tracking releases |
+| Package-level | `.knowledge/version.md` tracking releases |
 | Change tracking | Git history with conventional commits |
 
 **Version Lifecycle**:
@@ -192,14 +192,14 @@ project-root/
 ### 4.1 5-Level Hierarchy
 
 ```
-L0: INDEX.md (Project Overview, ~100 tokens)
+L0: index.md (Project Overview, ~100 tokens)
     └── What is this project? Quick links, How to navigate
 
-L1: .junie/GUIDELINES.md (AI Client Entry, ~200 tokens)
+L1: .junie/guidelines.md (AI Client Entry, ~200 tokens)
     └── Tech stack, Coding standards summary, @file references
 
 L2: .knowledge/core/*.md (Core Principles, ~500 tokens)
-    └── PRINCIPLES.md, QUICK_REFERENCE.md, DEFAULTS.md
+    └── principles.md, quick_reference.md, defaults.md
 
 L3: .knowledge/guidelines/*.md (On-Demand, ~100-200/file)
     └── Triggered by keywords in user query
@@ -212,7 +212,7 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 | Content Type      | Location                 | Rationale           |
 |-------------------|--------------------------|---------------------|
-| Project overview  | `INDEX.md`               | Universal entry     |
+| Project overview  | `index.md`               | Universal entry     |
 | AI client config  | `.junie/`                | Client-specific     |
 | Core philosophy   | `.knowledge/core/`       | Always needed       |
 | How-to guides     | `.knowledge/guidelines/` | Task-triggered      |
@@ -258,9 +258,9 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 ## Related
 
-- `docs/design/06-CONTENT-STRUCTURE.md` — Directory structure overview
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Organization guide
+- `docs/design/06-content-structure.md` — Directory structure overview
+- `docs/design/01-architecture.md` — Architecture design
+- `.knowledge/practices/documentation/knowledge_organization.md` — Organization guide
 
 ---
 

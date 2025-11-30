@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~2750
----
-
 # Documentation Standards (SSOT)
 
 > Single source of truth for documentation writing standards
@@ -27,13 +20,6 @@ tokens: ~2750
 ### 1.1 Document Template
 
 ```markdown
----
-version: "1.0"
-last_updated: "YYYY-MM-DD"
-status: draft | review | published
-tokens: ~NNN
----
-
 # Title
 
 > Single-line purpose
@@ -59,8 +45,10 @@ tokens: ~NNN
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*
 ```
+
+**Note**: Frontmatter metadata (version, tokens, etc.) is NOT used. Document content speaks for itself.
 
 ### 1.2 Heading Rules
 
@@ -149,8 +137,8 @@ tokens: ~NNN
 | Case                  | Format              | Example                                  |
 |-----------------------|---------------------|------------------------------------------|
 | Same directory file   | Full path from root | `.knowledge/contexts/policies/TIMEOUT.md`|
-| Source code reference | Path from root      | `src/sage/core/config.py`                |
-| Config file reference | Path from root      | `config/sage.yaml`                       |
+| Source code reference | Path from root      | `src/app/core/config.py`                 |
+| Config file reference | Path from root      | `config/app.yaml`                        |
 | External URL          | Full URL            | `https://example.com/docs`               |
 
 ---
@@ -320,7 +308,7 @@ print(greet("World"))  # Output: Hello, World
 **Footer**:
 
 - [ ] Horizontal rule before
-- [ ] `*Part of SAGE Knowledge Base*`
+- [ ] `*AI Collaboration Knowledge Base*`
 
 ### 6.2 Update Triggers
 
@@ -354,4 +342,4 @@ print(greet("World"))  # Output: Hello, World
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

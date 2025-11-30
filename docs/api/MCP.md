@@ -98,18 +98,18 @@ mcp:
 
 | Document                                   | Content                              |
 |--------------------------------------------|--------------------------------------|
-| [MCP Tools Reference](MCP_TOOLS_REF.md)    | Detailed tool schemas and examples   |
-| [MCP Resources](MCP_RESOURCES.md)          | Resources, prompts, error handling   |
-| [MCP Quick Reference](MCP_QUICK_REF.md)    | One-page quick reference             |
+| [MCP Tools Reference](mcp_tools_ref.md)    | Detailed tool schemas and examples   |
+| [MCP Resources](mcp_resources.md)          | Resources, prompts, error handling   |
+| [MCP Quick Reference](mcp_quick_ref.md)    | One-page quick reference             |
 
 ---
 
 ## Related
 
-- `docs/api/INDEX.md` — API overview
-- `docs/api/CLI.md` — CLI reference
-- `docs/api/PYTHON.md` — Python API
-- `docs/design/02-SAGE-PROTOCOL.md` — Protocol design
+- `docs/api/index.md` — API overview
+- `docs/api/cli.md` — CLI reference
+- `docs/api/python.md` — Python API
+- `docs/design/02-sage-protocol.md` — Protocol design
 
 ---
 

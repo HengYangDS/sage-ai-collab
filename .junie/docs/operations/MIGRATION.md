@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -133,7 +133,7 @@ Phase 4: Completion
 git pull origin main
 
 # 2. Verify no breaking changes
-cat .junie/docs/operations/MIGRATION.md
+cat .junie/docs/operations/migration.md
 
 # 3. Test configuration
 pytest tests/tools/test_junie_config.py -v
@@ -325,9 +325,9 @@ git diff origin/main -- .junie/generic/config.yaml | grep schema_version
 
 ## 8. Related
 
-- [Maintenance](MAINTENANCE.md) — Daily operations
-- [Recovery](RECOVERY.md) — Error recovery
-- [Metrics](METRICS.md) — Track migration impact
+- [Maintenance](maintenance.md) — Daily operations
+- [Recovery](recovery.md) — Error recovery
+- [Metrics](metrics.md) — Track migration impact
 
 ---
 

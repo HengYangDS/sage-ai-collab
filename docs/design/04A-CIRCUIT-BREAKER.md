@@ -246,9 +246,9 @@ Layer 5: HUMAN ─────────────────────�
 
 ## Related
 
-- `docs/design/04-TIMEOUT-LOADING.md` — Timeout hierarchy overview
-- `docs/design/04B-SMART-LOADING.md` — Smart loading and token efficiency
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
+- `docs/design/04-timeout-loading.md` — Timeout hierarchy overview
+- `docs/design/04b-smart-loading.md` — Smart loading and token efficiency
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

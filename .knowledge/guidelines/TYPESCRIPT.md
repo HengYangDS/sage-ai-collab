@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3150
----
-
 # TypeScript Guidelines
 
 > TypeScript and JavaScript development standards
@@ -563,4 +556,4 @@ mockFetch.mockResolvedValue({id: '1', name: 'Test'});
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

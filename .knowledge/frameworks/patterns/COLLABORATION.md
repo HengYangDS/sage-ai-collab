@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~950
----
-
 # AI Collaboration Patterns
 
 > Patterns for effective human-AI collaboration
@@ -140,9 +133,9 @@ Attempt → Uncertain? → Escalate → Guidance → Continue
 
 ## Related
 
-- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration guidelines
-- `.knowledge/practices/ai_collaboration/WORKFLOW.md` — Workflow practices
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
+- `.knowledge/guidelines/ai_collaboration.md` — Collaboration guidelines
+- `.knowledge/practices/ai_collaboration/workflow.md` — Workflow practices
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

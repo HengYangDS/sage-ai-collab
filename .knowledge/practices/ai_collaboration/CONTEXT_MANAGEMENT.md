@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~900
----
-
 # Context Management Practices
 
 > Strategies for building and managing shared context in AI collaboration
@@ -146,4 +139,4 @@ tokens: ~900
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

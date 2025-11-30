@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -523,10 +523,10 @@ Use JSON schema for validation:
 
 ## 12. Related
 
-- [Overview](OVERVIEW.md) — MCP architecture
-- [Servers Reference](SERVERS.md) — Detailed server documentation
-- [Memory Best Practices](MEMORY.md) — Knowledge persistence
-- [Troubleshooting](TROUBLESHOOTING.md) — Problem solving
+- [Overview](overview.md) — MCP architecture
+- [Servers Reference](servers.md) — Detailed server documentation
+- [Memory Best Practices](memory.md) — Knowledge persistence
+- [Troubleshooting](troubleshooting.md) — Problem solving
 
 ---
 

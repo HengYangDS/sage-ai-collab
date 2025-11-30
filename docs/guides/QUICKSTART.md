@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -265,9 +265,9 @@ Place your own knowledge files in:
 
 ### 5.4 Learn More
 
-- [Advanced Usage Guide](ADVANCED.md) — Deep dive into features
-- [API Reference](../api/INDEX.md) — Complete API documentation
-- [Design Documents](../design/00-OVERVIEW.md) — Architecture details
+- [Advanced Usage Guide](advanced.md) — Deep dive into features
+- [API Reference](../api/index.md) — Complete API documentation
+- [Design Documents](../design/00-overview.md) — Architecture details
 
 ---
 
@@ -297,9 +297,9 @@ sage get --help
 
 ## Related
 
-- [Advanced Usage](ADVANCED.md) — Configuration and customization
-- [CLI Reference](../api/CLI.md) — Complete CLI documentation
-- [Python API](../api/PYTHON.md) — Python API reference
+- [Advanced Usage](advanced.md) — Configuration and customization
+- [CLI Reference](../api/cli.md) — Complete CLI documentation
+- [Python API](../api/python.md) — Python API reference
 
 ---
 

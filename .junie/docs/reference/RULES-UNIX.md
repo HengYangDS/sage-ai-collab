@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -261,9 +261,9 @@ Copy this entire block for quick setup:
 
 ## 6. Related
 
-- [Windows Rules](RULES-WINDOWS.md) — Windows/PowerShell rules
-- [Regex Reference](REGEX.md) — Pattern syntax
-- [Action Allowlist](../guides/ACTION-ALLOWLIST.md) — Configuration guide
+- [Windows Rules](rules-windows.md) — Windows/PowerShell rules
+- [Regex Reference](regex.md) — Pattern syntax
+- [Action Allowlist](../guides/action-allowlist.md) — Configuration guide
 
 ---
 

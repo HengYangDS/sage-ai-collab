@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1200
----
-
 # Troubleshooting Guide Template
 
 > **Purpose**: Template for creating troubleshooting documentation
@@ -218,7 +204,7 @@ For each issue, include:
 ### Health Check
 
 ```bash
-sage serve --status
+app serve --status
 curl http://localhost:8080/health
 ```
 
@@ -236,7 +222,7 @@ curl http://localhost:8080/health
 
 ### Symptom
 
-Running `sage serve` fails with "Address already in use" error.
+Running `app serve` fails with "Address already in use" error.
 
 ### Possible Causes
 
@@ -258,13 +244,13 @@ lsof -i :8080
 
 ```bash
 kill $(lsof -t -i:8080)
-sage serve
+app serve
 ```
 
 **Option 2: Use different port**
 
 ```bash
-sage serve --port 8081
+app serve --port 8081
 ```
 
 ### Prevention
@@ -294,7 +280,7 @@ sage serve --port 8081
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

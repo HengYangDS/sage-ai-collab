@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
 # Planning and Design Guidelines
 
 > Architecture and design principles for sustainable systems
@@ -118,4 +111,4 @@ tokens: ~800
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -43,9 +43,9 @@ tokens: ~800
 
 | Document                           | Content                            |
 |------------------------------------|------------------------------------|
-| `docs/api/MCP_TOOLS_REF.md`        | Knowledge tools detailed reference |
-| `docs/api/MCP_RESOURCES.md`        | Resources, prompts, error handling |
-| `docs/api/MCP_QUICK_REF.md`        | One-page quick reference           |
+| `docs/api/mcp_tools_ref.md`        | Knowledge tools detailed reference |
+| `docs/api/mcp_resources.md`        | Resources, prompts, error handling |
+| `docs/api/mcp_quick_ref.md`        | One-page quick reference           |
 
 ---
 
@@ -162,11 +162,11 @@ tokens: ~800
 
 ## Related
 
-- `docs/api/MCP.md` — MCP protocol overview
-- `docs/api/MCP_TOOLS_REF.md` — Detailed tool schemas
-- `docs/api/MCP_RESOURCES.md` — Resources and prompts
-- `docs/api/MCP_QUICK_REF.md` — Quick reference card
-- `docs/guides/QUICKSTART.md` — Getting started guide
+- `docs/api/mcp.md` — MCP protocol overview
+- `docs/api/mcp_tools_ref.md` — Detailed tool schemas
+- `docs/api/mcp_resources.md` — Resources and prompts
+- `docs/api/mcp_quick_ref.md` — Quick reference card
+- `docs/guides/quickstart.md` — Getting started guide
 
 ---
 

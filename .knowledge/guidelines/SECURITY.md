@@ -1,13 +1,6 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3750
----
-
 # Security Guidelines
 
-> Security best practices for SAGE Knowledge Base development
+> Security best practices for knowledge base development
 
 ---
 
@@ -586,4 +579,4 @@ def secure_temp_file(suffix: str = ".tmp"):
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

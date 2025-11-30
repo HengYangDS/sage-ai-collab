@@ -296,9 +296,9 @@ def get_settings() -> SageSettings:
 
 ## Related
 
-- `docs/design/02-SAGE-PROTOCOL.md` — Protocol overview
-- `docs/design/02A-DI-EVENTBUS.md` — DI Container and EventBus
-- `docs/design/01B-CONFIGURATION.md` — Configuration hierarchy details
+- `docs/design/02-sage-protocol.md` — Protocol overview
+- `docs/design/02a-di-eventbus.md` — DI Container and EventBus
+- `docs/design/01b-configuration.md` — Configuration hierarchy details
 - `config/sage.yaml` — Main configuration file
 
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -16,9 +16,9 @@ For comprehensive performance optimization guides, see:
 
 | Topic                       | Reference                                                      |
 |:----------------------------|:---------------------------------------------------------------|
-| **Optimization Strategies** | `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` |
-| **Caching Patterns**        | `.knowledge/frameworks/performance/CACHING_PATTERNS.md`        |
-| **Profiling Guide**         | `.knowledge/frameworks/performance/PROFILING_GUIDE.md`         |
+| **Optimization Strategies** | `.knowledge/frameworks/performance/optimization_strategies.md` |
+| **Caching Patterns**        | `.knowledge/frameworks/performance/caching_patterns.md`        |
+| **Profiling Guide**         | `.knowledge/frameworks/performance/profiling_guide.md`         |
 
 ---
 
@@ -147,8 +147,8 @@ def measure_time(operation: str):
 ## Related
 
 - `.knowledge/frameworks/performance/` — Generic performance guides
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout settings
-- `.context/intelligence/optimization/OPTIMIZATIONS.md` — SAGE code optimizations
+- `.context/policies/timeout_hierarchy.md` — Timeout settings
+- `.context/intelligence/optimization/optimizations.md` — SAGE code optimizations
 - `tests/performance/` — Performance test suite
 - `config/core/memory.yaml` — Memory configuration
 

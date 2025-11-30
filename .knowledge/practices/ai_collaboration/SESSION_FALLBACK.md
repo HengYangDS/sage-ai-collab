@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~350
----
-
 # Session Management Manual Fallback
 
 > Manual procedures when automated session tools are unavailable
@@ -152,4 +145,4 @@ ls -la .knowledge/
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

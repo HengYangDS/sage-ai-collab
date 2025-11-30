@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -93,4 +93,4 @@ results = await client.call_tool("sage_search", {"query": "timeout"})
 
 ---
 
-**Full Reference**: `docs/api/MCP.md`
+**Full Reference**: `docs/api/mcp.md`

@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -316,9 +316,9 @@ For Junie, ACP is **lower priority** because:
 
 ## 10. Related
 
-- [MCP Overview](../mcp/OVERVIEW.md) — Current MCP architecture
-- [MCP Configuration](../mcp/CONFIGURATION.md) — Server setup
-- [Memory Best Practices](../mcp/MEMORY.md) — Knowledge persistence
+- [MCP Overview](../mcp/overview.md) — Current MCP architecture
+- [MCP Configuration](../mcp/configuration.md) — Server setup
+- [Memory Best Practices](../mcp/memory.md) — Knowledge persistence
 
 ---
 

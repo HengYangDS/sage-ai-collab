@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -47,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                                                                                                                    |
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/references/KNOWLEDGE_QUICK_REF.md`                                                                                                                    |
-| **On-Demand** | `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` · `.knowledge/practices/ai_collaboration/KNOWLEDGE_EXTRACTION.md` |
+| **Auto-Load** | `core/principles.md` · `.knowledge/references/knowledge_quick_ref.md`                                                                                                                    |
+| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/documentation_standards.md` · `.knowledge/practices/ai_collaboration/knowledge_extraction.md` |
 
 ---
 
@@ -195,8 +188,8 @@ Content...
 
 ### Internal
 
-- `.knowledge/core/PRINCIPLES.md` — Core principles
-- `.knowledge/practices/ai_collaboration/WORKFLOW.md` — Implementation guide
+- `.knowledge/core/principles.md` — Core principles
+- `.knowledge/practices/ai_collaboration/workflow.md` — Implementation guide
 
 ### External
 
@@ -224,13 +217,13 @@ Content...
 
 ```bash
 # 1. Create content file
-touch .knowledge/practices/new_topic/GUIDE.md
+touch .knowledge/practices/new_topic/guide.md
 
 # 2. Add content with metadata
 # (Use standard template)
 
 # 3. Update layer index
-# Edit .knowledge/practices/INDEX.md
+# Edit .knowledge/practices/index.md
 
 # 4. Verify integration
 sage search "new topic"
@@ -324,10 +317,10 @@ sage search "new topic"
 
 ## Related
 
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Organization patterns
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards (SSOT)
-- `.knowledge/practices/ai_collaboration/KNOWLEDGE_CAPTURE.md` — Extraction techniques
-- `.knowledge/frameworks/design/INDEX.md` — Design patterns
+- `.knowledge/practices/documentation/knowledge_organization.md` — Organization patterns
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/practices/ai_collaboration/knowledge_capture.md` — Extraction techniques
+- `.knowledge/frameworks/design/index.md` — Design patterns
 
 ---
 

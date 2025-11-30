@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~450
----
-
 # Quick Start Guide
 
 > Get productive in 3 minutes
@@ -17,8 +10,7 @@ tokens: ~450
 - [2. Five Critical Questions](#2-five-critical-questions)
 - [3. Autonomy Levels](#3-autonomy-levels)
 - [4. Response Format](#4-response-format)
-- [5. Key Commands](#5-key-commands)
-- [6. Next Steps](#6-next-steps)
+- [5. Next Steps](#5-next-steps)
 
 ---
 
@@ -76,17 +68,7 @@ Ask before every task:
 
 ---
 
-## 5. Key Commands
-
-```bash
-sage get core          # Load core knowledge
-sage search "keyword"  # Search knowledge base
-sage serve             # Start MCP server
-```
-
----
-
-## 6. Next Steps
+## 5. Next Steps
 
 | Goal           | Read                                        |
 |----------------|---------------------------------------------|
@@ -106,4 +88,4 @@ sage serve             # Start MCP server
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

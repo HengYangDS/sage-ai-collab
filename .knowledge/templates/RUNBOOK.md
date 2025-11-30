@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1400
----
-
 # Operational Runbook Template
 
 > **Purpose**: Document operational procedures for system maintenance and incident response
@@ -241,7 +227,7 @@ curl -s https://service.example.com/health | jq
 
 ---
 
-*Runbook from SAGE Knowledge Base*
+*Runbook from AI Collaboration Knowledge Base*
 
 ```
 
@@ -298,7 +284,7 @@ Always include:
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

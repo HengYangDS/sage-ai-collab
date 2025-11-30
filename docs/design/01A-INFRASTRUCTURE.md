@@ -271,20 +271,20 @@ def get_platform_paths() -> dict[str, Path]:
 from pathlib import Path
 
 # ✅ CORRECT: Use pathlib (cross-platform)
-config_file = Path("content") / "core" / "PRINCIPLES.md"
+config_file = Path("content") / "core" / "principles.md"
 
 # ⚠️ AVOID: Hardcoded paths
-config_file = "content\\core\\PRINCIPLES.md"  # Windows-only
+config_file = "content\\core\\principles.md"  # Windows-only
 ```
 
 ---
 
 ## Related
 
-- `docs/design/01-ARCHITECTURE.md` — Main architecture design
-- `docs/design/01B-CONFIGURATION.md` — Configuration design
-- `docs/design/01C-USAGE.md` — Usage patterns
-- `docs/guides/CONFIGURATION.md` — Configuration guide
+- `docs/design/01-architecture.md` — Main architecture design
+- `docs/design/01b-configuration.md` — Configuration design
+- `docs/design/01c-usage.md` — Usage patterns
+- `docs/guides/configuration.md` — Configuration guide
 
 ---
 

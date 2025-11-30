@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -112,9 +105,9 @@ tokens: ~500
 
 ## Related
 
-- `.knowledge/scenarios/devops/CONTEXT.md` — DevOps context
-- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
-- `.knowledge/practices/engineering/MONITORING.md` — Monitoring practices
+- `.knowledge/scenarios/devops/context.md` — DevOps context
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
+- `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
 
 ---
 

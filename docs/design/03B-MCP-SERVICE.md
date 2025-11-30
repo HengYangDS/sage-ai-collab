@@ -226,10 +226,10 @@ kb_info()
 
 ## Related
 
-- `docs/design/03-SERVICES.md` — Services overview
-- `docs/design/03A-CLI-SERVICE.md` — CLI service design
-- `docs/design/03C-API-SERVICE.md` — HTTP API design
-- `docs/api/MCP.md` — MCP API reference
+- `docs/design/03-services.md` — Services overview
+- `docs/design/03a-cli-service.md` — CLI service design
+- `docs/design/03c-api-service.md` — HTTP API design
+- `docs/api/mcp.md` — MCP API reference
 
 ---
 

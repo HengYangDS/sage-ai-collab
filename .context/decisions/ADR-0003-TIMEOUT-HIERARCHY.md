@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -203,10 +203,10 @@ timeout:
 
 ## Related
 
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Detailed configuration
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Architecture context
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Universal patterns
-- `docs/design/04-TIMEOUT-LOADING.md` — Full design documentation
+- `.context/policies/timeout_hierarchy.md` — Detailed configuration
+- `.context/decisions/ADR-0001-architecture.md` — Architecture context
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Universal patterns
+- `docs/design/04-timeout-loading.md` — Full design documentation
 
 ---
 

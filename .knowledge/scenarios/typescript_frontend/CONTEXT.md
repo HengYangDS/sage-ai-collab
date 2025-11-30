@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -48,8 +41,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                   |
 |---------------|-----------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/CODE_STYLE.md` · `.knowledge/practices/engineering/PATTERNS.md` |
-| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`               |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/code_style.md` · `.knowledge/practices/engineering/patterns.md` |
+| **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/testing_strategy.md`               |
 
 ---
 
@@ -308,10 +301,10 @@ describe('useFetch', () => {
 
 ## Related
 
-- `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
+- `.knowledge/guidelines/code_style.md` — Code style guidelines
+- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

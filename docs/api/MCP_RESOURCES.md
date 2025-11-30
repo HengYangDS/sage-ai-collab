@@ -203,10 +203,10 @@ async with Client("localhost", 8000) as client:
 
 ## Related
 
-- `docs/api/MCP.md` — MCP protocol overview
-- `docs/api/MCP_TOOLS_REF.md` — Tools detailed reference
-- `docs/api/MCP_QUICK_REF.md` — Quick reference guide
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
+- `docs/api/mcp.md` — MCP protocol overview
+- `docs/api/mcp_tools_ref.md` — Tools detailed reference
+- `docs/api/mcp_quick_ref.md` — Quick reference guide
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~2550
----
-
 # Common Pitfalls
 
 > Known pitfalls and how to avoid them in software development
@@ -230,17 +223,17 @@ except ValueError as e:
 ```python
 # ❌ Bad - Missing await
 def get_content():
-    return loader.load("FILE.md")  # Returns coroutine!
+    return loader.load("file.md")  # Returns coroutine!
 
 
 # ✅ Good - Proper await
 async def get_content():
-    return await loader.load("FILE.md")
+    return await loader.load("file.md")
 
 
 # ✅ Good - Or explicitly sync
 def get_content():
-    return asyncio.run(loader.load("FILE.md"))
+    return asyncio.run(loader.load("file.md"))
 ```
 
 ---
@@ -566,8 +559,8 @@ timeout instead of raising exception."
 
 ## Related
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing best practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing best practices
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
 
 ---

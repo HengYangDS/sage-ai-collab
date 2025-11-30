@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -105,9 +98,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/mcp_integration/CONTEXT.md` — MCP integration context
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/scenarios/mcp_integration/context.md` — MCP integration context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~2050
----
-
 # Knowledge Organization Patterns
 
 > Hierarchical patterns for organizing AI-collaborative knowledge bases
@@ -231,4 +224,4 @@ Each layer has an `INDEX.md` with:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

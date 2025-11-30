@@ -1,13 +1,6 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
 # Knowledge Base Navigation
 
-> Entry point for SAGE knowledge content
+> Entry point for AI collaboration knowledge content
 
 ---
 
@@ -218,11 +211,11 @@ Each layer has an `INDEX.md` for navigation. Use layer indexes for discovery, sp
 
 ## Related
 
-- `config/sage.yaml` — Main configuration
-- `docs/design/00-OVERVIEW.md` — Design overview
-- `.context/INDEX.md` — Project context
-- `./INDEX.md` — Root navigation
+- `.knowledge/core/INDEX.md` — Core principles layer
+- `.knowledge/guidelines/INDEX.md` — Guidelines layer
+- `.knowledge/frameworks/INDEX.md` — Frameworks layer
+- `.knowledge/practices/INDEX.md` — Practices layer
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

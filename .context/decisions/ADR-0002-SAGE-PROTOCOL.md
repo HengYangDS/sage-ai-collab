@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -203,7 +203,7 @@ async def process_knowledge(query: str) -> str:
 
 ```python
 # Direct source-to-generate (skip analyze)
-content = await source.load("path/to/FILE.md")
+content = await source.load("path/to/file.md")
 output = await generator.format(content, "json")
 ```
 
@@ -211,9 +211,9 @@ output = await generator.format(content, "json")
 
 ## Related
 
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Three-layer architecture
-- `.context/decisions/ADR-0006-PROTOCOL-FIRST.md` — Protocol-first design
-- `docs/design/02-SAGE-PROTOCOL.md` — Full protocol documentation
+- `.context/decisions/ADR-0001-architecture.md` — Three-layer architecture
+- `.context/decisions/ADR-0006-protocol-first.md` — Protocol-first design
+- `docs/design/02-sage-protocol.md` — Full protocol documentation
 
 ---
 

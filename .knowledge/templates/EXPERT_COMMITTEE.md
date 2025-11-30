@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1200
----
-
 # Expert Committee Decision Templates
 
 > Ready-to-use decision prompts for multi-perspective analysis
@@ -162,4 +155,4 @@ schedule reviews) · **Adapt** (customize for domain)
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

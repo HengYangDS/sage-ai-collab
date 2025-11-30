@@ -127,7 +127,7 @@ Search the knowledge base.
 {
   "results": [
     {
-      "path": ".knowledge/core/PRINCIPLES.md",
+      "path": ".knowledge/core/principles.md",
       "title": "Core Principles",
       "snippet": "...matching text...",
       "score": 0.95
@@ -218,9 +218,9 @@ Get system information and status.
 
 ## Related
 
-- `docs/api/MCP.md` — MCP protocol overview
-- `docs/api/MCP_RESOURCES.md` — MCP resources and prompts
-- `docs/api/MCP_QUICK_REF.md` — Quick reference guide
+- `docs/api/mcp.md` — MCP protocol overview
+- `docs/api/mcp_resources.md` — MCP resources and prompts
+- `docs/api/mcp_quick_ref.md` — Quick reference guide
 
 ---
 

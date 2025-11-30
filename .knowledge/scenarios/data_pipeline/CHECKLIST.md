@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -102,9 +95,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/data_pipeline/CONTEXT.md` — Data pipeline context
-- `.knowledge/practices/engineering/MONITORING.md` — Monitoring practices
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/scenarios/data_pipeline/context.md` — Data pipeline context
+- `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
 ---
 

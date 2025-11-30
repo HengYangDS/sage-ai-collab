@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -225,9 +225,9 @@ except CircularDependencyError as e:
 
 ## Related
 
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Layer architecture
-- `.context/decisions/ADR-0006-PROTOCOL-FIRST.md` — Protocol-based interfaces
-- `.context/conventions/CODE_PATTERNS.md` — DI usage patterns
+- `.context/decisions/ADR-0001-architecture.md` — Layer architecture
+- `.context/decisions/ADR-0006-protocol-first.md` — Protocol-based interfaces
+- `.context/conventions/code_patterns.md` — DI usage patterns
 - `src/sage/core/di/` — Implementation
 
 ---

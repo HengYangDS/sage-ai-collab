@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1750
----
-
 # Task Handoff Template
 
 > **Purpose**: Enable seamless task continuation between sessions or collaborators
@@ -186,7 +172,7 @@ Before handoff, ensure:
 
 ---
 
-*Task handoff from SAGE Knowledge Base*
+*Task handoff from AI Collaboration Knowledge Base*
 
 ```
 
@@ -242,7 +228,7 @@ A good handoff should enable the recipient to:
 
 ### Original Objective
 
-Implement rate limiting for the SAGE API service to prevent abuse and ensure fair usage.
+Implement rate limiting for the API service to prevent abuse and ensure fair usage.
 
 ### Current Status
 
@@ -275,8 +261,8 @@ Implement rate limiting for the SAGE API service to prevent abuse and ensure fai
 
 | File | Role | Current State |
 |------|------|---------------|
-| `src/sage/services/rate_limiter.py` | Core implementation | Ready for review |
-| `src/sage/services/api.py` | Needs middleware integration | Pending changes |
+| `src/app/services/rate_limiter.py` | Core implementation | Ready for review |
+| `src/app/services/api.py` | Needs middleware integration | Pending changes |
 | `tests/unit/services/test_rate_limiter.py` | Unit tests | 4/7 passing |
 
 ### Important Decisions Already Made
@@ -310,7 +296,7 @@ The Redis mock in tests occasionally fails due to timing. Consider using `freeze
 
 ---
 
-*Task handoff from SAGE Knowledge Base*
+*Task handoff from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -323,7 +309,7 @@ The Redis mock in tests occasionally fails due to timing. Consider using `freeze
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

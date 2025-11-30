@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -48,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` · `.knowledge/templates/RUNBOOK.md` |
-| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md`          |
+| **Auto-Load** | `core/principles.md` · `.knowledge/practices/engineering/error_handling.md` · `.knowledge/templates/runbook.md` |
+| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/frameworks/resilience/timeout_patterns.md`          |
 
 ---
 
@@ -438,10 +431,10 @@ groups:
 
 ## Related
 
-- `.knowledge/templates/RUNBOOK.md` — Operational runbook template
-- `.knowledge/templates/POSTMORTEM.md` — Incident postmortem template
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Resilience patterns
+- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/templates/postmortem.md` — Incident postmortem template
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
 
 ---
 

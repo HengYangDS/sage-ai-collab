@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -47,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                    |
 |---------------|------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/PATTERNS.md` |
-| **On-Demand** | `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` · `.knowledge/guidelines/CODE_STYLE.md`    |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/patterns.md` |
+| **On-Demand** | `.knowledge/practices/documentation/project_directory_structure.md` · `.knowledge/guidelines/code_style.md`    |
 
 ---
 
@@ -400,9 +393,9 @@ pnpm init
 
 ## Related
 
-- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
-- `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` — Directory patterns
-- `.knowledge/guidelines/TYPESCRIPT.md` — TypeScript guidelines
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/documentation/project_directory_structure.md` — Directory patterns
+- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~700
----
-
 # Documentation Guidelines
 
 > Clear, maintainable, useful documentation
@@ -68,7 +61,7 @@ tokens: ~700
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*
 ```
 
 ### 3.2 Heading Rules
@@ -131,4 +124,4 @@ print(result)  # Output: "processed"
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

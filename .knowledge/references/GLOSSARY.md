@@ -1,13 +1,6 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~200
----
-
 # Glossary
 
-> Term definitions and acronyms for SAGE Knowledge Base
+> Term definitions and acronyms for AI collaboration
 
 ---
 
@@ -15,7 +8,7 @@ tokens: ~200
 
 | Term | Definition |
 |:-----|:-----------|
-| **SAGE** | Smart AI-Guided Engineering knowledge system |
+
 | **Token** | Unit of text processed by AI (~4 chars English) |
 | **SSOT** | Single Source of Truth |
 | **MECE** | Mutually Exclusive, Collectively Exhaustive |
@@ -53,4 +46,4 @@ tokens: ~200
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

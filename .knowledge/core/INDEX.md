@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~450
----
-
 # Core Knowledge
 
 > Foundational principles and defaults — always loaded
@@ -23,9 +16,9 @@ tokens: ~450
 
 | File                 | Purpose                                | Priority |
 |----------------------|----------------------------------------|----------|
-| `PRINCIPLES.md`      | 信达雅 + 术法道 philosophy                   | Always   |
-| `QUICK_REFERENCE.md` | 5 critical questions + autonomy levels | Always   |
-| `DEFAULTS.md`        | Default behaviors + calibration        | Always   |
+| `principles.md`      | 信达雅 + 术法道 philosophy                   | Always   |
+| `quick_reference.md` | 5 critical questions + autonomy levels | Always   |
+| `defaults.md`        | Default behaviors + calibration        | Always   |
 
 ---
 
@@ -65,8 +58,8 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/guidelines/QUICK_START.md` — 3-minute guide
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Full autonomy framework
+- `.knowledge/guidelines/quick_start.md` — 3-minute guide
+- `.knowledge/frameworks/autonomy/levels.md` — Full autonomy framework
 - `config/knowledge/loading.yaml` — Loading configuration
 
 ---

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -522,8 +515,8 @@ tests/
 
 ## Related
 
-- `.knowledge/practices/engineering/UNIT_TESTING_PATTERNS.md` — Unit testing
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategy
+- `.knowledge/practices/engineering/unit_testing_patterns.md` — Unit testing
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
 
 ---
 

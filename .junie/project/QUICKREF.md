@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -89,7 +89,7 @@ sage-kb/
 
 ## 4. Coding Standards
 
-> **Reference**: See `.knowledge/guidelines/PYTHON.md` and `.context/conventions/NAMING.md` for full details
+> **Reference**: See `.knowledge/guidelines/python.md` and `.context/conventions/naming.md` for full details
 
 **Quick Summary:**
 
@@ -97,7 +97,7 @@ sage-kb/
 - **Type Hints**: Required
 - **Docstrings**: Google style
 - **Naming**: Files `snake_case.py`, Classes `PascalCase`, Constants `UPPER_SNAKE_CASE`
-- **Architecture**: Core → Services → Capabilities (see `.context/conventions/CODE_PATTERNS.md`)
+- **Architecture**: Core → Services → Capabilities (see `.context/conventions/code_patterns.md`)
 
 ---
 
@@ -110,7 +110,7 @@ sage-kb/
 | `src/sage/core/`     | Core layer (loader, timeout, config)             |
 | `src/sage/services/` | Service layer (CLI, MCP, API)                    |
 | `pyproject.toml`     | Python project configuration                     |
-| `INDEX.md`           | Knowledge base navigation entry                  |
+| `index.md`           | Knowledge base navigation entry                  |
 
 ---
 
@@ -152,7 +152,7 @@ mypy src/                           # Type check
 
 ## 8. Timeout Hierarchy
 
-> **Reference**: See `.context/policies/TIMEOUT_HIERARCHY.md` for full details
+> **Reference**: See `.context/policies/timeout_hierarchy.md` for full details
 
 **SAGE-specific timeout configuration**:
 
@@ -169,15 +169,15 @@ mypy src/                           # Type check
 ## 9. References
 
 - **Project Variables**: `config.yaml`
-- **Design Documents**: `docs/design/00-OVERVIEW.md`
-- **Documentation Standards**: `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md`
-- **Documentation Index**: `docs/INDEX.md`
+- **Design Documents**: `docs/design/00-overview.md`
+- **Documentation Standards**: `.knowledge/practices/documentation/documentation_standards.md`
+- **Documentation Index**: `docs/index.md`
 - **Configuration**: `config/sage.yaml`
-- **Project Context**: `.context/INDEX.md`
-- **Knowledge Content**: `.knowledge/INDEX.md`
-- **Directory Conventions**: `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md`
-- **Timeout Hierarchy**: `.context/policies/TIMEOUT_HIERARCHY.md`
-- **Core Principles**: `.knowledge/core/PRINCIPLES.md`
+- **Project Context**: `.context/index.md`
+- **Knowledge Content**: `.knowledge/index.md`
+- **Directory Conventions**: `.knowledge/practices/documentation/project_directory_structure.md`
+- **Timeout Hierarchy**: `.context/policies/timeout_hierarchy.md`
+- **Core Principles**: `.knowledge/core/principles.md`
 
 ---
 
@@ -185,8 +185,8 @@ mypy src/                           # Type check
 
 ### Session History
 
-> **Generic checklist**: See `.knowledge/practices/ai_collaboration/SESSION_CHECKLIST.md`
-> **SAGE-specific**: See `.history/_SESSION-END-CHECKLIST.md`
+> **Generic checklist**: See `.knowledge/practices/ai_collaboration/session_checklist.md`
+> **SAGE-specific**: See `.history/_session-end-checklist.md`
 
 ### Expert Committee (SAGE Context)
 

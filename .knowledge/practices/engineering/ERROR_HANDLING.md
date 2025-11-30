@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~850
----
-
 # Error Handling Patterns
 
 > Consistent error handling for robust applications
@@ -159,8 +152,8 @@ except Exception as e:
 
 ## Related
 
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Resilience patterns
-- `.knowledge/practices/engineering/API_DESIGN.md` — API error responses
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
+- `.knowledge/practices/engineering/api_design.md` — API error responses
 
 ---
 

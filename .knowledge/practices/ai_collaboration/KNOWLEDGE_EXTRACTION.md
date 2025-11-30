@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~900
----
-
 # Knowledge Extraction Patterns
 
 > Methods for extracting reusable knowledge from experience
@@ -167,4 +160,4 @@ tokens: ~900
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -288,9 +288,9 @@ result = await loader.load("core")
 
 ## Related
 
-- `docs/api/PYTHON.md` — Python API basics
-- `docs/api/INDEX.md` — API overview
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
+- `docs/api/python.md` — Python API basics
+- `docs/api/index.md` — API overview
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

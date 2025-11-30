@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -349,10 +349,10 @@ sage config --show --section services.mcp
 
 ## Related
 
-- `.context/policies/RUNTIME_SETTINGS.md` — Runtime configuration
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout configuration
+- `.context/policies/runtime_settings.md` — Runtime configuration
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
 - `docs/api/` — API documentation
-- `docs/api/MCP.md` — MCP protocol reference
+- `docs/api/mcp.md` — MCP protocol reference
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -113,9 +106,9 @@ tokens: ~500
 
 ## Related
 
-- `.knowledge/scenarios/plugin_development/CONTEXT.md` — Plugin development context
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/scenarios/plugin_development/context.md` — Plugin development context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
 ---
 

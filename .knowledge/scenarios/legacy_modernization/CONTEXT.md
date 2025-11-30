@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -46,8 +39,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                                   |
 |---------------|---------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` |
-| **On-Demand** | `.knowledge/practices/engineering/TESTING_STRATEGY.md` · `.knowledge/practices/engineering/CODE_REVIEW.md`                    |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/incremental_improvement.md` |
+| **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.knowledge/practices/engineering/code_review.md`                    |
 
 ---
 
@@ -323,10 +316,10 @@ metrics:
 
 ## Related
 
-- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
-- `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` — Incremental approach
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing practices
-- `.knowledge/frameworks/patterns/DECISION.md` — Decision framework
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental approach
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing practices
+- `.knowledge/frameworks/patterns/decision.md` — Decision framework
 
 ---
 

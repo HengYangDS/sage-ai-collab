@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~250
----
-
 # {TITLE}
 
 > {PURPOSE}
@@ -81,4 +74,4 @@ Key configuration options:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

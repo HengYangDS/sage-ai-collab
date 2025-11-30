@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -47,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/MCP_QUICK_REF.md` · `.knowledge/practices/engineering/API_DESIGN.md`                  |
-| **On-Demand** | `docs/api/MCP.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
+| **Auto-Load** | `core/principles.md` · `docs/api/mcp_quick_ref.md` · `.knowledge/practices/engineering/api_design.md`                  |
+| **On-Demand** | `docs/api/mcp.md` · `.knowledge/frameworks/resilience/timeout_patterns.md` · `.knowledge/practices/engineering/error_handling.md` |
 
 ---
 
@@ -59,7 +52,7 @@ autonomy_default: L3
 | `src/sage/services/` | MCP server implementation |
 | `config/services/`   | MCP configuration         |
 | `tests/integration/` | MCP integration tests     |
-| `docs/api/MCP.md`    | MCP API documentation     |
+| `docs/api/mcp.md`    | MCP API documentation     |
 
 ---
 
@@ -148,7 +141,7 @@ async def sage_search(query: str, limit: int = 10) -> str:
 @mcp.resource("sage://core/principles")
 async def get_principles() -> str:
     """Core principles of SAGE knowledge base."""
-    return await load_file(".knowledge/core/PRINCIPLES.md")
+    return await load_file(".knowledge/core/principles.md")
 
 
 @mcp.resource("sage://layer/{layer}")
@@ -279,7 +272,7 @@ async def test_my_new_tool():
     assert "expected" in result
 
 # 3. Update documentation
-# Edit docs/api/MCP.md
+# Edit docs/api/mcp.md
 ```
 
 ### 6.2 Testing MCP Server
@@ -399,10 +392,10 @@ mcp:
 
 ## Related
 
-- `docs/api/MCP.md` — MCP API documentation
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
+- `docs/api/mcp.md` — MCP API documentation
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
 
 ---
 

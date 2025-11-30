@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -327,10 +327,10 @@ src/sage/plugins/
 
 ## Related
 
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Capabilities layer
-- `.context/decisions/ADR-0004-DEPENDENCY-INJECTION.md` — DI integration
-- `.context/decisions/ADR-0006-PROTOCOL-FIRST.md` — Protocol contracts
-- `docs/design/05-PLUGIN-MEMORY.md` — Full plugin design
+- `.context/decisions/ADR-0001-architecture.md` — Capabilities layer
+- `.context/decisions/ADR-0004-dependency-injection.md` — DI integration
+- `.context/decisions/ADR-0006-protocol-first.md` — Protocol contracts
+- `docs/design/05-plugin-memory.md` — Full plugin design
 - `src/sage/plugins/` — Implementation
 
 ---

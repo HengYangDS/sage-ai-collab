@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -485,10 +478,10 @@ export SAGE_PROFILE=1
 
 ## Related
 
-- `.knowledge/practices/engineering/LOGGING.md` — Logging best practices
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout configuration
-- `docs/guides/CONFIGURATION.md` — Configuration guide
+- `.knowledge/practices/engineering/logging.md` — Logging best practices
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `docs/guides/configuration.md` — Configuration guide
 
 ---
 

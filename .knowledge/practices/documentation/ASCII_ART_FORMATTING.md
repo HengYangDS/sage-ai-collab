@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~950
----
-
 # ASCII Art Formatting Best Practices
 
 > Guidelines for consistent rendering of ASCII art boxes and diagrams
@@ -137,4 +130,4 @@ When creating ASCII art boxes or diagrams:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

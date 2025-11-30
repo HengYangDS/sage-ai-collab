@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -94,9 +87,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/knowledge_management/CONTEXT.md` — Knowledge management context
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Knowledge organization
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
+- `.knowledge/scenarios/knowledge_management/context.md` — Knowledge management context
+- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge organization
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
 
 ---
 

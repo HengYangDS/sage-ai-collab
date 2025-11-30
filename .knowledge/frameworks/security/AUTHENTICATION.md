@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3350
----
-
 # Authentication Patterns
 
 > Identity verification mechanisms and best practices
@@ -446,9 +439,9 @@ SECURITY_HEADERS = {
 
 ## Related
 
-- `.knowledge/frameworks/security/AUTHORIZATION.md` — Access control patterns
-- `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Secure credential handling
-- `.knowledge/frameworks/security/SECURITY_CHECKLIST.md` — Implementation checklist
+- `.knowledge/frameworks/security/authorization.md` — Access control patterns
+- `.knowledge/frameworks/security/secrets_management.md` — Secure credential handling
+- `.knowledge/frameworks/security/security_checklist.md` — Implementation checklist
 
 ---
 

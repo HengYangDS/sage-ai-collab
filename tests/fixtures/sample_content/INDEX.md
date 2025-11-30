@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -22,7 +22,7 @@ This is a test fixture for the SAGE Knowledge Base system.
 
 ### Quick Links
 
-- [Core Principles](core/PRINCIPLES.md)
+- [Core Principles](core/principles.md)
 
 ---
 

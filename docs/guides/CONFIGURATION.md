@@ -46,9 +46,9 @@ Priority (highest to lowest):
 
 | Document                          | Content                              |
 |-----------------------------------|--------------------------------------|
-| `docs/design/01B-CONFIGURATION.md`| Configuration design and YAML DSL    |
-| `docs/design/04-TIMEOUT-LOADING.md`| Timeout configuration details       |
-| `docs/design/09-CONFIGURATION.md` | Full configuration reference         |
+| `docs/design/01b-configuration.md`| Configuration design and YAML DSL    |
+| `docs/design/04-timeout-loading.md`| Timeout configuration details       |
+| `docs/design/09-configuration.md` | Full configuration reference         |
 
 ---
 
@@ -151,9 +151,9 @@ circuit_breaker:
 # config/knowledge/loading.yaml
 loading:
   always:                  # Always loaded (pre-cached)
-    - INDEX.md
-    - .knowledge/core/PRINCIPLES.md
-    - .knowledge/core/QUICK_REFERENCE.md
+    - index.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
   
   max_tokens: 8000
   cache_enabled: true
@@ -168,15 +168,15 @@ triggers:
   code:
     keywords: [code, implement, fix, refactor, debug]
     load:
-      - .knowledge/guidelines/CODE_STYLE.md
-      - .knowledge/guidelines/PYTHON.md
+      - .knowledge/guidelines/code_style.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 1
 
   architecture:
     keywords: [architecture, design, system, pattern]
     load:
-      - .knowledge/guidelines/PLANNING_DESIGN.md
+      - .knowledge/guidelines/planning_design.md
       - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 2
@@ -265,10 +265,10 @@ export SAGE_CACHE_ENABLED=false
 
 ## Related
 
-- `docs/design/01B-CONFIGURATION.md` — Configuration design
-- `docs/design/04-TIMEOUT-LOADING.md` — Timeout patterns
-- `docs/design/09-CONFIGURATION.md` — Full configuration reference
-- `docs/guides/QUICKSTART.md` — Getting started guide
+- `docs/design/01b-configuration.md` — Configuration design
+- `docs/design/04-timeout-loading.md` — Timeout patterns
+- `docs/design/09-configuration.md` — Full configuration reference
+- `docs/guides/quickstart.md` — Getting started guide
 - `config/sage.yaml` — Main configuration file
 
 ---

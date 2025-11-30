@@ -17,9 +17,9 @@ This document is part of the Implementation Roadmap series:
 
 | Document                       | Content                                |
 |--------------------------------|----------------------------------------|
-| `07-ROADMAP.md`                | Overview, status, KPIs, success criteria |
-| **07A-PHASES-FOUNDATION.MD** (this) | Phase 0-F: MVP foundation phases     |
-| `07B-PHASES-ADVANCED.md`       | Phase G-J: Advanced feature phases     |
+| `07-roadmap.md`                | Overview, status, KPIs, success criteria |
+| **07a-phases-foundation.md** (this) | Phase 0-F: MVP foundation phases     |
+| `07b-phases-advanced.md`       | Phase G-J: Advanced feature phases     |
 
 ---
 
@@ -204,9 +204,9 @@ This document is part of the Implementation Roadmap series:
 
 ## Related
 
-- `docs/design/07-ROADMAP.md` — Roadmap overview and KPIs
-- `docs/design/07B-PHASES-ADVANCED.md` — Advanced phases (G-J)
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
+- `docs/design/07-roadmap.md` — Roadmap overview and KPIs
+- `docs/design/07b-phases-advanced.md` — Advanced phases (G-J)
+- `docs/design/01-architecture.md` — Architecture design
 
 ---
 

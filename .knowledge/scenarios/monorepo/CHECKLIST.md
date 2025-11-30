@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -105,9 +98,9 @@ tokens: ~500
 
 ## Related
 
-- `.knowledge/scenarios/monorepo/CONTEXT.md` — Monorepo context
-- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Git workflow practices
-- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
+- `.knowledge/scenarios/monorepo/context.md` — Monorepo context
+- `.knowledge/practices/engineering/git_workflow.md` — Git workflow practices
+- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
 
 ---
 

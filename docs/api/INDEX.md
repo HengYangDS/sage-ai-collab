@@ -38,24 +38,24 @@ SAGE provides three interface layers for accessing knowledge:
 
 | Document                            | Description                    |
 |-------------------------------------|--------------------------------|
-| [CLI Reference](CLI.md)             | Command-line interface         |
-| [MCP Protocol](MCP.md)              | MCP server overview            |
-| [Python API](PYTHON.md)             | Python library basics          |
+| [CLI Reference](cli.md)             | Command-line interface         |
+| [MCP Protocol](mcp.md)              | MCP server overview            |
+| [Python API](python.md)             | Python library basics          |
 
 ### 2.2 MCP Detailed References
 
 | Document                                  | Description                    |
 |-------------------------------------------|--------------------------------|
-| [MCP Tools Reference](MCP_TOOLS_REF.md)   | Detailed tool schemas          |
-| [MCP Resources](MCP_RESOURCES.md)         | Resources, prompts, errors     |
-| [MCP Quick Reference](MCP_QUICK_REF.md)   | One-page quick reference       |
+| [MCP Tools Reference](mcp_tools_ref.md)   | Detailed tool schemas          |
+| [MCP Resources](mcp_resources.md)         | Resources, prompts, errors     |
+| [MCP Quick Reference](mcp_quick_ref.md)   | One-page quick reference       |
 
 ### 2.3 Python Detailed References
 
 | Document                                    | Description                  |
 |---------------------------------------------|------------------------------|
-| [Python Advanced](PYTHON_ADVANCED.md)       | Search, events, exceptions   |
-| [Plugin API Quick Ref](PLUGIN_QUICK_REF.md) | Plugin development API       |
+| [Python Advanced](python_advanced.md)       | Search, events, exceptions   |
+| [Plugin API Quick Ref](plugin_quick_ref.md) | Plugin development API       |
 
 ---
 
@@ -105,7 +105,7 @@ All interfaces respect the 5-level timeout hierarchy:
 ## Related
 
 - `docs/guides/` — User guides and tutorials
-- `docs/design/03-SERVICES.md` — Service layer design
+- `docs/design/03-services.md` — Service layer design
 - `config/services/` — Service configuration
 
 ---

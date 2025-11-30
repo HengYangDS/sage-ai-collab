@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3600
----
-
 # Caching Patterns
 
 > Data caching strategies for performance optimization
@@ -494,9 +487,9 @@ user_data                     # No structure
 
 ## Related
 
-- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — General optimization
-- `.knowledge/frameworks/performance/PROFILING_GUIDE.md` — Performance analysis
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
+- `.knowledge/frameworks/performance/optimization_strategies.md` — General optimization
+- `.knowledge/frameworks/performance/profiling_guide.md` — Performance analysis
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -48,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                     |
 |---------------|-------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
-| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`          |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/error_handling.md` |
+| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/practices/engineering/testing_strategy.md`          |
 
 ---
 
@@ -404,10 +397,10 @@ validator = (
 
 ## Related
 
-- `.knowledge/guidelines/PYTHON.md` — Python guidelines
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
-- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
+- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/logging.md` — Logging practices
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

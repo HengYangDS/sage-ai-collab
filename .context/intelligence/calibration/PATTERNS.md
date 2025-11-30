@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -22,7 +22,7 @@ tokens: ~500
 
 For the comprehensive guide on AI collaboration patterns, see:
 
-**→ `.knowledge/practices/ai_collaboration/INTERACTION_PATTERNS.md`**
+**→ `.knowledge/practices/ai_collaboration/interaction_patterns.md`**
 
 This includes:
 
@@ -75,7 +75,7 @@ Current calibration for SAGE project:
 
 When starting a SAGE development session:
 
-1. Review `.junie/GUIDELINES.md` for project context
+1. Review `.junie/guidelines.md` for project context
 2. Check `.history/current/` for active sessions
 3. Review recent commits for context continuity
 4. Reference `.context/policies/` for runtime settings
@@ -93,7 +93,7 @@ When working with SAGE knowledge layers:
 
 For all I/O operations in SAGE:
 
-1. Reference `.context/policies/TIMEOUT_HIERARCHY.md`
+1. Reference `.context/policies/timeout_hierarchy.md`
 2. Use appropriate timeout level (T1-T5)
 3. Implement fallback for timeout scenarios
 4. Log timeout events for calibration
@@ -102,11 +102,11 @@ For all I/O operations in SAGE:
 
 ## Related
 
-- `.knowledge/practices/ai_collaboration/INTERACTION_PATTERNS.md` — Generic patterns
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy level definitions
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout policy
-- `.context/intelligence/calibration/CALIBRATION.md` — Detailed calibration data
-- `.junie/GUIDELINES.md` — Project collaboration guidelines
+- `.knowledge/practices/ai_collaboration/interaction_patterns.md` — Generic patterns
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
+- `.context/policies/timeout_hierarchy.md` — Timeout policy
+- `.context/intelligence/calibration/calibration.md` — Detailed calibration data
+- `.junie/guidelines.md` — Project collaboration guidelines
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~600
----
-
 # Document Templates
 
 > Reusable templates for common documents
@@ -205,7 +198,7 @@ All templates follow this structure:
 [Completed example if helpful]
 
 ---
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -228,4 +221,4 @@ All templates follow this structure:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

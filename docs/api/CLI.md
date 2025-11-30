@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -258,8 +258,8 @@ cli:
 
 ## Related
 
-- [API Index](INDEX.md) — API overview
-- [MCP Protocol](MCP.md) — MCP server documentation
+- [API Index](index.md) — API overview
+- [MCP Protocol](mcp.md) — MCP server documentation
 - `config/services/cli.yaml` — CLI configuration
 
 ---

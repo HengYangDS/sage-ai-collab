@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -371,21 +371,21 @@ If Memory server is unavailable, use file-based persistence:
 ```
 .history/
 ├── conversations/
-│   └── YYYY-MM-DD-TOPIC.md      # Key decisions
+│   └── YYYY-MM-DD-topic.md      # Key decisions
 ├── handoffs/
-│   └── YYYY-MM-DD-TASK.md       # Continuation context
+│   └── YYYY-MM-DD-task.md       # Continuation context
 └── current/
-    └── SESSION-STATE.md         # Active work state
+    └── session-state.md         # Active work state
 ```
 
 ---
 
 ## 11. Related
 
-- [Overview](OVERVIEW.md) — MCP architecture
-- [Configuration](CONFIGURATION.md) — Setup guide
-- [Servers Reference](SERVERS.md) — All MCP servers
-- [Troubleshooting](TROUBLESHOOTING.md) — Problem solving
+- [Overview](overview.md) — MCP architecture
+- [Configuration](configuration.md) — Setup guide
+- [Servers Reference](servers.md) — All MCP servers
+- [Troubleshooting](troubleshooting.md) — Problem solving
 
 ---
 

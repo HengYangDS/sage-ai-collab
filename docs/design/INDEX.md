@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -23,9 +23,9 @@ tokens: ~500
 
 | Document           | Description                             |
 |--------------------|-----------------------------------------|
-| `00-OVERVIEW.md`   | Project overview, goals, and scope      |
-| `07-ROADMAP.md`    | Implementation roadmap and milestones   |
-| `08-EVALUATION.md` | Success metrics and evaluation criteria |
+| `00-overview.md`   | Project overview, goals, and scope      |
+| `07-roadmap.md`    | Implementation roadmap and milestones   |
+| `08-evaluation.md` | Success metrics and evaluation criteria |
 
 ---
 
@@ -33,9 +33,9 @@ tokens: ~500
 
 | Document              | Description                                             |
 |-----------------------|---------------------------------------------------------|
-| `01-ARCHITECTURE.md`  | Three-layer architecture (Core, Services, Capabilities) |
-| `02-SAGE-PROTOCOL.md` | SAGE protocol specification and interfaces              |
-| `09-CONFIGURATION.md` | Configuration management system                         |
+| `01-architecture.md`  | Three-layer architecture (Core, Services, Capabilities) |
+| `02-sage-protocol.md` | SAGE protocol specification and interfaces              |
+| `09-configuration.md` | Configuration management system                         |
 
 ---
 
@@ -43,16 +43,16 @@ tokens: ~500
 
 | Document                  | Description                                 |
 |---------------------------|---------------------------------------------|
-| `03-SERVICES.md`          | Service layer (API, CLI, MCP) design        |
-| `04-TIMEOUT-LOADING.md`   | Timeout hierarchy (T1-T5) and smart loading |
-| `05-PLUGIN-MEMORY.md`     | Plugin system and memory persistence        |
-| `06-CONTENT-STRUCTURE.md` | Knowledge content organization and taxonomy |
+| `03-services.md`          | Service layer (API, CLI, MCP) design        |
+| `04-timeout-loading.md`   | Timeout hierarchy (T1-T5) and smart loading |
+| `05-plugin-memory.md`     | Plugin system and memory persistence        |
+| `06-content-structure.md` | Knowledge content organization and taxonomy |
 
 ---
 
 ## Related
 
-- `../api/INDEX.md` — API Reference
+- `../api/index.md` — API Reference
 - `../../.context/decisions/` — Architecture Decision Records (ADRs)
 - `../../.knowledge/frameworks/design/` — Design Framework
 

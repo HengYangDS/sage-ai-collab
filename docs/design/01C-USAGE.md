@@ -257,11 +257,11 @@ except Exception:
 
 ## Related
 
-- `docs/design/01-ARCHITECTURE.md` — Main architecture design
-- `docs/design/01A-INFRASTRUCTURE.md` — Infrastructure design
-- `docs/design/01B-CONFIGURATION.md` — Configuration design
-- `docs/guides/QUICKSTART.md` — User quick start guide
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
+- `docs/design/01-architecture.md` — Main architecture design
+- `docs/design/01a-infrastructure.md` — Infrastructure design
+- `docs/design/01b-configuration.md` — Configuration design
+- `docs/guides/quickstart.md` — User quick start guide
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

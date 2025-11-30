@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -433,10 +433,10 @@ copy mcp.windows.json mcp.json
 
 ## 9. Related
 
-- [Overview](OVERVIEW.md) — MCP architecture
-- [Configuration](CONFIGURATION.md) — Setup guide
-- [Servers Reference](SERVERS.md) — Server documentation
-- [Memory Best Practices](MEMORY.md) — Knowledge persistence
+- [Overview](overview.md) — MCP architecture
+- [Configuration](configuration.md) — Setup guide
+- [Servers Reference](servers.md) — Server documentation
+- [Memory Best Practices](memory.md) — Knowledge persistence
 
 ---
 

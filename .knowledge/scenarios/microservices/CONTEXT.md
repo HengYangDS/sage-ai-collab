@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -47,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                      |
 |---------------|--------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/API_DESIGN.md` |
-| **On-Demand** | `.knowledge/guidelines/SECURITY.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md`                       |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/api_design.md` |
+| **On-Demand** | `.knowledge/guidelines/security.md` · `.knowledge/practices/engineering/error_handling.md`                       |
 
 ---
 
@@ -317,10 +310,10 @@ Order Service          Payment Service       Inventory Service
 
 ## Related
 
-- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
-- `.knowledge/guidelines/SECURITY.md` — Security guidelines
-- `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
+- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/guidelines/security.md` — Security guidelines
+- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
 
 ---
 

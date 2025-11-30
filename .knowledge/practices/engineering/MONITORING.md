@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1450
----
-
 # Monitoring & Observability
 
 > Best practices for system monitoring and observability
@@ -259,8 +252,8 @@ groups:
 
 ## Related
 
-- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
-- `.knowledge/frameworks/performance/PROFILING_GUIDE.md` — Performance profiling
+- `.knowledge/practices/engineering/logging.md` — Logging practices
+- `.knowledge/frameworks/performance/profiling_guide.md` — Performance profiling
 
 ---
 

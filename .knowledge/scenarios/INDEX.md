@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -44,7 +37,7 @@ tokens: ~700
 
 ## 2. Python Backend Scenario
 
-**Path**: `python_backend/CONTEXT.md`
+**Path**: `python_backend/context.md`
 
 ### When to Load
 
@@ -76,8 +69,8 @@ Each scenario contains:
 
 ```
 scenarios/[name]/
-├── CONTEXT.md      # Main scenario context
-├── CHECKLIST.md    # Optional: task checklist
+├── context.md      # Main scenario context
+├── checklist.md    # Optional: task checklist
 └── templates/      # Optional: scenario-specific templates
 ```
 
@@ -111,7 +104,7 @@ scenarios/[name]/
 ## 4. Creating New Scenarios
 
 1. Create directory: `.knowledge/scenarios/[name]/`
-2. Add `CONTEXT.md` with scenario context
+2. Add `context.md` with scenario context
 3. Define auto-load triggers in `config/knowledge/triggers.yaml`
 4. Update this index
 
@@ -119,9 +112,9 @@ scenarios/[name]/
 
 ## Related
 
-- `.knowledge/guidelines/INDEX.md` — General guidelines
-- `.knowledge/practices/INDEX.md` — Implementation practices
-- `.knowledge/templates/INDEX.md` — Document templates
+- `.knowledge/guidelines/index.md` — General guidelines
+- `.knowledge/practices/index.md` — Implementation practices
+- `.knowledge/templates/index.md` — Document templates
 - `.config/knowledge/triggers.yaml` — Trigger configuration
 
 ---

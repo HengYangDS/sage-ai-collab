@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~400
----
-
 # Quarterly L5 Review Process
 
 > Standard process for quarterly knowledge base expert committee review
@@ -124,4 +117,4 @@ tokens: ~400
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

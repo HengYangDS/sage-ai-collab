@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -239,7 +239,7 @@ pytest tests/unit/
 
 ### How do I create a plugin?
 
-See the [Plugin Development Guide](PLUGIN_DEVELOPMENT.md) for detailed instructions.
+See the [Plugin Development Guide](plugin_development.md) for detailed instructions.
 
 Quick start:
 
@@ -283,7 +283,7 @@ https://github.com/HengYangDS/sage-kb/issues
 
 ### Getting Help
 
-1. Check [Troubleshooting Guide](TROUBLESHOOTING.md)
+1. Check [Troubleshooting Guide](troubleshooting.md)
 2. Search existing issues
 3. Ask in discussions
 4. Open a new issue with details
@@ -302,10 +302,10 @@ sage --debug --timing get core
 
 ## Related
 
-- [Quick Start](QUICKSTART.md) — Getting started
-- [Advanced Usage](ADVANCED.md) — Advanced features
-- [Troubleshooting](TROUBLESHOOTING.md) — Problem solving
-- [Plugin Development](PLUGIN_DEVELOPMENT.md) — Creating plugins
+- [Quick Start](quickstart.md) — Getting started
+- [Advanced Usage](advanced.md) — Advanced features
+- [Troubleshooting](troubleshooting.md) — Problem solving
+- [Plugin Development](plugin_development.md) — Creating plugins
 
 ---
 

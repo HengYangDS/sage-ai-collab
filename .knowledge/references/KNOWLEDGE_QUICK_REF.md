@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # Knowledge Organization Quick Reference
 
 > Essential patterns for organizing AI-collaborative knowledge bases
@@ -108,4 +94,4 @@ tokens: ~500
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

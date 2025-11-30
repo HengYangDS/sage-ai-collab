@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~900
----
-
 # Cognitive Enhancement Guidelines
 
 > Enhanced metacognitive capabilities for AI collaboration
@@ -151,4 +144,4 @@ tokens: ~900
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

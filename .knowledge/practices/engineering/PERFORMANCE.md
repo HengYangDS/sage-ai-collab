@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -516,10 +509,10 @@ py-spy record -o profile.svg -- python script.py
 
 ## Related
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Performance testing
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
-- `.context/intelligence/optimization/OPTIMIZATIONS.md` — Project optimizations
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout config
+- `.knowledge/practices/engineering/testing_strategy.md` — Performance testing
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.context/intelligence/optimization/optimizations.md` — Project optimizations
+- `.context/policies/timeout_hierarchy.md` — Timeout config
 
 ---
 

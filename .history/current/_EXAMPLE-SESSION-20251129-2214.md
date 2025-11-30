@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -40,12 +40,12 @@ examples.
 ### Completed Steps
 
 1. Analyzed `.history` directory structure ✓
-2. Reviewed `INDEX.md` documentation ✓
+2. Reviewed `index.md` documentation ✓
 3. Identified empty subdirectories ✓
-4. Created `CONVERSATION_RECORD.md` template ✓
-5. Created `SESSION_STATE.md` template ✓
-6. Created `TASK_HANDOFF.md` template ✓
-7. Updated `.knowledge/templates/INDEX.md` ✓
+4. Created `conversation_record.md` template ✓
+5. Created `session_state.md` template ✓
+6. Created `task_handoff.md` template ✓
+7. Updated `.knowledge/templates/index.md` ✓
 
 ### Current Step
 
@@ -70,10 +70,10 @@ None - all tasks completed successfully:
 
 | File                                          | Purpose                | Status |
 |-----------------------------------------------|------------------------|--------|
-| `.knowledge/templates/CONVERSATION_RECORD.md` | Conversation template  | Done   |
-| `.knowledge/templates/SESSION_STATE.md`       | Session state template | Done   |
-| `.knowledge/templates/TASK_HANDOFF.md`        | Handoff template       | Done   |
-| `.knowledge/templates/INDEX.md`               | Template catalog       | Done   |
+| `.knowledge/templates/conversation_record.md` | Conversation template  | Done   |
+| `.knowledge/templates/session_state.md`       | Session state template | Done   |
+| `.knowledge/templates/task_handoff.md`        | Handoff template       | Done   |
+| `.knowledge/templates/index.md`               | Template catalog       | Done   |
 | `.history/conversations/_example-*.md`        | Example conversation   | Done   |
 | `.history/current/_example-*.md`              | Example session state  | Done   |
 | `.history/handoffs/_example-*.md`             | Example handoff        | Done   |

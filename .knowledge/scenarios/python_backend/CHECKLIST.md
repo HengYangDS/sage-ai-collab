@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -80,9 +73,9 @@ tokens: ~300
 
 ## Related
 
-- `.knowledge/scenarios/python_backend/CONTEXT.md` — Python backend context
-- `.knowledge/guidelines/PYTHON.md` — Python guidelines
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/scenarios/python_backend/context.md` — Python backend context
+- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
 ---
 

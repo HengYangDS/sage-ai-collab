@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -105,9 +98,9 @@ tokens: ~450
 
 ## Related
 
-- `.knowledge/scenarios/microservices/CONTEXT.md` — Microservices context
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
-- `.knowledge/frameworks/patterns/INTEGRATION.md` — Integration patterns
+- `.knowledge/scenarios/microservices/context.md` — Microservices context
+- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/frameworks/patterns/integration.md` — Integration patterns
 
 ---
 

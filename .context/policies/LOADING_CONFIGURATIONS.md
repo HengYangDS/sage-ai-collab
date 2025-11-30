@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -282,7 +282,7 @@ loading:
       - scenarios
       - templates
   
-  # Timeout settings (defer to TIMEOUT_HIERARCHY.md)
+  # Timeout settings (defer to timeout_hierarchy.md)
   timeouts:
     layer_load: 2s           # T3
     full_load: 5s            # T4
@@ -302,7 +302,7 @@ loading:
 # Knowledge layers
 knowledge:
   base_path: .knowledge/
-  index_file: INDEX.md
+  index_file: index.md
   
   layers:
     - name: core
@@ -367,10 +367,10 @@ export SAGE__CACHE__ENABLED=false
 
 ## Related
 
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout configuration
-- `.context/policies/RUNTIME_SETTINGS.md` — Runtime settings
-- `.context/decisions/ADR-0003-TIMEOUT-HIERARCHY.md` — Timeout design decision
-- `docs/design/04-TIMEOUT-LOADING.md` — Full loading design
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/runtime_settings.md` — Runtime settings
+- `.context/decisions/ADR-0003-timeout-hierarchy.md` — Timeout design decision
+- `docs/design/04-timeout-loading.md` — Full loading design
 
 ---
 

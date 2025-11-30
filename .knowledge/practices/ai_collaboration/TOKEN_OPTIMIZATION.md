@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1100
----
-
 # Token Optimization Principles
 
 > Maximize knowledge density per token in AI collaboration
@@ -165,4 +158,4 @@ Load: docs/api/AUTH.md lines 1-50 (~200 tokens)
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

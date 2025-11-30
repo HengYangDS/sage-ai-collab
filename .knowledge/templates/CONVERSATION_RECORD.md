@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1000
----
-
 # Conversation Record Template
 
 > **Purpose**: Document AI collaboration sessions with key decisions and learnings
@@ -104,7 +90,7 @@ conversations that contain decisions, insights, or learnings worth preserving fo
 
 ---
 
-*Conversation record from SAGE Knowledge Base*
+*Conversation record from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -147,7 +133,7 @@ conversations that contain decisions, insights, or learnings worth preserving fo
 
 ## Context
 
-Designing the timeout hierarchy for SAGE Knowledge Base to ensure responsive AI interactions while handling varying
+Designing the timeout hierarchy for MyProject to ensure responsive AI interactions while handling varying
 content load times.
 
 ---
@@ -196,7 +182,7 @@ Explored graceful degradation patterns when timeouts occur. Decided on partial c
 
 ---
 
-*Conversation record from SAGE Knowledge Base*
+*Conversation record from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -209,7 +195,7 @@ Explored graceful degradation patterns when timeouts occur. Decided on partial c
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

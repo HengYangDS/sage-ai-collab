@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1350
----
-
 # API Specification Template
 
 > **Purpose**: Document API endpoints, request/response schemas, and behaviors
@@ -217,7 +203,7 @@ Rate limit headers:
 
 ---
 
-*API Specification from SAGE Knowledge Base*
+*API Specification from AI Collaboration Knowledge Base*
 
 ```
 
@@ -272,7 +258,7 @@ Rate limit headers:
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

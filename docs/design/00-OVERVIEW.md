@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -149,16 +149,16 @@ This design is organized into 10 independent documents:
 
 | Document                    | Description                                                 |
 |-----------------------------|-------------------------------------------------------------|
-| **00-OVERVIEW.MD**          | Project overview, philosophy, progress (this file)          |
-| **01-ARCHITECTURE.MD**      | Three-layer architecture, directory structure, toolchain    |
-| **02-SAGE-PROTOCOL.MD**     | SAGE Protocol, DI Container, EventBus, Bootstrap            |
-| **03-SERVICES.MD**          | API/MCP/CLI services, error handling, testing               |
-| **04-TIMEOUT-LOADING.MD**   | Timeout mechanism, token efficiency, smart loading          |
-| **05-PLUGIN-MEMORY.MD**     | Plugin architecture, Memory persistence, Session continuity |
-| **06-CONTENT-STRUCTURE.MD** | Content organization, knowledge taxonomy, versioning        |
-| **07-ROADMAP.MD**           | Implementation roadmap, phases, MVP/M2 split                |
-| **08-EVALUATION.MD**        | Expert committee evaluation, 99.8/100 score, approved       |
-| **09-CONFIGURATION.MD**     | Configuration system, modular config files, settings        |
+| **00-overview.md**          | Project overview, philosophy, progress (this file)          |
+| **01-architecture.md**      | Three-layer architecture, directory structure, toolchain    |
+| **02-sage-protocol.md**     | SAGE Protocol, DI Container, EventBus, Bootstrap            |
+| **03-services.md**          | API/MCP/CLI services, error handling, testing               |
+| **04-timeout-loading.md**   | Timeout mechanism, token efficiency, smart loading          |
+| **05-plugin-memory.md**     | Plugin architecture, Memory persistence, Session continuity |
+| **06-content-structure.md** | Content organization, knowledge taxonomy, versioning        |
+| **07-roadmap.md**           | Implementation roadmap, phases, MVP/M2 split                |
+| **08-evaluation.md**        | Expert committee evaluation, 99.8/100 score, approved       |
+| **09-configuration.md**     | Configuration system, modular config files, settings        |
 
 ### 4.1 Reading Order
 
@@ -195,7 +195,7 @@ This design is organized into 10 independent documents:
 | DI Container         | ✅ Complete    | Lifetime mgmt, auto-wiring, 94% coverage    |
 | Test Suite           | ✅ Complete    | 841 tests, 89% coverage (incl. 30 perf)     |
 | Dev Toolchain        | ✅ Complete    | Makefile, py.typed, pyproject.toml          |
-| Config Files         | ✅ Complete    | sage.yaml, INDEX.md created                 |
+| Config Files         | ✅ Complete    | sage.yaml, index.md created                 |
 | CI/CD Pipeline       | ✅ Complete    | GitHub Actions, pre-commit, Codecov         |
 | Type Safety          | ✅ Complete    | mypy strict, 26→9 errors fixed              |
 | Production Ready     | ✅ M3 Complete | All MVP + M2 + M3 phases complete           |
@@ -251,10 +251,10 @@ print(result.content)
 
 ## Related
 
-- `01-ARCHITECTURE.md` — Three-layer architecture details
-- `07-ROADMAP.md` — Implementation roadmap
-- `08-EVALUATION.md` — Expert committee evaluation
-- `../INDEX.md` — Documentation navigation
+- `01-architecture.md` — Three-layer architecture details
+- `07-roadmap.md` — Implementation roadmap
+- `08-evaluation.md` — Expert committee evaluation
+- `../index.md` — Documentation navigation
 
 ---
 

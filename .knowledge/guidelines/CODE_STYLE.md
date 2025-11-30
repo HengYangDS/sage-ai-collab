@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
 # Code Style Guidelines
 
 > Consistent, readable, maintainable code
@@ -145,4 +138,4 @@ def process(data: str) -> Result:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

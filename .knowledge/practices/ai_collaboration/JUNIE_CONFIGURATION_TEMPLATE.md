@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~2950
----
-
 # Junie Configuration Template System
 
 > A reusable template system for JetBrains Junie AI collaboration configuration.
@@ -459,4 +452,4 @@ mcp:
 
 ---
 
-*Part of SAGE Knowledge Base - AI Collaboration Practices*
+*AI Collaboration Knowledge Base*

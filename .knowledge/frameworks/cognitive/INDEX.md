@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~350
----
-
 # Cognitive Framework
 
 > Cognitive patterns for AI reasoning and decision-making
@@ -30,8 +23,8 @@ and information density optimization for AI-human collaboration.
 
 | Document                 | Description                                    |
 |--------------------------|------------------------------------------------|
-| `EXPERT_COMMITTEE.md`    | Expert committee pattern for complex decisions |
-| `INFORMATION_DENSITY.md` | Information density optimization strategies    |
+| `expert_committee.md`    | Expert committee pattern for complex decisions |
+| `information_density.md` | Information density optimization strategies    |
 
 ---
 
@@ -58,7 +51,7 @@ Optimizes knowledge representation for:
 
 ## Related
 
-- `.junie/GUIDELINES.md` — Expert committee usage
+- `.junie/guidelines.md` — Expert committee usage
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
 - `.knowledge/frameworks/design/` — Design thinking patterns
 

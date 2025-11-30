@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1250
----
-
 # Session State Template
 
 > **Purpose**: Capture current session context for continuity and recovery
@@ -137,7 +123,7 @@ interruptions, provides context for session recovery, and helps maintain focus d
 
 ---
 
-*Session state from SAGE Knowledge Base*
+*Session state from AI Collaboration Knowledge Base*
 
 ```
 
@@ -234,8 +220,8 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 
 | File | Purpose | Status |
 |------|---------|--------|
-| `src/sage/core/loader.py` | Base TimeoutLoader | Done |
-| `src/sage/core/timeout.py` | Timeout utilities | Modified |
+| `src/app/core/loader.py` | Base TimeoutLoader | Done |
+| `src/app/core/timeout.py` | Timeout utilities | Modified |
 | `tests/unit/core/test_loader.py` | Unit tests | Pending |
 
 ### Key Decisions Made
@@ -249,7 +235,7 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 
 ### To Continue This Session
 
-1. Open `src/sage/core/timeout.py`
+1. Open `src/app/core/timeout.py`
 2. Continue implementing `handle_t4_timeout()` method
 3. Reference T3 implementation for pattern
 
@@ -260,7 +246,7 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 
 ---
 
-*Session state from SAGE Knowledge Base*
+*Session state from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -273,7 +259,7 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

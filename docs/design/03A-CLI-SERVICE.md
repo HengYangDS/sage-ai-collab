@@ -195,9 +195,9 @@ sage> get core
 
 sage> search "autonomy level"
 Found 3 results:
-  1. frameworks/autonomy/LEVELS.md (score: 0.95)
-  2. guidelines/AI_COLLABORATION.md (score: 0.72)
-  3. .knowledge/core/QUICK_REFERENCE.md (score: 0.65)
+  1. frameworks/autonomy/levels.md (score: 0.95)
+  2. guidelines/ai_collaboration.md (score: 0.72)
+  3. .knowledge/core/quick_reference.md (score: 0.65)
 
 sage> exit
 Goodbye!
@@ -216,10 +216,10 @@ Goodbye!
 
 ## Related
 
-- `docs/design/03-SERVICES.md` — Services overview
-- `docs/design/03B-MCP-SERVICE.md` — MCP service design
-- `docs/design/03C-API-SERVICE.md` — HTTP API design
-- `docs/api/CLI.md` — CLI API reference
+- `docs/design/03-services.md` — Services overview
+- `docs/design/03b-mcp-service.md` — MCP service design
+- `docs/design/03c-api-service.md` — HTTP API design
+- `docs/api/cli.md` — CLI API reference
 
 ---
 

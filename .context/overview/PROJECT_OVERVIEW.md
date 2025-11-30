@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -113,14 +113,14 @@ The four-phase processing model:
 
 ### For New Contributors
 
-1. Read `conventions/NAMING.md` and `conventions/FILE_STRUCTURE.md`
+1. Read `conventions/naming.md` and `conventions/file_structure.md`
 2. Review ADR-0001 (architecture) and ADR-0002 (SAGE protocol)
-3. Check `intelligence/calibration/PATTERNS.md` for collaboration patterns
+3. Check `intelligence/calibration/patterns.md` for collaboration patterns
 
 ### For AI Assistants
 
-1. Check `intelligence/calibration/CALIBRATION.md` for autonomy levels
-2. Follow patterns in `intelligence/calibration/PATTERNS.md`
+1. Check `intelligence/calibration/calibration.md` for autonomy levels
+2. Follow patterns in `intelligence/calibration/patterns.md`
 3. Use optimizations from `intelligence/optimization/`
 4. Reference conventions when generating code
 
@@ -139,11 +139,11 @@ The four-phase processing model:
 
 ## 5. Related
 
-- `../INDEX.md` — Full project context navigation
-- `../decisions/ADR-0001-ARCHITECTURE.md` — Architecture decision
-- `../decisions/ADR-0002-SAGE-PROTOCOL.md` — SAGE protocol design
-- `../intelligence/calibration/CALIBRATION.md` — AI autonomy calibration
-- `.junie/GUIDELINES.md` — AI collaboration guidelines
+- `../index.md` — Full project context navigation
+- `../decisions/ADR-0001-architecture.md` — Architecture decision
+- `../decisions/ADR-0002-sage-protocol.md` — SAGE protocol design
+- `../intelligence/calibration/calibration.md` — AI autonomy calibration
+- `.junie/guidelines.md` — AI collaboration guidelines
 
 ---
 

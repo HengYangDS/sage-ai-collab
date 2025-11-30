@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -48,8 +41,8 @@ autonomy_default: L2
 
 | Priority      | Files                                                                                          |
 |---------------|------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/PATTERNS.md`            |
-| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/frameworks/timeout/HIERARCHY.md` · `.knowledge/templates/PROJECT_SETUP.md` |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/patterns.md`            |
+| **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/frameworks/timeout/hierarchy.md` · `.knowledge/templates/project_setup.md` |
 
 ---
 
@@ -193,9 +186,9 @@ def get_settings() -> Settings:
 
 ## Related
 
-- `.knowledge/guidelines/PYTHON.md` — Python guidelines
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
+- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

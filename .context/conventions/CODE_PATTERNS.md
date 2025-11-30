@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -497,7 +497,7 @@ import pytest
 
 @pytest.mark.asyncio
 async def test_async_load():
-    result = await load_knowledge("TEST.md")
+    result = await load_knowledge("test.md")
     assert result is not None
 ```
 
@@ -505,9 +505,9 @@ async def test_async_load():
 
 ## Related
 
-- `.context/conventions/NAMING.md` — Naming conventions
-- `.context/conventions/FILE_STRUCTURE.md` — File organization
-- `docs/design/01-ARCHITECTURE.md` — Architecture details
+- `.context/conventions/naming.md` — Naming conventions
+- `.context/conventions/file_structure.md` — File organization
+- `docs/design/01-architecture.md` — Architecture details
 - `src/sage/core/` — Core implementations
 
 ---

@@ -195,7 +195,7 @@ config = SAGEConfig.from_file("custom/config.yaml")
 
 ## 6. Advanced Topics
 
-For advanced features, see [Python API Advanced Reference](PYTHON_ADVANCED.md):
+For advanced features, see [Python API Advanced Reference](python_advanced.md):
 
 | Topic            | Description                        |
 |------------------|------------------------------------|
@@ -210,10 +210,10 @@ For advanced features, see [Python API Advanced Reference](PYTHON_ADVANCED.md):
 
 ## Related
 
-- `docs/api/PYTHON_ADVANCED.md` — Advanced Python API
-- `docs/api/INDEX.md` — API overview
-- `docs/api/MCP.md` — MCP protocol reference
-- `docs/guides/QUICKSTART.md` — Quick start guide
+- `docs/api/python_advanced.md` — Advanced Python API
+- `docs/api/index.md` — API overview
+- `docs/api/mcp.md` — MCP protocol reference
+- `docs/guides/quickstart.md` — Quick start guide
 
 ---
 

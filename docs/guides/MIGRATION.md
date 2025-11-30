@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -141,7 +141,7 @@ cache:
 |----------|----------|
 | `content/` | `.knowledge/` |
 | `content/core/` | `.knowledge/core/` |
-| `GUIDELINES.md` | `.knowledge/guidelines/` |
+| `guidelines.md` | `.knowledge/guidelines/` |
 
 ### 5.2 Migration Commands
 
@@ -246,8 +246,8 @@ pip install sage-kb==<previous-version>
 
 ## Related
 
-- `docs/guides/TROUBLESHOOTING.md` — Troubleshooting guide
-- `docs/guides/CONFIGURATION.md` — Configuration reference
+- `docs/guides/troubleshooting.md` — Troubleshooting guide
+- `docs/guides/configuration.md` — Configuration reference
 - `CHANGELOG.md` — Version history
 
 ---

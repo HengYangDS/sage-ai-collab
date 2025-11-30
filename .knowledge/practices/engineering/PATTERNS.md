@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1000
----
-
 # Engineering Patterns Practice Guide
 
 > Common engineering patterns and their practical application
@@ -160,8 +153,8 @@ class EventBus:
 
 ## Related
 
-- `.knowledge/guidelines/CODE_STYLE.md` — Code style
-- `.knowledge/frameworks/design/AXIOMS.md` — Design principles
+- `.knowledge/guidelines/code_style.md` — Code style
+- `.knowledge/frameworks/design/axioms.md` — Design principles
 
 ---
 

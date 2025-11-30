@@ -57,7 +57,7 @@ export SAGE_LOADING_CACHE_ENABLED=false
 
 ## 2. Timeout & Reliability
 
-> **Detailed Design**: See `docs/design/04-TIMEOUT-LOADING.md`
+> **Detailed Design**: See `docs/design/04-timeout-loading.md`
 > **Philosophy**: "No operation should block indefinitely"
 
 ### 2.1 Five-Level Timeout Hierarchy
@@ -124,23 +124,23 @@ timeout:
 # sage.yaml - Smart Loading with Keyword Triggers
 loading:
   always:  # Always loaded (pre-cached)
-    - INDEX.md
-    - .knowledge/core/PRINCIPLES.md
-    - .knowledge/core/QUICK_REFERENCE.md
+    - index.md
+    - .knowledge/core/principles.md
+    - .knowledge/core/quick_reference.md
 
 triggers:
   code:
     keywords: [code, implement, fix, refactor, debug, 代码, 实现, 修复]
     load:
-      - .knowledge/guidelines/CODE_STYLE.md
-      - .knowledge/guidelines/PYTHON.md
+      - .knowledge/guidelines/code_style.md
+      - .knowledge/guidelines/python.md
     timeout_ms: 2000
     priority: 1
 
   architecture:
     keywords: [architecture, design, system, pattern, 架构, 设计, 系统]
     load:
-      - .knowledge/guidelines/PLANNING_DESIGN.md
+      - .knowledge/guidelines/planning_design.md
       - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 2
@@ -148,7 +148,7 @@ triggers:
   testing:
     keywords: [test, coverage, unit, integration, 测试, 覆盖率]
     load:
-      - .knowledge/guidelines/ENGINEERING.md
+      - .knowledge/guidelines/engineering.md
     timeout_ms: 2000
     priority: 3
 ```
@@ -218,11 +218,11 @@ di:
 
 ## Related
 
-- `docs/design/01-ARCHITECTURE.md` — Main architecture design
-- `docs/design/01A-INFRASTRUCTURE.md` — Infrastructure design
-- `docs/design/01C-USAGE.md` — Usage patterns
-- `docs/design/04-TIMEOUT-LOADING.md` — Detailed timeout design
-- `docs/guides/CONFIGURATION.md` — Configuration guide
+- `docs/design/01-architecture.md` — Main architecture design
+- `docs/design/01a-infrastructure.md` — Infrastructure design
+- `docs/design/01c-usage.md` — Usage patterns
+- `docs/design/04-timeout-loading.md` — Detailed timeout design
+- `docs/guides/configuration.md` — Configuration guide
 
 ---
 

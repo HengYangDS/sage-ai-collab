@@ -17,9 +17,9 @@ This document is part of the Timeout & Loading Design series:
 
 | Document                       | Content                                |
 |--------------------------------|----------------------------------------|
-| **04-TIMEOUT-LOADING.MD** (this) | Philosophy, hierarchy, configuration |
-| `04A-CIRCUIT-BREAKER.md`       | Circuit breaker and graceful degradation |
-| `04B-SMART-LOADING.md`         | Smart loading and token efficiency     |
+| **04-timeout-loading.md** (this) | Philosophy, hierarchy, configuration |
+| `04a-circuit-breaker.md`       | Circuit breaker and graceful degradation |
+| `04b-smart-loading.md`         | Smart loading and token efficiency     |
 
 ---
 
@@ -198,10 +198,10 @@ class TimeoutConfig:
 
 ## Related
 
-- `docs/design/04A-CIRCUIT-BREAKER.md` — Circuit breaker and graceful degradation
-- `docs/design/04B-SMART-LOADING.md` — Smart loading and token efficiency
-- `docs/design/01-ARCHITECTURE.md` — Overall architecture
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
+- `docs/design/04a-circuit-breaker.md` — Circuit breaker and graceful degradation
+- `docs/design/04b-smart-loading.md` — Smart loading and token efficiency
+- `docs/design/01-architecture.md` — Overall architecture
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
 # Autonomy Decision Cases
 
 > Concrete examples for autonomy level decisions
@@ -118,8 +111,8 @@ tokens: ~800
 
 ## Related
 
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Full autonomy framework
-- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration patterns
+- `.knowledge/frameworks/autonomy/levels.md` — Full autonomy framework
+- `.knowledge/guidelines/ai_collaboration.md` — Collaboration patterns
 
 ---
 

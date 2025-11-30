@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1600
----
-
 # Meeting Notes Template
 
 > **Purpose**: Template for documenting meetings and discussions
@@ -196,7 +182,7 @@ Use status indicators:
 ## Example
 
 ```markdown
-# Meeting: SAGE Architecture Review
+# Meeting: Architecture Review
 
 > **Date**: 2025-11-29
 > **Time**: 14:00 - 15:30 (UTC+8)
@@ -324,7 +310,7 @@ Use status indicators:
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

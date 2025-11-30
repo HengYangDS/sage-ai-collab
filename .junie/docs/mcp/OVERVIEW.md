@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -137,7 +137,7 @@ between AI applications and external data sources and tools.
 | **everything**          | P2 🔥     | System-wide file search (Windows)    |
 | **desktop-commander**   | P2 🔥     | Desktop automation                   |
 
-For detailed server configuration, see [Servers Reference](SERVERS.md).
+For detailed server configuration, see [Servers Reference](servers.md).
 
 ---
 
@@ -215,19 +215,19 @@ MCP servers provide:
 
 | Goal                   | Document                              |
 |:-----------------------|:--------------------------------------|
-| Configure MCP servers  | [Configuration](CONFIGURATION.md)     |
-| Learn server details   | [Servers Reference](SERVERS.md)       |
-| Use Memory effectively | [Memory Best Practices](MEMORY.md)    |
-| Fix connection issues  | [Troubleshooting](TROUBLESHOOTING.md) |
+| Configure MCP servers  | [Configuration](configuration.md)     |
+| Learn server details   | [Servers Reference](servers.md)       |
+| Use Memory effectively | [Memory Best Practices](memory.md)    |
+| Fix connection issues  | [Troubleshooting](troubleshooting.md) |
 
 ---
 
 ## 8. Related
 
-- [Configuration](CONFIGURATION.md) — Setup MCP servers
-- [Servers Reference](SERVERS.md) — Detailed server documentation
-- [Memory Best Practices](MEMORY.md) — Knowledge persistence patterns
-- [Troubleshooting](TROUBLESHOOTING.md) — Problem solving
+- [Configuration](configuration.md) — Setup MCP servers
+- [Servers Reference](servers.md) — Detailed server documentation
+- [Memory Best Practices](memory.md) — Knowledge persistence patterns
+- [Troubleshooting](troubleshooting.md) — Problem solving
 
 ---
 

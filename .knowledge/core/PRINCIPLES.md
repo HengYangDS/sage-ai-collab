@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # Core Principles - 信达雅 · 术法道
 
 > Foundational philosophy for AI collaboration
@@ -96,9 +89,9 @@ Before any task, ask:
 
 ## Related
 
-- `.knowledge/core/QUICK_REFERENCE.md` — Quick reference card
-- `.knowledge/core/DEFAULTS.md` — Default behaviors
-- `.knowledge/guidelines/SUCCESS.md` — Success principles
+- `.knowledge/core/quick_reference.md` — Quick reference card
+- `.knowledge/core/defaults.md` — Default behaviors
+- `.knowledge/guidelines/success.md` — Success principles
 
 ---
 

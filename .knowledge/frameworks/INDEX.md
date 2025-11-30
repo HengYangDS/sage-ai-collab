@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~400
----
-
 # Frameworks Reference
 
 > Deep conceptual frameworks and patterns
@@ -85,4 +78,4 @@ tokens: ~400
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

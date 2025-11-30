@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -395,9 +395,9 @@ After recovery, document:
 
 ## 8. Related
 
-- [Maintenance](MAINTENANCE.md) — Regular operations
-- [Migration](MIGRATION.md) — Version updates
-- [MCP Troubleshooting](../mcp/TROUBLESHOOTING.md) — MCP-specific issues
+- [Maintenance](maintenance.md) — Regular operations
+- [Migration](migration.md) — Version updates
+- [MCP Troubleshooting](../mcp/troubleshooting.md) — MCP-specific issues
 
 ---
 

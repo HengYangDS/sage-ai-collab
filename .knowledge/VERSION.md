@@ -1,13 +1,6 @@
----
-version: "1.0.2"
-last_updated: "2025-11-30"
-status: published
-tokens: ~150
----
-
 # Knowledge Base Version
 
-> Version tracking and changelog for SAGE Knowledge Base
+> Version tracking and changelog for AI collaboration
 
 ---
 
@@ -124,4 +117,4 @@ Metrics:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

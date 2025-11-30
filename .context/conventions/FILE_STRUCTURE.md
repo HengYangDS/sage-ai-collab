@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -73,7 +73,7 @@ dist/
 |:------------------|:----------------------|:----------------------|
 | Process output    | `.outputs/result.txt` | `./result.txt` (root) |
 | Temporary files   | `.outputs/temp_*.txt` | `./temp_*.txt` (root) |
-| Generated reports | `.outputs/REPORT.md`  | `./REPORT.md` (root)  |
+| Generated reports | `.outputs/report.md`  | `./report.md` (root)  |
 | Debug logs        | `.logs/debug.log`     | `./debug.log` (root)  |
 
 **Why this matters:**
@@ -126,7 +126,7 @@ This section defines the rules for organizing knowledge across the project's dir
 | Language/technology references      | SAGE API documentation       |
 | Industry-standard conventions       | Session history or handoffs  |
 
-**Example**: `.knowledge/practices/engineering/COMMON_PITFALLS.md` — Generic engineering pitfalls applicable to any
+**Example**: `.knowledge/practices/engineering/common_pitfalls.md` — Generic engineering pitfalls applicable to any
 project.
 
 ### 2.3 Context Directory (`.context/`)
@@ -141,7 +141,7 @@ project.
 | AI calibration data for SAGE         | Content meant for distribution |
 | Internal optimization notes          | User-facing documentation      |
 
-**Example**: `.context/decisions/ADR-0001-ARCHITECTURE.md` — SAGE-specific architecture decisions.
+**Example**: `.context/decisions/ADR-0001-architecture.md` — SAGE-specific architecture decisions.
 
 ### 2.4 Documentation Directory (`docs/`)
 
@@ -155,7 +155,7 @@ project.
 | Architecture overviews    | ADRs (belong in .context)              |
 | Quick reference guides    | Calibration data                       |
 
-**Example**: `docs/design/01-ARCHITECTURE.md` — SAGE architecture design document.
+**Example**: `docs/design/01-architecture.md` — SAGE architecture design document.
 
 ### 2.5 History Directory (`.history/`)
 
@@ -168,7 +168,7 @@ project.
 | Task handoff documents | Design decisions (use ADRs) |
 | Lessons learned        | Generic knowledge           |
 
-**Example**: `.history/conversations/2025-11-30-KNOWLEDGE-REORGANIZATION.md`
+**Example**: `.history/conversations/2025-11-30-knowledge-reorganization.md`
 
 ### 2.6 Migration Decision Rules
 
@@ -355,7 +355,7 @@ The configuration system uses a modular YAML structure organized by functional a
 ```
 config/
 ├── sage.yaml              # Main configuration entry point
-├── INDEX.md               # Configuration documentation
+├── index.md               # Configuration documentation
 ├── core/                  # Core infrastructure configs
 │   ├── timeout.yaml       # 5-level timeout hierarchy (T1-T5)
 │   ├── logging.yaml       # Structured logging (structlog)
@@ -432,9 +432,9 @@ This pattern enables:
 ```
 docs/
 ├── design/              # Design documents
-│   ├── 00-OVERVIEW.md
-│   ├── 01-ARCHITECTURE.md
-│   ├── 02-SAGE-PROTOCOL.md
+│   ├── 00-overview.md
+│   ├── 01-architecture.md
+│   ├── 02-sage-protocol.md
 │   └── ...
 ├── api/                 # API documentation
 ├── guides/              # User guides
@@ -446,8 +446,8 @@ docs/
 ```
 .knowledge/
 ├── core/                # Core principles
-│   ├── PRINCIPLES.md
-│   └── DEFAULTS.md
+│   ├── principles.md
+│   └── defaults.md
 ├── frameworks/          # Conceptual frameworks
 │   ├── autonomy/
 │   ├── cognitive/
@@ -469,21 +469,21 @@ docs/
 
 ```
 .context/
-├── INDEX.md             # Navigation index
+├── index.md             # Navigation index
 ├── policies/            # Project-specific policies
-│   ├── TIMEOUT_HIERARCHY.md
-│   ├── LOADING_CONFIGURATIONS.md
-│   └── RUNTIME_SETTINGS.md
+│   ├── timeout_hierarchy.md
+│   ├── loading_configurations.md
+│   └── runtime_settings.md
 ├── conventions/         # Coding conventions
-│   ├── NAMING.md
-│   ├── CODE_PATTERNS.md
-│   └── FILE_STRUCTURE.md
+│   ├── naming.md
+│   ├── code_patterns.md
+│   └── file_structure.md
 ├── decisions/           # Architecture Decision Records
-│   ├── ADR-0001-ARCHITECTURE.md
+│   ├── ADR-0001-architecture.md
 │   └── ...
 └── intelligence/        # AI collaboration patterns
-    ├── PATTERNS.md
-    └── CALIBRATION.md
+    ├── patterns.md
+    └── calibration.md
 ```
 
 ---
@@ -646,7 +646,7 @@ def _helper_function() -> None:
 | `README.md`       | Project overview             |
 | `Makefile`        | Development commands         |
 | `environment.yml` | Conda environment            |
-| `INDEX.md`        | Knowledge base entry point   |
+| `index.md`        | Knowledge base entry point   |
 
 ### 9.2 Hidden Configuration
 
@@ -661,10 +661,10 @@ def _helper_function() -> None:
 
 ## Related
 
-- `.context/conventions/NAMING.md` — Naming conventions
-- `.context/conventions/CODE_PATTERNS.md` — Code patterns
-- `docs/design/01-ARCHITECTURE.md` — Architecture
-- `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` — General directory practices
+- `.context/conventions/naming.md` — Naming conventions
+- `.context/conventions/code_patterns.md` — Code patterns
+- `docs/design/01-architecture.md` — Architecture
+- `.knowledge/practices/documentation/project_directory_structure.md` — General directory practices
 
 ---
 

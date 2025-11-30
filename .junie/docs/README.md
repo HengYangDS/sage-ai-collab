@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -49,26 +49,26 @@ This documentation covers everything you need to configure and optimize Junie AI
 docs/
 ├── README.md                 # This file - main index
 ├── guides/                   # 📘 User Guides
-│   ├── QUICK-START.md        # First-time setup (~10 min)
-│   └── ACTION-ALLOWLIST.md   # Terminal rules configuration (~30 min)
+│   ├── quick-start.md        # First-time setup (~10 min)
+│   └── action-allowlist.md   # Terminal rules configuration (~30 min)
 ├── mcp/                      # 🔌 MCP Integration
-│   ├── OVERVIEW.md           # Architecture and concepts (~15 min)
-│   ├── CONFIGURATION.md      # Setup and configuration (~30 min)
-│   ├── SERVERS.md            # Server reference (~20 min)
-│   ├── MEMORY.md             # Memory best practices (~15 min)
-│   └── TROUBLESHOOTING.md    # Problem solving (~10 min)
+│   ├── overview.md           # Architecture and concepts (~15 min)
+│   ├── configuration.md      # Setup and configuration (~30 min)
+│   ├── servers.md            # Server reference (~20 min)
+│   ├── memory.md             # Memory best practices (~15 min)
+│   └── troubleshooting.md    # Problem solving (~10 min)
 ├── operations/               # 🔧 Operations Guide
-│   ├── MAINTENANCE.md        # Daily operations (~10 min)
-│   ├── MIGRATION.md          # Version migration (~10 min)
-│   ├── METRICS.md            # Efficiency tracking (~10 min)
-│   └── RECOVERY.md           # Error recovery (~10 min)
+│   ├── maintenance.md        # Daily operations (~10 min)
+│   ├── migration.md          # Version migration (~10 min)
+│   ├── metrics.md            # Efficiency tracking (~10 min)
+│   └── recovery.md           # Error recovery (~10 min)
 ├── reference/                # 📚 Reference Materials
-│   ├── GLOSSARY.md           # Terminology (~5 min)
-│   ├── REGEX.md              # Regex patterns (~10 min)
-│   ├── RULES-WINDOWS.md      # Windows rules (copy-paste)
-│   └── RULES-UNIX.md         # macOS/Linux rules (copy-paste)
+│   ├── glossary.md           # Terminology (~5 min)
+│   ├── regex.md              # Regex patterns (~10 min)
+│   ├── rules-windows.md      # Windows rules (copy-paste)
+│   └── rules-unix.md         # macOS/Linux rules (copy-paste)
 └── vision/                   # 🔮 Future Vision
-    └── FUTURE-PROTOCOLS.md   # Protocol roadmap (~30 min)
+    └── future-protocols.md   # Protocol roadmap (~30 min)
 ```
 
 ---
@@ -90,12 +90,12 @@ Some documentation files exceed the recommended 300-line limit. This is an **int
 
 | File                         | Lines | Justification                                       |
 |:-----------------------------|:------|:----------------------------------------------------|
-| `mcp/CONFIGURATION.md`       | ~527  | Complete server setup requires all details together |
-| `mcp/SERVERS.md`             | ~451  | All server docs in one reference                    |
-| `mcp/TROUBLESHOOTING.md`     | ~437  | Comprehensive problem-solving guide                 |
-| `mcp/MEMORY.md`              | ~386  | Complete memory patterns and examples               |
-| `operations/RECOVERY.md`     | ~398  | All recovery procedures in one place                |
-| `guides/ACTION-ALLOWLIST.md` | ~325  | Complete rule configuration guide                   |
+| `mcp/configuration.md`       | ~527  | Complete server setup requires all details together |
+| `mcp/servers.md`             | ~451  | All server docs in one reference                    |
+| `mcp/troubleshooting.md`     | ~437  | Comprehensive problem-solving guide                 |
+| `mcp/memory.md`              | ~386  | Complete memory patterns and examples               |
+| `operations/recovery.md`     | ~398  | All recovery procedures in one place                |
+| `guides/action-allowlist.md` | ~325  | Complete rule configuration guide                   |
 
 ### When to Split vs. Keep Together
 
@@ -114,12 +114,12 @@ Some documentation files exceed the recommended 300-line limit. This is an **int
 
 | Your Goal                       | Go To                                                                   | Time      |
 |:--------------------------------|:------------------------------------------------------------------------|:----------|
-| 🚀 **First-time setup**         | [Quick Start](guides/QUICK-START.md)                                    | 10 min    |
-| 📘 **Configure Terminal rules** | [Action Allowlist](guides/ACTION-ALLOWLIST.md)                          | 30 min    |
-| 🔌 **Setup MCP servers**        | [MCP Configuration](mcp/CONFIGURATION.md)                               | 30 min    |
-| 📋 **Copy all rules**           | [Windows](reference/RULES-WINDOWS.md) / [Unix](reference/RULES-UNIX.md) | 5 min     |
-| 🐛 **Fix issues**               | [MCP Troubleshooting](mcp/TROUBLESHOOTING.md)                           | 10-20 min |
-| 🔮 **Learn future protocols**   | [Future Protocols](vision/FUTURE-PROTOCOLS.md)                          | 30 min    |
+| 🚀 **First-time setup**         | [Quick Start](guides/quick-start.md)                                    | 10 min    |
+| 📘 **Configure Terminal rules** | [Action Allowlist](guides/action-allowlist.md)                          | 30 min    |
+| 🔌 **Setup MCP servers**        | [MCP Configuration](mcp/configuration.md)                               | 30 min    |
+| 📋 **Copy all rules**           | [Windows](reference/rules-windows.md) / [Unix](reference/rules-unix.md) | 5 min     |
+| 🐛 **Fix issues**               | [MCP Troubleshooting](mcp/troubleshooting.md)                           | 10-20 min |
+| 🔮 **Learn future protocols**   | [Future Protocols](vision/future-protocols.md)                          | 30 min    |
 
 ### By Role
 

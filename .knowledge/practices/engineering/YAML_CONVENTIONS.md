@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1250
----
-
 # YAML Configuration Conventions
 
 > Universal standards for writing YAML configuration files
@@ -201,8 +194,8 @@ database:
 
 ## Related
 
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards (SSOT)
-- `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/guidelines/code_style.md` — Code style guidelines
 
 ---
 

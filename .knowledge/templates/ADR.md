@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~950
----
-
 # Architecture Decision Record (ADR) Template
 
 > **Purpose**: Document significant architectural decisions
@@ -133,7 +119,7 @@ tokens: ~950
 
 ---
 
-*ADR from SAGE Knowledge Base*
+*ADR from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -234,7 +220,7 @@ FastMCP provides the right balance of simplicity and capability.
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

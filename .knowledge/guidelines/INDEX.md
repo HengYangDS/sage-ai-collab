@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~300
----
-
 # Engineering Guidelines
 
 > Standards for code, documentation, and AI collaboration
@@ -84,4 +77,4 @@ QUICK_START.md → CODE_STYLE.md → ENGINEERING.md → [specific topic]
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

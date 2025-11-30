@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~950
----
-
 # Information Density Framework
 
 > Balance between compression and clarity in communication
@@ -125,8 +118,8 @@ tokens: ~950
 
 ## Related
 
-- `.knowledge/practices/ai_collaboration/TOKEN_OPTIMIZATION.md` — Token efficiency
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards (SSOT)
+- `.knowledge/practices/ai_collaboration/token_optimization.md` — Token efficiency
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
 
 ---
 

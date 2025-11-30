@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1350
----
-
 # Database Best Practices
 
 > Guidelines for effective database design and usage
@@ -226,8 +219,8 @@ CREATE INDEX ix_users_active ON users(email) WHERE deleted_at IS NULL;
 
 ## Related
 
-- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Performance guide
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/frameworks/performance/optimization_strategies.md` — Performance guide
+- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~800
----
-
 # Code Review Practices
 
 > Effective code review patterns for quality and knowledge sharing
@@ -136,8 +129,8 @@ tokens: ~800
 
 ## Related
 
-- `.knowledge/guidelines/QUALITY.md` — Quality standards
-- `.knowledge/guidelines/CODE_STYLE.md` — Code style
+- `.knowledge/guidelines/quality.md` — Quality standards
+- `.knowledge/guidelines/code_style.md` — Code style
 
 ---
 

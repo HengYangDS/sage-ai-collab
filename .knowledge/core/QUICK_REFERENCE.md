@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~750
----
-
 # Quick Reference Card
 
 > Critical questions and autonomy levels at a glance
@@ -115,9 +108,9 @@ Ask before every task:
 
 ## Related
 
-- `.knowledge/core/PRINCIPLES.md` — Full philosophy
-- `.knowledge/core/DEFAULTS.md` — Default behaviors
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
+- `.knowledge/core/principles.md` — Full philosophy
+- `.knowledge/core/defaults.md` — Default behaviors
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
 ---
 

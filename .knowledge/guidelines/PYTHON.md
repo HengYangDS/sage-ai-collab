@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1000
----
-
 # Python-Specific Guidelines
 
 > Python best practices, type hints, decorators, patterns
@@ -215,4 +208,4 @@ class UserRepository:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

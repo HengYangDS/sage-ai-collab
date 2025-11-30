@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1400
----
-
 # Document Optimization Workflow
 
 > Systematic workflow for batch document optimization and quality assurance
@@ -91,7 +84,7 @@ tokens: ~1400
 ### 2.5 Footer Check
 
 - [ ] Horizontal rule before footer
-- [ ] Standard footer: `*Part of SAGE Knowledge Base*`
+- [ ] Standard footer: `*AI Collaboration Knowledge Base*`
 - [ ] No custom signatures
 
 ---
@@ -182,4 +175,4 @@ tokens: ~1400
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

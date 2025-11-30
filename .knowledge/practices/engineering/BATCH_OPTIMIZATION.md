@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~900
----
-
 # Batch Optimization Patterns
 
 > Efficient processing of large-scale operations
@@ -147,8 +140,8 @@ def process_with_errors(items: List):
 
 ## Related
 
-- `.knowledge/frameworks/patterns/PERSISTENCE.md` — Data patterns
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
+- `.knowledge/frameworks/patterns/persistence.md` — Data patterns
+- `.knowledge/practices/engineering/error_handling.md` — Error handling
 
 ---
 

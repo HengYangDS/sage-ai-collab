@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.1"
 last_updated: "2025-11-30"
 status: published

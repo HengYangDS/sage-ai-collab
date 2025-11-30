@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -274,10 +274,10 @@ This document tracks:
 
 ## Related
 
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy level definitions
-- `.context/intelligence/calibration/PATTERNS.md` — AI collaboration patterns
-- `.context/intelligence/optimization/OPTIMIZATIONS.md` — Project optimizations
-- `.junie/GUIDELINES.md` — Project guidelines
+- `.knowledge/frameworks/autonomy/levels.md` — Autonomy level definitions
+- `.context/intelligence/calibration/patterns.md` — AI collaboration patterns
+- `.context/intelligence/optimization/optimizations.md` — Project optimizations
+- `.junie/guidelines.md` — Project guidelines
 
 ---
 

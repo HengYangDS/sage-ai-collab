@@ -33,7 +33,7 @@ tokens: ~1000
 
 | Layer  | Directory              | Tokens       | Load Timing   | Timeout |
 |--------|------------------------|--------------|---------------|---------|
-| **L0** | INDEX.md               | ~100         | Always        | 100ms   |
+| **L0** | index.md               | ~100         | Always        | 100ms   |
 | **L1** | .knowledge/core/       | ~500         | Always        | 500ms   |
 | **L2** | .knowledge/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
 | **L3** | .knowledge/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
@@ -48,7 +48,7 @@ tokens: ~1000
 │                                                             │
 │  Always Load (~600 tokens):                                 │
 │  ┌─────────────┐  ┌─────────────────────────────┐          │
-│  │  INDEX.md   │  │  .knowledge/core/*.md       │          │
+│  │  index.md   │  │  .knowledge/core/*.md       │          │
 │  │  (~100)     │  │  (~500)                     │          │
 │  └─────────────┘  └─────────────────────────────┘          │
 │                                                             │
@@ -277,9 +277,9 @@ class TimeoutLoader:
 
 ## Related
 
-- `docs/design/04-TIMEOUT-LOADING.md` — Timeout hierarchy overview
-- `docs/design/04A-CIRCUIT-BREAKER.md` — Circuit breaker and degradation
-- `docs/guides/CONFIGURATION.md` — Configuration guide
+- `docs/design/04-timeout-loading.md` — Timeout hierarchy overview
+- `docs/design/04a-circuit-breaker.md` — Circuit breaker and degradation
+- `docs/guides/configuration.md` — Configuration guide
 
 ---
 

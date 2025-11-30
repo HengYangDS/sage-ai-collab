@@ -170,7 +170,7 @@ curl "http://localhost:8080/v1/search?q=timeout&max_results=5"
   "query": "timeout",
   "results": [
     {
-      "path": ".knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md",
+      "path": ".knowledge/frameworks/resilience/timeout_patterns.md",
       "score": 0.95,
       "preview": "5-level timeout hierarchy...",
       "layer": "frameworks"
@@ -240,10 +240,10 @@ def run_api_server(host: str = "localhost", port: int = 8080):
 
 ## Related
 
-- `docs/design/03-SERVICES.md` — Services overview
-- `docs/design/03A-CLI-SERVICE.md` — CLI service design
-- `docs/design/03B-MCP-SERVICE.md` — MCP service design
-- `docs/api/PYTHON.md` — Python API reference
+- `docs/design/03-services.md` — Services overview
+- `docs/design/03a-cli-service.md` — CLI service design
+- `docs/design/03b-mcp-service.md` — MCP service design
+- `docs/api/python.md` — Python API reference
 
 ---
 

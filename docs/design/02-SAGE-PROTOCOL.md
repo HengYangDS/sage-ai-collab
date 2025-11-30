@@ -17,9 +17,9 @@ This document is part of the SAGE Protocol Design series:
 
 | Document                  | Content                              |
 |---------------------------|--------------------------------------|
-| **02-SAGE-PROTOCOL.MD** (this) | Protocol overview, data classes, interfaces |
-| `02A-DI-EVENTBUS.md`      | DI Container and EventBus            |
-| `02B-BOOTSTRAP.md`        | Application bootstrap and configuration |
+| **02-sage-protocol.md** (this) | Protocol overview, data classes, interfaces |
+| `02a-di-eventbus.md`      | DI Container and EventBus            |
+| `02b-bootstrap.md`        | Application bootstrap and configuration |
 
 ---
 
@@ -238,10 +238,10 @@ class EvolveProtocol(Protocol):
 
 ## Related
 
-- `docs/design/02A-DI-EVENTBUS.md` — DI Container and EventBus details
-- `docs/design/02B-BOOTSTRAP.md` — Application bootstrap and configuration
-- `docs/design/01-ARCHITECTURE.md` — Overall architecture
-- `docs/design/03-SERVICES.md` — Service layer implementation
+- `docs/design/02a-di-eventbus.md` — DI Container and EventBus details
+- `docs/design/02b-bootstrap.md` — Application bootstrap and configuration
+- `docs/design/01-architecture.md` — Overall architecture
+- `docs/design/03-services.md` — Service layer implementation
 
 ---
 

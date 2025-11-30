@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -67,8 +67,8 @@ If your project includes `.junie/` configuration:
 1. Open `Settings | Tools | Junie | Action Allowlist`
 2. Click "Add" to add Terminal rules
 3. Copy rules from:
-    - [Windows Rules](../reference/RULES-WINDOWS.md)
-    - [macOS/Linux Rules](../reference/RULES-UNIX.md)
+    - [Windows Rules](../reference/rules-windows.md)
+    - [macOS/Linux Rules](../reference/rules-unix.md)
 
 ### Method C: Quick Copy-Paste
 
@@ -132,7 +132,7 @@ MCP servers provide advanced capabilities like persistent memory and external to
 | **memory**     | P0       | Cross-session knowledge        |
 | **fetch**      | P1       | External URL access            |
 
-For detailed MCP configuration, see [MCP Configuration](../mcp/CONFIGURATION.md).
+For detailed MCP configuration, see [MCP Configuration](../mcp/configuration.md).
 
 ---
 
@@ -163,13 +163,13 @@ In Junie chat, try:
 
 1. Check rule syntax in `Settings | Tools | Junie | Action Allowlist`
 2. Verify regex patterns match your commands
-3. See [Action Allowlist Guide](ACTION-ALLOWLIST.md) for detailed patterns
+3. See [Action Allowlist Guide](action-allowlist.md) for detailed patterns
 
 ### MCP Servers Not Connecting
 
 1. Verify Node.js is installed: `node --version`
 2. Check server logs in IDE's MCP panel
-3. See [MCP Troubleshooting](../mcp/TROUBLESHOOTING.md)
+3. See [MCP Troubleshooting](../mcp/troubleshooting.md)
 
 ---
 
@@ -177,18 +177,18 @@ In Junie chat, try:
 
 | Goal                        | Document                                          |
 |:----------------------------|:--------------------------------------------------|
-| Configure all 87 rules      | [Action Allowlist](ACTION-ALLOWLIST.md)           |
-| Setup advanced MCP features | [MCP Overview](../mcp/OVERVIEW.md)                |
-| Track efficiency metrics    | [Metrics](../operations/METRICS.md)               |
-| Learn about future features | [Future Protocols](../vision/FUTURE-PROTOCOLS.md) |
+| Configure all 87 rules      | [Action Allowlist](action-allowlist.md)           |
+| Setup advanced MCP features | [MCP Overview](../mcp/overview.md)                |
+| Track efficiency metrics    | [Metrics](../operations/metrics.md)               |
+| Learn about future features | [Future Protocols](../vision/future-protocols.md) |
 
 ---
 
 ## 9. Related
 
-- [Action Allowlist](ACTION-ALLOWLIST.md) — Complete Terminal rules guide
-- [MCP Configuration](../mcp/CONFIGURATION.md) — MCP server setup
-- [Glossary](../reference/GLOSSARY.md) — Terminology reference
+- [Action Allowlist](action-allowlist.md) — Complete Terminal rules guide
+- [MCP Configuration](../mcp/configuration.md) — MCP server setup
+- [Glossary](../reference/glossary.md) — Terminology reference
 
 ---
 

@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -8,7 +8,7 @@ tokens: ~500
 
 > SAGE Knowledge Base specific timeout configuration (T1-T5 levels)
 >
-> For universal timeout patterns, see `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md`
+> For universal timeout patterns, see `.knowledge/frameworks/resilience/timeout_patterns.md`
 
 ---
 
@@ -112,9 +112,9 @@ timeout:
 
 | Document           | Location                                               | Description                               |
 |:-------------------|:-------------------------------------------------------|:------------------------------------------|
-| Timeout Patterns   | `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` | Universal timeout and resilience patterns |
+| Timeout Patterns   | `.knowledge/frameworks/resilience/timeout_patterns.md` | Universal timeout and resilience patterns |
 | Main Configuration | `sage.yaml`                                            | Runtime timeout settings                  |
-| Defaults           | `.knowledge/core/DEFAULTS.md`                          | Default timeout values reference          |
+| Defaults           | `.knowledge/core/defaults.md`                          | Default timeout values reference          |
 
 ---
 

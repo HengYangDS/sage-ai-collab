@@ -30,9 +30,9 @@ This document is part of the Plugin & Memory series:
 
 | Document                      | Content                                    |
 |-------------------------------|--------------------------------------------|
-| **05-PLUGIN-MEMORY.MD** (this)| Overview, plugin system, extension points  |
-| `05A-EVENT-PLUGINS.md`        | Event-driven plugin architecture details   |
-| `05B-MEMORY-PERSISTENCE.md`   | Cross-task memory persistence details      |
+| **05-plugin-memory.md** (this)| Overview, plugin system, extension points  |
+| `05a-event-plugins.md`        | Event-driven plugin architecture details   |
+| `05b-memory-persistence.md`   | Cross-task memory persistence details      |
 
 ---
 
@@ -156,7 +156,7 @@ class PluginRegistry:
 
 ## 6. Event-Driven Architecture Summary
 
-> **Detailed Design**: See `05A-EVENT-PLUGINS.md`
+> **Detailed Design**: See `05a-event-plugins.md`
 
 ### Architecture Pattern
 
@@ -184,7 +184,7 @@ class PluginRegistry:
 
 ## 7. Memory Persistence Summary
 
-> **Detailed Design**: See `05B-MEMORY-PERSISTENCE.md`
+> **Detailed Design**: See `05b-memory-persistence.md`
 
 ### Memory Components
 
@@ -209,11 +209,11 @@ class PluginRegistry:
 
 ## Related
 
-- `docs/design/05A-EVENT-PLUGINS.md` — Event-driven plugin architecture
-- `docs/design/05B-MEMORY-PERSISTENCE.md` — Memory persistence design
-- `docs/design/02-SAGE-PROTOCOL.md` — SAGE protocol design
-- `docs/design/01-ARCHITECTURE.md` — Architecture overview
-- `docs/api/PLUGIN_QUICK_REF.md` — Plugin API quick reference
+- `docs/design/05a-event-plugins.md` — Event-driven plugin architecture
+- `docs/design/05b-memory-persistence.md` — Memory persistence design
+- `docs/design/02-sage-protocol.md` — SAGE protocol design
+- `docs/design/01-architecture.md` — Architecture overview
+- `docs/api/plugin_quick_ref.md` — Plugin API quick reference
 
 ---
 

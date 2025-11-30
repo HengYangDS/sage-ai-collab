@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~850
----
-
 # Engineering Practices Guidelines
 
 > Configuration, testing, performance, change control, maintainability
@@ -141,4 +134,4 @@ Measure → Profile → Optimize → Verify
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1600
----
-
 # AI Collaboration Patterns
 
 > Successful interaction patterns for human-AI collaboration
@@ -291,4 +284,4 @@ Please confirm or adjust.
 
 ---
 
-*Part of SAGE Knowledge Base - AI Collaboration Practices*
+*AI Collaboration Knowledge Base*

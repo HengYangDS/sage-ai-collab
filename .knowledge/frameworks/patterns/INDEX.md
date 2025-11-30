@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~350
----
-
 # Patterns Framework
 
 > Reusable patterns for AI-human collaboration and system design
@@ -30,10 +23,10 @@ persistence in AI-human collaborative systems.
 
 | Document           | Description                                     |
 |--------------------|-------------------------------------------------|
-| `COLLABORATION.md` | Collaboration patterns for AI-human interaction |
-| `DECISION.md`      | Decision-making patterns and workflows          |
-| `INTEGRATION.md`   | System integration patterns                     |
-| `PERSISTENCE.md`   | Data persistence and state management patterns  |
+| `collaboration.md` | Collaboration patterns for AI-human interaction |
+| `decision.md`      | Decision-making patterns and workflows          |
+| `integration.md`   | System integration patterns                     |
+| `persistence.md`   | Data persistence and state management patterns  |
 
 ---
 
@@ -68,8 +61,8 @@ persistence in AI-human collaborative systems.
 ## Related
 
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
-- `.context/conventions/CODE_PATTERNS.md` — Code patterns
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
+- `.context/conventions/code_patterns.md` — Code patterns
+- `docs/design/01-architecture.md` — Architecture design
 
 ---
 

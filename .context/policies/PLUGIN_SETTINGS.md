@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -411,9 +411,9 @@ sage plugin config <plugin_name>
 
 ## Related
 
-- `.context/policies/SERVICE_SETTINGS.md` — Service configuration
-- `.context/policies/MEMORY_SETTINGS.md` — Memory/persistence settings
-- `.context/decisions/ADR-0008-PLUGIN-SYSTEM.md` — Plugin system ADR
+- `.context/policies/service_settings.md` — Service configuration
+- `.context/policies/memory_settings.md` — Memory/persistence settings
+- `.context/decisions/ADR-0008-plugin-system.md` — Plugin system ADR
 - `.knowledge/scenarios/plugin_development/` — Plugin development guide
 
 ---

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~4100
----
-
 # Optimization Strategies
 
 > Systematic approaches to improving system performance
@@ -570,9 +563,9 @@ class DatabaseRouter:
 
 ## Related
 
-- `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
-- `.knowledge/frameworks/performance/PROFILING_GUIDE.md` — Performance measurement
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/frameworks/performance/caching_patterns.md` — Caching strategies
+- `.knowledge/frameworks/performance/profiling_guide.md` — Performance measurement
+- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1100
----
-
 # Timeout Design Patterns
 
 > Universal timeout and resilience patterns for system design
@@ -167,8 +160,8 @@ async def resilient_call(params):
 
 ## Related
 
-- `.context/policies/TIMEOUT_HIERARCHY.md` — SAGE-specific T1-T5 timeout hierarchy
-- `.knowledge/frameworks/patterns/PERSISTENCE.md` — Data persistence patterns
+- `.context/policies/timeout_hierarchy.md` — SAGE-specific T1-T5 timeout hierarchy
+- `.knowledge/frameworks/patterns/persistence.md` — Data persistence patterns
 
 ---
 

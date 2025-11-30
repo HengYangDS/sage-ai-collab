@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -126,7 +126,7 @@ tokens: ~500
 | `open_nodes`       | Retrieve specific entities  | `open_nodes(["entity_name"])`              |
 | `delete_entities`  | Remove entities             | `delete_entities(["old_entity"])`          |
 
-**Best Practices**: See [Memory Best Practices](MEMORY.md) for detailed patterns.
+**Best Practices**: See [Memory Best Practices](memory.md) for detailed patterns.
 
 ---
 
@@ -447,10 +447,10 @@ tokens: ~500
 
 ## 6. Related
 
-- [Overview](OVERVIEW.md) — MCP architecture
-- [Configuration](CONFIGURATION.md) — Setup guide
-- [Memory Best Practices](MEMORY.md) — Knowledge persistence
-- [Troubleshooting](TROUBLESHOOTING.md) — Problem solving
+- [Overview](overview.md) — MCP architecture
+- [Configuration](configuration.md) — Setup guide
+- [Memory Best Practices](memory.md) — Knowledge persistence
+- [Troubleshooting](troubleshooting.md) — Problem solving
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1100
----
-
 # Incremental Improvement Practices
 
 > Systematic approach to continuous, low-risk enhancement
@@ -159,8 +152,8 @@ return old_algorithm(data)
 
 ## Related
 
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
-- `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
+- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
+- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
 
 ---
 

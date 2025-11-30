@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1500
----
-
 # Concurrency Practices
 
 > Best practices for concurrent and parallel programming
@@ -222,8 +215,8 @@ async def safe_gather(tasks):
 
 ## Related
 
-- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Performance optimization
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/frameworks/performance/optimization_strategies.md` — Performance optimization
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
 ---
 

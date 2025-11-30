@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1700
----
-
 # Logging Standards
 
 > Universal logging standards and best practices
@@ -277,9 +270,9 @@ logging:
 
 ## Related
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 - `config/core/logging.yaml` — Logging configuration
-- `.knowledge/guidelines/ENGINEERING.md` — Engineering guidelines
+- `.knowledge/guidelines/engineering.md` — Engineering guidelines
 
 ---
 

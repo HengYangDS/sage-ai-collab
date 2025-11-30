@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -32,7 +32,7 @@ Content here may be outdated or superseded by newer versions.
 
 | File                       | Description                            | Archived Date |
 |----------------------------|----------------------------------------|---------------|
-| `ULTIMATE_DESIGN_FINAL.md` | Original comprehensive design document | 2025-11       |
+| `ULTIMATE_DESIGN_FINAL.MD` | Original comprehensive design document | 2025-11       |
 
 ---
 

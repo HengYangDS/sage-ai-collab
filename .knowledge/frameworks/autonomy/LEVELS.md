@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~900
----
-
 # AI Autonomy Levels Framework
 
 > 6-level autonomy spectrum for human-AI collaboration
@@ -135,9 +128,9 @@ autonomy:
 
 ## Related
 
-- `.knowledge/core/QUICK_REFERENCE.md` — Quick autonomy reference
-- `.knowledge/practices/decisions/AUTONOMY_CASES.md` — Concrete examples
-- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration guidelines
+- `.knowledge/core/quick_reference.md` — Quick autonomy reference
+- `.knowledge/practices/decisions/autonomy_cases.md` — Concrete examples
+- `.knowledge/guidelines/ai_collaboration.md` — Collaboration guidelines
 
 ---
 

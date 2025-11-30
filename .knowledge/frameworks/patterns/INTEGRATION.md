@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3850
----
-
 # Integration Patterns
 
 > Patterns for integrating SAGE with AI tools, IDEs, and CI/CD systems
@@ -145,7 +138,7 @@ class ContextSync:
 
 ### 3.1 JetBrains IDE Integration
 
-**Setup via .junie/GUIDELINES.MD**:
+**Setup via .junie/guidelines.md**:
 
 ```markdown
 # Project Guidelines
@@ -611,10 +604,10 @@ SAGE_EXTERNAL_URL=https://api.example.com
 
 ## Related
 
-- `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design guidelines
-- `.context/decisions/ADR-0008-PLUGIN-SYSTEM.md` — Plugin architecture
-- `docs/api/MCP.md` — MCP API reference
+- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
+- `.knowledge/practices/engineering/api_design.md` — API design guidelines
+- `.context/decisions/ADR-0008-plugin-system.md` — Plugin architecture
+- `docs/api/mcp.md` — MCP API reference
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~3650
----
-
 # Knowledge Graph Guide
 
 > Building and using knowledge graphs for content analysis and visualization
@@ -184,7 +177,7 @@ graph = builder.build_from_directory(
 # Build only changed files
 graph = builder.build_incremental(
     since=last_build_time,
-    changed_files=[".knowledge/NEW_FILE.md"]
+    changed_files=[".knowledge/new_file.md"]
 )
 ```
 
@@ -235,7 +228,7 @@ stats = builder.get_statistics()
 
 ```python
 # Get subgraph for a specific file
-file_graph = builder.get_file_graph(".knowledge/core/PRINCIPLES.md")
+file_graph = builder.get_file_graph(".knowledge/core/principles.md")
 
 # Find files linked from this file
 outgoing = [
@@ -576,8 +569,8 @@ result = await build_knowledge_graph(
 ## Related
 
 - `tools/knowledge_graph/` — Graph builder implementation
-- `docs/guides/MCP_TOOLS.md` — MCP tools reference
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Content organization
+- `docs/guides/mcp_tools.md` — MCP tools reference
+- `.knowledge/practices/documentation/knowledge_organization.md` — Content organization
 - `.outputs/` — Graph output directory
 
 ---

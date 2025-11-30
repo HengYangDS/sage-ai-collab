@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~400
----
-
 # Resilience Framework
 
 > Fault tolerance and graceful degradation patterns
@@ -30,7 +23,7 @@ timeouts, and degraded conditions while maintaining useful functionality.
 
 | Document              | Description                              |
 |-----------------------|------------------------------------------|
-| `TIMEOUT_PATTERNS.md` | Timeout handling and fallback strategies |
+| `timeout_patterns.md` | Timeout handling and fallback strategies |
 
 ---
 
@@ -57,8 +50,8 @@ timeouts, and degraded conditions while maintaining useful functionality.
 
 ## Related
 
-- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout configuration
-- `.context/decisions/ADR-0003-TIMEOUT-HIERARCHY.md` — Timeout ADR
+- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/decisions/ADR-0003-timeout-hierarchy.md` — Timeout ADR
 - `config/core/timeout.yaml` — Timeout settings
 
 ---

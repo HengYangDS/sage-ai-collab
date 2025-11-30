@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1450
----
-
 # Incident Postmortem Template
 
 > **Purpose**: Document incidents, root causes, and preventive measures
@@ -226,7 +212,7 @@ tokens: ~1450
 
 ---
 
-*Postmortem from SAGE Knowledge Base*
+*Postmortem from AI Collaboration Knowledge Base*
 ```
 
 ---
@@ -287,7 +273,7 @@ tokens: ~1450
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

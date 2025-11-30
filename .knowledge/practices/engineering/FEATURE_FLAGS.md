@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1750
----
-
 # Feature Flag Patterns
 
 > Feature flag design principles and best practices
@@ -282,8 +275,8 @@ alerts:
 
 ## Related
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing with flags
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Degradation patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing with flags
+- `.knowledge/practices/engineering/error_handling.md` — Degradation patterns
 - `config/capabilities/features.yaml` — Project feature configuration
 
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -205,13 +205,13 @@ The final design was consolidated from multiple expert-reviewed documents:
 
 ## Related
 
-- `01-ARCHITECTURE.md` — Three-layer architecture details
-- `02-SAGE-PROTOCOL.md` — SAGE protocol specification
-- `03-SERVICES.md` — Service layer design
-- `04-TIMEOUT-LOADING.md` — Timeout hierarchy and smart loading
-- `05-PLUGIN-MEMORY.md` — Plugin system and memory persistence
-- `06-CONTENT-STRUCTURE.md` — Content organization
-- `07-ROADMAP.md` — Implementation roadmap
+- `01-architecture.md` — Three-layer architecture details
+- `02-sage-protocol.md` — SAGE protocol specification
+- `03-services.md` — Service layer design
+- `04-timeout-loading.md` — Timeout hierarchy and smart loading
+- `05-plugin-memory.md` — Plugin system and memory persistence
+- `06-content-structure.md` — Content organization
+- `07-roadmap.md` — Implementation roadmap
 
 ---
 

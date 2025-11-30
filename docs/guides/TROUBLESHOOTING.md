@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -268,9 +268,9 @@ Include in bug reports:
 
 ## Related
 
-- `docs/guides/CONFIGURATION.md` — Configuration guide
-- `docs/guides/QUICKSTART.md` — Quick start guide
-- `docs/guides/FAQ.md` — Frequently asked questions
+- `docs/guides/configuration.md` — Configuration guide
+- `docs/guides/quickstart.md` — Quick start guide
+- `docs/guides/faq.md` — Frequently asked questions
 
 ---
 

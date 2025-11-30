@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -48,8 +41,8 @@ autonomy_default: L4
 
 | Priority      | Files                                                                                                       |
 |---------------|-------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/DOCUMENTATION.md` · `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` |
-| **On-Demand** | `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` · `.knowledge/templates/INDEX.md`                                  |
+| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/documentation.md` · `.knowledge/practices/documentation/documentation_standards.md` |
+| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/templates/index.md`                                  |
 
 ---
 
@@ -82,10 +75,10 @@ autonomy_default: L4
 
 | Document Type | Template                  | Use Case               |
 |---------------|---------------------------|------------------------|
-| API Reference | `.knowledge/templates/API_SPEC.md`   | Endpoint documentation |
-| Architecture  | `.knowledge/templates/ADR.md`        | Design decisions       |
-| Runbook       | `.knowledge/templates/RUNBOOK.md`    | Operational guides     |
-| Postmortem    | `.knowledge/templates/POSTMORTEM.md` | Incident reports       |
+| API Reference | `.knowledge/templates/api_spec.md`   | Endpoint documentation |
+| Architecture  | `.knowledge/templates/adr.md`        | Design decisions       |
+| Runbook       | `.knowledge/templates/runbook.md`    | Operational guides     |
+| Postmortem    | `.knowledge/templates/postmortem.md` | Incident reports       |
 
 ---
 
@@ -313,10 +306,10 @@ def process_data(
 
 ## Related
 
-- `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards (SSOT)
-- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Knowledge organization
-- `.knowledge/frameworks/cognitive/INFORMATION_DENSITY.md` — Information density
+- `.knowledge/guidelines/documentation.md` — Documentation guidelines
+- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards (SSOT)
+- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge organization
+- `.knowledge/frameworks/cognitive/information_density.md` — Information density
 
 ---
 

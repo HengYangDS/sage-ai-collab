@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1400
----
-
 # Case Study Template
 
 > Template for documenting problem-solving cases and lessons learned
@@ -246,4 +239,4 @@ builder.export_to_json(output_path)
 
 ---
 
-*Template version: 1.0 — Part of SAGE Knowledge Base*
+*Template version: 1.0 — AI Collaboration Knowledge Base*

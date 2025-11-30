@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~450
----
-
 # Best Practices
 
 > Practical guides for implementation
@@ -101,4 +94,4 @@ tokens: ~450
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

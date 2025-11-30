@@ -293,9 +293,9 @@ async def main():
 
 ## Related
 
-- `docs/design/02-SAGE-PROTOCOL.md` — Protocol overview
-- `docs/design/02B-BOOTSTRAP.md` — Application bootstrap
-- `.knowledge/practices/engineering/DEPENDENCY_INJECTION.md` — DI patterns
+- `docs/design/02-sage-protocol.md` — Protocol overview
+- `docs/design/02b-bootstrap.md` — Application bootstrap
+- `.knowledge/practices/engineering/dependency_injection.md` — DI patterns
 
 ---
 

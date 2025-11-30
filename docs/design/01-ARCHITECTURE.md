@@ -28,10 +28,10 @@ This document is part of the Architecture Design series:
 
 | Document                   | Content                                            |
 |----------------------------|----------------------------------------------------|
-| **01-ARCHITECTURE.MD** (this) | Core architecture, layers, directory structure  |
-| `01A-INFRASTRUCTURE.md`    | Logging, toolchain, packaging, platform support    |
-| `01B-CONFIGURATION.md`     | Configuration hierarchy, timeout, YAML DSL         |
-| `01C-USAGE.md`             | Bootstrap, quick start, exceptions, AI scenarios   |
+| **01-architecture.md** (this) | Core architecture, layers, directory structure  |
+| `01a-infrastructure.md`    | Logging, toolchain, packaging, platform support    |
+| `01b-configuration.md`     | Configuration hierarchy, timeout, YAML DSL         |
+| `01c-usage.md`             | Bootstrap, quick start, exceptions, AI scenarios   |
 
 ---
 
@@ -51,7 +51,7 @@ This document is part of the Architecture Design series:
 | Memory persistence  | MemoryStore, TokenBudget    | core/memory/                     | ✅ Complete |
 | SAGE Protocol       | models, protocols, exceptions | core/models.py, core/protocols.py | ✅ Complete |
 
-**Status**: M3 complete. 841+ tests passing, 89% coverage. See `07-ROADMAP.md` for details.
+**Status**: M3 complete. 841+ tests passing, 89% coverage. See `07-roadmap.md` for details.
 
 ---
 
@@ -147,7 +147,7 @@ sage/                           # Project root
 ├── README.md, LICENSE          # Documentation
 ├── pyproject.toml              # Python project config
 ├── sage.yaml                   # Smart loading configuration
-├── INDEX.md                    # Navigation entry
+├── index.md                    # Navigation entry
 │
 ├── .context/                   # Project-specific knowledge
 ├── .history/                   # AI session history
@@ -194,11 +194,11 @@ sage/                           # Project root
 
 ## Related
 
-- `docs/design/01A-INFRASTRUCTURE.md` — Logging, toolchain, packaging, platform support
-- `docs/design/01B-CONFIGURATION.md` — Configuration hierarchy, timeout, YAML DSL
-- `docs/design/01C-USAGE.md` — Bootstrap, quick start, exceptions, AI scenarios
-- `docs/design/02-SAGE-PROTOCOL.md` — SAGE protocol design
-- `docs/design/03-SERVICES.md` — Services layer design
+- `docs/design/01a-infrastructure.md` — Logging, toolchain, packaging, platform support
+- `docs/design/01b-configuration.md` — Configuration hierarchy, timeout, YAML DSL
+- `docs/design/01c-usage.md` — Bootstrap, quick start, exceptions, AI scenarios
+- `docs/design/02-sage-protocol.md` — SAGE protocol design
+- `docs/design/03-services.md` — Services layer design
 
 ---
 

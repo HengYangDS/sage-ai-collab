@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1000
----
-
 # Design Axioms Framework
 
 > 8 foundational design principles (信达雅 applied to software design)
@@ -132,8 +125,8 @@ Components → EventBus → Components
 
 ## Related
 
-- `.knowledge/core/PRINCIPLES.md` — 信达雅 philosophy
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
+- `.knowledge/core/principles.md` — 信达雅 philosophy
+- `docs/design/01-architecture.md` — Architecture design
 
 ---
 

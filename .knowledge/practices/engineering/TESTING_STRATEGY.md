@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1050
----
-
 # Testing Strategy
 
 > Universal testing layers, organization, and best practices
@@ -213,8 +206,8 @@ def test_with_mock(mocker):
 
 ## Related
 
-- `.knowledge/guidelines/QUALITY.md` — Quality standards
-- `.knowledge/practices/engineering/CODE_REVIEW.md` — Review practices
+- `.knowledge/guidelines/quality.md` — Quality standards
+- `.knowledge/practices/engineering/code_review.md` — Review practices
 
 ---
 

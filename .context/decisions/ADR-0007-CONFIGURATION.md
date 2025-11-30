@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -289,9 +289,9 @@ level = TimeoutLevel(config.timeout.cache_lookup)
 
 ## Related
 
-- `.context/decisions/ADR-0003-TIMEOUT-HIERARCHY.md` — Timeout configuration
+- `.context/decisions/ADR-0003-timeout-hierarchy.md` — Timeout configuration
 - `.context/policies/` — Configuration documentation
-- `docs/design/09-CONFIGURATION.md` — Full configuration design
+- `docs/design/09-configuration.md` — Full configuration design
 - `config/` — Configuration files
 
 ---

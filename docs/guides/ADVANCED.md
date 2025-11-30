@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -297,10 +297,10 @@ SAGE_LOGGING_LEVEL=DEBUG sage serve    # Debug logs
 
 ## Related
 
-- `docs/guides/QUICKSTART.md` — Quick start guide
-- `docs/guides/CONFIGURATION.md` — Configuration reference
-- `docs/guides/PLUGIN_DEVELOPMENT.md` — Full plugin guide
-- `docs/api/PYTHON.md` — Python API reference
+- `docs/guides/quickstart.md` — Quick start guide
+- `docs/guides/configuration.md` — Configuration reference
+- `docs/guides/plugin_development.md` — Full plugin guide
+- `docs/api/python.md` — Python API reference
 
 ---
 

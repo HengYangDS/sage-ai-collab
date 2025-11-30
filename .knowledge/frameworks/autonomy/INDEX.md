@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -37,7 +30,7 @@ autonomy (always ask) to full autonomy (act independently).
 
 | Document    | Description                                 |
 |-------------|---------------------------------------------|
-| `LEVELS.md` | Complete 6-level autonomy framework (L1-L6) |
+| `levels.md` | Complete 6-level autonomy framework (L1-L6) |
 
 ---
 
@@ -58,9 +51,9 @@ autonomy (always ask) to full autonomy (act independently).
 
 ## Related
 
-- `.context/intelligence/calibration/CALIBRATION.md` — Autonomy calibration settings
+- `.context/intelligence/calibration/calibration.md` — Autonomy calibration settings
 - `config/capabilities/autonomy.yaml` — Autonomy configuration
-- `.junie/GUIDELINES.md` — AI collaboration guidelines
+- `.junie/guidelines.md` — AI collaboration guidelines
 
 ---
 

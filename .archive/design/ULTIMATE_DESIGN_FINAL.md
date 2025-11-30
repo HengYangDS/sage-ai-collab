@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -26,18 +26,18 @@ tokens: ~500
 
 | Target Document                | Content                                           | Lines (approx) |
 |--------------------------------|---------------------------------------------------|----------------|
-| `docs/design/ARCHITECTURE.md`  | Part 2: Architecture, SAGE Protocol, DI Container | ~1500          |
-| `docs/design/CONTENT.md`       | Part 3: Content Structure, Knowledge Layers       | ~800           |
-| `docs/design/CONFIGURATION.md` | Part 4: Configuration, Smart Loading              | ~600           |
-| `docs/design/API.md`           | Part 6: CLI, MCP, HTTP API Reference              | ~1000          |
-| `docs/design/ROADMAP.md`       | Part 7: Implementation Roadmap                    | ~800           |
-| `docs/design/EVALUATION.md`    | Part 8: Expert Committee Evaluations              | ~500           |
+| `docs/design/ARCHITECTURE.MD`  | Part 2: Architecture, SAGE Protocol, DI Container | ~1500          |
+| `docs/design/CONTENT.MD`       | Part 3: Content Structure, Knowledge Layers       | ~800           |
+| `docs/design/CONFIGURATION.MD` | Part 4: Configuration, Smart Loading              | ~600           |
+| `docs/design/API.MD`           | Part 6: CLI, MCP, HTTP API Reference              | ~1000          |
+| `docs/design/ROADMAP.MD`       | Part 7: Implementation Roadmap                    | ~800           |
+| `docs/design/EVALUATION.MD`    | Part 8: Expert Committee Evaluations              | ~500           |
 
 **Split Command** (when ready for implementation):
 
 ```bash
 # Use the migration script to split this document
-python tools/migration/split_design_doc.py ULTIMATE_DESIGN_FINAL.md --output docs/design/
+python tools/migration/split_design_doc.py ULTIMATE_DESIGN_FINAL.MD --output docs/design/
 ```
 
 ---
@@ -234,63 +234,63 @@ sage/                          # Project root directory
 ├── .gitignore                         # 🔹 Git ignore rules
 │
 ├── sage.yaml                          # 🔹 Smart loading configuration
-├── INDEX.md                           # 🔹 Navigation entry (~100 tokens, Always Load)
+├── INDEX.MD                           # 🔹 Navigation entry (~100 tokens, Always Load)
 │
 ├── docs/                              # 📖 Project documentation (separate from content)
 │   ├── design/                        #    Design documents
-│   │   └── ULTIMATE_DESIGN_FINAL.md   #    Final design document
+│   │   └── ULTIMATE_DESIGN_FINAL.MD   #    Final design document
 │   ├── api/                           #    API documentation
-│   │   ├── MCP_PROTOCOL.md            #    MCP protocol specification
-│   │   └── CLI_REFERENCE.md           #    CLI command reference
+│   │   ├── MCP_PROTOCOL.MD            #    MCP protocol specification
+│   │   └── CLI_REFERENCE.MD           #    CLI command reference
 │   └── guides/                        #    Development guides
-│       ├── QUICKSTART.md              #    Quick start guide
-│       └── CONTRIBUTING.md            #    Contributing guide
+│       ├── QUICKSTART.MD              #    Quick start guide
+│       └── CONTRIBUTING.MD            #    Contributing guide
 │
 ├── .knowledge/                           # 📚 Knowledge content directory
 │   │
 │   ├── core/                          # 🔸 Core principles (~500 tokens, Always Load)
-│   │   ├── PRINCIPLES.md              #    Xin-Da-Ya philosophy, core values
-│   │   ├── QUICK_REFERENCE.md         #    5 critical questions, autonomy quick ref
-│   │   └── DEFAULTS.md                #    Default behaviors, calibration standards
+│   │   ├── PRINCIPLES.MD              #    Xin-Da-Ya philosophy, core values
+│   │   ├── QUICK_REFERENCE.MD         #    5 critical questions, autonomy quick ref
+│   │   └── DEFAULTS.MD                #    Default behaviors, calibration standards
 │   │
 │   ├── guidelines/                    # 🔸 Engineering guidelines (~1,200 tokens, On-Demand)
-│   │   ├── 00_QUICK_START.md          #    3-minute quick start (~60 lines)
-│   │   ├── 01_PLANNING_DESIGN.md      #    Planning and architecture (~80 lines)
-│   │   ├── 02_CODE_STYLE.md           #    Code style standards (~150 lines)
-│   │   ├── 03_ENGINEERING.md          #    Config/test/perf/change/maintain (~120 lines)
-│   │   ├── 04_DOCUMENTATION.md        #    Documentation standards (~100 lines)
-│   │   ├── 05_PYTHON.md               #    Python best practices (~130 lines)
-│   │   ├── 06_AI_COLLABORATION.md     #    AI collaboration and autonomy (~200 lines)
-│   │   ├── 07_COGNITIVE.md            #    Cognitive enhancement core (~100 lines)
-│   │   ├── 08_QUALITY.md              #    Quality framework (~80 lines)
-│   │   └── 09_SUCCESS.md              #    Xin-Da-Ya mapping, success criteria (~80 lines)
+│   │   ├── 00_QUICK_START.MD          #    3-minute quick start (~60 lines)
+│   │   ├── 01_PLANNING_DESIGN.MD      #    Planning and architecture (~80 lines)
+│   │   ├── 02_CODE_STYLE.MD           #    Code style standards (~150 lines)
+│   │   ├── 03_ENGINEERING.MD          #    Config/test/perf/change/maintain (~120 lines)
+│   │   ├── 04_DOCUMENTATION.MD        #    Documentation standards (~100 lines)
+│   │   ├── 05_PYTHON.MD               #    Python best practices (~130 lines)
+│   │   ├── 06_AI_COLLABORATION.MD     #    AI collaboration and autonomy (~200 lines)
+│   │   ├── 07_COGNITIVE.MD            #    Cognitive enhancement core (~100 lines)
+│   │   ├── 08_QUALITY.MD              #    Quality framework (~80 lines)
+│   │   └── 09_SUCCESS.MD              #    Xin-Da-Ya mapping, success criteria (~80 lines)
 │   │
 │   ├── frameworks/                    # 🔸 Deep frameworks (~2,000 tokens, On-Demand)
 │   │   ├── autonomy/                  #    Autonomy framework
-│   │   │   └── LEVELS.md              #    6-level autonomy spectrum definition
+│   │   │   └── LEVELS.MD              #    6-level autonomy spectrum definition
 │   │   ├── cognitive/                 #    Cognitive framework
-│   │   │   └── EXPERT_COMMITTEE.md    #    Expert committee, chain-of-thought, iteration
+│   │   │   └── EXPERT_COMMITTEE.MD    #    Expert committee, chain-of-thought, iteration
 │   │   ├── collaboration/             #    Collaboration framework
-│   │   │   └── PATTERNS.md            #    Collaboration patterns, instruction engineering
+│   │   │   └── PATTERNS.MD            #    Collaboration patterns, instruction engineering
 │   │   ├── decision/                  #    Decision framework
-│   │   │   └── QUALITY_ANGLES.md      #    Quality angles, expert roles
+│   │   │   └── QUALITY_ANGLES.MD      #    Quality angles, expert roles
 │   │   └── timeout/                   #    Timeout framework
-│   │       └── HIERARCHY.md           #    Timeout principles, strategies, recovery
+│   │       └── HIERARCHY.MD           #    Timeout principles, strategies, recovery
 │   │
 │   ├── practices/                     # 🔸 Best practices (~1,500 tokens, On-Demand)
 │   │   ├── ai_collaboration/          #    AI collaboration practices
-│   │   │   └── WORKFLOW.md            #    Workflow, interaction patterns
+│   │   │   └── WORKFLOW.MD            #    Workflow, interaction patterns
 │   │   ├── documentation/             #    Documentation practices
-│   │   │   └── STANDARDS.md           #    Documentation standards, templates
+│   │   │   └── STANDARDS.MD           #    Documentation standards, templates
 │   │   └── engineering/               #    Engineering practices
-│   │       └── PATTERNS.md            #    Design patterns, best practices
+│   │       └── PATTERNS.MD            #    Design patterns, best practices
 │   │
 │   ├── scenarios/                     # 🔸 Scenario presets (~500 tokens, On-Demand)
 │   │   └── python_backend/            #    Python backend scenario
-│   │       └── CONTEXT.md             #    Context configuration, specific guidelines
+│   │       └── CONTEXT.MD             #    Context configuration, specific guidelines
 │   │
 │   └── templates/                     # 🔸 Reusable templates (~300 tokens, On-Demand)
-│       └── PROJECT_SETUP.md           #    Project initialization template
+│       └── PROJECT_SETUP.MD           #    Project initialization template
 │
 ├── src/                               # 💻 Source code directory (3-layer architecture)
 │   └── sage/                  #    Main package
@@ -348,7 +348,7 @@ sage/                          # Project root directory
 │   ├── fixtures/                      # 🆕 Test data
 │   │   ├── __init__.py
 │   │   ├── sample_.knowledge/            #    Sample knowledge content
-│   │   │   ├── INDEX.md
+│   │   │   ├── INDEX.MD
 │   │   │   └── core/
 │   │   ├── mock_responses/            #    Mock response data
 │   │   │   ├── mcp_success.json
@@ -441,16 +441,16 @@ sage/                          # Project root directory
 
 | Original Chapters                     | New Chapter            | Lines | Rationale     |
 |---------------------------------------|------------------------|-------|---------------|
-| 0. Quick Reference                    | 00_QUICK_START.md      | ~60   | Keep as-is    |
-| 1. Planning + 2. Design               | 01_PLANNING_DESIGN.md  | ~80   | Merge short   |
-| 3. Code Style                         | 02_CODE_STYLE.md       | ~150  | Keep as-is    |
-| 4-8. Config/Test/Perf/Change/Maintain | 03_ENGINEERING.md      | ~120  | Merge 5 mini  |
-| 9. Documentation                      | 04_DOCUMENTATION.md    | ~100  | Keep as-is    |
-| 10. Python + 11. Decorator            | 05_PYTHON.md           | ~130  | Merge overlap |
-| 12. AI Collab + 13. Autonomy          | 06_AI_COLLABORATION.md | ~200  | Unify AI      |
-| 14. Cognitive (core)                  | 07_COGNITIVE.md        | ~100  | Extract core  |
-| (new) Quality                         | 08_QUALITY.md          | ~80   | From 14       |
-| 15. Success                           | 09_SUCCESS.md          | ~80   | Streamline    |
+| 0. Quick Reference                    | 00_QUICK_START.MD      | ~60   | Keep as-is    |
+| 1. Planning + 2. Design               | 01_PLANNING_DESIGN.MD  | ~80   | Merge short   |
+| 3. Code Style                         | 02_CODE_STYLE.MD       | ~150  | Keep as-is    |
+| 4-8. Config/Test/Perf/Change/Maintain | 03_ENGINEERING.MD      | ~120  | Merge 5 mini  |
+| 9. Documentation                      | 04_DOCUMENTATION.MD    | ~100  | Keep as-is    |
+| 10. Python + 11. Decorator            | 05_PYTHON.MD           | ~130  | Merge overlap |
+| 12. AI Collab + 13. Autonomy          | 06_AI_COLLABORATION.MD | ~200  | Unify AI      |
+| 14. Cognitive (core)                  | 07_COGNITIVE.MD        | ~100  | Extract core  |
+| (new) Quality                         | 08_QUALITY.MD          | ~80   | From 14       |
+| 15. Success                           | 09_SUCCESS.MD          | ~80   | Streamline    |
 
 **Result**: 16 → 10 chapters, ~1,100 lines (from ~1,464, -25%)
 
@@ -598,7 +598,7 @@ logger.info("application started", version="2.0.0")
 # Context-bound logging
 with bind_context(request_id="req-123", operation="load_knowledge"):
     logger.info("loading layer", layer="core", tokens=500)
-    logger.debug("cache hit", key="PRINCIPLES.md")
+    logger.debug("cache hit", key="PRINCIPLES.MD")
 
 # Error logging with stack trace
 try:
@@ -681,7 +681,7 @@ include = [
     "/src", # Source code
     "/content", # Knowledge content
     "/tools", # Development tools
-    "/INDEX.md", # Navigation entry
+    "/INDEX.MD", # Navigation entry
     "/sage.yaml", # Configuration
     "/README.md", # Documentation
     "/LICENSE", # License file
@@ -786,11 +786,11 @@ clean:
 from pathlib import Path
 
 # ✅ CORRECT: Use pathlib (cross-platform)
-config_file = Path("../../content") / "core" / "PRINCIPLES.md"
+config_file = Path("../../content") / "core" / "PRINCIPLES.MD"
 
 # ❌ WRONG: Hardcoded separators
-config_file = "../../.knowledge/core/PRINCIPLES.md"  # Fails on Windows
-config_file = "../../.knowledge/core/PRINCIPLES.md"  # Fails on Unix
+config_file = "../../.knowledge/core/PRINCIPLES.MD"  # Fails on Windows
+config_file = "../../.knowledge/core/PRINCIPLES.MD"  # Fails on Unix
 ```
 
 ### 2.7 Configuration Hierarchy (Zero Coupling)
@@ -1882,7 +1882,7 @@ In addition to the package structure above, projects using sage should include t
 project-root/
 │
 ├── .junie/                      # 🤖 AI Client: JetBrains Junie
-│   ├── GUIDELINES.md            # 📋 PRIMARY ENTRY POINT (required by Junie)
+│   ├── GUIDELINES.MD            # 📋 PRIMARY ENTRY POINT (required by Junie)
 │   ├── mcp/
 │   │   └── mcp.json             # MCP server configurations
 │   ├── prompts/                 # Client-specific prompt overrides (optional)
@@ -1893,14 +1893,14 @@ project-root/
 ├── .claude/                     # 🤖 AI Client: Claude Desktop (future)
 │
 ├── .context/                    # 📚 Project Knowledge Base (Local, Non-Distributed)
-│   ├── INDEX.md                 # Project KB navigation & overview
+│   ├── INDEX.MD                 # Project KB navigation & overview
 │   ├── project.yaml             # Project metadata, tech stack, dependencies
 │   ├── decisions/               # Architecture Decision Records (ADRs)
 │   │   ├── README.md            # ADR template and index
-│   │   └── 001_EXAMPLE.md       # Example ADR
+│   │   └── 001_EXAMPLE.MD       # Example ADR
 │   ├── conventions/             # Project-specific conventions
-│   │   └── NAMING.md            # Naming conventions
-│   └── ACTIVE.md                # Current focus, tasks, blockers
+│   │   └── NAMING.MD            # Naming conventions
+│   └── ACTIVE.MD                # Current focus, tasks, blockers
 │
 ├── .history/                    # 💬 AI Session Management (Project-Scoped)
 │   ├── .gitignore               # Ignore sensitive/ephemeral data
@@ -1916,7 +1916,7 @@ project-root/
 │
 ├── docs/                        # 📖 Documentation (Public, User-Facing)
 │   ├── design/                  # Design documents
-│   │   └── ULTIMATE_DESIGN_FINAL.md
+│   │   └── ULTIMATE_DESIGN_FINAL.MD
 │   ├── api/                     # API documentation
 │   └── guides/                  # User guides
 │
@@ -1957,7 +1957,7 @@ project-root/
 │  │ .context/        (project-specific KB)  │ LOCAL             │
 │  │ ├── decisions/   (architecture ADRs)    │                   │
 │  │ ├── conventions/ (project conventions)  │                   │
-│  │ └── ACTIVE.md    (current focus)        │                   │
+│  │ └── ACTIVE.MD    (current focus)        │                   │
 │  └─────────────────────────────────────────┘                   │
 │                                                                 │
 │  EPHEMERAL (Session-specific)                                   │
@@ -1978,9 +1978,9 @@ project-root/
 └─────────────────────────────────────────────────────────────────┘
 ```
 
-#### 2.12.4 `.junie/GUIDELINES.md` Entry Point
+#### 2.12.4 `.junie/GUIDELINES.MD` Entry Point
 
-The `.junie/GUIDELINES.md` file is the **primary entry point** for JetBrains Junie AI collaboration. It should contain:
+The `.junie/GUIDELINES.MD` file is the **primary entry point** for JetBrains Junie AI collaboration. It should contain:
 
 ```markdown
 # Project Guidelines for AI Collaboration
@@ -2035,7 +2035,7 @@ Both systems work together:
 │  Score: 99.2/100 🏆                                             │
 │                                                                 │
 │  APPROVED STRUCTURE:                                            │
-│  ✅ .junie/     - AI client config + GUIDELINES.md entry        │
+│  ✅ .junie/     - AI client config + GUIDELINES.MD entry        │
 │  ✅ .context/   - Project-specific knowledge                    │
 │  ✅ .history/   - Session records & handoffs                    │
 │  ✅ .archive/   - Historical archives                           │
@@ -2393,7 +2393,7 @@ def temp_content_dir(tmp_path):
     content = tmp_path / "content"
     content.mkdir()
     (content / "core").mkdir()
-    (content / "core" / "PRINCIPLES.md").write_text("# Test Principles")
+    (content / "core" / "PRINCIPLES.MD").write_text("# Test Principles")
     return content
 
 
@@ -2814,7 +2814,7 @@ src/sage/
 
 | Layer  | Directory              | Tokens       | Load Timing   | Timeout |
 |--------|------------------------|--------------|---------------|---------|
-| **L0** | INDEX.md               | ~100         | Always        | 100ms   |
+| **L0** | INDEX.MD               | ~100         | Always        | 100ms   |
 | **L1** | .knowledge/core/       | ~500         | Always        | 500ms   |
 | **L2** | .knowledge/guidelines/ | ~100-200/ch  | On-demand     | 500ms   |
 | **L3** | .knowledge/frameworks/ | ~300-500/doc | Complex tasks | 2s      |
@@ -2865,9 +2865,9 @@ preferred language while receiving consistent content.
 # sage.yaml - Smart Loading Configuration with Bilingual Support
 loading:
   always:
-    - INDEX.md
-    - .knowledge/core/PRINCIPLES.md
-    - .knowledge/core/QUICK_REFERENCE.md
+    - INDEX.MD
+    - .knowledge/core/PRINCIPLES.MD
+    - .knowledge/core/QUICK_REFERENCE.MD
 
 triggers:
   code:
@@ -2893,8 +2893,8 @@ triggers:
       - 类
       - 方法
     load:
-      - .knowledge/guidelines/02_CODE_STYLE.md
-      - .knowledge/guidelines/05_PYTHON.md
+      - .knowledge/guidelines/02_CODE_STYLE.MD
+      - .knowledge/guidelines/05_PYTHON.MD
     timeout_ms: 2000
     priority: 1
 
@@ -2919,7 +2919,7 @@ triggers:
       - 结构
       - 模式
     load:
-      - .knowledge/guidelines/01_PLANNING_DESIGN.md
+      - .knowledge/guidelines/01_PLANNING_DESIGN.MD
       - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 2
@@ -2944,7 +2944,7 @@ triggers:
       - 集成
       - 模拟
     load:
-      - .knowledge/guidelines/03_ENGINEERING.md
+      - .knowledge/guidelines/03_ENGINEERING.MD
     timeout_ms: 2000
     priority: 3
 
@@ -2967,7 +2967,7 @@ triggers:
       - 助手
       - 级别
     load:
-      - .knowledge/guidelines/06_AI_COLLABORATION.md
+      - .knowledge/guidelines/06_AI_COLLABORATION.MD
       - .knowledge/frameworks/autonomy/
     timeout_ms: 2000
     priority: 4
@@ -2991,7 +2991,7 @@ triggers:
       - 评价
       - 批评
     load:
-      - .knowledge/frameworks/cognitive/EXPERT_COMMITTEE.md
+      - .knowledge/frameworks/cognitive/EXPERT_COMMITTEE.MD
       - .knowledge/frameworks/decision/
     timeout_ms: 3000
     priority: 5
@@ -3015,7 +3015,7 @@ triggers:
       - 注释
       - 文档字符串
     load:
-      - .knowledge/guidelines/04_DOCUMENTATION.md
+      - .knowledge/guidelines/04_DOCUMENTATION.MD
       - .knowledge/practices/documentation/
     timeout_ms: 2000
     priority: 6
@@ -3035,7 +3035,7 @@ triggers:
       - 类型
       - 类型注解
     load:
-      - .knowledge/guidelines/05_PYTHON.md
+      - .knowledge/guidelines/05_PYTHON.MD
     timeout_ms: 2000
     priority: 7
 
@@ -4166,7 +4166,7 @@ Target: Production-ready MVP
 | Task                                              | Owner                  | Priority | Status    | Deliverable                           |
 |---------------------------------------------------|------------------------|----------|-----------|---------------------------------------|
 | A.1 Create docs/ directory structure              | Documentation Engineer | P0       | ⚪ Pending | docs/design/, docs/api/, docs/guides/ |
-| A.2 Move ULTIMATE_DESIGN_FINAL.md to docs/design/ | Documentation Engineer | P0       | ⚪ Pending | Clean root directory                  |
+| A.2 Move ULTIMATE_DESIGN_FINAL.MD to docs/design/ | Documentation Engineer | P0       | ⚪ Pending | Clean root directory                  |
 | A.3 Create src/sage/core/ directory               | Chief Architect        | P0       | ⚪ Pending | Layer 1 structure                     |
 | A.4 Create src/sage/services/ directory           | Chief Architect        | P0       | ⚪ Pending | Layer 2 structure                     |
 | A.5 Move loader.py to core/                       | Python Engineer        | P0       | ⚪ Pending | Core layer migration                  |
@@ -4589,7 +4589,7 @@ MEMORY_USAGE_BYTES = Gauge(
 | Task                     | macOS/Linux (Bash)                                   | Windows (PowerShell)                                                           |
 |--------------------------|------------------------------------------------------|--------------------------------------------------------------------------------|
 | **A.1 Create docs/**     | `mkdir -p docs/{design,api,guides}`                  | `New-Item -ItemType Directory -Path docs\design, docs\api, docs\guides -Force` |
-| **A.2 Move design doc**  | `mv ULTIMATE_DESIGN_FINAL.md docs/design/`           | `Move-Item ULTIMATE_DESIGN_FINAL.md docs\design\`                              |
+| **A.2 Move design doc**  | `mv ULTIMATE_DESIGN_FINAL.MD docs/design/`           | `Move-Item ULTIMATE_DESIGN_FINAL.MD docs\design\`                              |
 | **A.3 Create core/**     | `mkdir -p src/sage/core`                             | `New-Item -ItemType Directory -Path src\sage\core -Force`                      |
 | **A.4 Create services/** | `mkdir -p src/sage/services`                         | `New-Item -ItemType Directory -Path src\sage\services -Force`                  |
 | **A.5 Move loader.py**   | `mv src/sage/loader.py src/sage/core/`               | `Move-Item src\sage\loader.py src\sage\core\`                                  |
@@ -5039,7 +5039,7 @@ Configuration Priority (highest to lowest):
 │       LEVEL 5 EXPERT COMMITTEE RE-EVALUATION                │
 │              MODERN DESIGN IMPROVEMENTS                     │
 ├─────────────────────────────────────────────────────────────┤
-│  Document: ULTIMATE_DESIGN_FINAL.md                         │
+│  Document: ULTIMATE_DESIGN_FINAL.MD                         │
 │  Re-evaluation Date: 2025-11-28                            │
 │  Expert Count: 24                                           │
 │  Voting Result: 24/24 UNANIMOUS APPROVAL                    │
@@ -5154,7 +5154,7 @@ Configuration Priority (highest to lowest):
 │       LEVEL 5 EXPERT COMMITTEE EVALUATION                   │
 │    EVENT-DRIVEN PLUGIN & MEMORY PERSISTENCE ENHANCEMENT     │
 ├─────────────────────────────────────────────────────────────┤
-│  Document: ULTIMATE_DESIGN_FINAL.md                         │
+│  Document: ULTIMATE_DESIGN_FINAL.MD                         │
 │  Evaluation Date: 2025-11-28                                │
 │  Expert Count: 24                                           │
 │  Voting Result: 24/24 UNANIMOUS APPROVAL                    │
@@ -5337,7 +5337,7 @@ src/sage/
 
 #### 8.10.3 Issue 2: File Naming Optimization
 
-**Problem**: 00_XXX.md numbered naming creates insertion problems and cognitive overhead.
+**Problem**: 00_XXX.MD numbered naming creates insertion problems and cognitive overhead.
 
 **Recommended Solution**: Semantic filenames with YAML index for ordering.
 
@@ -5345,16 +5345,16 @@ src/sage/
 # .knowledge/guidelines/guidelines_index.yaml
 version: "1.0"
 order:
-  - quick_start          # Was 00_QUICK_START.md
-  - planning_design      # Was 01_PLANNING_DESIGN.md
-  - code_style           # Was 02_CODE_STYLE.md
-  - engineering          # Was 03_ENGINEERING.md
-  - documentation        # Was 04_DOCUMENTATION.md
-  - python               # Was 05_PYTHON.md
-  - ai_collaboration     # Was 06_AI_COLLABORATION.md
-  - cognitive            # Was 07_COGNITIVE.md
-  - quality              # Was 08_QUALITY.md
-  - success              # Was 09_SUCCESS.md
+  - quick_start          # Was 00_QUICK_START.MD
+  - planning_design      # Was 01_PLANNING_DESIGN.MD
+  - code_style           # Was 02_CODE_STYLE.MD
+  - engineering          # Was 03_ENGINEERING.MD
+  - documentation        # Was 04_DOCUMENTATION.MD
+  - python               # Was 05_PYTHON.MD
+  - ai_collaboration     # Was 06_AI_COLLABORATION.MD
+  - cognitive            # Was 07_COGNITIVE.MD
+  - quality              # Was 08_QUALITY.MD
+  - success              # Was 09_SUCCESS.MD
 
 metadata:
   quick_start:
@@ -5391,14 +5391,14 @@ features:
 **5-Level Navigation Hierarchy**:
 
 ```
-L0: INDEX.md (Project Overview, ~100 tokens)
+L0: INDEX.MD (Project Overview, ~100 tokens)
     └── What is this project? Quick links, How to navigate
 
-L1: .junie/GUIDELINES.md (AI Client Entry, ~200 tokens)
+L1: .junie/GUIDELINES.MD (AI Client Entry, ~200 tokens)
     └── Tech stack, Coding standards summary, @file references
 
 L2: .knowledge/core/*.md (Core Principles, ~500 tokens)
-    └── PRINCIPLES.md, QUICK_REFERENCE.md, DEFAULTS.md
+    └── PRINCIPLES.MD, QUICK_REFERENCE.MD, DEFAULTS.MD
 
 L3: .knowledge/guidelines/*.md (On-Demand, ~100-200/file)
     └── Triggered by keywords in user query
@@ -5411,7 +5411,7 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 | Content Type      | Location               | Rationale           |
 |-------------------|------------------------|---------------------|
-| Project overview  | INDEX.md               | Universal entry     |
+| Project overview  | INDEX.MD               | Universal entry     |
 | AI client config  | .junie/                | Client-specific     |
 | Core philosophy   | .knowledge/core/       | Always needed       |
 | How-to guides     | .knowledge/guidelines/ | Task-triggered      |
@@ -5422,16 +5422,16 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 #### 8.10.6 Issue 5: .junie Knowledge Index
 
-**Enhancement to `.junie/GUIDELINES.md`**:
+**Enhancement to `.junie/GUIDELINES.MD`**:
 
 ```markdown
 ## 🔗 Knowledge Base Index
 
 ### Core Knowledge (Always Available)
 
-- @file:.knowledge/core/PRINCIPLES.md - Xin-Da-Ya philosophy
-- @file:.knowledge/core/QUICK_REFERENCE.md - 5 critical questions
-- @file:.knowledge/core/DEFAULTS.md - Default behaviors
+- @file:.knowledge/core/PRINCIPLES.MD - Xin-Da-Ya philosophy
+- @file:.knowledge/core/QUICK_REFERENCE.MD - 5 critical questions
+- @file:.knowledge/core/DEFAULTS.MD - Default behaviors
 
 ### Engineering Guidelines (On-Demand)
 
@@ -5445,7 +5445,7 @@ L4: .knowledge/frameworks/*.md (Deep Dive, ~300-500/file)
 
 ### Project Context
 
-- @file:.context/INDEX.md - Project-specific knowledge
+- @file:.context/INDEX.MD - Project-specific knowledge
 ```
 
 **Additional**: Create `.junie/loading_rules.yaml` for smart loading configuration.
@@ -5558,7 +5558,7 @@ fallback:
 |-------------------------|----------|---------------------------|
 | intelligence/ structure | P0       | .context/intelligence/    |
 | loading_rules.yaml      | P0       | .junie/loading_rules.yaml |
-| NAVIGATION_STANDARDS.md | P1       | docs/standards/           |
+| NAVIGATION_STANDARDS.MD | P1       | docs/standards/           |
 | operations/ structure   | P1       | tools/ or ops/            |
 
 **Consider Adopting (P2-P3)**:
@@ -5574,12 +5574,12 @@ fallback:
 ```
 sage/
 ├── .junie/
-│   ├── GUIDELINES.md                # Enhanced with Knowledge Index
+│   ├── GUIDELINES.MD                # Enhanced with Knowledge Index
 │   ├── loading_rules.yaml           # 🆕 Smart loading
 │   └── mcp/
 │
 ├── .context/
-│   ├── INDEX.md
+│   ├── INDEX.MD
 │   ├── decisions/
 │   ├── conventions/
 │   └── intelligence/                # 🆕 From star/.junie
@@ -5595,7 +5595,7 @@ sage/
 ├── docs/
 │   ├── design/
 │   └── standards/                   # 🆕
-│       └── NAVIGATION_STANDARDS.md
+│       └── NAVIGATION_STANDARDS.MD
 │
 ├── .knowledge/
 │   ├── core/
@@ -5605,7 +5605,7 @@ sage/
 │   ├── practices/
 │   │   └── decisions/               # 🆕 Dynamic framework cases
 │   └── templates/
-│       └── EXPERT_COMMITTEE.md      # 🆕
+│       └── EXPERT_COMMITTEE.MD      # 🆕
 │
 ├── src/sage/
 │   ├── interfaces/                  # 🆕 Protocol definitions
@@ -5623,7 +5623,7 @@ sage/
 |-------|-------|----------|---------------------------------------------------------|
 | A     | 1-3   | P0       | Business domain models, interfaces/, loading_rules.yaml |
 | B     | 4-6   | P0       | Knowledge cycles implementation                         |
-| C     | 7-9   | P1       | 5-layer fallback, NAVIGATION_STANDARDS.md               |
+| C     | 7-9   | P1       | 5-layer fallback, NAVIGATION_STANDARDS.MD               |
 | D     | 10-11 | P2       | File naming optimization                                |
 | E     | 12-15 | P2       | star/.junie pattern adoption                            |
 

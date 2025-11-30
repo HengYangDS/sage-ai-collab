@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -458,10 +451,10 @@ python -c "import secrets; print(secrets.token_hex(32))"
 
 ## Related
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Secure error handling
-- `.knowledge/practices/engineering/LOGGING.md` — Secure logging practices
-- `.knowledge/guidelines/PYTHON.md` — Python coding standards
-- `.knowledge/scenarios/devops/CONTEXT.md` — DevOps security
+- `.knowledge/practices/engineering/error_handling.md` — Secure error handling
+- `.knowledge/practices/engineering/logging.md` — Secure logging practices
+- `.knowledge/guidelines/python.md` — Python coding standards
+- `.knowledge/scenarios/devops/context.md` — DevOps security
 
 ---
 

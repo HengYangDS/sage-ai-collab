@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~200
----
-
 # References
 
 > Quick lookup resources and checklists
@@ -37,4 +30,4 @@ References are designed for:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

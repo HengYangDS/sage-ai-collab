@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -115,11 +115,11 @@ config/
 
 | Trigger | Keywords | Loaded Content |
 |---------|----------|----------------|
-| code | code, implement, fix, 代码 | CODE_STYLE.md |
-| architecture | architecture, design, 架构 | PLANNING.md |
-| testing | test, coverage, 测试 | ENGINEERING.md |
-| documentation | doc, guide, 文档 | DOCUMENTATION.md |
-| python | python, pip, 蟒蛇 | PYTHON.md |
+| code | code, implement, fix, 代码 | code_style.md |
+| architecture | architecture, design, 架构 | planning.md |
+| testing | test, coverage, 测试 | engineering.md |
+| documentation | doc, guide, 文档 | documentation.md |
+| python | python, pip, 蟒蛇 | python.md |
 
 ### 4.3 Token Budget
 
@@ -226,9 +226,9 @@ cache:
 
 ## Related
 
-- `docs/design/01B-CONFIGURATION.md` — Configuration hierarchy details
-- `docs/design/04-TIMEOUT-LOADING.md` — Timeout design
-- `docs/guides/CONFIGURATION.md` — Configuration user guide
+- `docs/design/01b-configuration.md` — Configuration hierarchy details
+- `docs/design/04-timeout-loading.md` — Timeout design
+- `docs/guides/configuration.md` — Configuration user guide
 - `config/sage.yaml` — Main configuration file
 
 ---

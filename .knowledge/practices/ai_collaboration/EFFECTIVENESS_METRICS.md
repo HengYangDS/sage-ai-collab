@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~350
----
-
 # AI Collaboration Effectiveness Metrics
 
 > Measuring and improving human-AI collaboration quality
@@ -93,4 +86,4 @@ tokens: ~350
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

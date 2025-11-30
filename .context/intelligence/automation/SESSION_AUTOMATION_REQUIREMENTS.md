@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -27,7 +27,7 @@ the designed `.history/` system and its actual usage.
 ### Current State
 
 - `.history/` directory structure exists with templates
-- Manual session record creation is documented in `.junie/GUIDELINES.md`
+- Manual session record creation is documented in `.junie/guidelines.md`
 - No automated mechanism to create or manage session records
 - Session records are not being created consistently
 
@@ -251,10 +251,10 @@ session_history:
 
 ## Related
 
-- `.history/INDEX.md` — Session history structure
-- `.junie/GUIDELINES.md` — AI collaboration guidelines
-- `.history/_SESSION-END-CHECKLIST.md` — Manual session checklist
-- `.knowledge/practices/ai_collaboration/SESSION_MANAGEMENT.md` — Session management practices
+- `.history/index.md` — Session history structure
+- `.junie/guidelines.md` — AI collaboration guidelines
+- `.history/_session-end-checklist.md` — Manual session checklist
+- `.knowledge/practices/ai_collaboration/session_management.md` — Session management practices
 
 ---
 

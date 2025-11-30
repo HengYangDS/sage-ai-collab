@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1450
----
-
 # Project Setup Templates
 
 > Ready-to-use templates for project initialization
@@ -46,7 +39,7 @@ tokens: ~1450
 
 ## Knowledge Base
 
-Uses AI Collaboration KB v0.1.0 — Load: `sage get --scenario python_backend`
+Uses AI Collaboration KB v0.1.0 — Load: `kb get --scenario python_backend`
 
 ## Project-Specific
 
@@ -259,7 +252,7 @@ echo "Next steps:"
 echo "  cd $PROJECT"
 echo "  conda env create -f environment.yml"
 echo "  conda activate $PROJECT"
-echo "  sage get"
+echo "  kb get"
 ```
 
 ---
@@ -272,4 +265,4 @@ echo "  sage get"
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

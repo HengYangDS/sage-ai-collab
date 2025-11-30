@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -116,7 +116,7 @@ tests/
 │   │   └── mcp_responses.json
 │   └── sample_.knowledge/        # Test content files
 │       └── core/
-│           └── TEST_PRINCIPLES.md
+│           └── test_principles.md
 ├── unit/
 │   ├── capabilities/
 │   │   ├── analyzers/
@@ -310,7 +310,7 @@ def sample_content(tmp_path):
     core_dir = tmp_path / "core"
     core_dir.mkdir()
     
-    (core_dir / "PRINCIPLES.md").write_text("""
+    (core_dir / "principles.md").write_text("""
 # Core Principles
 
 Test principles content.
@@ -350,7 +350,7 @@ knowledge:
   content_path: tests/fixtures/sample_content
 ```
 
-**Sample Content (`fixtures/sample_.knowledge/core/TEST_PRINCIPLES.md`):**
+**Sample Content (`fixtures/sample_.knowledge/core/test_principles.md`):**
 
 ```markdown
 # Test Principles
@@ -562,8 +562,8 @@ repos:
 
 ## Related
 
-- `docs/guides/ADVANCED.md` — Advanced usage
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategy
+- `docs/guides/advanced.md` — Advanced usage
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
 - `.github/workflows/ci.yml` — CI configuration
 - `pyproject.toml` — pytest configuration
 

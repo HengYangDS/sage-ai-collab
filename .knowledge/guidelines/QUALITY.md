@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~850
----
-
 # Quality Assurance Guidelines
 
 > Quality metrics, review processes, continuous improvement
@@ -136,4 +129,4 @@ def test_user_creation():
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

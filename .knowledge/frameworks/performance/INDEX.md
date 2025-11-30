@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1450
----
-
 # Performance Framework
 
 > Optimization patterns and best practices for high-performance systems
@@ -34,9 +27,9 @@ This framework provides performance optimization guidelines for:
 
 | Document                                                                                  | Purpose                 | When to Use               |
 |-------------------------------------------------------------------------------------------|-------------------------|---------------------------|
-| [Caching Patterns](.knowledge/frameworks/performance/CACHING_PATTERNS.md)                 | Data caching strategies | Reducing latency, load    |
-| [Optimization Strategies](.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md)   | Performance improvement | Scaling, efficiency       |
-| [Profiling Guide](.knowledge/frameworks/performance/PROFILING_GUIDE.md)                   | Performance analysis    | Bottleneck identification |
+| [Caching Patterns](.knowledge/frameworks/performance/caching_patterns.md)                 | Data caching strategies | Reducing latency, load    |
+| [Optimization Strategies](.knowledge/frameworks/performance/optimization_strategies.md)   | Performance improvement | Scaling, efficiency       |
+| [Profiling Guide](.knowledge/frameworks/performance/profiling_guide.md)                   | Performance analysis    | Bottleneck identification |
 
 ---
 
@@ -139,9 +132,9 @@ This framework provides performance optimization guidelines for:
 
 ## Related
 
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout strategies
-- `.context/policies/TIMEOUT_HIERARCHY.md` — SAGE timeout config
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout strategies
+- `.context/policies/timeout_hierarchy.md` — SAGE timeout config
+- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
 - `tools/timeout_manager.py` — Performance testing tool
 
 ---

@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -39,7 +39,7 @@ subdirectories by functional area:
 ```
 config/
 ├── sage.yaml           # Main configuration entry point
-├── INDEX.md            # This documentation
+├── index.md            # This documentation
 ├── capabilities/       # Capability configurations
 │   ├── autonomy.yaml   # Autonomy level settings (+ risk assessment, audit)
 │   ├── documentation.yaml # Documentation generation
@@ -150,7 +150,7 @@ Configuration values are resolved in this order (later overrides earlier):
 ## Related
 
 - `.context/policies/` — Project-specific policy documentation
-- `docs/design/09-CONFIGURATION.md` — Configuration design details
+- `docs/design/09-configuration.md` — Configuration design details
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -47,8 +40,8 @@ autonomy_default: L3
 
 | Priority      | Files                                                                                                                            |
 |---------------|----------------------------------------------------------------------------------------------------------------------------------|
-| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/PLUGIN_QUICK_REF.md` · `.knowledge/practices/engineering/PATTERNS.md`                                      |
-| **On-Demand** | `.knowledge/practices/engineering/TESTING_STRATEGY.md` · `.context/decisions/ADR-0008-PLUGIN-SYSTEM.md` · `docs/design/05-PLUGIN-MEMORY.md` |
+| **Auto-Load** | `core/principles.md` · `docs/api/plugin_quick_ref.md` · `.knowledge/practices/engineering/patterns.md`                                      |
+| **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.context/decisions/ADR-0008-plugin-system.md` · `docs/design/05-plugin-memory.md` |
 
 ---
 
@@ -60,7 +53,7 @@ autonomy_default: L3
 | `src/sage/plugins/bundled/` | Built-in plugins         |
 | `config/capabilities/`      | Plugin configuration     |
 | `tests/unit/plugins/`       | Plugin unit tests        |
-| `docs/guides/ADVANCED.md`   | Plugin development guide |
+| `docs/guides/advanced.md`   | Plugin development guide |
 
 ---
 
@@ -323,13 +316,13 @@ class TestMyPlugin:
 
     async def test_before_load_hook(self, my_plugin):
         """Hook should modify legacy paths."""
-        result = await my_plugin.before_load("legacy/OLD.md")
-        assert result == ".knowledge/OLD.md"
+        result = await my_plugin.before_load("legacy/old.md")
+        assert result == ".knowledge/old.md"
 
     async def test_after_load_hook(self, my_plugin):
         """Hook should add metadata header."""
-        result = await my_plugin.after_load("content", "TEST.md")
-        assert "<!-- Source: TEST.md -->" in result
+        result = await my_plugin.after_load("content", "test.md")
+        assert "<!-- Source: test.md -->" in result
 
     async def test_plugin_integration(self, plugin_manager, my_plugin):
         """Plugin should integrate with manager."""
@@ -449,10 +442,10 @@ class MyPlugin(PluginBase):
 
 ## Related
 
-- `docs/design/05-PLUGIN-MEMORY.md` — Plugin system design
-- `.context/decisions/ADR-0008-PLUGIN-SYSTEM.md` — Architecture decision
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing guide
+- `docs/design/05-plugin-memory.md` — Plugin system design
+- `.context/decisions/ADR-0008-plugin-system.md` — Architecture decision
+- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing guide
 
 ---
 

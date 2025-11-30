@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1150
----
-
 # Expert Committee Framework
 
 > Multi-perspective analysis using 35+ expert roles
@@ -167,9 +160,9 @@ Each expert provides:
 
 ## Related
 
-- `.knowledge/templates/EXPERT_COMMITTEE.md` — Decision templates
-- `.knowledge/frameworks/patterns/DECISION.md` — Quality angles
-- `.knowledge/guidelines/COGNITIVE.md` — Cognitive guidelines
+- `.knowledge/templates/expert_committee.md` — Decision templates
+- `.knowledge/frameworks/patterns/decision.md` — Quality angles
+- `.knowledge/guidelines/cognitive.md` — Cognitive guidelines
 
 ---
 

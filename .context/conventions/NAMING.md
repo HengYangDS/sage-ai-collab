@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -24,7 +24,7 @@ tokens: ~500
 
 ## 1. Generic Python Conventions
 
-> **Reference**: See `.knowledge/guidelines/PYTHON.md` for comprehensive Python naming conventions
+> **Reference**: See `.knowledge/guidelines/python.md` for comprehensive Python naming conventions
 
 **SAGE-specific principles:**
 
@@ -198,9 +198,9 @@ class TimeoutOccurredEvent:
 
 | Type       | Pattern                            | Example                    |
 |:-----------|:-----------------------------------|:---------------------------|
-| Markdown   | `KEBAB-CASE.md` or `SNAKE_CASE.md` | `TIMEOUT-HIERARCHY.md`     |
-| ADR        | `ADR-NNNN-TITLE.md`                | `ADR-0001-ARCHITECTURE.md` |
-| Design doc | `NN-TITLE.md`                      | `01-ARCHITECTURE.md`       |
+| Markdown   | `kebab-case.md` or `snake_case.md` | `timeout-hierarchy.md`     |
+| ADR        | `ADR-NNNN-title.md`                | `ADR-0001-architecture.md` |
+| Design doc | `NN-title.md`                      | `01-architecture.md`       |
 
 ### 5.3 Directory Structure
 
@@ -276,9 +276,9 @@ format.
 
 ## Related
 
-- `.junie/GUIDELINES.md` — General coding guidelines
+- `.junie/guidelines.md` — General coding guidelines
 - `.knowledge/practices/engineering/` — Engineering practices
-- `docs/design/01-ARCHITECTURE.md` — Architecture patterns
+- `docs/design/01-architecture.md` — Architecture patterns
 
 ---
 

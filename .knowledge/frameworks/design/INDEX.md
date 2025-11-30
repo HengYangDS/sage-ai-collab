@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~300
----
-
 # Design Framework
 
 > Core design principles and axioms for SAGE
@@ -30,7 +23,7 @@ implementation decisions in SAGE Knowledge Base.
 
 | Document    | Description                                   |
 |-------------|-----------------------------------------------|
-| `AXIOMS.md` | Core design axioms and fundamental principles |
+| `axioms.md` | Core design axioms and fundamental principles |
 
 ---
 
@@ -47,7 +40,7 @@ implementation decisions in SAGE Knowledge Base.
 ## Related
 
 - `docs/design/` — Design documentation
-- `.knowledge/core/PRINCIPLES.md` — Core principles
+- `.knowledge/core/principles.md` — Core principles
 - `.context/decisions/` — Architecture Decision Records
 
 ---

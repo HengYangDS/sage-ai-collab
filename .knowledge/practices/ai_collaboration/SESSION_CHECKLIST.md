@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1150
----
-
 # Session Checklist
 
 > Quick reference checklist for AI collaboration session management
@@ -166,4 +159,4 @@ SESSION END
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

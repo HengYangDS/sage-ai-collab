@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1000
----
-
 # Security Framework
 
 > Comprehensive security patterns and best practices for software development
@@ -35,10 +28,10 @@ This framework provides security guidelines and patterns for:
 
 | Document                                                                      | Purpose                        | When to Use                        |
 |-------------------------------------------------------------------------------|--------------------------------|------------------------------------|
-| [Authentication](.knowledge/frameworks/security/AUTHENTICATION.md)            | Identity verification patterns | Implementing login, tokens, SSO    |
-| [Authorization](.knowledge/frameworks/security/AUTHORIZATION.md)              | Access control strategies      | Role-based, attribute-based access |
-| [Secrets Management](.knowledge/frameworks/security/SECRETS_MANAGEMENT.md)    | Secure data handling           | API keys, passwords, certificates  |
-| [Security Checklist](.knowledge/frameworks/security/SECURITY_CHECKLIST.md)    | Security review guide          | Code review, deployment, audit     |
+| [Authentication](.knowledge/frameworks/security/authentication.md)            | Identity verification patterns | Implementing login, tokens, SSO    |
+| [Authorization](.knowledge/frameworks/security/authorization.md)              | Access control strategies      | Role-based, attribute-based access |
+| [Secrets Management](.knowledge/frameworks/security/secrets_management.md)    | Secure data handling           | API keys, passwords, certificates  |
+| [Security Checklist](.knowledge/frameworks/security/security_checklist.md)    | Security review guide          | Code review, deployment, audit     |
 
 ---
 
@@ -114,10 +107,10 @@ This framework provides security guidelines and patterns for:
 
 ## Related
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Secure error handling
-- `.knowledge/practices/engineering/LOGGING.md` — Security logging
+- `.knowledge/practices/engineering/error_handling.md` — Secure error handling
+- `.knowledge/practices/engineering/logging.md` — Security logging
 - `config/core/security.yaml` — Security configuration
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Security architecture decisions
+- `.context/decisions/ADR-0001-architecture.md` — Security architecture decisions
 
 ---
 

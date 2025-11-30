@@ -17,9 +17,9 @@ This document provides the roadmap overview. Detailed phase information is in se
 
 | Document                   | Content                                  |
 |----------------------------|------------------------------------------|
-| **07-ROADMAP.MD** (this)   | Overview, status, KPIs, success criteria |
-| `07A-PHASES-FOUNDATION.md` | Phase 0-F: MVP foundation phases         |
-| `07B-PHASES-ADVANCED.md`   | Phase G-J: Advanced feature phases       |
+| **07-roadmap.md** (this)   | Overview, status, KPIs, success criteria |
+| `07a-phases-foundation.md` | Phase 0-F: MVP foundation phases         |
+| `07b-phases-advanced.md`   | Phase G-J: Advanced feature phases       |
 
 ---
 
@@ -105,7 +105,7 @@ This document provides the roadmap overview. Detailed phase information is in se
 | E | Tests Reorganization | Day 6 | ✅ Complete |
 | F | Enhancement & Polish | Day 7-8 | ✅ Complete |
 
-→ Details: `docs/design/07A-PHASES-FOUNDATION.md`
+→ Details: `docs/design/07a-phases-foundation.md`
 
 ### 4.2 M2/M3 Phases (Complete ✅)
 
@@ -115,7 +115,7 @@ This document provides the roadmap overview. Detailed phase information is in se
 | H | Memory Persistence | Day 13-16 | ✅ Complete | 100/100 |
 | I | DI Container | Day 17 | ✅ Complete | 100/100 |
 
-→ Details: `docs/design/07B-PHASES-ADVANCED.md`
+→ Details: `docs/design/07b-phases-advanced.md`
 
 ### 4.3 M4 Phases (In Progress 🔄)
 
@@ -126,7 +126,7 @@ This document provides the roadmap overview. Detailed phase information is in se
 | J.3 | API Service | Day 21-22 | 📋 Planned |
 | J.4 | Optimization | Day 23-24 | 📋 Planned |
 
-→ Details: `docs/design/07B-PHASES-ADVANCED.md`
+→ Details: `docs/design/07b-phases-advanced.md`
 
 ---
 
@@ -212,10 +212,10 @@ This document provides the roadmap overview. Detailed phase information is in se
 
 ## Related
 
-- `docs/design/07A-PHASES-FOUNDATION.md` — Foundation phases (0-F)
-- `docs/design/07B-PHASES-ADVANCED.md` — Advanced phases (G-J)
-- `docs/design/01-ARCHITECTURE.md` — Architecture design
-- `docs/design/05-PLUGIN-MEMORY.md` — Plugin and memory design
+- `docs/design/07a-phases-foundation.md` — Foundation phases (0-F)
+- `docs/design/07b-phases-advanced.md` — Advanced phases (G-J)
+- `docs/design/01-architecture.md` — Architecture design
+- `docs/design/05-plugin-memory.md` — Plugin and memory design
 
 ---
 

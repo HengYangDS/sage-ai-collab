@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -154,7 +154,7 @@ For changes to:
 
 ### Documentation
 
-- [ ] Review and update project/QUICKREF.md
+- [ ] Review and update project/quickref.md
 - [ ] Check cross-references are valid
 - [ ] Update version numbers if needed
 ```
@@ -299,9 +299,9 @@ Monthly review:
 
 ## 8. Related
 
-- [Migration Guide](MIGRATION.md) — Version migration
-- [Metrics](METRICS.md) — Efficiency tracking
-- [Recovery](RECOVERY.md) — Error recovery procedures
+- [Migration Guide](migration.md) — Version migration
+- [Metrics](metrics.md) — Efficiency tracking
+- [Recovery](recovery.md) — Error recovery procedures
 
 ---
 

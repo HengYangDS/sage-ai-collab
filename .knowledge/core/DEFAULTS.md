@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~950
----
-
 # Default Behaviors and Calibration
 
 > Universal baseline behaviors and calibration parameters for AI collaboration
@@ -144,10 +137,10 @@ tokens: ~950
 
 ## Related
 
-- `.knowledge/core/PRINCIPLES.md` — Core philosophy (Xin-Da-Ya)
-- `.knowledge/core/QUICK_REFERENCE.md` — Quick reference card
-- `.knowledge/frameworks/autonomy/LEVELS.md` — Full autonomy framework
-- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout design patterns
+- `.knowledge/core/principles.md` — Core philosophy (Xin-Da-Ya)
+- `.knowledge/core/quick_reference.md` — Quick reference card
+- `.knowledge/frameworks/autonomy/levels.md` — Full autonomy framework
+- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout design patterns
 
 ---
 

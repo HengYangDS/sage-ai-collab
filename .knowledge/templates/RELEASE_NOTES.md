@@ -1,17 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-﻿---
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~1500
----
-
 # Release Notes Template
 
 > **Purpose**: Template for documenting software releases
@@ -216,7 +202,7 @@ Organize changes by category:
 ## Example
 
 ```markdown
-# Release Notes: SAGE Knowledge Base v0.2.0
+# Release Notes: MyProject v0.2.0
 
 > **Release Date**: 2025-11-29
 > **Release Type**: Minor
@@ -264,7 +250,7 @@ This release introduces MCP streaming support for real-time knowledge delivery a
 **What changed**: Timeout configuration moved under `performance` section.
 
 **Migration steps**:
-1. Update your `config/sage.yaml`
+1. Update your `config/app.yaml`
 2. Move timeout settings to new location
 3. Restart services
 
@@ -293,14 +279,14 @@ performance:
 
 ### Upgrade Steps
 
-1. **Backup**: `cp config/sage.yaml config/sage.yaml.bak`
-2. **Update**: `pip install --upgrade sage-kb`
+1. **Backup**: `cp config/app.yaml config/app.yaml.bak`
+2. **Update**: `pip install --upgrade myproject`
 3. **Migrate config**: Update configuration as shown above
-4. **Verify**: `sage info`
+4. **Verify**: `app info`
 
 ---
 
-*Released by SAGE Team on 2025-11-29*
+*Released by Team on 2025-11-29*
 
 ```
 
@@ -324,7 +310,7 @@ performance:
 
 ---
 
-*Template from SAGE Knowledge Base*
+*Template from AI Collaboration Knowledge Base*
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

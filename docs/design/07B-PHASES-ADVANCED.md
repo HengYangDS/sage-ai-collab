@@ -17,9 +17,9 @@ This document is part of the Implementation Roadmap series:
 
 | Document                       | Content                                |
 |--------------------------------|----------------------------------------|
-| `07-ROADMAP.md`                | Overview, status, KPIs, success criteria |
-| `07A-PHASES-FOUNDATION.md`     | Phase 0-F: MVP foundation phases       |
-| **07B-PHASES-ADVANCED.MD** (this) | Phase G-J: Advanced feature phases  |
+| `07-roadmap.md`                | Overview, status, KPIs, success criteria |
+| `07a-phases-foundation.md`     | Phase 0-F: MVP foundation phases       |
+| **07b-phases-advanced.md** (this) | Phase G-J: Advanced feature phases  |
 
 ---
 
@@ -152,7 +152,7 @@ src/sage/core/memory/
 | Add optimization features to features.yaml | P1 | ✅ | client_cache, lazy_expansion, etc. |
 | Create src/sage/data/fallback_core.yaml | P1 | ✅ | Fallback content for degradation |
 | Create config/services/api.yaml | P1 | ✅ | HTTP API service configuration |
-| Create docs/design/09-CONFIGURATION.md | P1 | ✅ | Configuration design documentation |
+| Create docs/design/09-configuration.md | P1 | ✅ | Configuration design documentation |
 
 ### Part 2: DI Services Implementation 📋 PLANNED
 
@@ -194,9 +194,9 @@ src/sage/core/memory/
 
 ## Related
 
-- `docs/design/07-ROADMAP.md` — Roadmap overview and KPIs
-- `docs/design/07A-PHASES-FOUNDATION.md` — Foundation phases (0-F)
-- `docs/design/05-PLUGIN-MEMORY.md` — Plugin and memory design
+- `docs/design/07-roadmap.md` — Roadmap overview and KPIs
+- `docs/design/07a-phases-foundation.md` — Foundation phases (0-F)
+- `docs/design/05-plugin-memory.md` — Plugin and memory design
 
 ---
 

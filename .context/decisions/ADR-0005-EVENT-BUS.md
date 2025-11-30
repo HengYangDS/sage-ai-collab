@@ -1,4 +1,4 @@
-﻿---
+---
 version: "1.0"
 last_updated: "2025-11-30"
 status: published
@@ -259,9 +259,9 @@ async def test_event_publishing(event_bus):
 
 ## Related
 
-- `.context/decisions/ADR-0001-ARCHITECTURE.md` — Layer architecture
-- `.context/decisions/ADR-0002-SAGE-PROTOCOL.md` — SAGE phase events
-- `.context/conventions/CODE_PATTERNS.md` — EventBus patterns
+- `.context/decisions/ADR-0001-architecture.md` — Layer architecture
+- `.context/decisions/ADR-0002-sage-protocol.md` — SAGE phase events
+- `.context/conventions/code_patterns.md` — EventBus patterns
 - `src/sage/core/events/` — Implementation
 
 ---

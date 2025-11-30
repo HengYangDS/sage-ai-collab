@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~2150
----
-
 # Project Directory Structure Patterns
 
 > Universal directory organization patterns for AI-collaborative projects
@@ -255,4 +248,4 @@ Is this an intermediate/generated file?
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

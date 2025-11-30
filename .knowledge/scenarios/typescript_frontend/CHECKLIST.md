@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 ﻿---
 version: "1.0"
 last_updated: "2025-11-30"
@@ -90,9 +83,9 @@ tokens: ~400
 
 ## Related
 
-- `.knowledge/scenarios/typescript_frontend/CONTEXT.md` — TypeScript frontend context
-- `.knowledge/guidelines/TYPESCRIPT.md` — TypeScript guidelines
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/scenarios/typescript_frontend/context.md` — TypeScript frontend context
+- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
 ---
 
