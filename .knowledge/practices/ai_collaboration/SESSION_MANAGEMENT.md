@@ -141,10 +141,10 @@ Location: `.history/current/session-YYYYMMDD-HHMM.md`
 - [ ] Step 4 pending
 
 ### Files Modified
-| File | Changes | Status |
-|------|---------|--------|
-| `src/module.py` | Added function X | Done |
-| `tests/test_module.py` | Added tests | In Progress |
+| File                    | Changes          | Status      |
+|-------------------------|------------------|-------------|
+| `src/module.py`         | Added function X | Done        |
+| `tests/test_module.py`  | Added tests      | In Progress |
 
 ### Decisions
 1. Chose approach A because [reason]

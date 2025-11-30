@@ -65,6 +65,7 @@
 | **Postmortem**            | `POSTMORTEM.md`            | ~250   | Incident postmortem report         |
 | **Troubleshooting Guide** | `TROUBLESHOOTING_GUIDE.md` | ~300   | Problem diagnosis and solutions    |
 | **Release Notes**         | `RELEASE_NOTES.md`         | ~350   | Software release documentation     |
+| **Shell Script**          | `SHELL_SCRIPT.md`          | ~200   | Bash script template               |
 | **Meeting Notes**         | `MEETING_NOTES.md`         | ~300   | Meeting records and action items   |
 | **Case Study**            | `CASE_STUDY.md`            | ~230   | Problem-solving case documentation |
 | **Convention**            | `CONVENTION.md`            | ~80    | Code/project convention template   |

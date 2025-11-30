@@ -270,18 +270,31 @@ classDiagram
 ```mermaid
 stateDiagram-v2
     [*] --> Idle
-    Idle --> Processing : start
-    Processing --> Completed : success
-    Processing --> Failed : error
+    Idle --> Processing : ▶ start
+    Processing --> Completed : ✓ success
+    Processing --> Failed : ✗ error
     Completed --> [*]
-    Failed --> Idle : retry
+    Failed --> Idle : ↻ retry
+
+    Idle : 💤 Waiting
+    Processing : ⚙️ Working
+    Completed : ✅ Done
+    Failed : ❌ Error
+
+    classDef base fill:#2d2d2d,stroke:#555,color:#fff
+    classDef success fill:#1a1a1a,stroke:#4a4,color:#fff
+    classDef error fill:#1a1a1a,stroke:#a44,color:#fff
+
+    class Idle,Processing base
+    class Completed success
+    class Failed error
 ```
 #### Special States
 
-| Syntax | Meaning |
-|--------|---------|
-| `[*]` | Start/End state |
-| `state "Name" as s1` | State with alias |
+| Syntax                 | Meaning          |
+|------------------------|------------------|
+| `[*]`                  | Start/End state  |
+| `state "Name" as s1`   | State with alias |
 
 #### Composite States
 
@@ -295,10 +308,10 @@ stateDiagram-v2
 ```
 #### Transitions
 
-| Element | Syntax |
-|---------|--------|
-| Basic | `A --> B` |
-| With label | `A --> B : event` |
+| Element    | Syntax                  |
+|------------|-------------------------|
+| Basic      | `A --> B`               |
+| With label | `A --> B : event`       |
 | With guard | `A --> B : [condition]` |
 
 ### 5.3 Entity Relationship Diagram

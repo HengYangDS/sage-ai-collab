@@ -20,12 +20,12 @@
 | **Core**       | `core/`       | Principles, defaults, quick reference     | 4     |
 | **Guidelines** | `guidelines/` | Code style, engineering, AI collaboration | 15    |
 | **Frameworks** | `frameworks/` | Autonomy, timeout, cognitive patterns     | 25    |
-| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 54    |
+| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 57    |
 | **References** | `references/` | Quick reference guides and checklists     | 4     |
 | **Scenarios**  | `scenarios/`  | Context-specific guides                   | 34    |
-| **Templates**  | `templates/`  | Reusable document templates               | 17    |
+| **Templates**  | `templates/`  | Reusable document templates               | 18    |
 
-**Total**: 155 knowledge files
+**Total**: 159 knowledge files
 
 ---
 
@@ -76,7 +76,7 @@ Reusable patterns and strategies across 7 categories:
 | `resilience/`  | 2     | Timeout patterns, fallbacks      |
 | `security/`    | 5     | Auth, secrets, security checks   |
 
-### 2.4 Practices (54 files)
+### 2.4 Practices (57 files)
 
 Real-world implementation guidance:
 
@@ -85,7 +85,7 @@ Real-world implementation guidance:
 | `ai_collaboration/` | 12    | Context, session, token mgmt |
 | `decisions/`        | 2     | Autonomy case studies        |
 | `documentation/`    | 11    | Knowledge org, standards     |
-| `engineering/`      | 28    | API, testing, CI/CD, logging |
+| `engineering/`      | 31    | API, testing, CI/CD, logging |
 
 ### 2.5 Scenarios (34 files)
 
@@ -116,7 +116,7 @@ Quick reference guides and checklists:
 | `KNOWLEDGE_QUICK_REF.md`   | Knowledge organization patterns |
 | `PERFORMANCE_CHECKLIST.md` | Performance optimization checks |
 
-### 2.7 Templates (17 files)
+### 2.7 Templates (18 files)
 
 Reusable document templates:
 
@@ -137,6 +137,7 @@ Reusable document templates:
 | `RELEASE_NOTES.md`         | Release notes format         |
 | `RUNBOOK.md`               | Operational runbook          |
 | `SESSION_STATE.md`         | AI session state             |
+| `SHELL_SCRIPT.md`          | Shell script template        |
 | `TASK_HANDOFF.md`          | Task handoff document        |
 | `TROUBLESHOOTING_GUIDE.md` | Troubleshooting template     |
 

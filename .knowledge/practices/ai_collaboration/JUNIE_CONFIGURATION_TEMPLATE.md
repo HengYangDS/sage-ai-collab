@@ -44,7 +44,7 @@ All files in `.junie/` are categorized as either:
 
 | Category    | Symbol | Description                    | Examples                                     |
 |-------------|--------|--------------------------------|----------------------------------------------|
-| **Generic** | 🔄     | Reusable across projects       | `GUIDELINES.md`, `generic/config.yaml`       |
+| **Generic** | 🔄     | Reusable across projects       | `guidelines.md`, `generic/config.yaml`       |
 | **Project** | 📌     | Must be customized per project | `project/config.yaml`, `project/QUICKREF.md` |
 
 ### 2.2 Variable Centralization
@@ -84,42 +84,63 @@ The `.junie/` thin layer delegates detailed knowledge to:
 
 ```text
 .junie/
-├── GUIDELINES.md           # 🔄 Main entry point (generic AI rules)
+├── guidelines.md           # 🔄 Main entry point (generic AI rules)
 ├── README.md               # 🔄 Directory documentation
+│
+├── docs/                   # 🔄 Documentation hub
+│   ├── guides/             # Getting started guides
+│   ├── mcp/                # MCP server documentation
+│   ├── operations/         # Operations & maintenance
+│   ├── reference/          # Reference materials
+│   ├── vision/             # Future roadmap
+│   └── README.md           # Docs index
 │
 ├── generic/                # 🔄 Generic settings (reusable)
 │   ├── config.yaml         # Junie settings
+│   ├── INDEX.md            # Generic index
 │   └── QUICKREF.md         # Quick reference card
 │
 ├── mcp/                    # 🔄 MCP server configuration
 │   └── mcp.json            # MCP servers definition
 │
-├── configuration/          # 🔄 Junie configuration guides
-│   └── *.md                # Configuration documentation
+├── schema/                 # 🔄 JSON Schema definitions
+│   ├── config.schema.json  # Config validation schema
+│   └── mcp.schema.json     # MCP config schema
 │
 └── project/                # 📌 Project-specific files (must customize)
     ├── config.yaml         # Project variables definition
+    ├── INDEX.md            # Project index
     └── QUICKREF.md         # Project-specific quick reference
 ```
 ### File Relationships
 
 ```mermaid
-flowchart TB
-    G["GUIDELINES.md<br/>(Main entry point)"]
-    
-    subgraph Generic["Generic Directories (Reusable)"]
-        GEN["generic/<br/>(Settings)"]
-        MCP["mcp/<br/>(MCP)"]
-        CFG["configuration/<br/>(Guides)"]
+flowchart LR
+    G["📋 guidelines.md"]
+
+    subgraph GRP1[" 🔄 Generic "]
+        GEN["⚙️ generic/"]
+        MCP["🔌 mcp/"]
+        DOC["📖 docs/"]
+        SCH["📐 schema/"]
     end
-    
-    subgraph Project["project/ (Customize)"]
-        PY["config.yaml<br/>(Variables)"]
-        PQ["QUICKREF.md<br/>(Project Ref)"]
+
+    subgraph GRP2[" 📌 Project "]
+        PY["📝 config.yaml"]
+        PQ["📑 QUICKREF.md"]
     end
-    
-    G --> Generic
-    G --> Project
+
+    G -->|loads| GRP1
+    G -->|loads| GRP2
+    PY -.->|referenced by| PQ
+
+    classDef entry fill:#1a1a1a,stroke:#555,color:#fff,stroke-width:2px
+    classDef generic fill:#2d2d2d,stroke:#444,color:#fff
+    classDef project fill:#2d2d2d,stroke:#666,color:#fff
+
+    class G entry
+    class GEN,MCP,DOC,SCH generic
+    class PY,PQ project
 ```
 ---
 
@@ -127,7 +148,7 @@ flowchart TB
 
 ### 4.1 Root Files (🔄)
 
-#### `GUIDELINES.md` — Entry Point
+#### `guidelines.md` — Entry Point
 
 The primary entry point for AI collaboration. Contains:
 
@@ -274,17 +295,26 @@ cp -r template/.junie .junie
 
 # 2. The directory structure will be:
 #    .junie/
-#    ├── GUIDELINES.md          # Keep as-is (generic)
+#    ├── guidelines.md          # Keep as-is (generic)
 #    ├── README.md              # Keep as-is (generic)
+#    ├── docs/                  # Keep as-is (documentation)
+#    │   ├── guides/
+#    │   ├── mcp/
+#    │   ├── operations/
+#    │   ├── reference/
+#    │   └── vision/
 #    ├── generic/               # Keep as-is (generic settings)
 #    │   ├── config.yaml
+#    │   ├── INDEX.md
 #    │   └── QUICKREF.md
 #    ├── mcp/                   # Keep as-is (MCP config)
 #    │   └── mcp.json
-#    ├── configuration/         # Keep as-is (config guides)
-#    │   └── *.md
+#    ├── schema/                # Keep as-is (JSON schemas)
+#    │   ├── config.schema.json
+#    │   └── mcp.schema.json
 #    └── project/               # Customize these files
 #        ├── config.yaml
+#        ├── INDEX.md
 #        └── QUICKREF.md
 
 # 3. Edit project/config.yaml with your project's information
@@ -304,7 +334,7 @@ When the template system is updated:
 To migrate an existing project:
 
 1. Copy the entire `.junie/` directory from template
-2. Keep `generic/`, `mcp/`, and `configuration/` directories unchanged
+2. Keep `generic/`, `mcp/`, `docs/`, and `schema/` directories unchanged
 3. Extract project-specific values into `project/config.yaml`
 4. Move project quick reference to `project/QUICKREF.md`
 5. Remove duplicated content from other files
@@ -372,7 +402,7 @@ This enables:
 
 ### 7.1 Adding New Generic Sections
 
-When adding to `GUIDELINES.md`:
+When adding to `guidelines.md`:
 
 1. Ensure content is truly generic (applies to any project)
 2. Use placeholder paths (`src/`, `tests/`, etc.)
@@ -419,14 +449,6 @@ mcp:
 - `.knowledge/practices/ai_collaboration/INTERACTION_PATTERNS.md` — AI interaction patterns
 - `.knowledge/practices/ai_collaboration/CONTEXT_MANAGEMENT.md` — Context loading strategies
 - `.knowledge/practices/ai_collaboration/WORKFLOW.md` — AI collaboration workflow
-
----
-
-## Version History
-
-| Version | Date       | Changes                        |
-|---------|------------|--------------------------------|
-| 1.0     | 2025-11-30 | Initial template system design |
 
 ---
 

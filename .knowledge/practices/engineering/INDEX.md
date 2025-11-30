@@ -31,7 +31,10 @@
 | [Python Implementation Patterns](PYTHON_PATTERNS.md) | Python Implementation Patterns |
 | [Secrets Implementation Patterns](SECRETS_IMPLEMENTATION.md) | Secrets Implementation Patterns |
 | [Security Implementation Patterns](SECURITY_PATTERNS.md) | Security Implementation Patterns |
+| [Shell Script Patterns](SHELL_PATTERNS.md) | Shell script patterns and practices |
+| [SQL Patterns](SQL_PATTERNS.md) | SQL query patterns and best practices |
 | [Testing Strategy](TESTING_STRATEGY.md) | Testing Strategy |
+| [TypeScript Patterns](TYPESCRIPT_PATTERNS.md) | TypeScript patterns and practices |
 | [Troubleshooting Guide](TROUBLESHOOTING.md) | Troubleshooting Guide |
 | [Unit Testing Patterns](UNIT_TESTING_PATTERNS.md) | Unit Testing Patterns |
 | [YAML Configuration Conventions](YAML_CONVENTIONS.md) | YAML Configuration Conventions |

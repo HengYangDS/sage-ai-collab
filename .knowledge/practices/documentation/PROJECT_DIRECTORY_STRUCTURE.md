@@ -37,7 +37,7 @@ project/
 ├── .backups/        # Backup files before changes (hidden, tracked)
 ├── .logs/           # Runtime log files (hidden, ignored)
 ├── .outputs/        # Intermediate process files (hidden, ignored)
-├── .knowledge/         # Generic reusable knowledge (visible, tracked)
+├── .knowledge/      # Generic reusable knowledge (visible, tracked)
 ├── docs/            # User-facing documentation (visible, tracked)
 ├── src/             # Source code (visible, tracked)
 └── tests/           # Test suite (visible, tracked)
@@ -177,14 +177,15 @@ Is this content reusable across ANY project?
 
 **Purpose**: Universal knowledge that helps AI collaboration, reusable across projects.
 
-| Subdirectory  | Content                           |
-|---------------|-----------------------------------|
-| `core/`       | Core principles, defaults         |
-| `guidelines/` | Code style, engineering standards |
-| `frameworks/` | Deep conceptual frameworks        |
-| `practices/`  | Best practices, workflows         |
-| `scenarios/`  | Context-specific presets          |
-| `templates/`  | Reusable document templates       |
+| Subdirectory   | Content                            |
+|----------------|-----------------------------------|
+| `core/`        | Core principles, defaults          |
+| `guidelines/`  | Code style, engineering standards  |
+| `frameworks/`  | Deep conceptual frameworks         |
+| `practices/`   | Best practices, workflows          |
+| `references/`  | Quick reference guides, glossary   |
+| `scenarios/`   | Context-specific presets           |
+| `templates/`   | Reusable document templates        |
 
 **When to use**: Knowledge that applies universally, not project-specific.
 
