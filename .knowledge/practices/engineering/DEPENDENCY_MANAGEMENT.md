@@ -114,8 +114,7 @@ all = [
 
 ]
 
-```
-
+```text
 ### 2.2 Version Specifiers
 
 | Specifier  | Meaning            | Example              |
@@ -144,8 +143,7 @@ all = [
 
 # pip install knowledge-base[all]
 
-```
-
+```text
 ---
 
 ## 3. Version Pinning
@@ -180,8 +178,7 @@ pip-compile --generate-hashes pyproject.toml
 
 pip-compile --upgrade pyproject.toml
 
-```
-
+```text
 ### 3.3 Lock File Example
 
 ```txt
@@ -202,8 +199,7 @@ rich==13.7.0 \
 
     --hash=sha256:...
 
-```
-
+```text
 ---
 
 ## 4. Security
@@ -228,8 +224,7 @@ pip-audit -r requirements.lock
 
 pip-audit --format json -o audit.json
 
-```
-
+```text
 ### 4.2 GitHub Dependabot
 
 ```yaml
@@ -262,8 +257,7 @@ updates:
 
           - "mypy"
 
-```
-
+```text
 ### 4.3 Security Best Practices
 
 | Practice           | Description                  |
@@ -324,8 +318,7 @@ git add requirements.lock
 
 git commit -m "chore(deps): update dependencies"
 
-```
-
+```text
 ### 5.3 Handling Breaking Changes
 
 1. **Read changelog** before updating major versions
@@ -368,7 +361,7 @@ dependencies:
 
       - -e ".[all]"
 
-```
+```text
 
 ```bash
 
@@ -388,8 +381,7 @@ conda env update -f environment.yml
 
 conda deactivate
 
-```
-
+```text
 ### 6.2 Virtual Environments (venv Alternative)
 
 ```bash
@@ -410,8 +402,7 @@ source .venv/bin/activate
 
 pip install -e ".[dev]"
 
-```
-
+```text
 ### 6.3 Development Setup
 
 ```bash
@@ -430,8 +421,7 @@ pip install -e ".[all]"
 
 pre-commit install
 
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -464,8 +454,7 @@ pip install pipdeptree
 
 pipdeptree
 
-```
-
+```text
 ---
 
 ## Dependency Checklist
@@ -488,11 +477,11 @@ pipdeptree
 
 ## Related
 
-- `.knowledge/practices/engineering/ci_cd.md` — CI/CD pipeline with dependency checks
+- `.knowledge/practices/engineering/CI_CD.md` — CI/CD pipeline with dependency checks
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing after updates
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing after updates
 
-- `.knowledge/guidelines/python.md` — Python coding standards
+- `.knowledge/guidelines/PYTHON.md` — Python coding standards
 
 ---
 

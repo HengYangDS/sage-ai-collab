@@ -40,22 +40,19 @@
 
 ### 2.1 Single Task
 
-```
+```text
 Request → Confirm → Execute → Report
-```
-
+```text
 ### 2.2 Batch Processing
 
-```
+```text
 Request → Plan → [Execute → Checkpoint]* → Summary
-```
-
+```text
 ### 2.3 Iterative Refinement
 
-```
+```text
 Request → Draft → Feedback → Refine → [Repeat] → Finalize
-```
-
+```text
 ---
 
 ## 3. Context Patterns
@@ -115,10 +112,9 @@ Request → Draft → Feedback → Refine → [Repeat] → Finalize
 
 ### 5.2 Escalation Pattern
 
-```
+```text
 Attempt → Uncertain? → Escalate → Guidance → Continue
-```
-
+```text
 ---
 
 ## 6. Workflow Patterns
@@ -133,9 +129,9 @@ Attempt → Uncertain? → Escalate → Guidance → Continue
 
 ## Related
 
-- `.knowledge/guidelines/ai_collaboration.md` — Collaboration guidelines
-- `.knowledge/practices/ai_collaboration/workflow.md` — Workflow practices
-- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
+- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration guidelines
+- `.knowledge/practices/ai_collaboration/WORKFLOW.md` — Workflow practices
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 
 ---
 

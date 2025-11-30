@@ -27,7 +27,7 @@ Knowledge is organized into hierarchical layers with defined priorities, token b
 
 ### 2.1 Standard Layout
 
-```
+```text
 project/
 ├── .context/        # Project-specific knowledge (tracked)
 ├── .history/        # Session history and handoffs (tracked)
@@ -39,8 +39,7 @@ project/
 ├── docs/            # User-facing documentation (tracked)
 ├── src/             # Source code (tracked)
 └── tests/           # Test suite (tracked)
-```
-
+```text
 > **Note**: `.junie/` is optional AI tool configuration. Projects may have additional directories (`scripts/`, `tools/`, `config/`) as needed.
 
 ### 2.2 Directory Categories
@@ -73,8 +72,7 @@ flowchart LR
         A[".archive/"]
         B[".backups/"]
     end
-```
-
+```text
 **Override Rule**: `.knowledge/` > `.context/` > `docs/`
 
 ### 3.1 Layer Definitions
@@ -98,6 +96,8 @@ flowchart LR
 
 ## 4. Layer Details
 
+> **SSOT**: See `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` for complete `.knowledge/` subdirectory definitions.
+
 ### 4.1 Layer 1: .knowledge/
 
 **Purpose**: Universal knowledge that applies across all projects. Contains principles, guidelines, and best practices.
@@ -111,14 +111,6 @@ flowchart LR
 | `references/` | Quick reference, glossary | On-demand | ~300 |
 | `scenarios/` | Context presets | Selective | ~500 |
 | `templates/` | Reusable templates | Selective | ~300 |
-
-**Core Files (Always Loaded)**:
-
-| File | Purpose | Tokens |
-|------|---------|--------|
-| `PRINCIPLES.md` | Xin-Da-Ya philosophy | ~200 |
-| `QUICK_REFERENCE.md` | Critical questions | ~150 |
-| `DEFAULTS.md` | Default behaviors | ~150 |
 
 ### 4.2 Layer 2: .context/
 
@@ -157,14 +149,13 @@ flowchart LR
 
 When content exists in multiple layers:
 
-```
+```text
 .knowledge/ > .context/ > docs/
 
 Example:
 - .knowledge/guidelines/CODE_STYLE.md  ← Universal default
 - .context/conventions/CODE_STYLE.md   ← Project override
-```
-
+```text
 ### 5.1 Override Rules
 
 | Scenario | Resolution |
@@ -194,8 +185,7 @@ Example:
 
 - `.knowledge/guidelines/CODE_STYLE.md` — Universal style guide
 - `.context/conventions/NAMING.md` — Project naming conventions
-```
-
+```text
 ---
 
 ## Related

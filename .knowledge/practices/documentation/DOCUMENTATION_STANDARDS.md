@@ -46,8 +46,7 @@
 ---
 
 *AI Collaboration Knowledge Base*
-```
-
+```text
 **Note**: Frontmatter metadata (version, tokens, etc.) is NOT used. Document content speaks for itself.
 
 ### 1.2 Heading Rules
@@ -188,8 +187,7 @@ def greet(name: str) -> str:
     return f"Hello, {name}"
 
 print(greet("World"))  # Output: Hello, World
-```
-
+```text
 > **Full Standards**: See `CODE_BLOCK_STANDARDS.md`
 
 ---
@@ -198,14 +196,17 @@ print(greet("World"))  # Output: Hello, World
 
 ### 5.1 Layer Architecture
 
-| Layer | Purpose | Token Budget | Load Timing |
-|-------|---------|--------------|-------------|
-| `core/` | Foundational principles | ~500 | Always |
-| `guidelines/` | Standards, conventions | ~1200 | By role/task |
-| `frameworks/` | Deep conceptual models | ~2000 | On-demand |
-| `practices/` | Actionable patterns | ~1500 | Implementation |
-| `scenarios/` | Context presets | ~500 | By trigger |
-| `templates/` | Ready-to-use templates | ~300 | Direct copy |
+> **SSOT**: See `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` for complete `.knowledge/` layer definitions.
+
+| Layer | Token Budget | Load Timing |
+|-------|--------------|-------------|
+| `core/` | ~500 | Always |
+| `guidelines/` | ~1,200 | By role/task |
+| `frameworks/` | ~2,000 | On-demand |
+| `practices/` | ~1,500 | Implementation |
+| `references/` | ~300 | On-demand |
+| `scenarios/` | ~500 | By trigger |
+| `templates/` | ~300 | Direct copy |
 
 ### 5.2 Directory Conventions
 
@@ -281,7 +282,7 @@ print(greet("World"))  # Output: Hello, World
 
 ### 6.3 Optimization Workflow
 
-```
+```text
 1. Review against checklist
        ↓
 2. Identify deviations
@@ -289,8 +290,7 @@ print(greet("World"))  # Output: Hello, World
 3. Batch apply fixes
        ↓
 4. Verify consistency
-```
-
+```text
 > **Full Workflow**: See `OPTIMIZATION_WORKFLOW.md`
 
 ---

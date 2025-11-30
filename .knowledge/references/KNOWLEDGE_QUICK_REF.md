@@ -17,7 +17,7 @@
 
 ## 1. Layer Hierarchy
 
-```
+```text
 .knowledge/
 ├── core/           # Always load (~500 tokens)
 ├── guidelines/     # By role/task (~1200 tokens)
@@ -25,8 +25,7 @@
 ├── practices/      # When implementing (~1500 tokens)
 ├── scenarios/      # By trigger (~500 tokens)
 └── templates/      # Direct copy (~300 tokens)
-```
-
+```text
 ---
 
 ## 2. Layer Token Budgets
@@ -44,10 +43,9 @@
 
 ## 3. Navigation Pattern
 
-```
+```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```
-
+```text
 ---
 
 ## 4. MECE Principle

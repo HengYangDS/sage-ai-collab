@@ -31,8 +31,7 @@
 # =============================================================================
 # [Section Name]
 # =============================================================================
-```
-
+```text
 ### Section Format
 
 | Element        | Format                | Purpose                      |
@@ -85,8 +84,7 @@ database:
   port: 5432                   # Default PostgreSQL port
   max_connections: 100         # Connection pool size
   timeout_ms: 5000             # Query timeout
-```
-
+```text
 ---
 
 ## 4. Hierarchy Structure
@@ -117,8 +115,7 @@ allowed_hosts:
   - localhost
   - 127.0.0.1
   - "*.example.com"
-```
-
+```text
 ### Object Lists
 
 ```yaml
@@ -129,8 +126,7 @@ servers:
   - name: replica
     host: db2.example.com
     port: 5432
-```
-
+```text
 ---
 
 ## 6. Multi-line Strings
@@ -142,8 +138,7 @@ script: |
   #!/bin/bash
   echo "Line 1"
   echo "Line 2"
-```
-
+```text
 ### Folded Block (Collapse Newlines)
 
 ```yaml
@@ -151,8 +146,7 @@ description: >
   This is a long description
   that will be folded into
   a single line with spaces.
-```
-
+```text
 ---
 
 ## 7. Environment Variables
@@ -163,8 +157,7 @@ description: >
 database:
   password: ${DB_PASSWORD}
   host: ${DB_HOST:-localhost}    # With default value
-```
-
+```text
 ---
 
 ## 8. File Organization
@@ -194,8 +187,8 @@ database:
 
 ## Related
 
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
-- `.knowledge/guidelines/code_style.md` — Code style guidelines
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
+- `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
 
 ---
 

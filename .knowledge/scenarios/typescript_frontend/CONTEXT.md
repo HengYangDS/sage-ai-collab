@@ -40,8 +40,7 @@ focus: [ components, state, testing, styling ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -50,9 +49,9 @@ autonomy_default: L3
 
 |---------------|-----------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/code_style.md` · `.knowledge/practices/engineering/patterns.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/CODE_STYLE.md` · `.knowledge/practices/engineering/PATTERNS.md` |
 
-| **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/testing_strategy.md`               |
+| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`               |
 
 ---
 
@@ -134,8 +133,7 @@ export const UserCard: FC<UserCardProps> = ({user, onSelect}) => {
 
     ;
 
-```
-
+```text
 ### 4.2 Custom Hook Pattern
 
 ```typescript
@@ -194,8 +192,7 @@ export function useFetch<T>(url: string): UseFetchResult<T> {
 
 }
 
-```
-
+```text
 ### 4.3 Context Pattern
 
 ```typescript
@@ -264,8 +261,7 @@ export const useAuth = () => {
 
 };
 
-```
-
+```text
 ---
 
 ## 5. Testing Patterns
@@ -322,8 +318,7 @@ describe('UserCard', () => {
 
 });
 
-```
-
+```text
 ### 5.2 Hook Testing
 
 ```typescript
@@ -360,8 +355,7 @@ describe('useFetch', () => {
 
 });
 
-```
-
+```text
 ---
 
 ## 6. State Management
@@ -454,13 +448,13 @@ describe('useFetch', () => {
 
 ## Related
 
-- `.knowledge/guidelines/code_style.md` — Code style guidelines
+- `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
 
-- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
 
-- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 
 ---
 

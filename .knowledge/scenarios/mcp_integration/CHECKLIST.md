@@ -132,11 +132,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/mcp_integration/context.md` — MCP integration context
+- `.knowledge/scenarios/mcp_integration/CONTEXT.md` — MCP integration context
 
-- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

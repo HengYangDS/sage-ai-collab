@@ -66,8 +66,7 @@ function process(data: unknown) {
         // data is now typed as User
     }
 }
-```
-
+```text
 ### 2.2 Generics
 
 ```typescript
@@ -87,8 +86,7 @@ interface ApiResponse<T> {
     status: number;
     message: string;
 }
-```
-
+```text
 ### 2.3 Utility Types
 
 ```typescript
@@ -109,8 +107,7 @@ type UserMap = Record<string, User>;
 
 // ReturnType - function return type
 type CreateUserReturn = ReturnType<typeof createUser>;
-```
-
+```text
 ### 2.4 Type Guards
 
 ```typescript
@@ -138,8 +135,7 @@ function handleResult<T>(result: Result<T>) {
         console.error(result.error);
     }
 }
-```
-
+```text
 ---
 
 ## 3. Code Style
@@ -177,8 +173,7 @@ export function fetchUser(id: string): Promise<User> {
 function greet(name: string, greeting = 'Hello'): string {
     return `${greeting}, ${name}!`;
 }
-```
-
+```text
 ### 3.3 Object and Array Patterns
 
 ```typescript
@@ -196,8 +191,7 @@ const user = {name, email, age};
 // ✅ Good - Computed property names
 const key = 'dynamicKey';
 const obj = {[key]: value};
-```
-
+```text
 ### 3.4 Null Handling
 
 ```typescript
@@ -217,8 +211,7 @@ function processValue(value: string | null) {
     }
     return value.toUpperCase();
 }
-```
-
+```text
 ---
 
 ## 4. Patterns
@@ -252,8 +245,7 @@ async function fetchData<T>(url: string): Promise<Result<T>> {
         return {ok: false, error: error as Error};
     }
 }
-```
-
+```text
 ### 4.2 Async Patterns
 
 ```typescript
@@ -280,8 +272,7 @@ async function safeGetUser(id: string): Promise<User | null> {
         return null;
     }
 }
-```
-
+```text
 ### 4.3 Module Organization
 
 ```typescript
@@ -303,8 +294,7 @@ export class UserService {
     async getById(id: string): Promise<User> {
     }
 }
-```
-
+```text
 ---
 
 ## 5. React Patterns
@@ -356,8 +346,7 @@ export function Card({title, children}: CardProps) {
 )
     ;
 }
-```
-
+```text
 ### 5.2 Hooks
 
 ```typescript
@@ -385,8 +374,7 @@ function useLocalStorage<T>(
 
 // Usage
 const [user, setUser] = useLocalStorage<User | null>('user', null);
-```
-
+```text
 ### 5.3 State Management
 
 ```typescript
@@ -414,8 +402,7 @@ function reducer(state: State, action: Action): State {
             return state;
     }
 }
-```
-
+```text
 ---
 
 ## 6. Testing
@@ -442,8 +429,7 @@ describe('UserService', () => {
         await expect(service.getById('')).rejects.toThrow('Invalid ID');
     });
 });
-```
-
+```text
 ### 6.2 Component Tests
 
 ```typescript
@@ -475,8 +461,7 @@ describe('Button', () => {
         expect(handleClick).toHaveBeenCalledTimes(1);
     });
 });
-```
-
+```text
 ### 6.3 Mock Patterns
 
 ```typescript
@@ -493,8 +478,7 @@ vi.mock('./useAuth', () => ({
 // Type-safe mocks
 const mockFetch = vi.fn<[string], Promise<User>>();
 mockFetch.mockResolvedValue({id: '1', name: 'Test'});
-```
-
+```text
 ---
 
 ## 7. Tooling
@@ -515,8 +499,7 @@ mockFetch.mockResolvedValue({id: '1', name: 'Test'});
     "@typescript-eslint/no-explicit-any": "error"
   }
 }
-```
-
+```text
 ### 7.2 TSConfig
 
 ```json
@@ -534,8 +517,7 @@ mockFetch.mockResolvedValue({id: '1', name: 'Test'});
     "skipLibCheck": true
   }
 }
-```
-
+```text
 ### 7.3 Quick Checklist
 
 | Check                   | Description                    |

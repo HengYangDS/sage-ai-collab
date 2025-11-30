@@ -54,8 +54,7 @@ Default: L4 | Elevated: [routine tasks → L5] | Lowered: [sensitive areas → L
 ## Commands
 
 `[dev cmd]` · `[test cmd]` · `[build cmd]`
-```
-
+```text
 ---
 
 ## 3. Python Project
@@ -82,8 +81,7 @@ strict = true
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-v --cov=src"
-```
-
+```text
 ### 3.2 Directory Structure
 
 | Path                   | Purpose                                       |
@@ -112,14 +110,13 @@ conda activate project-name
 
 # Install
 pip install project-name
-```
+```text
 
 ```python
 from project_name import main_function
 
 result = main_function()
-```
-
+```text
 ## Development
 
 ```bash
@@ -127,8 +124,7 @@ git clone <url> && cd project-name
 conda env create -f environment.yml  # recommended
 conda activate project-name
 pip install -e ".[dev]"
-```
-
+```text
 **Test**: `pytest` | **Lint**: `ruff check . && mypy src/`
 
 ## Contributing
@@ -139,8 +135,7 @@ Fork → Branch → Changes + Tests → PR
 
 MIT
 
-```
-
+```text
 ---
 
 ## 5. .gitignore Template
@@ -160,8 +155,7 @@ __pycache__/ | *.py[cod] | *.egg-info/ | dist/ | build/ | .eggs/
 
 # Local
 .env.local | *.local.yaml | secrets.yaml
-```
-
+```text
 ---
 
 ## 6. Docker Template
@@ -175,8 +169,7 @@ COPY pyproject.toml .
 RUN pip install --no-cache-dir .
 COPY src/ src/
 CMD ["python", "-m", "project_name"]
-```
-
+```text
 ### 6.2 docker-compose.yml
 
 ```yaml
@@ -192,8 +185,7 @@ services:
     volumes: [ postgres_data:/var/lib/postgresql/data ]
 volumes:
   postgres_data:
-```
-
+```text
 ---
 
 ## 7. CI/CD Template
@@ -219,8 +211,7 @@ jobs:
       - run: ruff check . && mypy src/
       - run: pytest --cov --cov-report=xml
       - uses: codecov/codecov-action@v3
-```
-
+```text
 ---
 
 ## 8. Quick Setup Script
@@ -253,8 +244,7 @@ echo "  cd $PROJECT"
 echo "  conda env create -f environment.yml"
 echo "  conda activate $PROJECT"
 echo "  kb get"
-```
-
+```text
 ---
 
 ## Related

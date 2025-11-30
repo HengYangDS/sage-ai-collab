@@ -91,8 +91,7 @@ conversations that contain decisions, insights, or learnings worth preserving fo
 ---
 
 *Conversation record from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Instructions
@@ -183,8 +182,7 @@ Explored graceful degradation patterns when timeouts occur. Decided on partial c
 ---
 
 *Conversation record from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Related

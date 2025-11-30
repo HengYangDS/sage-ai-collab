@@ -63,8 +63,7 @@ async def fetch_with_limit(urls: list[str], limit: int = 10) -> list[str]:
     async with httpx.AsyncClient() as client:
         tasks = [bounded_fetch(client, url) for url in urls]
         return await asyncio.gather(*tasks)
-```
-
+```text
 ### Multiprocessing (For CPU-bound)
 
 ```python
@@ -79,8 +78,7 @@ def process_parallel(items: list, workers: int = None):
     workers = workers or mp.cpu_count()
     with ProcessPoolExecutor(max_workers=workers) as executor:
         return list(executor.map(cpu_intensive, items))
-```
-
+```text
 ### Thread Pool (For Blocking I/O)
 
 ```python
@@ -93,8 +91,7 @@ def blocking_io(item):
 def process_threaded(items: list, workers: int = 10):
     with ThreadPoolExecutor(max_workers=workers) as executor:
         return list(executor.map(blocking_io, items))
-```
-
+```text
 ---
 
 ## 3. Common Patterns
@@ -132,8 +129,7 @@ async def run_pipeline(items, process_func, num_consumers=3):
         await queue.put(None)
     
     await asyncio.gather(*consumers)
-```
-
+```text
 ### Worker Pool
 
 ```python
@@ -172,8 +168,7 @@ class WorkerPool:
         await self.queue.join()
         for worker in self.workers:
             worker.cancel()
-```
-
+```text
 ---
 
 ## 4. Best Practices
@@ -209,14 +204,13 @@ async def safe_gather(tasks):
         logger.error(f"{len(errors)} tasks failed")
     
     return successes, errors
-```
-
+```text
 ---
 
 ## Related
 
-- `.knowledge/frameworks/performance/optimization_strategies.md` — Performance optimization
-- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Performance optimization
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

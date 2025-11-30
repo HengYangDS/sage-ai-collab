@@ -129,8 +129,8 @@
 
 ## Related
 
-- `.knowledge/guidelines/quality.md` — Quality standards
-- `.knowledge/guidelines/code_style.md` — Code style
+- `.knowledge/guidelines/QUALITY.md` — Quality standards
+- `.knowledge/guidelines/CODE_STYLE.md` — Code style
 
 ---
 

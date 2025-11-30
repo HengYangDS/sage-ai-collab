@@ -116,11 +116,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/knowledge_management/context.md` — Knowledge management context
+- `.knowledge/scenarios/knowledge_management/CONTEXT.md` — Knowledge management context
 
-- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge organization
+- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Knowledge organization
 
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 
 ---
 

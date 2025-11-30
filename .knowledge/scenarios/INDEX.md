@@ -42,7 +42,7 @@
 
 ## 2. Python Backend Scenario
 
-**Path**: `python_backend/context.md`
+**Path**: `python_backend/CONTEXT.md`
 
 ### When to Load
 
@@ -82,8 +82,7 @@
 
 Each scenario contains:
 
-```
-
+```text
 scenarios/[name]/
 
 ├── context.md      # Main scenario context
@@ -92,8 +91,7 @@ scenarios/[name]/
 
 └── templates/      # Optional: scenario-specific templates
 
-```
-
+```text
 ### Context File Format
 
 ```markdown
@@ -120,8 +118,7 @@ scenarios/[name]/
 
 [Common mistakes to avoid]
 
-```
-
+```text
 ---
 
 ## 4. Creating New Scenarios
@@ -138,11 +135,11 @@ scenarios/[name]/
 
 ## Related
 
-- `.knowledge/guidelines/index.md` — General guidelines
+- `.knowledge/guidelines/INDEX.md` — General guidelines
 
-- `.knowledge/practices/index.md` — Implementation practices
+- `.knowledge/practices/INDEX.md` — Implementation practices
 
-- `.knowledge/templates/index.md` — Document templates
+- `.knowledge/templates/INDEX.md` — Document templates
 
 - `.config/knowledge/triggers.yaml` — Trigger configuration
 

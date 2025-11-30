@@ -139,8 +139,7 @@ Before finalizing code blocks:
 - old_function()  # Removed
 + new_function()  # Added
   unchanged_line()
-```
-
+```text
 ### 4.4 Console Example
 
 ```console
@@ -148,8 +147,7 @@ $ python --version
 Python 3.11.0
 $ pip install requests
 Successfully installed requests-2.28.0
-```
-
+```text
 ---
 
 ## 5. Code Content Guidelines
@@ -166,8 +164,7 @@ Successfully installed requests-2.28.0
 # Calculate sum of list
 result = sum([1, 2, 3, 4, 5])
 print(result)  # Output: 15
-```
-
+```text
 ### 5.2 Comment Guidelines
 
 | Comment Type | When to Use          | Example                 |
@@ -190,8 +187,7 @@ result = sum(data)
 
 # Output
 print(result)  # Output: 15
-```
-
+```text
 ### 5.4 Error Examples
 
 Show error handling:
@@ -202,8 +198,7 @@ try:
     result = 1 / 0
 except ZeroDivisionError as e:
     print(f"Error: {e}")  # Output: Error: division by zero
-```
-
+```text
 ### 5.5 Multi-File Examples
 
 Use headers for multi-file:
@@ -214,8 +209,7 @@ Use headers for multi-file:
 database:
   host: localhost
   port: 5432
-```
-
+```text
 **`app.py`**:
 
 ```python
@@ -223,8 +217,7 @@ import yaml
 
 with open("config.yaml") as f:
     config = yaml.safe_load(f)
-```
-
+```text
 ---
 
 ## 6. Quote Blocks

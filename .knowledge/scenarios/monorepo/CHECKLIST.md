@@ -132,11 +132,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/monorepo/context.md` — Monorepo context
+- `.knowledge/scenarios/monorepo/CONTEXT.md` — Monorepo context
 
-- `.knowledge/practices/engineering/git_workflow.md` — Git workflow practices
+- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Git workflow practices
 
-- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
+- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
 
 ---
 

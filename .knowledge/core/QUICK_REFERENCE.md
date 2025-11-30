@@ -77,8 +77,7 @@ Ask before every task:
 ## Next Steps
 
 [Follow-up actions if applicable]
-```
-
+```text
 ---
 
 ## 4. Timeout Tiers
@@ -108,9 +107,9 @@ Ask before every task:
 
 ## Related
 
-- `.knowledge/core/principles.md` — Full philosophy
-- `.knowledge/core/defaults.md` — Default behaviors
-- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
+- `.knowledge/core/PRINCIPLES.md` — Full philosophy
+- `.knowledge/core/DEFAULTS.md` — Default behaviors
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 
 ---
 

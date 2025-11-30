@@ -45,10 +45,9 @@
 - Symptom 2: [Description]
 - Error messages (if any):
 
-```
+```text
 [Error message or log output]
-```
-
+```text
 ### 1.3 Expected Behavior
 
 [What should have happened?]
@@ -108,8 +107,7 @@
 
 # After
 [fixed code]
-```
-
+```text
 ### 3.3 Verification
 
 [How did you verify the fix worked?]
@@ -220,8 +218,7 @@ outputs_dir = project_root / ".outputs"
 outputs_dir.mkdir(parents=True, exist_ok=True)
 output_path = outputs_dir / Path(output_file).name
 builder.export_to_json(output_path)
-```
-
+```text
 ### Lessons Learned
 
 - Always normalize output paths to designated directories

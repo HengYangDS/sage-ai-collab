@@ -70,8 +70,7 @@
 ---
 
 *AI Collaboration Knowledge Base*
-```
-
+```text
 ### 3.2 Heading Rules
 
 | Level | Use For             | Numbering  |
@@ -157,8 +156,7 @@ Documentation uses four primary elements. Each has dedicated standards.
 # ✓ Good: focused, shows input/output
 result = process("input")
 print(result)  # Output: "processed"
-```
-
+```text
 > **Full Standards**: See `.knowledge/practices/documentation/CODE_BLOCK_STANDARDS.md`
 
 ### 5.4 Quote Blocks

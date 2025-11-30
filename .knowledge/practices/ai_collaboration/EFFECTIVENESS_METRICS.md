@@ -44,8 +44,7 @@
 - Tasks completed: [count]
 - Iterations needed: [count]
 - Blockers hit: [list]
-```
-
+```text
 ### Weekly Review
 
 | Question | Answer |

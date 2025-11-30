@@ -38,8 +38,7 @@ focus: [ service_design, api, messaging, deployment ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -48,9 +47,9 @@ autonomy_default: L3
 
 |---------------|--------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/api_design.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/API_DESIGN.md` |
 
-| **On-Demand** | `.knowledge/guidelines/security.md` · `.knowledge/practices/engineering/error_handling.md`                       |
+| **On-Demand** | `.knowledge/guidelines/SECURITY.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md`                       |
 
 ---
 
@@ -70,30 +69,25 @@ autonomy_default: L3
 
 ### 3.2 Service Boundaries
 
-```
-
-┌─────────────────────────────────────────────────────────────┐
-
-│                         API Gateway                          │
-
-├─────────┬─────────┬─────────┬─────────┬─────────────────────┤
-
-│  User   │  Order  │ Product │ Payment │    Notification     │
-
-│ Service │ Service │ Service │ Service │      Service        │
-
-├─────────┴─────────┴─────────┴─────────┴─────────────────────┤
-
-│                    Message Bus / Events                      │
-
-├─────────────────────────────────────────────────────────────┤
-
-│             Databases (per-service ownership)                │
-
-└─────────────────────────────────────────────────────────────┘
-
-```
-
+```mermaid
+flowchart TB
+    GW["API Gateway"]
+    
+    subgraph Services
+        U["User Service"]
+        O["Order Service"]
+        P["Product Service"]
+        Pay["Payment Service"]
+        N["Notification Service"]
+    end
+    
+    MB["Message Bus / Events"]
+    DB["Databases (per-service ownership)"]
+    
+    GW --> Services
+    Services --> MB
+    MB --> DB
+```text
 ### 3.3 Key Principles
 
 | Principle                 | Description                                |
@@ -116,8 +110,7 @@ autonomy_default: L3
 
 ### 4.1 Service Template Structure
 
-```
-
+```text
 service-name/
 
 ├── src/
@@ -138,8 +131,7 @@ service-name/
 
 └── README.md
 
-```
-
+```text
 ### 4.2 API Design
 
 ```python
@@ -192,8 +184,7 @@ async def create_order(order: Order):
 
     return created
 
-```
-
+```text
 ### 4.3 Health Checks
 
 ```python
@@ -218,8 +209,7 @@ async def readiness_check():
 
     return {"status": "ready", "checks": {"db": db_ok, "cache": cache_ok}}
 
-```
-
+```text
 ---
 
 ## 5. Communication Patterns
@@ -294,8 +284,7 @@ async def handle_order_created(event: OrderCreatedEvent):
 
     )
 
-```
-
+```text
 ### 5.4 Circuit Breaker
 
 ```python
@@ -316,8 +305,7 @@ async def call_payment_service(order_id: str):
 
     return response.json()
 
-```
-
+```text
 ---
 
 ## 6. Data Management
@@ -348,8 +336,7 @@ async def call_payment_service(order_id: str):
 
 ### 6.3 Saga Example (Choreography)
 
-```
-
+```text
 Order Service          Payment Service       Inventory Service
 
       │                       │                      │
@@ -368,8 +355,7 @@ Order Service          Payment Service       Inventory Service
 
       │ OrderCompleted        │                      │
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -454,13 +440,13 @@ Order Service          Payment Service       Inventory Service
 
 ## Related
 
-- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 
-- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
 
-- `.knowledge/guidelines/security.md` — Security guidelines
+- `.knowledge/guidelines/SECURITY.md` — Security guidelines
 
-- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
+- `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
 
 ---
 

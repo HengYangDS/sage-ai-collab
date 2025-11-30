@@ -112,11 +112,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/typescript_frontend/context.md` — TypeScript frontend context
+- `.knowledge/scenarios/typescript_frontend/CONTEXT.md` — TypeScript frontend context
 
-- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/guidelines/TYPESCRIPT.md` — TypeScript guidelines
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

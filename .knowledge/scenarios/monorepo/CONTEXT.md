@@ -38,8 +38,7 @@ focus: [ structure, dependencies, ci_cd, code_sharing ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -48,9 +47,9 @@ autonomy_default: L3
 
 |---------------|------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/patterns.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/PATTERNS.md` |
 
-| **On-Demand** | `.knowledge/practices/documentation/project_directory_structure.md` · `.knowledge/guidelines/code_style.md`    |
+| **On-Demand** | `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` · `.knowledge/guidelines/CODE_STYLE.md`    |
 
 ---
 
@@ -58,8 +57,7 @@ autonomy_default: L3
 
 ### 3.1 Common Monorepo Layout
 
-```
-
+```text
 monorepo/
 
 ├── apps/                    # Deployable applications
@@ -94,8 +92,7 @@ monorepo/
 
 └── nx.json                  # Nx config (if using Nx)
 
-```
-
+```text
 ### 3.2 Package Naming Convention
 
 | Type         | Pattern         | Example                   |
@@ -218,8 +215,7 @@ monorepo/
 
 }
 
-```
-
+```text
 ### 4.3 pnpm Workspace
 
 ```yaml
@@ -234,8 +230,7 @@ packages:
 
   - 'tools/*'
 
-```
-
+```text
 ### 4.4 Nx Configuration
 
 ```json
@@ -298,8 +293,7 @@ packages:
 
 }
 
-```
-
+```text
 ---
 
 ## 5. Dependency Management
@@ -324,8 +318,7 @@ packages:
 
 }
 
-```
-
+```text
 ### 5.2 Shared Configuration
 
 ```typescript
@@ -358,8 +351,7 @@ module.exports = {
 
 };
 
-```
-
+```text
 ### 5.3 TypeScript Project References
 
 ```json
@@ -394,8 +386,7 @@ module.exports = {
 
 }
 
-```
-
+```text
 ---
 
 ## 6. CI/CD Patterns
@@ -440,8 +431,7 @@ jobs:
 
       - run: pnpm nx affected -t lint test build
 
-```
-
+```text
 ### 6.2 Turborepo with Remote Cache
 
 ```yaml
@@ -480,8 +470,7 @@ jobs:
 
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
-```
-
+```text
 ### 6.3 Selective Deployment
 
 ```yaml
@@ -500,8 +489,7 @@ deploy-web:
 
     - run: pnpm --filter @acme/web deploy
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -564,8 +552,7 @@ pnpm init
 
 }
 
-```
-
+```text
 ### 7.2 Package Checklist
 
 | Item                             | Status |
@@ -630,11 +617,11 @@ pnpm init
 
 ## Related
 
-- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 
-- `.knowledge/practices/documentation/project_directory_structure.md` — Directory patterns
+- `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` — Directory patterns
 
-- `.knowledge/guidelines/typescript.md` — TypeScript guidelines
+- `.knowledge/guidelines/TYPESCRIPT.md` — TypeScript guidelines
 
 ---
 

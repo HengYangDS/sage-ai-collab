@@ -40,8 +40,7 @@ focus: [ api, database, testing, deployment ]
 
 autonomy_default: L2
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -50,9 +49,9 @@ autonomy_default: L2
 
 |---------------|------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/patterns.md`            |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/PATTERNS.md`            |
 
-| **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/frameworks/timeout/hierarchy.md` · `.knowledge/templates/project_setup.md` |
+| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/templates/PROJECT_SETUP.md` |
 
 ---
 
@@ -102,8 +101,7 @@ async def get_user(id: str, service: UserService = Depends(get_service)) -> User
 
     return user
 
-```
-
+```text
 ### 4.2 Service Layer
 
 ```python
@@ -122,8 +120,7 @@ class UserService:
 
         return await self._repo.save(User(email=data.email, password_hash=hash(data.password)))
 
-```
-
+```text
 ### 4.3 Repository
 
 ```python
@@ -140,8 +137,7 @@ class UserRepository:
 
         return result.scalar_one_or_none()
 
-```
-
+```text
 ---
 
 ## 5. Testing Patterns
@@ -164,8 +160,7 @@ def user_factory():
 
     return lambda **kw: User(**{"email": "test@example.com", "name": "Test", **kw})
 
-```
-
+```text
 ### 5.2 API Test
 
 ```python
@@ -180,8 +175,7 @@ async def test_create_user(client: AsyncClient):
 
     assert "id" in response.json()
 
-```
-
+```text
 ---
 
 ## 6. Configuration
@@ -206,8 +200,7 @@ def get_settings() -> Settings:
 
     return Settings()
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -262,11 +255,11 @@ def get_settings() -> Settings:
 
 ## Related
 
-- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
 
-- `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 
 ---
 

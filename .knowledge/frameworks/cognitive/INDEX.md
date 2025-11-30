@@ -51,7 +51,7 @@ Optimizes knowledge representation for:
 
 ## Related
 
-- `.junie/guidelines.md` — Expert committee usage
+- `.junie/GUIDELINES.md` — Expert committee usage
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
 - `.knowledge/frameworks/design/` — Design thinking patterns
 

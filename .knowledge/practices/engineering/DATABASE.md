@@ -39,8 +39,7 @@ CREATE INDEX ix_users_email ON users(email);
 
 -- Foreign keys: fk_table_referenced
 CONSTRAINT fk_orders_user FOREIGN KEY (user_id) REFERENCES users(id)
-```
-
+```text
 ### Index Strategy
 
 | Index Type    | Use Case                         |
@@ -60,8 +59,7 @@ CREATE INDEX ix_active_users ON users(email) WHERE is_active = true;
 
 -- Covering index
 CREATE INDEX ix_orders_covering ON orders(user_id) INCLUDE (total, status);
-```
-
+```text
 ---
 
 ## 2. Query Optimization
@@ -87,8 +85,7 @@ SELECT * FROM users WHERE name LIKE '%john%';
 
 -- ✅ Good: Full-text search for text searching
 SELECT * FROM users WHERE to_tsvector(name) @@ to_tsquery('john');
-```
-
+```text
 ### Pagination
 
 ```sql
@@ -100,8 +97,7 @@ SELECT * FROM orders
 WHERE id > :last_seen_id
 ORDER BY id
 LIMIT 20;
-```
-
+```text
 ### EXPLAIN Usage
 
 ```sql
@@ -113,8 +109,7 @@ SELECT * FROM orders WHERE user_id = 123 AND status = 'pending';
 -- - Seq Scan (may need index)
 -- - High cost estimates
 -- - Row count mismatches
-```
-
+```text
 ---
 
 ## 3. Connection Management
@@ -134,8 +129,7 @@ engine = create_engine(
     pool_recycle=1800,      # Recycle after 30 min
     pool_pre_ping=True,     # Verify before use
 )
-```
-
+```text
 ### Async Connections
 
 ```python
@@ -149,8 +143,7 @@ engine = create_async_engine(
 
 async with AsyncSession(engine) as session:
     result = await session.execute(query)
-```
-
+```text
 ---
 
 ## 4. Data Integrity
@@ -166,8 +159,7 @@ async with session.begin():
     transfer = Transfer(from_user=user_id, amount=amount)
     session.add(transfer)
     # Auto-commit on exit, rollback on exception
-```
-
+```text
 ### Constraints
 
 ```sql
@@ -177,8 +169,7 @@ ALTER TABLE orders ADD CONSTRAINT chk_amount CHECK (amount > 0);
 
 -- Unique constraints
 ALTER TABLE users ADD CONSTRAINT uq_users_email UNIQUE (email);
-```
-
+```text
 ### Soft Deletes
 
 ```sql
@@ -190,8 +181,7 @@ SELECT * FROM users WHERE deleted_at IS NULL;
 
 -- Create partial index for performance
 CREATE INDEX ix_users_active ON users(email) WHERE deleted_at IS NULL;
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -219,8 +209,8 @@ CREATE INDEX ix_users_active ON users(email) WHERE deleted_at IS NULL;
 
 ## Related
 
-- `.knowledge/frameworks/performance/optimization_strategies.md` — Performance guide
-- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
+- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Performance guide
+- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
 
 ---
 

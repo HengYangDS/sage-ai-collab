@@ -29,7 +29,7 @@
 
 ### 2.2 Classification Decision Tree
 
-```
+```text
 New tool/capability arrives
     │
     ├── Does it analyze/diagnose? ──────────► analyzers/
@@ -41,8 +41,7 @@ New tool/capability arrives
     ├── Does it convert/transform? ─────────► converters/
     │
     └── Does it generate/create? ───────────► generators/
-```
-
+```text
 ### 2.3 Boundary Rules
 
 | Rule | Description | Example |

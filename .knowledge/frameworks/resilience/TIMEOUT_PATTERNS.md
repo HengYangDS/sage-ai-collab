@@ -41,8 +41,7 @@ async def with_timeout(coro, timeout_ms: int, fallback=None):
         )
     except asyncio.TimeoutError:
         return fallback
-```
-
+```text
 ### 2.2 Guidelines
 
 | Guideline              | Description                     |
@@ -79,12 +78,13 @@ async def with_timeout(coro, timeout_ms: int, fallback=None):
 
 ### 4.1 States
 
-```
-Closed ──failures──▶ Open ──timeout──▶ Half-Open
-   ▲                                        │
-   └──────────success───────────────────────┘
-```
-
+```mermaid
+stateDiagram-v2
+    Closed --> Open : failures
+    Open --> HalfOpen : timeout
+    HalfOpen --> Closed : success
+    HalfOpen --> Open : failure
+```text
 ### 4.2 Configuration
 
 | Parameter         | Value  | Purpose           |
@@ -122,8 +122,7 @@ async def get_with_fallback(key: str) -> Result:
 
     # Return default
     return default_value(key)
-```
-
+```text
 ---
 
 ## 6. Bulkhead Pattern
@@ -154,14 +153,13 @@ async def get_with_fallback(key: str) -> Result:
 @timeout(ms=5000)
 async def resilient_call(params):
     return await external_service.call(params)
-```
-
+```text
 ---
 
 ## Related
 
-- `.context/policies/timeout_hierarchy.md` — the system-specific T1-T5 timeout hierarchy
-- `.knowledge/frameworks/patterns/persistence.md` — Data persistence patterns
+- `.context/policies/TIMEOUT_HIERARCHY.md` — the system-specific T1-T5 timeout hierarchy
+- `.knowledge/frameworks/patterns/PERSISTENCE.md` — Data persistence patterns
 
 ---
 

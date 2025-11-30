@@ -18,13 +18,12 @@
 
 ## 1. Test Pyramid
 
-```
+```text
         /\          E2E (Few) - User flows
        /──\         Integration (Some) - Components
       /────\        Unit (Many) - Functions
      /──────\
-```
-
+```text
 | Type        | Ratio | Speed  | Focus     |
 |-------------|-------|--------|-----------|
 | Unit        | 70%   | < 10ms | Logic     |
@@ -80,8 +79,7 @@ def test_calculate_total_empty_cart_returns_zero():
 
 def test_login_invalid_password_raises_error():
     ...
-```
-
+```text
 ### 3.2 Class Organization
 
 ```python
@@ -90,8 +88,7 @@ class TestUserService:
         def test_valid_data_creates_user(self): ...
 
         def test_duplicate_email_raises_error(self): ...
-```
-
+```text
 ---
 
 ## 4. Test Structure
@@ -110,8 +107,7 @@ def test_add_item_to_cart():
     # Assert
     assert cart.total == 100
     assert len(cart.items) == 1
-```
-
+```text
 ### 4.2 Given-When-Then (BDD)
 
 ```python
@@ -124,8 +120,7 @@ def test_user_registration():
 
     # Then user is created
     assert result.id is not None
-```
-
+```text
 ---
 
 ## 5. Fixtures
@@ -142,8 +137,7 @@ def db_session():
     session = create_session()
     yield session
     session.rollback()
-```
-
+```text
 ### 5.2 Fixture Scopes
 
 | Scope    | Lifetime   | Use For          |
@@ -167,8 +161,7 @@ def test_with_mock(mocker):
     result = service.process()
 
     mock_api.assert_called_once()
-```
-
+```text
 ### 6.2 When to Mock
 
 | Mock          | Don't Mock          |
@@ -202,8 +195,8 @@ def test_with_mock(mocker):
 
 ## Related
 
-- `.knowledge/guidelines/quality.md` — Quality standards
-- `.knowledge/practices/engineering/code_review.md` — Review practices
+- `.knowledge/guidelines/QUALITY.md` — Quality standards
+- `.knowledge/practices/engineering/CODE_REVIEW.md` — Review practices
 
 ---
 

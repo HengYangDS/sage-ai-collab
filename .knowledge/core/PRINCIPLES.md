@@ -53,10 +53,9 @@ Three levels of mastery from technique to wisdom.
 
 ### 2.1 Growth Path
 
-```
+```text
 术 (Learn tools) → 法 (Apply patterns) → 道 (Develop wisdom)
-```
-
+```text
 ### 2.2 Balance
 
 - **术 without 法**: Mechanical, inflexible

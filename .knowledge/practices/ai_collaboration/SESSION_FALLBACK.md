@@ -46,8 +46,7 @@
 - Project: [name]
 - Branch: [current branch]
 - Key files: [list]
-```
-
+```text
 ### Quick Start Command
 
 ```bash
@@ -55,8 +54,7 @@
 git status
 git log --oneline -5
 ls -la .knowledge/
-```
-
+```text
 ---
 
 ## 3. Session Checkpoint Fallback
@@ -84,8 +82,7 @@ ls -la .knowledge/
 
 ### Modified Files
 - [file1]: [change summary]
-```
-
+```text
 ---
 
 ## 4. Session End Fallback
@@ -111,8 +108,7 @@ ls -la .knowledge/
 
 ### Context Files
 - `.history/sessions/[date].md`
-```
-
+```text
 ---
 
 ## 5. Recovery Procedures

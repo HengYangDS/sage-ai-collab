@@ -133,7 +133,7 @@
 
 ## Quick Reference Card
 
-```
+```text
 SESSION START
   □ Load context  □ Check active sessions  □ Set scope
 
@@ -145,8 +145,7 @@ BEFORE END
 
 SESSION END
   □ Create records  □ Cleanup  □ Prepare handoff
-```
-
+```text
 ---
 
 ## Related

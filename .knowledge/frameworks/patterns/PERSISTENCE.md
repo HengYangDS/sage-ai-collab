@@ -124,14 +124,13 @@ def cleanup(store: DataStore, policy: RetentionPolicy):
             count=store.count() - policy.max_entries,
             below_priority=policy.min_priority
         )
-```
-
+```text
 ---
 
 ## Related
 
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
-- `.knowledge/practices/engineering/patterns.md` — Engineering patterns
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
+- `.knowledge/practices/engineering/PATTERNS.md` — Engineering patterns
 
 ---
 

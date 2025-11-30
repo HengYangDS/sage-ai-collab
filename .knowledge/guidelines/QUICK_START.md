@@ -64,8 +64,7 @@ Ask before every task:
 ## Verification
 
 [How to verify]
-```
-
+```text
 ---
 
 ## 5. Next Steps

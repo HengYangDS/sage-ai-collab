@@ -40,7 +40,7 @@ implementation decisions in AI Collaboration Knowledge Base.
 ## Related
 
 - `docs/design/` — Design documentation
-- `.knowledge/core/principles.md` — Core principles
+- `.knowledge/core/PRINCIPLES.md` — Core principles
 - `.context/decisions/` — Architecture Decision Records
 
 ---

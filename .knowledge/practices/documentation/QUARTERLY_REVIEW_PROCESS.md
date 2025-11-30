@@ -65,8 +65,7 @@
 ```markdown
 召集 Level 5 专家委员会，评审 .knowledge
 要求评审前，先阅读文档写作及配置文件相关规范、标准等
-```
-
+```text
 ### Step 2: Expert Groups
 
 | Group | Focus Areas |

@@ -39,10 +39,9 @@
 
 ### 2.1 PDCA Loop
 
-```
+```text
 Plan → Do → Check → Adjust → (repeat)
-```
-
+```text
 | Step   | Duration | Output          |
 |--------|----------|-----------------|
 | Plan   | 10-20%   | Scope, criteria |
@@ -95,10 +94,9 @@ Plan → Do → Check → Adjust → (repeat)
 
 ### 4.2 Quality Gates
 
-```
+```text
 Edit → Lint ✓ → Commit → Tests ✓ → PR → Review ✓ → Merge
-```
-
+```text
 | Gate        | Criteria    | Block   |
 |-------------|-------------|---------|
 | Lint        | No errors   | Yes     |
@@ -116,8 +114,7 @@ Edit → Lint ✓ → Commit → Tests ✓ → PR → Review ✓ → Merge
 if feature_enabled("new_algorithm"):
     return new_algorithm(data)
 return old_algorithm(data)
-```
-
+```text
 **Benefits**: Deploy without releasing, gradual rollout, instant rollback.
 
 ### 5.2 Strangler Fig
@@ -152,8 +149,8 @@ return old_algorithm(data)
 
 ## Related
 
-- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
-- `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
+- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
 
 ---
 

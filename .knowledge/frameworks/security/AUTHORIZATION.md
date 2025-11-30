@@ -19,27 +19,19 @@
 
 ### Authorization Flow
 
-```
-┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
-│ Subject  │────▶│  Policy  │────▶│ Decision │────▶│ Resource │
-│ (User)   │     │  Engine  │     │  Point   │     │          │
-└──────────┘     └──────────┘     └──────────┘     └──────────┘
-     │                │                │                │
-     │  Who + What    │                │                │
-     │───────────────▶│                │                │
-     │                │                │                │
-     │                │  Evaluate      │                │
-     │                │  Policies      │                │
-     │                │                │                │
-     │                │  PERMIT/DENY   │                │
-     │                │───────────────▶│                │
-     │                │                │                │
-     │                │                │  If PERMIT     │
-     │                │                │───────────────▶│
-     │                                                  │
-     │◀─────────────────────────────────────────────────│
-```
+```mermaid
+sequenceDiagram
+    participant S as Subject (User)
+    participant PE as Policy Engine
+    participant DP as Decision Point
+    participant R as Resource
 
+    S->>PE: Who + What
+    PE->>PE: Evaluate Policies
+    PE->>DP: PERMIT/DENY
+    DP->>R: If PERMIT
+    R-->>S: Response
+```text
 ### Key Concepts
 
 | Concept      | Description            | Example                |
@@ -66,60 +58,44 @@
 
 ### Decision Matrix
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Choose Your Model                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Simple permissions?                                        │
-│  └─ Yes ──▶ ACL or Basic RBAC                              │
-│  └─ No                                                      │
-│      │                                                      │
-│      ▼                                                      │
-│  Role-based access sufficient?                              │
-│  └─ Yes ──▶ RBAC                                           │
-│  └─ No                                                      │
-│      │                                                      │
-│      ▼                                                      │
-│  Need dynamic, contextual rules?                            │
-│  └─ Yes ──▶ ABAC                                           │
-│  └─ No                                                      │
-│      │                                                      │
-│      ▼                                                      │
-│  Relationship-based access?                                 │
-│  └─ Yes ──▶ ReBAC (e.g., Google Zanzibar)                  │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart TD
+    Q1{"Simple permissions?"} -->|Yes| ACL["ACL or Basic RBAC"]
+    Q1 -->|No| Q2{"Role-based access sufficient?"}
+    Q2 -->|Yes| RBAC["RBAC"]
+    Q2 -->|No| Q3{"Need dynamic, contextual rules?"}
+    Q3 -->|Yes| ABAC["ABAC"]
+    Q3 -->|No| Q4{"Relationship-based access?"}
+    Q4 -->|Yes| ReBAC["ReBAC (Google Zanzibar)"]
+```text
 ---
 
 ## 3. RBAC
 
 ### Role-Based Access Control
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         RBAC Model                          │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌────────┐      ┌────────┐      ┌─────────────┐           │
-│  │ Users  │─────▶│ Roles  │─────▶│ Permissions │           │
-│  └────────┘      └────────┘      └─────────────┘           │
-│                                                             │
-│  Alice ──────▶ Admin ──────▶ users:create                  │
-│                       ──────▶ users:read                    │
-│                       ──────▶ users:update                  │
-│                       ──────▶ users:delete                  │
-│                                                             │
-│  Bob ────────▶ Editor ─────▶ content:read                  │
-│                       ─────▶ content:update                 │
-│                                                             │
-│  Carol ──────▶ Viewer ─────▶ content:read                  │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart LR
+    subgraph Users
+        Alice
+        Bob
+        Carol
+    end
+    subgraph Roles
+        Admin
+        Editor
+        Viewer
+    end
+    subgraph Permissions
+        P1["users:*"]
+        P2["content:read/update"]
+        P3["content:read"]
+    end
 
+    Alice --> Admin --> P1
+    Bob --> Editor --> P2
+    Carol --> Viewer --> P3
+```text
 ### RBAC Implementation
 
 ```python
@@ -192,8 +168,7 @@ class RBACAuthorizer:
             if role:
                 permissions.update(role.permissions)
         return permissions
-```
-
+```text
 ### Role Hierarchy
 
 ```python
@@ -215,39 +190,26 @@ class HierarchicalRBAC:
         for inherited in self.role_hierarchy.get(role, []):
             effective.update(self.get_effective_roles(inherited))
         return effective
-```
-
+```text
 ---
 
 ## 4. ABAC
 
 ### Attribute-Based Access Control
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         ABAC Model                          │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Subject Attributes    Resource Attributes    Environment  │
-│  ┌─────────────────┐   ┌─────────────────┐   ┌───────────┐ │
-│  │ user.role       │   │ doc.owner       │   │ time      │ │
-│  │ user.department │   │ doc.sensitivity │   │ location  │ │
-│  │ user.clearance  │   │ doc.type        │   │ ip_addr   │ │
-│  └────────┬────────┘   └────────┬────────┘   └─────┬─────┘ │
-│           │                     │                   │       │
-│           └─────────────────────┼───────────────────┘       │
-│                                 │                           │
-│                                 ▼                           │
-│                        ┌───────────────┐                    │
-│                        │ Policy Engine │                    │
-│                        └───────┬───────┘                    │
-│                                │                            │
-│                                ▼                            │
-│                        PERMIT / DENY                        │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart TB
+    subgraph Attributes
+        S["Subject Attributes<br/>role, department, clearance"]
+        R["Resource Attributes<br/>owner, sensitivity, type"]
+        E["Environment<br/>time, location, ip_addr"]
+    end
 
+    S --> PE["Policy Engine"]
+    R --> PE
+    E --> PE
+    PE --> D["PERMIT / DENY"]
+```text
 ### ABAC Policy Examples
 
 ```python
@@ -321,8 +283,7 @@ class ABACAuthorizer:
     def authorize(self, context: AccessContext) -> bool:
         """Evaluate all policies (any match = permit)."""
         return any(policy.evaluate(context) for policy in self.policies)
-```
-
+```text
 ---
 
 ## 5. Implementation Patterns
@@ -354,8 +315,7 @@ def require_permissions(*permissions: Permission):
 @require_permissions(Permission.CONTENT_CREATE)
 async def create_content(request, content: ContentCreate):
     return await content_service.create(content)
-```
-
+```text
 ### Resource-Level Authorization
 
 ```python
@@ -392,8 +352,7 @@ class ResourceAuthorizer:
                 return True
         
         return False
-```
-
+```text
 ### Policy Enforcement Point
 
 ```python
@@ -434,8 +393,7 @@ class PolicyEnforcementPoint:
             resource=resource,
             action=action
         )
-```
-
+```text
 ---
 
 ## 6. API Authorization
@@ -470,8 +428,7 @@ async def create_content(
     user = Depends(require_role({"admin", "editor"}))
 ):
     return await content_service.create(content, user.id)
-```
-
+```text
 ### Scope-Based Authorization (OAuth2)
 
 ```python
@@ -518,8 +475,7 @@ async def read_content():
 @router.delete("/.knowledge/{id}", dependencies=[Security(get_current_user, scopes=["delete:content"])])
 async def delete_content(id: str):
     return await content_service.delete(id)
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -546,9 +502,9 @@ async def delete_content(id: str):
 
 ## Related
 
-- `.knowledge/frameworks/security/authentication.md` — Identity verification
-- `.knowledge/frameworks/security/secrets_management.md` — Credential handling
-- `.knowledge/frameworks/security/security_checklist.md` — Implementation checklist
+- `.knowledge/frameworks/security/AUTHENTICATION.md` — Identity verification
+- `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Credential handling
+- `.knowledge/frameworks/security/SECURITY_CHECKLIST.md` — Implementation checklist
 
 ---
 

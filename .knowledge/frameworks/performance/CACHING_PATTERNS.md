@@ -27,24 +27,12 @@
 
 ### Cache Hierarchy
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     Cache Hierarchy                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  Fastest ─────────────────────────────────── Slowest       │
-│                                                             │
-│  ┌────────┐  ┌────────┐  ┌────────┐  ┌────────┐           │
-│  │ L1/L2  │  │ Local  │  │ Dist.  │  │ Origin │           │
-│  │ CPU    │──│ Memory │──│ Cache  │──│ (DB)   │           │
-│  │ Cache  │  │ Cache  │  │ Redis  │  │        │           │
-│  └────────┘  └────────┘  └────────┘  └────────┘           │
-│                                                             │
-│   ~1ns        ~100ns      ~1ms        ~10ms                │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart LR
+    L1["L1/L2 CPU Cache<br/>~1ns"] --> L2["Local Memory Cache<br/>~100ns"]
+    L2 --> L3["Distributed Cache (Redis)<br/>~1ms"]
+    L3 --> DB["Origin (DB)<br/>~10ms"]
+```text
 ---
 
 ## 2. Caching Strategies
@@ -61,26 +49,18 @@
 
 ### Cache-Aside (Lazy Loading)
 
-```
-┌──────────┐     ┌──────────┐     ┌──────────┐
-│  Client  │────▶│  Cache   │     │ Database │
-└──────────┘     └──────────┘     └──────────┘
-     │                │                │
-     │  1. Check      │                │
-     │───────────────▶│                │
-     │                │                │
-     │  2. Miss       │                │
-     │◀───────────────│                │
-     │                │                │
-     │  3. Query                       │
-     │─────────────────────────────────▶
-     │                │                │
-     │  4. Result                      │
-     │◀─────────────────────────────────
-     │                │                │
-     │  5. Populate   │                │
-     │───────────────▶│                │
-```
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant Ca as Cache
+    participant DB as Database
+
+    C->>Ca: 1. Check
+    Ca-->>C: 2. Miss
+    C->>DB: 3. Query
+    DB-->>C: 4. Result
+    C->>Ca: 5. Populate
+```text
 
 ```python
 class CacheAsidePattern:
@@ -109,8 +89,7 @@ class CacheAsidePattern:
         await self.db.update(key, value)
         # Invalidate cache
         await self.cache.delete(key)
-```
-
+```text
 ### Read-Through
 
 ```python
@@ -129,8 +108,7 @@ class ReadThroughCache:
             if value is not None:
                 await self.cache.set(key, value)
         return value
-```
-
+```text
 ### Write-Through
 
 ```python
@@ -146,8 +124,7 @@ class WriteThroughCache:
         await self.db.write(key, value)
         await self.cache.set(key, value)
         # Both succeed or operation fails
-```
-
+```text
 ### Write-Behind (Write-Back)
 
 ```python
@@ -182,8 +159,7 @@ class WriteBehindCache:
         await self.cache.set(key, value)
         # Queue for async database write
         self.write_queue.append((key, value))
-```
-
+```text
 ---
 
 ## 3. Cache Invalidation
@@ -208,8 +184,7 @@ import random
 base_ttl = 3600
 jitter = random.randint(-300, 300)  # ±5 minutes
 await cache.set("user:123", user_data, ttl=base_ttl + jitter)
-```
-
+```text
 ### Event-Driven Invalidation
 
 ```python
@@ -232,8 +207,7 @@ class EventDrivenCache:
         # Delete all related cache entries
         pattern = f"*:{user_id}:*"
         await self.cache.delete_pattern(pattern)
-```
-
+```text
 ### Version-Based Invalidation
 
 ```python
@@ -254,8 +228,7 @@ class VersionedCache:
             "data": data,
             "version": version
         })
-```
-
+```text
 ---
 
 ## 4. Implementation Patterns
@@ -292,8 +265,7 @@ def cached(ttl: int = 3600, key_prefix: str = ""):
 @cached(ttl=3600, key_prefix="users")
 async def get_user(user_id: str):
     return await db.get_user(user_id)
-```
-
+```text
 ### Cache-Stampede Prevention
 
 ```python
@@ -332,8 +304,7 @@ class StampedeProtectedCache:
             value = await loader()
             await self.cache.set(key, value, ttl=ttl)
             return value
-```
-
+```text
 ### Multi-Level Caching
 
 ```python
@@ -367,8 +338,7 @@ class MultiLevelCache:
     async def delete(self, key: str):
         self.l1.delete(key)
         await self.l2.delete(key)
-```
-
+```text
 ---
 
 ## 5. Distributed Caching
@@ -418,8 +388,7 @@ class RedisCache:
             value = await loader()
             await self.set(key, value, ttl)
         return value
-```
-
+```text
 ### Cache Cluster Considerations
 
 | Consideration   | Solution                    |
@@ -443,8 +412,7 @@ class RedisCache:
 # Redis eviction policy configuration
 # In redis.conf or via CONFIG SET
 # maxmemory-policy allkeys-lru
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -471,8 +439,7 @@ class RedisCache:
 "u123"                        # Unclear
 user_data                     # No structure
 "user_123_profile_data_v2"    # Inconsistent format
-```
-
+```text
 ### TTL Guidelines
 
 | Data Type      | TTL  | Reason              |
@@ -487,9 +454,9 @@ user_data                     # No structure
 
 ## Related
 
-- `.knowledge/frameworks/performance/optimization_strategies.md` — General optimization
-- `.knowledge/frameworks/performance/profiling_guide.md` — Performance analysis
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — General optimization
+- `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Performance analysis
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
 
 ---
 

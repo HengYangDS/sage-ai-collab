@@ -19,29 +19,13 @@
 
 ### Profiling Process
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Profiling Workflow                        │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1. Define Metrics                                          │
-│     └─▶ What to measure (latency, throughput, memory)      │
-│                                                             │
-│  2. Establish Baseline                                      │
-│     └─▶ Current performance numbers                         │
-│                                                             │
-│  3. Profile Under Load                                      │
-│     └─▶ Realistic usage patterns                           │
-│                                                             │
-│  4. Identify Bottlenecks                                    │
-│     └─▶ Where time/resources are spent                     │
-│                                                             │
-│  5. Optimize & Verify                                       │
-│     └─▶ Fix issues, measure improvement                    │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart TB
+    D["1. Define Metrics<br/>latency, throughput, memory"] --> B["2. Establish Baseline<br/>current performance"]
+    B --> P["3. Profile Under Load<br/>realistic patterns"]
+    P --> I["4. Identify Bottlenecks<br/>time/resource usage"]
+    I --> O["5. Optimize & Verify<br/>fix and measure"]
+```text
 ### Key Metrics
 
 | Category     | Metric                  | Tool                         |
@@ -86,8 +70,7 @@ profile_function(my_expensive_function, arg1, arg2)
 
 # Command line usage
 # python -m cProfile -s cumulative my_script.py
-```
-
+```text
 ### line_profiler (Line-Level)
 
 ```python
@@ -103,11 +86,10 @@ def slow_function(items):
     return result
 
 # Run with: kernprof -l -v my_script.py
-```
-
+```text
 **Output example:**
 
-```
+```text
 Line #    Hits    Time  Per Hit   % Time  Line Contents
 =======================================================
      3                                    def slow_function(items):
@@ -116,8 +98,7 @@ Line #    Hits    Time  Per Hit   % Time  Line Contents
      6    1000  40000.0     40.0   80.0          processed = process(item)
      7    1000   5000.0      5.0   10.0          result.append(processed)
      8       1      1.0      1.0    0.0      return result
-```
-
+```text
 ### memory_profiler (Memory Usage)
 
 ```python
@@ -132,11 +113,10 @@ def memory_intensive():
     return sum(filtered)
 
 # Run with: python -m memory_profiler my_script.py
-```
-
+```text
 **Output example:**
 
-```
+```text
 Line #    Mem usage    Increment   Line Contents
 ================================================
      4     50.0 MiB     50.0 MiB   @profile
@@ -144,8 +124,7 @@ Line #    Mem usage    Increment   Line Contents
      6     88.5 MiB     38.5 MiB       large_list = [i ** 2 for i in range(1000000)]
      7    107.2 MiB     18.7 MiB       filtered = [x for x in large_list if x % 2 == 0]
      8    107.2 MiB      0.0 MiB       return sum(filtered)
-```
-
+```text
 ### tracemalloc (Memory Tracing)
 
 ```python
@@ -177,8 +156,7 @@ top_stats = snapshot2.compare_to(snapshot1, 'lineno')
 
 for stat in top_stats[:10]:
     print(stat)
-```
-
+```text
 ### Async Profiling
 
 ```python
@@ -220,8 +198,7 @@ async def my_async_function():
 
 await my_async_function()
 profiler.report()
-```
-
+```text
 ---
 
 ## 3. Database Profiling
@@ -238,18 +215,16 @@ EXPLAIN ANALYZE SELECT * FROM users WHERE email = 'test@example.com';
 -- Full details
 EXPLAIN (ANALYZE, BUFFERS, FORMAT TEXT)
 SELECT * FROM users WHERE email = 'test@example.com';
-```
-
+```text
 **Understanding EXPLAIN output:**
 
-```
+```text
 Seq Scan on users  (cost=0.00..1234.00 rows=1 width=100) (actual time=0.015..12.345 rows=1 loops=1)
   Filter: (email = 'test@example.com'::text)
   Rows Removed by Filter: 99999
 Planning Time: 0.100 ms
 Execution Time: 12.400 ms
-```
-
+```text
 | Term             | Meaning                       |
 |------------------|-------------------------------|
 | **Seq Scan**     | Full table scan (usually bad) |
@@ -287,8 +262,7 @@ SELECT
 FROM pg_stat_user_tables
 WHERE seq_scan > idx_scan
 ORDER BY seq_tup_read DESC;
-```
-
+```text
 ### SQLAlchemy Profiling
 
 ```python
@@ -310,8 +284,7 @@ def after_cursor_execute(conn, cursor, statement, parameters, context, executema
     total = time.time() - conn.info['query_start_time'].pop(-1)
     if total > 0.1:  # Log slow queries (>100ms)
         logger.warning(f"Slow query ({total*1000:.0f}ms): {statement[:100]}")
-```
-
+```text
 ---
 
 ## 4. System Profiling
@@ -330,8 +303,7 @@ perf report
 pip install py-spy
 py-spy record -o profile.svg -- python my_script.py
 py-spy top --pid <PID>  # Real-time view
-```
-
+```text
 ### Memory Profiling
 
 ```bash
@@ -344,7 +316,7 @@ ms_print massif.out.*
 
 # Python memory with pympler
 pip install pympler
-```
+```text
 
 ```python
 from pympler import asizeof, tracker
@@ -357,8 +329,7 @@ print(f"Size: {asizeof.asizeof(obj)} bytes")
 tr = tracker.SummaryTracker()
 # ... code ...
 tr.print_diff()
-```
-
+```text
 ### I/O Profiling
 
 ```bash
@@ -370,8 +341,7 @@ strace -c python my_script.py
 
 # File operations only
 strace -e trace=file python my_script.py
-```
-
+```text
 ---
 
 ## 5. Application Monitoring
@@ -433,8 +403,7 @@ metrics = Metrics()
 metrics.increment("requests_total")
 with metrics.timer("request_duration"):
     handle_request()
-```
-
+```text
 ### Structured Logging for Performance
 
 ```python
@@ -467,8 +436,7 @@ def log_performance(func):
             )
             raise
     return wrapper
-```
-
+```text
 ### Health Endpoints
 
 ```python
@@ -494,8 +462,7 @@ async def metrics():
         "open_files": len(process.open_files()),
         "connections": len(process.connections()),
     }
-```
-
+```text
 ---
 
 ## 6. Load Testing
@@ -526,8 +493,7 @@ class WebsiteUser(HttpUser):
         })
 
 # Run: locust -f locustfile.py --host=http://localhost:8000
-```
-
+```text
 ### pytest-benchmark
 
 ```python
@@ -549,8 +515,7 @@ def test_with_setup(benchmark):
         iterations=100,
         rounds=10
     )
-```
-
+```text
 ### Simple Load Test Script
 
 ```python
@@ -629,23 +594,21 @@ result = asyncio.run(load_test("http://localhost:8000/api/items"))
 print(f"RPS: {result.rps:.2f}")
 print(f"Avg Latency: {result.avg_latency*1000:.2f}ms")
 print(f"P95 Latency: {result.p95_latency*1000:.2f}ms")
-```
-
+```text
 ---
 
 ## Quick Reference
 
 ### Profiling Decision Tree
 
-```
+```text
 What to profile?
 ├── Function slow? → cProfile, line_profiler
 ├── Memory issues? → memory_profiler, tracemalloc
 ├── Database slow? → EXPLAIN ANALYZE, slow query log
 ├── System issues? → top, iostat, strace
 └── Under load? → Locust, load test script
-```
-
+```text
 ### Performance Targets
 
 | Metric      | Good   | Acceptable | Poor   |
@@ -672,8 +635,8 @@ What to profile?
 
 ## Related
 
-- `.knowledge/frameworks/performance/optimization_strategies.md` — Optimization techniques
-- `.knowledge/frameworks/performance/caching_patterns.md` — Caching strategies
+- `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Optimization techniques
+- `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
 - `tools/timeout_manager.py` — the application timeout testing
 
 ---

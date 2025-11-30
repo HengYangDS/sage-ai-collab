@@ -72,8 +72,7 @@
     "subfield": "value"
   }
 }
-```
-
+```text
 | Field             | Type    | Required | Description   |
 |-------------------|---------|----------|---------------|
 | `field1`          | string  | Yes      | [Description] |
@@ -90,8 +89,7 @@
   "field1": "string",
   "created_at": "2025-01-01T00:00:00Z"
 }
-```
-
+```text
 | Field        | Type     | Description        |
 |--------------|----------|--------------------|
 | `id`         | string   | Unique identifier  |
@@ -118,8 +116,7 @@ curl -X POST https://api.example.com/v1/resource \
   -H "Authorization: Bearer token" \
   -H "Content-Type: application/json" \
   -d '{"field1": "value"}'
-```
-
+```text
 **Response**:
 
 ```json
@@ -128,8 +125,7 @@ curl -X POST https://api.example.com/v1/resource \
   "field1": "value",
   "created_at": "2025-01-01T00:00:00Z"
 }
-```
-
+```text
 ---
 
 ## Data Models
@@ -157,8 +153,7 @@ All errors follow this structure:
     "details": {}
   }
 }
-```
-
+```text
 ---
 
 ## Pagination
@@ -175,8 +170,7 @@ List endpoints support cursor-based pagination:
     "has_more": true
   }
 }
-```
-
+```text
 ---
 
 ## Rate Limiting
@@ -205,8 +199,7 @@ Rate limit headers:
 
 *API Specification from AI Collaboration Knowledge Base*
 
-```
-
+```text
 ---
 
 ## Instructions

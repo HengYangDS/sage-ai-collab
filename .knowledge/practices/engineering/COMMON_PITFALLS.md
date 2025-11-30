@@ -72,8 +72,7 @@ from protocols import AProtocol
 class B:
     def __init__(self, a: AProtocol):
         self.a = a
-```
-
+```text
 **Detection**: Run `pydeps` or check import graph.
 
 ---
@@ -99,8 +98,7 @@ content = await file.read()
 # ✅ Good - With timeout
 async with asyncio.timeout(5.0):
     content = await file.read()
-```
-
+```text
 **Rule**: Every I/O operation must have a timeout.
 
 ---
@@ -129,8 +127,7 @@ class Service:
 class Service:
     def __init__(self, loader: LoaderProtocol):
         self.loader = loader  # Loose coupling
-```
-
+```text
 ---
 
 ## 3. Implementation Pitfalls
@@ -161,8 +158,7 @@ def process(items: list | None = None):
         items = []
     items.append("new")
     return items
-```
-
+```text
 ---
 
 ### 3.2 Catching Too Broad Exceptions
@@ -194,8 +190,7 @@ except FileNotFoundError:
 except ValueError as e:
     log.error(f"Invalid value: {e}")
     raise
-```
-
+```text
 ---
 
 ### 3.3 Forgetting Async Context
@@ -224,8 +219,7 @@ async def get_content():
 # ✅ Good - Or explicitly sync
 def get_content():
     return asyncio.run(loader.load("file.md"))
-```
-
+```text
 ---
 
 ### 3.4 Not Closing Resources
@@ -256,8 +250,7 @@ with open("data.txt") as file:
 # ✅ Good - Async context manager
 async with aiofiles.open("data.txt") as file:
     content = await file.read()
-```
-
+```text
 ---
 
 ## 4. Configuration Pitfalls
@@ -286,8 +279,7 @@ if len(content) > 10000:
 timeout = config.get("timeout_ms", 5000)
 if len(content) > config.get("max_content_length", 10000):
     truncate(content)
-```
-
+```text
 ---
 
 ### 4.2 Missing Environment-Specific Config
@@ -316,8 +308,7 @@ development:
 production:
   debug: false
   log_level: INFO
-```
-
+```text
 ---
 
 ### 4.3 Secrets in Config Files
@@ -344,8 +335,7 @@ api_key: "${API_KEY}"
 # ✅ Good - Separate secrets file (gitignored)
 # secrets.yaml (in .gitignore)
 api_key: "sk-1234567890"
-```
-
+```text
 ---
 
 ## 5. Testing Pitfalls
@@ -377,8 +367,7 @@ def test_user_service():
     service.save(user)
     result = service.get(user.id)
     assert result == user
-```
-
+```text
 ---
 
 ### 5.2 Flaky Tests
@@ -408,8 +397,7 @@ def test_timeout(mocker):
     mock_time.side_effect = [0, 0.5, 1.0]
     result = slow_operation()
     assert result.duration == 0.5
-```
-
+```text
 ---
 
 ### 5.3 Missing Edge Case Tests
@@ -444,8 +432,7 @@ class TestLoadContent:
     def test_unicode_content(self): ...
 
     def test_special_characters_in_path(self): ...
-```
-
+```text
 ---
 
 ## 6. AI Collaboration Pitfalls
@@ -494,8 +481,7 @@ class TestLoadContent:
 "In src/core/loader.py, add timeout handling to the
 load_file method. Use 500ms timeout. Return None on
 timeout instead of raising exception."
-```
-
+```text
 ---
 
 ### 6.3 Not Reviewing AI Changes
@@ -547,8 +533,8 @@ timeout instead of raising exception."
 
 ## Related
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing best practices
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing best practices
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
 
 ---

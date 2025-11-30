@@ -76,8 +76,7 @@
 [+] Benefits
 [-] Drawbacks
 [~] Trade-offs
-```
-
+```text
 ---
 
 ## 4. Complexity Management

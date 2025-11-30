@@ -140,11 +140,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/documentation/context.md` — Documentation context
+- `.knowledge/scenarios/documentation/CONTEXT.md` — Documentation context
 
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 
-- `.knowledge/guidelines/documentation.md` — Documentation guidelines
+- `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines
 
 ---
 

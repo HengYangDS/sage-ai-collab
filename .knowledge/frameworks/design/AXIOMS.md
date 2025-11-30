@@ -79,11 +79,10 @@
 
 ### 3.2 Communication
 
-```
+```text
 Components → EventBus → Components
 (No direct imports between layers)
-```
-
+```text
 ---
 
 ## 4. Timeout Axiom
@@ -125,7 +124,7 @@ Components → EventBus → Components
 
 ## Related
 
-- `.knowledge/core/principles.md` — 信达雅 philosophy
+- `.knowledge/core/PRINCIPLES.md` — 信达雅 philosophy
 - `docs/design/01-architecture.md` — Architecture design
 
 ---

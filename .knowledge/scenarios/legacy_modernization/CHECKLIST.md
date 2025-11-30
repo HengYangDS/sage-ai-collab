@@ -132,11 +132,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/legacy_modernization/context.md` — Legacy modernization context
+- `.knowledge/scenarios/legacy_modernization/CONTEXT.md` — Legacy modernization context
 
-- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental improvement
+- `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` — Incremental improvement
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

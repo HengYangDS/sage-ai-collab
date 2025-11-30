@@ -96,18 +96,16 @@
     ]
   }
 }
-```
-
+```text
 ---
 
 ## 5. Pagination
 
 ### 5.1 Request
 
-```
+```text
 GET /users?page=2&page_size=20
-```
-
+```text
 ### 5.2 Response
 
 ```json
@@ -122,8 +120,7 @@ GET /users?page=2&page_size=20
     "total_pages": 8
   }
 }
-```
-
+```text
 ---
 
 ## 6. Versioning
@@ -150,8 +147,8 @@ GET /users?page=2&page_size=20
 
 ## Related
 
-- `.knowledge/guidelines/code_style.md` — Code conventions
-- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/guidelines/CODE_STYLE.md` — Code conventions
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # SAGE Knowledge Base
 
 > **Smart AI-Guided Expertise** — Navigation Entry
@@ -99,6 +92,9 @@ sage-kb/
 | **Guidelines** | `.knowledge/guidelines/` | Code style, engineering, AI collaboration |
 | **Frameworks** | `.knowledge/frameworks/` | Autonomy, timeout, cognitive patterns     |
 | **Practices**  | `.knowledge/practices/`  | Documentation, engineering patterns       |
+| **References** | `.knowledge/references/` | Quick reference, glossary                 |
+| **Scenarios**  | `.knowledge/scenarios/`  | Context presets, workflow triggers        |
+| **Templates**  | `.knowledge/templates/`  | Reusable document templates               |
 
 ### 3.2 Key Files
 
@@ -134,4 +130,4 @@ sage info              # Show system information
 
 ---
 
-*SAGE: Smart AI-Guided Expertise*
+*AI Collaboration Knowledge Base*

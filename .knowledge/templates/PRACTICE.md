@@ -29,10 +29,9 @@ Use this pattern when:
 
 ### Structure
 
-```
+```text
 // Pattern structure here
-```
-
+```text
 ### Key Principles
 
 1.
@@ -45,14 +44,12 @@ Use this pattern when:
 
 ```python
 # Example code
-```
-
+```text
 ### Advanced Example
 
 ```python
 # Advanced example
-```
-
+```text
 ## 5. Anti-patterns
 
 Avoid these common mistakes:

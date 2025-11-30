@@ -17,7 +17,7 @@
 
 ### 1.1 Workflow Steps
 
-```
+```text
 1. Establish Standards (DOCUMENTATION_STANDARDS.md)
        ↓
 2. Systematic File Review
@@ -27,8 +27,7 @@
 4. Batch Apply Corrections
        ↓
 5. Verify Consistency
-```
-
+```text
 ### 1.2 Review Order
 
 | Phase | Focus              | Files                        |

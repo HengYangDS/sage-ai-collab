@@ -51,10 +51,9 @@
 
 ## 3. Quick Start Path
 
-```
+```text
 QUICK_START.md → CODE_STYLE.md → ENGINEERING.md → [specific topic]
-```
-
+```text
 ---
 
 ## 4. By Role

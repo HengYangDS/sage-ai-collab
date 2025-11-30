@@ -110,8 +110,7 @@
 autonomy:
   level: L4
   reason: "Established trust, routine refactoring"
-```
-
+```text
 ### 6.2 Reporting Format
 
 | Level | Report Style            |
@@ -128,9 +127,9 @@ autonomy:
 
 ## Related
 
-- `.knowledge/core/quick_reference.md` — Quick autonomy reference
-- `.knowledge/practices/decisions/autonomy_cases.md` — Concrete examples
-- `.knowledge/guidelines/ai_collaboration.md` — Collaboration guidelines
+- `.knowledge/core/QUICK_REFERENCE.md` — Quick autonomy reference
+- `.knowledge/practices/decisions/AUTONOMY_CASES.md` — Concrete examples
+- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration guidelines
 
 ---
 

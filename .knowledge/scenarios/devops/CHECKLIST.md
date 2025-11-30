@@ -144,11 +144,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/devops/context.md` — DevOps context
+- `.knowledge/scenarios/devops/CONTEXT.md` — DevOps context
 
-- `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
+- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
 
-- `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
+- `.knowledge/practices/engineering/MONITORING.md` — Monitoring practices
 
 ---
 

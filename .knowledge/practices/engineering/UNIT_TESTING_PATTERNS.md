@@ -44,8 +44,7 @@
 
 ### 1.2 Test Pyramid
 
-```
-
+```text
         /\
 
        /  \    E2E (few)
@@ -60,8 +59,7 @@
 
   --------------
 
-```
-
+```text
 ---
 
 ## 2. Test Structure
@@ -90,8 +88,7 @@ def test_user_can_be_created():
 
     assert user.id is not None
 
-```
-
+```text
 ### 2.2 Given-When-Then (BDD Style)
 
 ```python
@@ -114,8 +111,7 @@ def test_user_registration():
 
     assert result.user.email == "bob@example.com"
 
-```
-
+```text
 ### 2.3 Test Class Organization
 
 ```python
@@ -142,8 +138,7 @@ class TestUserService:
 
         def test_returns_none_for_missing_user(self): ...
 
-```
-
+```text
 ---
 
 ## 3. Naming Conventions
@@ -192,8 +187,7 @@ def test_get_user_returns_none_when_not_found():
 
     ...
 
-```
-
+```text
 ---
 
 ## 4. Fixtures
@@ -226,8 +220,7 @@ def test_get_user(user_service, user):
 
     assert result == user
 
-```
-
+```text
 ### 4.2 Fixture Scopes
 
 ```python
@@ -256,8 +249,7 @@ def app():
 
     ...
 
-```
-
+```text
 ### 4.3 Factory Fixtures
 
 ```python
@@ -290,8 +282,7 @@ def test_user_with_custom_name(user_factory):
 
     assert user.name == "Alice"
 
-```
-
+```text
 ### 4.4 Temporary Resources
 
 ```python
@@ -314,8 +305,7 @@ def test_load_config(temp_config_file):
 
     assert config["debug"] is True
 
-```
-
+```text
 ---
 
 ## 5. Mocking
@@ -348,8 +338,7 @@ def test_service_calls_repository():
 
     assert result.name == "Test"
 
-```
-
+```text
 ### 5.2 Patching
 
 ```python
@@ -380,8 +369,7 @@ def test_send_email(mock_send):
 
     assert result is True
 
-```
-
+```text
 ### 5.3 Mock Side Effects
 
 ```python
@@ -406,8 +394,7 @@ def test_retry_on_failure():
 
     assert mock_service.call.call_count == 2
 
-```
-
+```text
 ### 5.4 Pytest-Mock
 
 ```python
@@ -426,8 +413,7 @@ def test_with_mocker(mocker):
 
     mock_func.assert_called_once()
 
-```
-
+```text
 ---
 
 ## 6. Assertions
@@ -460,8 +446,7 @@ assert item in collection
 
 assert key in dictionary
 
-```
-
+```text
 ### 6.2 Exception Testing
 
 ```python
@@ -482,8 +467,7 @@ def test_raises_with_match():
 
         validate_email("invalid")
 
-```
-
+```text
 ### 6.3 Approximate Comparisons
 
 ```python
@@ -500,8 +484,7 @@ assert result == pytest.approx(3.14159, rel=1e-5)
 
 assert isclose(result, 3.14159, rel_tol=1e-5)
 
-```
-
+```text
 ### 6.4 Collection Assertions
 
 ```python
@@ -524,8 +507,7 @@ assert expected_items <= set(result)
 
 assert len(result) == 3
 
-```
-
+```text
 ---
 
 ## 7. Async Testing
@@ -552,8 +534,7 @@ async def test_async_with_fixture(async_client):
 
     assert response.status_code == 200
 
-```
-
+```text
 ### 7.2 Async Fixtures
 
 ```python
@@ -582,8 +563,7 @@ async def database():
 
     await db.disconnect()
 
-```
-
+```text
 ### 7.3 Mocking Async Functions
 
 ```python
@@ -604,8 +584,7 @@ async def test_async_service():
 
     mock_repo.get.assert_awaited_once_with("1")
 
-```
-
+```text
 ---
 
 ## 8. Parameterized Tests
@@ -634,8 +613,7 @@ def test_uppercase(input, expected):
 
     assert input.upper() == expected
 
-```
-
+```text
 ### 8.2 Multiple Parameters
 
 ```python
@@ -660,8 +638,7 @@ def test_add(a, b, expected):
 
     assert add(a, b) == expected
 
-```
-
+```text
 ### 8.3 Named Test Cases
 
 ```python
@@ -686,8 +663,7 @@ def test_validate_email(email, valid):
 
     assert validate_email(email) == valid
 
-```
-
+```text
 ### 8.4 Combining Parameterization
 
 ```python
@@ -704,8 +680,7 @@ def test_endpoints(method, path):
 
     assert response.status_code in [200, 201, 405]
 
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -746,11 +721,11 @@ def test_endpoints(method, path):
 
 ## Related
 
-- `.knowledge/practices/engineering/integration_testing.md` — Integration testing
+- `.knowledge/practices/engineering/INTEGRATION_TESTING.md` — Integration testing
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategy
 
-- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
 ---
 

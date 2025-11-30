@@ -69,8 +69,7 @@ GROUP BY u.id, u.name, u.email
 HAVING COUNT(o.id) > 0
 ORDER BY order_count DESC
 LIMIT 100;
-```
-
+```text
 ### 2.2 Keywords and Capitalization
 
 | Style         | Usage                              |
@@ -95,8 +94,7 @@ SELECT a.name, b.name, c.quantity
 FROM customers a
          JOIN orders b ON b.customer_id = a.id
          JOIN order_items c ON c.order_id = b.id;
-```
-
+```text
 ### 2.4 Comments
 
 ```sql
@@ -116,8 +114,7 @@ SELECT user_id,
            ROWS BETWEEN 29 PRECEDING AND CURRENT ROW
            ) AS rolling_avg
 FROM transactions;
-```
-
+```text
 ---
 
 ## 3. Schema Design
@@ -143,8 +140,7 @@ CREATE TABLE users
 -- Create index for common queries
 CREATE INDEX idx_users_email ON users (email);
 CREATE INDEX idx_users_status ON users (status);
-```
-
+```text
 ### 3.2 Data Types
 
 | Use Case    | Recommended Type           | Avoid                  |
@@ -177,8 +173,7 @@ CREATE TABLE user_roles
 
     PRIMARY KEY (user_id, role_id)
 );
-```
-
+```text
 ### 3.4 Normalization Guidelines
 
 | Normal Form | Rule                       | When to Denormalize   |
@@ -206,8 +201,7 @@ CREATE INDEX idx_orders_active ON orders (user_id) WHERE status = 'active';
 
 -- ✅ Good - Covering index to avoid table lookup
 CREATE INDEX idx_users_email_name ON users (email) INCLUDE (name);
-```
-
+```text
 ### 4.2 Query Optimization
 
 ```sql
@@ -232,8 +226,7 @@ FROM users;
 -- ✅ Good - Select only needed columns
 SELECT id, name, email
 FROM users;
-```
-
+```text
 ### 4.3 Avoiding N+1 Queries
 
 ```sql
@@ -257,8 +250,7 @@ SELECT u.id,
 FROM users u
          LEFT JOIN orders o ON o.user_id = u.id
 GROUP BY u.id, u.name;
-```
-
+```text
 ### 4.4 EXPLAIN Usage
 
 ```sql
@@ -274,8 +266,7 @@ GROUP BY u.name;
 -- - Actual vs Estimated rows
 -- - Sort operations
 -- - Hash joins vs Nested loops
-```
-
+```text
 ---
 
 ## 5. Security
@@ -291,8 +282,7 @@ cursor.execute(
 
 # ❌ Bad - String interpolation (SQL injection risk)
 cursor.execute(f"SELECT * FROM users WHERE email = '{user_email}'")
-```
-
+```text
 ### 5.2 Least Privilege
 
 ```sql
@@ -306,8 +296,7 @@ GRANT SELECT, INSERT, UPDATE ON users, orders TO app_writer;
 -- Application user with specific role
 CREATE USER app_user WITH PASSWORD 'secure_password';
 GRANT app_writer TO app_user;
-```
-
+```text
 ### 5.3 Row-Level Security
 
 ```sql
@@ -319,8 +308,7 @@ CREATE
 POLICY user_orders ON orders
     FOR ALL
     USING (user_id = current_setting('app.current_user_id')::bigint);
-```
-
+```text
 ---
 
 ## 6. Migrations
@@ -362,8 +350,7 @@ ALTER TABLE users RENAME TO users_v2;
 CREATE VIEW users AS
 SELECT *
 FROM users_v2;
-```
-
+```text
 ### 6.3 Migration File Format
 
 ```sql
@@ -378,8 +365,7 @@ CREATE INDEX idx_users_verified ON users (verified);
 DROP INDEX IF EXISTS idx_users_verified;
 ALTER TABLE users
     DROP COLUMN IF EXISTS verified;
-```
-
+```text
 ---
 
 ## 7. ORM Patterns
@@ -407,8 +393,7 @@ users = session.query(User.id, User.name).filter(User.status == 'active').all()
 
 # ✅ Good - Eager loading to avoid N+1
 users = session.query(User).options(joinedload(User.orders)).all()
-```
-
+```text
 ### 7.2 Prisma (TypeScript)
 
 ```typescript
@@ -444,8 +429,7 @@ const users = await prisma.user.findMany({
 const usersWithOrders = await prisma.user.findMany({
     include: {orders: true}
 });
-```
-
+```text
 ### 7.3 Raw Queries When Needed
 
 ```python
@@ -467,8 +451,7 @@ result = session.execute(
         'min_orders': 5
     }
 )
-```
-
+```text
 ---
 
 ## Quick Reference

@@ -48,8 +48,7 @@ class UserRepository(Repository[User]):
 
     def get(self, id: str) -> Optional[User]:
         return self._session.query(User).get(id)
-```
-
+```text
 **Use for**: Data access abstraction, testing with mocks.
 
 ---
@@ -66,8 +65,7 @@ class UserService:
         user = self._repo.save(User(**data.dict()))
         self._events.publish(UserRegistered(user.id))
         return user
-```
-
+```text
 **Use for**: Business logic encapsulation, transaction management.
 
 ---
@@ -89,8 +87,7 @@ class HandlerFactory:
     @classmethod
     def create(cls, msg_type: str) -> Handler:
         return cls._handlers[msg_type]()
-```
-
+```text
 **Use for**: Dynamic object creation, plugin systems.
 
 ---
@@ -112,8 +109,7 @@ class BulkPricing:
     def calculate(self, base: float, qty: int) -> float:
         mult = 1 - self.discount if qty >= self.threshold else 1
         return base * qty * mult
-```
-
+```text
 **Use for**: Algorithm selection at runtime.
 
 ---
@@ -131,8 +127,7 @@ class EventBus:
     def publish(self, event: str, data: Any):
         for handler in self._subs.get(event, []):
             handler(data)
-```
-
+```text
 **Use for**: Decoupled communication, plugin architecture.
 
 ---
@@ -150,8 +145,8 @@ class EventBus:
 
 ## Related
 
-- `.knowledge/guidelines/code_style.md` — Code style
-- `.knowledge/frameworks/design/axioms.md` — Design principles
+- `.knowledge/guidelines/CODE_STYLE.md` — Code style
+- `.knowledge/frameworks/design/AXIOMS.md` — Design principles
 
 ---
 

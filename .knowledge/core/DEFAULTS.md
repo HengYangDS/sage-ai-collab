@@ -117,8 +117,7 @@
 ## Next Steps
 
 [Follow-up actions if applicable]
-```
-
+```text
 ---
 
 ## 6. Fallback Behavior
@@ -137,10 +136,10 @@
 
 ## Related
 
-- `.knowledge/core/principles.md` — Core philosophy (Xin-Da-Ya)
-- `.knowledge/core/quick_reference.md` — Quick reference card
-- `.knowledge/frameworks/autonomy/levels.md` — Full autonomy framework
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout design patterns
+- `.knowledge/core/PRINCIPLES.md` — Core philosophy (Xin-Da-Ya)
+- `.knowledge/core/QUICK_REFERENCE.md` — Quick reference card
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Full autonomy framework
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout design patterns
 
 ---
 

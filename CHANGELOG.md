@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # Changelog
 
 All notable changes to SAGE Knowledge Base will be documented in this file.
@@ -120,3 +113,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/HengYangDS/sage-kb/compare/v0.1.0...HEAD
 
 [0.1.0]: https://github.com/HengYangDS/sage-kb/releases/tag/v0.1.0
+
+---
+
+*AI Collaboration Knowledge Base*

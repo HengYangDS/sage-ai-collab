@@ -27,10 +27,9 @@
 
 ### Profiling Workflow
 
-```
+```text
 Define Metrics → Establish Baseline → Profile Under Load → Identify Bottlenecks → Optimize → Verify
-```
-
+```text
 ---
 
 ## 2. Profiling Dimensions

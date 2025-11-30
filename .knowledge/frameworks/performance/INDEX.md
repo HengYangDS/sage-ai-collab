@@ -45,26 +45,13 @@ This framework provides performance optimization guidelines for:
 
 ### The Three Pillars
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Performance Triad                         │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│                      ┌─────────┐                            │
-│                      │ Measure │                            │
-│                      └────┬────┘                            │
-│                           │                                 │
-│              ┌────────────┴────────────┐                    │
-│              │                         │                    │
-│              ▼                         ▼                    │
-│        ┌──────────┐             ┌──────────┐               │
-│        │ Optimize │◄───────────▶│ Validate │               │
-│        └──────────┘             └──────────┘               │
-│                                                             │
-│  "You can't improve what you don't measure"                │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart TB
+    M["Measure"] --> O["Optimize"]
+    M --> V["Validate"]
+    O <--> V
+```text
+> "You can't improve what you don't measure"
 
 ### Core Principles
 
@@ -103,29 +90,30 @@ This framework provides performance optimization guidelines for:
 
 ### Common Bottlenecks
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                  Bottleneck Diagnosis                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  High CPU?                                                  │
-│  └─▶ Profile code, check algorithms, optimize hot paths    │
-│                                                             │
-│  High Memory?                                               │
-│  └─▶ Check for leaks, reduce caching, optimize data types  │
-│                                                             │
-│  High I/O Wait?                                             │
-│  └─▶ Add caching, optimize queries, use async I/O          │
-│                                                             │
-│  High Network Latency?                                      │
-│  └─▶ Reduce payload, add CDN, connection pooling           │
-│                                                             │
-│  Database Slow?                                             │
-│  └─▶ Add indexes, optimize queries, read replicas          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart LR
+    subgraph Problems["🔍 Bottleneck"]
+        CPU["💻 High CPU"]
+        MEM["🧠 High Memory"]
+        IO["💾 High I/O Wait"]
+        NET["🌐 Network Latency"]
+        DB["🗄️ Database Slow"]
+    end
 
+    subgraph Solutions["✅ Solutions"]
+        CPU_FIX["Profile code<br/>Check algorithms<br/>Optimize hot paths"]
+        MEM_FIX["Check for leaks<br/>Reduce caching<br/>Optimize data types"]
+        IO_FIX["Add caching<br/>Optimize queries<br/>Use async I/O"]
+        NET_FIX["Reduce payload<br/>Add CDN<br/>Connection pooling"]
+        DB_FIX["Add indexes<br/>Optimize queries<br/>Read replicas"]
+    end
+
+    CPU --> CPU_FIX
+    MEM --> MEM_FIX
+    IO --> IO_FIX
+    NET --> NET_FIX
+    DB --> DB_FIX
+```text
 ### Performance Checklist
 
 - [ ] Response time targets defined
@@ -140,9 +128,9 @@ This framework provides performance optimization guidelines for:
 
 ## Related
 
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout strategies
-- `.context/policies/timeout_hierarchy.md` — the system timeout config
-- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout strategies
+- `.context/policies/TIMEOUT_HIERARCHY.md` — the system timeout config
+- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
 - `tools/timeout_manager.py` — Performance testing tool
 
 ---

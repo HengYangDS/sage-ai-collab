@@ -30,8 +30,7 @@ This template helps create structured troubleshooting guides for components, fea
 # Example diagnostic commands
 [command 1]
 [command 2]
-```
-
+```text
 ### Common Symptoms
 
 | Symptom     | Likely Cause | Solution Section  |
@@ -59,8 +58,7 @@ This template helps create structured troubleshooting guides for components, fea
 ```bash
 # Commands to diagnose the issue
 [diagnostic command]
-```
-
+```text
 [How to interpret the output]
 
 ### Solution
@@ -70,8 +68,7 @@ This template helps create structured troubleshooting guides for components, fea
 ```bash
 # Steps to fix
 [fix command]
-```
-
+```text
 **Option 2: [Alternative Solution]**
 
 [Alternative steps if Option 1 doesn't work]
@@ -148,8 +145,7 @@ Before escalating, gather:
 
 *Last Updated: [DATE]*
 
-```
-
+```text
 ---
 
 ## Instructions
@@ -206,8 +202,7 @@ For each issue, include:
 ```bash
 app serve --status
 curl http://localhost:8080/health
-```
-
+```text
 ### Common Symptoms
 
 | Symptom            | Likely Cause        | Solution Section       |
@@ -236,8 +231,7 @@ Running `app serve` fails with "Address already in use" error.
 # Check what's using the port
 netstat -an | grep 8080
 lsof -i :8080
-```
-
+```text
 ### Solution
 
 **Option 1: Kill existing process**
@@ -245,21 +239,18 @@ lsof -i :8080
 ```bash
 kill $(lsof -t -i:8080)
 app serve
-```
-
+```text
 **Option 2: Use different port**
 
 ```bash
 app serve --port 8081
-```
-
+```text
 ### Prevention
 
 - Always stop server properly with Ctrl+C
 - Use unique ports per environment
 
-```
-
+```text
 ---
 
 ## Best Practices

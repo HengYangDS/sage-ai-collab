@@ -132,11 +132,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/microservices/context.md` — Microservices context
+- `.knowledge/scenarios/microservices/CONTEXT.md` — Microservices context
 
-- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
 
-- `.knowledge/frameworks/patterns/integration.md` — Integration patterns
+- `.knowledge/frameworks/patterns/INTEGRATION.md` — Integration patterns
 
 ---
 

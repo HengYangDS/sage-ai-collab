@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # Contributing to SAGE Knowledge Base
 
 Thank you for your interest in contributing to SAGE! This document provides guidelines and instructions for
@@ -424,4 +417,4 @@ Thank you for contributing to SAGE Knowledge Base! 🎉
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

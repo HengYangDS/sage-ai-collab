@@ -74,8 +74,7 @@ Always review at session end:
 3. [ ] Any gotchas or pitfalls discovered?
 4. [ ] Any useful commands or snippets?
 5. [ ] Any calibration insights for AI collaboration?
-```
-
+```text
 ---
 
 ## 3. Knowledge Types
@@ -91,28 +90,12 @@ Always review at session end:
 
 ### 3.2 Knowledge Hierarchy
 
-```
-                    ┌─────────────────┐
-                    │    Principles   │  ← Rarely changes
-                    │   (core values) │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │   Frameworks    │  ← Evolves slowly
-                    │ (methodologies) │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │    Practices    │  ← Updates regularly
-                    │  (how we work)  │
-                    └────────┬────────┘
-                             │
-                    ┌────────▼────────┐
-                    │    Scenarios    │  ← Context-specific
-                    │ (applied usage) │
-                    └─────────────────┘
-```
-
+```mermaid
+flowchart TB
+    P["Principles<br/>(core values)"] -->|Rarely changes| F["Frameworks<br/>(methodologies)"]
+    F -->|Evolves slowly| PR["Practices<br/>(how we work)"]
+    PR -->|Updates regularly| S["Scenarios<br/>(applied usage)"]
+```text
 ### 3.3 Knowledge Lifecycle
 
 | Stage           | Action                          | Duration        |
@@ -138,13 +121,12 @@ Quick capture during active work:
 - **What**: Brief description
 - **Why it matters**: Impact or importance
 - **Details**: Specifics if needed
-```
-
+```text
 ### 4.2 Post-Session Processing
 
 After session, promote valuable knowledge:
 
-```
+```text
 1. Review session notes and conversation
 2. Identify knowledge worth preserving
 3. Determine appropriate storage location
@@ -152,8 +134,7 @@ After session, promote valuable knowledge:
 5. Create/update document
 6. Link from relevant indexes
 7. Commit changes
-```
-
+```text
 ### 4.3 Capture Templates
 
 #### Decision Capture
@@ -172,8 +153,7 @@ What was decided?
 
 ### Consequences
 What are the implications?
-```
-
+```text
 #### Pattern Capture
 
 ```markdown
@@ -191,14 +171,12 @@ How does it work?
 ### Example
 ```code
 // Concrete example
-```
-
+```text
 ### Related
 
 - Links to related patterns
 
-```
-
+```text
 #### Gotcha Capture
 
 ```markdown
@@ -215,8 +193,7 @@ Why does this happen?
 
 ### Solution
 How to fix or avoid it?
-```
-
+```text
 ---
 
 ## 5. Storage Locations
@@ -237,7 +214,7 @@ How to fix or avoid it?
 
 ### 5.2 Decision Tree
 
-```
+```text
 Is this knowledge...
 
 ├─ A significant technical decision?
@@ -260,8 +237,7 @@ Is this knowledge...
 │
 └─ User-facing documentation?
    └─ YES → docs/*/*.md
-```
-
+```text
 ### 5.3 Cross-Referencing
 
 Always link related knowledge:
@@ -271,8 +247,7 @@ Always link related knowledge:
 
 - `path/to/related/DOC.md` — Brief description
 - `another/related/DOC.md` — Why it's relevant
-```
-
+```text
 ---
 
 ## 6. Quality Standards
@@ -308,8 +283,7 @@ Before committing knowledge documents:
 3. [ ] Does it follow the appropriate template?
 4. [ ] Are examples accurate and tested?
 5. [ ] Are related documents linked?
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -325,8 +299,7 @@ touch .context/conventions/NEW_CONVENTION.md
 
 # Record conversation insight
 touch .history/conversations/$(date +%Y%m%d)_TOPIC.md
-```
-
+```text
 ### Capture Checklist
 
 | When                | What              | Where                    |

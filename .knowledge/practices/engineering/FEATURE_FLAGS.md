@@ -49,10 +49,9 @@ Feature flags are a technique to control feature enable/disable at runtime witho
 
 ### Naming Rules
 
-```
+```text
 [type]_[feature]_[optional:version]
-```
-
+```text
 ### Examples
 
 | Flag Name                 | Meaning                         |
@@ -72,8 +71,7 @@ Feature flags are a technique to control feature enable/disable at runtime witho
 features:
   new_dashboard: true
   dark_mode: false
-```
-
+```text
 ### Conditional Flag
 
 ```yaml
@@ -86,8 +84,7 @@ features:
       - user_456
     excluded_regions: # Excluded regions
       - EU
-```
-
+```text
 ---
 
 ## 5. Code Implementation
@@ -103,8 +100,7 @@ if get_feature("new_dashboard"):
     show_new_dashboard()
 else:
     show_old_dashboard()
-```
-
+```text
 ### Context-Aware Check
 
 ```python
@@ -123,8 +119,7 @@ def is_feature_enabled(name: str, context: dict) -> bool:
     # Check rollout percentage
     rollout = feature.get("rollout_percentage", 100)
     return hash(context.get("user_id")) % 100 < rollout
-```
-
+```text
 ### Decorator Pattern
 
 ```python
@@ -143,8 +138,7 @@ def feature_flag(name: str, default: bool = False):
 @feature_flag("new_recommendation")
 def get_recommendations(user_id: str):
     return new_recommendation_engine(user_id)
-```
-
+```text
 ---
 
 ## 6. Gradual Rollout
@@ -175,22 +169,20 @@ features:
       - name: ga
         percentage: 100
     current_stage: canary
-```
-
+```text
 ---
 
 ## 7. Lifecycle Management
 
 ### Flag Lifecycle
 
-```
+```text
 Created → Active → Deprecated → Removed
    │         │          │
    │         │          └─ Cleanup code
    │         └─ Monitor & decide
    └─ Start testing
-```
-
+```text
 ### Cleanup Checklist
 
 | Step | Action                            |
@@ -225,8 +217,7 @@ alerts:
   - name: performance_degradation
     condition: latency_p99 > threshold
     action: notify_oncall
-```
-
+```text
 ---
 
 ## 9. Best Practices
@@ -273,8 +264,8 @@ alerts:
 
 ## Related
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing with flags
-- `.knowledge/practices/engineering/error_handling.md` — Degradation patterns
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing with flags
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Degradation patterns
 - `config/capabilities/features.yaml` — Project feature configuration
 
 ---

@@ -128,8 +128,7 @@ Items to discuss later:
 ---
 
 *Notes taken by [Name] on [Date]*
-```
-
+```text
 ---
 
 ## Instructions
@@ -273,8 +272,7 @@ Use status indicators:
 ---
 
 *Notes taken by Alice Chen on 2025-11-29*
-```
-
+```text
 ---
 
 ## Meeting Types

@@ -38,8 +38,7 @@ focus: [ content-organization, taxonomy, search, ai-integration ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -48,9 +47,9 @@ autonomy_default: L3
 
 |---------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/references/knowledge_quick_ref.md`                                                                                                                    |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/references/KNOWLEDGE_QUICK_REF.md`                                                                                                                    |
 
-| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/documentation_standards.md` · `.knowledge/practices/ai_collaboration/knowledge_extraction.md` |
+| **On-Demand** | `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` · `.knowledge/practices/ai_collaboration/KNOWLEDGE_EXTRACTION.md` |
 
 ---
 
@@ -80,36 +79,15 @@ autonomy_default: L3
 
 ### 4.1 Layer Model
 
-```
-
-┌─────────────────────────────────────┐
-
-│           Core Layer                │  ← Fundamental concepts
-
-│    (Principles, Concepts)           │     Always loaded first
-
-├─────────────────────────────────────┤
-
-│         Guidelines Layer            │  ← Standards & rules
-
-│    (Standards, Conventions)         │     High priority
-
-├─────────────────────────────────────┤
-
-│        Frameworks Layer             │  ← Patterns & structures
-
-│    (Patterns, Architectures)        │     Medium priority
-
-├─────────────────────────────────────┤
-
-│         Practices Layer             │  ← Implementation guides
-
-│    (How-tos, Workflows)             │     On-demand loading
-
-└─────────────────────────────────────┘
-
-```
-
+```mermaid
+flowchart TB
+    C["Core Layer<br/>(Principles, Concepts)<br/>Always loaded first"]
+    G["Guidelines Layer<br/>(Standards, Conventions)<br/>High priority"]
+    F["Frameworks Layer<br/>(Patterns, Architectures)<br/>Medium priority"]
+    P["Practices Layer<br/>(How-tos, Workflows)<br/>On-demand loading"]
+    
+    C --> G --> F --> P
+```text
 ### 4.2 Content Types
 
 | Type          | Purpose                     | Format                            |
@@ -156,8 +134,7 @@ author: Name or AI
 
 ---
 
-```
-
+```text
 ---
 
 ## 5. Content Patterns
@@ -198,8 +175,7 @@ Content...
 
 *Part of [Knowledge Base Name]*
 
-```
-
+```text
 ### 5.2 Index Pattern
 
 <!-- Example template - replace placeholder links with actual document paths -->
@@ -240,8 +216,7 @@ Content...
 
 *Index for [Knowledge Base Name]*
 
-```
-
+```text
 ### 5.3 Cross-Reference Pattern
 
 ```markdown
@@ -250,9 +225,9 @@ Content...
 
 ### Internal
 
-- `.knowledge/core/principles.md` — Core principles
+- `.knowledge/core/PRINCIPLES.md` — Core principles
 
-- `.knowledge/practices/ai_collaboration/workflow.md` — Implementation guide
+- `.knowledge/practices/ai_collaboration/WORKFLOW.md` — Implementation guide
 
 ### External
 
@@ -262,8 +237,7 @@ Content...
 
 - ADR-0001: Architecture decision
 
-```
-
+```text
 ---
 
 ## 6. Common Tasks
@@ -298,18 +272,16 @@ touch .knowledge/practices/new_topic/guide.md
 
 # 3. Update layer index
 
-# Edit .knowledge/practices/index.md
+# Edit .knowledge/practices/INDEX.md
 
 # 4. Verify integration
 
 sage search "new topic"
 
-```
-
+```text
 ### 6.2 Knowledge Extraction Workflow
 
-```
-
+```text
 1. Source Identification
 
    └── Identify knowledge source (docs, code, conversations)
@@ -344,8 +316,7 @@ sage search "new topic"
 
    └── Test AI retrieval
 
-```
-
+```text
 ---
 
 ## 7. Autonomy Calibration
@@ -438,13 +409,13 @@ sage search "new topic"
 
 ## Related
 
-- `.knowledge/practices/documentation/knowledge_organization.md` — Organization patterns
+- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Organization patterns
 
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 
-- `.knowledge/practices/ai_collaboration/knowledge_capture.md` — Extraction techniques
+- `.knowledge/practices/ai_collaboration/KNOWLEDGE_CAPTURE.md` — Extraction techniques
 
-- `.knowledge/frameworks/design/index.md` — Design patterns
+- `.knowledge/frameworks/design/INDEX.md` — Design patterns
 
 ---
 

@@ -29,7 +29,7 @@
 
 ### 1.2 Standard Project Layout
 
-```
+```text
 project/
 ├── .context/        # Project-specific knowledge (hidden, tracked)
 ├── .history/        # Session history and handoffs (hidden, tracked)
@@ -41,8 +41,7 @@ project/
 ├── docs/            # User-facing documentation (visible, tracked)
 ├── src/             # Source code (visible, tracked)
 └── tests/           # Test suite (visible, tracked)
-```
-
+```text
 ---
 
 ## 2. Directory Categories
@@ -93,7 +92,7 @@ The three knowledge directories follow strict MECE (Mutually Exclusive, Collecti
 
 ### 3.2 Content Placement Decision
 
-```
+```text
 Is this content reusable across ANY project?
 ├─ YES → .knowledge/
 │   └─ Does it contain project-specific names/paths/commands?
@@ -103,8 +102,7 @@ Is this content reusable across ANY project?
     ├─ Architecture decision? → .context/decisions/
     ├─ Coding convention? → .context/conventions/
     └─ AI learned pattern? → .context/intelligence/
-```
-
+```text
 ---
 
 ## 4. Hidden Directory Conventions
@@ -206,7 +204,7 @@ Is this content reusable across ANY project?
 
 ## 6. Placement Decision Tree
 
-```
+```text
 Is this content project-specific?
 ├─ YES → .context/
 │   ├─ Coding convention? → .context/conventions/
@@ -232,8 +230,7 @@ Is this a runtime log?
 
 Is this an intermediate/generated file?
 └─ YES → .outputs/
-```
-
+```text
 ### Quick Reference
 
 | Content Type              | Location                 |

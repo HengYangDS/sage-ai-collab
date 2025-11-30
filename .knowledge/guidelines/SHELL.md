@@ -140,8 +140,7 @@ main() {
 }
 
 main "$@"
-```
-
+```text
 ### 2.2 Shebang Lines
 
 ```bash
@@ -153,8 +152,7 @@ main "$@"
 
 # ⚠️ POSIX shell only
 #!/bin/sh
-```
-
+```text
 ### 2.3 Strict Mode
 
 ```bash
@@ -167,8 +165,7 @@ set -euo pipefail
 
 # Optional: Debug mode
 set -x  # Print commands as they execute
-```
-
+```text
 ---
 
 ## 3. Variables
@@ -194,8 +191,7 @@ my_function() {
     local count=0
     # ...
 }
-```
-
+```text
 ### 3.2 Default Values
 
 ```bash
@@ -210,8 +206,7 @@ name="${NAME:-}"
 
 # Error if unset
 name="${NAME:?'NAME is required'}"
-```
-
+```text
 ### 3.3 Arrays
 
 ```bash
@@ -236,8 +231,7 @@ declare -A config
 config[host]="localhost"
 config[port]="8080"
 echo "${config[host]}:${config[port]}"
-```
-
+```text
 ---
 
 ## 4. Control Flow
@@ -272,8 +266,7 @@ fi
 if [[ -f "${file}" && -r "${file}" ]]; then
     echo "File exists and is readable"
 fi
-```
-
+```text
 ### 4.2 Test Operators
 
 | Operator        | Description                     |
@@ -324,8 +317,7 @@ count=0
 while [[ "${count}" -lt 10 ]]; do
     ((count++))
 done
-```
-
+```text
 ### 4.4 Case Statement
 
 ```bash
@@ -348,8 +340,7 @@ case "${command}" in
         exit 1
         ;;
 esac
-```
-
+```text
 ---
 
 ## 5. Functions
@@ -378,8 +369,7 @@ if process_file "input.txt" "output.txt"; then
 else
     echo "Failed"
 fi
-```
-
+```text
 ### 5.2 Return Values
 
 ```bash
@@ -405,8 +395,7 @@ get_dimensions() {
 }
 get_dimensions
 echo "Width: ${RESULT_WIDTH}, Height: ${RESULT_HEIGHT}"
-```
-
+```text
 ### 5.3 Arguments
 
 ```bash
@@ -448,8 +437,7 @@ process_args() {
     echo "Output: ${output}"
     echo "Args: $*"
 }
-```
-
+```text
 ---
 
 ## 6. Error Handling
@@ -473,8 +461,7 @@ some_command
 if [[ $? -ne 0 ]]; then
     log_error "Command failed with status: $?"
 fi
-```
-
+```text
 ### 6.2 Trap for Cleanup
 
 ```bash
@@ -500,8 +487,7 @@ trap cleanup EXIT INT TERM
 # Now safe to create temp resources
 TEMP_DIR=$(mktemp -d)
 ORIGINAL_DIR=$(pwd)
-```
-
+```text
 ### 6.3 Error Messages
 
 ```bash
@@ -517,8 +503,7 @@ die() {
 # Usage
 [[ -f "${config_file}" ]] || die "Config file not found: ${config_file}"
 [[ -n "${API_KEY:-}" ]] || die "API_KEY environment variable is required"
-```
-
+```text
 ---
 
 ## 7. Best Practices
@@ -538,8 +523,7 @@ if [[ "${var}" == "value" ]]; then
 
 # ⚠️ Exception: Arithmetic
 count=$((count + 1))
-```
-
+```text
 ### 7.2 Command Substitution
 
 ```bash
@@ -552,8 +536,7 @@ result=`command`
 
 # ✅ Good - Nested substitution
 result=$(command1 "$(command2)")
-```
-
+```text
 ### 7.3 Safe Temporary Files
 
 ```bash
@@ -566,8 +549,7 @@ trap 'rm -f "${temp_file}"' EXIT
 
 # ❌ Bad - Predictable names
 temp_file="/tmp/myapp_temp"
-```
-
+```text
 ### 7.4 Safe File Operations
 
 ```bash
@@ -584,8 +566,7 @@ cat -- "${file}"
 while IFS= read -r -d '' file; do
     process "${file}"
 done < <(find . -type f -print0)
-```
-
+```text
 ---
 
 ## 8. Common Patterns
@@ -598,8 +579,7 @@ SCRIPT_DIR="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
 
 # Or simpler version
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-```
-
+```text
 ### 8.2 Configuration Loading
 
 ```bash
@@ -614,8 +594,7 @@ load_config() {
         log_warn "Config file not found: ${config_file}"
     fi
 }
-```
-
+```text
 ### 8.3 Logging
 
 ```bash
@@ -635,8 +614,7 @@ log() {
     
     echo -e "${color}[${level}]${reset} $*" >&2
 }
-```
-
+```text
 ### 8.4 Retry Pattern
 
 ```bash
@@ -663,8 +641,7 @@ retry() {
 
 # Usage
 retry 3 5 curl -f "https://api.example.com/health"
-```
-
+```text
 ### 8.5 Progress Indicator
 
 ```bash
@@ -686,8 +663,7 @@ spinner() {
 # Usage
 long_running_command &
 spinner $!
-```
-
+```text
 ---
 
 ## Quick Reference

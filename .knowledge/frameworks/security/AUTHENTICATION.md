@@ -28,28 +28,21 @@
 
 ### Authentication Flow
 
-```
-┌──────────┐     ┌──────────┐     ┌──────────┐     ┌──────────┐
-│  Client  │────▶│  Authn   │────▶│  Authz   │────▶│ Resource │
-│          │     │  Server  │     │  Server  │     │  Server  │
-└──────────┘     └──────────┘     └──────────┘     └──────────┘
-     │                │                │                │
-     │   Credentials  │                │                │
-     │───────────────▶│                │                │
-     │                │                │                │
-     │   Token        │                │                │
-     │◀───────────────│                │                │
-     │                │                │                │
-     │   Token + Request               │                │
-     │─────────────────────────────────▶                │
-     │                │                │                │
-     │                │   Validate     │                │
-     │                │◀───────────────│                │
-     │                │                │                │
-     │   Response                                       │
-     │◀─────────────────────────────────────────────────│
-```
+```mermaid
+sequenceDiagram
+    participant C as Client
+    participant Auth as Authn Server
+    participant Authz as Authz Server
+    participant R as Resource Server
 
+    C->>Auth: Credentials
+    Auth-->>C: Token
+    C->>Authz: Token + Request
+    Authz->>Auth: Validate
+    Auth-->>Authz: Valid
+    Authz->>R: Authorized Request
+    R-->>C: Response
+```text
 ---
 
 ## 2. Authentication Methods
@@ -90,8 +83,7 @@ def verify_password(password: str, hash_value: str, salt: str) -> bool:
     """Verify password against stored hash."""
     new_hash, _ = hash_password_with_salt(password, salt)
     return secrets.compare_digest(new_hash, hash_value)
-```
-
+```text
 ### API Key Authentication
 
 ```python
@@ -115,30 +107,22 @@ def require_api_key(func: Callable) -> Callable:
         return await func(request, *args, **kwargs)
 
     return wrapper
-```
-
+```text
 ---
 
 ## 3. Token-Based Auth
 
 ### JWT Structure
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                         JWT Token                           │
-├──────────────┬──────────────────┬──────────────────────────┤
-│    Header    │     Payload      │        Signature         │
-│   (Base64)   │    (Base64)      │        (Base64)          │
-├──────────────┼──────────────────┼──────────────────────────┤
-│ {            │ {                │ HMACSHA256(              │
-│   "alg":     │   "sub": "123",  │   base64(header) + "." + │
-│     "HS256", │   "name": "John",│   base64(payload),       │
-│   "typ":     │   "iat": 16789,  │   secret                 │
-│     "JWT"    │   "exp": 16889   │ )                        │
-│ }            │ }                │                          │
-└──────────────┴──────────────────┴──────────────────────────┘
-```
-
+```mermaid
+flowchart LR
+    subgraph JWT["JWT Token"]
+        H["Header<br/>(Base64)<br/>alg, typ"]
+        P["Payload<br/>(Base64)<br/>sub, iat, exp"]
+        S["Signature<br/>(Base64)<br/>HMACSHA256()"]
+    end
+    H --> P --> S
+```text
 ### JWT Best Practices
 
 | Practice   | Recommendation                                          |
@@ -191,8 +175,7 @@ class JWTManager:
             raise AuthenticationError("Token expired")
         except jwt.InvalidTokenError:
             raise AuthenticationError("Invalid token")
-```
-
+```text
 ---
 
 ## 4. Session Management
@@ -258,8 +241,7 @@ class SessionManager:
     def destroy_session(self, session_id: str) -> None:
         """Destroy session."""
         self.store.delete(f"session:{session_id}")
-```
-
+```text
 ---
 
 ## 5. Multi-Factor Auth
@@ -317,8 +299,7 @@ class TOTPManager:
         """Verify TOTP code."""
         totp = pyotp.TOTP(secret)
         return totp.verify(code, valid_window=1)
-```
-
+```text
 ---
 
 ## 6. Implementation Patterns
@@ -365,8 +346,7 @@ async def login(request: LoginRequest) -> LoginResponse:
         refresh_token=refresh_token,
         expires_in=3600
     )
-```
-
+```text
 ### Middleware Pattern
 
 ```python
@@ -398,8 +378,7 @@ async def auth_middleware(request: Request, call_next):
         raise HTTPException(status_code=401, detail=str(e))
 
     return await call_next(request)
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -416,8 +395,7 @@ SECURITY_HEADERS = {
     "Cache-Control"            : "no-store",
     "Pragma"                   : "no-cache"
 }
-```
-
+```text
 ### Password Requirements
 
 | Requirement | Minimum                       |
@@ -432,9 +410,9 @@ SECURITY_HEADERS = {
 
 ## Related
 
-- `.knowledge/frameworks/security/authorization.md` — Access control patterns
-- `.knowledge/frameworks/security/secrets_management.md` — Secure credential handling
-- `.knowledge/frameworks/security/security_checklist.md` — Implementation checklist
+- `.knowledge/frameworks/security/AUTHORIZATION.md` — Access control patterns
+- `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Secure credential handling
+- `.knowledge/frameworks/security/SECURITY_CHECKLIST.md` — Implementation checklist
 
 ---
 

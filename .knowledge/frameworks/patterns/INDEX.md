@@ -61,7 +61,7 @@ persistence in AI-human collaborative systems.
 ## Related
 
 - `.knowledge/practices/ai_collaboration/` — AI collaboration practices
-- `.context/conventions/code_patterns.md` — Code patterns
+- `.context/conventions/CODE_PATTERNS.md` — Code patterns
 - `docs/design/01-architecture.md` — Architecture design
 
 ---

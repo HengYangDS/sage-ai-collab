@@ -35,8 +35,7 @@ def get_required_secret(name: str) -> str:
 
 DATABASE_URL = get_required_secret("DATABASE_URL")
 API_KEY = get_required_secret("API_KEY")
-```
-
+```text
 ### Type-Safe Configuration
 
 ```python
@@ -53,8 +52,7 @@ class Settings(BaseSettings):
 
 settings = Settings()
 # Access: settings.api_key.get_secret_value()
-```
-
+```text
 ---
 
 ## 2. HashiCorp Vault
@@ -83,8 +81,7 @@ class VaultSecretManager:
             path=path,
             secret=data
         )
-```
-
+```text
 ### AppRole Authentication
 
 ```python
@@ -106,8 +103,7 @@ class VaultAppRole:
             "password": response["data"]["password"],
             "ttl": response["lease_duration"]
         }
-```
-
+```text
 ---
 
 ## 3. AWS Secrets Manager
@@ -143,8 +139,7 @@ class AWSSecretManager:
             SecretId=name,
             SecretString=json.dumps(value)
         )
-```
-
+```text
 ### Caching for Performance
 
 ```python
@@ -172,8 +167,7 @@ class CachedSecretManager:
         self._cache[name] = secret
         self._timestamps[name] = now
         return secret
-```
-
+```text
 ---
 
 ## 4. Secret Rotation
@@ -209,8 +203,7 @@ class SecretRotator(ABC):
             raise ValueError("New secret validation failed")
         
         self.apply_secret(new_secret)
-```
-
+```text
 ### Database Password Rotation
 
 ```python
@@ -241,8 +234,7 @@ class DatabasePasswordRotator(SecretRotator):
         """Update password in database and secret manager."""
         self.db.execute(f"ALTER USER app_user PASSWORD '{secret}'")
         self.secrets.update_secret("db-password", {"password": secret})
-```
-
+```text
 ---
 
 ## 5. Application Integration
@@ -268,8 +260,7 @@ app = FastAPI()
 async def get_data(secrets: AWSSecretManager = Depends(get_secret_manager)):
     api_key = secrets.get_secret("external-api")["key"]
     # Use api_key...
-```
-
+```text
 ### Context Manager Pattern
 
 ```python
@@ -288,8 +279,7 @@ def secret_scope(secret_manager, secret_name: str):
 # Usage
 with secret_scope(manager, "api-credentials") as creds:
     response = call_api(creds["key"])
-```
-
+```text
 ---
 
 ## Related

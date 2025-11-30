@@ -24,20 +24,13 @@
 | **Logs**    | Event records             | ELK, Loki           |
 | **Traces**  | Request flow              | Jaeger, Zipkin      |
 
-```
-┌─────────────────────────────────────────────────┐
-│                 Observability                   │
-├─────────────────────────────────────────────────┤
-│                                                 │
-│    Metrics ←────→ Logs ←────→ Traces           │
-│       │            │            │               │
-│       ▼            ▼            ▼               │
-│   "What"       "Why"        "Where"            │
-│   happened     happened     happened            │
-│                                                 │
-└─────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart LR
+    subgraph Observability
+        M["Metrics<br/>'What' happened"] <--> L["Logs<br/>'Why' happened"]
+        L <--> T["Traces<br/>'Where' happened"]
+    end
+```text
 ---
 
 ## 2. Metrics
@@ -99,8 +92,7 @@ def handle_request(endpoint):
         duration = time.time() - start
         request_duration.labels(endpoint=endpoint).observe(duration)
         active_connections.dec()
-```
-
+```text
 ---
 
 ## 3. Logging
@@ -123,8 +115,7 @@ logger.info(
 
 # ❌ Bad: Unstructured string
 logger.info(f"Order {order.id} created for user {user.id}")
-```
-
+```text
 ### Log Levels
 
 | Level     | Use Case                       |
@@ -168,8 +159,7 @@ async def handle_request(request):
             result = await db.query(...)
         
         return result
-```
-
+```text
 ### Context Propagation
 
 ```python
@@ -180,8 +170,7 @@ context = extract(request.headers)
 headers = {}
 inject(headers)
 await client.get(url, headers=headers)
-```
-
+```text
 ---
 
 ## 5. Alerting
@@ -223,8 +212,7 @@ groups:
           severity: critical
         annotations:
           summary: "Service {{ $labels.instance }} is down"
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -252,8 +240,8 @@ groups:
 
 ## Related
 
-- `.knowledge/practices/engineering/logging.md` — Logging practices
-- `.knowledge/frameworks/performance/profiling_guide.md` — Performance profiling
+- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
+- `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Performance profiling
 
 ---
 

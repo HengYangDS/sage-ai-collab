@@ -202,10 +202,9 @@
 
 ### Response Flow
 
-```
+```text
 Detect → Assess → Contain → Eradicate → Recover → Learn
-```
-
+```text
 ### Immediate Actions by Type
 
 | Incident Type        | Actions                                    |

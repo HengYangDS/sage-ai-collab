@@ -32,8 +32,7 @@ API_KEY = os.environ.get("API_KEY")
 API_KEY = os.environ.get("API_KEY")
 if not API_KEY:
     raise ValueError("API_KEY environment variable required")
-```
-
+```text
 ### .gitignore for Secrets
 
 ```gitignore
@@ -45,8 +44,7 @@ if not API_KEY:
 *_secret*
 credentials.json
 secrets.yaml
-```
-
+```text
 ---
 
 ## 2. Input Validation
@@ -75,8 +73,7 @@ def safe_path(user_input: str, base_dir: Path) -> Path:
         raise ValueError(f"Path traversal detected: {user_input}")
 
     return requested
-```
-
+```text
 ### String Validation
 
 ```python
@@ -105,8 +102,7 @@ def validate_identifier(value: str, max_length: int = 64) -> str:
         raise ValueError("Identifier contains invalid characters")
 
     return value
-```
-
+```text
 ### Numeric Validation
 
 ```python
@@ -131,8 +127,7 @@ def validate_timeout(value: int, min_val: int = 100, max_val: int = 10000) -> in
         raise ValueError(f"Timeout must be {min_val}-{max_val}ms")
 
     return value
-```
-
+```text
 ### Pydantic Validation
 
 ```python
@@ -148,8 +143,7 @@ class UserInput(BaseModel):
         if '@' not in v:
             raise ValueError('Invalid email')
         return v.lower()
-```
-
+```text
 ---
 
 ## 3. Output Sanitization
@@ -162,8 +156,7 @@ from markupsafe import escape
 def safe_html_output(user_input: str) -> str:
     """Escape HTML special characters."""
     return escape(user_input)
-```
-
+```text
 ### JSON Output
 
 ```python
@@ -172,8 +165,7 @@ import json
 def safe_json_response(data: dict) -> str:
     """Safely encode data as JSON."""
     return json.dumps(data, ensure_ascii=True)
-```
-
+```text
 ---
 
 ## 4. Path Security
@@ -194,8 +186,7 @@ def safe_read_file(filepath: Path, base_dir: Path) -> str:
     """Read file safely within allowed directory."""
     safe = safe_path(str(filepath), base_dir)
     return safe.read_text()
-```
-
+```text
 ---
 
 ## 5. SQL Injection Prevention
@@ -212,8 +203,7 @@ cursor.execute(query, (user_input,))
 
 # ✅ Good - ORM with proper filtering
 User.objects.filter(name=user_input)
-```
-
+```text
 ---
 
 ## 6. Logging Security
@@ -245,8 +235,7 @@ def log_security_event(
         timestamp=datetime.utcnow().isoformat(),
         **extra
     )
-```
-
+```text
 ### Redacting Sensitive Data
 
 ```python
@@ -262,8 +251,7 @@ def redact_secrets(text: str) -> str:
     for pattern, replacement in patterns:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     return text
-```
-
+```text
 ---
 
 ## Related

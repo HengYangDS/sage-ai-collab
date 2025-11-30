@@ -40,8 +40,7 @@ focus: [ etl, transformation, validation, scheduling ]
 
 autonomy_default: L2
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -50,9 +49,9 @@ autonomy_default: L2
 
 |---------------|-------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/python.md` · `.knowledge/practices/engineering/error_handling.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/practices/engineering/testing_strategy.md`          |
+| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`          |
 
 ---
 
@@ -138,8 +137,7 @@ class DatabaseExtractor(BaseExtractor):
 
             yield chunk
 
-```
-
+```text
 ### 4.2 Transformer Pattern
 
 ```python
@@ -192,8 +190,7 @@ transformer = (
 
 result = transformer.apply(raw_data)
 
-```
-
+```text
 ### 4.3 Loader Pattern
 
 ```python
@@ -248,8 +245,7 @@ class DataLoader:
 
         return rows or len(df)
 
-```
-
+```text
 ### 4.4 Pipeline Pattern
 
 ```python
@@ -326,8 +322,7 @@ class Pipeline:
 
         )
 
-```
-
+```text
 ---
 
 ## 5. Testing Patterns
@@ -386,8 +381,7 @@ def test_normalize_dates(sample_data):
 
     assert pd.api.types.is_datetime64_any_dtype(result["date"])
 
-```
-
+```text
 ### 5.2 Pipeline Integration Testing
 
 ```python
@@ -426,8 +420,7 @@ def test_pipeline_success():
 
     assert len(result.errors) == 0
 
-```
-
+```text
 ---
 
 ## 6. Data Quality
@@ -512,8 +505,7 @@ validator = (
 
 )
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -576,13 +568,13 @@ validator = (
 
 ## Related
 
-- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
 
-- `.knowledge/practices/engineering/logging.md` — Logging practices
+- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
 
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
 
 ---
 

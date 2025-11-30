@@ -36,8 +36,7 @@ focus: [ refactoring, migration, testing, documentation ]
 
 autonomy_default: L2
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -46,9 +45,9 @@ autonomy_default: L2
 
 |---------------|---------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/incremental_improvement.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.knowledge/practices/engineering/code_review.md`                    |
+| **On-Demand** | `.knowledge/practices/engineering/TESTING_STRATEGY.md` · `.knowledge/practices/engineering/CODE_REVIEW.md`                    |
 
 ---
 
@@ -90,38 +89,16 @@ autonomy_default: L2
 
 ### 3.3 Strangler Fig Pattern
 
-```
-
-┌────────────────────────────────────────────────────────┐
-
-│                      API Gateway                        │
-
-├────────────────────────────────────────────────────────┤
-
-│                    Routing Layer                        │
-
-│  ┌──────────────┐    ┌──────────────┐                  │
-
-│  │   /users/*   │───>│ New Service  │  (Migrated)      │
-
-│  └──────────────┘    └──────────────┘                  │
-
-│  ┌──────────────┐    ┌──────────────┐                  │
-
-│  │  /orders/*   │───>│Legacy System │  (Pending)       │
-
-│  └──────────────┘    └──────────────┘                  │
-
-│  ┌──────────────┐    ┌──────────────┐                  │
-
-│  │ /products/*  │───>│ New Service  │  (In Progress)   │
-
-│  └──────────────┘    └──────────────┘                  │
-
-└────────────────────────────────────────────────────────┘
-
-```
-
+```mermaid
+flowchart LR
+    subgraph GW["API Gateway"]
+        R["Routing Layer"]
+    end
+    
+    R -->|/users/*| NS1["New Service<br/>(Migrated)"]
+    R -->|/orders/*| LS["Legacy System<br/>(Pending)"]
+    R -->|/products/*| NS2["New Service<br/>(In Progress)"]
+```text
 ---
 
 ## 4. Assessment
@@ -178,8 +155,7 @@ autonomy_default: L2
 
 | Performance degradation | Low | Medium | Load testing, monitoring |
 
-```
-
+```text
 ---
 
 ## 5. Migration Patterns
@@ -198,8 +174,7 @@ autonomy_default: L2
 
 ### 5.2 Incremental Migration Steps
 
-```
-
+```text
 1. Add Tests
 
    └── Cover existing behavior before changes
@@ -224,8 +199,7 @@ autonomy_default: L2
 
    └── Remove legacy code
 
-```
-
+```text
 ### 5.3 Database Migration
 
 ```python
@@ -268,8 +242,7 @@ class UserRepository:
 
         return legacy_user
 
-```
-
+```text
 ### 5.4 Feature Flag Migration
 
 ```python
@@ -286,8 +259,7 @@ def get_user(user_id: str):
 
         return legacy_user_service.get(user_id)
 
-```
-
+```text
 ---
 
 ## 6. Risk Management
@@ -346,8 +318,7 @@ metrics:
 
     action: pause_migration
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -466,13 +437,13 @@ metrics:
 
 ## Related
 
-- `.knowledge/guidelines/engineering.md` — Engineering practices
+- `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 
-- `.knowledge/practices/engineering/incremental_improvement.md` — Incremental approach
+- `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` — Incremental approach
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing practices
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing practices
 
-- `.knowledge/frameworks/patterns/decision.md` — Decision framework
+- `.knowledge/frameworks/patterns/DECISION.md` — Decision framework
 
 ---
 

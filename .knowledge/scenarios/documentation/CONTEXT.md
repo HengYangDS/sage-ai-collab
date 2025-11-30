@@ -40,8 +40,7 @@ focus: [ technical_writing, api_docs, tutorials, reference ]
 
 autonomy_default: L4
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -50,9 +49,9 @@ autonomy_default: L4
 
 |---------------|-------------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/guidelines/documentation.md` · `.knowledge/practices/documentation/documentation_standards.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/DOCUMENTATION.md` · `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` |
 
-| **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/templates/index.md`                                  |
+| **On-Demand** | `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` · `.knowledge/templates/INDEX.md`                                  |
 
 ---
 
@@ -100,13 +99,13 @@ autonomy_default: L4
 
 |---------------|---------------------------|------------------------|
 
-| API Reference | `.knowledge/templates/api_spec.md`   | Endpoint documentation |
+| API Reference | `.knowledge/templates/API_SPEC.md`   | Endpoint documentation |
 
-| Architecture  | `.knowledge/templates/adr.md`        | Design decisions       |
+| Architecture  | `.knowledge/templates/ADR.md`        | Design decisions       |
 
-| Runbook       | `.knowledge/templates/runbook.md`    | Operational guides     |
+| Runbook       | `.knowledge/templates/RUNBOOK.md`    | Operational guides     |
 
-| Postmortem    | `.knowledge/templates/postmortem.md` | Incident reports       |
+| Postmortem    | `.knowledge/templates/POSTMORTEM.md` | Incident reports       |
 
 ---
 
@@ -150,8 +149,7 @@ autonomy_default: L4
 
 *[Footer/attribution]*
 
-```
-
+```text
 ### 5.2 Section Formatting
 
 | Element        | Format          | Example                 |
@@ -240,8 +238,7 @@ def process_data(
 
     """
 
-```
-
+```text
 ---
 
 ## 6. Quality Standards
@@ -308,8 +305,7 @@ def process_data(
 
 ### 7.1 Documentation Workflow
 
-```
-
+```text
 1. Plan
 
    └── Identify audience, purpose, scope
@@ -334,8 +330,7 @@ def process_data(
 
    └── Monitor feedback, update regularly
 
-```
-
+```text
 ---
 
 ## 8. Autonomy Calibration
@@ -426,13 +421,13 @@ def process_data(
 
 ## Related
 
-- `.knowledge/guidelines/documentation.md` — Documentation guidelines
+- `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines
 
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 
-- `.knowledge/practices/documentation/knowledge_organization.md` — Knowledge organization
+- `.knowledge/practices/documentation/KNOWLEDGE_ORGANIZATION.md` — Knowledge organization
 
-- `.knowledge/frameworks/cognitive/information_density.md` — Information density
+- `.knowledge/frameworks/cognitive/INFORMATION_DENSITY.md` — Information density
 
 ---
 

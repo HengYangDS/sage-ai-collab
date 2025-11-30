@@ -118,8 +118,8 @@
 
 ## Related
 
-- `.knowledge/practices/ai_collaboration/token_optimization.md` — Token efficiency
-- `.knowledge/practices/documentation/documentation_standards.md` — Documentation standards
+- `.knowledge/practices/ai_collaboration/TOKEN_OPTIMIZATION.md` — Token efficiency
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 
 ---
 

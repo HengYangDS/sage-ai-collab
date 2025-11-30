@@ -189,7 +189,7 @@ Reusable document templates:
 - `.knowledge/frameworks/performance/INDEX.md` — Performance framework
 - `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
 - `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Optimization
-- `.knowledge/frameworks/performance/PROFILING_GUIDE.md` — Profiling guide
+- `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Profiling guide
 - `.knowledge/frameworks/resilience/INDEX.md` — Resilience framework
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
 - `.knowledge/frameworks/security/INDEX.md` — Security framework
@@ -211,10 +211,9 @@ Reusable document templates:
 
 ## 4. Navigation Pattern
 
-```
+```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```
-
+```text
 Each layer has an `INDEX.md` for navigation. Use layer indexes for discovery, specific files for detailed guidance.
 
 ---

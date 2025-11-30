@@ -18,24 +18,25 @@
 
 ### 1.1 Standard Hierarchy
 
-```
+```text
 .knowledge/
 ├── core/           # Foundational principles (always load)
 ├── guidelines/     # Standards and conventions (by role/task)
 ├── frameworks/     # Deep conceptual models (complex decisions)
 ├── practices/      # Actionable patterns (implementation)
+├── references/     # Quick reference, glossary (on-demand)
 ├── scenarios/      # Context presets (specific workflows)
 └── templates/      # Ready-to-use templates (direct use)
-```
-
+```text
 ### 1.2 Layer Characteristics
 
 | Layer          | Depth            | Load Timing       | Token Budget |
 |----------------|------------------|-------------------|--------------|
 | **Core**       | Minimal          | Always            | ~500         |
-| **Guidelines** | Medium           | By role/task      | ~1200        |
-| **Frameworks** | Deep             | On-demand         | ~2000        |
-| **Practices**  | Actionable       | When implementing | ~1500        |
+| **Guidelines** | Medium           | By role/task      | ~1,200       |
+| **Frameworks** | Deep             | On-demand         | ~2,000       |
+| **Practices**  | Actionable       | When implementing | ~1,500       |
+| **References** | Quick lookup     | On-demand         | ~300         |
 | **Scenarios**  | Context-specific | By trigger        | ~500         |
 | **Templates**  | Ready-to-use     | Direct copy       | ~300         |
 
@@ -115,10 +116,9 @@
 
 ### 3.1 Path Structure
 
-```
+```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```
-
+```text
 ### 3.2 Index File Pattern
 
 Each layer has an `INDEX.md` with:

@@ -84,8 +84,7 @@ def test_user_creation():
 
     # Assert
     assert result.name == "Alice"
-```
-
+```text
 ---
 
 ## 5. Continuous Improvement

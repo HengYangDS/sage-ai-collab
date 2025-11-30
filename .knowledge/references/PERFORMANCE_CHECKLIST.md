@@ -40,8 +40,7 @@ python -m memory_profiler script.py
 
 # Production flame graph
 py-spy record -o profile.svg -- python script.py
-```
-
+```text
 ---
 
 ## 3. Performance Checklist
@@ -84,8 +83,7 @@ def process_large(items):
 # Async I/O
 async def read_files(paths):
     return await asyncio.gather(*[read(p) for p in paths])
-```
-
+```text
 ---
 
 ## Related
@@ -93,7 +91,7 @@ async def read_files(paths):
 - `.knowledge/practices/engineering/PERFORMANCE.md` — Full performance guide
 - `.knowledge/frameworks/performance/INDEX.md` — Performance framework
 - `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
-- `.knowledge/frameworks/performance/PROFILING_GUIDE.md` — Profiling guide
+- `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Profiling guide
 
 ---
 

@@ -38,22 +38,13 @@
 
 ### 1.2 Pipeline Stages
 
-```
-
-┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐   ┌─────────┐
-
-│  Lint   │ → │  Test   │ → │  Build  │ → │ Publish │ → │ Deploy  │
-
-└─────────┘   └─────────┘   └─────────┘   └─────────┘   └─────────┘
-
-     │             │             │             │             │
-
-   Ruff        pytest        wheel         PyPI        Staging
-
-   MyPy       coverage      Docker        GHCR        Production
-
-```
-
+```mermaid
+flowchart LR
+    L["Lint<br/>Ruff, MyPy"] --> T["Test<br/>pytest, coverage"]
+    T --> B["Build<br/>wheel, Docker"]
+    B --> P["Publish<br/>PyPI, GHCR"]
+    P --> D["Deploy<br/>Staging, Production"]
+```text
 ---
 
 ## 2. GitHub Actions
@@ -148,8 +139,7 @@ jobs:
 
           file: coverage.xml
 
-```
-
+```text
 ### 2.2 Release Workflow
 
 ```yaml
@@ -244,8 +234,7 @@ jobs:
 
             ghcr.io/${{ github.repository }}:latest
 
-```
-
+```text
 ### 2.3 Scheduled Jobs
 
 ```yaml
@@ -278,8 +267,7 @@ jobs:
 
         run: pip-audit
 
-```
-
+```text
 ---
 
 ## 3. Testing Pipeline
@@ -348,8 +336,7 @@ jobs:
 
 ]
 
-```
-
+```text
 ### 3.3 Running Tests
 
 ```bash
@@ -370,8 +357,7 @@ pytest --cov=src --cov-report=html
 
 pytest -n auto
 
-```
-
+```text
 ---
 
 ## 4. Quality Gates
@@ -430,8 +416,7 @@ repos:
 
       - id: commitizen
 
-```
-
+```text
 ### 4.3 Branch Protection
 
 ```yaml
@@ -456,8 +441,7 @@ branch_protection:
 
     require_code_owner_reviews: true
 
-```
-
+```text
 ---
 
 ## 5. Deployment Strategies
@@ -478,32 +462,16 @@ branch_protection:
 
 #### Blue-Green Deployment
 
-```
-
-     Active          Standby
-
-   ┌─────────┐    ┌─────────┐
-
-   │  Blue   │    │  Green  │
-
-   │  v1.0   │    │  v1.1   │
-
-   └────┬────┘    └────┬────┘
-
-        │              │
-
-        └──────┬───────┘
-
-               │
-
-         Load Balancer
-
-               │
-
-            Traffic
-
-```
-
+```mermaid
+flowchart TB
+    subgraph Servers
+        B["Blue (v1.0)<br/>Active"]
+        G["Green (v1.1)<br/>Standby"]
+    end
+    B --> LB["Load Balancer"]
+    G --> LB
+    LB --> T["Traffic"]
+```text
 #### Rolling Update
 
 ```yaml
@@ -522,8 +490,7 @@ spec:
 
       maxUnavailable: 0
 
-```
-
+```text
 ### 5.3 Rollback Procedure
 
 ```bash
@@ -540,8 +507,7 @@ git checkout v1.0.0
 
 # trigger deployment
 
-```
-
+```text
 ---
 
 ## 6. Secrets Management
@@ -576,8 +542,7 @@ env:
 
   DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
 
-```
-
+```text
 ### 6.3 Best Practices
 
 - Never commit secrets to repository
@@ -616,19 +581,18 @@ gh run list
 
 gh run download <run-id>
 
-```
-
+```text
 ---
 
 ## Related
 
-- `.knowledge/practices/engineering/git_workflow.md` — Git workflow and versioning
+- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Git workflow and versioning
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing best practices
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing best practices
 
-- `.knowledge/scenarios/devops/context.md` — DevOps scenario context
+- `.knowledge/scenarios/devops/CONTEXT.md` — DevOps scenario context
 
-- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/templates/RUNBOOK.md` — Operational runbook template
 
 ---
 

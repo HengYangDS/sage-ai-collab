@@ -96,11 +96,11 @@
 
 ## Related
 
-- `.knowledge/scenarios/python_backend/context.md` — Python backend context
+- `.knowledge/scenarios/python_backend/CONTEXT.md` — Python backend context
 
-- `.knowledge/guidelines/python.md` — Python guidelines
+- `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

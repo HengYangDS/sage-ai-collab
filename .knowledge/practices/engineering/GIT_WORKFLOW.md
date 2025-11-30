@@ -40,8 +40,7 @@
 
 ### 1.2 Branch Flow
 
-```
-
+```text
 main ─────●─────────────────●─────────────────●──── (releases)
 
           │                 ↑                 ↑
@@ -60,8 +59,7 @@ feature/a ───●─────┘     │     │
 
 feature/b ───────────────●─────┘
 
-```
-
+```text
 ### 1.3 Branch Rules
 
 | Rule                   | Description                             |
@@ -82,16 +80,14 @@ feature/b ───────────────●─────┘
 
 ### 2.1 Commit Message Format
 
-```
-
+```text
 <type>(<scope>): <subject>
 
 <body>
 
 <footer>
 
-```
-
+```text
 ### 2.2 Commit Types
 
 | Type       | Description      | Example                                  |
@@ -176,8 +172,7 @@ Add comprehensive documentation for:
 
 - Configuration options
 
-```
-
+```text
 ### 2.5 Commit Best Practices
 
 | Practice             | Description                          |
@@ -236,12 +231,10 @@ Add comprehensive documentation for:
 
 Closes #[issue number]
 
-```
-
+```text
 ### 3.2 PR Workflow
 
-```
-
+```text
 1. Create Branch
 
    └── git checkout -b feature/my-feature develop
@@ -270,8 +263,7 @@ Closes #[issue number]
 
    └── Squash and merge after approval
 
-```
-
+```text
 ### 3.3 Review Guidelines
 
 | Aspect            | Check                       |
@@ -298,14 +290,12 @@ Closes #[issue number]
 
 Follow [Semantic Versioning](https://semver.org/):
 
-```
-
+```text
 MAJOR.MINOR.PATCH
 
 Example: 1.2.3
 
-```
-
+```text
 | Component | Increment When                     |
 
 |-----------|------------------------------------|
@@ -354,8 +344,7 @@ git merge release/v1.2.0
 
 git branch -d release/v1.2.0
 
-```
-
+```text
 ### 4.3 Changelog Format
 
 ```markdown
@@ -390,8 +379,7 @@ git branch -d release/v1.2.0
 
 - Fixed vulnerability in D
 
-```
-
+```text
 ---
 
 ## 5. Best Practices
@@ -426,8 +414,7 @@ git rebase origin/develop
 
 git push origin feature/my-feature
 
-```
-
+```text
 ### 5.2 Handling Conflicts
 
 ```bash
@@ -452,8 +439,7 @@ git rebase --continue
 
 git rebase --abort
 
-```
-
+```text
 ### 5.3 Useful Aliases
 
 ```bash
@@ -478,8 +464,7 @@ git rebase --abort
 
     amend = commit --amend --no-edit
 
-```
-
+```text
 ### 5.4 Common Commands
 
 | Task               | Command                            |
@@ -526,8 +511,7 @@ mypy src/sage/
 
 pytest tests/unit/ -q
 
-```
-
+```text
 ### 5.6 Commit-msg Hook
 
 ```bash
@@ -550,15 +534,14 @@ if ! grep -qE "$commit_regex" "$1"; then
 
 fi
 
-```
-
+```text
 ---
 
 ## Related
 
-- `.knowledge/practices/engineering/ci_cd.md` — CI/CD configuration
+- `.knowledge/practices/engineering/CI_CD.md` — CI/CD configuration
 
-- `.knowledge/practices/engineering/code_review.md` — Code review guidelines
+- `.knowledge/practices/engineering/CODE_REVIEW.md` — Code review guidelines
 
 - `.context/conventions/` — Coding conventions
 

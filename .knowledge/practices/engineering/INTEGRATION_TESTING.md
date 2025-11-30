@@ -26,32 +26,22 @@
 
 ### 1.1 Integration vs Unit Tests
 
-| Aspect           | Unit Tests        | Integration Tests     |
-
+| Aspect | Unit Tests | Integration Tests |
 |------------------|-------------------|-----------------------|
-
-| **Scope**        | Single unit       | Multiple components   |
-
-| **Dependencies** | Mocked            | Real or test doubles  |
-
+| **Scope**        | Single unit | Multiple components |
+| **Dependencies** | Mocked | Real or test doubles |
 | **Speed**        | Fast (< 100ms)    | Slower (100ms - 5s)   |
-
-| **Isolation**    | Complete          | Partial               |
-
+| **Isolation**    | Complete | Partial |
 | **Purpose**      | Logic correctness | Component interaction |
 
 ### 1.2 Integration Test Goals
 
-| Goal                   | Description                      |
+| Goal | Description |
 
 |------------------------|----------------------------------|
-
 | **Verify interfaces**  | Components communicate correctly |
-
-| **Test data flow**     | Data passes through layers       |
-
-| **Validate config**    | Configuration works together     |
-
+| **Test data flow**     | Data passes through layers |
+| **Validate config**    | Configuration works together |
 | **Check side effects** | External effects occur correctly |
 
 ---
@@ -60,41 +50,23 @@
 
 ### 2.1 Test Types
 
-```
-
-┌─────────────────────────────────────────────┐
-
-│                 E2E Tests                    │
-
-│     (Full system, browser, real services)   │
-
-├─────────────────────────────────────────────┤
-
-│            Integration Tests                 │
-
-│   (Multiple components, test database)       │
-
-├─────────────────────────────────────────────┤
-
-│              Unit Tests                      │
-
-│        (Single unit, mocked deps)            │
-
-└─────────────────────────────────────────────┘
-
-```
-
+```mermaid
+flowchart TB
+    subgraph Pyramid["Test Pyramid"]
+        E2E["E2E Tests<br/>(Full system, browser, real services)"]
+        INT["Integration Tests<br/>(Multiple components, test database)"]
+        UNIT["Unit Tests<br/>(Single unit, mocked deps)"]
+    end
+    
+    E2E --> INT --> UNIT
+```text
 ### 2.2 Integration Test Scope
 
-| Scope      | Components      | Example              |
-
+| Scope | Components | Example |
 |------------|-----------------|----------------------|
-
-| **Narrow** | 2-3 components  | Service + Repository |
-
-| **Medium** | Layer           | API → Service → DB   |
-
-| **Broad**  | Multiple layers | Full request flow    |
+| **Narrow** | 2-3 components | Service + Repository |
+| **Medium** | Layer | API → Service → DB |
+| **Broad**  | Multiple layers | Full request flow |
 
 ---
 
@@ -110,8 +82,8 @@ from sqlalchemy import create_engine
 
 from sqlalchemy.orm import sessionmaker
 
-@pytest.fixture(scope="session")
 
+@pytest.fixture(scope="session")
 def test_engine():
 
     """Create test database engine."""
@@ -122,8 +94,8 @@ def test_engine():
 
     return engine
 
-@pytest.fixture(scope="function")
 
+@pytest.fixture(scope="function")
 def db_session(test_engine):
 
     """Create a new database session for each test."""
@@ -138,14 +110,12 @@ def db_session(test_engine):
 
     session.close()
 
-```
-
+```text
 ### 3.2 Database Fixtures
 
 ```python
 
 @pytest.fixture
-
 def sample_users(db_session):
 
     """Create sample users in test database."""
@@ -166,6 +136,7 @@ def sample_users(db_session):
 
     return users
 
+
 def test_get_all_users(db_session, sample_users):
 
     repo = UserRepository(db_session)
@@ -176,14 +147,12 @@ def test_get_all_users(db_session, sample_users):
 
     assert result[0].name == "Alice"
 
-```
-
+```text
 ### 3.3 Transaction Rollback
 
 ```python
 
 @pytest.fixture
-
 def db_session(test_engine):
 
     """Session with automatic rollback after each test."""
@@ -204,8 +173,7 @@ def db_session(test_engine):
 
     connection.close()
 
-```
-
+```text
 ### 3.4 Test Data Management
 
 ```python
@@ -215,11 +183,9 @@ class TestDataBuilder:
     """Builder for creating test data."""
 
     def __init__(self, session):
-
         self.session = session
 
     def create_user(self, **kwargs) -> User:
-
         defaults = {
 
             "id"   : str(uuid.uuid4()),
@@ -239,7 +205,6 @@ class TestDataBuilder:
         return user
 
     def create_order(self, user: User, **kwargs) -> Order:
-
         defaults = {
 
             "id"     : str(uuid.uuid4()),
@@ -258,8 +223,7 @@ class TestDataBuilder:
 
         return order
 
-```
-
+```text
 ---
 
 ## 4. API Testing
@@ -276,23 +240,23 @@ from httpx import AsyncClient
 
 from app.main import app
 
-@pytest.fixture
 
+@pytest.fixture
 def client():
 
     """Sync test client."""
 
     return TestClient(app)
 
-@pytest.fixture
 
+@pytest.fixture
 async def async_client():
 
     """Async test client."""
 
     async with AsyncClient(app=app, base_url="http://test") as client:
-
         yield client
+
 
 def test_get_users(client):
 
@@ -302,8 +266,8 @@ def test_get_users(client):
 
     assert isinstance(response.json(), list)
 
-@pytest.mark.asyncio
 
+@pytest.mark.asyncio
 async def test_create_user(async_client):
 
     response = await async_client.post(
@@ -318,8 +282,7 @@ async def test_create_user(async_client):
 
     assert response.json()["name"] == "Alice"
 
-```
-
+```text
 ### 4.2 Request/Response Testing
 
 ```python
@@ -329,7 +292,6 @@ class TestUserAPI:
     """Integration tests for User API."""
 
     def test_create_user_success(self, client, db_session):
-
         # Arrange
 
         payload = {"name": "Alice", "email": "alice@test.com"}
@@ -357,7 +319,6 @@ class TestUserAPI:
         assert user.email == "alice@test.com"
 
     def test_create_user_duplicate_email(self, client, sample_users):
-
         payload = {"name": "Duplicate", "email": sample_users[0].email}
 
         response = client.post("/api/users", json=payload)
@@ -366,14 +327,12 @@ class TestUserAPI:
 
         assert "already exists" in response.json()["detail"]
 
-```
-
+```text
 ### 4.3 Authentication Testing
 
 ```python
 
 @pytest.fixture
-
 def auth_headers(client):
 
     """Get authentication headers."""
@@ -390,11 +349,13 @@ def auth_headers(client):
 
     return {"Authorization": f"Bearer {token}"}
 
+
 def test_protected_endpoint(client, auth_headers):
 
     response = client.get("/api/admin/users", headers=auth_headers)
 
     assert response.status_code == 200
+
 
 def test_protected_endpoint_without_auth(client):
 
@@ -402,8 +363,7 @@ def test_protected_endpoint_without_auth(client):
 
     assert response.status_code == 401
 
-```
-
+```text
 ---
 
 ## 5. Service Integration
@@ -417,9 +377,7 @@ class TestOrderService:
     """Integration tests for OrderService."""
 
     @pytest.fixture
-
     def order_service(self, db_session):
-
         """Create OrderService with real dependencies."""
 
         user_repo = UserRepository(db_session)
@@ -429,7 +387,6 @@ class TestOrderService:
         return OrderService(user_repo, order_repo)
 
     def test_create_order(self, order_service, sample_users):
-
         user = sample_users[0]
 
         items = [{"product_id": "p1", "quantity": 2}]
@@ -443,13 +400,10 @@ class TestOrderService:
         assert order.status == "pending"
 
     def test_create_order_invalid_user(self, order_service):
-
         with pytest.raises(UserNotFoundError):
-
             order_service.create_order("invalid-id", [])
 
-```
-
+```text
 ### 5.2 External Service Mocking
 
 ```python
@@ -458,14 +412,13 @@ import responses
 
 import httpx
 
-@pytest.fixture
 
+@pytest.fixture
 def mock_payment_service():
 
     """Mock external payment service."""
 
     with responses.RequestsMock() as rsps:
-
         rsps.add(
 
             responses.POST,
@@ -480,6 +433,7 @@ def mock_payment_service():
 
         yield rsps
 
+
 def test_process_payment(order_service, mock_payment_service):
 
     result = order_service.process_payment("order123", 100.00)
@@ -488,14 +442,12 @@ def test_process_payment(order_service, mock_payment_service):
 
     assert result.transaction_id == "tx123"
 
-```
-
+```text
 ### 5.3 Event/Message Testing
 
 ```python
 
 @pytest.fixture
-
 def event_bus():
 
     """Create test event bus."""
@@ -505,6 +457,7 @@ def event_bus():
     yield bus
 
     bus.clear()
+
 
 def test_order_created_event(order_service, event_bus, sample_users):
 
@@ -518,8 +471,7 @@ def test_order_created_event(order_service, event_bus, sample_users):
 
     assert events[0].data["order_id"] == order.id
 
-```
-
+```text
 ---
 
 ## 6. Test Isolation
@@ -529,7 +481,6 @@ def test_order_created_event(order_service, event_bus, sample_users):
 ```python
 
 @pytest.fixture(autouse=True)
-
 def reset_database(db_session):
 
     """Reset database state before each test."""
@@ -544,8 +495,7 @@ def reset_database(db_session):
 
     db_session.commit()
 
-```
-
+```text
 ### 6.2 Test Containers
 
 ```python
@@ -554,44 +504,37 @@ import pytest
 
 from testcontainers.postgres import PostgresContainer
 
-@pytest.fixture(scope="session")
 
+@pytest.fixture(scope="session")
 def postgres():
 
     """Start PostgreSQL container for tests."""
 
     with PostgresContainer("postgres:15") as postgres:
-
         yield postgres
 
-@pytest.fixture
 
+@pytest.fixture
 def db_url(postgres):
 
     """Get database URL from container."""
 
     return postgres.get_connection_url()
 
-```
-
+```text
 ### 6.3 Environment Isolation
 
 ```python
 
 @pytest.fixture
-
 def test_env(monkeypatch):
 
     """Set up test environment variables."""
 
     monkeypatch.setenv("DATABASE_URL", "sqlite:///:memory:")
-
     monkeypatch.setenv("API_KEY", "test-key")
-
     monkeypatch.setenv("DEBUG", "true")
-
-```
-
+```text
 ---
 
 ## 7. CI/CD Integration
@@ -599,164 +542,100 @@ def test_env(monkeypatch):
 ### 7.1 GitHub Actions Example
 
 ```yaml
-
 name: Integration Tests
-
 on: [ push, pull_request ]
-
 jobs:
-
   test:
-
     runs-on: ubuntu-latest
-
     services:
-
       postgres:
-
         image: postgres:15
-
         env:
-
           POSTGRES_PASSWORD: postgres
-
         ports:
-
           - 5432:5432
-
         options: >-
-
           --health-cmd pg_isready
-
           --health-interval 10s
-
           --health-timeout 5s
-
           --health-retries 5
-
     steps:
-
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
-
         with:
-
           python-version: '3.12'
-
       - run: pip install -e ".[dev]"
-
       - name: Run integration tests
-
         run: pytest tests/integration/ -v
-
         env:
-
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test
-
-```
-
+```text
 ### 7.2 Test Markers
 
 ```python
-
 # conftest.py
 
 def pytest_configure(config):
-
     config.addinivalue_line(
-
         "markers", "integration: mark test as integration test"
-
     )
-
     config.addinivalue_line(
 
         "markers", "slow: mark test as slow running"
-
     )
 
 # Run only integration tests
-
 # pytest -m integration
-
 # Skip slow tests
-
 # pytest -m "not slow"
-
-```
-
+```text
 ### 7.3 Test Organization
 
-```
-
+```text
 tests/
 
 ├── unit/                    # Fast, isolated tests
-
 │   ├── test_models.py
-
 │   └── test_services.py
-
 ├── integration/             # Component integration
-
 │   ├── test_api.py
-
 │   ├── test_database.py
-
 │   └── test_services.py
-
 ├── e2e/                     # Full system tests
-
 │   └── test_workflows.py
-
 └── conftest.py              # Shared fixtures
-
-```
-
+```text
 ---
 
 ## Quick Reference
 
 ### Integration Test Checklist
 
-| Check                      | Description              |
+| Check | Description |
 
 |----------------------------|--------------------------|
-
 | ☐ Test database configured | Isolated from production |
-
-| ☐ Data cleanup             | Reset between tests      |
-
-| ☐ Real dependencies        | Where appropriate        |
-
-| ☐ External services mocked | When needed              |
-
-| ☐ CI/CD compatible         | Works in pipeline        |
+| ☐ Data cleanup | Reset between tests |
+| ☐ Real dependencies | Where appropriate |
+| ☐ External services mocked | When needed |
+| ☐ CI/CD compatible | Works in pipeline |
 
 ### Common Fixtures
 
-| Fixture         | Purpose               |
-
+| Fixture | Purpose |
 |-----------------|-----------------------|
-
-| `db_session`    | Database session      |
-
-| `client`        | HTTP test client      |
-
-| `sample_data`   | Pre-populated data    |
-
-| `auth_headers`  | Authentication        |
-
+| `db_session`    | Database session |
+| `client`        | HTTP test client |
+| `sample_data`   | Pre-populated data |
+| `auth_headers`  | Authentication |
 | `mock_external` | External service mock |
 
 ---
 
 ## Related
 
-- `.knowledge/practices/engineering/unit_testing_patterns.md` — Unit testing
-
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
+- `.knowledge/practices/engineering/UNIT_TESTING_PATTERNS.md` — Unit testing
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategy
 
 ---
 

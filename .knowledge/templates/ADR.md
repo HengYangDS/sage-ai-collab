@@ -120,8 +120,7 @@
 ---
 
 *ADR from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Instructions
@@ -151,10 +150,9 @@ Use sequential 4-digit numbers: `ADR-0001`, `ADR-0002`, etc.
 
 ### 4. File Naming
 
-```
+```text
 .context/decisions/ADR_NNNN_SHORT_TITLE.md
-```
-
+```text
 Example: `ADR_0001_FASTMCP_CHOICE.md`
 
 ---
@@ -208,8 +206,7 @@ FastMCP provides the right balance of simplicity and capability.
 
 ### Negative
 - Dependency on FastMCP updates
-```
-
+```text
 ---
 
 ## Related

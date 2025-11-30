@@ -1,10 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
 # SAGE Knowledge Base
 
 > **Production-grade knowledge management for AI-human collaboration**
@@ -207,5 +200,4 @@ MIT License – see LICENSE file for details.
 
 ---
 
-**Version**: 0.1.0
-**Author**: SAGE AI Collab Team
+*AI Collaboration Knowledge Base*

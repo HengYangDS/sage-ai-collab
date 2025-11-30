@@ -143,8 +143,7 @@ Each expert provides:
 
 ### Decision
 [Final recommendation with rationale]
-```
-
+```text
 ---
 
 ## 6. Quick Reference
@@ -160,9 +159,9 @@ Each expert provides:
 
 ## Related
 
-- `.knowledge/templates/expert_committee.md` — Decision templates
-- `.knowledge/frameworks/patterns/decision.md` — Quality angles
-- `.knowledge/guidelines/cognitive.md` — Cognitive guidelines
+- `.knowledge/templates/EXPERT_COMMITTEE.md` — Decision templates
+- `.knowledge/frameworks/patterns/DECISION.md` — Quality angles
+- `.knowledge/guidelines/COGNITIVE.md` — Cognitive guidelines
 
 ---
 

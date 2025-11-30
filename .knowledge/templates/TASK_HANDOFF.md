@@ -87,8 +87,7 @@ needed to continue work without context loss, ensuring efficient handoffs and ma
 
 ```[language]
 [Important code pattern or snippet to understand the approach]
-```
-
+```text
 ### Dependencies
 
 | Dependency | Version   | Notes                          |
@@ -150,8 +149,7 @@ needed to continue work without context loss, ensuring efficient handoffs and ma
 
 # [Description of command]
 [command]
-```
-
+```text
 ---
 
 ## Handoff Checklist
@@ -174,8 +172,7 @@ Before handoff, ensure:
 
 *Task handoff from AI Collaboration Knowledge Base*
 
-```
-
+```text
 ---
 
 ## Instructions
@@ -297,8 +294,7 @@ The Redis mock in tests occasionally fails due to timing. Consider using `freeze
 ---
 
 *Task handoff from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Related

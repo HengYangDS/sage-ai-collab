@@ -17,13 +17,12 @@
 
 ASCII art boxes and diagrams may render with misaligned borders across different environments:
 
-```
+```text
 ┌─────────────────────────────────────────┐
 │ Example with emoji: ✅ Complete         │  ← Misaligned!
 │ Example without emoji: OK              │
 └─────────────────────────────────────────┘
-```
-
+```text
 The right border `│` appears misaligned because emojis and special Unicode characters have unpredictable display widths.
 
 ---
@@ -65,16 +64,14 @@ Replace emojis and special Unicode with ASCII equivalents:
 
 **Before** (problematic):
 
-```
+```text
 │ ├── Junie integration: ✅ Complete                          │
-```
-
+```text
 **After** (consistent):
 
-```
+```text
 │ ├── Junie integration: [OK] Complete                        │
-```
-
+```text
 ---
 
 ## 4. Checklist

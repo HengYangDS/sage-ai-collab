@@ -28,15 +28,14 @@
 
 ### 1.2 Structure
 
-```
+```text
 1. Understand the problem
 2. Identify constraints
 3. Generate options
 4. Evaluate trade-offs
 5. Select approach
 6. Verify solution
-```
-
+```text
 ---
 
 ## 2. Self-Reflection

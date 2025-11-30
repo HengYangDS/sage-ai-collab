@@ -46,8 +46,7 @@ sage serve --dry-run
 
 sage check --all
 
-```
-
+```text
 ### 1.2 Diagnostic Checklist
 
 | Check             | Command                    | Expected Result        |
@@ -90,8 +89,7 @@ import sys
 
 print(sys.path)  # Check if src/ is in path
 
-```
-
+```text
 ### 2.2 Configuration Errors
 
 **Symptom**: `ConfigurationError: Invalid configuration`
@@ -124,8 +122,7 @@ with open("config/app.yaml") as f:
 
         print(f"YAML Error: {e}")
 
-```
-
+```text
 ### 2.3 Timeout Errors
 
 **Symptom**: `TimeoutError: Operation timed out`
@@ -200,8 +197,7 @@ SAGE_LOG_LEVEL = DEBUG
 
 default_level: DEBUG
 
-```
-
+```text
 ### 3.2 Interactive Debugging
 
 ```python
@@ -222,8 +218,7 @@ embed()
 
 breakpoint()
 
-```
-
+```text
 ### 3.3 Trace Execution
 
 ```python
@@ -242,8 +237,7 @@ def trace_calls(frame, event, arg):
 
 sys.settrace(trace_calls)
 
-```
-
+```text
 ### 3.4 Memory Profiling
 
 ```python
@@ -260,8 +254,7 @@ def memory_intensive_function():
 
     pass
 
-```
-
+```text
 ---
 
 ## 4. Log Analysis
@@ -284,16 +277,14 @@ def memory_intensive_function():
 
 **Error Pattern**:
 
-```
-
+```text
 [ERROR] 2025-01-15 10:30:45 | module.name | Error message
 
         Traceback: ...
 
         Context: {"key": "value"}
 
-```
-
+```text
 **Parsing Logs**:
 
 ```bash
@@ -314,8 +305,7 @@ tail -100 .logs/error.log
 
 tail -f .logs/sage.log
 
-```
-
+```text
 ### 4.3 Structured Log Query
 
 ```python
@@ -340,8 +330,7 @@ def parse_structured_log(log_file):
 
                 continue
 
-```
-
+```text
 ---
 
 ## 5. Performance Issues
@@ -362,8 +351,7 @@ elapsed = time.perf_counter() - start
 
 print(f"Elapsed: {elapsed:.3f}s")
 
-```
-
+```text
 **Common Causes**:
 
 | Cause          | Solution                 |
@@ -398,8 +386,7 @@ for stat in top_stats[:10]:
 
     print(stat)
 
-```
-
+```text
 **Solutions**:
 
 - Use generators instead of lists
@@ -434,8 +421,7 @@ stats.sort_stats('cumulative')
 
 stats.print_stats(10)
 
-```
-
+```text
 ---
 
 ## 6. Configuration Problems
@@ -458,8 +444,7 @@ except Exception as e:
 
     print(f"Configuration error: {e}")
 
-```
-
+```text
 ### 6.2 Common Config Issues
 
 | Issue        | Symptom           | Solution           |
@@ -490,8 +475,7 @@ SAGE_CONFIG_PATH=/custom/path
 
 SAGE_TIMEOUT_DEFAULT=5000
 
-```
-
+```text
 ---
 
 ## 7. MCP Server Issues
@@ -522,8 +506,7 @@ app = create_app()
 
 print(f"Registered tools: {list(app.tools.keys())}")
 
-```
-
+```text
 ### 7.3 Request/Response Issues
 
 **Enable request logging**:
@@ -540,8 +523,7 @@ logging:
 
   level: DEBUG
 
-```
-
+```text
 ---
 
 ## 8. Recovery Procedures
@@ -562,8 +544,7 @@ sage config reset
 
 cp config/app.yaml.backup config/app.yaml
 
-```
-
+```text
 ### 8.2 Database/Cache Corruption
 
 ```bash
@@ -580,8 +561,7 @@ sage rebuild --indices
 
 sage check --integrity
 
-```
-
+```text
 ### 8.3 Failed Migration Recovery
 
 ```bash
@@ -598,8 +578,7 @@ sage backup restore --name pre_migration_backup
 
 sage check --all
 
-```
-
+```text
 ### 8.4 Emergency Procedures
 
 | Scenario            | Procedure                               |
@@ -646,19 +625,18 @@ export SAGE_TRACE=1
 
 export SAGE_PROFILE=1
 
-```
-
+```text
 ---
 
 ## Related
 
-- `.knowledge/practices/engineering/logging.md` — Logging best practices
+- `.knowledge/practices/engineering/LOGGING.md` — Logging best practices
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
 
-- `.context/policies/timeout_hierarchy.md` — Timeout configuration
+- `.context/policies/TIMEOUT_HIERARCHY.md` — Timeout configuration
 
-- `docs/guides/configuration.md` — Configuration guide
+- `docs/guides/CONFIGURATION.md` — Configuration guide
 
 ---
 

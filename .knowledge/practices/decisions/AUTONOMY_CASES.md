@@ -111,8 +111,8 @@
 
 ## Related
 
-- `.knowledge/frameworks/autonomy/levels.md` — Full autonomy framework
-- `.knowledge/guidelines/ai_collaboration.md` — Collaboration patterns
+- `.knowledge/frameworks/autonomy/LEVELS.md` — Full autonomy framework
+- `.knowledge/guidelines/AI_COLLABORATION.md` — Collaboration patterns
 
 ---
 

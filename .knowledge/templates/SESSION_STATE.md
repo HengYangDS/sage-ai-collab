@@ -110,8 +110,7 @@ interruptions, provides context for session recovery, and helps maintain focus d
 
 ```[language]
 [Any important code snippets or commands]
-```
-
+```text
 ---
 
 ## Session Metadata
@@ -125,8 +124,7 @@ interruptions, provides context for session recovery, and helps maintain focus d
 
 *Session state from AI Collaboration Knowledge Base*
 
-```
-
+```text
 ---
 
 ## Instructions
@@ -247,8 +245,7 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 ---
 
 *Session state from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Related

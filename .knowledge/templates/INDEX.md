@@ -105,8 +105,7 @@
 
 [Use template prompts]
 ...
-```
-
+```text
 ---
 
 ## 3. Project Setup Template
@@ -232,8 +231,7 @@ All templates follow this structure:
 
 ---
 *Template from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## 8. Creating New Templates

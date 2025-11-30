@@ -213,8 +213,7 @@
 ---
 
 *Postmortem from AI Collaboration Knowledge Base*
-```
-
+```text
 ---
 
 ## Instructions

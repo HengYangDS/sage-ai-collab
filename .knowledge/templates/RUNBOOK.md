@@ -50,8 +50,7 @@ curl -s https://service.example.com/health | jq
 
 # Expected response
 {"status": "healthy", "version": "x.y.z"}
-```
-
+```text
 ### Key Metrics
 
 | Metric              | Normal Range | Alert Threshold |
@@ -147,8 +146,7 @@ curl -s https://service.example.com/health | jq
 
 # Check for bottlenecks
 [diagnostic command]
-```
-
+```text
 **Resolution**:
 
 1. [Step 1]
@@ -172,8 +170,7 @@ curl -s https://service.example.com/health | jq
 
 ```bash
 [diagnostic command]
-```
-
+```text
 **Resolution**:
 
 1. [Step 1]
@@ -229,8 +226,7 @@ curl -s https://service.example.com/health | jq
 
 *Runbook from AI Collaboration Knowledge Base*
 
-```
-
+```text
 ---
 
 ## Instructions

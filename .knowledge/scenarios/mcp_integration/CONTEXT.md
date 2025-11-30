@@ -38,8 +38,7 @@ focus: [ protocol, tools, resources, prompts, transport ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -48,9 +47,9 @@ autonomy_default: L3
 
 |---------------|-------------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `docs/api/mcp_quick_ref.md` · `.knowledge/practices/engineering/api_design.md`                  |
+| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/MCP_QUICK_REF.md` · `.knowledge/practices/engineering/API_DESIGN.md`                  |
 
-| **On-Demand** | `docs/api/mcp.md` · `.knowledge/frameworks/resilience/timeout_patterns.md` · `.knowledge/practices/engineering/error_handling.md` |
+| **On-Demand** | `docs/api/MCP.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
 
 ---
 
@@ -66,7 +65,7 @@ autonomy_default: L3
 
 | `tests/integration/` | MCP integration tests     |
 
-| `docs/api/mcp.md`    | MCP API documentation     |
+| `docs/api/MCP.md`    | MCP API documentation     |
 
 ---
 
@@ -74,32 +73,14 @@ autonomy_default: L3
 
 ### 4.1 Protocol Overview
 
-```
-
-┌─────────────────┐     MCP Protocol      ┌─────────────────┐
-
-│   AI Client     │ ◄──────────────────► │   MCP Server    │
-
-│  (Claude, etc.) │                       │   (SAGE)        │
-
-└─────────────────┘                       └─────────────────┘
-
-        │                                         │
-
-        │  Request: tools/call                    │
-
-        │  ─────────────────────►                 │
-
-        │                                         │
-
-        │  Response: tool result                  │
-
-        │  ◄─────────────────────                 │
-
-        │                                         │
-
-```
-
+```mermaid
+sequenceDiagram
+    participant C as AI Client<br/>(Claude, etc.)
+    participant S as MCP Server<br/>(SAGE)
+    
+    C->>S: Request: tools/call
+    S-->>C: Response: tool result
+```text
 ### 4.2 Core Components
 
 | Component     | Purpose             | Implementation              |
@@ -194,8 +175,7 @@ async def sage_search(query: str, limit: int = 10) -> str:
 
     return format_results(results)
 
-```
-
+```text
 ### 5.2 Resource Definition
 
 ```python
@@ -206,7 +186,7 @@ async def get_principles() -> str:
 
     """Core principles of SAGE knowledge base."""
 
-    return await load_file(".knowledge/core/principles.md")
+    return await load_file(".knowledge/core/PRINCIPLES.md")
 
 @mcp.resource("sage://layer/{layer}")
 
@@ -216,8 +196,7 @@ async def get_layer(layer: str) -> str:
 
     return await load_layer(layer)
 
-```
-
+```text
 ### 5.3 Prompt Templates
 
 ```python
@@ -250,8 +229,7 @@ Code to review:
 
 {code}
 
-```
-
+```text
 Provide feedback on:
 
 1. Adherence to guidelines
@@ -262,8 +240,7 @@ Provide feedback on:
 
    """
 
-```
-
+```text
 ### 5.4 Error Handling
 
 ```python
@@ -320,8 +297,7 @@ async def sage_get(layer: str) -> str:
 
         )
 
-```
-
+```text
 ### 5.5 Timeout Integration
 
 ```python
@@ -352,8 +328,7 @@ async def sage_search(query: str) -> str:
 
         return "Search timed out. Try a more specific query."
 
-```
-
+```text
 ---
 
 ## 6. Common Tasks
@@ -418,10 +393,9 @@ async def test_my_new_tool():
 
 # 3. Update documentation
 
-# Edit docs/api/mcp.md
+# Edit docs/api/MCP.md
 
-```
-
+```text
 ### 6.2 Testing MCP Server
 
 ```python
@@ -452,8 +426,7 @@ async def test_mcp_server():
 
         assert "principles" in resource.lower()
 
-```
-
+```text
 ---
 
 ## 7. Autonomy Calibration
@@ -550,8 +523,7 @@ mcp:
 
     burst: 10
 
-```
-
+```text
 ### Client Configuration
 
 ```json
@@ -582,8 +554,7 @@ mcp:
 
 }
 
-```
-
+```text
 ---
 
 ## Troubleshooting
@@ -606,13 +577,13 @@ mcp:
 
 ## Related
 
-- `docs/api/mcp.md` — MCP API documentation
+- `docs/api/MCP.md` — MCP API documentation
 
-- `.knowledge/practices/engineering/api_design.md` — API design patterns
+- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
 
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout handling
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
 
 ---
 

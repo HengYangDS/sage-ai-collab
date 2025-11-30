@@ -39,21 +39,16 @@ This framework provides security guidelines and patterns for:
 
 ### 3.1 Defense in Depth
 
-```
-┌─────────────────────────────────────────────────┐
-│                 Application Layer               │
-│  ┌───────────────────────────────────────────┐  │
-│  │              Service Layer                │  │
-│  │  ┌─────────────────────────────────────┐  │  │
-│  │  │           Data Layer                │  │  │
-│  │  │  ┌───────────────────────────────┐  │  │  │
-│  │  │  │     Sensitive Data            │  │  │  │
-│  │  │  └───────────────────────────────┘  │  │  │
-│  │  └─────────────────────────────────────┘  │  │
-│  └───────────────────────────────────────────┘  │
-└─────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart TB
+    subgraph App["Application Layer"]
+        subgraph Svc["Service Layer"]
+            subgraph Data["Data Layer"]
+                SD["Sensitive Data"]
+            end
+        end
+    end
+```text
 ### 3.2 Core Principles
 
 | Principle                | Description                         |

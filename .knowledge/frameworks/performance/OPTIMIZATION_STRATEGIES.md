@@ -19,26 +19,14 @@
 
 ### Optimization Process
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                 Optimization Workflow                       │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  ┌──────────┐     ┌──────────┐     ┌──────────┐            │
-│  │ Measure  │────▶│ Identify │────▶│ Optimize │            │
-│  │ Baseline │     │ Hotspots │     │ Targeted │            │
-│  └──────────┘     └──────────┘     └──────────┘            │
-│       │                                   │                 │
-│       │                                   │                 │
-│       │           ┌──────────┐            │                 │
-│       └──────────▶│ Validate │◀───────────┘                 │
-│                   │ Results  │                              │
-│                   └──────────┘                              │
-│                                                             │
-│  Rule: Measure → Analyze → Optimize → Verify → Repeat      │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+```mermaid
+flowchart LR
+    M["Measure Baseline"] --> I["Identify Hotspots"]
+    I --> O["Optimize Targeted"]
+    M --> V["Validate Results"]
+    O --> V
+```text
+> **Rule**: Measure → Analyze → Optimize → Verify → Repeat
 
 ### Optimization Priorities
 
@@ -84,8 +72,7 @@ def find_duplicates_fast(items: list) -> list:
             duplicates.append(item)
         seen.add(item)
     return duplicates
-```
-
+```text
 ### Data Structure Selection
 
 | Need             | Best Choice       | Why                 |
@@ -114,8 +101,7 @@ priority, item = heapq.heappop(heap)
 items_set = set(items)  # O(n) once
 if item in items_set:   # O(1) per lookup
     ...
-```
-
+```text
 ### Loop Optimization
 
 ```python
@@ -145,8 +131,7 @@ for i in range(len(items)):  # len() called each time
 n = len(items)
 for i in range(n):
     ...
-```
-
+```text
 ### Generator Patterns
 
 ```python
@@ -172,8 +157,7 @@ def batch_iterator(items, batch_size=100):
             batch = []
     if batch:
         yield batch
-```
-
+```text
 ---
 
 ## 3. Database Optimization
@@ -196,8 +180,7 @@ SELECT u.*, o.*
 FROM users u
 LEFT JOIN orders o ON u.id = o.user_id
 WHERE u.status = 'active';
-```
-
+```text
 ### Index Strategies
 
 | Index Type    | Use Case               | Example                   |
@@ -222,8 +205,7 @@ WHERE status = 'active';
 CREATE INDEX idx_user_orders_covering
 ON orders (user_id)
 INCLUDE (total, status, created_at);
-```
-
+```text
 ### Connection Pooling
 
 ```python
@@ -240,8 +222,7 @@ engine = create_engine(
     pool_recycle=1800,     # Recycle connections after 30 min
     pool_pre_ping=True,    # Verify connections before use
 )
-```
-
+```text
 ### Batch Operations
 
 ```python
@@ -264,8 +245,7 @@ writer = csv.writer(buffer)
 writer.writerows(items)
 buffer.seek(0)
 cursor.copy_from(buffer, 'items', sep=',')
-```
-
+```text
 ---
 
 ## 4. Network Optimization
@@ -287,8 +267,7 @@ from fastapi.middleware.gzip import GZipMiddleware
 
 app = FastAPI()
 app.add_middleware(GZipMiddleware, minimum_size=1000)
-```
-
+```text
 ### Connection Management
 
 ```python
@@ -317,8 +296,7 @@ limits = httpx.Limits(
 )
 async with httpx.AsyncClient(limits=limits) as client:
     ...
-```
-
+```text
 ### Response Optimization
 
 ```python
@@ -354,8 +332,7 @@ async def get_user(user_id: str, fields: str = None):
         user = {k: v for k, v in user.items() if k in requested}
     
     return user
-```
-
+```text
 ---
 
 ## 5. System Optimization
@@ -395,8 +372,7 @@ async def hybrid_processing(items):
     ])
     
     return io_results
-```
-
+```text
 ### Memory Optimization
 
 ```python
@@ -422,8 +398,7 @@ python_list = [0.0] * 1_000_000  # ~8MB
 
 # Good: NumPy array
 numpy_array = np.zeros(1_000_000)  # ~8MB but faster operations
-```
-
+```text
 ### Resource Pooling
 
 ```python
@@ -452,8 +427,7 @@ class ResourcePool:
             yield resource
         finally:
             await self.pool.put(resource)
-```
-
+```text
 ---
 
 ## 6. Scaling Strategies
@@ -470,29 +444,13 @@ class ResourcePool:
 
 ### Load Balancing
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    Load Balancing                           │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│                    ┌──────────────┐                         │
-│                    │    Client    │                         │
-│                    └──────┬───────┘                         │
-│                           │                                 │
-│                           ▼                                 │
-│                    ┌──────────────┐                         │
-│                    │ Load Balancer│                         │
-│                    └──────┬───────┘                         │
-│              ┌────────────┼────────────┐                    │
-│              │            │            │                    │
-│              ▼            ▼            ▼                    │
-│        ┌─────────┐  ┌─────────┐  ┌─────────┐              │
-│        │ Server1 │  │ Server2 │  │ Server3 │              │
-│        └─────────┘  └─────────┘  └─────────┘              │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
+```mermaid
+flowchart TB
+    C["Client"] --> LB["Load Balancer"]
+    LB --> S1["Server1"]
+    LB --> S2["Server2"]
+    LB --> S3["Server3"]
+```text
 ### Load Balancing Algorithms
 
 | Algorithm             | Use Case         | Pros            | Cons                |
@@ -529,8 +487,7 @@ class DatabaseRouter:
     async def execute_write(self, query):
         conn = self.get_write_connection()
         return await conn.execute(query)
-```
-
+```text
 ---
 
 ## Quick Reference
@@ -563,9 +520,9 @@ class DatabaseRouter:
 
 ## Related
 
-- `.knowledge/frameworks/performance/caching_patterns.md` — Caching strategies
-- `.knowledge/frameworks/performance/profiling_guide.md` — Performance measurement
-- `.knowledge/practices/engineering/batch_optimization.md` — Batch processing
+- `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
+- `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Performance measurement
+- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
 
 ---
 

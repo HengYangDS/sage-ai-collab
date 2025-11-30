@@ -82,13 +82,12 @@ interactions. These patterns are applicable across projects and AI tools.
 
 **Example**:
 
-```
+```text
 I understand you wish to update the configuration files. A few points to confirm:
 1. Does this include configuration in all subdirectories? (Default: Yes)
 2. Should the original files be backed up? (Default: No)
 Please confirm or adjust.
-```
-
+```text
 **Benefits**: Reduces misunderstandings, establishes shared expectations
 
 ---

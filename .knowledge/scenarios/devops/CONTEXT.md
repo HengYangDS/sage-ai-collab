@@ -40,8 +40,7 @@ focus: [ ci/cd, infrastructure, monitoring, security ]
 
 autonomy_default: L2
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -50,9 +49,9 @@ autonomy_default: L2
 
 |---------------|-------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `.knowledge/practices/engineering/error_handling.md` · `.knowledge/templates/runbook.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` · `.knowledge/templates/RUNBOOK.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/frameworks/resilience/timeout_patterns.md`          |
+| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md`          |
 
 ---
 
@@ -196,8 +195,7 @@ jobs:
 
           echo "Deploying version ${{ github.sha }}"
 
-```
-
+```text
 ### 4.2 GitLab CI Pipeline
 
 ```yaml
@@ -280,8 +278,7 @@ deploy:
 
   when: manual
 
-```
-
+```text
 ### 4.3 Multi-Stage Dockerfile
 
 ```dockerfile
@@ -328,8 +325,7 @@ EXPOSE 8000
 
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0"]
 
-```
-
+```text
 ---
 
 ## 5. Infrastructure as Code
@@ -398,8 +394,7 @@ output "instance_id" {
 
 }
 
-```
-
+```text
 ### 5.2 Kubernetes Deployment
 
 ```yaml
@@ -520,8 +515,7 @@ spec:
 
   type: ClusterIP
 
-```
-
+```text
 ---
 
 ## 6. Monitoring & Alerting
@@ -606,8 +600,7 @@ groups:
 
           description: "p99 latency is {{ $value }}s"
 
-```
-
+```text
 ---
 
 ## 7. Common Tasks
@@ -690,13 +683,13 @@ groups:
 
 ## Related
 
-- `.knowledge/templates/runbook.md` — Operational runbook template
+- `.knowledge/templates/RUNBOOK.md` — Operational runbook template
 
-- `.knowledge/templates/postmortem.md` — Incident postmortem template
+- `.knowledge/templates/POSTMORTEM.md` — Incident postmortem template
 
-- `.knowledge/practices/engineering/error_handling.md` — Error handling
+- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
 
-- `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
+- `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Resilience patterns
 
 ---
 

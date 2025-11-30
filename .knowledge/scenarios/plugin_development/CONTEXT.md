@@ -38,8 +38,7 @@ focus: [ extensibility, hooks, lifecycle, configuration ]
 
 autonomy_default: L3
 
-```
-
+```text
 ---
 
 ## 2. Relevant Knowledge
@@ -48,9 +47,9 @@ autonomy_default: L3
 
 |---------------|----------------------------------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/principles.md` · `docs/api/plugin_quick_ref.md` · `.knowledge/practices/engineering/patterns.md`                                      |
+| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/PLUGIN_QUICK_REF.md` · `.knowledge/practices/engineering/PATTERNS.md`                                      |
 
-| **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.context/decisions/ADR_0008_PLUGIN_SYSTEM.md` · `docs/design/05-plugin-memory.md` |
+| **On-Demand** | `.knowledge/practices/engineering/TESTING_STRATEGY.md` · `.context/decisions/ADR_0008_PLUGIN_SYSTEM.md` · `docs/design/05-plugin-memory.md` |
 
 ---
 
@@ -68,7 +67,7 @@ autonomy_default: L3
 
 | `tests/unit/plugins/`       | Plugin unit tests        |
 
-| `docs/guides/advanced.md`   | Plugin development guide |
+| `docs/guides/ADVANCED.md`   | Plugin development guide |
 
 ---
 
@@ -76,38 +75,28 @@ autonomy_default: L3
 
 ### 4.1 Plugin System Overview
 
-```
-
-┌─────────────────────────────────────────────────────────────┐
-
-│                    SAGE Core                                │
-
-├─────────────────────────────────────────────────────────────┤
-
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────┐         │
-
-│  │ Plugin      │  │ Hook        │  │ Plugin      │         │
-
-│  │ Manager     │  │ Registry    │  │ Config      │         │
-
-│  └─────────────┘  └─────────────┘  └─────────────┘         │
-
-├─────────────────────────────────────────────────────────────┤
-
-│                    Plugin Interface                         │
-
-├──────────┬──────────┬──────────┬──────────┬────────────────┤
-
-│ Plugin A │ Plugin B │ Plugin C │ Plugin D │ ... (Bundled)  │
-
-├──────────┴──────────┴──────────┴──────────┴────────────────┤
-
-│                    External Plugins                         │
-
-└─────────────────────────────────────────────────────────────┘
-
-```
-
+```mermaid
+flowchart TB
+    subgraph Core["SAGE Core"]
+        PM["Plugin Manager"]
+        HR["Hook Registry"]
+        PC["Plugin Config"]
+    end
+    
+    subgraph Interface["Plugin Interface"]
+        subgraph Bundled["Bundled Plugins"]
+            A["Plugin A"]
+            B["Plugin B"]
+            C["Plugin C"]
+            D["Plugin D"]
+        end
+    end
+    
+    EP["External Plugins"]
+    
+    Core --> Interface
+    Interface --> EP
+```text
 ### 4.2 Core Components
 
 | Component         | Purpose                     | Location                           |
@@ -124,24 +113,12 @@ autonomy_default: L3
 
 ### 4.3 Plugin Lifecycle
 
-```
-
-┌──────────┐    ┌──────────┐    ┌──────────┐    ┌──────────┐
-
-│ Discover │ → │ Validate │ → │ Register │ → │  Enable  │
-
-└──────────┘    └──────────┘    └──────────┘    └──────────┘
-
-                                                     │
-
-┌──────────┐    ┌──────────┐    ┌──────────┐         │
-
-│  Unload  │ ← │ Disable  │ ← │  Active  │ ← ───────┘
-
-└──────────┘    └──────────┘    └──────────┘
-
-```
-
+```mermaid
+flowchart LR
+    D["Discover"] --> V["Validate"] --> R["Register"] --> E["Enable"]
+    E --> A["Active"]
+    A --> Di["Disable"] --> U["Unload"]
+```text
 | Phase        | Description            | Hook          |
 
 |--------------|------------------------|---------------|
@@ -222,8 +199,7 @@ class MyPlugin(PluginBase):
 
         self.logger.info(f"{self.name} disabled")
 
-```
-
+```text
 ### 5.2 Hook Implementation
 
 ```python
@@ -320,8 +296,7 @@ class ContentPlugin(PluginBase):
 
         return sorted(results, key=lambda r: r.relevance, reverse=True)
 
-```
-
+```text
 ### 5.3 Available Hook Points
 
 | Hook               | Trigger             | Parameters                        | Returns |
@@ -394,8 +369,7 @@ plugins:
 
     - ./plugins/
 
-```
-
+```text
 ### 5.5 Plugin with Configuration
 
 ```python
@@ -442,8 +416,7 @@ class MyPlugin(PluginBase):
 
         return content
 
-```
-
+```text
 ### 5.6 Testing Plugins
 
 ```python
@@ -508,8 +481,7 @@ class TestMyPlugin:
 
         assert plugin_manager.is_enabled("my-plugin")
 
-```
-
+```text
 ---
 
 ## 6. Common Tasks
@@ -554,8 +526,7 @@ touch tests/unit/plugins/test_my_plugin.py
 
 pytest tests/unit/plugins/test_my_plugin.py -v
 
-```
-
+```text
 ### 6.2 Debugging Plugins
 
 ```python
@@ -578,8 +549,7 @@ class MyPlugin(PluginBase):
 
         # ... implementation
 
-```
-
+```text
 ---
 
 ## 7. Autonomy Calibration
@@ -674,9 +644,9 @@ class MyPlugin(PluginBase):
 
 - `.context/decisions/ADR_0008_PLUGIN_SYSTEM.md` — Architecture decision
 
-- `.knowledge/practices/engineering/patterns.md` — Design patterns
+- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
 
-- `.knowledge/practices/engineering/testing_strategy.md` — Testing guide
+- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing guide
 
 ---
 

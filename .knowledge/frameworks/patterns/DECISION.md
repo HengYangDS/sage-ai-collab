@@ -118,8 +118,7 @@ For major decisions, check core + extended + domain angles.
 ### Recommendations
 
 [Actions to improve quality]
-```
-
+```text
 ---
 
 ## 6. Coverage Matrix
@@ -137,10 +136,10 @@ For major decisions, check core + extended + domain angles.
 
 ## Related
 
-- `.knowledge/frameworks/cognitive/expert_committee.md` — Expert committee pattern
-- `.knowledge/templates/expert_committee.md` — Decision templates
-- `.knowledge/guidelines/quality.md` — Quality assurance guidelines
-- `.knowledge/practices/decisions/autonomy_cases.md` — Autonomy decision cases
+- `.knowledge/frameworks/cognitive/EXPERT_COMMITTEE.md` — Expert committee pattern
+- `.knowledge/templates/EXPERT_COMMITTEE.md` — Decision templates
+- `.knowledge/guidelines/QUALITY.md` — Quality assurance guidelines
+- `.knowledge/practices/decisions/AUTONOMY_CASES.md` — Autonomy decision cases
 
 ---
 
