@@ -237,6 +237,14 @@ Is this an intermediate/generated file?
 
 **Rationale**: Uppercase naming provides clear visual distinction for documentation files.
 
+### 6.1 Naming Exceptions
+
+| Directory | Convention      | Example           | Rationale                                    |
+|-----------|-----------------|-------------------|----------------------------------------------|
+| `.junie/` | `lowercase.md`  | `guidelines.md`   | AI client config directory follows tool convention |
+
+**Note**: The `.junie/` directory is the JetBrains Junie AI client configuration directory. Its root `guidelines.md` file must use lowercase naming to comply with the Junie tool's expected file structure.
+
 ---
 
 ## Related

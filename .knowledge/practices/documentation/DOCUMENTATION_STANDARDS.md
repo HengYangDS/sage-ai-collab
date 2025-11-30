@@ -228,6 +228,14 @@ print(greet("World"))  # Output: Hello, World
 
 **Rationale**: Uppercase naming provides clear visual distinction for documentation files and ensures consistent cross-platform compatibility.
 
+#### 4.3.1 Naming Exceptions
+
+| Directory | Convention      | Example           | Rationale                                    |
+|-----------|-----------------|-------------------|----------------------------------------------|
+| `.junie/` | `lowercase.md`  | `guidelines.md`   | AI client config directory follows tool convention |
+
+**Note**: The `.junie/` directory is the JetBrains Junie AI client configuration directory. Its root `guidelines.md` file must use lowercase naming to comply with the Junie tool's expected file structure.
+
 ---
 
 ## 5. Organization
