@@ -45,31 +45,35 @@
 
 ### 1.4 Engineering
 
-| File                                     | Purpose                      |
-|------------------------------------------|------------------------------|
-| `engineering/API_DESIGN.md`              | API design patterns          |
-| `engineering/BATCH_OPTIMIZATION.md`      | Batch processing             |
-| `engineering/CI_CD.md`                   | CI/CD configuration          |
-| `engineering/CODE_REVIEW.md`             | Code review practices        |
-| `engineering/COMMON_PITFALLS.md`         | Common mistakes to avoid     |
-| `engineering/CONCURRENCY.md`             | Concurrency patterns         |
-| `engineering/DATABASE.md`                | Database best practices      |
-| `engineering/DEPENDENCY_MANAGEMENT.md`   | Dependency version control   |
-| `engineering/ERROR_HANDLING.md`          | Error handling patterns      |
-| `engineering/FEATURE_FLAGS.md`           | Feature flag patterns        |
-| `engineering/GIT_WORKFLOW.md`            | Git branching and commits    |
-| `engineering/INCREMENTAL_IMPROVEMENT.md` | Incremental changes          |
-| `engineering/INTEGRATION_TESTING.md`     | Integration testing          |
-| `engineering/KNOWLEDGE_GRAPH.md`         | Knowledge graph patterns     |
-| `engineering/LOGGING.md`                 | Logging practices            |
-| `engineering/MONITORING.md`              | Monitoring and observability |
-| `engineering/PATTERNS.md`                | Engineering patterns         |
-| `engineering/PERFORMANCE.md`             | Performance optimization     |
-| `engineering/SECURITY.md`                | Security best practices      |
-| `engineering/TESTING_STRATEGY.md`        | Testing strategies           |
-| `engineering/TROUBLESHOOTING.md`         | Troubleshooting guides       |
-| `engineering/UNIT_TESTING_PATTERNS.md`   | Unit testing patterns        |
-| `engineering/YAML_CONVENTIONS.md`        | YAML configuration standards |
+| File                                     | Purpose                        |
+|------------------------------------------|--------------------------------|
+| `engineering/API_DESIGN.md`              | API design patterns            |
+| `engineering/BATCH_OPTIMIZATION.md`      | Batch processing               |
+| `engineering/CI_CD.md`                   | CI/CD configuration            |
+| `engineering/CODE_REVIEW.md`             | Code review practices          |
+| `engineering/COMMON_PITFALLS.md`         | Common mistakes to avoid       |
+| `engineering/CONCURRENCY.md`             | Concurrency patterns           |
+| `engineering/DATABASE.md`                | Database best practices        |
+| `engineering/DEPENDENCY_MANAGEMENT.md`   | Dependency version control     |
+| `engineering/ERROR_HANDLING.md`          | Error handling patterns        |
+| `engineering/FEATURE_FLAGS.md`           | Feature flag patterns          |
+| `engineering/GIT_WORKFLOW.md`            | Git branching and commits      |
+| `engineering/INCREMENTAL_IMPROVEMENT.md` | Incremental changes            |
+| `engineering/INTEGRATION_TESTING.md`     | Integration testing            |
+| `engineering/KNOWLEDGE_GRAPH.md`         | Knowledge graph patterns       |
+| `engineering/LOGGING.md`                 | Logging practices              |
+| `engineering/MONITORING.md`              | Monitoring and observability   |
+| `engineering/PATTERNS.md`                | Engineering patterns           |
+| `engineering/PERFORMANCE.md`             | Performance optimization       |
+| `engineering/PROFILING_GUIDE.md`         | Performance profiling guide    |
+| `engineering/PYTHON_PATTERNS.md`         | Python implementation patterns |
+| `engineering/SECRETS_IMPLEMENTATION.md`  | Secrets management code        |
+| `engineering/SECURITY.md`                | Security best practices        |
+| `engineering/SECURITY_PATTERNS.md`       | Security implementation code   |
+| `engineering/TESTING_STRATEGY.md`        | Testing strategies             |
+| `engineering/TROUBLESHOOTING.md`         | Troubleshooting guides         |
+| `engineering/UNIT_TESTING_PATTERNS.md`   | Unit testing patterns          |
+| `engineering/YAML_CONVENTIONS.md`        | YAML configuration standards   |
 
 ---
 

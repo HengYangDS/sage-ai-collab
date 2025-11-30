@@ -25,11 +25,19 @@ This framework provides performance optimization guidelines for:
 
 ## 2. Contents
 
+### Framework Documents (Concepts)
+
 | Document                                                                                  | Purpose                 | When to Use               |
 |-------------------------------------------------------------------------------------------|-------------------------|---------------------------|
-| [Caching Patterns](.knowledge/frameworks/performance/caching_patterns.md)                 | Data caching strategies | Reducing latency, load    |
-| [Optimization Strategies](.knowledge/frameworks/performance/optimization_strategies.md)   | Performance improvement | Scaling, efficiency       |
-| [Profiling Guide](.knowledge/frameworks/performance/profiling_guide.md)                   | Performance analysis    | Bottleneck identification |
+| [Caching Patterns](CACHING_PATTERNS.md)                                                   | Data caching strategies | Reducing latency, load    |
+| [Optimization Strategies](OPTIMIZATION_STRATEGIES.md)                                     | Performance improvement | Scaling, efficiency       |
+| [Profiling Framework](PROFILING_FRAMEWORK.md)                                             | Performance concepts    | Understanding approach    |
+
+### Practice Documents (Implementation)
+
+| Document                                                                                  | Purpose                 | When to Use               |
+|-------------------------------------------------------------------------------------------|-------------------------|---------------------------|
+| [Profiling Guide](../../practices/engineering/PROFILING_GUIDE.md)                         | Detailed profiling how-to | Bottleneck identification |
 
 ---
 
