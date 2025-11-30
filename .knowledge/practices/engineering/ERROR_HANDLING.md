@@ -34,16 +34,13 @@ class AppError(Exception):
     """Base application error."""
     pass
 
-
 class ValidationError(AppError):
     """Input validation failed."""
     pass
 
-
 class NotFoundError(AppError):
     """Resource not found."""
     pass
-
 
 class AuthorizationError(AppError):
     """Access denied."""
@@ -90,7 +87,6 @@ class ValidationError(AppError):
         super().__init__(message)
         self.field = field
         self.message = message
-
 
 raise ValidationError("Invalid email", field="email")
 ```

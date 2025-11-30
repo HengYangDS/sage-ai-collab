@@ -139,7 +139,6 @@ def mask_email(email: str) -> str:
     local, domain = email.split("@")
     return f"{local[0]}***@{domain}"
 
-
 def mask_token(token: str) -> str:
     return f"***{token[-4:]}"
 ```

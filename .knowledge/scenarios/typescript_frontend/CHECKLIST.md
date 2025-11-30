@@ -1,18 +1,10 @@
 # TypeScript Frontend Checklist
 
-
-
 > Task checklist for TypeScript frontend development
-
-
 
 ---
 
-
-
 ## Project Setup
-
-
 
 - [ ] Node.js version specified
 
@@ -26,11 +18,7 @@
 
 - [ ] CI/CD configured
 
-
-
 ## Code Quality
-
-
 
 - [ ] Strict TypeScript (no `any`)
 
@@ -44,11 +32,7 @@
 
 - [ ] E2E tests for critical paths
 
-
-
 ## Component Development
-
-
 
 - [ ] Component structure organized
 
@@ -62,11 +46,7 @@
 
 - [ ] Accessibility (a11y) checked
 
-
-
 ## Styling
-
-
 
 - [ ] CSS methodology consistent
 
@@ -78,11 +58,7 @@
 
 - [ ] No inline styles in logic
 
-
-
 ## Performance
-
-
 
 - [ ] Bundle size optimized
 
@@ -96,11 +72,7 @@
 
 - [ ] Core Web Vitals passing
 
-
-
 ## Security
-
-
 
 - [ ] No sensitive data in client
 
@@ -112,11 +84,7 @@
 
 - [ ] Dependencies audited
 
-
-
 ## API Integration
-
-
 
 - [ ] API client typed
 
@@ -128,11 +96,7 @@
 
 - [ ] Retry logic implemented
 
-
-
 ## Deployment
-
-
 
 - [ ] Environment variables configured
 
@@ -144,15 +108,9 @@
 
 - [ ] Analytics integrated
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/typescript_frontend/context.md` — TypeScript frontend context
 
@@ -160,17 +118,11 @@
 
 - `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - TypeScript Frontend Checklist*
 
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

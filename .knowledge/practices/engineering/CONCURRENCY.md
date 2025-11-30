@@ -220,4 +220,4 @@ async def safe_gather(tasks):
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Engineering Practices*
+*AI Collaboration Knowledge Base*

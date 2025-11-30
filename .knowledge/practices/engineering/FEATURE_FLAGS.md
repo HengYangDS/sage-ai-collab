@@ -98,7 +98,6 @@ features:
 def get_feature(name: str, default: bool = False) -> bool:
     return features_config.get(name, default)
 
-
 # Usage
 if get_feature("new_dashboard"):
     show_new_dashboard()
@@ -140,7 +139,6 @@ def feature_flag(name: str, default: bool = False):
         return wrapper
 
     return decorator
-
 
 @feature_flag("new_recommendation")
 def get_recommendations(user_id: str):

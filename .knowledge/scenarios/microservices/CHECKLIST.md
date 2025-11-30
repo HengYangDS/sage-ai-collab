@@ -1,18 +1,10 @@
 # Microservices Checklist
 
-
-
 > Task checklist for microservices architecture design and implementation
-
-
 
 ---
 
-
-
 ## Service Design
-
-
 
 - [ ] Service boundaries defined (DDD)
 
@@ -24,11 +16,7 @@
 
 - [ ] Service dependencies mapped
 
-
-
 ## API Design
-
-
 
 - [ ] API versioning strategy defined
 
@@ -40,11 +28,7 @@
 
 - [ ] Pagination implemented
 
-
-
 ## Data Management
-
-
 
 - [ ] Database per service (if applicable)
 
@@ -56,11 +40,7 @@
 
 - [ ] Data migration plan ready
 
-
-
 ## Communication
-
-
 
 - [ ] Sync vs async patterns decided
 
@@ -72,11 +52,7 @@
 
 - [ ] Dead letter queues configured
 
-
-
 ## Service Discovery
-
-
 
 - [ ] Service registry configured
 
@@ -88,11 +64,7 @@
 
 - [ ] Failover strategy defined
 
-
-
 ## Resilience
-
-
 
 - [ ] Circuit breakers implemented
 
@@ -104,11 +76,7 @@
 
 - [ ] Chaos testing planned
 
-
-
 ## Observability
-
-
 
 - [ ] Distributed tracing enabled
 
@@ -120,11 +88,7 @@
 
 - [ ] Dashboards created
 
-
-
 ## Security
-
-
 
 - [ ] Service-to-service auth (mTLS)
 
@@ -136,11 +100,7 @@
 
 - [ ] Network policies defined
 
-
-
 ## Deployment
-
-
 
 - [ ] Container images built
 
@@ -152,11 +112,7 @@
 
 - [ ] Rollback procedures tested
 
-
-
 ## Documentation
-
-
 
 - [ ] Architecture diagram updated
 
@@ -168,21 +124,13 @@
 
 - [ ] Service catalog maintained
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Microservices Checklist*
 
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/microservices/context.md` — Microservices context
 
@@ -190,11 +138,7 @@
 
 - `.knowledge/frameworks/patterns/integration.md` — Integration patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

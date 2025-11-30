@@ -1,18 +1,10 @@
 # Dependency Management
 
-
-
 > Best practices for managing project dependencies in Python projects
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Overview](#1-overview)
 
@@ -26,19 +18,11 @@
 
 - [6. Environment Management](#6-environment-management)
 
-
-
 ---
-
-
 
 ## 1. Overview
 
-
-
 ### 1.1 Dependency Types
-
-
 
 | Type            | Purpose          | Example             |
 
@@ -52,11 +36,7 @@
 
 | **Build**       | Package building | `build`, `twine`    |
 
-
-
 ### 1.2 Key Principles
-
-
 
 - **Minimal Dependencies**: Only add what's necessary
 
@@ -66,19 +46,11 @@
 
 - **Security First**: Monitor for vulnerabilities
 
-
-
 ---
-
-
 
 ## 2. Dependency Specification
 
-
-
 ### 2.1 pyproject.toml Structure
-
-
 
 ```toml
 
@@ -89,8 +61,6 @@ name = "knowledge-base"
 version = "0.1.0"
 
 requires-python = ">=3.12"
-
-
 
 dependencies = [
 
@@ -105,8 +75,6 @@ dependencies = [
     "structlog>=23.0",
 
 ]
-
-
 
 [project.optional-dependencies]
 
@@ -148,11 +116,7 @@ all = [
 
 ```
 
-
-
 ### 2.2 Version Specifiers
-
-
 
 | Specifier  | Meaning            | Example              |
 
@@ -168,11 +132,7 @@ all = [
 
 | `!=X.Y.Z`  | Exclude version    | `!=1.2.3`            |
 
-
-
 ### 2.3 Extras for Optional Features
-
-
 
 ```toml
 
@@ -186,19 +146,11 @@ all = [
 
 ```
 
-
-
 ---
-
-
 
 ## 3. Version Pinning
 
-
-
 ### 3.1 Pinning Strategy
-
-
 
 | Environment     | Strategy          | File                  |
 
@@ -210,11 +162,7 @@ all = [
 
 | **CI/CD**       | Pinned versions   | `requirements-ci.txt` |
 
-
-
 ### 3.2 Lock File Generation
-
-
 
 ```bash
 
@@ -224,13 +172,9 @@ pip install pip-tools
 
 pip-compile pyproject.toml -o requirements.lock
 
-
-
 # With hashes for security
 
 pip-compile --generate-hashes pyproject.toml
-
-
 
 # Update lock file
 
@@ -238,11 +182,7 @@ pip-compile --upgrade pyproject.toml
 
 ```
 
-
-
 ### 3.3 Lock File Example
-
-
 
 ```txt
 
@@ -264,19 +204,11 @@ rich==13.7.0 \
 
 ```
 
-
-
 ---
-
-
 
 ## 4. Security
 
-
-
 ### 4.1 Vulnerability Scanning
-
-
 
 ```bash
 
@@ -284,19 +216,13 @@ rich==13.7.0 \
 
 pip install pip-audit
 
-
-
 # Scan current environment
 
 pip-audit
 
-
-
 # Scan requirements file
 
 pip-audit -r requirements.lock
-
-
 
 # Output as JSON
 
@@ -304,11 +230,7 @@ pip-audit --format json -o audit.json
 
 ```
 
-
-
 ### 4.2 GitHub Dependabot
-
-
 
 ```yaml
 
@@ -342,11 +264,7 @@ updates:
 
 ```
 
-
-
 ### 4.3 Security Best Practices
-
-
 
 | Practice           | Description                  |
 
@@ -362,19 +280,11 @@ updates:
 
 | **Review updates** | Don't blindly update         |
 
-
-
 ---
-
-
 
 ## 5. Update Strategy
 
-
-
 ### 5.1 Update Frequency
-
-
 
 | Dependency Type    | Frequency | Approach        |
 
@@ -388,11 +298,7 @@ updates:
 
 | **Major versions** | Quarterly | Plan migration  |
 
-
-
 ### 5.2 Update Process
-
-
 
 ```bash
 
@@ -400,25 +306,17 @@ updates:
 
 pip list --outdated
 
-
-
 # 2. Update lock file
 
 pip-compile --upgrade pyproject.toml
-
-
 
 # 3. Install updated dependencies
 
 pip install -r requirements.lock
 
-
-
 # 4. Run tests
 
 pytest
-
-
 
 # 5. Commit changes
 
@@ -428,11 +326,7 @@ git commit -m "chore(deps): update dependencies"
 
 ```
 
-
-
 ### 5.3 Handling Breaking Changes
-
-
 
 1. **Read changelog** before updating major versions
 
@@ -444,23 +338,13 @@ git commit -m "chore(deps): update dependencies"
 
 5. **Document migration** steps if needed
 
-
-
 ---
-
-
 
 ## 6. Environment Management
 
-
-
 ### 6.1 Conda Environment (Recommended)
 
-
-
 Miniconda is the recommended virtual environment management tool.
-
-
 
 ```yaml
 
@@ -486,27 +370,19 @@ dependencies:
 
 ```
 
-
-
 ```bash
 
 # Create environment
 
 conda env create -f environment.yml
 
-
-
 # Activate
 
 conda activate knowledge-base
 
-
-
 # Update
 
 conda env update -f environment.yml
-
-
 
 # Deactivate
 
@@ -514,11 +390,7 @@ conda deactivate
 
 ```
 
-
-
 ### 6.2 Virtual Environments (venv Alternative)
-
-
 
 ```bash
 
@@ -526,19 +398,13 @@ conda deactivate
 
 python -m venv .venv
 
-
-
 # Activate (Linux/macOS)
 
 source .venv/bin/activate
 
-
-
 # Activate (Windows)
 
 .venv\Scripts\activate
-
-
 
 # Install dependencies
 
@@ -546,11 +412,7 @@ pip install -e ".[dev]"
 
 ```
 
-
-
 ### 6.3 Development Setup
-
-
 
 ```bash
 
@@ -570,15 +432,9 @@ pre-commit install
 
 ```
 
-
-
 ---
 
-
-
 ## Quick Reference
-
-
 
 ```bash
 
@@ -586,31 +442,21 @@ pre-commit install
 
 pip list --outdated
 
-
-
 # Install with extras
 
 pip install -e ".[dev,mcp,api]"
-
-
 
 # Generate lock file
 
 pip-compile pyproject.toml -o requirements.lock
 
-
-
 # Security audit
 
 pip-audit
 
-
-
 # Upgrade single package
 
 pip install --upgrade package-name
-
-
 
 # Show dependency tree
 
@@ -620,15 +466,9 @@ pipdeptree
 
 ```
 
-
-
 ---
 
-
-
 ## Dependency Checklist
-
-
 
 | Check                   | Frequency |
 
@@ -644,15 +484,9 @@ pipdeptree
 
 | Audit unused deps       | Quarterly |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/ci_cd.md` — CI/CD pipeline with dependency checks
 
@@ -660,11 +494,7 @@ pipdeptree
 
 - `.knowledge/guidelines/python.md` — Python coding standards
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

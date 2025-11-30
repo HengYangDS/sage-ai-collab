@@ -1,18 +1,10 @@
 # DevOps Scenario Context
 
-
-
 > Pre-configured context for CI/CD, infrastructure, and operations
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -32,15 +24,9 @@
 
 - [9. Quick Commands](#9-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -56,15 +42,9 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                     |
 
@@ -74,15 +54,9 @@ autonomy_default: L2
 
 | **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/frameworks/resilience/timeout_patterns.md`          |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory         | Purpose                   |
 
@@ -104,25 +78,15 @@ autonomy_default: L2
 
 | `docs/runbooks/`  | Operational runbooks      |
 
-
-
 ---
-
-
 
 ## 4. CI/CD Patterns
 
-
-
 ### 4.1 GitHub Actions Workflow
-
-
 
 ```yaml
 
 name: CI/CD Pipeline
-
-
 
 on:
 
@@ -134,15 +98,11 @@ on:
 
     branches: [ main ]
 
-
-
 env:
 
   REGISTRY: ghcr.io
 
   IMAGE_NAME: ${{ github.repository }}
-
-
 
 jobs:
 
@@ -154,8 +114,6 @@ jobs:
 
       - uses: actions/checkout@v4
 
-
-
       - name: Set up Python
 
         uses: actions/setup-python@v5
@@ -166,25 +124,17 @@ jobs:
 
           cache: 'pip'
 
-
-
       - name: Install dependencies
 
         run: pip install -e ".[dev]"
-
-
 
       - name: Run tests
 
         run: pytest --cov=src --cov-report=xml
 
-
-
       - name: Upload coverage
 
         uses: codecov/codecov-action@v4
-
-
 
   build:
 
@@ -198,13 +148,9 @@ jobs:
 
       packages: write
 
-
-
     steps:
 
       - uses: actions/checkout@v4
-
-
 
       - name: Log in to registry
 
@@ -218,8 +164,6 @@ jobs:
 
           password: ${{ secrets.GITHUB_TOKEN }}
 
-
-
       - name: Build and push
 
         uses: docker/build-push-action@v5
@@ -232,8 +176,6 @@ jobs:
 
           tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.sha }}
 
-
-
   deploy:
 
     needs: build
@@ -243,8 +185,6 @@ jobs:
     runs-on: ubuntu-latest
 
     environment: production
-
-
 
     steps:
 
@@ -258,11 +198,7 @@ jobs:
 
 ```
 
-
-
 ### 4.2 GitLab CI Pipeline
-
-
 
 ```yaml
 
@@ -274,13 +210,9 @@ stages:
 
   - deploy
 
-
-
 variables:
 
   DOCKER_IMAGE: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
-
-
 
 test:
 
@@ -306,8 +238,6 @@ test:
 
         path: coverage.xml
 
-
-
 build:
 
   stage: build
@@ -329,8 +259,6 @@ build:
   only:
 
     - main
-
-
 
 deploy:
 
@@ -354,11 +282,7 @@ deploy:
 
 ```
 
-
-
 ### 4.3 Multi-Stage Dockerfile
-
-
 
 ```dockerfile
 
@@ -366,31 +290,21 @@ deploy:
 
 FROM python:3.12-slim AS builder
 
-
-
 WORKDIR /app
 
 COPY pyproject.toml .
 
 COPY src/ src/
 
-
-
 RUN pip install build && \
 
     python -m build --wheel
-
-
 
 # Runtime stage
 
 FROM python:3.12-slim AS runtime
 
-
-
 WORKDIR /app
-
-
 
 # Create non-root user
 
@@ -398,15 +312,11 @@ RUN useradd --create-home --shell /bin/bash app
 
 USER app
 
-
-
 # Install from wheel
 
 COPY --from=builder /app/dist/*.whl .
 
 RUN pip install --user *.whl && rm *.whl
-
-
 
 # Health check
 
@@ -414,27 +324,17 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
 
     CMD curl -f http://localhost:8000/health || exit 1
 
-
-
 EXPOSE 8000
 
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0"]
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Infrastructure as Code
 
-
-
 ### 5.1 Terraform Module Structure
-
-
 
 ```hcl
 
@@ -456,8 +356,6 @@ terraform {
 
 }
 
-
-
 variable "environment" {
 
   type        = string
@@ -466,8 +364,6 @@ variable "environment" {
 
 }
 
-
-
 variable "instance_type" {
 
   type    = string
@@ -475,8 +371,6 @@ variable "instance_type" {
   default = "t3.small"
 
 }
-
-
 
 resource "aws_instance" "app" {
 
@@ -498,8 +392,6 @@ resource "aws_instance" "app" {
 
 }
 
-
-
 output "instance_id" {
 
   value = aws_instance.app.id
@@ -508,11 +400,7 @@ output "instance_id" {
 
 ```
 
-
-
 ### 5.2 Kubernetes Deployment
-
-
 
 ```yaml
 
@@ -634,19 +522,11 @@ spec:
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Monitoring & Alerting
 
-
-
 ### 6.1 Key Metrics
-
-
 
 | Category         | Metrics                                   |
 
@@ -660,11 +540,7 @@ spec:
 
 | **Business**     | Active users, Transactions, Revenue       |
 
-
-
 ### 6.2 Alert Rules
-
-
 
 | Severity     | Condition            | Response                 |
 
@@ -678,11 +554,7 @@ spec:
 
 | **Low**      | Disk > 80%           | Create ticket            |
 
-
-
 ### 6.3 Prometheus Alert Example
-
-
 
 ```yaml
 
@@ -712,8 +584,6 @@ groups:
 
           description: "Error rate is {{ $value | humanizePercentage }}"
 
-
-
       - alert: HighLatency
 
         expr: |
@@ -738,15 +608,9 @@ groups:
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                    | Steps                                                      |
 
@@ -762,15 +626,9 @@ groups:
 
 | **Add secret**          | Create in vault → Reference in config → Deploy             |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                  | Level | Notes                       |
 
@@ -792,15 +650,9 @@ groups:
 
 | Rollback deployment        | L2    | Use established procedures  |
 
-
-
 ---
 
-
-
 ## 9. Quick Commands
-
-
 
 | Category      | Commands                                                   |
 
@@ -816,15 +668,9 @@ groups:
 
 | **Secrets**   | `kubectl create secret` · `vault kv put`                   |
 
-
-
 ---
 
-
-
 ## Security Checklist
-
-
 
 | Area        | Check                                             |
 
@@ -840,15 +686,9 @@ groups:
 
 | **Audit**   | Enable audit logging, monitor suspicious activity |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/templates/runbook.md` — Operational runbook template
 
@@ -858,11 +698,7 @@ groups:
 
 - `.knowledge/frameworks/resilience/timeout_patterns.md` — Resilience patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

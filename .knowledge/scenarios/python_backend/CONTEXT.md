@@ -1,18 +1,10 @@
 # Python Backend Scenario Context
 
-
-
 > Pre-configured context for Python backend development
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -32,15 +24,9 @@
 
 - [9. Quick Commands](#9-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -56,15 +42,9 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                          |
 
@@ -74,15 +54,9 @@ autonomy_default: L2
 
 | **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/frameworks/timeout/hierarchy.md` · `.knowledge/templates/project_setup.md` |
 
-
-
 ---
 
-
-
 ## 3. Project Structure (FastAPI)
-
-
 
 | Directory               | Purpose                  |
 
@@ -108,19 +82,11 @@ autonomy_default: L2
 
 | `alembic/`              | Migrations               |
 
-
-
 ---
-
-
 
 ## 4. Common Patterns
 
-
-
 ### 4.1 Endpoint Pattern
-
-
 
 ```python
 
@@ -138,11 +104,7 @@ async def get_user(id: str, service: UserService = Depends(get_service)) -> User
 
 ```
 
-
-
 ### 4.2 Service Layer
-
-
 
 ```python
 
@@ -151,8 +113,6 @@ class UserService:
     def __init__(self, repository: UserRepository):
 
         self._repo = repository
-
-
 
     async def create(self, data: UserCreate) -> User:
 
@@ -164,11 +124,7 @@ class UserService:
 
 ```
 
-
-
 ### 4.3 Repository
-
-
 
 ```python
 
@@ -178,8 +134,6 @@ class UserRepository:
 
         self._session = session
 
-
-
     async def get(self, id: str) -> Optional[User]:
 
         result = await self._session.execute(select(User).where(User.id == id))
@@ -188,19 +142,11 @@ class UserRepository:
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Testing Patterns
 
-
-
 ### 5.1 Fixtures
-
-
 
 ```python
 
@@ -212,10 +158,6 @@ async def client(app) -> AsyncClient:
 
         yield ac
 
-
-
-
-
 @pytest.fixture
 
 def user_factory():
@@ -224,11 +166,7 @@ def user_factory():
 
 ```
 
-
-
 ### 5.2 API Test
-
-
 
 ```python
 
@@ -244,15 +182,9 @@ async def test_create_user(client: AsyncClient):
 
 ```
 
-
-
 ---
 
-
-
 ## 6. Configuration
-
-
 
 ```python
 
@@ -264,15 +196,9 @@ class Settings(BaseSettings):
 
     secret_key: str
 
-
-
     class Config:
 
         env_file = ".env"
-
-
-
-
 
 @lru_cache
 
@@ -282,15 +208,9 @@ def get_settings() -> Settings:
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                | Steps                                                                         |
 
@@ -302,15 +222,9 @@ def get_settings() -> Settings:
 
 | **Background Task** | `background_tasks.add_task(func, *args)` in endpoint                          |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type               | Level | Notes                |
 
@@ -328,15 +242,9 @@ def get_settings() -> Settings:
 
 | Security changes        | L1-L2 | Full review required |
 
-
-
 ---
 
-
-
 ## 9. Quick Commands
-
-
 
 | Category | Commands                                                |
 
@@ -350,15 +258,9 @@ def get_settings() -> Settings:
 
 | **DB**   | `alembic upgrade head` · `alembic downgrade -1`         |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/python.md` — Python guidelines
 
@@ -366,11 +268,7 @@ def get_settings() -> Settings:
 
 - `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

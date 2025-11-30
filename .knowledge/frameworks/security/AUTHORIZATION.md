@@ -552,4 +552,4 @@ async def delete_content(id: str):
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Security Framework*
+*AI Collaboration Knowledge Base*

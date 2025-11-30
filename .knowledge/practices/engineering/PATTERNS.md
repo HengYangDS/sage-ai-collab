@@ -42,7 +42,6 @@ class Repository(ABC, Generic[T]):
     @abstractmethod
     def delete(self, id: str) -> bool: ...
 
-
 class UserRepository(Repository[User]):
     def __init__(self, session: Session):
         self._session = session
@@ -102,11 +101,9 @@ class HandlerFactory:
 class PricingStrategy(Protocol):
     def calculate(self, base: float, qty: int) -> float: ...
 
-
 class RegularPricing:
     def calculate(self, base: float, qty: int) -> float:
         return base * qty
-
 
 class BulkPricing:
     def __init__(self, threshold: int, discount: float):

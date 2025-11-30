@@ -56,7 +56,6 @@ secrets.yaml
 ```python
 from pathlib import Path
 
-
 def safe_path(user_input: str, base_dir: Path) -> Path:
     """Validate and resolve path safely.
     
@@ -82,7 +81,6 @@ def safe_path(user_input: str, base_dir: Path) -> Path:
 
 ```python
 import re
-
 
 def validate_identifier(value: str, max_length: int = 64) -> str:
     """Validate identifier string.
@@ -140,7 +138,6 @@ def validate_timeout(value: int, min_val: int = 100, max_val: int = 10000) -> in
 ```python
 from pydantic import BaseModel, Field, validator
 
-
 class UserInput(BaseModel):
     username: str = Field(..., min_length=3, max_length=50, regex="^[a-zA-Z0-9_]+$")
     email: str = Field(..., max_length=255)
@@ -172,7 +169,6 @@ def safe_html_output(user_input: str) -> str:
 ```python
 import json
 
-
 def safe_json_response(data: dict) -> str:
     """Safely encode data as JSON."""
     return json.dumps(data, ensure_ascii=True)
@@ -188,13 +184,11 @@ def safe_json_response(data: dict) -> str:
 from pathlib import Path
 import tempfile
 
-
 def safe_temp_file(suffix: str = ".tmp") -> Path:
     """Create a secure temporary file."""
     fd, path = tempfile.mkstemp(suffix=suffix)
     os.close(fd)
     return Path(path)
-
 
 def safe_read_file(filepath: Path, base_dir: Path) -> str:
     """Read file safely within allowed directory."""
@@ -232,7 +226,6 @@ from datetime import datetime
 
 logger = structlog.get_logger()
 
-
 def log_security_event(
     event_type: str,
     user_id: str,
@@ -258,7 +251,6 @@ def log_security_event(
 
 ```python
 import re
-
 
 def redact_secrets(text: str) -> str:
     """Redact potential secrets from text."""

@@ -32,7 +32,6 @@
 | Code Quality | Lint/test pass rate | >95% |
 | Documentation Coverage | Docs per feature | 100% |
 
-
 ---
 
 ## 2. Measurement Methods

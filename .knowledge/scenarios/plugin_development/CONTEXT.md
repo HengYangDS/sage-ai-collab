@@ -1,18 +1,10 @@
 # Plugin Development Scenario Context
 
-
-
 > Pre-configured context for SAGE plugin development
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Quick Commands](#8-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -54,15 +40,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                                                            |
 
@@ -72,15 +52,9 @@ autonomy_default: L3
 
 | **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.context/decisions/ADR_0008_PLUGIN_SYSTEM.md` · `docs/design/05-plugin-memory.md` |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory                   | Purpose                  |
 
@@ -96,19 +70,11 @@ autonomy_default: L3
 
 | `docs/guides/advanced.md`   | Plugin development guide |
 
-
-
 ---
-
-
 
 ## 4. Plugin Architecture
 
-
-
 ### 4.1 Plugin System Overview
-
-
 
 ```
 
@@ -142,11 +108,7 @@ autonomy_default: L3
 
 ```
 
-
-
 ### 4.2 Core Components
-
-
 
 | Component         | Purpose                     | Location                           |
 
@@ -160,11 +122,7 @@ autonomy_default: L3
 
 | **PluginConfig**  | Plugin configuration        | `config/capabilities/plugins.yaml` |
 
-
-
 ### 4.3 Plugin Lifecycle
-
-
 
 ```
 
@@ -184,8 +142,6 @@ autonomy_default: L3
 
 ```
 
-
-
 | Phase        | Description            | Hook          |
 
 |--------------|------------------------|---------------|
@@ -204,27 +160,15 @@ autonomy_default: L3
 
 | **Unload**   | Remove from memory     | `on_unload`   |
 
-
-
 ---
-
-
 
 ## 5. Implementation Patterns
 
-
-
 ### 5.1 Basic Plugin Structure
-
-
 
 ```python
 
 from sage.plugins import PluginBase, hook
-
-
-
-
 
 class MyPlugin(PluginBase):
 
@@ -238,8 +182,6 @@ class MyPlugin(PluginBase):
 
     """
 
-
-
     # Plugin metadata
 
     name = "my-plugin"
@@ -250,13 +192,9 @@ class MyPlugin(PluginBase):
 
     author = "Your Name"
 
-
-
     # Dependencies (optional)
 
     dependencies = ["other-plugin>=1.0"]
-
-
 
     def __init__(self, config: dict | None = None):
 
@@ -265,8 +203,6 @@ class MyPlugin(PluginBase):
         super().__init__(config)
 
         self._initialized = False
-
-
 
     # Lifecycle hooks
 
@@ -278,8 +214,6 @@ class MyPlugin(PluginBase):
 
         self.logger.info(f"{self.name} enabled")
 
-
-
     async def on_disable(self) -> None:
 
         """Called when plugin is disabled."""
@@ -290,31 +224,19 @@ class MyPlugin(PluginBase):
 
 ```
 
-
-
 ### 5.2 Hook Implementation
-
-
 
 ```python
 
 from sage.plugins import PluginBase, hook
 
-
-
-
-
 class ContentPlugin(PluginBase):
 
     """Plugin that processes content."""
 
-
-
     name = "content-processor"
 
     version = "1.0.0"
-
-
 
     @hook("before_load")
 
@@ -344,8 +266,6 @@ class ContentPlugin(PluginBase):
 
         return path
 
-
-
     @hook("after_load")
 
     async def after_load(self, content: str, path: str) -> str:
@@ -373,8 +293,6 @@ class ContentPlugin(PluginBase):
         header = f"<!-- Source: {path} -->\n"
 
         return header + content
-
-
 
     @hook("on_search")
 
@@ -404,11 +322,7 @@ class ContentPlugin(PluginBase):
 
 ```
 
-
-
 ### 5.3 Available Hook Points
-
-
 
 | Hook               | Trigger             | Parameters                        | Returns |
 
@@ -428,11 +342,7 @@ class ContentPlugin(PluginBase):
 
 | `after_serve`      | After MCP stop      | `server: FastMCP`                 | `None`  |
 
-
-
 ### 5.4 Plugin Configuration
-
-
 
 ```yaml
 
@@ -454,8 +364,6 @@ plugins:
 
         max_size: 100MB
 
-
-
     - name: metrics-plugin
 
       enabled: true
@@ -463,8 +371,6 @@ plugins:
       config:
 
         export_prometheus: true
-
-
 
   # External plugins
 
@@ -480,8 +386,6 @@ plugins:
 
         custom_option: value
 
-
-
   # Discovery paths
 
   discovery:
@@ -492,21 +396,13 @@ plugins:
 
 ```
 
-
-
 ### 5.5 Plugin with Configuration
-
-
 
 ```python
 
 from sage.plugins import PluginBase, hook
 
 from pydantic import BaseModel
-
-
-
-
 
 class MyPluginConfig(BaseModel):
 
@@ -518,23 +414,15 @@ class MyPluginConfig(BaseModel):
 
     enabled_features: list[str] = []
 
-
-
-
-
 class MyPlugin(PluginBase):
 
     """Plugin with typed configuration."""
-
-
 
     name = "configurable-plugin"
 
     version = "1.0.0"
 
     config_schema = MyPluginConfig
-
-
 
     def __init__(self, config: dict | None = None):
 
@@ -543,8 +431,6 @@ class MyPlugin(PluginBase):
         # Config is validated and typed
 
         self.settings = MyPluginConfig(**(config or {}))
-
-
 
     @hook("after_load")
 
@@ -558,11 +444,7 @@ class MyPlugin(PluginBase):
 
 ```
 
-
-
 ### 5.6 Testing Plugins
-
-
 
 ```python
 
@@ -572,10 +454,6 @@ from sage.plugins import PluginManager
 
 from my_plugin import MyPlugin
 
-
-
-
-
 @pytest.fixture
 
 def plugin_manager():
@@ -583,10 +461,6 @@ def plugin_manager():
     """Create plugin manager for testing."""
 
     return PluginManager()
-
-
-
-
 
 @pytest.fixture
 
@@ -596,15 +470,9 @@ def my_plugin():
 
     return MyPlugin(config={"option_a": "test"})
 
-
-
-
-
 class TestMyPlugin:
 
     """Tests for MyPlugin."""
-
-
 
     async def test_plugin_enables(self, my_plugin):
 
@@ -614,8 +482,6 @@ class TestMyPlugin:
 
         assert my_plugin._initialized
 
-
-
     async def test_before_load_hook(self, my_plugin):
 
         """Hook should modify legacy paths."""
@@ -623,8 +489,6 @@ class TestMyPlugin:
         result = await my_plugin.before_load("legacy/old.md")
 
         assert result == ".knowledge/old.md"
-
-
 
     async def test_after_load_hook(self, my_plugin):
 
@@ -634,8 +498,6 @@ class TestMyPlugin:
 
         assert "<!-- Source: test.md -->" in result
 
-
-
     async def test_plugin_integration(self, plugin_manager, my_plugin):
 
         """Plugin should integrate with manager."""
@@ -644,21 +506,13 @@ class TestMyPlugin:
 
         await plugin_manager.enable("my-plugin")
 
-
-
         assert plugin_manager.is_enabled("my-plugin")
 
 ```
 
-
-
 ---
 
-
-
 ## 6. Common Tasks
-
-
 
 | Task                 | Steps                                                     |
 
@@ -676,11 +530,7 @@ class TestMyPlugin:
 
 | **Debug plugin**     | Enable debug logging → Use breakpoints → Check hook calls |
 
-
-
 ### 6.1 Creating a New Plugin
-
-
 
 ```bash
 
@@ -690,23 +540,15 @@ mkdir -p src/sage/plugins/bundled/my_plugin
 
 touch src/sage/plugins/bundled/my_plugin/__init__.py
 
-
-
 # 2. Implement plugin (see patterns above)
-
-
 
 # 3. Add configuration
 
 # Edit config/capabilities/plugins.yaml
 
-
-
 # 4. Create tests
 
 touch tests/unit/plugins/test_my_plugin.py
-
-
 
 # 5. Run tests
 
@@ -714,25 +556,15 @@ pytest tests/unit/plugins/test_my_plugin.py -v
 
 ```
 
-
-
 ### 6.2 Debugging Plugins
-
-
 
 ```python
 
 import logging
 
-
-
 # Enable debug logging for plugins
 
 logging.getLogger("sage.plugins").setLevel(logging.DEBUG)
-
-
-
-
 
 # In your plugin
 
@@ -748,15 +580,9 @@ class MyPlugin(PluginBase):
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Autonomy Calibration
-
-
 
 | Task Type                   | Level | Notes               |
 
@@ -774,15 +600,9 @@ class MyPlugin(PluginBase):
 
 | Modify lifecycle            | L1    | Core architecture   |
 
-
-
 ---
 
-
-
 ## 8. Quick Commands
-
-
 
 | Category   | Commands                                                     |
 
@@ -798,19 +618,11 @@ class MyPlugin(PluginBase):
 
 | **Enable** | `sage plugins enable <name>` · `sage plugins disable <name>` |
 
-
-
 ---
-
-
 
 ## Best Practices
 
-
-
 ### Plugin Design
-
-
 
 | Practice                     | Description                     |
 
@@ -826,11 +638,7 @@ class MyPlugin(PluginBase):
 
 | **Comprehensive Testing**    | Unit + integration tests        |
 
-
-
 ### Performance
-
-
 
 | Aspect               | Guideline                     |
 
@@ -844,11 +652,7 @@ class MyPlugin(PluginBase):
 
 | **Caching**          | Cache expensive computations  |
 
-
-
 ### Security
-
-
 
 | Check                | Description                 |
 
@@ -862,15 +666,9 @@ class MyPlugin(PluginBase):
 
 | **Permissions**      | Follow least privilege      |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `docs/design/05-plugin-memory.md` — Plugin system design
 
@@ -880,11 +678,7 @@ class MyPlugin(PluginBase):
 
 - `.knowledge/practices/engineering/testing_strategy.md` — Testing guide
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

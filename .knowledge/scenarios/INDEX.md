@@ -1,18 +1,10 @@
 # Scenario Presets
 
-
-
 > Context-specific knowledge presets for common development scenarios
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Available Scenarios](#1-available-scenarios)
 
@@ -22,15 +14,9 @@
 
 - [4. Creating New Scenarios](#4-creating-new-scenarios)
 
-
-
 ---
 
-
-
 ## 1. Available Scenarios
-
-
 
 | Scenario                 | Path                    | Tokens | Context                           |
 
@@ -52,23 +38,13 @@
 
 | **Plugin Development**   | `plugin_development/`   | ~400   | plugin development           |
 
-
-
 ---
-
-
 
 ## 2. Python Backend Scenario
 
-
-
 **Path**: `python_backend/context.md`
 
-
-
 ### When to Load
-
-
 
 - Building Python web services
 
@@ -78,11 +54,7 @@
 
 - Python testing with pytest
 
-
-
 ### Includes
-
-
 
 - Python code style guidelines
 
@@ -92,11 +64,7 @@
 
 - Configuration management
 
-
-
 ### Auto-Load Triggers
-
-
 
 | Keywords                    | Action        |
 
@@ -108,19 +76,11 @@
 
 | pytest, python test         | Load scenario |
 
-
-
 ---
-
-
 
 ## 3. Scenario Structure
 
-
-
 Each scenario contains:
-
-
 
 ```
 
@@ -134,65 +94,37 @@ scenarios/[name]/
 
 ```
 
-
-
 ### Context File Format
-
-
 
 ```markdown
 
 # [Scenario Name] Context
 
-
-
 > **Purpose**: [brief description]
 
 > **Stack**: [technologies]
 
-
-
 ## Quick Setup
-
-
 
 [Essential setup steps]
 
-
-
 ## Key Guidelines
-
-
 
 [Scenario-specific guidelines]
 
-
-
 ## Common Tasks
-
-
 
 [Frequent operations]
 
-
-
 ## Pitfalls
-
-
 
 [Common mistakes to avoid]
 
 ```
 
-
-
 ---
 
-
-
 ## 4. Creating New Scenarios
-
-
 
 1. Create directory: `.knowledge/scenarios/[name]/`
 
@@ -202,15 +134,9 @@ scenarios/[name]/
 
 4. Update this index
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/index.md` — General guidelines
 
@@ -220,11 +146,7 @@ scenarios/[name]/
 
 - `.config/knowledge/triggers.yaml` — Trigger configuration
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

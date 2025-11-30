@@ -1,18 +1,10 @@
 # Monorepo Scenario Context
 
-
-
 > Pre-configured context for monorepo project management
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Autonomy Calibration](#8-autonomy-calibration)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -54,15 +40,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                    |
 
@@ -72,19 +52,11 @@ autonomy_default: L3
 
 | **On-Demand** | `.knowledge/practices/documentation/project_directory_structure.md` · `.knowledge/guidelines/code_style.md`    |
 
-
-
 ---
-
-
 
 ## 3. Structure Patterns
 
-
-
 ### 3.1 Common Monorepo Layout
-
-
 
 ```
 
@@ -124,11 +96,7 @@ monorepo/
 
 ```
 
-
-
 ### 3.2 Package Naming Convention
-
-
 
 | Type         | Pattern         | Example                   |
 
@@ -142,11 +110,7 @@ monorepo/
 
 | Types        | `@org/types-*`  | `@acme/types-shared`      |
 
-
-
 ### 3.3 Architecture Principles
-
-
 
 | Principle              | Description                                |
 
@@ -162,19 +126,11 @@ monorepo/
 
 | **Incremental Builds** | Only rebuild what changed                  |
 
-
-
 ---
-
-
 
 ## 4. Tooling
 
-
-
 ### 4.1 Tool Comparison
-
-
 
 | Tool          | Language   | Best For           | Key Feature         |
 
@@ -190,11 +146,7 @@ monorepo/
 
 | **Bazel**     | Any        | Large scale        | Hermetic builds     |
 
-
-
 ### 4.2 Turborepo Configuration
-
-
 
 ```json
 
@@ -268,11 +220,7 @@ monorepo/
 
 ```
 
-
-
 ### 4.3 pnpm Workspace
-
-
 
 ```yaml
 
@@ -288,11 +236,7 @@ packages:
 
 ```
 
-
-
 ### 4.4 Nx Configuration
-
-
 
 ```json
 
@@ -356,19 +300,11 @@ packages:
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Dependency Management
 
-
-
 ### 5.1 Internal Dependencies
-
-
 
 ```json
 
@@ -390,11 +326,7 @@ packages:
 
 ```
 
-
-
 ### 5.2 Shared Configuration
-
-
 
 ```typescript
 
@@ -416,8 +348,6 @@ module.exports = {
 
 };
 
-
-
 // apps/web/.eslintrc.js
 
 module.exports = {
@@ -430,11 +360,7 @@ module.exports = {
 
 ```
 
-
-
 ### 5.3 TypeScript Project References
-
-
 
 ```json
 
@@ -470,19 +396,11 @@ module.exports = {
 
 ```
 
-
-
 ---
-
-
 
 ## 6. CI/CD Patterns
 
-
-
 ### 6.1 Affected-Only Builds
-
-
 
 ```yaml
 
@@ -491,8 +409,6 @@ module.exports = {
 name: CI
 
 on: [ push, pull_request ]
-
-
 
 jobs:
 
@@ -508,8 +424,6 @@ jobs:
 
           fetch-depth: 0
 
-
-
       - uses: pnpm/action-setup@v2
 
       - uses: actions/setup-node@v4
@@ -520,33 +434,21 @@ jobs:
 
           cache: 'pnpm'
 
-
-
       - run: pnpm install
 
-
-
       - uses: nrwl/nx-set-shas@v4
-
-
 
       - run: pnpm nx affected -t lint test build
 
 ```
 
-
-
 ### 6.2 Turborepo with Remote Cache
-
-
 
 ```yaml
 
 name: CI
 
 on: [ push, pull_request ]
-
-
 
 jobs:
 
@@ -558,8 +460,6 @@ jobs:
 
       - uses: actions/checkout@v4
 
-
-
       - uses: pnpm/action-setup@v2
 
       - uses: actions/setup-node@v4
@@ -570,11 +470,7 @@ jobs:
 
           cache: 'pnpm'
 
-
-
       - run: pnpm install
-
-
 
       - run: pnpm turbo run build test lint
 
@@ -586,11 +482,7 @@ jobs:
 
 ```
 
-
-
 ### 6.3 Selective Deployment
-
-
 
 ```yaml
 
@@ -610,15 +502,9 @@ deploy-web:
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                  | Command                                            |
 
@@ -642,11 +528,7 @@ deploy-web:
 
 | **Graph**             | `pnpm nx graph`                                    |
 
-
-
 ### 7.1 Creating New Package
-
-
 
 ```bash
 
@@ -654,15 +536,11 @@ deploy-web:
 
 mkdir -p packages/new-lib/src
 
-
-
 # Initialize package.json
 
 cd packages/new-lib
 
 pnpm init
-
-
 
 # Update package.json
 
@@ -688,11 +566,7 @@ pnpm init
 
 ```
 
-
-
 ### 7.2 Package Checklist
-
-
 
 | Item                             | Status |
 
@@ -712,15 +586,9 @@ pnpm init
 
 | ☐ Export in index.ts             |        |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                    | Level | Notes                    |
 
@@ -740,15 +608,9 @@ pnpm init
 
 | Update tooling (Nx/Turbo)    | L2    | Compatibility check      |
 
-
-
 ---
 
-
-
 ## Pitfalls to Avoid
-
-
 
 | Pitfall                   | Solution                            |
 
@@ -764,15 +626,9 @@ pnpm init
 
 | **Unclear ownership**     | CODEOWNERS file                     |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/engineering.md` — Engineering practices
 
@@ -780,11 +636,7 @@ pnpm init
 
 - `.knowledge/guidelines/typescript.md` — TypeScript guidelines
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

@@ -1,18 +1,10 @@
 # MCP Integration Scenario Context
 
-
-
 > Pre-configured context for Model Context Protocol integration development
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Quick Commands](#8-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -54,15 +40,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                                       |
 
@@ -72,15 +52,9 @@ autonomy_default: L3
 
 | **On-Demand** | `docs/api/mcp.md` · `.knowledge/frameworks/resilience/timeout_patterns.md` · `.knowledge/practices/engineering/error_handling.md` |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory            | Purpose                   |
 
@@ -94,19 +68,11 @@ autonomy_default: L3
 
 | `docs/api/mcp.md`    | MCP API documentation     |
 
-
-
 ---
-
-
 
 ## 4. MCP Architecture
 
-
-
 ### 4.1 Protocol Overview
-
-
 
 ```
 
@@ -134,11 +100,7 @@ autonomy_default: L3
 
 ```
 
-
-
 ### 4.2 Core Components
-
-
 
 | Component     | Purpose             | Implementation              |
 
@@ -154,11 +116,7 @@ autonomy_default: L3
 
 | **Transport** | Communication layer | stdio, SSE, WebSocket       |
 
-
-
 ### 4.3 Transport Options
-
-
 
 | Transport     | Use Case                | Configuration            |
 
@@ -170,33 +128,19 @@ autonomy_default: L3
 
 | **WebSocket** | Real-time bidirectional | For streaming needs      |
 
-
-
 ---
-
-
 
 ## 5. Implementation Patterns
 
-
-
 ### 5.1 Basic Server Setup
-
-
 
 ```python
 
 from mcp.server.fastmcp import FastMCP
 
-
-
 # Initialize server
 
 mcp = FastMCP("knowledge-base")
-
-
-
-
 
 @mcp.tool()
 
@@ -223,10 +167,6 @@ async def sage_get(layer: str = "core", topic: str | None = None) -> str:
     # Implementation
 
     return await load_knowledge(layer, topic)
-
-
-
-
 
 @mcp.tool()
 
@@ -256,11 +196,7 @@ async def sage_search(query: str, limit: int = 10) -> str:
 
 ```
 
-
-
 ### 5.2 Resource Definition
-
-
 
 ```python
 
@@ -272,10 +208,6 @@ async def get_principles() -> str:
 
     return await load_file(".knowledge/core/principles.md")
 
-
-
-
-
 @mcp.resource("sage://layer/{layer}")
 
 async def get_layer(layer: str) -> str:
@@ -286,11 +218,7 @@ async def get_layer(layer: str) -> str:
 
 ```
 
-
-
 ### 5.3 Prompt Templates
-
-
 
 ```python
 
@@ -314,11 +242,7 @@ async def code_review(code: str, language: str = "python") -> str:
 
     return f"""Review this {language} code using these guidelines:
 
-
-
 {guidelines}
-
-
 
 Code to review:
 
@@ -328,11 +252,7 @@ Code to review:
 
 ```
 
-
-
 Provide feedback on:
-
-
 
 1. Adherence to guidelines
 
@@ -342,23 +262,15 @@ Provide feedback on:
 
    """
 
-
-
 ```
 
-
-
 ### 5.4 Error Handling
-
-
 
 ```python
 
 from mcp.server.fastmcp import FastMCP
 
 from mcp.types import McpError, ErrorCode
-
-
 
 @mcp.tool()
 
@@ -410,21 +322,13 @@ async def sage_get(layer: str) -> str:
 
 ```
 
-
-
 ### 5.5 Timeout Integration
-
-
 
 ```python
 
 import asyncio
 
 from sage.core.timeout import TimeoutLevel
-
-
-
-
 
 @mcp.tool()
 
@@ -433,8 +337,6 @@ async def sage_search(query: str) -> str:
     """Search with timeout protection."""
 
     timeout = get_timeout(TimeoutLevel.T3_LAYER)
-
-
 
     try:
 
@@ -452,15 +354,9 @@ async def sage_search(query: str) -> str:
 
 ```
 
-
-
 ---
 
-
-
 ## 6. Common Tasks
-
-
 
 | Task                    | Steps                                                      |
 
@@ -478,11 +374,7 @@ async def sage_search(query: str) -> str:
 
 | **Add rate limiting**   | Configure limits → Implement middleware → Monitor          |
 
-
-
 ### 6.1 Adding a New Tool
-
-
 
 ```python
 
@@ -516,10 +408,6 @@ async def my_new_tool(param1: str, param2: int = 10) -> str:
 
     return format_output(result)
 
-
-
-
-
 # 2. Add tests
 
 async def test_my_new_tool():
@@ -528,19 +416,13 @@ async def test_my_new_tool():
 
     assert "expected" in result
 
-
-
 # 3. Update documentation
 
 # Edit docs/api/mcp.md
 
 ```
 
-
-
 ### 6.2 Testing MCP Server
-
-
 
 ```python
 
@@ -549,10 +431,6 @@ import pytest
 from mcp.client import Client
 
 from mcp.client.stdio import stdio_client
-
-
-
-
 
 @pytest.mark.asyncio
 
@@ -568,8 +446,6 @@ async def test_mcp_server():
 
         assert result.content
 
-
-
         # Test resource access
 
         resource = await client.read_resource("sage://core/principles")
@@ -578,15 +454,9 @@ async def test_mcp_server():
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Autonomy Calibration
-
-
 
 | Task Type                | Level | Notes                          |
 
@@ -604,15 +474,9 @@ async def test_mcp_server():
 
 | Protocol version upgrade | L1    | Breaking changes possible      |
 
-
-
 ---
 
-
-
 ## 8. Quick Commands
-
-
 
 | Category   | Commands                                                 |
 
@@ -626,19 +490,11 @@ async def test_mcp_server():
 
 | **Client** | `mcp dev sage serve` · `npx @anthropic/mcp-cli`          |
 
-
-
 ---
-
-
 
 ## Configuration Reference
 
-
-
 ### Server Configuration
-
-
 
 ```yaml
 
@@ -654,8 +510,6 @@ mcp:
 
     description: "AI Collaboration Knowledge Base MCP Server"
 
-
-
   transport:
 
     type: stdio  # stdio, sse, websocket
@@ -665,8 +519,6 @@ mcp:
     host: "0.0.0.0"
 
     port: 8080
-
-
 
   tools:
 
@@ -690,8 +542,6 @@ mcp:
 
       timeout_level: T1
 
-
-
   rate_limit:
 
     enabled: true
@@ -702,11 +552,7 @@ mcp:
 
 ```
 
-
-
 ### Client Configuration
-
-
 
 ```json
 
@@ -738,15 +584,9 @@ mcp:
 
 ```
 
-
-
 ---
 
-
-
 ## Troubleshooting
-
-
 
 | Issue              | Cause               | Solution                      |
 
@@ -762,15 +602,9 @@ mcp:
 
 | Auth failed        | Missing credentials | Configure authentication      |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `docs/api/mcp.md` — MCP API documentation
 
@@ -780,11 +614,7 @@ mcp:
 
 - `.knowledge/practices/engineering/error_handling.md` — Error handling
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

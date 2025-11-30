@@ -23,7 +23,6 @@
 | Partial tool failure | Complete manually |
 | New environment setup | Use until tools configured |
 
-
 ---
 
 ## 2. Session Start Fallback
@@ -62,7 +61,6 @@ ls -la .knowledge/
 
 ## 3. Session Checkpoint Fallback
 
-
 ### When to Checkpoint
 
 | Trigger | Action |
@@ -99,7 +97,6 @@ ls -la .knowledge/
 
 ### Summary
 [1-2 sentence overview]
-
 
 ### Completed
 - [x] [Task 1]

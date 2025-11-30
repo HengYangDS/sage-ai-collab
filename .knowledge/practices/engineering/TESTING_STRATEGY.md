@@ -71,15 +71,12 @@
 ```python
 def test_[function]_[scenario]
 
-
 _[expected]():
 pass
-
 
 # Examples
 def test_calculate_total_empty_cart_returns_zero():
     ...
-
 
 def test_login_invalid_password_raises_error():
     ...
@@ -139,7 +136,6 @@ def test_user_registration():
 @pytest.fixture
 def user():
     return User(name="Test", email="test@example.com")
-
 
 @pytest.fixture
 def db_session():

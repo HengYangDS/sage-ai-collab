@@ -1,18 +1,10 @@
 # Monorepo Checklist
 
-
-
 > Task checklist for monorepo setup and management
-
-
 
 ---
 
-
-
 ## Repository Setup
-
-
 
 - [ ] Monorepo tool chosen (Nx, Turborepo, Lerna, etc.)
 
@@ -24,11 +16,7 @@
 
 - [ ] Editor/IDE settings configured
 
-
-
 ## Package Structure
-
-
 
 - [ ] Package naming convention defined
 
@@ -40,11 +28,7 @@
 
 - [ ] Version strategy decided (fixed/independent)
 
-
-
 ## Build System
-
-
 
 - [ ] Build tool configured
 
@@ -56,11 +40,7 @@
 
 - [ ] Build order determined
 
-
-
 ## Dependency Management
-
-
 
 - [ ] Package manager configured (npm/yarn/pnpm)
 
@@ -72,11 +52,7 @@
 
 - [ ] Dependency constraints set
 
-
-
 ## Code Sharing
-
-
 
 - [ ] Shared libraries created
 
@@ -88,11 +64,7 @@
 
 - [ ] Circular dependencies prevented
 
-
-
 ## Testing
-
-
 
 - [ ] Test runner configured
 
@@ -104,11 +76,7 @@
 
 - [ ] E2E tests organized
 
-
-
 ## CI/CD
-
-
 
 - [ ] Pipeline optimized for monorepo
 
@@ -120,11 +88,7 @@
 
 - [ ] Selective deployment ready
 
-
-
 ## Code Quality
-
-
 
 - [ ] Linting configured (root + packages)
 
@@ -136,11 +100,7 @@
 
 - [ ] PR templates created
 
-
-
 ## Release Management
-
-
 
 - [ ] Changelog generation automated
 
@@ -152,11 +112,7 @@
 
 - [ ] Rollback procedures documented
 
-
-
 ## Documentation
-
-
 
 - [ ] Monorepo guide written
 
@@ -168,21 +124,13 @@
 
 - [ ] Onboarding guide ready
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Monorepo Checklist*
 
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/monorepo/context.md` — Monorepo context
 
@@ -190,11 +138,7 @@
 
 - `.knowledge/practices/engineering/ci_cd.md` — CI/CD practices
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

@@ -122,20 +122,17 @@ builder.export_to_json(Path(".outputs/graph.json"))
 from dataclasses import dataclass
 from enum import Enum
 
-
 class NodeType(Enum):
     FILE = "file"
     DIRECTORY = "directory"
     CONCEPT = "concept"
     TAG = "tag"
 
-
 class EdgeType(Enum):
     LINKS_TO = "links_to"
     CONTAINS = "contains"
     REFERENCES = "references"
     TAGGED_WITH = "tagged_with"
-
 
 @dataclass
 class KnowledgeNode:
@@ -144,7 +141,6 @@ class KnowledgeNode:
     node_type: NodeType
     properties: dict
     tokens: int = 0
-
 
 @dataclass
 class KnowledgeEdge:
@@ -575,4 +571,4 @@ result = await build_knowledge_graph(
 
 ---
 
-*Part of AI Collaboration Knowledge Base — 信达雅 (Xin-Da-Ya)*
+*AI Collaboration Knowledge Base*

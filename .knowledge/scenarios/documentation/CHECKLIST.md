@@ -1,18 +1,10 @@
 # Documentation Checklist
 
-
-
 > Task checklist for technical writing projects
-
-
 
 ---
 
-
-
 ## Planning
-
-
 
 - [ ] Target audience identified
 
@@ -24,11 +16,7 @@
 
 - [ ] Review process established
 
-
-
 ## Structure
-
-
 
 - [ ] Clear hierarchy (H1-H4)
 
@@ -40,11 +28,7 @@
 
 - [ ] Navigation intuitive
 
-
-
 ## Content Quality
-
-
 
 - [ ] Accurate and up-to-date
 
@@ -58,11 +42,7 @@
 
 - [ ] Common errors addressed
 
-
-
 ## Code Examples
-
-
 
 - [ ] Syntax highlighted
 
@@ -74,11 +54,7 @@
 
 - [ ] Version/environment specified
 
-
-
 ## Visual Elements
-
-
 
 - [ ] Diagrams where helpful
 
@@ -90,11 +66,7 @@
 
 - [ ] Mobile-friendly display
 
-
-
 ## API Documentation
-
-
 
 - [ ] All endpoints documented
 
@@ -106,11 +78,7 @@
 
 - [ ] Rate limits documented
 
-
-
 ## User Guides
-
-
 
 - [ ] Getting started guide
 
@@ -122,11 +90,7 @@
 
 - [ ] Glossary if needed
 
-
-
 ## Technical Reference
-
-
 
 - [ ] Configuration options listed
 
@@ -136,11 +100,7 @@
 
 - [ ] Default values specified
 
-
-
 ## Maintenance
-
-
 
 - [ ] Version history maintained
 
@@ -152,11 +112,7 @@
 
 - [ ] Deprecation notices clear
 
-
-
 ## Accessibility
-
-
 
 - [ ] Plain language used
 
@@ -168,11 +124,7 @@
 
 - [ ] Keyboard navigable
 
-
-
 ## Publishing
-
-
 
 - [ ] Spell check passed
 
@@ -184,15 +136,9 @@
 
 - [ ] Localization (if needed)
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/documentation/context.md` — Documentation context
 
@@ -200,17 +146,11 @@
 
 - `.knowledge/guidelines/documentation.md` — Documentation guidelines
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Documentation Checklist*
 
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

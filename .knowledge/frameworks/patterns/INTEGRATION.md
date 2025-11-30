@@ -89,7 +89,6 @@ from sage.services.mcp_server import create_app
 
 app = create_app()
 
-
 # Each client gets isolated session state
 @app.tool()
 async def get_knowledge(
@@ -347,7 +346,6 @@ from sage.core.loader import KnowledgeLoader
 app = FastAPI()
 loader = KnowledgeLoader()
 
-
 @app.get("/api/v1/knowledge/{layer}")
 async def get_knowledge(layer: int, timeout_ms: int = 5000):
     """REST endpoint for knowledge retrieval."""
@@ -356,7 +354,6 @@ async def get_knowledge(layer: int, timeout_ms: int = 5000):
         return {"status": "success", "data": result}
     except TimeoutError:
         raise HTTPException(504, "Knowledge loading timed out")
-
 
 @app.get("/api/v1/search")
 async def search(q: str, max_results: int = 10):
@@ -371,14 +368,12 @@ async def search(q: str, max_results: int = 10):
 import strawberry
 from sage.core.loader import KnowledgeLoader
 
-
 @strawberry.type
 class KnowledgeNode:
     id: str
     title: str
     content: str
     layer: int
-
 
 @strawberry.type
 class Query:
@@ -397,7 +392,6 @@ class Query:
 
 ```python
 from sage.core.events import EventBus
-
 
 class WebhookIntegration:
     def __init__(self, webhook_url: str):
@@ -423,7 +417,6 @@ class WebhookIntegration:
 
 ```python
 from sage.plugins import PluginManager
-
 
 class IntegrationPlugin:
     """Base class for integration plugins."""
@@ -460,7 +453,6 @@ class IntegrationPlugin:
 
 ```python
 from sage.core.events import EventBus
-
 
 class AnalyticsPlugin:
     async def initialize(self, context):
@@ -545,7 +537,6 @@ await exporter.to_json("dist/knowledge.json")
 ```python
 from sage.integrations import IntegrationError
 
-
 class ResilientIntegration:
     async def call_external(self, request):
         retries = 3
@@ -611,4 +602,4 @@ SAGE_EXTERNAL_URL=https://api.example.com
 
 ---
 
-*Part of AI Collaboration Knowledge Base — 信达雅 (Xin-Da-Ya)*
+*AI Collaboration Knowledge Base*

@@ -74,7 +74,6 @@ import hashlib
 import secrets
 from typing import Tuple
 
-
 def hash_password(password: str) -> Tuple[str, str]:
     """Hash password with salt using secure algorithm."""
     salt = secrets.token_hex(32)
@@ -86,7 +85,6 @@ def hash_password(password: str) -> Tuple[str, str]:
         iterations=100000
     )
     return hash_value.hex(), salt
-
 
 def verify_password(password: str, hash_value: str, salt: str) -> bool:
     """Verify password against stored hash."""
@@ -100,7 +98,6 @@ def verify_password(password: str, hash_value: str, salt: str) -> bool:
 # API key validation pattern
 from functools import wraps
 from typing import Callable
-
 
 def require_api_key(func: Callable) -> Callable:
     """Decorator to require valid API key."""
@@ -160,7 +157,6 @@ import jwt
 from datetime import datetime, timedelta
 from typing import Dict, Any
 
-
 class JWTManager:
     """JWT token management."""
 
@@ -218,7 +214,6 @@ class JWTManager:
 import secrets
 from datetime import datetime, timedelta
 from typing import Optional
-
 
 class SessionManager:
     """Secure session management."""
@@ -286,7 +281,6 @@ class SessionManager:
 import pyotp
 import qrcode
 from io import BytesIO
-
 
 class TOTPManager:
     """Time-based OTP management."""
@@ -381,7 +375,6 @@ from fastapi.security import HTTPBearer
 
 security = HTTPBearer()
 
-
 async def auth_middleware(request: Request, call_next):
     """Authentication middleware."""
 
@@ -445,4 +438,4 @@ SECURITY_HEADERS = {
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Security Framework*
+*AI Collaboration Knowledge Base*

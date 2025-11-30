@@ -2,7 +2,7 @@
 
 > Entry point for AI collaboration knowledge content
 >
-> **Layer Hierarchy Design**: `docs/design/knowledge_system/LAYER_HIERARCHY.md`
+> **Layer Hierarchy Design**: `.knowledge/frameworks/design/LAYER_HIERARCHY.md`
 
 ---
 
@@ -22,12 +22,12 @@
 | **Core**       | `core/`       | Principles, defaults, quick reference     | 4     |
 | **Guidelines** | `guidelines/` | Code style, engineering, AI collaboration | 15    |
 | **Frameworks** | `frameworks/` | Autonomy, timeout, cognitive patterns     | 24    |
-| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 43    |
+| **Practices**  | `practices/`  | Documentation, engineering, decisions     | 54    |
 | **References** | `references/` | Quick reference guides and checklists     | 4     |
-| **Scenarios**  | `scenarios/`  | Context-specific guides                   | 23    |
+| **Scenarios**  | `scenarios/`  | Context-specific guides                   | 34    |
 | **Templates**  | `templates/`  | Reusable document templates               | 17    |
 
-**Total**: ~132 knowledge files
+**Total**: ~152 knowledge files
 
 ---
 
@@ -78,57 +78,63 @@ Reusable patterns and strategies across 7 categories:
 | `resilience/`  | 2     | Timeout patterns, fallbacks      |
 | `security/`    | 5     | Auth, secrets, security checks   |
 
-### 2.4 Practices (43 files)
+### 2.4 Practices (54 files)
 
 Real-world implementation guidance:
 
 | Subdirectory        | Files | Purpose                      |
 |---------------------|-------|------------------------------|
-| `ai_collaboration/` | 11    | Context, session, token mgmt |
-| `decisions/`        | 1     | Autonomy case studies        |
-| `documentation/`    | 7     | Knowledge org, standards     |
-| `engineering/`      | 23    | API, testing, CI/CD, logging |
+| `ai_collaboration/` | 12    | Context, session, token mgmt |
+| `decisions/`        | 2     | Autonomy case studies        |
+| `documentation/`    | 11    | Knowledge org, standards     |
+| `engineering/`      | 28    | API, testing, CI/CD, logging |
 
-### 2.5 Scenarios (23 files)
+### 2.5 Scenarios (34 files)
 
 Context-specific project guides:
 
 | Subdirectory            | Files | Purpose                    |
 |-------------------------|-------|----------------------------|
-| `data_pipeline/`        | 2     | Data pipeline projects     |
-| `devops/`               | 2     | DevOps workflows           |
-| `documentation/`        | 2     | Documentation projects     |
-| `knowledge_management/` | 1     | Knowledge management       |
-| `legacy_modernization/` | 1     | Legacy system updates      |
-| `mcp_integration/`      | 1     | MCP integration            |
-| `microservices/`        | 1     | Microservices architecture |
-| `monorepo/`             | 1     | Monorepo management        |
-| `plugin_development/`   | 1     | Plugin development         |
-| `python_backend/`       | 2     | Python backend projects    |
-| `typescript_frontend/`  | 2     | TypeScript frontend        |
+| `data_pipeline/`        | 3     | Data pipeline projects     |
+| `devops/`               | 3     | DevOps workflows           |
+| `documentation/`        | 3     | Documentation projects     |
+| `knowledge_management/` | 3     | Knowledge management       |
+| `legacy_modernization/` | 3     | Legacy system updates      |
+| `mcp_integration/`      | 3     | MCP integration            |
+| `microservices/`        | 3     | Microservices architecture |
+| `monorepo/`             | 3     | Monorepo management        |
+| `plugin_development/`   | 3     | Plugin development         |
+| `python_backend/`       | 3     | Python backend projects    |
+| `typescript_frontend/`  | 3     | TypeScript frontend        |
 
-### 2.6 References (2 files)
+### 2.6 References (4 files)
 
 Quick reference guides and checklists:
 
 | File                       | Purpose                         |
 |----------------------------|---------------------------------|
+| `INDEX.md`                 | References layer navigation     |
+| `GLOSSARY.md`              | Term definitions and glossary   |
 | `KNOWLEDGE_QUICK_REF.md`   | Knowledge organization patterns |
 | `PERFORMANCE_CHECKLIST.md` | Performance optimization checks |
 
-### 2.7 Templates (14 files)
+### 2.7 Templates (17 files)
 
 Reusable document templates:
 
 | File                       | Purpose                      |
 |----------------------------|------------------------------|
+| `INDEX.md`                 | Templates layer navigation   |
 | `ADR.md`                   | Architecture Decision Record |
 | `API_SPEC.md`              | API specification            |
 | `CASE_STUDY.md`            | Case study template          |
+| `CONVENTION.md`            | Convention documentation     |
 | `CONVERSATION_RECORD.md`   | Conversation logging         |
 | `EXPERT_COMMITTEE.md`      | Expert committee review      |
+| `GUIDE.md`                 | Guide documentation          |
 | `MEETING_NOTES.md`         | Meeting notes template       |
 | `POSTMORTEM.md`            | Incident postmortem          |
+| `PRACTICE.md`              | Practice documentation       |
 | `PROJECT_SETUP.md`         | Project setup checklist      |
 | `RELEASE_NOTES.md`         | Release notes format         |
 | `RUNBOOK.md`               | Operational runbook          |
@@ -194,6 +200,8 @@ Reusable document templates:
 
 ### References
 
+- `.knowledge/references/INDEX.md` — References layer navigation
+- `.knowledge/references/GLOSSARY.md` — Term definitions and glossary
 - `.knowledge/references/KNOWLEDGE_QUICK_REF.md` — Knowledge organization patterns
 - `.knowledge/references/PERFORMANCE_CHECKLIST.md` — Performance optimization checks
 

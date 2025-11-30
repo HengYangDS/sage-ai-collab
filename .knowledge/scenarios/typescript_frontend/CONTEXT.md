@@ -1,18 +1,10 @@
 # TypeScript Frontend Scenario Context
 
-
-
 > Pre-configured context for TypeScript frontend development (React/Vue)
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -32,15 +24,9 @@
 
 - [9. Quick Commands](#9-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -56,15 +42,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                   |
 
@@ -74,15 +54,9 @@ autonomy_default: L3
 
 | **On-Demand** | `.knowledge/guidelines/engineering.md` · `.knowledge/practices/engineering/testing_strategy.md`               |
 
-
-
 ---
 
-
-
 ## 3. Project Structure (React)
-
-
 
 | Directory         | Purpose                     |
 
@@ -108,25 +82,15 @@ autonomy_default: L3
 
 | `public/`         | Static assets               |
 
-
-
 ---
-
-
 
 ## 4. Common Patterns
 
-
-
 ### 4.1 Component Pattern
-
-
 
 ```typescript
 
 import {FC, useState, useCallback} from 'react';
-
-
 
 interface UserCardProps {
 
@@ -136,13 +100,9 @@ interface UserCardProps {
 
 }
 
-
-
 export const UserCard: FC<UserCardProps> = ({user, onSelect}) => {
 
     const [isExpanded, setIsExpanded] = useState(false);
-
-
 
     const handleClick = useCallback(() => {
 
@@ -151,8 +111,6 @@ export const UserCard: FC<UserCardProps> = ({user, onSelect}) => {
         onSelect?.(user.id);
 
     }, [user.id, onSelect]);
-
-
 
     return (
 
@@ -178,17 +136,11 @@ export const UserCard: FC<UserCardProps> = ({user, onSelect}) => {
 
 ```
 
-
-
 ### 4.2 Custom Hook Pattern
-
-
 
 ```typescript
 
 import {useState, useEffect} from 'react';
-
-
 
 interface UseFetchResult<T> {
 
@@ -200,8 +152,6 @@ interface UseFetchResult<T> {
 
 }
 
-
-
 export function useFetch<T>(url: string): UseFetchResult<T> {
 
     const [data, setData] = useState<T | null>(null);
@@ -209,8 +159,6 @@ export function useFetch<T>(url: string): UseFetchResult<T> {
     const [loading, setLoading] = useState(true);
 
     const [error, setError] = useState<Error | null>(null);
-
-
 
     useEffect(() => {
 
@@ -242,25 +190,17 @@ export function useFetch<T>(url: string): UseFetchResult<T> {
 
     }, [url]);
 
-
-
     return {data, loading, error};
 
 }
 
 ```
 
-
-
 ### 4.3 Context Pattern
-
-
 
 ```typescript
 
 import {createContext, useContext, ReactNode, useState} from 'react';
-
-
 
 interface AuthContextType {
 
@@ -272,17 +212,11 @@ interface AuthContextType {
 
 }
 
-
-
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
-
-
 
 export const AuthProvider = ({children}: { children: ReactNode }) => {
 
     const [user, setUser] = useState<User | null>(null);
-
-
 
     const login = async (credentials: Credentials) => {
 
@@ -292,11 +226,7 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
 
     };
 
-
-
     const logout = () => setUser(null);
-
-
 
     return (
 
@@ -324,8 +254,6 @@ export const AuthProvider = ({children}: { children: ReactNode }) => {
 
 };
 
-
-
 export const useAuth = () => {
 
     const context = useContext(AuthContext);
@@ -338,19 +266,11 @@ export const useAuth = () => {
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Testing Patterns
 
-
-
 ### 5.1 Component Testing
-
-
 
 ```typescript
 
@@ -358,13 +278,9 @@ import {render, screen, fireEvent} from '@testing-library/react';
 
 import {UserCard} from './UserCard';
 
-
-
 describe('UserCard', () => {
 
     const mockUser = {id: '1', name: 'John', bio: 'Developer'};
-
-
 
     it('renders user name', () => {
 
@@ -375,8 +291,6 @@ describe('UserCard', () => {
         expect(screen.getByText('John')).toBeInTheDocument();
 
     });
-
-
 
     it('expands on click', () => {
 
@@ -389,8 +303,6 @@ describe('UserCard', () => {
         expect(screen.getByText('Developer')).toBeInTheDocument();
 
     });
-
-
 
     it('calls onSelect with user id', () => {
 
@@ -412,19 +324,13 @@ describe('UserCard', () => {
 
 ```
 
-
-
 ### 5.2 Hook Testing
-
-
 
 ```typescript
 
 import {renderHook, waitFor} from '@testing-library/react';
 
 import {useFetch} from './useFetch';
-
-
 
 describe('useFetch', () => {
 
@@ -438,19 +344,13 @@ describe('useFetch', () => {
 
         });
 
-
-
         const {result} = renderHook(() => useFetch('/api/data'));
-
-
 
         await waitFor(() => {
 
             expect(result.current.loading).toBe(false);
 
         });
-
-
 
         expect(result.current.data).toEqual({name: 'Test'});
 
@@ -462,19 +362,11 @@ describe('useFetch', () => {
 
 ```
 
-
-
 ---
-
-
 
 ## 6. State Management
 
-
-
 ### 6.1 Local State
-
-
 
 | Pattern      | Use Case                 |
 
@@ -486,11 +378,7 @@ describe('useFetch', () => {
 
 | `useRef`     | Mutable values, DOM refs |
 
-
-
 ### 6.2 Global State Options
-
-
 
 | Library           | Best For                  |
 
@@ -506,15 +394,9 @@ describe('useFetch', () => {
 
 | TanStack Query    | Server state              |
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                 | Steps                                                       |
 
@@ -528,15 +410,9 @@ describe('useFetch', () => {
 
 | **Add Global State** | Create context/store → Add provider → Use hook              |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                | Level | Notes                      |
 
@@ -556,15 +432,9 @@ describe('useFetch', () => {
 
 | Breaking API changes     | L1-L2 | Full review required       |
 
-
-
 ---
 
-
-
 ## 9. Quick Commands
-
-
 
 | Category  | Commands                                                    |
 
@@ -580,15 +450,9 @@ describe('useFetch', () => {
 
 | **Deps**  | `npm install` · `npm update` · `npm audit`                  |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/code_style.md` — Code style guidelines
 
@@ -598,11 +462,7 @@ describe('useFetch', () => {
 
 - `.knowledge/frameworks/autonomy/levels.md` — Autonomy framework
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

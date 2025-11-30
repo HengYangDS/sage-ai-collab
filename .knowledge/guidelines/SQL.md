@@ -393,7 +393,6 @@ from datetime import datetime
 
 Base = declarative_base()
 
-
 class User(Base):
     __tablename__ = 'users'
 
@@ -401,7 +400,6 @@ class User(Base):
     email = Column(String(255), unique=True, nullable=False)
     name = Column(String(100), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
-
 
 # Query patterns
 # ✅ Good - Explicit columns

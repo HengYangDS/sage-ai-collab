@@ -1,18 +1,10 @@
 # Data Pipeline Checklist
 
-
-
 > Task checklist for ETL and data processing workflows
-
-
 
 ---
 
-
-
 ## Design
-
-
 
 - [ ] Data sources identified
 
@@ -24,11 +16,7 @@
 
 - [ ] Recovery strategy planned
 
-
-
 ## Data Extraction
-
-
 
 - [ ] Source connections configured
 
@@ -40,11 +28,7 @@
 
 - [ ] Connection pooling used
 
-
-
 ## Data Transformation
-
-
 
 - [ ] Business rules documented
 
@@ -56,11 +40,7 @@
 
 - [ ] Deduplication logic implemented
 
-
-
 ## Data Loading
-
-
 
 - [ ] Target schema created
 
@@ -72,11 +52,7 @@
 
 - [ ] Indexes managed
 
-
-
 ## Quality & Validation
-
-
 
 - [ ] Data quality checks defined
 
@@ -90,11 +66,7 @@
 
 - [ ] Anomaly detection
 
-
-
 ## Error Handling
-
-
 
 - [ ] Retry logic implemented
 
@@ -106,11 +78,7 @@
 
 - [ ] Manual intervention procedures
 
-
-
 ## Performance
-
-
 
 - [ ] Parallel processing enabled
 
@@ -122,11 +90,7 @@
 
 - [ ] SLA targets defined
 
-
-
 ## Monitoring
-
-
 
 - [ ] Pipeline status dashboard
 
@@ -138,11 +102,7 @@
 
 - [ ] Cost monitoring
 
-
-
 ## Security
-
-
 
 - [ ] Credentials in secrets manager
 
@@ -154,11 +114,7 @@
 
 - [ ] Audit logging enabled
 
-
-
 ## Documentation
-
-
 
 - [ ] Pipeline diagram created
 
@@ -168,15 +124,9 @@
 
 - [ ] On-call procedures defined
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/data_pipeline/context.md` — Data pipeline context
 
@@ -184,17 +134,11 @@
 
 - `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Data Pipeline Checklist*
 
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

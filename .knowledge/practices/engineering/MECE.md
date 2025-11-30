@@ -91,4 +91,4 @@ New tool/capability arrives
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

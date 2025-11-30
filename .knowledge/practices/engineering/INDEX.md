@@ -44,4 +44,4 @@
 
 ---
 
-*Auto-generated index*
+*AI Collaboration Knowledge Base*

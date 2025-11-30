@@ -1,18 +1,10 @@
 # Documentation Scenario Context
 
-
-
 > Pre-configured context for technical writing and documentation projects
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -32,15 +24,9 @@
 
 - [9. Quick Commands](#9-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -56,15 +42,9 @@ autonomy_default: L4
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                                       |
 
@@ -74,15 +54,9 @@ autonomy_default: L4
 
 | **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/templates/index.md`                                  |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory      | Purpose                     |
 
@@ -102,19 +76,11 @@ autonomy_default: L4
 
 | `templates/`   | Document templates          |
 
-
-
 ---
-
-
 
 ## 4. Document Types
 
-
-
 ### 4.1 Documentation Quadrant (Diátaxis)
-
-
 
 | Type             | Purpose                | User Need                |
 
@@ -128,11 +94,7 @@ autonomy_default: L4
 
 | **Explanation**  | Understanding-oriented | "I want to understand Z" |
 
-
-
 ### 4.2 Document Templates
-
-
 
 | Document Type | Template                  | Use Case               |
 
@@ -146,93 +108,51 @@ autonomy_default: L4
 
 | Postmortem    | `.knowledge/templates/postmortem.md` | Incident reports       |
 
-
-
 ---
-
-
 
 ## 5. Writing Patterns
 
-
-
 ### 5.1 Document Structure
-
-
 
 ```markdown
 
 # [Title]
 
-
-
 > [One-line description]
 
-
-
 ---
-
-
 
 ## Table of Contents
 
-
-
 [Section links]
 
-
-
 ---
-
-
 
 ## 1. [First Section]
 
-
-
 [Content]
 
-
-
 ---
-
-
 
 ## 2. [Second Section]
 
-
-
 [Content]
-
-
 
 ---
 
-
-
 ## Related
-
-
 
 - [Related doc 1]
 
 - [Related doc 2]
 
-
-
 ---
-
-
 
 *[Footer/attribution]*
 
 ```
 
-
-
 ### 5.2 Section Formatting
-
-
 
 | Element        | Format          | Example                 |
 
@@ -250,11 +170,7 @@ autonomy_default: L4
 
 | **Note**       | Blockquote      | `> **Note**: ...`       |
 
-
-
 ### 5.3 Writing Style
-
-
 
 | Principle         | Description              | Example                                               |
 
@@ -270,11 +186,7 @@ autonomy_default: L4
 
 | **Specific**      | Avoid vague terms        | "3 seconds" not "a short time"                        |
 
-
-
 ### 5.4 Code Documentation
-
-
 
 ```python
 
@@ -294,13 +206,9 @@ def process_data(
 
     """Process data from input file and write to output.
 
-
-
     Reads data in chunks, applies transformations, and writes results.
 
     Supports validation and progress tracking.
-
-
 
     Args:
 
@@ -312,21 +220,15 @@ def process_data(
 
         validate: Whether to validate data. Defaults to True.
 
-
-
     Returns:
 
         ProcessResult containing success status and statistics.
-
-
 
     Raises:
 
         FileNotFoundError: If input_path doesn't exist.
 
         ValidationError: If validate=True and data is invalid.
-
-
 
     Example:
 
@@ -340,19 +242,11 @@ def process_data(
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Quality Standards
 
-
-
 ### 6.1 Documentation Checklist
-
-
 
 | Category          | Check                                   |
 
@@ -368,11 +262,7 @@ def process_data(
 
 | **Accessibility** | Readable, proper headings, alt text     |
 
-
-
 ### 6.2 Review Criteria
-
-
 
 | Level         | Focus                                      |
 
@@ -384,11 +274,7 @@ def process_data(
 
 | **User**      | Usability, findability, task completion    |
 
-
-
 ### 6.3 Information Density
-
-
 
 | Content Type    | Target Density | Approach                  |
 
@@ -402,15 +288,9 @@ def process_data(
 
 | Reference       | High           | Structured, searchable    |
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                 | Steps                                                         |
 
@@ -426,11 +306,7 @@ def process_data(
 
 | **Restructure docs** | Analyze current → Plan new structure → Migrate → Redirect     |
 
-
-
 ### 7.1 Documentation Workflow
-
-
 
 ```
 
@@ -438,13 +314,9 @@ def process_data(
 
    └── Identify audience, purpose, scope
 
-
-
 2. Draft
 
    └── Use template, write content, add examples
-
-
 
 3. Review
 
@@ -454,13 +326,9 @@ def process_data(
 
    └── User review (usability)
 
-
-
 4. Publish
 
    └── Build, deploy, announce
-
-
 
 5. Maintain
 
@@ -468,15 +336,9 @@ def process_data(
 
 ```
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type            | Level | Notes                     |
 
@@ -498,15 +360,9 @@ def process_data(
 
 | Create new guide     | L3    | Review outline first      |
 
-
-
 ---
 
-
-
 ## 9. Quick Commands
-
-
 
 | Category       | Commands                                             |
 
@@ -522,19 +378,11 @@ def process_data(
 
 | **Lint**       | `markdownlint .` · `vale docs/`                      |
 
-
-
 ---
-
-
 
 ## Style Quick Reference
 
-
-
 ### Headings
-
-
 
 - Use sentence case: "Getting started" not "Getting Started"
 
@@ -542,11 +390,7 @@ def process_data(
 
 - Limit depth to 3-4 levels
 
-
-
 ### Lists
-
-
 
 - Use bullets for unordered items
 
@@ -554,11 +398,7 @@ def process_data(
 
 - Keep parallel structure
 
-
-
 ### Tables
-
-
 
 - Use for structured data comparison
 
@@ -566,11 +406,7 @@ def process_data(
 
 - Align numbers right, text left
 
-
-
 ### Code
-
-
 
 - Always specify language for syntax highlighting
 
@@ -578,11 +414,7 @@ def process_data(
 
 - Include expected output when helpful
 
-
-
 ### Links
-
-
 
 - Use descriptive link text: "see the configuration guide" not "click here"
 
@@ -590,15 +422,9 @@ def process_data(
 
 - Check links regularly
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/documentation.md` — Documentation guidelines
 
@@ -608,11 +434,7 @@ def process_data(
 
 - `.knowledge/frameworks/cognitive/information_density.md` — Information density
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

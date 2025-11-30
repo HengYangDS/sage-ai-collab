@@ -1,18 +1,10 @@
 # Integration Testing
 
-
-
 > Best practices for testing component interactions and system integration
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Overview](#1-overview)
 
@@ -28,19 +20,11 @@
 
 - [7. CI/CD Integration](#7-cicd-integration)
 
-
-
 ---
-
-
 
 ## 1. Overview
 
-
-
 ### 1.1 Integration vs Unit Tests
-
-
 
 | Aspect           | Unit Tests        | Integration Tests     |
 
@@ -56,11 +40,7 @@
 
 | **Purpose**      | Logic correctness | Component interaction |
 
-
-
 ### 1.2 Integration Test Goals
-
-
 
 | Goal                   | Description                      |
 
@@ -74,19 +54,11 @@
 
 | **Check side effects** | External effects occur correctly |
 
-
-
 ---
-
-
 
 ## 2. Test Categories
 
-
-
 ### 2.1 Test Types
-
-
 
 ```
 
@@ -112,11 +84,7 @@
 
 ```
 
-
-
 ### 2.2 Integration Test Scope
-
-
 
 | Scope      | Components      | Example              |
 
@@ -128,19 +96,11 @@
 
 | **Broad**  | Multiple layers | Full request flow    |
 
-
-
 ---
-
-
 
 ## 3. Database Testing
 
-
-
 ### 3.1 Test Database Setup
-
-
 
 ```python
 
@@ -149,10 +109,6 @@ import pytest
 from sqlalchemy import create_engine
 
 from sqlalchemy.orm import sessionmaker
-
-
-
-
 
 @pytest.fixture(scope="session")
 
@@ -166,10 +122,6 @@ def test_engine():
 
     return engine
 
-
-
-
-
 @pytest.fixture(scope="function")
 
 def db_session(test_engine):
@@ -180,11 +132,7 @@ def db_session(test_engine):
 
     session = Session()
 
-
-
     yield session
-
-
 
     session.rollback()
 
@@ -192,11 +140,7 @@ def db_session(test_engine):
 
 ```
 
-
-
 ### 3.2 Database Fixtures
-
-
 
 ```python
 
@@ -222,19 +166,11 @@ def sample_users(db_session):
 
     return users
 
-
-
-
-
 def test_get_all_users(db_session, sample_users):
 
     repo = UserRepository(db_session)
 
-
-
     result = repo.get_all()
-
-
 
     assert len(result) == 2
 
@@ -242,11 +178,7 @@ def test_get_all_users(db_session, sample_users):
 
 ```
 
-
-
 ### 3.3 Transaction Rollback
-
-
 
 ```python
 
@@ -260,17 +192,11 @@ def db_session(test_engine):
 
     transaction = connection.begin()
 
-
-
     Session = sessionmaker(bind=connection)
 
     session = Session()
 
-
-
     yield session
-
-
 
     session.close()
 
@@ -280,11 +206,7 @@ def db_session(test_engine):
 
 ```
 
-
-
 ### 3.4 Test Data Management
-
-
 
 ```python
 
@@ -292,13 +214,9 @@ class TestDataBuilder:
 
     """Builder for creating test data."""
 
-
-
     def __init__(self, session):
 
         self.session = session
-
-
 
     def create_user(self, **kwargs) -> User:
 
@@ -319,8 +237,6 @@ class TestDataBuilder:
         self.session.commit()
 
         return user
-
-
 
     def create_order(self, user: User, **kwargs) -> Order:
 
@@ -344,19 +260,11 @@ class TestDataBuilder:
 
 ```
 
-
-
 ---
-
-
 
 ## 4. API Testing
 
-
-
 ### 4.1 FastAPI Testing
-
-
 
 ```python
 
@@ -366,13 +274,7 @@ from fastapi.testclient import TestClient
 
 from httpx import AsyncClient
 
-
-
 from app.main import app
-
-
-
-
 
 @pytest.fixture
 
@@ -381,10 +283,6 @@ def client():
     """Sync test client."""
 
     return TestClient(app)
-
-
-
-
 
 @pytest.fixture
 
@@ -396,23 +294,13 @@ async def async_client():
 
         yield client
 
-
-
-
-
 def test_get_users(client):
 
     response = client.get("/api/users")
 
-
-
     assert response.status_code == 200
 
     assert isinstance(response.json(), list)
-
-
-
-
 
 @pytest.mark.asyncio
 
@@ -426,19 +314,13 @@ async def test_create_user(async_client):
 
     )
 
-
-
     assert response.status_code == 201
 
     assert response.json()["name"] == "Alice"
 
 ```
 
-
-
 ### 4.2 Request/Response Testing
-
-
 
 ```python
 
@@ -446,21 +328,15 @@ class TestUserAPI:
 
     """Integration tests for User API."""
 
-
-
     def test_create_user_success(self, client, db_session):
 
         # Arrange
 
         payload = {"name": "Alice", "email": "alice@test.com"}
 
-
-
         # Act
 
         response = client.post("/api/users", json=payload)
-
-
 
         # Assert response
 
@@ -472,8 +348,6 @@ class TestUserAPI:
 
         assert "id" in data
 
-
-
         # Assert database
 
         user = db_session.query(User).filter_by(id=data["id"]).first()
@@ -482,17 +356,11 @@ class TestUserAPI:
 
         assert user.email == "alice@test.com"
 
-
-
     def test_create_user_duplicate_email(self, client, sample_users):
 
         payload = {"name": "Duplicate", "email": sample_users[0].email}
 
-
-
         response = client.post("/api/users", json=payload)
-
-
 
         assert response.status_code == 409
 
@@ -500,11 +368,7 @@ class TestUserAPI:
 
 ```
 
-
-
 ### 4.3 Authentication Testing
-
-
 
 ```python
 
@@ -526,19 +390,11 @@ def auth_headers(client):
 
     return {"Authorization": f"Bearer {token}"}
 
-
-
-
-
 def test_protected_endpoint(client, auth_headers):
 
     response = client.get("/api/admin/users", headers=auth_headers)
 
     assert response.status_code == 200
-
-
-
-
 
 def test_protected_endpoint_without_auth(client):
 
@@ -548,27 +404,17 @@ def test_protected_endpoint_without_auth(client):
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Service Integration
 
-
-
 ### 5.1 Service Layer Testing
-
-
 
 ```python
 
 class TestOrderService:
 
     """Integration tests for OrderService."""
-
-
 
     @pytest.fixture
 
@@ -582,27 +428,19 @@ class TestOrderService:
 
         return OrderService(user_repo, order_repo)
 
-
-
     def test_create_order(self, order_service, sample_users):
 
         user = sample_users[0]
 
         items = [{"product_id": "p1", "quantity": 2}]
 
-
-
         order = order_service.create_order(user.id, items)
-
-
 
         assert order.id is not None
 
         assert order.user_id == user.id
 
         assert order.status == "pending"
-
-
 
     def test_create_order_invalid_user(self, order_service):
 
@@ -612,21 +450,13 @@ class TestOrderService:
 
 ```
 
-
-
 ### 5.2 External Service Mocking
-
-
 
 ```python
 
 import responses
 
 import httpx
-
-
-
-
 
 @pytest.fixture
 
@@ -650,15 +480,9 @@ def mock_payment_service():
 
         yield rsps
 
-
-
-
-
 def test_process_payment(order_service, mock_payment_service):
 
     result = order_service.process_payment("order123", 100.00)
-
-
 
     assert result.success is True
 
@@ -666,11 +490,7 @@ def test_process_payment(order_service, mock_payment_service):
 
 ```
 
-
-
 ### 5.3 Event/Message Testing
-
-
 
 ```python
 
@@ -686,21 +506,13 @@ def event_bus():
 
     bus.clear()
 
-
-
-
-
 def test_order_created_event(order_service, event_bus, sample_users):
 
     events = []
 
     event_bus.subscribe("order.created", lambda e: events.append(e))
 
-
-
     order = order_service.create_order(sample_users[0].id, [])
-
-
 
     assert len(events) == 1
 
@@ -708,19 +520,11 @@ def test_order_created_event(order_service, event_bus, sample_users):
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Test Isolation
 
-
-
 ### 6.1 Database Isolation
-
-
 
 ```python
 
@@ -742,21 +546,13 @@ def reset_database(db_session):
 
 ```
 
-
-
 ### 6.2 Test Containers
-
-
 
 ```python
 
 import pytest
 
 from testcontainers.postgres import PostgresContainer
-
-
-
-
 
 @pytest.fixture(scope="session")
 
@@ -768,10 +564,6 @@ def postgres():
 
         yield postgres
 
-
-
-
-
 @pytest.fixture
 
 def db_url(postgres):
@@ -782,11 +574,7 @@ def db_url(postgres):
 
 ```
 
-
-
 ### 6.3 Environment Isolation
-
-
 
 ```python
 
@@ -804,37 +592,23 @@ def test_env(monkeypatch):
 
 ```
 
-
-
 ---
-
-
 
 ## 7. CI/CD Integration
 
-
-
 ### 7.1 GitHub Actions Example
-
-
 
 ```yaml
 
 name: Integration Tests
 
-
-
 on: [ push, pull_request ]
-
-
 
 jobs:
 
   test:
 
     runs-on: ubuntu-latest
-
-
 
     services:
 
@@ -860,13 +634,9 @@ jobs:
 
           --health-retries 5
 
-
-
     steps:
 
       - uses: actions/checkout@v4
-
-
 
       - uses: actions/setup-python@v5
 
@@ -874,11 +644,7 @@ jobs:
 
           python-version: '3.12'
 
-
-
       - run: pip install -e ".[dev]"
-
-
 
       - name: Run integration tests
 
@@ -890,11 +656,7 @@ jobs:
 
 ```
 
-
-
 ### 7.2 Test Markers
-
-
 
 ```python
 
@@ -914,13 +676,9 @@ def pytest_configure(config):
 
     )
 
-
-
 # Run only integration tests
 
 # pytest -m integration
-
-
 
 # Skip slow tests
 
@@ -928,11 +686,7 @@ def pytest_configure(config):
 
 ```
 
-
-
 ### 7.3 Test Organization
-
-
 
 ```
 
@@ -960,19 +714,11 @@ tests/
 
 ```
 
-
-
 ---
-
-
 
 ## Quick Reference
 
-
-
 ### Integration Test Checklist
-
-
 
 | Check                      | Description              |
 
@@ -988,11 +734,7 @@ tests/
 
 | ☐ CI/CD compatible         | Works in pipeline        |
 
-
-
 ### Common Fixtures
-
-
 
 | Fixture         | Purpose               |
 
@@ -1008,25 +750,15 @@ tests/
 
 | `mock_external` | External service mock |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/unit_testing_patterns.md` — Unit testing
 
 - `.knowledge/practices/engineering/testing_strategy.md` — Testing strategy
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

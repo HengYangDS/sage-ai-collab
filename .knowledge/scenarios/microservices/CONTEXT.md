@@ -1,18 +1,10 @@
 # Microservices Scenario Context
 
-
-
 > Pre-configured context for microservices architecture development
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Autonomy Calibration](#8-autonomy-calibration)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -54,15 +40,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                      |
 
@@ -72,19 +52,11 @@ autonomy_default: L3
 
 | **On-Demand** | `.knowledge/guidelines/security.md` · `.knowledge/practices/engineering/error_handling.md`                       |
 
-
-
 ---
-
-
 
 ## 3. Architecture Patterns
 
-
-
 ### 3.1 Service Decomposition
-
-
 
 | Pattern           | Description                            | When to Use            |
 
@@ -96,11 +68,7 @@ autonomy_default: L3
 
 | **Strangler Fig** | Gradual migration from monolith        | Legacy modernization   |
 
-
-
 ### 3.2 Service Boundaries
-
-
 
 ```
 
@@ -126,11 +94,7 @@ autonomy_default: L3
 
 ```
 
-
-
 ### 3.3 Key Principles
-
-
 
 | Principle                 | Description                                |
 
@@ -146,19 +110,11 @@ autonomy_default: L3
 
 | **Resilience**            | Design for failure                         |
 
-
-
 ---
-
-
 
 ## 4. Service Design
 
-
-
 ### 4.1 Service Template Structure
-
-
 
 ```
 
@@ -184,11 +140,7 @@ service-name/
 
 ```
 
-
-
 ### 4.2 API Design
-
-
 
 ```python
 
@@ -197,8 +149,6 @@ service-name/
 from fastapi import FastAPI, HTTPException
 
 from pydantic import BaseModel
-
-
 
 app = FastAPI(
 
@@ -210,10 +160,6 @@ app = FastAPI(
 
 )
 
-
-
-
-
 class Order(BaseModel):
 
     id: str
@@ -223,10 +169,6 @@ class Order(BaseModel):
     items: list[dict]
 
     status: str
-
-
-
-
 
 @app.get("/orders/{order_id}", response_model=Order)
 
@@ -240,10 +182,6 @@ async def get_order(order_id: str):
 
     return order
 
-
-
-
-
 @app.post("/orders", response_model=Order, status_code=201)
 
 async def create_order(order: Order):
@@ -256,11 +194,7 @@ async def create_order(order: Order):
 
 ```
 
-
-
 ### 4.3 Health Checks
-
-
 
 ```python
 
@@ -270,10 +204,6 @@ async def health_check():
 
     return {"status": "healthy"}
 
-
-
-
-
 @app.get("/health/ready")
 
 async def readiness_check():
@@ -282,31 +212,19 @@ async def readiness_check():
 
     cache_ok = await check_cache()
 
-
-
     if not (db_ok and cache_ok):
 
         raise HTTPException(status_code=503, detail="Not ready")
-
-
 
     return {"status": "ready", "checks": {"db": db_ok, "cache": cache_ok}}
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Communication Patterns
 
-
-
 ### 5.1 Synchronous (HTTP/gRPC)
-
-
 
 | Pattern      | Use Case         | Consideration             |
 
@@ -318,11 +236,7 @@ async def readiness_check():
 
 | **GraphQL**  | Flexible queries | Client-driven             |
 
-
-
 ### 5.2 Asynchronous (Events/Messages)
-
-
 
 | Pattern                 | Use Case                 | Example                  |
 
@@ -336,11 +250,7 @@ async def readiness_check():
 
 | **Saga**                | Distributed transactions | Order fulfillment flow   |
 
-
-
 ### 5.3 Event Example
-
-
 
 ```python
 
@@ -354,15 +264,9 @@ class OrderCreatedEvent(BaseModel):
 
     data: dict
 
-
-
-
-
 async def create_order(order: Order):
 
     saved = await repository.save(order)
-
-
 
     event = OrderCreatedEvent(
 
@@ -374,13 +278,7 @@ async def create_order(order: Order):
 
     await message_bus.publish("orders", event)
 
-
-
     return saved
-
-
-
-
 
 # Consuming events
 
@@ -398,19 +296,11 @@ async def handle_order_created(event: OrderCreatedEvent):
 
 ```
 
-
-
 ### 5.4 Circuit Breaker
-
-
 
 ```python
 
 from circuitbreaker import circuit
-
-
-
-
 
 @circuit(failure_threshold=5, recovery_timeout=30)
 
@@ -428,19 +318,11 @@ async def call_payment_service(order_id: str):
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Data Management
 
-
-
 ### 6.1 Database per Service
-
-
 
 | Approach                              | Pros                 | Cons                       |
 
@@ -452,11 +334,7 @@ async def call_payment_service(order_id: str):
 
 | **Polyglot persistence**              | Best fit per service | Operational complexity     |
 
-
-
 ### 6.2 Data Consistency Patterns
-
-
 
 | Pattern            | Use Case                 | Implementation                |
 
@@ -468,11 +346,7 @@ async def call_payment_service(order_id: str):
 
 | **CQRS**           | Read/write optimization  | Separate models               |
 
-
-
 ### 6.3 Saga Example (Choreography)
-
-
 
 ```
 
@@ -496,15 +370,9 @@ Order Service          Payment Service       Inventory Service
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                      | Steps                                                            |
 
@@ -520,11 +388,7 @@ Order Service          Payment Service       Inventory Service
 
 | **Database migration**    | Create migration → Test → Deploy → Verify                        |
 
-
-
 ### 7.1 Service Creation Checklist
-
-
 
 | Item                             | Status |
 
@@ -548,15 +412,9 @@ Order Service          Payment Service       Inventory Service
 
 | ☐ Monitoring and alerts          |        |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                        | Level | Notes                    |
 
@@ -576,15 +434,9 @@ Order Service          Payment Service       Inventory Service
 
 | Security configuration           | L1-L2 | Full review required     |
 
-
-
 ---
 
-
-
 ## Quick Commands
-
-
 
 | Category     | Commands                                                  |
 
@@ -598,15 +450,9 @@ Order Service          Payment Service       Inventory Service
 
 | **Debug**    | `docker-compose exec service bash`                        |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/engineering.md` — Engineering practices
 
@@ -616,11 +462,7 @@ Order Service          Payment Service       Inventory Service
 
 - `.knowledge/frameworks/patterns/collaboration.md` — Collaboration patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

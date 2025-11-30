@@ -1,18 +1,10 @@
 # Troubleshooting Guide
 
-
-
 > Common issues, debugging techniques, and solutions for AI Collaboration Knowledge Base
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Quick Diagnostics](#1-quick-diagnostics)
 
@@ -30,19 +22,11 @@
 
 - [8. Recovery Procedures](#8-recovery-procedures)
 
-
-
 ---
-
-
 
 ## 1. Quick Diagnostics
 
-
-
 ### 1.1 Health Check Commands
-
-
 
 ```bash
 
@@ -50,19 +34,13 @@
 
 sage info
 
-
-
 # Verify configuration
 
 sage config validate
 
-
-
 # Test MCP connection
 
 sage serve --dry-run
-
-
 
 # Check knowledge base integrity
 
@@ -70,11 +48,7 @@ sage check --all
 
 ```
 
-
-
 ### 1.2 Diagnostic Checklist
-
-
 
 | Check             | Command                    | Expected Result        |
 
@@ -88,27 +62,15 @@ sage check --all
 
 | Content directory | `ls .knowledge/`           | Directories present    |
 
-
-
 ---
-
-
 
 ## 2. Common Errors
 
-
-
 ### 2.1 Import Errors
-
-
 
 **Symptom**: `ModuleNotFoundError: No module named 'sage'`
 
-
-
 **Causes & Solutions**:
-
-
 
 | Cause                    | Solution                           |
 
@@ -120,35 +82,21 @@ sage check --all
 
 | Path issues              | Check `PYTHONPATH`                 |
 
-
-
 **Debug Steps**:
-
-
 
 ```python
 
 import sys
 
-
-
 print(sys.path)  # Check if src/ is in path
 
 ```
 
-
-
 ### 2.2 Configuration Errors
-
-
 
 **Symptom**: `ConfigurationError: Invalid configuration`
 
-
-
 **Common Issues**:
-
-
 
 | Issue                  | Solution                                  |
 
@@ -160,17 +108,11 @@ print(sys.path)  # Check if src/ is in path
 
 | Type mismatch          | Ensure correct data types                 |
 
-
-
 **Debug Example**:
-
-
 
 ```python
 
 import yaml
-
-
 
 with open("config/app.yaml") as f:
 
@@ -184,19 +126,11 @@ with open("config/app.yaml") as f:
 
 ```
 
-
-
 ### 2.3 Timeout Errors
-
-
 
 **Symptom**: `TimeoutError: Operation timed out`
 
-
-
 **Timeout Levels Reference**:
-
-
 
 | Level | Timeout | Typical Cause     |
 
@@ -212,11 +146,7 @@ with open("config/app.yaml") as f:
 
 | T5    | 10s     | Complex analysis  |
 
-
-
 **Solutions**:
-
-
 
 - Increase timeout in config
 
@@ -226,19 +156,11 @@ with open("config/app.yaml") as f:
 
 - Enable caching
 
-
-
 ### 2.4 MCP Connection Errors
-
-
 
 **Symptom**: `ConnectionError: Failed to connect to MCP server`
 
-
-
 **Solutions**:
-
-
 
 | Issue              | Solution                 |
 
@@ -252,19 +174,11 @@ with open("config/app.yaml") as f:
 
 | SSL issues         | Check certificate config |
 
-
-
 ---
-
-
 
 ## 3. Debugging Techniques
 
-
-
 ### 3.1 Enable Debug Logging
-
-
 
 ```python
 
@@ -272,19 +186,13 @@ with open("config/app.yaml") as f:
 
 import logging
 
-
-
 logging.getLogger("sage").setLevel(logging.DEBUG)
-
-
 
 # Via environment
 
 export
 
 SAGE_LOG_LEVEL = DEBUG
-
-
 
 # Via config
 
@@ -294,11 +202,7 @@ default_level: DEBUG
 
 ```
 
-
-
 ### 3.2 Interactive Debugging
-
-
 
 ```python
 
@@ -306,21 +210,13 @@ default_level: DEBUG
 
 import pdb;
 
-
-
 pdb.set_trace()
-
-
 
 # Or use IPython
 
 from IPython import embed;
 
-
-
 embed()
-
-
 
 # Or use breakpoint() (Python 3.7+)
 
@@ -328,21 +224,13 @@ breakpoint()
 
 ```
 
-
-
 ### 3.3 Trace Execution
-
-
 
 ```python
 
 # Trace function calls
 
 import sys
-
-
-
-
 
 def trace_calls(frame, event, arg):
 
@@ -352,29 +240,17 @@ def trace_calls(frame, event, arg):
 
     return trace_calls
 
-
-
-
-
 sys.settrace(trace_calls)
 
 ```
 
-
-
 ### 3.4 Memory Profiling
-
-
 
 ```python
 
 # Install: pip install memory-profiler
 
 from memory_profiler import profile
-
-
-
-
 
 @profile
 
@@ -386,19 +262,11 @@ def memory_intensive_function():
 
 ```
 
-
-
 ---
-
-
 
 ## 4. Log Analysis
 
-
-
 ### 4.1 Log Locations
-
-
 
 | Log Type    | Location           | Purpose          |
 
@@ -412,15 +280,9 @@ def memory_intensive_function():
 
 | Debug       | `.logs/debug.log`  | Verbose debug    |
 
-
-
 ### 4.2 Log Patterns
 
-
-
 **Error Pattern**:
-
-
 
 ```
 
@@ -432,11 +294,7 @@ def memory_intensive_function():
 
 ```
 
-
-
 **Parsing Logs**:
-
-
 
 ```bash
 
@@ -444,19 +302,13 @@ def memory_intensive_function():
 
 grep "\[ERROR\]" .logs/sage.log
 
-
-
 # Find specific module issues
 
 grep "loader" .logs/sage.log
 
-
-
 # Get recent errors
 
 tail -100 .logs/error.log
-
-
 
 # Watch logs in real-time
 
@@ -464,19 +316,11 @@ tail -f .logs/sage.log
 
 ```
 
-
-
 ### 4.3 Structured Log Query
-
-
 
 ```python
 
 import json
-
-
-
-
 
 def parse_structured_log(log_file):
 
@@ -498,29 +342,17 @@ def parse_structured_log(log_file):
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Performance Issues
 
-
-
 ### 5.1 Slow Loading
 
-
-
 **Diagnosis**:
-
-
 
 ```python
 
 import time
-
-
 
 start = time.perf_counter()
 
@@ -532,11 +364,7 @@ print(f"Elapsed: {elapsed:.3f}s")
 
 ```
 
-
-
 **Common Causes**:
-
-
 
 | Cause          | Solution                 |
 
@@ -550,21 +378,13 @@ print(f"Elapsed: {elapsed:.3f}s")
 
 | Sync I/O       | Use async operations     |
 
-
-
 ### 5.2 High Memory Usage
 
-
-
 **Diagnosis**:
-
-
 
 ```python
 
 import tracemalloc
-
-
 
 tracemalloc.start()
 
@@ -574,19 +394,13 @@ snapshot = tracemalloc.take_snapshot()
 
 top_stats = snapshot.statistics('lineno')
 
-
-
 for stat in top_stats[:10]:
 
     print(stat)
 
 ```
 
-
-
 **Solutions**:
-
-
 
 - Use generators instead of lists
 
@@ -596,23 +410,15 @@ for stat in top_stats[:10]:
 
 - Use memory-mapped files
 
-
-
 ### 5.3 CPU Bottlenecks
 
-
-
 **Diagnosis**:
-
-
 
 ```python
 
 import cProfile
 
 import pstats
-
-
 
 profiler = cProfile.Profile()
 
@@ -622,8 +428,6 @@ profiler.enable()
 
 profiler.disable()
 
-
-
 stats = pstats.Stats(profiler)
 
 stats.sort_stats('cumulative')
@@ -632,25 +436,15 @@ stats.print_stats(10)
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Configuration Problems
 
-
-
 ### 6.1 Validate Configuration
-
-
 
 ```python
 
 from sage.core.config import load_config, validate_config
-
-
 
 try:
 
@@ -666,11 +460,7 @@ except Exception as e:
 
 ```
 
-
-
 ### 6.2 Common Config Issues
-
-
 
 | Issue        | Symptom           | Solution           |
 
@@ -684,19 +474,13 @@ except Exception as e:
 
 | Missing keys | KeyError          | Add required keys  |
 
-
-
 ### 6.3 Environment Override Issues
-
-
 
 ```bash
 
 # Check environment variables
 
 env | grep SAGE_
-
-
 
 # Common overrides
 
@@ -708,23 +492,13 @@ SAGE_TIMEOUT_DEFAULT=5000
 
 ```
 
-
-
 ---
-
-
 
 ## 7. MCP Server Issues
 
-
-
 ### 7.1 Server Won't Start
 
-
-
 **Checklist**:
-
-
 
 1. Check if port is available: `lsof -i :8080`
 
@@ -734,25 +508,15 @@ SAGE_TIMEOUT_DEFAULT=5000
 
 4. Review logs: `.logs/mcp.log`
 
-
-
 ### 7.2 Tool Registration Failures
-
-
 
 **Symptom**: Tools not appearing in MCP client
 
-
-
 **Debug**:
-
-
 
 ```python
 
 from sage.services.mcp_server import create_app
-
-
 
 app = create_app()
 
@@ -760,15 +524,9 @@ print(f"Registered tools: {list(app.tools.keys())}")
 
 ```
 
-
-
 ### 7.3 Request/Response Issues
 
-
-
 **Enable request logging**:
-
-
 
 ```yaml
 
@@ -784,19 +542,11 @@ logging:
 
 ```
 
-
-
 ---
-
-
 
 ## 8. Recovery Procedures
 
-
-
 ### 8.1 Corrupted Configuration
-
-
 
 ```bash
 
@@ -804,13 +554,9 @@ logging:
 
 cp config/app.yaml config/app.yaml.bak
 
-
-
 # Reset to defaults
 
 sage config reset
-
-
 
 # Or restore from backup
 
@@ -818,11 +564,7 @@ cp config/app.yaml.backup config/app.yaml
 
 ```
 
-
-
 ### 8.2 Database/Cache Corruption
-
-
 
 ```bash
 
@@ -830,13 +572,9 @@ cp config/app.yaml.backup config/app.yaml
 
 rm -rf .cache/*
 
-
-
 # Rebuild indices
 
 sage rebuild --indices
-
-
 
 # Verify integrity
 
@@ -844,11 +582,7 @@ sage check --integrity
 
 ```
 
-
-
 ### 8.3 Failed Migration Recovery
-
-
 
 ```bash
 
@@ -856,13 +590,9 @@ sage check --integrity
 
 sage backup list
 
-
-
 # Restore from backup
 
 sage backup restore --name pre_migration_backup
-
-
 
 # Verify restoration
 
@@ -870,11 +600,7 @@ sage check --all
 
 ```
 
-
-
 ### 8.4 Emergency Procedures
-
-
 
 | Scenario            | Procedure                               |
 
@@ -888,19 +614,11 @@ sage check --all
 
 | Dependency conflict | Create fresh conda env/venv → Reinstall |
 
-
-
 ---
-
-
 
 ## Quick Reference
 
-
-
 ### Error Code Reference
-
-
 
 | Code | Meaning      | Action                    |
 
@@ -916,11 +634,7 @@ sage check --all
 
 | E005 | Connection   | Check network/service     |
 
-
-
 ### Debug Environment Variables
-
-
 
 ```bash
 
@@ -934,15 +648,9 @@ export SAGE_PROFILE=1
 
 ```
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/logging.md` — Logging best practices
 
@@ -952,11 +660,6 @@ export SAGE_PROFILE=1
 
 - `docs/guides/configuration.md` — Configuration guide
 
-
-
 ---
 
-
-
-*Part of AI Collaboration Knowledge Base — 信达雅 (Xin-Da-Ya)*
-
+*AI Collaboration Knowledge Base*

@@ -257,4 +257,4 @@ groups:
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Engineering Practices*
+*AI Collaboration Knowledge Base*

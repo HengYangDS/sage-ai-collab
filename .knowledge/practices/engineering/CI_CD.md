@@ -1,18 +1,10 @@
 # CI/CD Practices
 
-
-
 > Continuous Integration and Continuous Deployment best practices for the projects
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Overview](#1-overview)
 
@@ -26,19 +18,11 @@
 
 - [6. Secrets Management](#6-secrets-management)
 
-
-
 ---
-
-
 
 ## 1. Overview
 
-
-
 ### 1.1 CI/CD Philosophy
-
-
 
 | Principle               | Description                            |
 
@@ -52,11 +36,7 @@
 
 | **Version Everything**  | Config as code, reproducible builds    |
 
-
-
 ### 1.2 Pipeline Stages
-
-
 
 ```
 
@@ -74,27 +54,17 @@
 
 ```
 
-
-
 ---
-
-
 
 ## 2. GitHub Actions
 
-
-
 ### 2.1 Basic CI Workflow
-
-
 
 ```yaml
 
 # .github/workflows/ci.yml
 
 name: CI
-
-
 
 on:
 
@@ -106,8 +76,6 @@ on:
 
     branches: [ main ]
 
-
-
 jobs:
 
   lint:
@@ -117,8 +85,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v4
-
-
 
       - name: Set up Python
 
@@ -130,25 +96,17 @@ jobs:
 
           cache: 'pip'
 
-
-
       - name: Install dependencies
 
         run: pip install ruff mypy
-
-
 
       - name: Run Ruff
 
         run: ruff check src/
 
-
-
       - name: Run MyPy
 
         run: mypy src/
-
-
 
   test:
 
@@ -160,13 +118,9 @@ jobs:
 
         python-version: [ '3.11', '3.12' ]
 
-
-
     steps:
 
       - uses: actions/checkout@v4
-
-
 
       - name: Set up Python ${{ matrix.python-version }}
 
@@ -178,19 +132,13 @@ jobs:
 
           cache: 'pip'
 
-
-
       - name: Install dependencies
 
         run: pip install -e ".[dev]"
 
-
-
       - name: Run tests
 
         run: pytest --cov=src --cov-report=xml
-
-
 
       - name: Upload coverage
 
@@ -202,19 +150,13 @@ jobs:
 
 ```
 
-
-
 ### 2.2 Release Workflow
-
-
 
 ```yaml
 
 # .github/workflows/release.yml
 
 name: Release
-
-
 
 on:
 
@@ -223,8 +165,6 @@ on:
     tags:
 
       - 'v*'
-
-
 
 jobs:
 
@@ -236,8 +176,6 @@ jobs:
 
       - uses: actions/checkout@v4
 
-
-
       - name: Set up Python
 
         uses: actions/setup-python@v5
@@ -246,19 +184,13 @@ jobs:
 
           python-version: '3.12'
 
-
-
       - name: Install build tools
 
         run: pip install build twine
 
-
-
       - name: Build package
 
         run: python -m build
-
-
 
       - name: Publish to PyPI
 
@@ -270,8 +202,6 @@ jobs:
 
         run: twine upload dist/*
 
-
-
   docker:
 
     runs-on: ubuntu-latest
@@ -282,13 +212,9 @@ jobs:
 
       packages: write
 
-
-
     steps:
 
       - uses: actions/checkout@v4
-
-
 
       - name: Log in to GHCR
 
@@ -301,8 +227,6 @@ jobs:
           username: ${{ github.actor }}
 
           password: ${{ secrets.GITHUB_TOKEN }}
-
-
 
       - name: Build and push
 
@@ -322,11 +246,7 @@ jobs:
 
 ```
 
-
-
 ### 2.3 Scheduled Jobs
-
-
 
 ```yaml
 
@@ -334,15 +254,11 @@ jobs:
 
 name: Scheduled Tasks
 
-
-
 on:
 
   schedule:
 
     - cron: '0 0 * * 1'  # Weekly on Monday
-
-
 
 jobs:
 
@@ -354,13 +270,9 @@ jobs:
 
       - uses: actions/checkout@v4
 
-
-
       - name: Check for updates
 
         run: pip list --outdated
-
-
 
       - name: Security audit
 
@@ -368,19 +280,11 @@ jobs:
 
 ```
 
-
-
 ---
-
-
 
 ## 3. Testing Pipeline
 
-
-
 ### 3.1 Test Categories
-
-
 
 | Category        | Scope                 | Speed  | When to Run    |
 
@@ -394,11 +298,7 @@ jobs:
 
 | **Performance** | Benchmarks            | Varies | Weekly/Release |
 
-
-
 ### 3.2 Test Configuration
-
-
 
 ```yaml
 
@@ -430,15 +330,11 @@ jobs:
 
 ]
 
-
-
   [ tool.coverage.run ]
 
   branch = true
 
   source = ["src"]
-
-
 
   [ tool.coverage.report ]
 
@@ -454,11 +350,7 @@ jobs:
 
 ```
 
-
-
 ### 3.3 Running Tests
-
-
 
 ```bash
 
@@ -466,19 +358,13 @@ jobs:
 
 pytest
 
-
-
 # Unit tests only
 
 pytest -m unit
 
-
-
 # With coverage
 
 pytest --cov=src --cov-report=html
-
-
 
 # Parallel execution
 
@@ -486,19 +372,11 @@ pytest -n auto
 
 ```
 
-
-
 ---
-
-
 
 ## 4. Quality Gates
 
-
-
 ### 4.1 Required Checks
-
-
 
 | Check             | Tool       | Threshold          |
 
@@ -514,11 +392,7 @@ pytest -n auto
 
 | **Complexity**    | Ruff       | < 10 per function  |
 
-
-
 ### 4.2 Pre-commit Hooks
-
-
 
 ```yaml
 
@@ -538,8 +412,6 @@ repos:
 
       - id: ruff-format
 
-
-
   - repo: https://github.com/pre-commit/mirrors-mypy
 
     rev: v1.13.0
@@ -549,8 +421,6 @@ repos:
       - id: mypy
 
         additional_dependencies: [ types-PyYAML ]
-
-
 
   - repo: https://github.com/commitizen-tools/commitizen
 
@@ -562,11 +432,7 @@ repos:
 
 ```
 
-
-
 ### 4.3 Branch Protection
-
-
 
 ```yaml
 
@@ -592,19 +458,11 @@ branch_protection:
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Deployment Strategies
 
-
-
 ### 5.1 Environments
-
-
 
 | Environment     | Purpose             | Deployment      |
 
@@ -616,15 +474,9 @@ branch_protection:
 
 | **Production**  | Live system         | Manual approval |
 
-
-
 ### 5.2 Deployment Methods
 
-
-
 #### Blue-Green Deployment
-
-
 
 ```
 
@@ -652,11 +504,7 @@ branch_protection:
 
 ```
 
-
-
 #### Rolling Update
-
-
 
 ```yaml
 
@@ -676,11 +524,7 @@ spec:
 
 ```
 
-
-
 ### 5.3 Rollback Procedure
-
-
 
 ```bash
 
@@ -690,8 +534,6 @@ git revert HEAD
 
 git push origin main
 
-
-
 # Or deploy specific version
 
 git checkout v1.0.0
@@ -700,19 +542,11 @@ git checkout v1.0.0
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Secrets Management
 
-
-
 ### 6.1 Secret Types
-
-
 
 | Type             | Storage           | Example            |
 
@@ -724,11 +558,7 @@ git checkout v1.0.0
 
 | **Certificates** | Secure storage    | SSL/TLS certs      |
 
-
-
 ### 6.2 GitHub Secrets
-
-
 
 ```yaml
 
@@ -737,8 +567,6 @@ git checkout v1.0.0
 env:
 
   API_KEY: ${{ secrets.API_KEY }}
-
-
 
 # Environment-specific secrets
 
@@ -750,11 +578,7 @@ env:
 
 ```
 
-
-
 ### 6.3 Best Practices
-
-
 
 - Never commit secrets to repository
 
@@ -766,15 +590,9 @@ env:
 
 - Use OIDC for cloud providers when possible
 
-
-
 ---
 
-
-
 ## Quick Reference
-
-
 
 ```bash
 
@@ -786,19 +604,13 @@ pytest --cov=src
 
 mypy src/
 
-
-
 # Trigger workflow manually
 
 gh workflow run ci.yml
 
-
-
 # View workflow runs
 
 gh run list
-
-
 
 # Download artifacts
 
@@ -806,15 +618,9 @@ gh run download <run-id>
 
 ```
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/git_workflow.md` — Git workflow and versioning
 
@@ -824,11 +630,7 @@ gh run download <run-id>
 
 - `.knowledge/templates/runbook.md` — Operational runbook template
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

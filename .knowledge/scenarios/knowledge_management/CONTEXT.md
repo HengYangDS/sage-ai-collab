@@ -1,18 +1,10 @@
 # Knowledge Management Scenario Context
 
-
-
 > Pre-configured context for knowledge management system development
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Quick Commands](#8-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -54,15 +40,9 @@ autonomy_default: L3
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                                                                                                                    |
 
@@ -72,15 +52,9 @@ autonomy_default: L3
 
 | **On-Demand** | `.knowledge/practices/documentation/knowledge_organization.md` · `.knowledge/frameworks/design/` · `.knowledge/practices/documentation/documentation_standards.md` · `.knowledge/practices/ai_collaboration/knowledge_extraction.md` |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory     | Purpose                      |
 
@@ -100,19 +74,11 @@ autonomy_default: L3
 
 | `schemas/`    | Content validation schemas   |
 
-
-
 ---
-
-
 
 ## 4. Knowledge Architecture
 
-
-
 ### 4.1 Layer Model
-
-
 
 ```
 
@@ -144,11 +110,7 @@ autonomy_default: L3
 
 ```
 
-
-
 ### 4.2 Content Types
-
-
 
 | Type          | Purpose                     | Format                            |
 
@@ -166,11 +128,7 @@ autonomy_default: L3
 
 | **Reference** | Lookup information          | Tables, lists                     |
 
-
-
 ### 4.3 Metadata Schema
-
-
 
 ```yaml
 
@@ -200,109 +158,61 @@ author: Name or AI
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Content Patterns
 
-
-
 ### 5.1 Document Template
-
-
 
 ```markdown
 
 # Title
 
-
-
 > One-line description
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [Section 1](#section-1)
 
 - [Section 2](#section-2)
 
-
-
 ---
-
-
 
 ## Section 1
 
-
-
 ### 1.1 Subsection
-
-
 
 Content...
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - Related doc 1
 
 - Related doc 2
 
-
-
 ---
-
-
 
 *Part of [Knowledge Base Name]*
 
 ```
 
-
-
 ### 5.2 Index Pattern
 
-
-
 <!-- Example template - replace placeholder links with actual document paths -->
-
-
 
 ```markdown
 
 # Category Index
 
-
-
 > Navigation for [category] knowledge
-
-
 
 ---
 
-
-
 ## Quick Links
-
-
 
 | Document | Purpose | Tokens |
 
@@ -312,89 +222,51 @@ Content...
 
 | [Doc 2](#) | Description | ~300 |  <!-- Replace # with actual path -->
 
-
-
 ---
-
-
 
 ## By Topic
 
-
-
 ### Topic A
-
-
 
 - Document 1
 
 - Document 2
 
-
-
 ### Topic B
-
-
 
 - Document 3
 
-
-
 ---
-
-
 
 *Index for [Knowledge Base Name]*
 
 ```
 
-
-
 ### 5.3 Cross-Reference Pattern
-
-
 
 ```markdown
 
 ## References
 
-
-
 ### Internal
-
-
 
 - `.knowledge/core/principles.md` — Core principles
 
 - `.knowledge/practices/ai_collaboration/workflow.md` — Implementation guide
 
-
-
 ### External
-
-
 
 - [External Resource](https://example.com) — Description
 
-
-
 ### Related Decisions
-
-
 
 - ADR-0001: Architecture decision
 
 ```
 
-
-
 ---
 
-
-
 ## 6. Common Tasks
-
-
 
 | Task                        | Steps                                                        |
 
@@ -412,11 +284,7 @@ Content...
 
 | **Quality audit**           | Check completeness → Verify links → Validate format          |
 
-
-
 ### 6.1 Adding New Knowledge
-
-
 
 ```bash
 
@@ -424,19 +292,13 @@ Content...
 
 touch .knowledge/practices/new_topic/guide.md
 
-
-
 # 2. Add content with metadata
 
 # (Use standard template)
 
-
-
 # 3. Update layer index
 
 # Edit .knowledge/practices/index.md
-
-
 
 # 4. Verify integration
 
@@ -444,11 +306,7 @@ sage search "new topic"
 
 ```
 
-
-
 ### 6.2 Knowledge Extraction Workflow
-
-
 
 ```
 
@@ -456,15 +314,11 @@ sage search "new topic"
 
    └── Identify knowledge source (docs, code, conversations)
 
-
-
 2. Content Extraction
 
    └── Extract key information
 
    └── Identify patterns and principles
-
-
 
 3. Structuring
 
@@ -474,8 +328,6 @@ sage search "new topic"
 
    └── Add metadata
 
-
-
 4. Integration
 
    └── Link to related content
@@ -483,8 +335,6 @@ sage search "new topic"
    └── Update indexes
 
    └── Verify searchability
-
-
 
 5. Validation
 
@@ -496,15 +346,9 @@ sage search "new topic"
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Autonomy Calibration
-
-
 
 | Task Type              | Level | Notes                 |
 
@@ -524,15 +368,9 @@ sage search "new topic"
 
 | Create new layer       | L1    | Architecture decision |
 
-
-
 ---
 
-
-
 ## 8. Quick Commands
-
-
 
 | Category       | Commands                                                |
 
@@ -546,19 +384,11 @@ sage search "new topic"
 
 | **Statistics** | `sage info --layers` · `wc -l .knowledge/**/*.md`       |
 
-
-
 ---
-
-
 
 ## Best Practices
 
-
-
 ### Content Organization
-
-
 
 | Practice                    | Description                    |
 
@@ -574,11 +404,7 @@ sage search "new topic"
 
 | **Cross-References**        | Connect related content        |
 
-
-
 ### Knowledge Quality
-
-
 
 | Dimension           | Criteria                      |
 
@@ -594,11 +420,7 @@ sage search "new topic"
 
 | **Discoverability** | Easy to find                  |
 
-
-
 ### AI Integration
-
-
 
 | Aspect                | Consideration                          |
 
@@ -612,15 +434,9 @@ sage search "new topic"
 
 | **Chunking**          | Structure for partial retrieval        |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/documentation/knowledge_organization.md` — Organization patterns
 
@@ -630,11 +446,7 @@ sage search "new topic"
 
 - `.knowledge/frameworks/design/index.md` — Design patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

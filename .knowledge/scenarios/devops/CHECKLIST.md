@@ -1,18 +1,10 @@
 # DevOps Checklist
 
-
-
 > Task checklist for CI/CD and infrastructure management
-
-
 
 ---
 
-
-
 ## Version Control
-
-
 
 - [ ] Branch strategy defined
 
@@ -24,11 +16,7 @@
 
 - [ ] PR templates created
 
-
-
 ## CI Pipeline
-
-
 
 - [ ] Build automation configured
 
@@ -42,11 +30,7 @@
 
 - [ ] Artifact versioning
 
-
-
 ## CD Pipeline
-
-
 
 - [ ] Deployment automation
 
@@ -58,11 +42,7 @@
 
 - [ ] Feature flags integrated
 
-
-
 ## Infrastructure
-
-
 
 - [ ] Infrastructure as Code (IaC)
 
@@ -74,11 +54,7 @@
 
 - [ ] Capacity planning done
 
-
-
 ## Containerization
-
-
 
 - [ ] Dockerfile optimized
 
@@ -92,11 +68,7 @@
 
 - [ ] Resource limits set
 
-
-
 ## Kubernetes (if applicable)
-
-
 
 - [ ] Manifests or Helm charts
 
@@ -110,11 +82,7 @@
 
 - [ ] Secrets management
 
-
-
 ## Monitoring
-
-
 
 - [ ] Application metrics collected
 
@@ -126,11 +94,7 @@
 
 - [ ] Distributed tracing (if needed)
 
-
-
 ## Alerting
-
-
 
 - [ ] Alert rules defined
 
@@ -142,11 +106,7 @@
 
 - [ ] Alert fatigue addressed
 
-
-
 ## Security
-
-
 
 - [ ] Secrets in vault/manager
 
@@ -158,11 +118,7 @@
 
 - [ ] Vulnerability scanning
 
-
-
 ## Disaster Recovery
-
-
 
 - [ ] Backup strategy defined
 
@@ -174,11 +130,7 @@
 
 - [ ] Failover tested
 
-
-
 ## Documentation
-
-
 
 - [ ] Architecture diagram
 
@@ -188,15 +140,9 @@
 
 - [ ] Service catalog updated
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/devops/context.md` — DevOps context
 
@@ -204,17 +150,11 @@
 
 - `.knowledge/practices/engineering/monitoring.md` — Monitoring practices
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - DevOps Checklist*
 
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

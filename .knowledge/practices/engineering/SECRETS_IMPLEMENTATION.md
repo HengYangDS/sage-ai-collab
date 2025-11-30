@@ -42,7 +42,6 @@ API_KEY = get_required_secret("API_KEY")
 ```python
 from pydantic import BaseSettings, SecretStr
 
-
 class Settings(BaseSettings):
     database_url: SecretStr
     api_key: SecretStr
@@ -51,7 +50,6 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         env_file_encoding = "utf-8"
-
 
 settings = Settings()
 # Access: settings.api_key.get_secret_value()
@@ -65,7 +63,6 @@ settings = Settings()
 
 ```python
 import hvac
-
 
 class VaultSecretManager:
     """HashiCorp Vault integration."""
@@ -121,7 +118,6 @@ class VaultAppRole:
 import boto3
 import json
 
-
 class AWSSecretManager:
     """AWS Secrets Manager integration."""
     
@@ -155,7 +151,6 @@ class AWSSecretManager:
 from functools import lru_cache
 from datetime import datetime, timedelta
 
-
 class CachedSecretManager:
     """Secret manager with caching."""
     
@@ -187,7 +182,6 @@ class CachedSecretManager:
 
 ```python
 from abc import ABC, abstractmethod
-
 
 class SecretRotator(ABC):
     """Base class for secret rotation."""
@@ -222,7 +216,6 @@ class SecretRotator(ABC):
 ```python
 import secrets
 import string
-
 
 class DatabasePasswordRotator(SecretRotator):
     """Rotate database passwords."""
@@ -260,20 +253,16 @@ class DatabasePasswordRotator(SecretRotator):
 from fastapi import FastAPI, Depends
 from functools import lru_cache
 
-
 @lru_cache()
 def get_settings():
     return Settings()
-
 
 @lru_cache()
 def get_secret_manager():
     settings = get_settings()
     return AWSSecretManager(region=settings.aws_region)
 
-
 app = FastAPI()
-
 
 @app.get("/api/data")
 async def get_data(secrets: AWSSecretManager = Depends(get_secret_manager)):
@@ -286,7 +275,6 @@ async def get_data(secrets: AWSSecretManager = Depends(get_secret_manager)):
 ```python
 from contextlib import contextmanager
 
-
 @contextmanager
 def secret_scope(secret_manager, secret_name: str):
     """Temporarily access a secret."""
@@ -296,7 +284,6 @@ def secret_scope(secret_manager, secret_name: str):
     finally:
         # Clear from memory
         del secret
-
 
 # Usage
 with secret_scope(manager, "api-credentials") as creds:

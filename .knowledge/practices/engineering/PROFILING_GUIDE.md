@@ -678,4 +678,4 @@ What to profile?
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Performance Framework*
+*AI Collaboration Knowledge Base*

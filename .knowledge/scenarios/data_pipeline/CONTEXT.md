@@ -1,18 +1,10 @@
 # Data Pipeline Scenario Context
 
-
-
 > Pre-configured context for data processing and ETL workflows
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -32,15 +24,9 @@
 
 - [9. Quick Commands](#9-quick-commands)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -56,15 +42,9 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                     |
 
@@ -74,15 +54,9 @@ autonomy_default: L2
 
 | **On-Demand** | `.knowledge/practices/engineering/logging.md` · `.knowledge/practices/engineering/testing_strategy.md`          |
 
-
-
 ---
 
-
-
 ## 3. Project Structure
-
-
 
 | Directory           | Purpose                 |
 
@@ -108,19 +82,11 @@ autonomy_default: L2
 
 | `config/`           | Pipeline configurations |
 
-
-
 ---
-
-
 
 ## 4. Common Patterns
 
-
-
 ### 4.1 Extractor Pattern
-
-
 
 ```python
 
@@ -130,21 +96,13 @@ from typing import Iterator
 
 import pandas as pd
 
-
-
-
-
 class BaseExtractor(ABC):
 
     """Base class for data extractors."""
 
-
-
     def __init__(self, config: dict):
 
         self.config = config
-
-
 
     @abstractmethod
 
@@ -154,23 +112,15 @@ class BaseExtractor(ABC):
 
         pass
 
-
-
     def validate_source(self) -> bool:
 
         """Validate source accessibility."""
 
         return True
 
-
-
-
-
 class DatabaseExtractor(BaseExtractor):
 
     """Extract data from database."""
-
-
 
     def __init__(self, config: dict):
 
@@ -178,15 +128,11 @@ class DatabaseExtractor(BaseExtractor):
 
         self.connection = self._create_connection()
 
-
-
     def extract(self) -> Iterator[pd.DataFrame]:
 
         query = self.config["query"]
 
         chunk_size = self.config.get("chunk_size", 10000)
-
-
 
         for chunk in pd.read_sql(query, self.connection, chunksize=chunk_size):
 
@@ -194,11 +140,7 @@ class DatabaseExtractor(BaseExtractor):
 
 ```
 
-
-
 ### 4.2 Transformer Pattern
-
-
 
 ```python
 
@@ -206,21 +148,13 @@ from typing import Callable
 
 import pandas as pd
 
-
-
-
-
 class DataTransformer:
 
     """Chain transformations on data."""
 
-
-
     def __init__(self):
 
         self._transforms: list[Callable] = []
-
-
 
     def add(self, transform: Callable) -> "DataTransformer":
 
@@ -229,8 +163,6 @@ class DataTransformer:
         self._transforms.append(transform)
 
         return self
-
-
 
     def apply(self, df: pd.DataFrame) -> pd.DataFrame:
 
@@ -243,10 +175,6 @@ class DataTransformer:
             result = transform(result)
 
         return result
-
-
-
-
 
 # Usage
 
@@ -266,21 +194,13 @@ result = transformer.apply(raw_data)
 
 ```
 
-
-
 ### 4.3 Loader Pattern
-
-
 
 ```python
 
 from enum import Enum
 
 import pandas as pd
-
-
-
-
 
 class LoadMode(Enum):
 
@@ -290,15 +210,9 @@ class LoadMode(Enum):
 
     UPSERT = "upsert"
 
-
-
-
-
 class DataLoader:
 
     """Load data to destination."""
-
-
 
     def __init__(self, connection, table: str, mode: LoadMode = LoadMode.APPEND):
 
@@ -307,8 +221,6 @@ class DataLoader:
         self.table = table
 
         self.mode = mode
-
-
 
     def load(self, df: pd.DataFrame) -> int:
 
@@ -321,8 +233,6 @@ class DataLoader:
         elif self.mode == LoadMode.UPSERT:
 
             return self._upsert(df)
-
-
 
         rows = df.to_sql(
 
@@ -340,11 +250,7 @@ class DataLoader:
 
 ```
 
-
-
 ### 4.4 Pipeline Pattern
-
-
 
 ```python
 
@@ -353,10 +259,6 @@ from dataclasses import dataclass
 from typing import Optional
 
 import logging
-
-
-
-
 
 @dataclass
 
@@ -368,23 +270,15 @@ class PipelineResult:
 
     errors: list[str]
 
-
-
-
-
 class Pipeline:
 
     """ETL Pipeline orchestration."""
-
-
 
     def __init__(self, name: str):
 
         self.name = name
 
         self.logger = logging.getLogger(name)
-
-
 
     def run(
 
@@ -404,8 +298,6 @@ class Pipeline:
 
         errors = []
 
-
-
         try:
 
             for chunk in extractor.extract():
@@ -424,8 +316,6 @@ class Pipeline:
 
             self.logger.error(f"Pipeline failed: {e}")
 
-
-
         return PipelineResult(
 
             success=len(errors) == 0,
@@ -438,19 +328,11 @@ class Pipeline:
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Testing Patterns
 
-
-
 ### 5.1 Transformer Testing
-
-
 
 ```python
 
@@ -459,10 +341,6 @@ import pytest
 import pandas as pd
 
 from transformers import DataTransformer, normalize_dates
-
-
-
-
 
 @pytest.fixture
 
@@ -482,10 +360,6 @@ def sample_data():
 
     )
 
-
-
-
-
 def test_transformer_chain(sample_data):
 
     transformer = (
@@ -498,21 +372,13 @@ def test_transformer_chain(sample_data):
 
     )
 
-
-
     result = transformer.apply(sample_data)
-
-
 
     assert len(result) == 1
 
     assert "value" in result.columns
 
     assert "VALUE" not in result.columns
-
-
-
-
 
 def test_normalize_dates(sample_data):
 
@@ -522,21 +388,13 @@ def test_normalize_dates(sample_data):
 
 ```
 
-
-
 ### 5.2 Pipeline Integration Testing
-
-
 
 ```python
 
 import pytest
 
 from unittest.mock import Mock, patch
-
-
-
-
 
 def test_pipeline_success():
 
@@ -546,29 +404,19 @@ def test_pipeline_success():
 
     extractor.extract.return_value = [pd.DataFrame({"a": [1, 2]})]
 
-
-
     transformer = Mock()
 
     transformer.apply.return_value = pd.DataFrame({"a": [1, 2]})
-
-
 
     loader = Mock()
 
     loader.load.return_value = 2
 
-
-
     pipeline = Pipeline("test")
-
-
 
     # Act
 
     result = pipeline.run(extractor, transformer, loader)
-
-
 
     # Assert
 
@@ -580,19 +428,11 @@ def test_pipeline_success():
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Data Quality
 
-
-
 ### 6.1 Validation Rules
-
-
 
 | Check Type       | Example                           |
 
@@ -608,11 +448,7 @@ def test_pipeline_success():
 
 | **Referential**  | Foreign key exists                |
 
-
-
 ### 6.2 Validation Framework
-
-
 
 ```python
 
@@ -621,10 +457,6 @@ from dataclasses import dataclass
 from typing import Callable
 
 import pandas as pd
-
-
-
-
 
 @dataclass
 
@@ -636,29 +468,19 @@ class ValidationResult:
 
     failed_rows: int = 0
 
-
-
-
-
 class DataValidator:
 
     """Validate data quality."""
 
-
-
     def __init__(self):
 
         self._rules: list[tuple[str, Callable]] = []
-
-
 
     def add_rule(self, name: str, check: Callable) -> "DataValidator":
 
         self._rules.append((name, check))
 
         return self
-
-
 
     def validate(self, df: pd.DataFrame) -> list[ValidationResult]:
 
@@ -678,10 +500,6 @@ class DataValidator:
 
         return results
 
-
-
-
-
 # Usage
 
 validator = (
@@ -696,15 +514,9 @@ validator = (
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                   | Steps                                                  |
 
@@ -720,15 +532,9 @@ validator = (
 
 | **Add Data Source**    | Define connection → Create extractor → Update config   |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                | Level | Notes                      |
 
@@ -748,15 +554,9 @@ validator = (
 
 | Add new data source      | L2    | Security review needed     |
 
-
-
 ---
 
-
-
 ## 9. Quick Commands
-
-
 
 | Category  | Commands                                            |
 
@@ -772,15 +572,9 @@ validator = (
 
 | **Debug** | `python -m pipelines.debug --sample 100`            |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/python.md` — Python guidelines
 
@@ -790,11 +584,7 @@ validator = (
 
 - `.knowledge/frameworks/resilience/timeout_patterns.md` — Timeout patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

@@ -224,4 +224,4 @@ CREATE INDEX ix_users_active ON users(email) WHERE deleted_at IS NULL;
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Engineering Practices*
+*AI Collaboration Knowledge Base*

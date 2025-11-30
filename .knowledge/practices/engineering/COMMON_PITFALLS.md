@@ -52,28 +52,22 @@ cause, and prevention strategies.
 # module_a.py
 from module_b import B
 
-
 class A:
     def use_b(self): return B()
-
 
 # module_b.py
 from module_a import A  # Circular!
 
-
 class B:
     def use_a(self): return A()
-
 
 # ✅ Good - Use protocol/interface
 # protocols.py
 class AProtocol(Protocol):
     def method(self) -> None: ...
 
-
 # module_b.py
 from protocols import AProtocol
-
 
 class B:
     def __init__(self, a: AProtocol):
@@ -131,7 +125,6 @@ class Service:
     def __init__(self):
         self.loader = FileLoader()  # Tight coupling
 
-
 # ✅ Good - Dependency injection
 class Service:
     def __init__(self, loader: LoaderProtocol):
@@ -161,7 +154,6 @@ class Service:
 def process(items: list = []):
     items.append("new")
     return items
-
 
 # ✅ Good - None default
 def process(items: list | None = None):
@@ -225,11 +217,9 @@ except ValueError as e:
 def get_content():
     return loader.load("file.md")  # Returns coroutine!
 
-
 # ✅ Good - Proper await
 async def get_content():
     return await loader.load("file.md")
-
 
 # ✅ Good - Or explicitly sync
 def get_content():
@@ -381,7 +371,6 @@ def test_user_service():
     service._cache["user1"] = user  # Testing internal
     assert service._cache["user1"] == user
 
-
 # ✅ Good - Testing behavior
 def test_user_service():
     service = UserService()
@@ -412,7 +401,6 @@ def test_timeout():
     start = time.time()
     result = slow_operation()
     assert time.time() - start < 1.0  # Flaky!
-
 
 # ✅ Good - Mock time
 def test_timeout(mocker):
@@ -565,4 +553,4 @@ timeout instead of raising exception."
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Generic Engineering Practices*
+*AI Collaboration Knowledge Base*

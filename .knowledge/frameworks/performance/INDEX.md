@@ -147,4 +147,4 @@ This framework provides performance optimization guidelines for:
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Performance Framework*
+*AI Collaboration Knowledge Base*

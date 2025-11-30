@@ -1,18 +1,10 @@
 # Legacy Modernization Checklist
 
-
-
 > Task checklist for modernizing legacy systems and codebases
-
-
 
 ---
 
-
-
 ## Assessment
-
-
 
 - [ ] Current system documented
 
@@ -24,11 +16,7 @@
 
 - [ ] Risk assessment completed
 
-
-
 ## Planning
-
-
 
 - [ ] Modernization strategy chosen (rewrite/refactor/wrap)
 
@@ -40,11 +28,7 @@
 
 - [ ] Rollback strategy planned
 
-
-
 ## Code Analysis
-
-
 
 - [ ] Static analysis performed
 
@@ -56,11 +40,7 @@
 
 - [ ] Dependency vulnerabilities checked
 
-
-
 ## Testing Foundation
-
-
 
 - [ ] Existing tests documented
 
@@ -72,11 +52,7 @@
 
 - [ ] Test data prepared
 
-
-
 ## Incremental Migration
-
-
 
 - [ ] Strangler fig pattern applied
 
@@ -88,11 +64,7 @@
 
 - [ ] API compatibility maintained
 
-
-
 ## Infrastructure
-
-
 
 - [ ] Target infrastructure provisioned
 
@@ -104,11 +76,7 @@
 
 - [ ] Deployment automation ready
 
-
-
 ## Data Migration
-
-
 
 - [ ] Data mapping documented
 
@@ -120,11 +88,7 @@
 
 - [ ] Data integrity verified
 
-
-
 ## Security
-
-
 
 - [ ] Security audit performed
 
@@ -136,11 +100,7 @@
 
 - [ ] Compliance requirements met
 
-
-
 ## Cutover
-
-
 
 - [ ] Cutover plan documented
 
@@ -152,11 +112,7 @@
 
 - [ ] Success criteria defined
 
-
-
 ## Post-Migration
-
-
 
 - [ ] Legacy system decommissioned
 
@@ -168,21 +124,13 @@
 
 - [ ] Technical debt reduced
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Legacy Modernization Checklist*
 
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/legacy_modernization/context.md` — Legacy modernization context
 
@@ -190,11 +138,7 @@
 
 - `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

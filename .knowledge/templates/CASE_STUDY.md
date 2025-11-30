@@ -239,4 +239,4 @@ builder.export_to_json(output_path)
 
 ---
 
-*Template version: 1.0 — AI Collaboration Knowledge Base*
+*AI Collaboration Knowledge Base*

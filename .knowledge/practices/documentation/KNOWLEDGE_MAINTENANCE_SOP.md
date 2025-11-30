@@ -26,7 +26,6 @@
 
 ## 2. Weekly Tasks
 
-
 | Task | Action |
 |:-----|:-------|
 | Content audit | Review 5-10 random documents for accuracy |
@@ -56,7 +55,6 @@
 - [ ] Update file counts in indexes
 - [ ] Review and update Token budgets
 - [ ] Check for redundant content
-
 
 ---
 

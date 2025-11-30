@@ -1,18 +1,10 @@
 # Legacy Modernization Scenario Context
 
-
-
 > Pre-configured context for modernizing legacy systems
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Scenario Profile](#1-scenario-profile)
 
@@ -30,15 +22,9 @@
 
 - [8. Autonomy Calibration](#8-autonomy-calibration)
 
-
-
 ---
 
-
-
 ## 1. Scenario Profile
-
-
 
 ```yaml
 
@@ -52,15 +38,9 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
 
-
-
 ## 2. Relevant Knowledge
-
-
 
 | Priority      | Files                                                                                                   |
 
@@ -70,19 +50,11 @@ autonomy_default: L2
 
 | **On-Demand** | `.knowledge/practices/engineering/testing_strategy.md` · `.knowledge/practices/engineering/code_review.md`                    |
 
-
-
 ---
-
-
 
 ## 3. Modernization Strategies
 
-
-
 ### 3.1 Strategy Overview
-
-
 
 | Strategy        | Description                          | Risk    | Timeline  |
 
@@ -100,11 +72,7 @@ autonomy_default: L2
 
 | **Replace**     | Use commercial/SaaS solution         | Medium  | Medium    |
 
-
-
 ### 3.2 Strategy Selection Matrix
-
-
 
 | Factor                 | Rehost      | Refactor   | Rebuild      |
 
@@ -120,11 +88,7 @@ autonomy_default: L2
 
 | Technical debt         | ❌ Keeps     | ✅ Reduces  | ✅ Eliminates |
 
-
-
 ### 3.3 Strangler Fig Pattern
-
-
 
 ```
 
@@ -158,19 +122,11 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
-
-
 
 ## 4. Assessment
 
-
-
 ### 4.1 Code Assessment Checklist
-
-
 
 | Area              | Questions                                        |
 
@@ -188,11 +144,7 @@ autonomy_default: L2
 
 | **Deployment**    | How is it deployed? CI/CD exists?                |
 
-
-
 ### 4.2 Technical Debt Categories
-
-
 
 | Category     | Examples                                       | Priority |
 
@@ -206,21 +158,13 @@ autonomy_default: L2
 
 | **Low**      | Style inconsistencies, minor optimizations     | P3       |
 
-
-
 ### 4.3 Risk Assessment
-
-
 
 ```markdown
 
 ## Risk Assessment Template
 
-
-
 ### System: [Name]
-
-
 
 | Risk | Likelihood | Impact | Mitigation |
 
@@ -236,19 +180,11 @@ autonomy_default: L2
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Migration Patterns
 
-
-
 ### 5.1 Data Migration
-
-
 
 | Pattern          | Use Case                  | Approach            |
 
@@ -260,11 +196,7 @@ autonomy_default: L2
 
 | **Parallel Run** | High risk data            | Run both, compare   |
 
-
-
 ### 5.2 Incremental Migration Steps
-
-
 
 ```
 
@@ -272,31 +204,21 @@ autonomy_default: L2
 
    └── Cover existing behavior before changes
 
-
-
 2. Create Adapter Layer
 
    └── Abstract legacy dependencies
-
-
 
 3. Extract Component
 
    └── Move to new architecture
 
-
-
 4. Parallel Run
 
    └── Both old and new active
 
-
-
 5. Migrate Traffic
 
    └── Gradually shift to new
-
-
 
 6. Decommission
 
@@ -304,11 +226,7 @@ autonomy_default: L2
 
 ```
 
-
-
 ### 5.3 Database Migration
-
-
 
 ```python
 
@@ -324,8 +242,6 @@ class UserRepository:
 
         self.migration_complete = False
 
-
-
     def save(self, user):
 
         # Write to both during migration
@@ -334,15 +250,11 @@ class UserRepository:
 
         self.new.save(self._transform(user))
 
-
-
     def get(self, user_id):
 
         if self.migration_complete:
 
             return self.new.get(user_id)
-
-
 
         # Read from legacy, verify with new
 
@@ -350,31 +262,19 @@ class UserRepository:
 
         new_user = self.new.get(user_id)
 
-
-
         if legacy_user != self._transform_back(new_user):
 
             self._log_discrepancy(user_id)
-
-
 
         return legacy_user
 
 ```
 
-
-
 ### 5.4 Feature Flag Migration
-
-
 
 ```python
 
 from feature_flags import FeatureFlags
-
-
-
-
 
 def get_user(user_id: str):
 
@@ -388,19 +288,11 @@ def get_user(user_id: str):
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Risk Management
 
-
-
 ### 6.1 Rollback Strategy
-
-
 
 | Level  | Trigger          | Action              |
 
@@ -414,11 +306,7 @@ def get_user(user_id: str):
 
 | **L4** | Critical failure | Full rollback       |
 
-
-
 ### 6.2 Testing Strategy
-
-
 
 | Phase          | Test Type              | Coverage                  |
 
@@ -432,11 +320,7 @@ def get_user(user_id: str):
 
 | **Continuous** | Integration tests      | End-to-end flows          |
 
-
-
 ### 6.3 Monitoring During Migration
-
-
 
 ```yaml
 
@@ -450,15 +334,11 @@ metrics:
 
     action: alert
 
-
-
   - name: latency_p99
 
     threshold: 500ms
 
     action: alert
-
-
 
   - name: data_sync_lag
 
@@ -468,15 +348,9 @@ metrics:
 
 ```
 
-
-
 ---
 
-
-
 ## 7. Common Tasks
-
-
 
 | Task                         | Steps                                                                    |
 
@@ -492,11 +366,7 @@ metrics:
 
 | **Migrate database**         | Schema analysis → Create migration → Test with prod data copy → Execute  |
 
-
-
 ### 7.1 Modernization Checklist
-
-
 
 | Phase           | Item                        | Status |
 
@@ -532,15 +402,9 @@ metrics:
 
 |                 | ☐ Lessons learned captured  |        |
 
-
-
 ---
 
-
-
 ## 8. Autonomy Calibration
-
-
 
 | Task Type                  | Level | Notes               |
 
@@ -560,15 +424,9 @@ metrics:
 
 | Production data migration  | L1    | Full review         |
 
-
-
 ---
 
-
-
 ## Key Principles
-
-
 
 | Principle         | Description                     |
 
@@ -586,15 +444,9 @@ metrics:
 
 | **Document**      | Capture decisions and learnings |
 
-
-
 ---
 
-
-
 ## Pitfalls to Avoid
-
-
 
 | Pitfall                   | Solution                         |
 
@@ -610,15 +462,9 @@ metrics:
 
 | **Rush to production**    | Parallel run first               |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/guidelines/engineering.md` — Engineering practices
 
@@ -628,11 +474,7 @@ metrics:
 
 - `.knowledge/frameworks/patterns/decision.md` — Decision framework
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

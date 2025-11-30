@@ -1,18 +1,10 @@
 # Unit Testing Patterns
 
-
-
 > Best practices and patterns for writing effective unit tests
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Overview](#1-overview)
 
@@ -30,19 +22,11 @@
 
 - [8. Parameterized Tests](#8-parameterized-tests)
 
-
-
 ---
-
-
 
 ## 1. Overview
 
-
-
 ### 1.1 Unit Test Principles
-
-
 
 | Principle           | Description                             |
 
@@ -58,11 +42,7 @@
 
 | **Thorough**        | Cover edge cases and error paths        |
 
-
-
 ### 1.2 Test Pyramid
-
-
 
 ```
 
@@ -82,19 +62,11 @@
 
 ```
 
-
-
 ---
-
-
 
 ## 2. Test Structure
 
-
-
 ### 2.1 Arrange-Act-Assert (AAA)
-
-
 
 ```python
 
@@ -106,13 +78,9 @@ def test_user_can_be_created():
 
     service = UserService()
 
-
-
     # Act - Execute the code under test
 
     user = service.create(user_data)
-
-
 
     # Assert - Verify the results
 
@@ -124,11 +92,7 @@ def test_user_can_be_created():
 
 ```
 
-
-
 ### 2.2 Given-When-Then (BDD Style)
-
-
 
 ```python
 
@@ -140,13 +104,9 @@ def test_user_registration():
 
     service = UserService()
 
-
-
     # When the user registers
 
     result = service.register(user_data)
-
-
 
     # Then the registration succeeds
 
@@ -156,11 +116,7 @@ def test_user_registration():
 
 ```
 
-
-
 ### 2.3 Test Class Organization
-
-
 
 ```python
 
@@ -168,53 +124,31 @@ class TestUserService:
 
     """Tests for UserService."""
 
-
-
     class TestCreate:
 
         """Tests for create method."""
 
-
-
         def test_creates_user_with_valid_data(self): ...
-
-
 
         def test_raises_error_for_invalid_email(self): ...
 
-
-
         def test_raises_error_for_duplicate_email(self): ...
-
-
 
     class TestGet:
 
         """Tests for get method."""
 
-
-
         def test_returns_user_by_id(self): ...
-
-
 
         def test_returns_none_for_missing_user(self): ...
 
 ```
 
-
-
 ---
-
-
 
 ## 3. Naming Conventions
 
-
-
 ### 3.1 Test Function Names
-
-
 
 | Pattern                   | Example                             |
 
@@ -226,11 +160,7 @@ class TestUserService:
 
 | `test_<scenario>`         | `test_user_can_reset_password`      |
 
-
-
 ### 3.2 Good vs Bad Names
-
-
 
 ```python
 
@@ -240,25 +170,13 @@ def test_user():
 
     ...
 
-
-
-
-
 def test_1():
 
     ...
 
-
-
-
-
 def test_it_works():
 
     ...
-
-
-
-
 
 # ✅ Good - Clear and descriptive
 
@@ -266,17 +184,9 @@ def test_create_user_with_valid_email_succeeds():
 
     ...
 
-
-
-
-
 def test_create_user_with_invalid_email_raises_validation_error():
 
     ...
-
-
-
-
 
 def test_get_user_returns_none_when_not_found():
 
@@ -284,27 +194,15 @@ def test_get_user_returns_none_when_not_found():
 
 ```
 
-
-
 ---
-
-
 
 ## 4. Fixtures
 
-
-
 ### 4.1 Basic Fixtures
-
-
 
 ```python
 
 import pytest
-
-
-
-
 
 @pytest.fixture
 
@@ -314,10 +212,6 @@ def user():
 
     return User(id="1", name="Test User", email="test@example.com")
 
-
-
-
-
 @pytest.fixture
 
 def user_service(mock_repository):
@@ -325,10 +219,6 @@ def user_service(mock_repository):
     """Create UserService with mocked repository."""
 
     return UserService(repository=mock_repository)
-
-
-
-
 
 def test_get_user(user_service, user):
 
@@ -338,11 +228,7 @@ def test_get_user(user_service, user):
 
 ```
 
-
-
 ### 4.2 Fixture Scopes
-
-
 
 ```python
 
@@ -352,29 +238,17 @@ def user():
 
     ...
 
-
-
-
-
 @pytest.fixture(scope="class")  # Shared within test class
 
 def database():
 
     ...
 
-
-
-
-
 @pytest.fixture(scope="module")  # Shared within module
 
 def config():
 
     ...
-
-
-
-
 
 @pytest.fixture(scope="session")  # Shared across all tests
 
@@ -384,11 +258,7 @@ def app():
 
 ```
 
-
-
 ### 4.3 Factory Fixtures
-
-
 
 ```python
 
@@ -397,8 +267,6 @@ def app():
 def user_factory():
 
     """Factory for creating users with custom attributes."""
-
-
 
     def _create_user(**kwargs):
 
@@ -414,13 +282,7 @@ def user_factory():
 
         return User(**{**defaults, **kwargs})
 
-
-
     return _create_user
-
-
-
-
 
 def test_user_with_custom_name(user_factory):
 
@@ -430,11 +292,7 @@ def test_user_with_custom_name(user_factory):
 
 ```
 
-
-
 ### 4.4 Temporary Resources
-
-
 
 ```python
 
@@ -450,10 +308,6 @@ def temp_config_file(tmp_path):
 
     return config_file
 
-
-
-
-
 def test_load_config(temp_config_file):
 
     config = load_config(temp_config_file)
@@ -462,27 +316,15 @@ def test_load_config(temp_config_file):
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Mocking
 
-
-
 ### 5.1 Basic Mocking
-
-
 
 ```python
 
 from unittest.mock import Mock, MagicMock
-
-
-
-
 
 def test_service_calls_repository():
 
@@ -492,19 +334,13 @@ def test_service_calls_repository():
 
     mock_repo.get.return_value = User(id="1", name="Test")
 
-
-
     # Inject mock
 
     service = UserService(repository=mock_repo)
 
-
-
     # Call method
 
     result = service.get("1")
-
-
 
     # Verify interactions
 
@@ -514,19 +350,11 @@ def test_service_calls_repository():
 
 ```
 
-
-
 ### 5.2 Patching
-
-
 
 ```python
 
 from unittest.mock import patch
-
-
-
-
 
 def test_send_email():
 
@@ -534,19 +362,11 @@ def test_send_email():
 
         mock_send.return_value = True
 
-
-
         result = notify_user("user@example.com", "Hello")
-
-
 
         mock_send.assert_called_once()
 
         assert result is True
-
-
-
-
 
 # Using decorator
 
@@ -562,11 +382,7 @@ def test_send_email(mock_send):
 
 ```
 
-
-
 ### 5.3 Mock Side Effects
-
-
 
 ```python
 
@@ -584,11 +400,7 @@ def test_retry_on_failure():
 
     ]
 
-
-
     result = retry_call(mock_service, max_retries=3)
-
-
 
     assert result == {"status": "ok"}
 
@@ -596,11 +408,7 @@ def test_retry_on_failure():
 
 ```
 
-
-
 ### 5.4 Pytest-Mock
-
-
 
 ```python
 
@@ -612,11 +420,7 @@ def test_with_mocker(mocker):
 
     mock_func.return_value = 42
 
-
-
     result = process_data()
-
-
 
     assert result == 42
 
@@ -624,19 +428,11 @@ def test_with_mocker(mocker):
 
 ```
 
-
-
 ---
-
-
 
 ## 6. Assertions
 
-
-
 ### 6.1 Basic Assertions
-
-
 
 ```python
 
@@ -646,23 +442,17 @@ assert result == expected
 
 assert result != other
 
-
-
 # Identity
 
 assert result is None
 
 assert result is not None
 
-
-
 # Truthiness
 
 assert result
 
 assert not result
-
-
 
 # Containment
 
@@ -672,19 +462,11 @@ assert key in dictionary
 
 ```
 
-
-
 ### 6.2 Exception Testing
-
-
 
 ```python
 
 import pytest
-
-
-
-
 
 def test_raises_value_error():
 
@@ -692,13 +474,7 @@ def test_raises_value_error():
 
         validate_email("invalid")
 
-
-
     assert "Invalid email" in str(exc_info.value)
-
-
-
-
 
 def test_raises_with_match():
 
@@ -708,11 +484,7 @@ def test_raises_with_match():
 
 ```
 
-
-
 ### 6.3 Approximate Comparisons
-
-
 
 ```python
 
@@ -720,13 +492,9 @@ import pytest
 
 from math import isclose
 
-
-
 # Float comparison
 
 assert result == pytest.approx(3.14159, rel=1e-5)
-
-
 
 # Using math.isclose
 
@@ -734,11 +502,7 @@ assert isclose(result, 3.14159, rel_tol=1e-5)
 
 ```
 
-
-
 ### 6.4 Collection Assertions
-
-
 
 ```python
 
@@ -746,21 +510,15 @@ assert isclose(result, 3.14159, rel_tol=1e-5)
 
 assert result == [1, 2, 3]
 
-
-
 # Unordered comparison
 
 assert set(result) == {1, 2, 3}
 
 assert sorted(result) == sorted(expected)
 
-
-
 # Subset
 
 assert expected_items <= set(result)
-
-
 
 # Length
 
@@ -768,27 +526,15 @@ assert len(result) == 3
 
 ```
 
-
-
 ---
-
-
 
 ## 7. Async Testing
 
-
-
 ### 7.1 Pytest-Asyncio
-
-
 
 ```python
 
 import pytest
-
-
-
-
 
 @pytest.mark.asyncio
 
@@ -797,10 +543,6 @@ async def test_async_operation():
     result = await async_fetch_data()
 
     assert result is not None
-
-
-
-
 
 @pytest.mark.asyncio
 
@@ -812,19 +554,11 @@ async def test_async_with_fixture(async_client):
 
 ```
 
-
-
 ### 7.2 Async Fixtures
-
-
 
 ```python
 
 import pytest
-
-
-
-
 
 @pytest.fixture
 
@@ -835,10 +569,6 @@ async def async_client():
     async with AsyncClient() as client:
 
         yield client
-
-
-
-
 
 @pytest.fixture
 
@@ -854,19 +584,11 @@ async def database():
 
 ```
 
-
-
 ### 7.3 Mocking Async Functions
-
-
 
 ```python
 
 from unittest.mock import AsyncMock
-
-
-
-
 
 @pytest.mark.asyncio
 
@@ -876,39 +598,23 @@ async def test_async_service():
 
     mock_repo.get.return_value = User(id="1")
 
-
-
     service = UserService(repository=mock_repo)
 
     result = await service.get("1")
-
-
 
     mock_repo.get.assert_awaited_once_with("1")
 
 ```
 
-
-
 ---
-
-
 
 ## 8. Parameterized Tests
 
-
-
 ### 8.1 Basic Parameterization
-
-
 
 ```python
 
 import pytest
-
-
-
-
 
 @pytest.mark.parametrize(
 
@@ -930,11 +636,7 @@ def test_uppercase(input, expected):
 
 ```
 
-
-
 ### 8.2 Multiple Parameters
-
-
 
 ```python
 
@@ -960,11 +662,7 @@ def test_add(a, b, expected):
 
 ```
 
-
-
 ### 8.3 Named Test Cases
-
-
 
 ```python
 
@@ -990,11 +688,7 @@ def test_validate_email(email, valid):
 
 ```
 
-
-
 ### 8.4 Combining Parameterization
-
-
 
 ```python
 
@@ -1012,19 +706,11 @@ def test_endpoints(method, path):
 
 ```
 
-
-
 ---
-
-
 
 ## Quick Reference
 
-
-
 ### Test Structure Checklist
-
-
 
 | Check                      | Description              |
 
@@ -1040,11 +726,7 @@ def test_endpoints(method, path):
 
 | ☐ Fast                     | < 100ms per test         |
 
-
-
 ### Common Patterns
-
-
 
 | Pattern         | Use Case              |
 
@@ -1060,15 +742,9 @@ def test_endpoints(method, path):
 
 | monkeypatch     | Environment variables |
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/integration_testing.md` — Integration testing
 
@@ -1076,11 +752,7 @@ def test_endpoints(method, path):
 
 - `.knowledge/guidelines/python.md` — Python guidelines
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

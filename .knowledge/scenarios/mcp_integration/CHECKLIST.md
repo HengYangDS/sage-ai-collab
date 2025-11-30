@@ -1,18 +1,10 @@
 # MCP Integration Checklist
 
-
-
 > Task checklist for Model Context Protocol (MCP) server and client integration
-
-
 
 ---
 
-
-
 ## Planning
-
-
 
 - [ ] MCP use case defined
 
@@ -24,11 +16,7 @@
 
 - [ ] Prompt templates designed
 
-
-
 ## Server Setup
-
-
 
 - [ ] MCP server framework chosen (FastMCP, etc.)
 
@@ -40,11 +28,7 @@
 
 - [ ] Health checks implemented
 
-
-
 ## Resources
-
-
 
 - [ ] Resource URIs designed
 
@@ -56,11 +40,7 @@
 
 - [ ] Resource subscriptions (if needed)
 
-
-
 ## Tools
-
-
 
 - [ ] Tool definitions created
 
@@ -72,11 +52,7 @@
 
 - [ ] Tool results formatted
 
-
-
 ## Prompts
-
-
 
 - [ ] Prompt templates defined
 
@@ -88,11 +64,7 @@
 
 - [ ] Context injection working
 
-
-
 ## Client Integration
-
-
 
 - [ ] Client SDK chosen
 
@@ -104,11 +76,7 @@
 
 - [ ] Reconnection logic
 
-
-
 ## Security
-
-
 
 - [ ] Authentication configured
 
@@ -120,11 +88,7 @@
 
 - [ ] Secrets properly managed
 
-
-
 ## Error Handling
-
-
 
 - [ ] Error codes standardized
 
@@ -136,11 +100,7 @@
 
 - [ ] Retry logic configured
 
-
-
 ## Testing
-
-
 
 - [ ] Unit tests for tools
 
@@ -152,11 +112,7 @@
 
 - [ ] Error scenario testing
 
-
-
 ## Documentation
-
-
 
 - [ ] API documentation complete
 
@@ -168,21 +124,13 @@
 
 - [ ] Changelog maintained
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - MCP Integration Checklist*
 
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/mcp_integration/context.md` — MCP integration context
 
@@ -190,11 +138,7 @@
 
 - `.knowledge/practices/engineering/error_handling.md` — Error handling patterns
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

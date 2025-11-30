@@ -113,7 +113,6 @@ class RetentionPolicy:
     max_age_days: int = 30
     min_priority: int = 30  # LOW
 
-
 def cleanup(store: DataStore, policy: RetentionPolicy):
     # Remove by age
     cutoff = datetime.now() - timedelta(days=policy.max_age_days)

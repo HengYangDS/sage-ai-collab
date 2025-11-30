@@ -1,18 +1,10 @@
 # Git Workflow
 
-
-
 > Git branching strategy, commit conventions, and collaboration practices
-
-
 
 ---
 
-
-
 ## Table of Contents
-
-
 
 - [1. Branching Strategy](#1-branching-strategy)
 
@@ -24,19 +16,11 @@
 
 - [5. Best Practices](#5-best-practices)
 
-
-
 ---
-
-
 
 ## 1. Branching Strategy
 
-
-
 ### 1.1 Branch Types
-
-
 
 | Branch      | Purpose                 | Naming                  | Lifetime  |
 
@@ -54,11 +38,7 @@
 
 | `release/*` | Release preparation     | `release/v1.0.0`        | Temporary |
 
-
-
 ### 1.2 Branch Flow
-
-
 
 ```
 
@@ -82,11 +62,7 @@ feature/b ───────────────●─────┘
 
 ```
 
-
-
 ### 1.3 Branch Rules
-
-
 
 | Rule                   | Description                             |
 
@@ -100,39 +76,23 @@ feature/b ───────────────●─────┘
 
 | **Clean history**      | Squash commits when merging             |
 
-
-
 ---
-
-
 
 ## 2. Commit Conventions
 
-
-
 ### 2.1 Commit Message Format
-
-
 
 ```
 
 <type>(<scope>): <subject>
 
-
-
 <body>
-
-
 
 <footer>
 
 ```
 
-
-
 ### 2.2 Commit Types
-
-
 
 | Type       | Description      | Example                                  |
 
@@ -156,11 +116,7 @@ feature/b ───────────────●─────┘
 
 | `ci`       | CI/CD changes    | `ci: add coverage report`                |
 
-
-
 ### 2.3 Scope Examples
-
-
 
 | Scope    | Area          |
 
@@ -180,19 +136,13 @@ feature/b ───────────────●─────┘
 
 | `tests`  | Test suite    |
 
-
-
 ### 2.4 Good Commit Examples
-
-
 
 ```bash
 
 # Feature commit
 
 feat(mcp): add sage_search tool with pagination
-
-
 
 Add new MCP tool for searching knowledge base with:
 
@@ -202,33 +152,21 @@ Add new MCP tool for searching knowledge base with:
 
 - Pagination support via offset
 
-
-
 Closes #123
-
-
 
 # Bug fix commit
 
 fix(loader): handle timeout gracefully
 
-
-
 Return partial content instead of raising exception
 
 when T3 timeout occurs during layer loading.
 
-
-
 Fixes #456
-
-
 
 # Documentation commit
 
 docs(api): add Python API reference
-
-
 
 Add comprehensive documentation for:
 
@@ -240,11 +178,7 @@ Add comprehensive documentation for:
 
 ```
 
-
-
 ### 2.5 Commit Best Practices
-
-
 
 | Practice             | Description                          |
 
@@ -262,33 +196,19 @@ Add comprehensive documentation for:
 
 | **Reference issues** | Include issue numbers in footer      |
 
-
-
 ---
-
-
 
 ## 3. Pull Request Process
 
-
-
 ### 3.1 PR Checklist
-
-
 
 ```markdown
 
 ## Description
 
-
-
 [Describe what this PR does]
 
-
-
 ## Type of Change
-
-
 
 - [ ] Bug fix (non-breaking change fixing an issue)
 
@@ -298,11 +218,7 @@ Add comprehensive documentation for:
 
 - [ ] Documentation update
 
-
-
 ## Checklist
-
-
 
 - [ ] Code follows project style guidelines
 
@@ -316,21 +232,13 @@ Add comprehensive documentation for:
 
 - [ ] No new warnings
 
-
-
 ## Related Issues
-
-
 
 Closes #[issue number]
 
 ```
 
-
-
 ### 3.2 PR Workflow
-
-
 
 ```
 
@@ -338,25 +246,17 @@ Closes #[issue number]
 
    └── git checkout -b feature/my-feature develop
 
-
-
 2. Make Changes
 
    └── Implement feature with atomic commits
-
-
 
 3. Push Branch
 
    └── git push origin feature/my-feature
 
-
-
 4. Open PR
 
    └── Create PR against develop branch
-
-
 
 5. Review Process
 
@@ -366,19 +266,13 @@ Closes #[issue number]
 
    └── Address feedback
 
-
-
 6. Merge
 
    └── Squash and merge after approval
 
 ```
 
-
-
 ### 3.3 Review Guidelines
-
-
 
 | Aspect            | Check                       |
 
@@ -396,35 +290,21 @@ Closes #[issue number]
 
 | **Documentation** | Is it properly documented?  |
 
-
-
 ---
-
-
 
 ## 4. Release Management
 
-
-
 ### 4.1 Version Numbering
 
-
-
 Follow [Semantic Versioning](https://semver.org/):
-
-
 
 ```
 
 MAJOR.MINOR.PATCH
 
-
-
 Example: 1.2.3
 
 ```
-
-
 
 | Component | Increment When                     |
 
@@ -436,11 +316,7 @@ Example: 1.2.3
 
 | **PATCH** | Bug fixes (backward compatible)    |
 
-
-
 ### 4.2 Release Process
-
-
 
 ```bash
 
@@ -448,19 +324,13 @@ Example: 1.2.3
 
 git checkout -b release/v1.2.0 develop
 
-
-
 # 2. Update version
 
 # Edit pyproject.toml, CHANGELOG.md
 
-
-
 # 3. Final testing
 
 pytest tests/ -v
-
-
 
 # 4. Merge to main
 
@@ -468,15 +338,11 @@ git checkout main
 
 git merge release/v1.2.0
 
-
-
 # 5. Tag release
 
 git tag -a v1.2.0 -m "Release v1.2.0"
 
 git push origin v1.2.0
-
-
 
 # 6. Merge back to develop
 
@@ -484,91 +350,53 @@ git checkout develop
 
 git merge release/v1.2.0
 
-
-
 # 7. Delete release branch
 
 git branch -d release/v1.2.0
 
 ```
 
-
-
 ### 4.3 Changelog Format
-
-
 
 ```markdown
 
 ## [1.2.0] - 2025-11-29
 
-
-
 ### Added
-
-
 
 - New feature X
 
 - New feature Y
 
-
-
 ### Changed
-
-
 
 - Updated behavior of Z
 
-
-
 ### Fixed
-
-
 
 - Bug in component A
 
 - Issue with feature B
 
-
-
 ### Deprecated
-
-
 
 - Old API method (use new method instead)
 
-
-
 ### Removed
-
-
 
 - Legacy feature C
 
-
-
 ### Security
-
-
 
 - Fixed vulnerability in D
 
 ```
 
-
-
 ---
-
-
 
 ## 5. Best Practices
 
-
-
 ### 5.1 Daily Workflow
-
-
 
 ```bash
 
@@ -578,13 +406,9 @@ git checkout develop
 
 git pull origin develop
 
-
-
 # Create feature branch
 
 git checkout -b feature/my-feature
-
-
 
 # Work on feature (commit frequently)
 
@@ -592,15 +416,11 @@ git add .
 
 git commit -m "feat(scope): description"
 
-
-
 # Keep branch updated
 
 git fetch origin
 
 git rebase origin/develop
-
-
 
 # Push changes
 
@@ -608,19 +428,13 @@ git push origin feature/my-feature
 
 ```
 
-
-
 ### 5.2 Handling Conflicts
-
-
 
 ```bash
 
 # During rebase
 
 git rebase origin/develop
-
-
 
 # If conflicts occur
 
@@ -630,13 +444,9 @@ git rebase origin/develop
 
 git add <resolved-files>
 
-
-
 # 3. Continue rebase
 
 git rebase --continue
-
-
 
 # Or abort if needed
 
@@ -644,11 +454,7 @@ git rebase --abort
 
 ```
 
-
-
 ### 5.3 Useful Aliases
-
-
 
 ```bash
 
@@ -674,11 +480,7 @@ git rebase --abort
 
 ```
 
-
-
 ### 5.4 Common Commands
-
-
 
 | Task               | Command                            |
 
@@ -700,19 +502,11 @@ git rebase --abort
 
 | Cherry-pick        | `git cherry-pick <commit-hash>`    |
 
-
-
 ---
-
-
 
 ## Git Hooks
 
-
-
 ### 5.5 Pre-commit Hook
-
-
 
 ```bash
 
@@ -720,19 +514,13 @@ git rebase --abort
 
 # .git/hooks/pre-commit
 
-
-
 # Run linting
 
 ruff check src/
 
-
-
 # Run type checking
 
 mypy src/sage/
-
-
 
 # Run tests
 
@@ -740,11 +528,7 @@ pytest tests/unit/ -q
 
 ```
 
-
-
 ### 5.6 Commit-msg Hook
-
-
 
 ```bash
 
@@ -752,13 +536,9 @@ pytest tests/unit/ -q
 
 # .git/hooks/commit-msg
 
-
-
 # Validate commit message format
 
 commit_regex='^(feat|fix|docs|style|refactor|perf|test|chore|ci)(\(.+\))?: .{1,50}'
-
-
 
 if ! grep -qE "$commit_regex" "$1"; then
 
@@ -772,15 +552,9 @@ fi
 
 ```
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/practices/engineering/ci_cd.md` — CI/CD configuration
 
@@ -788,11 +562,7 @@ fi
 
 - `.context/conventions/` — Coding conventions
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 

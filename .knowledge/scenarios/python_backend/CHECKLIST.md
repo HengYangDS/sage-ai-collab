@@ -1,18 +1,10 @@
 # Python Backend Checklist
 
-
-
 > Task checklist for Python backend development
-
-
 
 ---
 
-
-
 ## Project Setup
-
-
 
 - [ ] Python version specified (3.12+)
 
@@ -26,11 +18,7 @@
 
 - [ ] CI/CD pipeline configured
 
-
-
 ## Code Quality
-
-
 
 - [ ] Type hints on all public functions
 
@@ -42,11 +30,7 @@
 
 - [ ] Test coverage > 80%
 
-
-
 ## API Development
-
-
 
 - [ ] OpenAPI schema defined
 
@@ -62,11 +46,7 @@
 
 - [ ] CORS settings appropriate
 
-
-
 ## Database
-
-
 
 - [ ] Migrations up to date
 
@@ -78,11 +58,7 @@
 
 - [ ] N+1 queries eliminated
 
-
-
 ## Security
-
-
 
 - [ ] No hardcoded secrets
 
@@ -94,11 +70,7 @@
 
 - [ ] Security headers set
 
-
-
 ## Performance
-
-
 
 - [ ] Response times < 200ms (P95)
 
@@ -108,11 +80,7 @@
 
 - [ ] Profiling completed
 
-
-
 ## Deployment
-
-
 
 - [ ] Environment variables documented
 
@@ -124,15 +92,9 @@
 
 - [ ] Rollback procedure documented
 
-
-
 ---
 
-
-
 ## Related
-
-
 
 - `.knowledge/scenarios/python_backend/context.md` — Python backend context
 
@@ -140,17 +102,11 @@
 
 - `.knowledge/practices/engineering/testing_strategy.md` — Testing strategies
 
-
-
 ---
-
-
 
 *AI Collaboration Knowledge Base - Python Backend Checklist*
 
 ---
-
-
 
 *AI Collaboration Knowledge Base*
 
