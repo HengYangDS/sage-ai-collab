@@ -24,7 +24,7 @@
 
 ## 1. Overview
 
-SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for AI-human collaboration, featuring:
+SAGE (Source, Analyze, Generate, Evolve) is a knowledge management system designed for AI-human collaboration, featuring:
 
 - **5-level timeout hierarchy** (100 ms ~ 10 s) for guaranteed response times
 - **Circuit breaker pattern** for fault tolerance
@@ -184,28 +184,33 @@ See `docs/` for comprehensive documentation:
 
 ### 7.1 Design Documents
 
-- `00-OVERVIEW.md` — Project overview
-- `01-ARCHITECTURE.md` — Three-layer architecture
-- `02-SAGE-PROTOCOL.md` — SAGE protocol specification
-- `03-SERVICES.md` — Service layer design
-- `04-TIMEOUT-LOADING.md` — Timeout hierarchy and smart loading
-- `05-PLUGIN-MEMORY.md` — Plugin system and memory
-- `06-CONTENT-STRUCTURE.md` — Knowledge content organization
-- `07-ROADMAP.md` — Implementation roadmap
-- `08-EVALUATION.md` — Evaluation criteria
-- `09-CONFIGURATION.md` — Configuration management
+| Document | Purpose |
+|----------|---------|
+| `docs/design/OVERVIEW.md` | Project overview |
+| `docs/design/architecture/THREE_LAYER.md` | Three-layer architecture |
+| `docs/design/protocols/SAGE_PROTOCOL.md` | SAGE protocol specification |
+| `docs/design/services/SERVICE_LAYER.md` | Service layer design |
+| `docs/design/timeout_resilience/TIMEOUT_HIERARCHY.md` | Timeout hierarchy |
+| `docs/design/plugins/PLUGIN_ARCHITECTURE.md` | Plugin system |
+| `docs/design/knowledge_system/LAYER_HIERARCHY.md` | Knowledge organization |
+| `docs/design/evolution/ROADMAP.md` | Implementation roadmap |
+| `docs/design/configuration/CONFIG_HIERARCHY.md` | Configuration management |
 
 ### 7.2 API Reference
 
-- `docs/api/CLI.md` — Command-line interface
-- `docs/api/MCP.md` — MCP (Model Context Protocol) API
-- `docs/api/PYTHON.md` — Python SDK reference
+| Document | Purpose |
+|----------|---------|
+| `docs/api/CLI.md` | Command-line interface |
+| `docs/api/MCP.md` | MCP (Model Context Protocol) API |
+| `docs/api/PYTHON.md` | Python SDK reference |
 
 ### 7.3 User Guides
 
-- `docs/guides/QUICKSTART.md` — Quick start guide
-- `docs/guides/CONFIGURATION.md` — Configuration guide
-- `docs/guides/PLUGIN_DEVELOPMENT.md` — Plugin development
+| Document | Purpose |
+|----------|---------|
+| `docs/guides/QUICKSTART.md` | Quick start guide |
+| `docs/guides/CONFIGURATION.md` | Configuration guide |
+| `docs/guides/MIGRATION.md` | Migration guide |
 
 ## 8. License
 
@@ -218,7 +223,7 @@ MIT License – see LICENSE file for details.
 - `INDEX.md` — Project navigation entry
 - `CONTRIBUTING.md` — Contribution guidelines
 - `CHANGELOG.md` — Version history and changes
-- `docs/design/00-OVERVIEW.md` — Design overview
+- `docs/design/OVERVIEW.md` — Design overview
 - `.knowledge/core/PRINCIPLES.md` — Core philosophy (信达雅)
 
 ---

@@ -17,6 +17,7 @@
 
 | File                                               | Purpose                            |
 |----------------------------------------------------|------------------------------------|
+| `ai_collaboration/INDEX.md`                        | AI collaboration practices index   |
 | `ai_collaboration/CONTEXT_MANAGEMENT.md`           | Managing shared context            |
 | `ai_collaboration/EFFECTIVENESS_METRICS.md`        | AI collaboration effectiveness     |
 | `ai_collaboration/INTERACTION_PATTERNS.md`         | AI collaboration patterns          |
@@ -33,16 +34,21 @@
 
 | File                          | Purpose                 |
 |-------------------------------|-------------------------|
+| `decisions/INDEX.md`          | Decisions practices index |
 | `decisions/AUTONOMY_CASES.md` | Autonomy level examples |
 
 ### 1.3 Documentation
 
 | File                                           | Purpose                                |
 |------------------------------------------------|----------------------------------------|
+| `documentation/INDEX.md`                       | Documentation practices index          |
+| `documentation/DOCUMENTATION_STANDARDS.md`     | Documentation format standards         |
+| `documentation/DIAGRAM_STANDARDS.md`           | Mermaid diagram standards              |
+| `documentation/TABLE_STANDARDS.md`             | Table creation standards               |
+| `documentation/CODE_BLOCK_STANDARDS.md`        | Code block and quote standards         |
 | `documentation/ASCII_ART_FORMATTING.md`        | ASCII art box alignment best practices |
-| `documentation/DOCUMENTATION_STANDARDS.md`     | Documentation format standards          |
-| `documentation/KNOWLEDGE_MAINTENANCE_SOP.md`   | Knowledge base maintenance procedures  |
 | `documentation/KNOWLEDGE_ORGANIZATION.md`      | Knowledge hierarchy patterns           |
+| `documentation/KNOWLEDGE_MAINTENANCE_SOP.md`   | Knowledge base maintenance procedures  |
 | `documentation/OPTIMIZATION_WORKFLOW.md`       | Batch optimization process             |
 | `documentation/PROJECT_DIRECTORY_STRUCTURE.md` | Project directory patterns             |
 | `documentation/QUARTERLY_REVIEW_PROCESS.md`    | Quarterly knowledge review process     |
@@ -51,6 +57,7 @@
 
 | File                                     | Purpose                        |
 |------------------------------------------|--------------------------------|
+| `engineering/INDEX.md`                   | Engineering practices index    |
 | `engineering/API_DESIGN.md`              | API design patterns            |
 | `engineering/BATCH_OPTIMIZATION.md`      | Batch processing               |
 | `engineering/CI_CD.md`                   | CI/CD configuration            |

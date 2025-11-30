@@ -8,7 +8,6 @@
 
 | Term | Definition |
 |:-----|:-----------|
-
 | **Token** | Unit of text processed by AI (~4 chars English) |
 | **SSOT** | Single Source of Truth |
 | **MECE** | Mutually Exclusive, Collectively Exhaustive |

@@ -1,43 +1,61 @@
 # Documentation Practices
 
-> Standards and workflows for creating high-quality documentation
+> Actionable patterns and standards for documentation creation
 
 ---
 
-## Contents
+## Table of Contents
 
-### SSOT Standards (Single Source of Truth)
+- [1. Standards](#1-standards)
+- [2. Element Standards](#2-element-standards)
+- [3. Organization](#3-organization)
+- [4. Maintenance](#4-maintenance)
 
-| Document | Purpose |
-|:---------|:--------|
-| [DOCUMENTATION_STANDARDS.md](DOCUMENTATION_STANDARDS.md) | Core document format, structure, writing style |
-| [DIAGRAM_STANDARDS.md](DIAGRAM_STANDARDS.md) | Mermaid diagrams: 21 types, 信达雅 design principles |
-| [TABLE_STANDARDS.md](TABLE_STANDARDS.md) | Table creation: layout, alignment, accessibility |
-| [CODE_BLOCK_STANDARDS.md](CODE_BLOCK_STANDARDS.md) | Code blocks, quotes, callouts, inline code |
+---
 
-### Supporting Practices
+## 1. Standards
 
-| Document | Purpose |
-|:---------|:--------|
-| [ASCII_ART_FORMATTING.md](ASCII_ART_FORMATTING.md) | ASCII art box alignment and character width issues |
-| [KNOWLEDGE_ORGANIZATION.md](KNOWLEDGE_ORGANIZATION.md) | Knowledge hierarchy and categorization patterns |
-| [PROJECT_DIRECTORY_STRUCTURE.md](PROJECT_DIRECTORY_STRUCTURE.md) | Standard project folder layouts |
+| Document                       | Purpose                                |
+|--------------------------------|----------------------------------------|
+| `DOCUMENTATION_STANDARDS.md`   | Document format and structure standards |
 
-### Workflows & Processes
+---
 
-| Document | Purpose |
-|:---------|:--------|
-| [OPTIMIZATION_WORKFLOW.md](OPTIMIZATION_WORKFLOW.md) | Document improvement and refinement process |
-| [KNOWLEDGE_MAINTENANCE_SOP.md](KNOWLEDGE_MAINTENANCE_SOP.md) | Routine knowledge base maintenance procedures |
-| [QUARTERLY_REVIEW_PROCESS.md](QUARTERLY_REVIEW_PROCESS.md) | Periodic review and audit process |
+## 2. Element Standards
+
+| Document                  | Purpose                                |
+|---------------------------|----------------------------------------|
+| `DIAGRAM_STANDARDS.md`    | Mermaid diagram creation standards     |
+| `TABLE_STANDARDS.md`      | Table creation standards               |
+| `CODE_BLOCK_STANDARDS.md` | Code block and quote standards         |
+| `ASCII_ART_FORMATTING.md` | ASCII art box alignment best practices |
+
+---
+
+## 3. Organization
+
+| Document                        | Purpose                                |
+|---------------------------------|----------------------------------------|
+| `KNOWLEDGE_ORGANIZATION.md`     | Knowledge hierarchy patterns           |
+| `PROJECT_DIRECTORY_STRUCTURE.md`| Project directory patterns             |
+
+---
+
+## 4. Maintenance
+
+| Document                       | Purpose                                |
+|--------------------------------|----------------------------------------|
+| `KNOWLEDGE_MAINTENANCE_SOP.md` | Knowledge base maintenance procedures  |
+| `OPTIMIZATION_WORKFLOW.md`     | Batch optimization process             |
+| `QUARTERLY_REVIEW_PROCESS.md`  | Quarterly knowledge review process     |
 
 ---
 
 ## Related
 
-- `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines (What rules)
-- `.knowledge/core/PRINCIPLES.md` — 信达雅 · 术法道 core principles
-- `.knowledge/practices/INDEX.md` — All practices index
+- `.knowledge/practices/INDEX.md` — Practices layer index
+- `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines
+- `.knowledge/templates/INDEX.md` — Document templates
 
 ---
 

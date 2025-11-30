@@ -20,6 +20,7 @@
 | **Cognitive**   | `cognitive/EXPERT_COMMITTEE.md`          | Multi-expert analysis         |
 | **Cognitive**   | `cognitive/INFORMATION_DENSITY.md`       | Compression vs clarity        |
 | **Design**      | `design/AXIOMS.md`                       | 8 design principles           |
+| **Design**      | `design/LAYER_HIERARCHY.md`              | Knowledge layer hierarchy     |
 | **Patterns**    | `patterns/COLLABORATION.md`              | AI collaboration patterns     |
 | **Patterns**    | `patterns/DECISION.md`                   | Quality angles framework      |
 | **Patterns**    | `patterns/INTEGRATION.md`                | System integration patterns   |
@@ -27,7 +28,7 @@
 | **Performance** | `performance/INDEX.md`                   | Performance optimization      |
 | **Performance** | `performance/CACHING_PATTERNS.md`        | Caching strategies            |
 | **Performance** | `performance/OPTIMIZATION_STRATEGIES.md` | Optimization techniques       |
-| **Performance** | `performance/PROFILING_GUIDE.md`         | Performance measurement       |
+| **Performance** | `performance/PROFILING_FRAMEWORK.md`     | Performance measurement       |
 | **Resilience**  | `resilience/TIMEOUT_PATTERNS.md`         | Timeout & resilience patterns |
 | **Security**    | `security/INDEX.md`                      | Security framework overview   |
 | **Security**    | `security/AUTHENTICATION.md`             | Identity verification         |
@@ -51,7 +52,7 @@
 | Data management    | `patterns/PERSISTENCE.md`                |
 | Caching strategy   | `performance/CACHING_PATTERNS.md`        |
 | Performance tuning | `performance/OPTIMIZATION_STRATEGIES.md` |
-| Profiling/analysis | `performance/PROFILING_GUIDE.md`         |
+| Profiling/analysis | `performance/PROFILING_FRAMEWORK.md`     |
 | Timeout handling   | `resilience/TIMEOUT_PATTERNS.md`         |
 | Authentication     | `security/AUTHENTICATION.md`             |
 | Authorization      | `security/AUTHORIZATION.md`              |

@@ -118,6 +118,7 @@
 
 [Follow-up actions if applicable]
 ```
+
 ---
 
 ## 6. Fallback Behavior

@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to SAGE Knowledge Base will be documented in this file.
+> All notable changes to SAGE Knowledge Base documented in this file
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
@@ -30,6 +30,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - README.md Python API example now uses proper async/await syntax
 - Root `INDEX.md` project structure now includes `.backups/` and `config/environments/`
 - `.junie/guidelines.md` project structure now complete with all directories
+- Root documentation standardization (README.md, INDEX.md, CHANGELOG.md, CONTRIBUTING.md):
+  - Simplified blockquotes to single-line purpose descriptions
+  - Added numbered H2/H3 section headings per documentation standards
+  - Updated TOC anchors to match numbered headings
+  - Added Related sections with cross-reference links
+  - Removed emoji from section headings
+  - Fixed Philosophy section title formatting in README.md
 
 ## [0.1.0] - 2025-11-29
 
@@ -71,7 +78,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 #### Documentation
 
-- Design documents (`docs/design/00-09`)
+- Design documents (`docs/design/`)
 - Code conventions (`.context/conventions/`)
 - Document templates (`.knowledge/templates/`)
 - AI collaboration guidelines (`.junie/guidelines.md`)
@@ -113,6 +120,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 [Unreleased]: https://github.com/HengYangDS/sage-kb/compare/v0.1.0...HEAD
 
 [0.1.0]: https://github.com/HengYangDS/sage-kb/releases/tag/v0.1.0
+
+---
+
+## Related
+
+- `README.md` — Project overview and quick start
+- `CONTRIBUTING.md` — Contribution guidelines
+- `docs/design/evolution/ROADMAP.md` — Implementation roadmap
+- `.context/decisions/INDEX.md` — Architecture decision records
 
 ---
 

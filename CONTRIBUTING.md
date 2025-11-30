@@ -1,24 +1,25 @@
 ﻿# Contributing to SAGE Knowledge Base
 
-Thank you for your interest in contributing to SAGE! This document provides guidelines and instructions for
-contributing.
+> Guidelines and instructions for contributing to SAGE Knowledge Base
 
 ---
 
 ## Table of Contents
 
-- [Code of Conduct](#code-of-conduct)
-- [Getting Started](#getting-started)
-- [Development Setup](#development-setup)
-- [Making Contributions](#making-contributions)
-- [Code Standards](#code-standards)
-- [Testing](#testing)
-- [Documentation](#documentation)
-- [Submitting Changes](#submitting-changes)
+- [1. Code of Conduct](#1-code-of-conduct)
+- [2. Getting Started](#2-getting-started)
+- [3. Development Setup](#3-development-setup)
+- [4. Making Contributions](#4-making-contributions)
+- [5. Code Standards](#5-code-standards)
+- [6. Testing](#6-testing)
+- [7. Documentation](#7-documentation)
+- [8. Submitting Changes](#8-submitting-changes)
+- [9. Quick Reference](#9-quick-reference)
+- [10. Recognition](#10-recognition)
 
 ---
 
-## Code of Conduct
+## 1. Code of Conduct
 
 We are committed to providing a welcoming and inclusive environment. Please:
 
@@ -29,9 +30,9 @@ We are committed to providing a welcoming and inclusive environment. Please:
 
 ---
 
-## Getting Started
+## 2. Getting Started
 
-### Types of Contributions
+### 2.1 Types of Contributions
 
 | Type             | Description             | Difficulty   |
 |------------------|-------------------------|--------------|
@@ -41,7 +42,7 @@ We are committed to providing a welcoming and inclusive environment. Please:
 | 🏗️ Architecture | Core system changes     | Advanced     |
 | 🧪 Testing       | Add or improve tests    | Intermediate |
 
-### First Contribution?
+### 2.2 First Contribution
 
 Look for issues labeled:
 
@@ -51,15 +52,15 @@ Look for issues labeled:
 
 ---
 
-## Development Setup
+## 3. Development Setup
 
-### Prerequisites
+### 3.1 Prerequisites
 
 - Python 3.12+
 - Git
 - Virtual environment tool (conda/miniconda recommended, or venv)
 
-### Setup Steps
+### 3.2 Setup Steps
 
 ```bash
 # 1. Fork the repository on GitHub
@@ -89,7 +90,7 @@ pytest tests/
 sage info
 ```
 
-### Project Structure
+### 3.3 Project Structure
 
 ```
 sage-kb/
@@ -105,9 +106,9 @@ sage-kb/
 
 ---
 
-## Making Contributions
+## 4. Making Contributions
 
-### Workflow
+### 4.1 Workflow
 
 ```text
 1. Create Issue (if not exists)
@@ -127,7 +128,7 @@ sage-kb/
 8. Review & Merge
 ```
 
-### Branch Naming
+### 4.2 Branch Naming
 
 | Type    | Format                | Example                       |
 |---------|-----------------------|-------------------------------|
@@ -136,7 +137,7 @@ sage-kb/
 | Docs    | `docs/description`    | `docs/update-api-guide`       |
 | Hotfix  | `hotfix/description`  | `hotfix/security-patch`       |
 
-### Creating a Branch
+### 4.3 Creating a Branch
 
 ```bash
 # Update main branch
@@ -149,9 +150,9 @@ git checkout -b feature/your-feature-name
 
 ---
 
-## Code Standards
+## 5. Code Standards
 
-### Python Style
+### 5.1 Python Style
 
 We use **Ruff** for linting and formatting:
 
@@ -166,7 +167,7 @@ ruff check --fix src/
 ruff format src/
 ```
 
-### Key Standards
+### 5.2 Key Standards
 
 | Standard    | Requirement                   |
 |-------------|-------------------------------|
@@ -175,7 +176,7 @@ ruff format src/
 | Docstrings  | Google style                  |
 | Imports     | Sorted by ruff                |
 
-### Example Code
+### 5.3 Example Code
 
 ```python
 from typing import Optional
@@ -207,7 +208,7 @@ def process_content(
     return result
 ```
 
-### Type Checking
+### 5.4 Type Checking
 
 ```bash
 # Run mypy
@@ -216,9 +217,9 @@ mypy src/
 
 ---
 
-## Testing
+## 6. Testing
 
-### Running Tests
+### 6.1 Running Tests
 
 ```bash
 # All tests
@@ -236,7 +237,7 @@ pytest -k "test_loader"
 pytest -v
 ```
 
-### Writing Tests
+### 6.2 Writing Tests
 
 ```python
 import pytest
@@ -267,7 +268,7 @@ class TestLoader:
             loader.load("NONEXISTENT.md")
 ```
 
-### Test Requirements
+### 6.3 Test Requirements
 
 - All new features need tests
 - Bug fixes should include regression tests
@@ -276,9 +277,9 @@ class TestLoader:
 
 ---
 
-## Documentation
+## 7. Documentation
 
-### Types of Documentation
+### 7.1 Types of Documentation
 
 | Type     | Location       | Purpose           |
 |----------|----------------|-------------------|
@@ -287,14 +288,14 @@ class TestLoader:
 | Design   | `docs/design/` | Architecture docs |
 | Content  | `.knowledge/`  | Knowledge content |
 
-### Documentation Style
+### 7.2 Documentation Style
 
 - Use Markdown format
 - Include code examples
 - Keep language clear and concise
 - Update when changing features
 
-### Adding Knowledge Content
+### 7.3 Adding Knowledge Content
 
 ```bash
 # Add to appropriate layer
@@ -308,9 +309,9 @@ class TestLoader:
 
 ---
 
-## Submitting Changes
+## 8. Submitting Changes
 
-### Commit Messages
+### 8.1 Commit Messages
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
@@ -332,7 +333,7 @@ fix(loader): handle empty files gracefully
 docs(api): update MCP protocol documentation
 ```
 
-### Pull Request Process
+### 8.2 Pull Request Process
 
 1. **Create PR** with clear title and description
 2. **Fill template** with all required information
@@ -341,7 +342,7 @@ docs(api): update MCP protocol documentation
 5. **Address feedback** promptly
 6. **Squash commits** if requested
 
-### PR Template
+### 8.3 PR Template
 
 ```markdown
 ## Description
@@ -368,7 +369,7 @@ Brief description of changes
 - [ ] No breaking changes (or documented)
 ```
 
-### Review Process
+### 8.4 Review Process
 
 - At least one approval required
 - All CI checks must pass
@@ -377,9 +378,9 @@ Brief description of changes
 
 ---
 
-## Quick Reference
+## 9. Quick Reference
 
-### Common Commands
+### 9.1 Common Commands
 
 ```bash
 # Development
@@ -397,7 +398,7 @@ git push origin feature/x  # Push
 pre-commit run --all-files # Run all hooks
 ```
 
-### Getting Help
+### 9.2 Getting Help
 
 - **Questions**: Open a GitHub Discussion
 - **Bugs**: Create an Issue with reproduction steps
@@ -405,7 +406,7 @@ pre-commit run --all-files # Run all hooks
 
 ---
 
-## Recognition
+## 10. Recognition
 
 Contributors will be:
 
@@ -413,7 +414,17 @@ Contributors will be:
 - Acknowledged in release notes
 - Added to contributors list (for significant contributions)
 
-Thank you for contributing to SAGE Knowledge Base! 🎉
+Thank you for contributing to SAGE Knowledge Base!
+
+---
+
+## Related
+
+- `README.md` — Project overview and quick start
+- `CHANGELOG.md` — Version history and changes
+- `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
+- `.context/conventions/NAMING.md` — Naming conventions
 
 ---
 

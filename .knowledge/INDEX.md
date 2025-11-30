@@ -1,8 +1,6 @@
 ﻿# Knowledge Base Navigation
 
 > Entry point for AI collaboration knowledge content
->
-> **Layer Hierarchy Design**: `.knowledge/frameworks/design/LAYER_HIERARCHY.md`
 
 ---
 
@@ -72,7 +70,7 @@ Reusable patterns and strategies across 7 categories:
 |----------------|-------|----------------------------------|
 | `autonomy/`    | 2     | AI autonomy levels (L1-L6)       |
 | `cognitive/`   | 3     | Expert committee, info density   |
-| `design/`      | 2     | Design axioms and principles     |
+| `design/`      | 3     | Design axioms, layer hierarchy   |
 | `patterns/`    | 5     | Collaboration, decision patterns |
 | `performance/` | 4     | Caching, optimization, profiling |
 | `resilience/`  | 2     | Timeout patterns, fallbacks      |
@@ -181,6 +179,7 @@ Reusable document templates:
 - `.knowledge/frameworks/cognitive/INFORMATION_DENSITY.md` — Information density
 - `.knowledge/frameworks/design/INDEX.md` — Design framework
 - `.knowledge/frameworks/design/AXIOMS.md` — Design axioms
+- `.knowledge/frameworks/design/LAYER_HIERARCHY.md` — Layer hierarchy design
 - `.knowledge/frameworks/patterns/INDEX.md` — Patterns framework
 - `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
 - `.knowledge/frameworks/patterns/DECISION.md` — Decision patterns
@@ -224,6 +223,9 @@ Each layer has an `INDEX.md` for navigation. Use layer indexes for discovery, sp
 - `.knowledge/guidelines/INDEX.md` — Guidelines layer
 - `.knowledge/frameworks/INDEX.md` — Frameworks layer
 - `.knowledge/practices/INDEX.md` — Practices layer
+- `.knowledge/references/INDEX.md` — References layer
+- `.knowledge/scenarios/INDEX.md` — Scenarios layer
+- `.knowledge/templates/INDEX.md` — Templates layer
 
 ---
 

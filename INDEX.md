@@ -1,6 +1,6 @@
 ﻿# SAGE Knowledge Base
 
-> Smart AI-Guided Expertise — Navigation entry point
+> Source, Analyze, Generate, Evolve — Navigation entry point
 
 ---
 
@@ -104,7 +104,7 @@ sage-kb/
 | `.knowledge/core/PRINCIPLES.md` | Core philosophy (信达雅)                            |
 | `.context/INDEX.md`             | Project-specific context navigation              |
 | `.junie/guidelines.md`          | AI collaboration guidelines                      |
-| `docs/design/00-OVERVIEW.md`    | Design overview                                  |
+| `docs/design/OVERVIEW.md`       | Design overview                                  |
 
 ---
 
