@@ -221,8 +221,8 @@ print(greet("World"))  # Output: Hello, World
 |----------|---------------------------|--------------------------------|
 | Markdown | `UPPER_SNAKE_CASE.md`     | `DOCUMENTATION_STANDARDS.md`   |
 | ADR      | `ADR-NNNN-TITLE.md`       | `ADR-0001-FASTMCP-CHOICE.md`   |
-| Session  | `YYYY-MM-DD-TOPIC.md`     | `2025-11-29-TIMEOUT.md`        |
-| Handoff  | `YYYY-MM-DD-HANDOFF.md`   | `2025-11-29-API-HANDOFF.md`    |
+| Session  | `YYYYMMDD-TOPIC.md`       | `20251129-TIMEOUT.md`          |
+| Handoff  | `YYYYMMDD-HANDOFF.md`     | `20251129-API-HANDOFF.md`      |
 | Index    | `INDEX.md`                | `INDEX.md`                     |
 | Special  | `UPPERCASE.md`            | `README.md`, `CHANGELOG.md`    |
 

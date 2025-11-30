@@ -138,9 +138,9 @@ At session end, create records in the designated history directory (typically `.
 
 **Naming Conventions**:
 
-- Conversations: `YYYY-MM-DD-TOPIC.md`
-- Handoffs: `YYYY-MM-DD-TASK-HANDOFF.md`
-- Sessions: `session-YYYYMMDD-HHMM.md`
+- Conversations: `YYYYMMDD-TOPIC.md`
+- Handoffs: `YYYYMMDD-TASK-HANDOFF.md`
+- Sessions: `SESSION-YYYYMMDD-HHMM.md`
 
 ### Session Automation (MCP Tools)
 

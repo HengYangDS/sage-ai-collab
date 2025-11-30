@@ -44,23 +44,23 @@ Store active session state:
 
 Store conversation records:
 
-- Format: `YYYY-MM-DD-TOPIC.md`
+- Format: `YYYYMMDD-TOPIC.md`
 - Include: key decisions, outcomes, learnings
 
 ### 2.3 Handoffs (`handoffs/`)
 
 Store task handoff documents for session continuity:
 
-- Format: `YYYY-MM-DD-TASK-HANDOFF.md`
+- Format: `YYYYMMDD-TASK-HANDOFF.md`
 - Include: task state, next steps, context needed
 
 ### 2.4 Example Files
 
 Files prefixed with `_example-` are **reference templates**, not actual session records:
 
-- `_EXAMPLE-2025-11-29-HISTORY-COMPLETENESS-REVIEW.md` — Sample conversation record
+- `_EXAMPLE-20251129-HISTORY-COMPLETENESS-REVIEW.md` — Sample conversation record
 - `_EXAMPLE-SESSION-20251129-2214.md` — Sample session state
-- `_EXAMPLE-2025-11-29-HISTORY-ENHANCEMENT-HANDOFF.md` — Sample handoff document
+- `_EXAMPLE-20251129-HISTORY-ENHANCEMENT-HANDOFF.md` — Sample handoff document
 
 **Usage**: Copy and rename (removing `_example-` prefix) when creating new records. These files demonstrate the expected
 format and content structure.
@@ -73,9 +73,9 @@ format and content structure.
 
 | Type         | Format                       | Example                        |
 |--------------|------------------------------|--------------------------------|
-| Conversation | `YYYY-MM-DD-TOPIC.md`        | `2025-11-29-TIMEOUT-DESIGN.md` |
-| Handoff      | `YYYY-MM-DD-TASK-HANDOFF.md` | `2025-11-29-API-HANDOFF.md`    |
-| Session      | `session-YYYYMMDD-HHMM.md`   | `SESSION-20251129-2100.md`     |
+| Conversation | `YYYYMMDD-TOPIC.md`          | `20251129-TIMEOUT-DESIGN.md`   |
+| Handoff      | `YYYYMMDD-TASK-HANDOFF.md`   | `20251129-API-HANDOFF.md`      |
+| Session      | `SESSION-YYYYMMDD-HHMM.md`   | `SESSION-20251129-2100.md`     |
 
 ---
 

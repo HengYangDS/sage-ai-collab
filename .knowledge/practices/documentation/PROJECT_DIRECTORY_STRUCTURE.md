@@ -117,7 +117,7 @@ project/
 
 **Purpose**: Store backup copies before major changes or refactoring.
 
-**Organization**: By date (`YYYY-MM-DD/`) or by topic.
+**Organization**: By date (`YYYYMMDD/`) or by topic.
 
 **When to use**: Pre-refactoring snapshots, configuration backups, critical data preservation.
 
@@ -228,12 +228,12 @@ Is this an intermediate/generated file?
 |----------------|-----------------------------|--------------------------------|
 | Markdown       | `UPPER_SNAKE_CASE.md`       | `DIRECTORY_STRUCTURE.md`       |
 | ADR            | `ADR-NNNN-TITLE.md`         | `ADR-0001-FASTMCP-CHOICE.md`   |
-| Session        | `YYYY-MM-DD-TOPIC.md`       | `2025-11-29-TIMEOUT.md`        |
-| Handoff        | `YYYY-MM-DD-HANDOFF.md`     | `2025-11-29-API-HANDOFF.md`    |
+| Session        | `YYYYMMDD-TOPIC.md`         | `20251129-TIMEOUT.md`          |
+| Handoff        | `YYYYMMDD-HANDOFF.md`       | `20251129-API-HANDOFF.md`      |
 | Index          | `INDEX.md`                  | `INDEX.md`                     |
 | Special        | `UPPERCASE.md`              | `README.md`, `CHANGELOG.md`    |
 | Archive folder | `YYYYMM/`                   | `202511/`                      |
-| Backup folder  | `YYYY-MM-DD-DESCRIPTION/`   | `2025-11-29-PRE-REFACTOR/`     |
+| Backup folder  | `YYYYMMDD-DESCRIPTION/`     | `20251129-PRE-REFACTOR/`       |
 
 **Rationale**: Uppercase naming provides clear visual distinction for documentation files.
 
