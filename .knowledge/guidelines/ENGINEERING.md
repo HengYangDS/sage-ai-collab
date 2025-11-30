@@ -1,4 +1,4 @@
-﻿# Engineering Practices Guidelines
+# Engineering Practices Guidelines
 
 > Configuration, testing, performance, change control, maintainability
 

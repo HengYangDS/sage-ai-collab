@@ -1,4 +1,4 @@
-﻿# Concurrency Practices
+# Concurrency Practices
 
 > Best practices for concurrent and parallel programming
 

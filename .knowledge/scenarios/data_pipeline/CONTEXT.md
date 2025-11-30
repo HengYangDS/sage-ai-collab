@@ -1,4 +1,4 @@
-﻿# Data Pipeline Scenario Context
+# Data Pipeline Scenario Context
 
 > Pre-configured context for data processing and ETL workflows
 

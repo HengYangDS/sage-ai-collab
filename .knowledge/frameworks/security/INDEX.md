@@ -1,4 +1,4 @@
-﻿# Security Framework
+# Security Framework
 
 > Comprehensive security patterns and best practices for software development
 

@@ -1,4 +1,4 @@
-﻿# Python Implementation Patterns
+# Python Implementation Patterns
 
 > Code patterns and examples for Python development
 

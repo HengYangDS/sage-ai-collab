@@ -1,4 +1,4 @@
-﻿# Profiling Framework
+# Profiling Framework
 
 > Conceptual framework for performance measurement and optimization
 

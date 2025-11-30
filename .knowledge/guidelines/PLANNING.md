@@ -1,4 +1,4 @@
-﻿# Planning and Design Guidelines
+# Planning and Design Guidelines
 
 > Architecture and design principles for sustainable systems
 

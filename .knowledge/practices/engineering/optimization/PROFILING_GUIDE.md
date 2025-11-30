@@ -1,4 +1,4 @@
-﻿# Profiling Guide
+# Profiling Guide
 
 > Performance measurement and bottleneck identification
 

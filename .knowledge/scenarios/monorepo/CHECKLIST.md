@@ -1,4 +1,4 @@
-﻿# Monorepo Checklist
+# Monorepo Checklist
 
 > Task checklist for monorepo setup and management
 

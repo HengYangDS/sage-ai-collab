@@ -1,4 +1,4 @@
-﻿# Data Pipeline Checklist
+# Data Pipeline Checklist
 
 > Task checklist for ETL and data processing workflows
 

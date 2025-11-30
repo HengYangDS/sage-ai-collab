@@ -1,4 +1,4 @@
-﻿# Security Checklist
+# Security Checklist
 
 > Comprehensive security review checklist for development, deployment, and operations
 

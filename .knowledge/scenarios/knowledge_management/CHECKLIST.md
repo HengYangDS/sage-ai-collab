@@ -1,4 +1,4 @@
-﻿# Knowledge Management Checklist
+# Knowledge Management Checklist
 
 > Task checklist for knowledge base and documentation systems
 

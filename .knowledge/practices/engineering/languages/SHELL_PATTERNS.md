@@ -1,4 +1,4 @@
-﻿# Shell Script Patterns
+# Shell Script Patterns
 
 > Common patterns and practices for Bash scripting
 

@@ -1,4 +1,4 @@
-﻿# Python Backend Scenario Context
+# Python Backend Scenario Context
 
 > Pre-configured context for Python backend development
 

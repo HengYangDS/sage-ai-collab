@@ -1,4 +1,4 @@
-﻿# Shell Script Guidelines
+# Shell Script Guidelines
 
 > Principles, standards, and quick reference for Bash scripting
 

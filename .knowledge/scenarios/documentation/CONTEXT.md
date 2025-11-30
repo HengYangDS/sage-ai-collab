@@ -1,4 +1,4 @@
-﻿# Documentation Scenario Context
+# Documentation Scenario Context
 
 > Pre-configured context for technical writing and documentation projects
 

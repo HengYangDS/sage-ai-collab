@@ -1,4 +1,4 @@
-﻿# Shell Script Template
+# Shell Script Template
 
 > Standard Bash script template with best practices
 

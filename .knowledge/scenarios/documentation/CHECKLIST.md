@@ -1,4 +1,4 @@
-﻿# Documentation Checklist
+# Documentation Checklist
 
 > Task checklist for technical writing projects
 

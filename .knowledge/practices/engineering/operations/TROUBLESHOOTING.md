@@ -1,4 +1,4 @@
-﻿# Troubleshooting Guide
+# Troubleshooting Guide
 
 > Common issues, debugging techniques, and solutions for AI Collaboration Knowledge Base
 

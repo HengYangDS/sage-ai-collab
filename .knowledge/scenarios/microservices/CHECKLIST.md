@@ -1,4 +1,4 @@
-﻿# Microservices Checklist
+# Microservices Checklist
 
 > Task checklist for microservices architecture design and implementation
 

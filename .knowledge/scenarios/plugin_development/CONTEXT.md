@@ -1,4 +1,4 @@
-﻿# Plugin Development Scenario Context
+# Plugin Development Scenario Context
 
 > Pre-configured context for plugin development
 
@@ -109,9 +109,9 @@ flowchart LR
 ### 5.1 Basic Plugin Structure
 
 ```python
-from sage.plugins import PluginBase, hook
+from myapp.plugins import PluginBase, hook
 class MyPlugin(PluginBase):
-    """My custom SAGE plugin.
+    """My custom plugin.
     
     This plugin demonstrates the basic structure and
     available hook points.
@@ -119,7 +119,7 @@ class MyPlugin(PluginBase):
     # Plugin metadata
     name = "my-plugin"
     version = "1.0.0"
-    description = "A sample SAGE plugin"
+    description = "A sample plugin"
     author = "Your Name"
     # Dependencies (optional)
     dependencies = ["other-plugin>=1.0"]
@@ -140,7 +140,7 @@ class MyPlugin(PluginBase):
 ### 5.2 Hook Implementation
 
 ```python
-from sage.plugins import PluginBase, hook
+from myapp.plugins import PluginBase, hook
 class ContentPlugin(PluginBase):
     """Plugin that processes content."""
     name = "content-processor"
@@ -218,19 +218,19 @@ plugins:
   # External plugins
   external:
     - name: my-plugin
-      path: ~/.sage/plugins/my_plugin.py
+      path: ~/.myapp/plugins/my_plugin.py
       enabled: true
       config:
         custom_option: value
   # Discovery paths
   discovery:
-    - ~/.sage/plugins/
+    - ~/.myapp/plugins/
     - ./plugins/
 ```
 ### 5.5 Plugin with Configuration
 
 ```python
-from sage.plugins import PluginBase, hook
+from myapp.plugins import PluginBase, hook
 from pydantic import BaseModel
 class MyPluginConfig(BaseModel):
     """Configuration schema for MyPlugin."""
@@ -256,7 +256,7 @@ class MyPlugin(PluginBase):
 
 ```python
 import pytest
-from sage.plugins import PluginManager
+from myapp.plugins import PluginManager
 from my_plugin import MyPlugin
 @pytest.fixture
 def plugin_manager():
@@ -303,8 +303,8 @@ class TestMyPlugin:
 
 ```bash
 # 1. Create plugin file
-mkdir -p src/sage/plugins/bundled/my_plugin
-touch src/sage/plugins/bundled/my_plugin/__init__.py
+mkdir -p src/plugins/bundled/my_plugin
+touch src/plugins/bundled/my_plugin/__init__.py
 # 2. Implement plugin (see patterns above)
 # 3. Add configuration
 # Edit config/capabilities/plugins.yaml

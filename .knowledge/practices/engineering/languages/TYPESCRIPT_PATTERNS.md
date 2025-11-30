@@ -1,4 +1,4 @@
-﻿# TypeScript Patterns
+# TypeScript Patterns
 
 > Type system patterns, React patterns, and testing practices
 

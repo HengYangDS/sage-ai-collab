@@ -1,4 +1,4 @@
-﻿# Knowledge Management Scenario Context
+# Knowledge Management Scenario Context
 
 > Pre-configured context for knowledge management system development
 

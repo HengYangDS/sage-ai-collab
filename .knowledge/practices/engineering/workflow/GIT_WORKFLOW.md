@@ -1,4 +1,4 @@
-﻿# Git Workflow
+# Git Workflow
 
 > Git branching strategy, commit conventions, and collaboration practices
 

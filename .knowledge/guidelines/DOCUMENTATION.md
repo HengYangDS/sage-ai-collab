@@ -1,4 +1,4 @@
-﻿# Documentation Guidelines
+# Documentation Guidelines
 
 > Clear, maintainable, useful documentation
 

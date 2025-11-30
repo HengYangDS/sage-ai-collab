@@ -1,4 +1,4 @@
-﻿# Python Backend Checklist
+# Python Backend Checklist
 
 > Task checklist for Python backend development
 

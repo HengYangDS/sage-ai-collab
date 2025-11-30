@@ -1,4 +1,4 @@
-﻿# DevOps Checklist
+# DevOps Checklist
 
 > Task checklist for CI/CD and infrastructure management
 

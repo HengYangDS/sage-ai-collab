@@ -1,4 +1,4 @@
-﻿# Legacy Modernization Checklist
+# Legacy Modernization Checklist
 
 > Task checklist for modernizing legacy systems and codebases
 

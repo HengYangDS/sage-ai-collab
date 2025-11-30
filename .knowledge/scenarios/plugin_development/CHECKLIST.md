@@ -1,4 +1,4 @@
-﻿# Plugin Development Checklist
+# Plugin Development Checklist
 
 > Task checklist for developing plugins and extensions
 

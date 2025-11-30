@@ -1,4 +1,4 @@
-﻿# Python Guidelines
+# Python Guidelines
 
 > Python coding standards, type hints, and best practices
 

@@ -1,4 +1,4 @@
-﻿# TypeScript Frontend Checklist
+# TypeScript Frontend Checklist
 
 > Task checklist for TypeScript frontend development
 

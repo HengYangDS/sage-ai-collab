@@ -1,4 +1,4 @@
-﻿# Performance Optimization
+# Performance Optimization
 
 > Performance best practices and optimization strategies for Python applications
 

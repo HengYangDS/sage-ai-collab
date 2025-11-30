@@ -1,4 +1,4 @@
-﻿# Dependency Management
+# Dependency Management
 
 > Best practices for managing project dependencies in Python projects
 

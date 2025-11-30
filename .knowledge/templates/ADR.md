@@ -1,4 +1,4 @@
-﻿# Architecture Decision Record (ADR) Template
+# Architecture Decision Record (ADR) Template
 
 > **Purpose**: Document significant architectural decisions
 > **Use When**: Making decisions that affect system structure, technology choices, or design patterns

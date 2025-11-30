@@ -1,4 +1,4 @@
-﻿# MCP Integration Scenario Context
+# MCP Integration Scenario Context
 
 > Pre-configured context for Model Context Protocol integration development
 

@@ -1,4 +1,4 @@
-﻿# Testing Strategy
+# Testing Strategy
 
 > Universal testing layers, organization, and best practices
 

@@ -1,4 +1,4 @@
-﻿# Logging Standards
+# Logging Standards
 
 > Universal logging standards and best practices
 

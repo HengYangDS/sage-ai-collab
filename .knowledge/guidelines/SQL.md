@@ -1,4 +1,4 @@
-﻿# SQL Guidelines
+# SQL Guidelines
 
 > SQL and database conventions and best practices
 

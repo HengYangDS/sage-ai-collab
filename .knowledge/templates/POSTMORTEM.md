@@ -1,4 +1,4 @@
-﻿# Incident Postmortem Template
+# Incident Postmortem Template
 
 > **Purpose**: Document incidents, root causes, and preventive measures
 > **Use When**: After resolving any SEV1/SEV2 incident or significant outage

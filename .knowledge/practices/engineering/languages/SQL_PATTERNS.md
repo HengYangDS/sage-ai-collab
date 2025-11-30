@@ -1,4 +1,4 @@
-﻿# SQL Patterns
+# SQL Patterns
 
 > Query patterns, schema design, and database best practices
 

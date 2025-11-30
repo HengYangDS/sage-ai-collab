@@ -1,4 +1,4 @@
-﻿# MCP Integration Checklist
+# MCP Integration Checklist
 
 > Task checklist for Model Context Protocol (MCP) server and client integration
 

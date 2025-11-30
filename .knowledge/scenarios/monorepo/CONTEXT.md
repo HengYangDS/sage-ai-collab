@@ -1,4 +1,4 @@
-﻿# Monorepo Scenario Context
+# Monorepo Scenario Context
 
 > Pre-configured context for monorepo project management
 

@@ -1,4 +1,4 @@
-﻿# Legacy Modernization Scenario Context
+# Legacy Modernization Scenario Context
 
 > Pre-configured context for modernizing legacy systems
 

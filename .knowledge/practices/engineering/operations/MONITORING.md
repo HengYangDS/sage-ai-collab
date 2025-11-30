@@ -1,4 +1,4 @@
-﻿# Monitoring & Observability
+# Monitoring & Observability
 
 > Best practices for system monitoring and observability
 

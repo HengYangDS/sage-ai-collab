@@ -1,4 +1,4 @@
-﻿# Security Guidelines
+# Security Guidelines
 
 > Security principles and standards for knowledge base development
 

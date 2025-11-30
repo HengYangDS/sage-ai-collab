@@ -1,4 +1,4 @@
-﻿# Quality Angles Framework
+# Quality Angles Framework
 
 > Multi-perspective quality evaluation using 35+ quality angles
 
