@@ -1,4 +1,4 @@
-# Expert Committee Decision Templates
+﻿# Expert Committee Decision Templates
 
 > Ready-to-use decision prompts for multi-perspective analysis
 
@@ -32,16 +32,17 @@
 
 **Use for**: Routine decisions, low-risk changes, quick validations
 
-**Panel**: Engineer · QA
+**Panel**: Engineer<br/>QA
 
 **Template**:
 
 ```
 Decision: [what]
-| Aspect | Status | Notes |
-| Implementation | ✅/⚠️/❌ | |
-| Test Coverage | ✅/⚠️/❌ | |
-| Risk Level | Low/Med/High | |
+| Aspect         | Status       | Notes |
+|----------------|--------------|-------|
+| Implementation | ✅/⚠️/❌    |       |
+| Test Coverage  | ✅/⚠️/❌    |       |
+| Risk Level     | Low/Med/High |       |
 Recommendation: [Go/No-Go + rationale]
 ```
 ---
@@ -50,14 +51,14 @@ Recommendation: [Go/No-Go + rationale]
 
 **Use for**: Feature decisions, moderate complexity, cross-team impact
 
-**Panel**: Architect · Engineer · QA · PM
+**Panel**: Architect<br/>Engineer<br/>QA<br/>PM
 
 **Template**:
 
 ```
 Decision: [what] | Context: [background]
 | Expert | Assessment | Concerns | Recommendations |
-Risk: Technical [L/M/H] · Business [L/M/H] · Timeline [L/M/H]
+Risk: Technical [L/M/H]<br/>Business [L/M/H]<br/>Timeline [L/M/H]
 Recommendation: [Approve/Revise/Reject] | Conditions: [if any] | Next Steps: [actions]
 ```
 ---
@@ -66,14 +67,14 @@ Recommendation: [Approve/Revise/Reject] | Conditions: [if any] | Next Steps: [ac
 
 **Use for**: Architecture decisions, significant refactoring, new technology
 
-**Panel**: Architect · Engineer · QA · DevOps · Security · PM · TPM · Knowledge Engineer
+**Panel**: Architect<br/>Engineer<br/>QA<br/>DevOps<br/>Security<br/>PM<br/>TPM<br/>Knowledge Engineer
 
 **Template**:
 
 ```
 Decision: [what] | Context: [background] | Stakeholders: [who]
-Technical Dimension (1-5): Correctness · Maintainability · Performance · Security · Scalability
-Business Dimension (1-5): Value · User Impact · Cost · Time to Market
+Technical Dimension (1-5): Correctness<br/>Maintainability<br/>Performance<br/>Security<br/>Scalability
+Business Dimension (1-5): Value<br/>User Impact<br/>Cost<br/>Time to Market
 Risk Matrix: | Risk | Probability | Impact | Mitigation |
 Expert Votes: | Expert | Vote | Confidence | Key Concern |
 Consensus: [Approve/Conditional/Reject] | Score: [X/100]
@@ -85,15 +86,14 @@ Conditions: [required] | Action Items: [with owners]
 
 **Use for**: Major architecture changes, critical system decisions
 
-**Groups**: Technical (Architect, Engineer, QA, DevOps, Security) · AI/Data (if applicable) · Business (PM, TPM, UX) ·
-Governance (KE, Compliance)
+**Groups**: Technical (Architect, Engineer, QA, DevOps, Security)<br/>AI/Data (if applicable)<br/>Business (PM, TPM, UX)<br/>Governance (KE, Compliance)
 
 **Template**:
 
 ```
 Decision: [detailed] | Impact Scope: [systems, teams, users] | Timeline: [deadline]
 10×10 Matrix: Roles × Angles (Correct, Maintain, Perform, Secure, Scale, Value, Usable, Efficient, Timely, Document)
-Weighted Scoring: Technical [X/100, 40%] · Business [X/100, 35%] · Process [X/100, 25%] = Final [X/100]
+Weighted Scoring: Technical [X/100, 40%]<br/>Business [X/100, 35%]<br/>Process [X/100, 25%] = Final [X/100]
 Recommendation: [Approve/Conditional/Major Revision/Reject] | Confidence: [H/M/L]
 Dissenting Opinions: [if any]
 Implementation: Phase 1 [timeline] → Phase 2 [timeline] → Validation checkpoints
@@ -119,17 +119,17 @@ Implementation: Phase 1 [timeline] → Phase 2 [timeline] → Validation checkpo
 ```
 Decision: [strategic] | Impact: [org-wide implications] | Urgency: [Critical/High/Medium]
 Group Assessments: | Group | Approval | Score | Key Concerns | Conditions |
-Consensus: Unanimous (4/4) · Strong (3/4) · Conditional (2/4) · Rejected (<2/4)
+Consensus: Unanimous (4/4)<br/>Strong (3/4)<br/>Conditional (2/4)<br/>Rejected (<2/4)
 Final: [Approved/Conditional/Rejected] | Score: [X/100] | Confidence: [X%]
 Binding Conditions: [must-meet items]
-Post-Decision: Document rationale · Communicate · Set checkpoints · Plan rollback
+Post-Decision: Document rationale<br/>Communicate<br/>Set checkpoints<br/>Plan rollback
 ```
 ---
 
 ## 7. Usage Tips
 
-**Start Low** (escalate if needed) · **Time-Box** (set limits) · **Document** (capture rationale) · **Revisit** (
-schedule reviews) · **Adapt** (customize for domain)
+**Start Low** (escalate if needed)<br/>**Time-Box** (set limits)<br/>**Document** (capture rationale)<br/>**Revisit** (
+schedule reviews)<br/>**Adapt** (customize for domain)
 
 ---
 

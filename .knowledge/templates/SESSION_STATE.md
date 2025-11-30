@@ -61,8 +61,8 @@ interruptions, provides context for session recovery, and helps maintain focus d
 ---
 ## Working Context
 ### Files Being Modified
-| File | Purpose | Status |
-|------|---------|--------|
+| File              | Purpose             | Status                  |
+|-------------------|---------------------|-------------------------|
 | `[path/to/file1]` | [What's being done] | [Modified/Pending/Done] |
 | `[path/to/file2]` | [What's being done] | [Modified/Pending/Done] |
 ### Key Decisions Made
@@ -73,8 +73,8 @@ interruptions, provides context for session recovery, and helps maintain focus d
 - [Dependency 2]: [Status]
 ---
 ## Blockers & Issues
-| Issue | Impact | Resolution |
-|-------|--------|------------|
+| Issue     | Impact                    | Resolution           |
+|-----------|---------------------------|----------------------|
 | [Issue 1] | [How it affects progress] | [Planned resolution] |
 ---
 ## Quick Resume Guide
@@ -167,11 +167,11 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 ---
 ## Working Context
 ### Files Being Modified
-| File | Purpose | Status |
-|------|---------|--------|
-| `src/app/core/loader.py` | Base TimeoutLoader | Done |
-| `src/app/core/timeout.py` | Timeout utilities | Modified |
-| `tests/unit/core/test_loader.py` | Unit tests | Pending |
+| File                             | Purpose            | Status   |
+|----------------------------------|--------------------|----------|
+| `src/app/core/loader.py`         | Base TimeoutLoader | Done     |
+| `src/app/core/timeout.py`        | Timeout utilities  | Modified |
+| `tests/unit/core/test_loader.py` | Unit tests         | Pending  |
 ### Key Decisions Made
 - Use asyncio.timeout for Python 3.11+ compatibility
 - Return partial content instead of raising on T3/T4

@@ -1,4 +1,4 @@
-# Project Setup Templates
+﻿# Project Setup Templates
 
 > Ready-to-use templates for project initialization
 
@@ -44,7 +44,7 @@ Uses AI Collaboration KB v0.1.0 — Load: `kb get --scenario python_backend`
 ## Autonomy
 Default: L4 | Elevated: [routine tasks → L5] | Lowered: [sensitive areas → L1-L2]
 ## Commands
-`[dev cmd]` · `[test cmd]` · `[build cmd]`
+`[dev cmd]`<br/>`[test cmd]`<br/>`[build cmd]`
 ```
 ---
 

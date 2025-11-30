@@ -40,22 +40,22 @@
 ## Considered Options
 ### Option 1: [Name]
 **Description**: [Brief description]
-| Pros | Cons |
-|------|------|
-| [Pro 1] | [Con 1] |
-| [Pro 2] | [Con 2] |
+| Pros     | Cons     |
+|----------|----------|
+| [Pro 1]  | [Con 1]  |
+| [Pro 2]  | [Con 2]  |
 ### Option 2: [Name]
 **Description**: [Brief description]
-| Pros | Cons |
-|------|------|
-| [Pro 1] | [Con 1] |
-| [Pro 2] | [Con 2] |
+| Pros     | Cons     |
+|----------|----------|
+| [Pro 1]  | [Con 1]  |
+| [Pro 2]  | [Con 2]  |
 ### Option 3: [Name]
 **Description**: [Brief description]
-| Pros | Cons |
-|------|------|
-| [Pro 1] | [Con 1] |
-| [Pro 2] | [Con 2] |
+| Pros     | Cons     |
+|----------|----------|
+| [Pro 1]  | [Con 1]  |
+| [Pro 2]  | [Con 2]  |
 ---
 ## Decision
 [State the decision and explain why this option was chosen]
@@ -73,8 +73,8 @@
 - [Negative consequence 1]
 - [Negative consequence 2]
 ### Risks
-| Risk | Mitigation |
-|------|------------|
+| Risk     | Mitigation            |
+|----------|-----------------------|
 | [Risk 1] | [Mitigation strategy] |
 | [Risk 2] | [Mitigation strategy] |
 ---
@@ -84,8 +84,8 @@
 - [ ] [Task 2]
 - [ ] [Task 3]
 ### Timeline
-| Phase | Duration | Deliverable |
-|-------|----------|-------------|
+| Phase     | Duration   | Deliverable   |
+|-----------|------------|---------------|
 | [Phase 1] | [Duration] | [Deliverable] |
 | [Phase 2] | [Duration] | [Deliverable] |
 ---
@@ -145,15 +145,15 @@ Need to implement MCP (Model Context Protocol) server for AI collaboration.
 - Type safety needs
 ## Considered Options
 ### Option 1: FastMCP
-| Pros | Cons |
-|------|------|
-| Simple API | Newer library |
-| Type hints | Smaller community |
+| Pros         | Cons              |
+|--------------|-------------------|
+| Simple API   | Newer library     |
+| Type hints   | Smaller community |
 ### Option 2: Raw MCP SDK
-| Pros | Cons |
-|------|------|
-| Full control | More boilerplate |
-| Direct access | Complex setup |
+| Pros          | Cons             |
+|---------------|------------------|
+| Full control  | More boilerplate |
+| Direct access | Complex setup    |
 ## Decision
 **Chosen Option**: FastMCP
 FastMCP provides the right balance of simplicity and capability.

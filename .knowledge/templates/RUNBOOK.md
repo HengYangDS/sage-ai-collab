@@ -34,13 +34,13 @@
 **SLA**: [Availability target, e.g., 99.9%]
 ---
 ## Quick Reference
-| Item | Value |
-|------|-------|
-| Dashboard | [Link to monitoring dashboard] |
-| Logs | [Link to log aggregation] |
-| Alerts | [Link to alert configuration] |
-| Repository | [Link to code repository] |
-| Documentation | [Link to detailed docs] |
+| Item          | Value                          |
+|---------------|--------------------------------|
+| Dashboard     | [Link to monitoring dashboard] |
+| Logs          | [Link to log aggregation]      |
+| Alerts        | [Link to alert configuration]  |
+| Repository    | [Link to code repository]      |
+| Documentation | [Link to detailed docs]        |
 ---
 ## Health Checks
 ### Service Status
