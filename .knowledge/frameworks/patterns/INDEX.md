@@ -1,4 +1,4 @@
-﻿# Patterns Framework
+# Patterns Framework
 
 > Reusable patterns for AI-human collaboration and system design
 

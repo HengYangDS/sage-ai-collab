@@ -1,4 +1,4 @@
-﻿# Caching Patterns
+# Caching Patterns
 
 > Data caching strategies for performance optimization
 

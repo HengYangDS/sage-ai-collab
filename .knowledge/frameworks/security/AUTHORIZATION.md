@@ -1,4 +1,4 @@
-﻿# Authorization Patterns
+# Authorization Patterns
 
 > Access control strategies and permission management
 

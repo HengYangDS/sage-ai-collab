@@ -1,4 +1,4 @@
-﻿# Cognitive Framework
+# Cognitive Framework
 
 > Cognitive patterns for AI reasoning and decision-making
 

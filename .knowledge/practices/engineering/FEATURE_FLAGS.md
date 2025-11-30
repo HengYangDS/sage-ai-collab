@@ -1,4 +1,4 @@
-﻿# Feature Flag Patterns
+# Feature Flag Patterns
 
 > Feature flag design principles and best practices
 

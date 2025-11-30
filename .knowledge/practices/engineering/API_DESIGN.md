@@ -1,4 +1,4 @@
-﻿# API Design Patterns
+# API Design Patterns
 
 > Principles and patterns for designing clean, consistent APIs
 
