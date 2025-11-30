@@ -1,4 +1,4 @@
-
+﻿
 # Configuration Maintenance
 
 > Daily operations and hot reload procedures (~10 min read)
@@ -31,7 +31,7 @@
 
 ### Configuration File Locations
 
-```
+```text
 .junie/
 ├── mcp/mcp.json          # MCP servers (requires server restart)
 ├── generic/config.yaml   # Generic settings (requires IDE restart)
@@ -57,7 +57,7 @@
 
 #### Terminal Rules (Immediate)
 
-```
+```text
 1. Settings | Tools | Junie | Action Allowlist
 2. Add/modify rules
 3. Click "Apply" → Changes effective immediately
@@ -67,7 +67,7 @@
 
 **Option A: Restart Single Server**
 
-```
+```text
 1. Settings | Tools | Junie | MCP Servers
 2. Select server → Click "Restart"
 3. Server reloads with new config
@@ -75,7 +75,7 @@
 
 **Option B: Restart All Servers**
 
-```
+```text
 1. Settings | Tools | Junie | MCP Servers
 2. Click "Restart All"
 3. All servers reload (~5-10 seconds)
@@ -91,7 +91,7 @@ For changes to:
 
 **Procedure**:
 
-```
+```text
 1. Save all changes
 2. File | Exit (or IDE exit shortcut)
 3. Restart IDE
@@ -222,7 +222,7 @@ sed -i 's/npx\.cmd/npx/g' .junie/mcp/mcp.json
 
 Maintain separate templates for different platforms:
 
-```
+```text
 .junie/mcp/
 ├── mcp.json              # Active config
 ├── mcp.windows.json      # Windows template

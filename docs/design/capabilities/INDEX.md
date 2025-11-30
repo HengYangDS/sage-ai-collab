@@ -1,4 +1,4 @@
-# Capabilities
+﻿# Capabilities
 
 > Capability families and extensibility model for SAGE
 

@@ -59,7 +59,7 @@ flowchart TB
     end
     
     E2E --> INT --> UNIT
-```text
+```
 ### 2.2 Integration Test Scope
 
 | Scope | Components | Example |
@@ -82,7 +82,6 @@ from sqlalchemy import create_engine
 
 from sqlalchemy.orm import sessionmaker
 
-
 @pytest.fixture(scope="session")
 def test_engine():
 
@@ -93,7 +92,6 @@ def test_engine():
     Base.metadata.create_all(engine)
 
     return engine
-
 
 @pytest.fixture(scope="function")
 def db_session(test_engine):
@@ -110,7 +108,7 @@ def db_session(test_engine):
 
     session.close()
 
-```text
+```
 ### 3.2 Database Fixtures
 
 ```python
@@ -136,7 +134,6 @@ def sample_users(db_session):
 
     return users
 
-
 def test_get_all_users(db_session, sample_users):
 
     repo = UserRepository(db_session)
@@ -147,7 +144,7 @@ def test_get_all_users(db_session, sample_users):
 
     assert result[0].name == "Alice"
 
-```text
+```
 ### 3.3 Transaction Rollback
 
 ```python
@@ -173,7 +170,7 @@ def db_session(test_engine):
 
     connection.close()
 
-```text
+```
 ### 3.4 Test Data Management
 
 ```python
@@ -223,7 +220,7 @@ class TestDataBuilder:
 
         return order
 
-```text
+```
 ---
 
 ## 4. API Testing
@@ -240,14 +237,12 @@ from httpx import AsyncClient
 
 from app.main import app
 
-
 @pytest.fixture
 def client():
 
     """Sync test client."""
 
     return TestClient(app)
-
 
 @pytest.fixture
 async def async_client():
@@ -257,7 +252,6 @@ async def async_client():
     async with AsyncClient(app=app, base_url="http://test") as client:
         yield client
 
-
 def test_get_users(client):
 
     response = client.get("/api/users")
@@ -265,7 +259,6 @@ def test_get_users(client):
     assert response.status_code == 200
 
     assert isinstance(response.json(), list)
-
 
 @pytest.mark.asyncio
 async def test_create_user(async_client):
@@ -282,7 +275,7 @@ async def test_create_user(async_client):
 
     assert response.json()["name"] == "Alice"
 
-```text
+```
 ### 4.2 Request/Response Testing
 
 ```python
@@ -327,7 +320,7 @@ class TestUserAPI:
 
         assert "already exists" in response.json()["detail"]
 
-```text
+```
 ### 4.3 Authentication Testing
 
 ```python
@@ -349,13 +342,11 @@ def auth_headers(client):
 
     return {"Authorization": f"Bearer {token}"}
 
-
 def test_protected_endpoint(client, auth_headers):
 
     response = client.get("/api/admin/users", headers=auth_headers)
 
     assert response.status_code == 200
-
 
 def test_protected_endpoint_without_auth(client):
 
@@ -363,7 +354,7 @@ def test_protected_endpoint_without_auth(client):
 
     assert response.status_code == 401
 
-```text
+```
 ---
 
 ## 5. Service Integration
@@ -403,7 +394,7 @@ class TestOrderService:
         with pytest.raises(UserNotFoundError):
             order_service.create_order("invalid-id", [])
 
-```text
+```
 ### 5.2 External Service Mocking
 
 ```python
@@ -411,7 +402,6 @@ class TestOrderService:
 import responses
 
 import httpx
-
 
 @pytest.fixture
 def mock_payment_service():
@@ -433,7 +423,6 @@ def mock_payment_service():
 
         yield rsps
 
-
 def test_process_payment(order_service, mock_payment_service):
 
     result = order_service.process_payment("order123", 100.00)
@@ -442,7 +431,7 @@ def test_process_payment(order_service, mock_payment_service):
 
     assert result.transaction_id == "tx123"
 
-```text
+```
 ### 5.3 Event/Message Testing
 
 ```python
@@ -458,7 +447,6 @@ def event_bus():
 
     bus.clear()
 
-
 def test_order_created_event(order_service, event_bus, sample_users):
 
     events = []
@@ -471,7 +459,7 @@ def test_order_created_event(order_service, event_bus, sample_users):
 
     assert events[0].data["order_id"] == order.id
 
-```text
+```
 ---
 
 ## 6. Test Isolation
@@ -495,7 +483,7 @@ def reset_database(db_session):
 
     db_session.commit()
 
-```text
+```
 ### 6.2 Test Containers
 
 ```python
@@ -503,7 +491,6 @@ def reset_database(db_session):
 import pytest
 
 from testcontainers.postgres import PostgresContainer
-
 
 @pytest.fixture(scope="session")
 def postgres():
@@ -513,7 +500,6 @@ def postgres():
     with PostgresContainer("postgres:15") as postgres:
         yield postgres
 
-
 @pytest.fixture
 def db_url(postgres):
 
@@ -521,7 +507,7 @@ def db_url(postgres):
 
     return postgres.get_connection_url()
 
-```text
+```
 ### 6.3 Environment Isolation
 
 ```python
@@ -534,7 +520,7 @@ def test_env(monkeypatch):
     monkeypatch.setenv("DATABASE_URL", "sqlite:///:memory:")
     monkeypatch.setenv("API_KEY", "test-key")
     monkeypatch.setenv("DEBUG", "true")
-```text
+```
 ---
 
 ## 7. CI/CD Integration
@@ -569,7 +555,7 @@ jobs:
         run: pytest tests/integration/ -v
         env:
           DATABASE_URL: postgresql://postgres:postgres@localhost:5432/test
-```text
+```
 ### 7.2 Test Markers
 
 ```python
@@ -588,10 +574,10 @@ def pytest_configure(config):
 # pytest -m integration
 # Skip slow tests
 # pytest -m "not slow"
-```text
+```
 ### 7.3 Test Organization
 
-```text
+```
 tests/
 
 ├── unit/                    # Fast, isolated tests
@@ -604,7 +590,7 @@ tests/
 ├── e2e/                     # Full system tests
 │   └── test_workflows.py
 └── conftest.py              # Shared fixtures
-```text
+```
 ---
 
 ## Quick Reference

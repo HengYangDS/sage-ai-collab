@@ -1,4 +1,4 @@
-# Session History Automation Requirements
+﻿# Session History Automation Requirements
 
 > Long-term automation plan for AI session history management in SAGE Knowledge Base
 

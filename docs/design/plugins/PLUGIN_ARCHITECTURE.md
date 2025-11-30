@@ -1,4 +1,4 @@
-# Plugin Architecture
+﻿# Plugin Architecture
 
 > Extensible plugin system design for SAGE
 
@@ -179,7 +179,7 @@ class PluginManager:
 
 ### 7.2 Discovery Process
 
-```
+```text
 1. Scan discovery paths
 2. Find plugin.yaml manifests
 3. Parse and validate manifests

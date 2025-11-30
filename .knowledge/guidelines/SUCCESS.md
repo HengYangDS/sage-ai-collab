@@ -1,4 +1,4 @@
-# Success Principles Guidelines
+﻿# Success Principles Guidelines
 
 > Philosophy mapping, success criteria, holistic excellence
 
@@ -27,7 +27,7 @@
 
 ```text
 信 (Correct) → 达 (Clear) → 雅 (Elegant)
-```text
+```
 Never sacrifice correctness for elegance.
 
 ---
@@ -89,9 +89,9 @@ Never sacrifice correctness for elegance.
 
 ### 5.2 Learning Cycle
 
-```text
+```
 Do → Reflect → Learn → Apply → Do
-```text
+```
 ---
 
 ## 6. Success Checklist

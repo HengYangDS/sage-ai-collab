@@ -23,7 +23,7 @@ autonomy (always ask) to full autonomy (act independently).
 
 | Document    | Description                                 |
 |-------------|---------------------------------------------|
-| `levels.md` | Complete 6-level autonomy framework (L1-L6) |
+| `LEVELS.md` | Complete 6-level autonomy framework (L1-L6) |
 
 ---
 

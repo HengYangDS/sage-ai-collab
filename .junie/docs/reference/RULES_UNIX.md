@@ -1,4 +1,4 @@
-
+﻿
 # macOS/Linux Terminal Rules
 
 > Complete rule list for Bash/Zsh (76 Rules)
@@ -31,7 +31,7 @@ These rules work on all platforms.
 
 ### Git Operations (15 rules)
 
-```
+```text
 ^\Qgit status\E$
 ^\Qgit fetch\E$
 ^\Qgit pull\E$
@@ -51,7 +51,7 @@ These rules work on all platforms.
 
 ### Python Development (12 rules)
 
-```
+```text
 ^\Qpython\E [^\s;&|<>@$]*$
 ^\Qpython3\E [^\s;&|<>@$]*$
 ^\Qpython -m\E [^\s;&|<>@$]*$
@@ -68,7 +68,7 @@ These rules work on all platforms.
 
 ### Node.js/npm (10 rules)
 
-```
+```text
 ^\Qnpm install\E.*$
 ^\Qnpm run\E [^\s;&|<>@$]*$
 ^\Qnpm test\E.*$
@@ -83,7 +83,7 @@ These rules work on all platforms.
 
 ### Code Quality Tools (8 rules)
 
-```
+```text
 ^\Qruff check\E.*$
 ^\Qruff format\E.*$
 ^\Qeslint\E.*$
@@ -96,7 +96,7 @@ These rules work on all platforms.
 
 ### Docker Commands (6 rules)
 
-```
+```text
 ^\Qdocker ps\E.*$
 ^\Qdocker images\E.*$
 ^\Qdocker logs\E [^\s;&|<>@$]*$
@@ -107,7 +107,7 @@ These rules work on all platforms.
 
 ### File/Directory Operations (6 rules)
 
-```
+```text
 ^\Qls\E.*$
 ^\Qdir\E.*$
 ^\Qcat\E [^\s;&|<>@$]*$
@@ -124,7 +124,7 @@ These rules are for macOS and Linux Bash/Zsh.
 
 ### File Operations (8 rules)
 
-```
+```text
 ^\Qchmod\E [^\s;&|<>@$]*$
 ^\Qchown\E [^\s;&|<>@$]*$
 ^\Qcp\E [^\s;&|<>@$]*$
@@ -137,7 +137,7 @@ These rules are for macOS and Linux Bash/Zsh.
 
 ### Text Processing (6 rules)
 
-```
+```text
 ^\Qgrep\E [^\s;&|<>@$]*$
 ^\Qawk\E [^\s;&|<>@$]*$
 ^\Qsed\E [^\s;&|<>@$]*$
@@ -148,7 +148,7 @@ These rules are for macOS and Linux Bash/Zsh.
 
 ### System Information (5 rules)
 
-```
+```text
 ^\Qpwd\E$
 ^\Qwhoami\E$
 ^\Qwhich\E [^\s;&|<>@$]*$
@@ -162,7 +162,7 @@ These rules are for macOS and Linux Bash/Zsh.
 
 Copy this entire block for quick setup:
 
-```
+```text
 ^\Qgit status\E$
 ^\Qgit fetch\E$
 ^\Qgit pull\E$

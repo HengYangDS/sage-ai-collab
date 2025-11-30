@@ -1,4 +1,4 @@
-# Secrets Management Framework
+﻿# Secrets Management Framework
 
 > Conceptual framework for secure handling of sensitive data and credentials
 
@@ -89,9 +89,9 @@ Secrets are sensitive data that must be protected from unauthorized access:
 
 ### Secret Lifecycle
 
-```text
+```
 Generate → Store → Use → Rotate → Revoke
-```text
+```
 | Phase        | Requirements                          |
 |--------------|---------------------------------------|
 | **Generate** | Cryptographically secure random       |

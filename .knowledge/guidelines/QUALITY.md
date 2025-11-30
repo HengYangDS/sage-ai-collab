@@ -1,4 +1,4 @@
-# Quality Assurance Guidelines
+﻿# Quality Assurance Guidelines
 
 > Quality metrics, review processes, continuous improvement
 
@@ -84,7 +84,7 @@ def test_user_creation():
 
     # Assert
     assert result.name == "Alice"
-```text
+```
 ---
 
 ## 5. Continuous Improvement

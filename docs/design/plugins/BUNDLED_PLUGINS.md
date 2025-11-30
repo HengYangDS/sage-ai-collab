@@ -1,4 +1,4 @@
-# Bundled Plugins
+﻿# Bundled Plugins
 
 > Built-in plugins shipped with SAGE
 

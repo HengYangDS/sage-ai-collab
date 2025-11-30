@@ -1,4 +1,4 @@
-# ADR-0004: Dependency Injection Container
+﻿# ADR-0004: Dependency Injection Container
 
 > Architecture Decision Record for SAGE Knowledge Base
 

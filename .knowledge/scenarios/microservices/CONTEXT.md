@@ -1,4 +1,4 @@
-# Microservices Scenario Context
+﻿# Microservices Scenario Context
 
 > Pre-configured context for microservices architecture development
 
@@ -38,7 +38,7 @@ focus: [ service_design, api, messaging, deployment ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -87,7 +87,7 @@ flowchart TB
     GW --> Services
     Services --> MB
     MB --> DB
-```text
+```
 ### 3.3 Key Principles
 
 | Principle                 | Description                                |
@@ -110,7 +110,7 @@ flowchart TB
 
 ### 4.1 Service Template Structure
 
-```text
+```
 service-name/
 
 ├── src/
@@ -131,7 +131,7 @@ service-name/
 
 └── README.md
 
-```text
+```
 ### 4.2 API Design
 
 ```python
@@ -184,7 +184,7 @@ async def create_order(order: Order):
 
     return created
 
-```text
+```
 ### 4.3 Health Checks
 
 ```python
@@ -209,7 +209,7 @@ async def readiness_check():
 
     return {"status": "ready", "checks": {"db": db_ok, "cache": cache_ok}}
 
-```text
+```
 ---
 
 ## 5. Communication Patterns
@@ -284,7 +284,7 @@ async def handle_order_created(event: OrderCreatedEvent):
 
     )
 
-```text
+```
 ### 5.4 Circuit Breaker
 
 ```python
@@ -305,7 +305,7 @@ async def call_payment_service(order_id: str):
 
     return response.json()
 
-```text
+```
 ---
 
 ## 6. Data Management
@@ -336,7 +336,7 @@ async def call_payment_service(order_id: str):
 
 ### 6.3 Saga Example (Choreography)
 
-```text
+```
 Order Service          Payment Service       Inventory Service
 
       │                       │                      │
@@ -355,7 +355,7 @@ Order Service          Payment Service       Inventory Service
 
       │ OrderCompleted        │                      │
 
-```text
+```
 ---
 
 ## 7. Common Tasks

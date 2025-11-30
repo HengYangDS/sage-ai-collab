@@ -1,4 +1,4 @@
-# MCP Integration Scenario Context
+﻿# MCP Integration Scenario Context
 
 > Pre-configured context for Model Context Protocol integration development
 
@@ -38,7 +38,7 @@ focus: [ protocol, tools, resources, prompts, transport ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -80,7 +80,7 @@ sequenceDiagram
     
     C->>S: Request: tools/call
     S-->>C: Response: tool result
-```text
+```
 ### 4.2 Core Components
 
 | Component     | Purpose             | Implementation              |
@@ -175,7 +175,7 @@ async def sage_search(query: str, limit: int = 10) -> str:
 
     return format_results(results)
 
-```text
+```
 ### 5.2 Resource Definition
 
 ```python
@@ -196,7 +196,7 @@ async def get_layer(layer: str) -> str:
 
     return await load_layer(layer)
 
-```text
+```
 ### 5.3 Prompt Templates
 
 ```python
@@ -229,7 +229,7 @@ Code to review:
 
 {code}
 
-```text
+```
 Provide feedback on:
 
 1. Adherence to guidelines
@@ -240,7 +240,7 @@ Provide feedback on:
 
    """
 
-```text
+```
 ### 5.4 Error Handling
 
 ```python
@@ -297,7 +297,7 @@ async def sage_get(layer: str) -> str:
 
         )
 
-```text
+```
 ### 5.5 Timeout Integration
 
 ```python
@@ -328,7 +328,7 @@ async def sage_search(query: str) -> str:
 
         return "Search timed out. Try a more specific query."
 
-```text
+```
 ---
 
 ## 6. Common Tasks
@@ -395,7 +395,7 @@ async def test_my_new_tool():
 
 # Edit docs/api/MCP.md
 
-```text
+```
 ### 6.2 Testing MCP Server
 
 ```python
@@ -426,7 +426,7 @@ async def test_mcp_server():
 
         assert "principles" in resource.lower()
 
-```text
+```
 ---
 
 ## 7. Autonomy Calibration
@@ -523,7 +523,7 @@ mcp:
 
     burst: 10
 
-```text
+```
 ### Client Configuration
 
 ```json
@@ -554,7 +554,7 @@ mcp:
 
 }
 
-```text
+```
 ---
 
 ## Troubleshooting

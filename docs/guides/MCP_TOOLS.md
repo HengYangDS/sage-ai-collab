@@ -1,4 +1,4 @@
-
+﻿
 # MCP Tools Guide
 
 > Complete reference for SAGE Knowledge Base MCP tools
@@ -101,21 +101,21 @@
 ### 3.3 Common Workflows
 
 **Starting a Task:**
-```
+```text
 1. kb_info() → Get available layers
 2. get_knowledge(layer=0) → Load core principles
 3. get_knowledge(layer=1, task="your task") → Load relevant guidelines
 ```
 
 **Quality Check:**
-```
+```text
 1. analyze_quality(path="output/") → Check quality score
 2. check_links(path="docs/") → Validate links
 3. check_structure(path=".") → Validate structure
 ```
 
 **Debugging:**
-```
+```text
 1. check_health() → Verify system status
 2. get_timeout_stats() → Check timeout metrics
 3. analyze_tokens(path=".knowledge/") → Check token usage

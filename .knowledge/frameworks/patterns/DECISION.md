@@ -1,4 +1,4 @@
-# Quality Angles Framework
+﻿# Quality Angles Framework
 
 > Multi-perspective quality evaluation using 35+ quality angles
 
@@ -118,7 +118,7 @@ For major decisions, check core + extended + domain angles.
 ### Recommendations
 
 [Actions to improve quality]
-```text
+```
 ---
 
 ## 6. Coverage Matrix

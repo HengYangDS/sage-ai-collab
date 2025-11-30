@@ -1,4 +1,4 @@
-# API Design Patterns
+﻿# API Design Patterns
 
 > Principles and patterns for designing clean, consistent APIs
 
@@ -96,16 +96,16 @@
     ]
   }
 }
-```text
+```
 ---
 
 ## 5. Pagination
 
 ### 5.1 Request
 
-```text
+```
 GET /users?page=2&page_size=20
-```text
+```
 ### 5.2 Response
 
 ```json
@@ -120,7 +120,7 @@ GET /users?page=2&page_size=20
     "total_pages": 8
   }
 }
-```text
+```
 ---
 
 ## 6. Versioning

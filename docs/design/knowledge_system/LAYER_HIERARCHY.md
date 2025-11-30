@@ -1,4 +1,4 @@
-# Layer Hierarchy
+﻿# Layer Hierarchy
 
 > Knowledge layer structure and priority system
 
@@ -134,7 +134,7 @@ End-user documentation including design documents, guides, and API references.
 
 When content exists in multiple layers:
 
-```
+```text
 .knowledge/ > .context/ > .junie/ > docs/
 
 Example:

@@ -1,4 +1,4 @@
-# Plugin Development Scenario Context
+﻿# Plugin Development Scenario Context
 
 > Pre-configured context for SAGE plugin development
 
@@ -38,7 +38,7 @@ focus: [ extensibility, hooks, lifecycle, configuration ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -96,7 +96,7 @@ flowchart TB
     
     Core --> Interface
     Interface --> EP
-```text
+```
 ### 4.2 Core Components
 
 | Component         | Purpose                     | Location                           |
@@ -118,7 +118,7 @@ flowchart LR
     D["Discover"] --> V["Validate"] --> R["Register"] --> E["Enable"]
     E --> A["Active"]
     A --> Di["Disable"] --> U["Unload"]
-```text
+```
 | Phase        | Description            | Hook          |
 
 |--------------|------------------------|---------------|
@@ -199,7 +199,7 @@ class MyPlugin(PluginBase):
 
         self.logger.info(f"{self.name} disabled")
 
-```text
+```
 ### 5.2 Hook Implementation
 
 ```python
@@ -296,7 +296,7 @@ class ContentPlugin(PluginBase):
 
         return sorted(results, key=lambda r: r.relevance, reverse=True)
 
-```text
+```
 ### 5.3 Available Hook Points
 
 | Hook               | Trigger             | Parameters                        | Returns |
@@ -369,7 +369,7 @@ plugins:
 
     - ./plugins/
 
-```text
+```
 ### 5.5 Plugin with Configuration
 
 ```python
@@ -416,7 +416,7 @@ class MyPlugin(PluginBase):
 
         return content
 
-```text
+```
 ### 5.6 Testing Plugins
 
 ```python
@@ -481,7 +481,7 @@ class TestMyPlugin:
 
         assert plugin_manager.is_enabled("my-plugin")
 
-```text
+```
 ---
 
 ## 6. Common Tasks
@@ -526,7 +526,7 @@ touch tests/unit/plugins/test_my_plugin.py
 
 pytest tests/unit/plugins/test_my_plugin.py -v
 
-```text
+```
 ### 6.2 Debugging Plugins
 
 ```python
@@ -549,7 +549,7 @@ class MyPlugin(PluginBase):
 
         # ... implementation
 
-```text
+```
 ---
 
 ## 7. Autonomy Calibration

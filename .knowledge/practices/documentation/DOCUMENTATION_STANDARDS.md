@@ -1,4 +1,4 @@
-# Documentation Standards
+﻿# Documentation Standards
 
 > Single source of truth for document format and structure standards
 
@@ -46,7 +46,7 @@
 ---
 
 *AI Collaboration Knowledge Base*
-```text
+```
 **Note**: Frontmatter metadata (version, tokens, etc.) is NOT used. Document content speaks for itself.
 
 ### 1.2 Heading Rules
@@ -187,7 +187,7 @@ def greet(name: str) -> str:
     return f"Hello, {name}"
 
 print(greet("World"))  # Output: Hello, World
-```text
+```
 > **Full Standards**: See `CODE_BLOCK_STANDARDS.md`
 
 ---
@@ -290,7 +290,7 @@ print(greet("World"))  # Output: Hello, World
 3. Batch apply fixes
        ↓
 4. Verify consistency
-```text
+```
 > **Full Workflow**: See `OPTIMIZATION_WORKFLOW.md`
 
 ---

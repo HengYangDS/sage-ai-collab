@@ -1,4 +1,4 @@
-# .junie Configuration
+﻿# .junie Configuration
 
 > JetBrains Junie AI collaboration configuration directory
 
@@ -15,7 +15,7 @@
 
 ## 1. Directory Structure
 
-```
+```text
 .junie/
 ├── guidelines.md           # 🔄 Main entry point (generic AI rules)
 ├── README.md               # 🔄 This file - directory documentation
@@ -85,7 +85,7 @@
 
 ### File Relationships
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                     .junie/ Directory                       │
 ├─────────────────────────────────────────────────────────────┤

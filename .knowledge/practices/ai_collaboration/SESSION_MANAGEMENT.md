@@ -1,4 +1,4 @@
-# Session Management
+﻿# Session Management
 
 > Best practices for managing AI collaboration sessions effectively
 
@@ -47,7 +47,7 @@ flowchart LR
     S["Start<br/>Context Loading"] --> A["Active<br/>Work Tracking"]
     A --> P["Pause<br/>State Capture"]
     P --> E["End<br/>Handoff Archive"]
-```text
+```
 ### 2.2 Session Start Checklist
 
 - [ ] Review `.junie/GUIDELINES.md` for project context
@@ -101,17 +101,17 @@ What are we trying to accomplish?
 ### Decisions Made
 1. Decision with rationale
 2. Another decision
-```text
+```
 ### 3.3 Context Loading Strategy
 
-```text
+```
 Priority Order:
 1. Guidelines (.junie/GUIDELINES.md)
 2. Active session state (.history/current/)
 3. Recent handoffs (.history/handoffs/)
 4. Relevant conventions (.context/conventions/)
 5. Task-specific knowledge (.knowledge/scenarios/)
-```text
+```
 ---
 
 ## 4. State Tracking
@@ -157,7 +157,7 @@ Location: `.history/current/session-YYYYMMDD-HHMM.md`
 
 ## Quick Resume
 To continue: [specific next action]
-```text
+```
 ### 4.2 Progress Tracking
 
 | Status      | Marker | Meaning                 |
@@ -226,7 +226,7 @@ Brief description of what was accomplished and what remains.
 ## Recommended Next Steps
 1. Immediate next action
 2. Following action
-```text
+```
 ### 5.3 Handoff Best Practices
 
 - Write for someone with no prior context
@@ -249,7 +249,7 @@ When resuming after interruption:
 3. Check git status for uncommitted changes
 4. Review last action taken
 5. Continue from documented position
-```text
+```
 ### 6.2 Context Loss Recovery
 
 When context is lost mid-session:
@@ -262,7 +262,7 @@ When context is lost mid-session:
 3. [ ] Check git diff for uncommitted changes
 4. [ ] Search for TODO/FIXME comments added
 5. [ ] Review test files for hints about work
-```text
+```
 ### 6.3 Conflict Resolution
 
 When multiple sessions conflict:
@@ -293,14 +293,14 @@ git diff
 
 # View recent activity
 git log --oneline -10
-```text
+```
 ### State File Naming
 
 ```text
 .history/current/session-YYYYMMDD-HHMM.md
 .history/handoffs/YYYY-MM-DD-TASK-NAME-HANDOFF.md
 .history/conversations/YYYY-MM-DD-TOPIC.md
-```text
+```
 ---
 
 ## Related

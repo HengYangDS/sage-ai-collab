@@ -1,4 +1,4 @@
-# Default Behaviors and Calibration
+﻿# Default Behaviors and Calibration
 
 > Universal baseline behaviors and calibration parameters for AI collaboration
 
@@ -117,7 +117,7 @@
 ## Next Steps
 
 [Follow-up actions if applicable]
-```text
+```
 ---
 
 ## 6. Fallback Behavior

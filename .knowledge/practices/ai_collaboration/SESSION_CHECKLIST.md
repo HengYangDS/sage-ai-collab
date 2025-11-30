@@ -1,4 +1,4 @@
-# Session Checklist
+﻿# Session Checklist
 
 > Quick reference checklist for AI collaboration session management
 
@@ -133,7 +133,7 @@
 
 ## Quick Reference Card
 
-```text
+```
 SESSION START
   □ Load context  □ Check active sessions  □ Set scope
 
@@ -145,7 +145,7 @@ BEFORE END
 
 SESSION END
   □ Create records  □ Cleanup  □ Prepare handoff
-```text
+```
 ---
 
 ## Related

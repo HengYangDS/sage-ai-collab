@@ -1,4 +1,4 @@
-# Diagram Standards
+﻿# Diagram Standards
 
 > Single source of truth for diagram creation standards using Mermaid
 
@@ -159,7 +159,7 @@ flowchart LR
     START(["Start"]) --> PHASE1
     PHASE1 --> PHASE2
     PHASE2 --> END(["End"])
-```text
+```
 **Best Practices**:
 - Use `subgraph` to group related nodes
 - ID in English, display name can use other languages
@@ -181,7 +181,7 @@ sequenceDiagram
     S->>D: Query
     D-->>S: Result
     S-->>C: HTTP Response
-```text
+```
 #### Message Types
 
 | Syntax | Meaning | Use Case |
@@ -197,7 +197,7 @@ sequenceDiagram
 sequenceDiagram
     participant A as API Gateway
     participant B as Backend Service
-```text
+```
 #### Advanced Features
 
 | Feature | Syntax | Purpose |
@@ -232,7 +232,7 @@ classDiagram
     }
     
     User "1" --> "*" Order : places
-```text
+```
 #### Visibility Modifiers
 
 | Symbol | Meaning |
@@ -275,7 +275,7 @@ stateDiagram-v2
     Processing --> Failed : error
     Completed --> [*]
     Failed --> Idle : retry
-```text
+```
 #### Special States
 
 | Syntax | Meaning |
@@ -292,7 +292,7 @@ stateDiagram-v2
         Validating --> Executing
         Executing --> [*]
     }
-```text
+```
 #### Transitions
 
 | Element | Syntax |
@@ -312,7 +312,7 @@ erDiagram
     USER ||--o{ ORDER : places
     ORDER ||--|{ LINE_ITEM : contains
     PRODUCT ||--o{ LINE_ITEM : "ordered in"
-```text
+```
 #### Relationship Symbols
 
 | Left | Right | Meaning |
@@ -332,7 +332,7 @@ erDiagram
         string name
         date created_at
     }
-```text
+```
 | Marker | Meaning |
 |--------|---------|
 | `PK` | Primary Key |
@@ -355,7 +355,7 @@ journey
     section Go home
         Go downstairs: 5: Me
         Sit down: 5: Me
-```text
+```
 #### Elements
 
 | Element | Format | Description |
@@ -376,7 +376,7 @@ timeline
     2024-06 : v2.0 Release
            : Major update
     2024-12 : v3.0 Planned
-```text
+```
 ## 6. Occasional Diagrams
 
 ### 6.1 Gantt Chart
@@ -390,7 +390,7 @@ gantt
         Task B :after a1, 20d
     section Phase 2
         Task C :2024-02-15, 25d
-```text
+```
 ### 6.2 XY Chart
 
 ```mermaid
@@ -400,7 +400,7 @@ xychart-beta
     y-axis "Revenue (K)" 0 --> 100
     bar [30, 45, 60, 55, 70]
     line [25, 40, 55, 50, 65]
-```text
+```
 ### 6.3 Other Occasional Types
 
 For Pie, Quadrant, Block, Architecture, and C4 diagrams, see [Section 3.1 Complete Type Reference](#31-complete-type-reference) and [Mermaid Official Documentation](https://mermaid.js.org/intro/).
@@ -423,7 +423,7 @@ mindmap
         Testing
             Unit Tests
             Integration
-```text
+```
 ### 7.2 Other Rare Types
 
 For Git Graph, Requirement, Radar, Sankey, Kanban, and Packet diagrams, see [Section 3.1 Complete Type Reference](#31-complete-type-reference) and [Mermaid Official Documentation](https://mermaid.js.org/intro/).

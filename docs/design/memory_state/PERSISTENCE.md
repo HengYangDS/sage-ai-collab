@@ -1,4 +1,4 @@
-# Persistence
+﻿# Persistence
 
 > State persistence mechanisms for SAGE
 

@@ -1,4 +1,4 @@
-# Cognitive Enhancement Guidelines
+﻿# Cognitive Enhancement Guidelines
 
 > Enhanced metacognitive capabilities for AI collaboration
 
@@ -35,7 +35,7 @@
 4. Evaluate trade-offs
 5. Select approach
 6. Verify solution
-```text
+```
 ---
 
 ## 2. Self-Reflection

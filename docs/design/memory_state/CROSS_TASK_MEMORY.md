@@ -1,4 +1,4 @@
-# Cross-Task Memory
+﻿# Cross-Task Memory
 
 > Persistent memory across sessions and tasks
 

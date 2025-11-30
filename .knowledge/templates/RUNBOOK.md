@@ -1,9 +1,22 @@
-# Operational Runbook Template
+﻿# Operational Runbook Template
 
 > **Purpose**: Document operational procedures for system maintenance and incident response
 > **Use When**: Creating standard operating procedures, on-call guides, or maintenance documentation
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Quick Reference](#quick-reference)
+- [Health Checks](#health-checks)
+- [Common Operations](#common-operations)
+- [Incident Response](#incident-response)
+- [Troubleshooting](#troubleshooting)
+- [Maintenance Procedures](#maintenance-procedures)
+- [Contacts](#contacts)
+- [Changelog](#changelog)
+- [Instructions](#instructions)
 
 ## Template
 
@@ -50,7 +63,7 @@ curl -s https://service.example.com/health | jq
 
 # Expected response
 {"status": "healthy", "version": "x.y.z"}
-```text
+```
 ### Key Metrics
 
 | Metric              | Normal Range | Alert Threshold |
@@ -146,7 +159,7 @@ curl -s https://service.example.com/health | jq
 
 # Check for bottlenecks
 [diagnostic command]
-```text
+```
 **Resolution**:
 
 1. [Step 1]
@@ -170,7 +183,7 @@ curl -s https://service.example.com/health | jq
 
 ```bash
 [diagnostic command]
-```text
+```
 **Resolution**:
 
 1. [Step 1]
@@ -226,7 +239,7 @@ curl -s https://service.example.com/health | jq
 
 *Runbook from AI Collaboration Knowledge Base*
 
-```text
+```
 ---
 
 ## Instructions

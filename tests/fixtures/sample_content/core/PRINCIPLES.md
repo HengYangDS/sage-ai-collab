@@ -1,11 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-# Core Principles - Test Fixture
+﻿# Core Principles - Test Fixture
 
 > Test fixture for core principles content.
 
@@ -40,4 +33,7 @@ The SAGE Knowledge Base follows the Xin-Da-Ya philosophy:
 
 ---
 
-*Test fixture content for unit tests*
+
+---
+
+*AI Collaboration Knowledge Base*

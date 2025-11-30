@@ -1,4 +1,4 @@
-# Monitoring & Observability
+﻿# Monitoring & Observability
 
 > Best practices for system monitoring and observability
 
@@ -30,7 +30,7 @@ flowchart LR
         M["Metrics<br/>'What' happened"] <--> L["Logs<br/>'Why' happened"]
         L <--> T["Traces<br/>'Where' happened"]
     end
-```text
+```
 ---
 
 ## 2. Metrics
@@ -92,7 +92,7 @@ def handle_request(endpoint):
         duration = time.time() - start
         request_duration.labels(endpoint=endpoint).observe(duration)
         active_connections.dec()
-```text
+```
 ---
 
 ## 3. Logging
@@ -115,7 +115,7 @@ logger.info(
 
 # ❌ Bad: Unstructured string
 logger.info(f"Order {order.id} created for user {user.id}")
-```text
+```
 ### Log Levels
 
 | Level     | Use Case                       |
@@ -159,7 +159,7 @@ async def handle_request(request):
             result = await db.query(...)
         
         return result
-```text
+```
 ### Context Propagation
 
 ```python
@@ -170,7 +170,7 @@ context = extract(request.headers)
 headers = {}
 inject(headers)
 await client.get(url, headers=headers)
-```text
+```
 ---
 
 ## 5. Alerting
@@ -212,7 +212,7 @@ groups:
           severity: critical
         annotations:
           summary: "Service {{ $labels.instance }} is down"
-```text
+```
 ---
 
 ## Quick Reference

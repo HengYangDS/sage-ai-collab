@@ -1,4 +1,4 @@
-# Security Checklist
+﻿# Security Checklist
 
 > Comprehensive security review checklist for development, deployment, and operations
 
@@ -202,9 +202,9 @@
 
 ### Response Flow
 
-```text
+```
 Detect → Assess → Contain → Eradicate → Recover → Learn
-```text
+```
 ### Immediate Actions by Type
 
 | Incident Type        | Actions                                    |

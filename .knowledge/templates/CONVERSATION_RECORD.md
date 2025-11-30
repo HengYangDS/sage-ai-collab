@@ -1,9 +1,26 @@
-# Conversation Record Template
+﻿# Conversation Record Template
 
 > **Purpose**: Document AI collaboration sessions with key decisions and learnings
 > **Use When**: Recording significant conversations, design discussions, or problem-solving sessions
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Context](#context)
+- [Key Discussion Points](#key-discussion-points)
+- [Decisions Made](#decisions-made)
+- [Action Items](#action-items)
+- [Learnings & Insights](#learnings-insights)
+- [References](#references)
+- [Follow-up](#follow-up)
+- [Instructions](#instructions)
+- [Context](#context)
+- [Key Discussion Points](#key-discussion-points)
+- [Decisions Made](#decisions-made)
+- [Action Items](#action-items)
+- [Learnings & Insights](#learnings-insights)
 
 ## Overview
 
@@ -91,7 +108,7 @@ conversations that contain decisions, insights, or learnings worth preserving fo
 ---
 
 *Conversation record from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Instructions
@@ -182,7 +199,7 @@ Explored graceful degradation patterns when timeouts occur. Decided on partial c
 ---
 
 *Conversation record from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Related

@@ -1,4 +1,4 @@
-# Plugins
+﻿# Plugins
 
 > Plugin system architecture for SAGE extensibility
 

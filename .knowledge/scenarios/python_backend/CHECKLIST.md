@@ -4,6 +4,16 @@
 
 ---
 
+## Table of Contents
+
+- [Project Setup](#project-setup)
+- [Code Quality](#code-quality)
+- [API Development](#api-development)
+- [Database](#database)
+- [Security](#security)
+- [Performance](#performance)
+- [Deployment](#deployment)
+
 ## Project Setup
 
 - [ ] Python version specified (3.12+)

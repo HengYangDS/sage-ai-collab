@@ -1,9 +1,25 @@
-# Architecture Decision Record (ADR) Template
+﻿# Architecture Decision Record (ADR) Template
 
 > **Purpose**: Document significant architectural decisions
 > **Use When**: Making decisions that affect system structure, technology choices, or design patterns
 
 ---
+
+## Table of Contents
+
+- [Context](#context)
+- [Decision Drivers](#decision-drivers)
+- [Considered Options](#considered-options)
+- [Decision](#decision)
+- [Consequences](#consequences)
+- [Implementation](#implementation)
+- [References](#references)
+- [Instructions](#instructions)
+- [Context](#context)
+- [Decision Drivers](#decision-drivers)
+- [Considered Options](#considered-options)
+- [Decision](#decision)
+- [Consequences](#consequences)
 
 ## Template
 
@@ -120,7 +136,7 @@
 ---
 
 *ADR from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Instructions
@@ -152,7 +168,7 @@ Use sequential 4-digit numbers: `ADR-0001`, `ADR-0002`, etc.
 
 ```text
 .context/decisions/ADR_NNNN_SHORT_TITLE.md
-```text
+```
 Example: `ADR_0001_FASTMCP_CHOICE.md`
 
 ---
@@ -206,7 +222,7 @@ FastMCP provides the right balance of simplicity and capability.
 
 ### Negative
 - Dependency on FastMCP updates
-```text
+```
 ---
 
 ## Related

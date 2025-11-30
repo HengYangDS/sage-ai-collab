@@ -1,4 +1,4 @@
-# AI Collaboration Patterns
+﻿# AI Collaboration Patterns
 
 > Patterns for effective human-AI collaboration
 
@@ -40,19 +40,19 @@
 
 ### 2.1 Single Task
 
-```text
+```
 Request → Confirm → Execute → Report
-```text
+```
 ### 2.2 Batch Processing
 
-```text
+```
 Request → Plan → [Execute → Checkpoint]* → Summary
-```text
+```
 ### 2.3 Iterative Refinement
 
-```text
+```
 Request → Draft → Feedback → Refine → [Repeat] → Finalize
-```text
+```
 ---
 
 ## 3. Context Patterns
@@ -112,9 +112,9 @@ Request → Draft → Feedback → Refine → [Repeat] → Finalize
 
 ### 5.2 Escalation Pattern
 
-```text
+```
 Attempt → Uncertain? → Escalate → Guidance → Continue
-```text
+```
 ---
 
 ## 6. Workflow Patterns

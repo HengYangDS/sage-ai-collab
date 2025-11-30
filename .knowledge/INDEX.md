@@ -1,4 +1,4 @@
-# Knowledge Base Navigation
+﻿# Knowledge Base Navigation
 
 > Entry point for AI collaboration knowledge content
 >
@@ -213,7 +213,7 @@ Reusable document templates:
 
 ```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```text
+```
 Each layer has an `INDEX.md` for navigation. Use layer indexes for discovery, specific files for detailed guidance.
 
 ---

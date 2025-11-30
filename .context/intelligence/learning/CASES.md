@@ -1,4 +1,4 @@
-# Technical Cases Repository
+﻿# Technical Cases Repository
 
 > Collection of problem-solving cases and lessons learned
 

@@ -1,4 +1,4 @@
-# Directory Layout
+﻿# Directory Layout
 
 > Canonical project structure for SAGE Knowledge Base
 
@@ -170,7 +170,7 @@ docs/
 
 ### 7.1 Universal Knowledge (.knowledge/)
 
-```
+```text
 .knowledge/
 ├── INDEX.md
 ├── VERSION.md
@@ -185,7 +185,7 @@ docs/
 
 ### 7.2 Project Knowledge (.context/)
 
-```
+```text
 .context/
 ├── INDEX.md
 ├── conventions/             # Project conventions

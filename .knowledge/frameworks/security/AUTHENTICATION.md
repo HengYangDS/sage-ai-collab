@@ -1,4 +1,4 @@
-# Authentication Patterns
+﻿# Authentication Patterns
 
 > Identity verification mechanisms and best practices
 
@@ -42,7 +42,7 @@ sequenceDiagram
     Auth-->>Authz: Valid
     Authz->>R: Authorized Request
     R-->>C: Response
-```text
+```
 ---
 
 ## 2. Authentication Methods
@@ -83,7 +83,7 @@ def verify_password(password: str, hash_value: str, salt: str) -> bool:
     """Verify password against stored hash."""
     new_hash, _ = hash_password_with_salt(password, salt)
     return secrets.compare_digest(new_hash, hash_value)
-```text
+```
 ### API Key Authentication
 
 ```python
@@ -107,7 +107,7 @@ def require_api_key(func: Callable) -> Callable:
         return await func(request, *args, **kwargs)
 
     return wrapper
-```text
+```
 ---
 
 ## 3. Token-Based Auth
@@ -122,7 +122,7 @@ flowchart LR
         S["Signature<br/>(Base64)<br/>HMACSHA256()"]
     end
     H --> P --> S
-```text
+```
 ### JWT Best Practices
 
 | Practice   | Recommendation                                          |
@@ -175,7 +175,7 @@ class JWTManager:
             raise AuthenticationError("Token expired")
         except jwt.InvalidTokenError:
             raise AuthenticationError("Invalid token")
-```text
+```
 ---
 
 ## 4. Session Management
@@ -241,7 +241,7 @@ class SessionManager:
     def destroy_session(self, session_id: str) -> None:
         """Destroy session."""
         self.store.delete(f"session:{session_id}")
-```text
+```
 ---
 
 ## 5. Multi-Factor Auth
@@ -299,7 +299,7 @@ class TOTPManager:
         """Verify TOTP code."""
         totp = pyotp.TOTP(secret)
         return totp.verify(code, valid_window=1)
-```text
+```
 ---
 
 ## 6. Implementation Patterns
@@ -346,7 +346,7 @@ async def login(request: LoginRequest) -> LoginResponse:
         refresh_token=refresh_token,
         expires_in=3600
     )
-```text
+```
 ### Middleware Pattern
 
 ```python
@@ -378,7 +378,7 @@ async def auth_middleware(request: Request, call_next):
         raise HTTPException(status_code=401, detail=str(e))
 
     return await call_next(request)
-```text
+```
 ---
 
 ## Quick Reference
@@ -395,7 +395,7 @@ SECURITY_HEADERS = {
     "Cache-Control"            : "no-store",
     "Pragma"                   : "no-cache"
 }
-```text
+```
 ### Password Requirements
 
 | Requirement | Minimum                       |

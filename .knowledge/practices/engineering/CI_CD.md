@@ -1,4 +1,4 @@
-# CI/CD Practices
+﻿# CI/CD Practices
 
 > Continuous Integration and Continuous Deployment best practices for the projects
 
@@ -44,7 +44,7 @@ flowchart LR
     T --> B["Build<br/>wheel, Docker"]
     B --> P["Publish<br/>PyPI, GHCR"]
     P --> D["Deploy<br/>Staging, Production"]
-```text
+```
 ---
 
 ## 2. GitHub Actions
@@ -139,7 +139,7 @@ jobs:
 
           file: coverage.xml
 
-```text
+```
 ### 2.2 Release Workflow
 
 ```yaml
@@ -234,7 +234,7 @@ jobs:
 
             ghcr.io/${{ github.repository }}:latest
 
-```text
+```
 ### 2.3 Scheduled Jobs
 
 ```yaml
@@ -267,7 +267,7 @@ jobs:
 
         run: pip-audit
 
-```text
+```
 ---
 
 ## 3. Testing Pipeline
@@ -336,7 +336,7 @@ jobs:
 
 ]
 
-```text
+```
 ### 3.3 Running Tests
 
 ```bash
@@ -357,7 +357,7 @@ pytest --cov=src --cov-report=html
 
 pytest -n auto
 
-```text
+```
 ---
 
 ## 4. Quality Gates
@@ -416,7 +416,7 @@ repos:
 
       - id: commitizen
 
-```text
+```
 ### 4.3 Branch Protection
 
 ```yaml
@@ -441,7 +441,7 @@ branch_protection:
 
     require_code_owner_reviews: true
 
-```text
+```
 ---
 
 ## 5. Deployment Strategies
@@ -471,7 +471,7 @@ flowchart TB
     B --> LB["Load Balancer"]
     G --> LB
     LB --> T["Traffic"]
-```text
+```
 #### Rolling Update
 
 ```yaml
@@ -490,7 +490,7 @@ spec:
 
       maxUnavailable: 0
 
-```text
+```
 ### 5.3 Rollback Procedure
 
 ```bash
@@ -507,7 +507,7 @@ git checkout v1.0.0
 
 # trigger deployment
 
-```text
+```
 ---
 
 ## 6. Secrets Management
@@ -542,7 +542,7 @@ env:
 
   DATABASE_URL: ${{ secrets.PROD_DATABASE_URL }}
 
-```text
+```
 ### 6.3 Best Practices
 
 - Never commit secrets to repository
@@ -581,7 +581,7 @@ gh run list
 
 gh run download <run-id>
 
-```text
+```
 ---
 
 ## Related

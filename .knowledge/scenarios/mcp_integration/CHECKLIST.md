@@ -4,6 +4,19 @@
 
 ---
 
+## Table of Contents
+
+- [Planning](#planning)
+- [Server Setup](#server-setup)
+- [Resources](#resources)
+- [Tools](#tools)
+- [Prompts](#prompts)
+- [Client Integration](#client-integration)
+- [Security](#security)
+- [Error Handling](#error-handling)
+- [Testing](#testing)
+- [Documentation](#documentation)
+
 ## Planning
 
 - [ ] MCP use case defined

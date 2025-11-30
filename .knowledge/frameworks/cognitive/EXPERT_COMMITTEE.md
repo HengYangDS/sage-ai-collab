@@ -1,4 +1,4 @@
-# Expert Committee Framework
+﻿# Expert Committee Framework
 
 > Multi-perspective analysis using 35+ expert roles
 
@@ -143,7 +143,7 @@ Each expert provides:
 
 ### Decision
 [Final recommendation with rationale]
-```text
+```
 ---
 
 ## 6. Quick Reference

@@ -4,6 +4,20 @@
 
 ---
 
+## Table of Contents
+
+- [Planning](#planning)
+- [Structure](#structure)
+- [Content Quality](#content-quality)
+- [Code Examples](#code-examples)
+- [Visual Elements](#visual-elements)
+- [API Documentation](#api-documentation)
+- [User Guides](#user-guides)
+- [Technical Reference](#technical-reference)
+- [Maintenance](#maintenance)
+- [Accessibility](#accessibility)
+- [Publishing](#publishing)
+
 ## Planning
 
 - [ ] Target audience identified

@@ -1,4 +1,4 @@
-# Engineering Practices Guidelines
+﻿# Engineering Practices Guidelines
 
 > Configuration, testing, performance, change control, maintainability
 
@@ -26,9 +26,9 @@
 
 ### 1.1 Config Priority
 
-```text
+```
 Environment vars > Config files > Defaults
-```text
+```
 ---
 
 ## 2. Testing Strategy
@@ -65,9 +65,9 @@ Environment vars > Config files > Defaults
 
 ### 3.2 Optimization Process
 
-```text
+```
 Measure → Profile → Optimize → Verify
-```text
+```
 **Rule**: Never optimize without profiling first.
 
 ---

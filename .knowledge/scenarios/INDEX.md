@@ -1,4 +1,4 @@
-# Scenario Presets
+﻿# Scenario Presets
 
 > Context-specific knowledge presets for common development scenarios
 
@@ -84,14 +84,10 @@ Each scenario contains:
 
 ```text
 scenarios/[name]/
-
-├── context.md      # Main scenario context
-
-├── checklist.md    # Optional: task checklist
-
+├── CONTEXT.md      # Main scenario context
+├── CHECKLIST.md    # Optional: task checklist
 └── templates/      # Optional: scenario-specific templates
-
-```text
+```
 ### Context File Format
 
 ```markdown
@@ -118,14 +114,14 @@ scenarios/[name]/
 
 [Common mistakes to avoid]
 
-```text
+```
 ---
 
 ## 4. Creating New Scenarios
 
 1. Create directory: `.knowledge/scenarios/[name]/`
 
-2. Add `context.md` with scenario context
+2. Add `CONTEXT.md` with scenario context
 
 3. Define auto-load triggers in `config/knowledge/triggers.yaml`
 

@@ -1,4 +1,4 @@
-# Expert Committee Decision Templates
+﻿# Expert Committee Decision Templates
 
 > Ready-to-use decision prompts for multi-perspective analysis
 
@@ -36,14 +36,14 @@
 
 **Template**:
 
-```text
+```
 Decision: [what]
 | Aspect | Status | Notes |
 | Implementation | ✅/⚠️/❌ | |
 | Test Coverage | ✅/⚠️/❌ | |
 | Risk Level | Low/Med/High | |
 Recommendation: [Go/No-Go + rationale]
-```text
+```
 ---
 
 ## 3. L2: Standard Review (4-5 Experts)
@@ -54,12 +54,12 @@ Recommendation: [Go/No-Go + rationale]
 
 **Template**:
 
-```text
+```
 Decision: [what] | Context: [background]
 | Expert | Assessment | Concerns | Recommendations |
 Risk: Technical [L/M/H] · Business [L/M/H] · Timeline [L/M/H]
 Recommendation: [Approve/Revise/Reject] | Conditions: [if any] | Next Steps: [actions]
-```text
+```
 ---
 
 ## 4. L3: Deep Analysis (6-8 Experts)
@@ -70,7 +70,7 @@ Recommendation: [Approve/Revise/Reject] | Conditions: [if any] | Next Steps: [ac
 
 **Template**:
 
-```text
+```
 Decision: [what] | Context: [background] | Stakeholders: [who]
 
 Technical Dimension (1-5): Correctness · Maintainability · Performance · Security · Scalability
@@ -81,7 +81,7 @@ Expert Votes: | Expert | Vote | Confidence | Key Concern |
 
 Consensus: [Approve/Conditional/Reject] | Score: [X/100]
 Conditions: [required] | Action Items: [with owners]
-```text
+```
 ---
 
 ## 5. L4: Comprehensive Review (10-12 Experts)
@@ -93,7 +93,7 @@ Governance (KE, Compliance)
 
 **Template**:
 
-```text
+```
 Decision: [detailed] | Impact Scope: [systems, teams, users] | Timeline: [deadline]
 
 10×10 Matrix: Roles × Angles (Correct, Maintain, Perform, Secure, Scale, Value, Usable, Efficient, Timely, Document)
@@ -103,7 +103,7 @@ Weighted Scoring: Technical [X/100, 40%] · Business [X/100, 35%] · Process [X/
 Recommendation: [Approve/Conditional/Major Revision/Reject] | Confidence: [H/M/L]
 Dissenting Opinions: [if any]
 Implementation: Phase 1 [timeline] → Phase 2 [timeline] → Validation checkpoints
-```text
+```
 ---
 
 ## 6. L5: Full Committee (24 Experts)
@@ -122,7 +122,7 @@ Implementation: Phase 1 [timeline] → Phase 2 [timeline] → Validation checkpo
 
 **Template**:
 
-```text
+```
 Decision: [strategic] | Impact: [org-wide implications] | Urgency: [Critical/High/Medium]
 
 Group Assessments: | Group | Approval | Score | Key Concerns | Conditions |
@@ -132,7 +132,7 @@ Consensus: Unanimous (4/4) · Strong (3/4) · Conditional (2/4) · Rejected (<2/
 Final: [Approved/Conditional/Rejected] | Score: [X/100] | Confidence: [X%]
 Binding Conditions: [must-meet items]
 Post-Decision: Document rationale · Communicate · Set checkpoints · Plan rollback
-```text
+```
 ---
 
 ## 7. Usage Tips

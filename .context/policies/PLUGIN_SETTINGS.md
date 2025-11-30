@@ -1,4 +1,4 @@
-# Plugin System Configuration
+﻿# Plugin System Configuration
 
 > Configuration reference for the SAGE plugin system
 
@@ -19,7 +19,7 @@
 
 ### 1.1 Plugin Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Plugin Manager                           │
 ├─────────────────────────────────────────────────────────────┤
@@ -71,7 +71,7 @@ plugins:
 
 ### 2.2 Discovery Process
 
-```
+```text
 1. Scan bundled plugins directory
 2. Search entry points (sage.plugins)
 3. Scan custom plugin paths

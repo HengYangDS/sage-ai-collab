@@ -1,4 +1,4 @@
-# Protocols
+﻿# Protocols
 
 > SAGE protocol specifications and interfaces
 

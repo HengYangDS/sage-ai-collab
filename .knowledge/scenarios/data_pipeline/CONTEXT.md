@@ -1,4 +1,4 @@
-# Data Pipeline Scenario Context
+﻿# Data Pipeline Scenario Context
 
 > Pre-configured context for data processing and ETL workflows
 
@@ -40,7 +40,7 @@ focus: [ etl, transformation, validation, scheduling ]
 
 autonomy_default: L2
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -137,7 +137,7 @@ class DatabaseExtractor(BaseExtractor):
 
             yield chunk
 
-```text
+```
 ### 4.2 Transformer Pattern
 
 ```python
@@ -190,7 +190,7 @@ transformer = (
 
 result = transformer.apply(raw_data)
 
-```text
+```
 ### 4.3 Loader Pattern
 
 ```python
@@ -245,7 +245,7 @@ class DataLoader:
 
         return rows or len(df)
 
-```text
+```
 ### 4.4 Pipeline Pattern
 
 ```python
@@ -322,7 +322,7 @@ class Pipeline:
 
         )
 
-```text
+```
 ---
 
 ## 5. Testing Patterns
@@ -381,7 +381,7 @@ def test_normalize_dates(sample_data):
 
     assert pd.api.types.is_datetime64_any_dtype(result["date"])
 
-```text
+```
 ### 5.2 Pipeline Integration Testing
 
 ```python
@@ -420,7 +420,7 @@ def test_pipeline_success():
 
     assert len(result.errors) == 0
 
-```text
+```
 ---
 
 ## 6. Data Quality
@@ -505,7 +505,7 @@ validator = (
 
 )
 
-```text
+```
 ---
 
 ## 7. Common Tasks

@@ -1,4 +1,4 @@
-# Memory and Persistence Configuration
+﻿# Memory and Persistence Configuration
 
 > Configuration reference for caching, memory management, and data persistence
 
@@ -19,7 +19,7 @@
 
 ### 1.1 Memory Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Memory Layer                             │
 ├─────────────────┬─────────────────┬─────────────────────────┤

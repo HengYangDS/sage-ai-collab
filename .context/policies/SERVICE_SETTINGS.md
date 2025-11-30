@@ -1,4 +1,4 @@
-# Service Layer Configuration
+﻿# Service Layer Configuration
 
 > Configuration reference for CLI, MCP, and API services
 
@@ -18,7 +18,7 @@
 
 ### 1.1 Service Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                      Service Layer                          │
 ├─────────────────┬─────────────────┬─────────────────────────┤
@@ -322,7 +322,7 @@ sage api --workers 4 --reload
 
 ### Configuration Priority
 
-```
+```text
 1. Command-line arguments (highest)
 2. Environment variables
 3. Config file (config/sage.yaml)

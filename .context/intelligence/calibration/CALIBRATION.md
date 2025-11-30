@@ -1,4 +1,4 @@
-# Autonomy Calibration Records
+﻿# Autonomy Calibration Records
 
 > Historical calibration data and effectiveness evaluation for AI collaboration in SAGE project
 
@@ -228,7 +228,7 @@ This document tracks **project-specific calibration data**:
 
 ### 8.1 Review Cycle
 
-```
+```text
 1. Weekly Review
    └── Analyze task outcomes
    └── Identify patterns

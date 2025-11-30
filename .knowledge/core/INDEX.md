@@ -16,9 +16,9 @@
 
 | File                 | Purpose                                | Priority |
 |----------------------|----------------------------------------|----------|
-| `principles.md`      | 信达雅 + 术法道 philosophy                   | Always   |
-| `quick_reference.md` | 5 critical questions + autonomy levels | Always   |
-| `defaults.md`        | Default behaviors + calibration        | Always   |
+| `PRINCIPLES.md`      | 信达雅 + 术法道 philosophy                   | Always   |
+| `QUICK_REFERENCE.md` | 5 critical questions + autonomy levels | Always   |
+| `DEFAULTS.md`        | Default behaviors + calibration        | Always   |
 
 ---
 

@@ -1,4 +1,4 @@
-
+﻿
 # MCP Configuration
 
 > Setup and configure MCP servers for Junie (~30 min)
@@ -485,7 +485,7 @@ sed -i 's/npx\.cmd/npx/g' .junie/mcp/mcp.json
 
 Alternative approach with separate configs:
 
-```
+```text
 .junie/mcp/
 ├── mcp.json              # Active config (symlink or copy)
 ├── mcp.windows.json      # Windows template

@@ -4,6 +4,19 @@
 
 ---
 
+## Table of Contents
+
+- [Service Design](#service-design)
+- [API Design](#api-design)
+- [Data Management](#data-management)
+- [Communication](#communication)
+- [Service Discovery](#service-discovery)
+- [Resilience](#resilience)
+- [Observability](#observability)
+- [Security](#security)
+- [Deployment](#deployment)
+- [Documentation](#documentation)
+
 ## Service Design
 
 - [ ] Service boundaries defined (DDD)

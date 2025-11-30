@@ -1,4 +1,4 @@
-# Python Backend Scenario Context
+﻿# Python Backend Scenario Context
 
 > Pre-configured context for Python backend development
 
@@ -40,7 +40,7 @@ focus: [ api, database, testing, deployment ]
 
 autonomy_default: L2
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -101,7 +101,7 @@ async def get_user(id: str, service: UserService = Depends(get_service)) -> User
 
     return user
 
-```text
+```
 ### 4.2 Service Layer
 
 ```python
@@ -120,7 +120,7 @@ class UserService:
 
         return await self._repo.save(User(email=data.email, password_hash=hash(data.password)))
 
-```text
+```
 ### 4.3 Repository
 
 ```python
@@ -137,7 +137,7 @@ class UserRepository:
 
         return result.scalar_one_or_none()
 
-```text
+```
 ---
 
 ## 5. Testing Patterns
@@ -160,7 +160,7 @@ def user_factory():
 
     return lambda **kw: User(**{"email": "test@example.com", "name": "Test", **kw})
 
-```text
+```
 ### 5.2 API Test
 
 ```python
@@ -175,7 +175,7 @@ async def test_create_user(client: AsyncClient):
 
     assert "id" in response.json()
 
-```text
+```
 ---
 
 ## 6. Configuration
@@ -200,7 +200,7 @@ def get_settings() -> Settings:
 
     return Settings()
 
-```text
+```
 ---
 
 ## 7. Common Tasks

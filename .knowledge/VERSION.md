@@ -4,6 +4,12 @@
 
 ---
 
+## Table of Contents
+
+- [Current Version](#current-version)
+- [Versioning Strategy](#versioning-strategy)
+- [Changelog](#changelog)
+
 ## Current Version
 
 | Field | Value |

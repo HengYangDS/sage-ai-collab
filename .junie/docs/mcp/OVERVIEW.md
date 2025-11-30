@@ -1,4 +1,4 @@
-# MCP Overview
+﻿# MCP Overview
 
 > Model Context Protocol architecture and concepts (~15 min read)
 >
@@ -36,7 +36,7 @@ between AI applications and external data sources and tools.
 
 ## 2. Architecture Overview
 
-```
+```text
 +------------------------------------------------------------------+
 |                        JetBrains IDE                             |
 |  +------------------------------------------------------------+  |
@@ -159,7 +159,7 @@ MCP uses **stdio** (standard input/output) with **JSON-RPC** messages:
 
 ### Server Lifecycle
 
-```
+```text
 1. IDE starts → MCP Client initializes
 2. Client spawns server processes
 3. Servers register available tools

@@ -1,4 +1,4 @@
-# SAGE Runtime Settings
+﻿# SAGE Runtime Settings
 
 > Runtime configuration, logging, and environment settings
 
@@ -121,13 +121,13 @@ logging:
 
 **Text Format** (development):
 
-```
+```text
 2025-11-29 10:30:00.123 INFO  [sage.core.loader] Knowledge loaded layer=core count=42 duration_ms=150
 ```
 
 **Rich Format** (CLI development):
 
-```
+```text
 10:30:00 │ INFO  │ Knowledge loaded                    │ layer=core count=42
 ```
 

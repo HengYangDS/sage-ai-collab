@@ -1,4 +1,4 @@
-# {TITLE}
+﻿# {TITLE}
 
 > {PURPOSE}
 
@@ -24,7 +24,7 @@ Before you begin, ensure you have:
 
 ```bash
 # Quick start commands
-```text
+```
 ## Step-by-Step
 
 ### Step 1: First Step

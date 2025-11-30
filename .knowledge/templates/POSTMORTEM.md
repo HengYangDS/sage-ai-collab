@@ -1,9 +1,22 @@
-# Incident Postmortem Template
+﻿# Incident Postmortem Template
 
 > **Purpose**: Document incidents, root causes, and preventive measures
 > **Use When**: After resolving any SEV1/SEV2 incident or significant outage
 
 ---
+
+## Table of Contents
+
+- [Executive Summary](#executive-summary)
+- [Timeline](#timeline)
+- [Impact Assessment](#impact-assessment)
+- [Root Cause Analysis](#root-cause-analysis)
+- [Detection & Response](#detection-response)
+- [Action Items](#action-items)
+- [Lessons Learned](#lessons-learned)
+- [Appendix](#appendix)
+- [Sign-off](#sign-off)
+- [Instructions](#instructions)
 
 ## Template
 
@@ -213,7 +226,7 @@
 ---
 
 *Postmortem from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Instructions

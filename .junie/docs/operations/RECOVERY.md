@@ -1,4 +1,4 @@
-
+﻿
 # Error Recovery Guide
 
 > Recovery procedures for common issues (~10 min read)
@@ -57,7 +57,7 @@ Issue Detected
 
 **Quick Fix**:
 
-```
+```text
 1. Settings | Tools | Junie | MCP Servers
 2. Select affected server
 3. Click "Restart"
@@ -206,7 +206,7 @@ grep "schema_version" .junie/project/config.yaml
 
 **Quick Fix**:
 
-```
+```text
 1. View | Tool Windows | Junie
 2. Click refresh/reload if available
 3. If no response, restart IDE
@@ -214,7 +214,7 @@ grep "schema_version" .junie/project/config.yaml
 
 **Full Recovery**:
 
-```
+```text
 1. File | Invalidate Caches / Restart
 2. Select "Invalidate and Restart"
 3. Wait for IDE to rebuild caches
@@ -227,7 +227,7 @@ grep "schema_version" .junie/project/config.yaml
 
 **Diagnosis**:
 
-```
+```text
 1. Help | Diagnostic Tools | Activity Monitor
 2. Look for exceptions or high CPU
 3. Check recently installed plugins
@@ -235,7 +235,7 @@ grep "schema_version" .junie/project/config.yaml
 
 **Fix**:
 
-```
+```text
 1. Settings | Plugins
 2. Disable recently added plugins
 3. Restart IDE
@@ -248,7 +248,7 @@ grep "schema_version" .junie/project/config.yaml
 
 **Recovery**:
 
-```
+```text
 1. Check if .junie/ directory exists
 2. Reload from project configuration
 3. Settings | Tools | Junie | Action Allowlist
@@ -273,7 +273,7 @@ ls -la .junie/ > .junie-state.txt
 
 ### Step 2: Stop All Services
 
-```
+```text
 1. Settings | Tools | Junie | MCP Servers | Stop All
 2. Close all Junie-related panels
 3. File | Exit (close IDE completely)
@@ -311,7 +311,7 @@ rm -rf .junie
 
 ### Step 5: Restart and Verify
 
-```
+```text
 1. Start IDE
 2. Open project
 3. Settings | Tools | Junie | MCP Servers

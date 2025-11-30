@@ -1,4 +1,4 @@
-# Junie Template System Optimization
+﻿# Junie Template System Optimization
 
 > **Date**: 2025-11-30
 > **Type**: Optimization & Knowledge Capture
@@ -25,7 +25,7 @@ clean separation between generic (reusable) and project-specific content.
 
 **Initial Structure**:
 
-```
+```text
 .junie/
 ├── GUIDELINES.md    (mixed content)
 └── mcp/
@@ -43,7 +43,7 @@ clean separation between generic (reusable) and project-specific content.
 
 **Intermediate Structure**:
 
-```
+```text
 .junie/
 ├── GUIDELINES.md
 ├── config.yaml
@@ -60,7 +60,7 @@ clean separation between generic (reusable) and project-specific content.
 
 **Final Structure**:
 
-```
+```text
 .junie/
 ├── GUIDELINES.md           # 🔄 Main entry point
 ├── README.md               # 🔄 Directory documentation

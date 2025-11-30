@@ -1,4 +1,4 @@
-# DevOps Scenario Context
+﻿# DevOps Scenario Context
 
 > Pre-configured context for CI/CD, infrastructure, and operations
 
@@ -40,7 +40,7 @@ focus: [ ci/cd, infrastructure, monitoring, security ]
 
 autonomy_default: L2
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -195,7 +195,7 @@ jobs:
 
           echo "Deploying version ${{ github.sha }}"
 
-```text
+```
 ### 4.2 GitLab CI Pipeline
 
 ```yaml
@@ -278,7 +278,7 @@ deploy:
 
   when: manual
 
-```text
+```
 ### 4.3 Multi-Stage Dockerfile
 
 ```dockerfile
@@ -325,7 +325,7 @@ EXPOSE 8000
 
 CMD ["python", "-m", "uvicorn", "app.main:app", "--host", "0.0.0.0"]
 
-```text
+```
 ---
 
 ## 5. Infrastructure as Code
@@ -394,7 +394,7 @@ output "instance_id" {
 
 }
 
-```text
+```
 ### 5.2 Kubernetes Deployment
 
 ```yaml
@@ -515,7 +515,7 @@ spec:
 
   type: ClusterIP
 
-```text
+```
 ---
 
 ## 6. Monitoring & Alerting
@@ -600,7 +600,7 @@ groups:
 
           description: "p99 latency is {{ $value }}s"
 
-```text
+```
 ---
 
 ## 7. Common Tasks

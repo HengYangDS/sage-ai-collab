@@ -1,9 +1,30 @@
-# Meeting Notes Template
+﻿# Meeting Notes Template
 
 > **Purpose**: Template for documenting meetings and discussions
 > **Use When**: Recording decisions, action items, and discussions from meetings
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Attendees](#attendees)
+- [Agenda](#agenda)
+- [Discussion Notes](#discussion-notes)
+- [Decisions Made](#decisions-made)
+- [Action Items](#action-items)
+- [Parking Lot](#parking-lot)
+- [Next Meeting](#next-meeting)
+- [Attachments](#attachments)
+- [Instructions](#instructions)
+- [Attendees](#attendees)
+- [Agenda](#agenda)
+- [Discussion Notes](#discussion-notes)
+- [Decisions Made](#decisions-made)
+- [Action Items](#action-items)
+- [Next Meeting](#next-meeting)
+- [Meeting Types](#meeting-types)
+- [Best Practices](#best-practices)
 
 ## Overview
 
@@ -128,7 +149,7 @@ Items to discuss later:
 ---
 
 *Notes taken by [Name] on [Date]*
-```text
+```
 ---
 
 ## Instructions
@@ -272,7 +293,7 @@ Use status indicators:
 ---
 
 *Notes taken by Alice Chen on 2025-11-29*
-```text
+```
 ---
 
 ## Meeting Types

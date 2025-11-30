@@ -1,11 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-# Configuration Directory
+﻿# Configuration Directory
 
 > SAGE Knowledge Base runtime configuration files
 
@@ -154,4 +147,7 @@ Configuration values are resolved in this order (later overrides earlier):
 
 ---
 
-*Part of SAGE Knowledge Base - Configuration*
+
+---
+
+*AI Collaboration Knowledge Base*

@@ -1,4 +1,4 @@
----
+﻿---
 name: Bug Report
 about: Create a report to help us improve SAGE Knowledge Base
 title: '[BUG] '
@@ -55,4 +55,7 @@ If you have ideas on how to fix this, please share them.
 
 ---
 
-*Please search existing issues before creating a new one.*
+
+---
+
+*AI Collaboration Knowledge Base*

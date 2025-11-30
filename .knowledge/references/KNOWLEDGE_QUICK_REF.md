@@ -1,4 +1,4 @@
-# Knowledge Organization Quick Reference
+﻿# Knowledge Organization Quick Reference
 
 > Essential patterns for organizing AI-collaborative knowledge bases
 
@@ -25,7 +25,7 @@
 ├── practices/      # When implementing (~1500 tokens)
 ├── scenarios/      # By trigger (~500 tokens)
 └── templates/      # Direct copy (~300 tokens)
-```text
+```
 ---
 
 ## 2. Layer Token Budgets
@@ -45,7 +45,7 @@
 
 ```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```text
+```
 ---
 
 ## 4. MECE Principle

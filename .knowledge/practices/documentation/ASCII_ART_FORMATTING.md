@@ -1,4 +1,4 @@
-# ASCII Art Formatting Best Practices
+﻿# ASCII Art Formatting Best Practices
 
 > Guidelines for consistent rendering of ASCII art boxes and diagrams
 
@@ -22,7 +22,7 @@ ASCII art boxes and diagrams may render with misaligned borders across different
 │ Example with emoji: ✅ Complete         │  ← Misaligned!
 │ Example without emoji: OK              │
 └─────────────────────────────────────────┘
-```text
+```
 The right border `│` appears misaligned because emojis and special Unicode characters have unpredictable display widths.
 
 ---
@@ -66,12 +66,12 @@ Replace emojis and special Unicode with ASCII equivalents:
 
 ```text
 │ ├── Junie integration: ✅ Complete                          │
-```text
+```
 **After** (consistent):
 
 ```text
 │ ├── Junie integration: [OK] Complete                        │
-```text
+```
 ---
 
 ## 4. Checklist

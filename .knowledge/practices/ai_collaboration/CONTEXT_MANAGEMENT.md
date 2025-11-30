@@ -1,4 +1,4 @@
-# Context Management Practices
+﻿# Context Management Practices
 
 > Strategies for building and managing shared context in AI collaboration
 
@@ -106,7 +106,7 @@
 ## Background
 
 [Brief context if needed]
-```text
+```
 ### 5.2 Session Summary
 
 ```markdown
@@ -115,7 +115,7 @@
 - **Completed**: [What was done]
 - **Decisions**: [Key choices made]
 - **Next**: [What's pending]
-```text
+```
 ---
 
 ## 6. Best Practices

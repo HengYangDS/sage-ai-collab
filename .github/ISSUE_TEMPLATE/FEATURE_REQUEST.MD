@@ -1,4 +1,4 @@
----
+﻿---
 name: Feature Request
 about: Suggest an idea for SAGE Knowledge Base
 title: '[FEATURE] '
@@ -65,4 +65,7 @@ Add any other context, mockups, or examples about the feature request here.
 
 ---
 
-*This feature request follows the SAGE philosophy: 信达雅 (Xin-Da-Ya)*
+
+---
+
+*AI Collaboration Knowledge Base*

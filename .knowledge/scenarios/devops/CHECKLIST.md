@@ -4,6 +4,20 @@
 
 ---
 
+## Table of Contents
+
+- [Version Control](#version-control)
+- [CI Pipeline](#ci-pipeline)
+- [CD Pipeline](#cd-pipeline)
+- [Infrastructure](#infrastructure)
+- [Containerization](#containerization)
+- [Kubernetes (if applicable)](#kubernetes-if-applicable)
+- [Monitoring](#monitoring)
+- [Alerting](#alerting)
+- [Security](#security)
+- [Disaster Recovery](#disaster-recovery)
+- [Documentation](#documentation)
+
 ## Version Control
 
 - [ ] Branch strategy defined

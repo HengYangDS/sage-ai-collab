@@ -1,4 +1,4 @@
-# TypeScript Frontend Scenario Context
+﻿# TypeScript Frontend Scenario Context
 
 > Pre-configured context for TypeScript frontend development (React/Vue)
 
@@ -40,7 +40,7 @@ focus: [ components, state, testing, styling ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -133,7 +133,7 @@ export const UserCard: FC<UserCardProps> = ({user, onSelect}) => {
 
     ;
 
-```text
+```
 ### 4.2 Custom Hook Pattern
 
 ```typescript
@@ -192,7 +192,7 @@ export function useFetch<T>(url: string): UseFetchResult<T> {
 
 }
 
-```text
+```
 ### 4.3 Context Pattern
 
 ```typescript
@@ -261,7 +261,7 @@ export const useAuth = () => {
 
 };
 
-```text
+```
 ---
 
 ## 5. Testing Patterns
@@ -318,7 +318,7 @@ describe('UserCard', () => {
 
 });
 
-```text
+```
 ### 5.2 Hook Testing
 
 ```typescript
@@ -355,7 +355,7 @@ describe('useFetch', () => {
 
 });
 
-```text
+```
 ---
 
 ## 6. State Management

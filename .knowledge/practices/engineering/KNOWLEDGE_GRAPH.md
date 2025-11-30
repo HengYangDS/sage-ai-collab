@@ -1,4 +1,4 @@
-# Knowledge Graph Guide
+﻿# Knowledge Graph Guide
 
 > Building and using knowledge graphs for content analysis and visualization
 
@@ -58,7 +58,7 @@ sage graph build --path .knowledge/
 
 # Via MCP tool
 build_knowledge_graph(path="content")
-```text
+```
 ### 2.2 Output Location
 
 All graph outputs are saved to `.outputs/` directory:
@@ -68,7 +68,7 @@ All graph outputs are saved to `.outputs/` directory:
 sage graph build --output graph.json
 
 # File saved to: .outputs/graph.json
-```text
+```
 ### 2.3 Basic Usage
 
 ```python
@@ -88,7 +88,7 @@ print(f"Edges: {stats['total_edges']}")
 
 # Export to JSON
 builder.export_to_json(Path(".outputs/graph.json"))
-```text
+```
 ---
 
 ## 3. Graph Structure
@@ -145,7 +145,7 @@ class KnowledgeEdge:
     target: str
     edge_type: EdgeType
     weight: float = 1.0
-```text
+```
 ---
 
 ## 4. Building Graphs
@@ -161,7 +161,7 @@ graph = builder.build_from_directory(
     extract_concepts=True,  # Extract concepts from text
     extract_tags=True,  # Extract tags from frontmatter
 )
-```text
+```
 ### 4.2 Incremental Build
 
 ```python
@@ -170,7 +170,7 @@ graph = builder.build_incremental(
     since=last_build_time,
     changed_files=[".knowledge/new_file.md"]
 )
-```text
+```
 ### 4.3 Filtered Build
 
 ```python
@@ -179,7 +179,7 @@ graph = builder.build_from_directory(
     include_patterns=[".knowledge/core/**", ".knowledge/guidelines/**"],
     exclude_patterns=["**/_*", "**/archive/**"]
 )
-```text
+```
 ### 4.4 MCP Tool Usage
 
 ```python
@@ -192,7 +192,7 @@ result = await build_knowledge_graph(
 
 print(f"Nodes: {result['result']['total_nodes']}")
 print(f"Edges: {result['result']['total_edges']}")
-```text
+```
 ---
 
 ## 5. Analysis & Queries
@@ -210,7 +210,7 @@ stats = builder.get_statistics()
 #     "nodes_by_type": {"file": 80, "concept": 50, "tag": 20},
 #     "edges_by_type": {"links_to": 200, "references": 100, "tagged_with": 20}
 # }
-```text
+```
 ### 5.2 Find Related Content
 
 ```python
@@ -228,7 +228,7 @@ incoming = [
     edge.source for edge in graph.edges
     if edge.target == file_id and edge.edge_type == EdgeType.LINKS_TO
 ]
-```text
+```
 ### 5.3 Identify Orphan Files
 
 ```python
@@ -246,7 +246,7 @@ def find_orphans(graph):
             linked_files.add(edge.target)
 
     return all_files - linked_files
-```text
+```
 ### 5.4 Find Broken Links
 
 ```python
@@ -266,7 +266,7 @@ def find_broken_links(graph):
             )
 
     return broken
-```text
+```
 ### 5.5 Centrality Analysis
 
 ```python
@@ -281,7 +281,7 @@ def calculate_centrality(graph):
 
     # Sort by centrality
     return sorted(centrality.items(), key=lambda x: x[1], reverse=True)
-```text
+```
 ---
 
 ## 6. Visualization
@@ -315,7 +315,7 @@ builder.export_to_json(Path(".outputs/graph.json"))
 #         "total_edges": 320
 #     }
 # }
-```text
+```
 ### 6.3 Visualization Tools
 
 **Graphviz (DOT format)**:
@@ -335,7 +335,7 @@ def export_to_dot(graph, output_path):
     lines.append("}")
 
     Path(output_path).write_text("\n".join(lines))
-```text
+```
 **D3.js Format**:
 
 ```python
@@ -353,7 +353,7 @@ def export_to_d3(graph, output_path):
 
     with open(output_path, "w") as f:
         json.dump(d3_data, f, indent=2)
-```text
+```
 ---
 
 ## 7. Best Practices
@@ -387,7 +387,7 @@ def maintain_graph():
 
     # Export for review
     builder.export_to_json(Path(".outputs/maintenance_graph.json"))
-```text
+```
 ### 7.3 Content Organization
 
 | Practice                    | Benefit                     |
@@ -419,7 +419,7 @@ def audit_documentation():
     }
 
     return report
-```text
+```
 ### 8.2 Content Recommendations
 
 ```python
@@ -443,7 +443,7 @@ def recommend_related(file_path, graph, top_n=5):
 
     # Return top N
     return sorted(similarity.items(), key=lambda x: x[1], reverse=True)[:top_n]
-```text
+```
 ### 8.3 Knowledge Gap Analysis
 
 ```python
@@ -463,7 +463,7 @@ def find_knowledge_gaps(graph, min_coverage=3):
     ]
 
     return gaps
-```text
+```
 ### 8.4 Navigation Optimization
 
 ```python
@@ -501,7 +501,7 @@ def suggest_links(graph, threshold=0.5):
                         )
 
     return suggestions
-```text
+```
 ---
 
 ## Quick Reference
@@ -514,7 +514,7 @@ sage graph build --path .knowledge/    # Build specific path
 sage graph build --output g.json    # Export to file
 sage graph stats                    # Show statistics
 sage graph check                    # Check for issues
-```text
+```
 ### MCP Tool
 
 ```python
@@ -536,7 +536,7 @@ result = await build_knowledge_graph(
         "edges_by_type": {...}
     }
 }
-```text
+```
 ---
 
 ## Related

@@ -1,11 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-## Description
+﻿## Description
 
 Brief description of what this PR does.
 
@@ -82,4 +75,4 @@ Any additional information that reviewers should know.
 
 ---
 
-*This PR follows the SAGE philosophy: 信达雅 (Xin-Da-Ya)*
+*AI Collaboration Knowledge Base*

@@ -1,4 +1,4 @@
-# Event Bus
+﻿# Event Bus
 
 > Decoupled communication through publish-subscribe pattern
 
@@ -66,7 +66,7 @@ class EventBus(Protocol):
 
 ### 5.1 Topic Pattern
 
-```
+```text
 {domain}.{entity}.{action}
 ```
 

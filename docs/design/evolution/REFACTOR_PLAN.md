@@ -1,4 +1,4 @@
-# docs/design 深度重构战略规划方案（最终版 v9.0）
+﻿# docs/design 深度重构战略规划方案（最终版 v9.0）
 
 > Level-5 专家委员会全票通过的终局重构方案
 
@@ -20,7 +20,7 @@
 
 ### 2.1 沉淀层级
 
-```
+```text
 优先级: .knowledge/ → .context/ → .junie/ → docs/
 
 .knowledge/                    通用知识（跨项目复用）
@@ -63,7 +63,7 @@ docs/design/                   用户文档（本次重构目标）
 
 ### 4.1 层级图
 
-```
+```text
 抽象 ▲
      │  ┌─────────────────────────────────────────┐
      │  │ plugins (架构层)                         │
@@ -109,7 +109,7 @@ docs/design/                   用户文档（本次重构目标）
 
 ### 4.3 依赖规则
 
-```
+```text
 允许: scripts → tools → capabilities → plugins
 禁止: plugins → capabilities → tools → scripts
 ```

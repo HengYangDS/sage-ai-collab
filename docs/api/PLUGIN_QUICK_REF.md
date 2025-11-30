@@ -1,4 +1,4 @@
-
+﻿
 # Plugin API Reference
 
 ## Core Classes
@@ -56,3 +56,7 @@ class LoaderPlugin(PluginBase):
 | `on_error`      | ErrorPlugin     | Error occurred  | Error handling, recovery          |
 | `on_cache_hit`  | CachePlugin     | Cache hit       | Cache metrics, value modification |
 | `on_cache_miss` | CachePlugin     | Cache miss      | Cache metrics, prefetching        |
+
+---
+
+*AI Collaboration Knowledge Base*

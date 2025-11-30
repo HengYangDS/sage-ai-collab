@@ -1,4 +1,4 @@
-# Timeout Hierarchy
+﻿# Timeout Hierarchy
 
 > T1-T5 timeout levels design documentation
 >

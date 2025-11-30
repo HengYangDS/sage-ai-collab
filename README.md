@@ -1,15 +1,28 @@
-# SAGE Knowledge Base
+﻿# SAGE Knowledge Base
 
-> **Production-grade knowledge management for AI-human collaboration**
->
-> ⚠️ **Status: Alpha (v0.1.0)** - Under active development and testing
+> Production-grade knowledge management system for AI-human collaboration
 
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![CI](https://github.com/HengYangDS/sage-kb/actions/workflows/ci.yml/badge.svg)](https://github.com/HengYangDS/sage-kb/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/HengYangDS/sage-kb/branch/main/graph/badge.svg)](https://codecov.io/gh/HengYangDS/sage-kb)
 
-## Overview
+---
+
+## Table of Contents
+
+- [1. Overview](#1-overview)
+- [2. Philosophy](#2-philosophy)
+- [3. Installation](#3-installation)
+- [4. Quick Start](#4-quick-start)
+- [5. Architecture](#5-architecture)
+- [6. Development](#6-development)
+- [7. Documentation](#7-documentation)
+- [8. License](#8-license)
+
+---
+
+## 1. Overview
 
 SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for AI-human collaboration, featuring:
 
@@ -19,7 +32,7 @@ SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for A
 - **Graceful degradation** – never hangs, always returns useful content
 - **Plugin architecture** with 7 extension points
 
-## Philosophy (信达雅 · Xin-Da-Ya)
+## 2. Philosophy
 
 | Principle        | Chinese | Meaning              | Application                             |
 |------------------|---------|----------------------|-----------------------------------------|
@@ -27,7 +40,7 @@ SAGE (Smart AI-Guided Expertise) is a knowledge management system designed for A
 | **Clarity**      | 达 (Da)  | Clear, accessible    | Unified structure, intuitive navigation |
 | **Elegance**     | 雅 (Ya)  | Refined, sustainable | Minimal dependencies, extensible        |
 
-## Installation
+## 3. Installation
 
 ### Prerequisites
 
@@ -60,7 +73,7 @@ pip install -e ".[mcp]"
 pip install -e ".[dev]"
 ```
 
-## Quick Start
+## 4. Quick Start
 
 ### CLI Usage
 
@@ -91,11 +104,11 @@ async def main():
 asyncio.run(main())
 ```
 
-## Architecture
+## 5. Architecture
 
 SAGE uses a 3-layer architecture:
 
-```
+```text
 ┌────────────────────────────────────────────────┐
 │              Services Layer                    │
 │   CLI (Typer) | MCP (FastMCP) | API (FastAPI)  │
@@ -108,9 +121,9 @@ SAGE uses a 3-layer architecture:
 └────────────────────────────────────────────────┘
 ```
 
-## Development
+## 6. Development
 
-### Setup
+### 6.1 Setup
 
 ```bash
 # 1. Setup conda environment (see Installation section above)
@@ -125,7 +138,7 @@ pip install pre-commit
 pre-commit install
 ```
 
-### Code Quality
+### 6.2 Code Quality
 
 ```bash
 # Run linting
@@ -141,7 +154,7 @@ mypy src/sage
 pytest tests/ --cov=sage
 ```
 
-### Pre-commit Hooks
+### 6.3 Pre-commit Hooks
 
 The project uses pre-commit hooks for code quality:
 
@@ -150,7 +163,7 @@ The project uses pre-commit hooks for code quality:
 - **Bandit**: Security checks
 - **Commitizen**: Conventional commits
 
-### CI/CD
+### 6.4 CI/CD
 
 GitHub Actions workflows:
 
@@ -165,11 +178,11 @@ GitHub Actions workflows:
     - Build & publish to PyPI
     - Create GitHub release
 
-## Documentation
+## 7. Documentation
 
 See `docs/` for comprehensive documentation:
 
-### Design Documents (`docs/design/`)
+### 7.1 Design Documents
 
 - `00-OVERVIEW.md` — Project overview
 - `01-ARCHITECTURE.md` — Three-layer architecture
@@ -182,21 +195,31 @@ See `docs/` for comprehensive documentation:
 - `08-EVALUATION.md` — Evaluation criteria
 - `09-CONFIGURATION.md` — Configuration management
 
-### API Reference (`docs/api/`)
+### 7.2 API Reference
 
-- `CLI.md` — Command-line interface
-- `MCP.md` — MCP (Model Context Protocol) API
-- `PYTHON.md` — Python SDK reference
+- `docs/api/CLI.md` — Command-line interface
+- `docs/api/MCP.md` — MCP (Model Context Protocol) API
+- `docs/api/PYTHON.md` — Python SDK reference
 
-### User Guides (`docs/guides/`)
+### 7.3 User Guides
 
-- `QUICKSTART.md` — Quick start guide
-- `CONFIGURATION.md` — Configuration guide
-- `PLUGIN_DEVELOPMENT.md` — Plugin development
+- `docs/guides/QUICKSTART.md` — Quick start guide
+- `docs/guides/CONFIGURATION.md` — Configuration guide
+- `docs/guides/PLUGIN_DEVELOPMENT.md` — Plugin development
 
-## License
+## 8. License
 
 MIT License – see LICENSE file for details.
+
+---
+
+## Related
+
+- `INDEX.md` — Project navigation entry
+- `CONTRIBUTING.md` — Contribution guidelines
+- `CHANGELOG.md` — Version history and changes
+- `docs/design/00-OVERVIEW.md` — Design overview
+- `.knowledge/core/PRINCIPLES.md` — Core philosophy (信达雅)
 
 ---
 

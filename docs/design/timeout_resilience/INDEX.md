@@ -1,4 +1,4 @@
-# Timeout & Resilience
+﻿# Timeout & Resilience
 
 > Timeout hierarchy and resilience patterns for SAGE
 

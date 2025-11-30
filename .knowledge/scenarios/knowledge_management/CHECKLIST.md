@@ -4,6 +4,18 @@
 
 ---
 
+## Table of Contents
+
+- [Planning](#planning)
+- [Content Organization](#content-organization)
+- [Content Creation](#content-creation)
+- [Search & Discovery](#search-discovery)
+- [Quality Assurance](#quality-assurance)
+- [Access & Permissions](#access-permissions)
+- [Maintenance](#maintenance)
+- [Integration](#integration)
+- [Documentation](#documentation)
+
 ## Planning
 
 - [ ] Knowledge domains identified

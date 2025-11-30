@@ -1,4 +1,4 @@
-# Dependency Rules
+﻿# Dependency Rules
 
 > Strict dependency boundaries for maintainable architecture
 

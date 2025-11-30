@@ -1,4 +1,4 @@
-# Security Framework
+﻿# Security Framework
 
 > Comprehensive security patterns and best practices for software development
 
@@ -48,7 +48,7 @@ flowchart TB
             end
         end
     end
-```text
+```
 ### 3.2 Core Principles
 
 | Principle                | Description                         |

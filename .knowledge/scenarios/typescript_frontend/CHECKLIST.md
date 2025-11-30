@@ -4,6 +4,17 @@
 
 ---
 
+## Table of Contents
+
+- [Project Setup](#project-setup)
+- [Code Quality](#code-quality)
+- [Component Development](#component-development)
+- [Styling](#styling)
+- [Performance](#performance)
+- [Security](#security)
+- [API Integration](#api-integration)
+- [Deployment](#deployment)
+
 ## Project Setup
 
 - [ ] Node.js version specified

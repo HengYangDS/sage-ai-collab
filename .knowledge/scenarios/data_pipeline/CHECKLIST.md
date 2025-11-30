@@ -4,6 +4,19 @@
 
 ---
 
+## Table of Contents
+
+- [Design](#design)
+- [Data Extraction](#data-extraction)
+- [Data Transformation](#data-transformation)
+- [Data Loading](#data-loading)
+- [Quality & Validation](#quality-validation)
+- [Error Handling](#error-handling)
+- [Performance](#performance)
+- [Monitoring](#monitoring)
+- [Security](#security)
+- [Documentation](#documentation)
+
 ## Design
 
 - [ ] Data sources identified

@@ -1,4 +1,4 @@
-# Contributing to SAGE Knowledge Base
+﻿# Contributing to SAGE Knowledge Base
 
 Thank you for your interest in contributing to SAGE! This document provides guidelines and instructions for
 contributing.
@@ -109,7 +109,7 @@ sage-kb/
 
 ### Workflow
 
-```
+```text
 1. Create Issue (if not exists)
       ↓
 2. Fork & Clone
@@ -314,7 +314,7 @@ class TestLoader:
 
 Follow [Conventional Commits](https://www.conventionalcommits.org/):
 
-```
+```text
 <type>(<scope>): <description>
 
 [optional body]

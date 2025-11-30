@@ -1,4 +1,4 @@
-# Knowledge Management Scenario Context
+﻿# Knowledge Management Scenario Context
 
 > Pre-configured context for knowledge management system development
 
@@ -38,7 +38,7 @@ focus: [ content-organization, taxonomy, search, ai-integration ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -87,7 +87,7 @@ flowchart TB
     P["Practices Layer<br/>(How-tos, Workflows)<br/>On-demand loading"]
     
     C --> G --> F --> P
-```text
+```
 ### 4.2 Content Types
 
 | Type          | Purpose                     | Format                            |
@@ -134,7 +134,7 @@ author: Name or AI
 
 ---
 
-```text
+```
 ---
 
 ## 5. Content Patterns
@@ -175,7 +175,7 @@ Content...
 
 *Part of [Knowledge Base Name]*
 
-```text
+```
 ### 5.2 Index Pattern
 
 <!-- Example template - replace placeholder links with actual document paths -->
@@ -216,7 +216,7 @@ Content...
 
 *Index for [Knowledge Base Name]*
 
-```text
+```
 ### 5.3 Cross-Reference Pattern
 
 ```markdown
@@ -237,7 +237,7 @@ Content...
 
 - ADR-0001: Architecture decision
 
-```text
+```
 ---
 
 ## 6. Common Tasks
@@ -278,7 +278,7 @@ touch .knowledge/practices/new_topic/guide.md
 
 sage search "new topic"
 
-```text
+```
 ### 6.2 Knowledge Extraction Workflow
 
 ```text
@@ -316,7 +316,7 @@ sage search "new topic"
 
    └── Test AI retrieval
 
-```text
+```
 ---
 
 ## 7. Autonomy Calibration

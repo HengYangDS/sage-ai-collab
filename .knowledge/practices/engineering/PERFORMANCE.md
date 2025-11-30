@@ -1,4 +1,4 @@
-# Performance Optimization
+﻿# Performance Optimization
 
 > Performance best practices and optimization strategies for Python applications
 
@@ -110,7 +110,7 @@ def profile_function(func, *args, **kwargs):
 
 # python -m cProfile -s cumulative script.py
 
-```text
+```
 ### 2.3 Line Profiler
 
 ```python
@@ -129,7 +129,7 @@ def slow_function():
 
 # Run with: kernprof -l -v script.py
 
-```text
+```
 ### 2.4 Benchmarking
 
 ```python
@@ -172,7 +172,7 @@ def benchmark_snippet():
 
     print(f"Average: {result / 10000:.6f}s")
 
-```text
+```
 ---
 
 ## 3. Python Optimization
@@ -205,7 +205,7 @@ if item in item_set:
 
     pass
 
-```text
+```
 ### 3.2 Comprehensions vs Loops
 
 ```python
@@ -226,7 +226,7 @@ result = [i * 2 for i in range(1000)]
 
 result = (i * 2 for i in range(1000))
 
-```text
+```
 ### 3.3 String Operations
 
 ```python
@@ -249,7 +249,7 @@ name = "MyApp"
 
 message = f"Welcome to {name}"
 
-```text
+```
 ### 3.4 Built-in Functions
 
 ```python
@@ -278,7 +278,7 @@ any(conditions)
 
 all(conditions)
 
-```text
+```
 ### 3.5 Local Variables
 
 ```python
@@ -299,7 +299,7 @@ def fast_function(values):
 
     return [sqrt(x) for x in values]
 
-```text
+```
 ---
 
 ## 4. I/O Optimization
@@ -336,7 +336,7 @@ def mmap_read(path: Path):
 
             return mm.read()
 
-```text
+```
 ### 4.2 Async I/O
 
 ```python
@@ -367,7 +367,7 @@ async def read_multiple_files(paths: list[Path]) -> list[str]:
 
 contents = asyncio.run(read_multiple_files(file_paths))
 
-```text
+```
 ### 4.3 Batch Operations
 
 ```python
@@ -386,7 +386,7 @@ file.write("\n".join(str(item) for item in items))
 
 file.writelines(f"{item}\n" for item in items)
 
-```text
+```
 ---
 
 ## 5. Memory Management
@@ -409,7 +409,7 @@ def memory_intensive_function():
 
 # Run: python -m memory_profiler script.py
 
-```text
+```
 ### 5.2 Generators for Large Data
 
 ```python
@@ -428,7 +428,7 @@ def get_all_items() -> Iterator:
 
         yield process(i)
 
-```text
+```
 ### 5.3 __slots__ for Classes
 
 ```python
@@ -457,7 +457,7 @@ class SlotPoint:
 
 # ~40% memory savings for many instances
 
-```text
+```
 ### 5.4 Weak References
 
 ```python
@@ -480,7 +480,7 @@ class Cache:
 
         self._cache[key] = value
 
-```text
+```
 ---
 
 ## 6. Caching Strategies
@@ -513,7 +513,7 @@ def another_expensive_function(x: str) -> str:
 
 expensive_computation.cache_clear()
 
-```text
+```
 ### 6.2 Time-Based Caching
 
 ```python
@@ -564,7 +564,7 @@ def fetch_data(key: str) -> dict:
 
     pass
 
-```text
+```
 ### 6.3 Multi-Level Cache
 
 ```python
@@ -621,7 +621,7 @@ class MultiLevelCache:
 
         cache_file.write_text(json.dumps(value))
 
-```text
+```
 ---
 
 ## Quick Reference
@@ -646,7 +646,7 @@ python -m memory_profiler script.py
 
 py-spy record -o profile.svg -- python script.py
 
-```text
+```
 ### Performance Checklist
 
 | Area                | Check                                 |

@@ -1,4 +1,4 @@
-# Error Handling Patterns
+﻿# Error Handling Patterns
 
 > Consistent error handling for robust applications
 
@@ -45,7 +45,7 @@ class NotFoundError(AppError):
 class AuthorizationError(AppError):
     """Access denied."""
     pass
-```text
+```
 ---
 
 ## 3. Error Handling Patterns
@@ -59,7 +59,7 @@ def process(data: str) -> Result:
     if len(data) > MAX_LENGTH:
         raise ValidationError(f"Data exceeds {MAX_LENGTH}")
     return do_process(data)
-```text
+```
 ### 3.2 Try-Except
 
 ```python
@@ -71,7 +71,7 @@ except SpecificError as e:
 except Exception as e:
     logger.error(f"Unexpected error: {e}")
     raise
-```text
+```
 ---
 
 ## 4. Error Context
@@ -86,7 +86,7 @@ class ValidationError(AppError):
         self.message = message
 
 raise ValidationError("Invalid email", field="email")
-```text
+```
 ### 4.2 Error Chaining
 
 ```python
@@ -94,7 +94,7 @@ try:
     parse_config(path)
 except ParseError as e:
     raise ConfigError(f"Invalid config: {path}") from e
-```text
+```
 ---
 
 ## 5. Logging Strategy
@@ -115,7 +115,7 @@ except ExpectedError as e:
 except Exception as e:
     logger.error("Unexpected failure", exc_info=True)
     raise
-```text
+```
 ---
 
 ## 6. Recovery Patterns

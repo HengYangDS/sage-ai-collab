@@ -1,9 +1,24 @@
-# Session State Template
+﻿# Session State Template
 
 > **Purpose**: Capture current session context for continuity and recovery
 > **Use When**: Starting complex tasks, before breaks, or when session may be interrupted
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Current Task](#current-task)
+- [Progress](#progress)
+- [Working Context](#working-context)
+- [Blockers & Issues](#blockers-issues)
+- [Quick Resume Guide](#quick-resume-guide)
+- [Session Metadata](#session-metadata)
+- [Instructions](#instructions)
+- [Current Task](#current-task)
+- [Progress](#progress)
+- [Working Context](#working-context)
+- [Quick Resume Guide](#quick-resume-guide)
 
 ## Overview
 
@@ -110,7 +125,7 @@ interruptions, provides context for session recovery, and helps maintain focus d
 
 ```[language]
 [Any important code snippets or commands]
-```text
+```
 ---
 
 ## Session Metadata
@@ -124,7 +139,7 @@ interruptions, provides context for session recovery, and helps maintain focus d
 
 *Session state from AI Collaboration Knowledge Base*
 
-```text
+```
 ---
 
 ## Instructions
@@ -245,7 +260,7 @@ Implement the TimeoutLoader base class with 5-tier timeout hierarchy.
 ---
 
 *Session state from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Related

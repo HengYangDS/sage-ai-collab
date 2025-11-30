@@ -1,4 +1,4 @@
-# ADR-0001: Three-Layer Architecture
+﻿# ADR-0001: Three-Layer Architecture
 
 > Architecture Decision Record for SAGE Knowledge Base
 
@@ -47,7 +47,7 @@ Adopt a **Core-Services-Capabilities** three-layer architecture with dev tools i
 
 ### Layer Structure
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    Core Engine Layer                    │
 │                   (<500 lines minimal)                  │

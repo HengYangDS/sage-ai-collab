@@ -1,4 +1,4 @@
-# Design Axioms
+﻿# Design Axioms
 
 > Core design principles that guide all SAGE decisions
 
@@ -20,7 +20,7 @@ Design axioms are fundamental principles that cannot be compromised. They serve 
 | **Rationale** | Simple systems are easier to understand, maintain, and debug |
 | **Application** | Avoid premature optimization and over-engineering |
 
-```
+```text
 ✅ Do: Start simple, add complexity only when needed
 ❌ Don't: Build for imaginary future requirements
 ```
@@ -33,7 +33,7 @@ Design axioms are fundamental principles that cannot be compromised. They serve 
 | **Rationale** | Explicit code is self-documenting and debuggable |
 | **Application** | Prefer clear names, avoid magic, document assumptions |
 
-```
+```text
 ✅ Do: timeout_seconds=30
 ❌ Don't: t=30  # what is t?
 ```
@@ -46,7 +46,7 @@ Design axioms are fundamental principles that cannot be compromised. They serve 
 | **Rationale** | Composition is more flexible and testable |
 | **Application** | Use protocols, dependency injection, and mixins |
 
-```
+```text
 ✅ Do: class Service(HasLogger, HasMetrics)
 ❌ Don't: class Service(BaseService(AbstractService))
 ```
@@ -59,7 +59,7 @@ Design axioms are fundamental principles that cannot be compromised. They serve 
 | **Rationale** | Reduces cognitive load and setup time |
 | **Application** | Make common cases easy, rare cases possible |
 
-```
+```text
 ✅ Do: Works out of the box with zero config
 ❌ Don't: Require 50 settings before first use
 ```

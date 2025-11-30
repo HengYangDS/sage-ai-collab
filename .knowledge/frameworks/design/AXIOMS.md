@@ -1,4 +1,4 @@
-# Design Axioms Framework
+﻿# Design Axioms Framework
 
 > 8 foundational design principles (信达雅 applied to software design)
 
@@ -79,10 +79,10 @@
 
 ### 3.2 Communication
 
-```text
+```
 Components → EventBus → Components
 (No direct imports between layers)
-```text
+```
 ---
 
 ## 4. Timeout Axiom

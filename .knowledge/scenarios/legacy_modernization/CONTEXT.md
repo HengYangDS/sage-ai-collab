@@ -1,4 +1,4 @@
-# Legacy Modernization Scenario Context
+﻿# Legacy Modernization Scenario Context
 
 > Pre-configured context for modernizing legacy systems
 
@@ -36,7 +36,7 @@ focus: [ refactoring, migration, testing, documentation ]
 
 autonomy_default: L2
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -98,7 +98,7 @@ flowchart LR
     R -->|/users/*| NS1["New Service<br/>(Migrated)"]
     R -->|/orders/*| LS["Legacy System<br/>(Pending)"]
     R -->|/products/*| NS2["New Service<br/>(In Progress)"]
-```text
+```
 ---
 
 ## 4. Assessment
@@ -155,7 +155,7 @@ flowchart LR
 
 | Performance degradation | Low | Medium | Load testing, monitoring |
 
-```text
+```
 ---
 
 ## 5. Migration Patterns
@@ -199,7 +199,7 @@ flowchart LR
 
    └── Remove legacy code
 
-```text
+```
 ### 5.3 Database Migration
 
 ```python
@@ -242,7 +242,7 @@ class UserRepository:
 
         return legacy_user
 
-```text
+```
 ### 5.4 Feature Flag Migration
 
 ```python
@@ -259,7 +259,7 @@ def get_user(user_id: str):
 
         return legacy_user_service.get(user_id)
 
-```text
+```
 ---
 
 ## 6. Risk Management
@@ -318,7 +318,7 @@ metrics:
 
     action: pause_migration
 
-```text
+```
 ---
 
 ## 7. Common Tasks

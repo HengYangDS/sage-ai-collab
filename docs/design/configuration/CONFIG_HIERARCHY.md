@@ -1,4 +1,4 @@
-# Configuration Hierarchy
+﻿# Configuration Hierarchy
 
 > Multi-level configuration system for SAGE
 

@@ -1,4 +1,4 @@
-# Extending Capabilities
+﻿# Extending Capabilities
 
 > Guide to creating and registering custom capabilities
 

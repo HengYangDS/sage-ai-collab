@@ -23,7 +23,7 @@ implementation decisions in AI Collaboration Knowledge Base.
 
 | Document    | Description                                   |
 |-------------|-----------------------------------------------|
-| `axioms.md` | Core design axioms and fundamental principles |
+| `AXIOMS.md` | Core design axioms and fundamental principles |
 
 ---
 

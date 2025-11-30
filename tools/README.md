@@ -1,11 +1,4 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
-
-# SAGE Development Tools
+﻿# SAGE Development Tools
 
 > Utilities and scripts for SAGE Knowledge Base development
 
@@ -163,7 +156,7 @@ python tools/monitors/timeout_monitor.py --dashboard
 
 **Dashboard Output:**
 
-```
+```text
 ╔══════════════════════════════════════════════════════════════╗
 ║                    SAGE Timeout Monitor                       ║
 ╠══════════════════════════════════════════════════════════════╣
@@ -392,4 +385,7 @@ python tools/migration_toolkit.py validate
 
 ---
 
-*SAGE Knowledge Base - Development Tools*
+
+---
+
+*AI Collaboration Knowledge Base*

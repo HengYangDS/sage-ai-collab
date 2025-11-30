@@ -1,4 +1,4 @@
-# Quick Reference Card
+﻿# Quick Reference Card
 
 > Critical questions and autonomy levels at a glance
 
@@ -77,7 +77,7 @@ Ask before every task:
 ## Next Steps
 
 [Follow-up actions if applicable]
-```text
+```
 ---
 
 ## 4. Timeout Tiers

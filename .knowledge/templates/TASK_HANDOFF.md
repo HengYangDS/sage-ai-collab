@@ -1,9 +1,26 @@
-# Task Handoff Template
+﻿# Task Handoff Template
 
 > **Purpose**: Enable seamless task continuation between sessions or collaborators
 > **Use When**: Ending a session with incomplete work, transferring tasks, or requesting async review
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Task Summary](#task-summary)
+- [Context for Continuation](#context-for-continuation)
+- [Technical Context](#technical-context)
+- [Blockers & Risks](#blockers-risks)
+- [Recommended Next Steps](#recommended-next-steps)
+- [Resources & References](#resources-references)
+- [Handoff Checklist](#handoff-checklist)
+- [Notes for Recipient](#notes-for-recipient)
+- [Instructions](#instructions)
+- [Task Summary](#task-summary)
+- [Context for Continuation](#context-for-continuation)
+- [Recommended Next Steps](#recommended-next-steps)
+- [Notes for Recipient](#notes-for-recipient)
 
 ## Overview
 
@@ -87,7 +104,7 @@ needed to continue work without context loss, ensuring efficient handoffs and ma
 
 ```[language]
 [Important code pattern or snippet to understand the approach]
-```text
+```
 ### Dependencies
 
 | Dependency | Version   | Notes                          |
@@ -149,7 +166,7 @@ needed to continue work without context loss, ensuring efficient handoffs and ma
 
 # [Description of command]
 [command]
-```text
+```
 ---
 
 ## Handoff Checklist
@@ -172,7 +189,7 @@ Before handoff, ensure:
 
 *Task handoff from AI Collaboration Knowledge Base*
 
-```text
+```
 ---
 
 ## Instructions
@@ -294,7 +311,7 @@ The Redis mock in tests occasionally fails due to timing. Consider using `freeze
 ---
 
 *Task handoff from AI Collaboration Knowledge Base*
-```text
+```
 ---
 
 ## Related

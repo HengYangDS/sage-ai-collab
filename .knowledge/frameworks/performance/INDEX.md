@@ -1,4 +1,4 @@
-# Performance Framework
+﻿# Performance Framework
 
 > Optimization patterns and best practices for high-performance systems
 
@@ -50,7 +50,7 @@ flowchart TB
     M["Measure"] --> O["Optimize"]
     M --> V["Validate"]
     O <--> V
-```text
+```
 > "You can't improve what you don't measure"
 
 ### Core Principles
@@ -113,7 +113,7 @@ flowchart LR
     IO --> IO_FIX
     NET --> NET_FIX
     DB --> DB_FIX
-```text
+```
 ### Performance Checklist
 
 - [ ] Response time targets defined

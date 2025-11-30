@@ -1,4 +1,4 @@
-# ADR-0002: SAGE Protocol Design
+﻿# ADR-0002: SAGE Protocol Design
 
 > Architecture Decision Record for SAGE Knowledge Base
 
@@ -44,7 +44,7 @@ SAGE Knowledge Base requires a unified processing model that:
 
 Adopt the **SAGE Protocol** — a four-phase processing model:
 
-```
+```text
 ┌─────────┐    ┌─────────┐    ┌──────────┐    ┌────────┐
 │ Source  │ →  │ Analyze │ →  │ Generate │ →  │ Evolve │
 │   (S)   │    │   (A)   │    │    (G)   │    │   (E)  │

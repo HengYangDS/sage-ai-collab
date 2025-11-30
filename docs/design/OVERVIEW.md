@@ -1,4 +1,4 @@
-# SAGE Design Overview
+﻿# SAGE Design Overview
 
 > Comprehensive design documentation for SAGE Knowledge Base system
 

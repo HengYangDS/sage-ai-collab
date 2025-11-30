@@ -23,8 +23,8 @@ and information density optimization for AI-human collaboration.
 
 | Document                 | Description                                    |
 |--------------------------|------------------------------------------------|
-| `expert_committee.md`    | Expert committee pattern for complex decisions |
-| `information_density.md` | Information density optimization strategies    |
+| `EXPERT_COMMITTEE.md`    | Expert committee pattern for complex decisions |
+| `INFORMATION_DENSITY.md` | Information density optimization strategies    |
 
 ---
 

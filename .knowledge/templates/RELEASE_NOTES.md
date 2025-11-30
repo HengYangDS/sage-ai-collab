@@ -1,9 +1,28 @@
-# Release Notes Template
+﻿# Release Notes Template
 
 > **Purpose**: Template for documenting software releases
 > **Use When**: Publishing a new version of software or documentation
 
 ---
+
+## Table of Contents
+
+- [Overview](#overview)
+- [Highlights](#highlights)
+- [What's New](#whats-new)
+- [Breaking Changes](#breaking-changes)
+- [Deprecations](#deprecations)
+- [Known Issues](#known-issues)
+- [Upgrade Guide](#upgrade-guide)
+- [Compatibility](#compatibility)
+- [Contributors](#contributors)
+- [Links](#links)
+- [Instructions](#instructions)
+- [Highlights](#highlights)
+- [What's New](#whats-new)
+- [Breaking Changes](#breaking-changes)
+- [Upgrade Guide](#upgrade-guide)
+- [Best Practices](#best-practices)
 
 ## Overview
 
@@ -74,12 +93,12 @@ This template helps create consistent, informative release notes that communicat
 
 ```[language]
 [old code/config]
-```text
+```
 **After**:
 
 ```[language]
 [new code/config]
-```text
+```
 ---
 
 ## Deprecations
@@ -118,7 +137,7 @@ The following features are deprecated and will be removed in [version]:
 # Example upgrade commands
 [upgrade command 1]
 [upgrade command 2]
-```text
+```
 ---
 
 ## Compatibility
@@ -151,7 +170,7 @@ Thanks to everyone who contributed to this release:
 
 *Released by [Team/Person] on [DATE]*
 
-```text
+```
 ---
 
 ## Instructions
@@ -254,14 +273,14 @@ This release introduces MCP streaming support for real-time knowledge delivery a
 ```yaml
 timeouts:
   t1_cache: 100
-```text
+```
 **After**:
 
 ```yaml
 performance:
   timeouts:
     t1_cache: 100
-```text
+```
 ---
 
 ## Upgrade Guide
@@ -282,7 +301,7 @@ performance:
 
 *Released by Team on 2025-11-29*
 
-```text
+```
 ---
 
 ## Best Practices

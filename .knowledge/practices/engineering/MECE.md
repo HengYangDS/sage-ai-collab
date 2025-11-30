@@ -1,8 +1,16 @@
-# MECE Principle
+﻿# MECE Principle
 
 > Mutually Exclusive, Collectively Exhaustive — the foundation of clear categorization
 
 ---
+
+## Table of Contents
+
+- [1. Definition](#1-definition)
+- [2. Application in SAGE](#2-application-in-sage)
+- [3. Benefits](#3-benefits)
+- [4. Anti-Patterns](#4-anti-patterns)
+- [5. Validation Checklist](#5-validation-checklist)
 
 ## 1. Definition
 
@@ -29,7 +37,7 @@
 
 ### 2.2 Classification Decision Tree
 
-```text
+```
 New tool/capability arrives
     │
     ├── Does it analyze/diagnose? ──────────► analyzers/
@@ -41,7 +49,7 @@ New tool/capability arrives
     ├── Does it convert/transform? ─────────► converters/
     │
     └── Does it generate/create? ───────────► generators/
-```text
+```
 ### 2.3 Boundary Rules
 
 | Rule | Description | Example |

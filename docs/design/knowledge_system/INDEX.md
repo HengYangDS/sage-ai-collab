@@ -1,4 +1,4 @@
-# Knowledge System
+﻿# Knowledge System
 
 > Knowledge management and organization for SAGE
 

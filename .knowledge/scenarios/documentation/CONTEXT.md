@@ -1,4 +1,4 @@
-# Documentation Scenario Context
+﻿# Documentation Scenario Context
 
 > Pre-configured context for technical writing and documentation projects
 
@@ -40,7 +40,7 @@ focus: [ technical_writing, api_docs, tutorials, reference ]
 
 autonomy_default: L4
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -149,7 +149,7 @@ autonomy_default: L4
 
 *[Footer/attribution]*
 
-```text
+```
 ### 5.2 Section Formatting
 
 | Element        | Format          | Example                 |
@@ -238,7 +238,7 @@ def process_data(
 
     """
 
-```text
+```
 ---
 
 ## 6. Quality Standards
@@ -330,7 +330,7 @@ def process_data(
 
    └── Monitor feedback, update regularly
 
-```text
+```
 ---
 
 ## 8. Autonomy Calibration

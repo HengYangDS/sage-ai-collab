@@ -1,4 +1,4 @@
-# SAGE Project Overview
+﻿# SAGE Project Overview
 
 > Quick introduction to SAGE Knowledge Base for new contributors and AI assistants
 
@@ -41,7 +41,7 @@ collaboration.
 
 SAGE uses a **Core-Services-Capabilities** three-layer architecture:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                    Core Engine Layer                    │
 │  • SAGE Protocol  • TimeoutManager  • EventBus  • DI    │

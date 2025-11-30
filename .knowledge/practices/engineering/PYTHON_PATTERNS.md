@@ -1,4 +1,4 @@
-# Python Implementation Patterns
+﻿# Python Implementation Patterns
 
 > Code patterns and examples for Python development
 
@@ -27,7 +27,7 @@ def process(name: str, count: int = 1) -> List[str]:
 
 def find_user(user_id: int) -> Optional[User]:
     return db.get(user_id)
-```text
+```
 ### Complex Types
 
 ```python
@@ -38,7 +38,7 @@ T = TypeVar("T")
 class Repository(Generic[T], Protocol):
     def get(self, id: str) -> Optional[T]: ...
     def save(self, entity: T) -> T: ...
-```text
+```
 ### Callable Types
 
 ```python
@@ -52,7 +52,7 @@ AsyncHandler = Callable[[Request], Awaitable[Response]]
 
 def register(handler: Handler) -> None:
     pass
-```text
+```
 ---
 
 ## 2. Decorators
@@ -73,7 +73,7 @@ def log_calls(func: Callable) -> Callable:
 @log_calls
 def process(data: str) -> str:
     return data.upper()
-```text
+```
 ### Decorator with Arguments
 
 ```python
@@ -94,7 +94,7 @@ def retry(max_attempts: int = 3, delay: float = 1.0):
 @retry(max_attempts=3, delay=0.5)
 def fetch_data(url: str) -> dict:
     return requests.get(url).json()
-```text
+```
 ### Class Decorator
 
 ```python
@@ -110,7 +110,7 @@ def singleton(cls):
 @singleton
 class Configuration:
     pass
-```text
+```
 ---
 
 ## 3. Context Managers
@@ -132,7 +132,7 @@ def timer(name: str):
 # Usage
 with timer("process"):
     do_work()
-```text
+```
 ### Class-based Context Manager
 
 ```python
@@ -153,7 +153,7 @@ class DatabaseConnection:
 # Usage
 with DatabaseConnection("postgresql://...") as conn:
     conn.execute("SELECT 1")
-```text
+```
 ### Async Context Manager
 
 ```python
@@ -170,7 +170,7 @@ async def async_timer(name: str):
 # Usage
 async with async_timer("async_process"):
     await do_async_work()
-```text
+```
 ---
 
 ## 4. Async Patterns
@@ -188,14 +188,14 @@ async def fetch_data(url: str) -> dict:
 
 async def fetch_all(urls: List[str]) -> List[dict]:
     return await asyncio.gather(*[fetch_data(u) for u in urls])
-```text
+```
 ### Async with Timeout
 
 ```python
 async def fetch_with_timeout(url: str, timeout: float = 5.0) -> dict:
     async with asyncio.timeout(timeout):
         return await fetch_data(url)
-```text
+```
 ### Async Semaphore (Rate Limiting)
 
 ```python
@@ -207,7 +207,7 @@ async def fetch_limited(urls: List[str], max_concurrent: int = 5) -> List[dict]:
             return await fetch_data(url)
     
     return await asyncio.gather(*[fetch_one(u) for u in urls])
-```text
+```
 ---
 
 ## 5. Data Classes
@@ -226,7 +226,7 @@ class User:
     
     def __post_init__(self):
         self.email = self.email.lower()
-```text
+```
 ### Immutable Dataclass
 
 ```python
@@ -238,7 +238,7 @@ class Config:
     @property
     def url(self) -> str:
         return f"http://{self.host}:{self.port}"
-```text
+```
 ### Dataclass with Validation
 
 ```python
@@ -257,7 +257,7 @@ class Order:
     @property
     def total(self) -> float:
         return self.quantity * self.price
-```text
+```
 ---
 
 ## 6. Design Patterns
@@ -286,7 +286,7 @@ class HandlerFactory:
 @HandlerFactory.register("json")
 class JsonHandler(Handler):
     pass
-```text
+```
 ### Repository Pattern
 
 ```python
@@ -312,7 +312,7 @@ class SQLUserRepository(UserRepository):
         self._session.add(user)
         self._session.commit()
         return user
-```text
+```
 ### Strategy Pattern
 
 ```python
@@ -338,7 +338,7 @@ class DataProcessor:
     
     def process(self, data: bytes) -> bytes:
         return self.compression.compress(data)
-```text
+```
 ---
 
 ## Related

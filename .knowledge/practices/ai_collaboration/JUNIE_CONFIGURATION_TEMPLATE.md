@@ -1,4 +1,4 @@
-# Junie Configuration Template System
+﻿# Junie Configuration Template System
 
 > A reusable template system for JetBrains Junie AI collaboration configuration.
 
@@ -65,7 +65,7 @@ tech_stack:
 commands:
   test: "pytest tests/ -v"
   lint: "ruff check src/"
-```text
+```
 Other files reference `project/config.yaml` instead of duplicating values.
 
 ### 2.3 Delegation Pattern
@@ -100,7 +100,7 @@ The `.junie/` thin layer delegates detailed knowledge to:
 └── project/                # 📌 Project-specific files (must customize)
     ├── config.yaml         # Project variables definition
     └── QUICKREF.md         # Project-specific quick reference
-```text
+```
 ### File Relationships
 
 ```mermaid
@@ -120,7 +120,7 @@ flowchart TB
     
     G --> Generic
     G --> Project
-```text
+```
 ---
 
 ## 4. File Descriptions
@@ -182,7 +182,7 @@ timeouts:
     T3: "2s"
     T4: "5s"
     T5: "10s"
-```text
+```
 **Size Target**: ~100 lines
 
 #### `generic/QUICKREF.md` — Quick Reference
@@ -217,7 +217,7 @@ MCP server configuration with profiles:
     }
   }
 }
-```text
+```
 Supports environment variables like `${PROJECT_ROOT}`.
 
 ### 4.4 Project Directory (`project/`) — 📌
@@ -250,7 +250,7 @@ commands:
 key_files:
   main_config: "config/settings.yaml"
   entry_point: "src/main.py"
-```text
+```
 #### `project/QUICKREF.md` — Project Quick Reference
 
 Project-specific quick reference including:
@@ -289,7 +289,7 @@ cp -r template/.junie .junie
 
 # 3. Edit project/config.yaml with your project's information
 # 4. Edit project/QUICKREF.md with project-specific documentation
-```text
+```
 ### 5.2 Updating Generic Files
 
 When the template system is updated:
@@ -337,7 +337,7 @@ commands:
 name: "My API Server"
 lang: "Python"
 cmd_test: "pytest"
-```text
+```
 ### 6.3 Separation Discipline
 
 **Never include in generic files:**
@@ -359,7 +359,7 @@ cmd_test: "pytest"
 ```yaml
 # Include schema version in each file
 schema_version: "1.0"
-```text
+```
 This enables:
 
 - Compatibility checking
@@ -392,7 +392,7 @@ deployment:
 team:
   contact: "team@example.com"
   slack_channel: "#project-dev"
-```text
+```
 ### 7.3 MCP Profile Customization
 
 Define profiles in `generic/config.yaml`:
@@ -410,7 +410,7 @@ mcp:
       - fetch
     full:
       - all
-```text
+```
 ---
 
 ## Related Documents

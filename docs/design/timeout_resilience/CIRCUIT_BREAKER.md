@@ -1,4 +1,4 @@
-# Circuit Breaker
+﻿# Circuit Breaker
 
 > Fail-fast pattern for handling repeated failures
 

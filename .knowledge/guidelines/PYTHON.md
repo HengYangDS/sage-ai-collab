@@ -22,7 +22,7 @@
 | Rule                     | Description                    |
 |--------------------------|--------------------------------|
 | All public functions     | Must have type hints           |
-| Optional for nullable    | Use `Optional[T]` not `T | None` |
+| Optional for nullable    | Use `Optional[T]` not `T \| None` |
 | Use TypeVar for generics | `T = TypeVar("T")`             |
 | Return type required     | Always specify return type     |
 

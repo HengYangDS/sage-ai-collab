@@ -1,4 +1,4 @@
-# Authorization Patterns
+﻿# Authorization Patterns
 
 > Access control strategies and permission management
 
@@ -31,7 +31,7 @@ sequenceDiagram
     PE->>DP: PERMIT/DENY
     DP->>R: If PERMIT
     R-->>S: Response
-```text
+```
 ### Key Concepts
 
 | Concept      | Description            | Example                |
@@ -67,7 +67,7 @@ flowchart TD
     Q3 -->|Yes| ABAC["ABAC"]
     Q3 -->|No| Q4{"Relationship-based access?"}
     Q4 -->|Yes| ReBAC["ReBAC (Google Zanzibar)"]
-```text
+```
 ---
 
 ## 3. RBAC
@@ -95,7 +95,7 @@ flowchart LR
     Alice --> Admin --> P1
     Bob --> Editor --> P2
     Carol --> Viewer --> P3
-```text
+```
 ### RBAC Implementation
 
 ```python
@@ -168,7 +168,7 @@ class RBACAuthorizer:
             if role:
                 permissions.update(role.permissions)
         return permissions
-```text
+```
 ### Role Hierarchy
 
 ```python
@@ -190,7 +190,7 @@ class HierarchicalRBAC:
         for inherited in self.role_hierarchy.get(role, []):
             effective.update(self.get_effective_roles(inherited))
         return effective
-```text
+```
 ---
 
 ## 4. ABAC
@@ -209,7 +209,7 @@ flowchart TB
     R --> PE
     E --> PE
     PE --> D["PERMIT / DENY"]
-```text
+```
 ### ABAC Policy Examples
 
 ```python
@@ -283,7 +283,7 @@ class ABACAuthorizer:
     def authorize(self, context: AccessContext) -> bool:
         """Evaluate all policies (any match = permit)."""
         return any(policy.evaluate(context) for policy in self.policies)
-```text
+```
 ---
 
 ## 5. Implementation Patterns
@@ -315,7 +315,7 @@ def require_permissions(*permissions: Permission):
 @require_permissions(Permission.CONTENT_CREATE)
 async def create_content(request, content: ContentCreate):
     return await content_service.create(content)
-```text
+```
 ### Resource-Level Authorization
 
 ```python
@@ -352,7 +352,7 @@ class ResourceAuthorizer:
                 return True
         
         return False
-```text
+```
 ### Policy Enforcement Point
 
 ```python
@@ -393,7 +393,7 @@ class PolicyEnforcementPoint:
             resource=resource,
             action=action
         )
-```text
+```
 ---
 
 ## 6. API Authorization
@@ -428,7 +428,7 @@ async def create_content(
     user = Depends(require_role({"admin", "editor"}))
 ):
     return await content_service.create(content, user.id)
-```text
+```
 ### Scope-Based Authorization (OAuth2)
 
 ```python
@@ -475,7 +475,7 @@ async def read_content():
 @router.delete("/.knowledge/{id}", dependencies=[Security(get_current_user, scopes=["delete:content"])])
 async def delete_content(id: str):
     return await content_service.delete(id)
-```text
+```
 ---
 
 ## Quick Reference

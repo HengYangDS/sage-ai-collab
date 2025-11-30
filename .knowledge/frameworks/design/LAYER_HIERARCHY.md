@@ -1,4 +1,4 @@
-# Layer Hierarchy
+﻿# Layer Hierarchy
 
 > Knowledge layer structure and priority system for AI context management
 
@@ -27,7 +27,7 @@ Knowledge is organized into hierarchical layers with defined priorities, token b
 
 ### 2.1 Standard Layout
 
-```text
+```
 project/
 ├── .context/        # Project-specific knowledge (tracked)
 ├── .history/        # Session history and handoffs (tracked)
@@ -39,7 +39,7 @@ project/
 ├── docs/            # User-facing documentation (tracked)
 ├── src/             # Source code (tracked)
 └── tests/           # Test suite (tracked)
-```text
+```
 > **Note**: `.junie/` is optional AI tool configuration. Projects may have additional directories (`scripts/`, `tools/`, `config/`) as needed.
 
 ### 2.2 Directory Categories
@@ -72,7 +72,7 @@ flowchart LR
         A[".archive/"]
         B[".backups/"]
     end
-```text
+```
 **Override Rule**: `.knowledge/` > `.context/` > `docs/`
 
 ### 3.1 Layer Definitions
@@ -155,7 +155,7 @@ When content exists in multiple layers:
 Example:
 - .knowledge/guidelines/CODE_STYLE.md  ← Universal default
 - .context/conventions/CODE_STYLE.md   ← Project override
-```text
+```
 ### 5.1 Override Rules
 
 | Scenario | Resolution |
@@ -185,7 +185,7 @@ Example:
 
 - `.knowledge/guidelines/CODE_STYLE.md` — Universal style guide
 - `.context/conventions/NAMING.md` — Project naming conventions
-```text
+```
 ---
 
 ## Related

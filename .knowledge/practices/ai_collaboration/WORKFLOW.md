@@ -1,4 +1,4 @@
-# AI Collaboration Workflow Practices
+﻿# AI Collaboration Workflow Practices
 
 > Practical workflows for effective human-AI collaboration
 
@@ -70,7 +70,7 @@
 ## Constraints
 
 - [List any constraints]
-```text
+```
 ### 3.2 Session Handoff
 
 ```markdown
@@ -80,7 +80,7 @@
 - Decisions: [key choices]
 - Pending: [what's next]
 - Issues: [any blockers]
-```text
+```
 ---
 
 ## 4. Communication Patterns

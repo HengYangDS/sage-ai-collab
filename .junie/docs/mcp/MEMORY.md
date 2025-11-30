@@ -1,4 +1,4 @@
-
+﻿
 # Memory Server Best Practices
 
 > Knowledge graph persistence patterns and usage guidelines (~15 min read)
@@ -78,7 +78,7 @@ Junie to remember decisions, patterns, and context across multiple sessions.
 
 ### Naming Conventions
 
-```
+```text
 <category>_<subject>_<qualifier>
 
 Examples:
@@ -362,7 +362,7 @@ memory.create_entities([{
 
 If Memory server is unavailable, use file-based persistence:
 
-```
+```text
 .history/
 ├── conversations/
 │   └── YYYY-MM-DD-topic.md      # Key decisions

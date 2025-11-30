@@ -1,4 +1,4 @@
-# Knowledge Extraction Patterns
+﻿# Knowledge Extraction Patterns
 
 > Methods for extracting reusable knowledge from experience
 
@@ -71,7 +71,7 @@
 ### When to Use
 
 [Applicability criteria]
-```text
+```
 ### 3.2 Quality Criteria
 
 | Criterion | Description               |
@@ -106,7 +106,7 @@
 
 [+] Benefits
 [-] Drawbacks
-```text
+```
 ### 4.2 Capture Triggers
 
 | Trigger              | Action             |

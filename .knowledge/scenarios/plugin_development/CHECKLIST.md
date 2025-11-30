@@ -4,6 +4,20 @@
 
 ---
 
+## Table of Contents
+
+- [Planning](#planning)
+- [Architecture](#architecture)
+- [Implementation](#implementation)
+- [Integration](#integration)
+- [Configuration](#configuration)
+- [Error Handling](#error-handling)
+- [Performance](#performance)
+- [Security](#security)
+- [Testing](#testing)
+- [Documentation](#documentation)
+- [Distribution](#distribution)
+
 ## Planning
 
 - [ ] Plugin purpose defined

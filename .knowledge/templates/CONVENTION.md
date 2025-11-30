@@ -1,4 +1,4 @@
-# {TITLE}
+﻿# {TITLE}
 
 > {PURPOSE}
 
@@ -43,12 +43,12 @@
 
 ```python
 # Correct example
-```text
+```
 ### Incorrect Usage
 
 ```python
 # Incorrect example - avoid this
-```text
+```
 ## 4. Exceptions
 
 The following exceptions are allowed:

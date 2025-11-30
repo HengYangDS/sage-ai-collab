@@ -1,4 +1,4 @@
-# AI Autonomy Levels Framework
+﻿# AI Autonomy Levels Framework
 
 > 6-level autonomy spectrum for human-AI collaboration
 
@@ -110,7 +110,7 @@
 autonomy:
   level: L4
   reason: "Established trust, routine refactoring"
-```text
+```
 ### 6.2 Reporting Format
 
 | Level | Report Style            |

@@ -1,4 +1,4 @@
-# ADR-0007: Configuration Management
+﻿# ADR-0007: Configuration Management
 
 > Architecture Decision Record for SAGE Knowledge Base
 
@@ -48,7 +48,7 @@ Implement a **YAML + Environment Variable** configuration system with Pydantic v
 
 ### Configuration Hierarchy
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │ 1. Environment Variables (SAGE__*)     [Highest Priority]│
 ├─────────────────────────────────────────────────────────┤

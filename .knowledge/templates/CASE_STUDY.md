@@ -1,8 +1,19 @@
-# Case Study Template
+﻿# Case Study Template
 
 > Template for documenting problem-solving cases and lessons learned
 
 ---
+
+## Table of Contents
+
+- [Usage Instructions](#usage-instructions)
+- [Case Summary](#case-summary)
+- [1. Problem Description](#1-problem-description)
+- [2. Investigation](#2-investigation)
+- [3. Solution](#3-solution)
+- [4. Lessons Learned](#4-lessons-learned)
+- [5. Related Information](#5-related-information)
+- [Quick Reference: Case Categories](#quick-reference-case-categories)
 
 ## Usage Instructions
 
@@ -47,7 +58,7 @@
 
 ```text
 [Error message or log output]
-```text
+```
 ### 1.3 Expected Behavior
 
 [What should have happened?]
@@ -107,7 +118,7 @@
 
 # After
 [fixed code]
-```text
+```
 ### 3.3 Verification
 
 [How did you verify the fix worked?]
@@ -218,7 +229,7 @@ outputs_dir = project_root / ".outputs"
 outputs_dir.mkdir(parents=True, exist_ok=True)
 output_path = outputs_dir / Path(output_file).name
 builder.export_to_json(output_path)
-```text
+```
 ### Lessons Learned
 
 - Always normalize output paths to designated directories

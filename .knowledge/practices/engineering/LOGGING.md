@@ -1,4 +1,4 @@
-# Logging Standards
+﻿# Logging Standards
 
 > Universal logging standards and best practices
 
@@ -30,7 +30,7 @@
 
 ### Level Selection Guide
 
-```text
+```
 Can continue normally? ─Yes─▶ INFO
         │
         No
@@ -44,7 +44,7 @@ Affects single request? ─Yes─▶ ERROR
         No
         ▼
 Affects entire service? ─Yes─▶ CRITICAL
-```text
+```
 ---
 
 ## 2. Structured Logging
@@ -61,7 +61,7 @@ logger.info(
         "status"     : "success"
     }
 )
-```text
+```
 ### Output Example (JSON)
 
 ```json
@@ -74,7 +74,7 @@ logger.info(
   "duration_ms": 150,
   "status": "success"
 }
-```text
+```
 ---
 
 ## 3. Required Fields
@@ -138,7 +138,7 @@ def mask_email(email: str) -> str:
 
 def mask_token(token: str) -> str:
     return f"***{token[-4:]}"
-```text
+```
 ---
 
 ## 5. Performance Logging
@@ -156,7 +156,7 @@ logger.info(
     "Request completed",
     extra={"duration_ms": round(duration_ms, 2)}
 )
-```text
+```
 ### Performance Thresholds
 
 | Duration  | Level   | Action      |
@@ -186,7 +186,7 @@ except OrderError as e:
         },
         exc_info=True  # Include stack trace
     )
-```text
+```
 ### Error Context Checklist
 
 - [ ] What operation failed?
@@ -223,7 +223,7 @@ logging:
     app.core: INFO
     app.services: INFO
     app.external: WARNING
-```text
+```
 ---
 
 ## 8. Quick Checklist

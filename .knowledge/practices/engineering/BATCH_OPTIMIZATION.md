@@ -1,4 +1,4 @@
-# Batch Optimization Patterns
+﻿# Batch Optimization Patterns
 
 > Efficient processing of large-scale operations
 
@@ -47,7 +47,7 @@ def process_in_batches(items: List, batch_size: int = 100):
     for i in range(0, len(items), batch_size):
         batch = items[i:i + batch_size]
         process_batch(batch)
-```text
+```
 ### 3.2 With Progress
 
 ```python
@@ -58,7 +58,7 @@ def process_with_progress(items: List, batch_size: int = 100):
         process_batch(batch)
         progress = min(i + batch_size, total) / total * 100
         logger.info(f"Progress: {progress:.1f}%")
-```text
+```
 ---
 
 ## 4. Checkpoint Strategy
@@ -72,7 +72,7 @@ class Checkpoint:
     last_id: str
     timestamp: datetime
     state: Dict[str, Any]
-```text
+```
 ### 4.2 Resume Pattern
 
 ```python
@@ -84,7 +84,7 @@ def process_with_checkpoint(items: List, checkpoint_file: str):
         process_item(item)
         if i % 100 == 0:
             save_checkpoint(checkpoint_file, i)
-```text
+```
 ---
 
 ## 5. Error Handling
@@ -108,7 +108,7 @@ def process_with_errors(items: List):
             failed.append((item, e))
             logger.warning(f"Skipping {item}: {e}")
     return failed
-```text
+```
 ---
 
 ## 6. Performance Optimization

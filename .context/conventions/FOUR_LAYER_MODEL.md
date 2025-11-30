@@ -1,4 +1,4 @@
-# Four Layer Model
+﻿# Four Layer Model
 
 > Architecture layers defining extension, capability, tool, and script boundaries
 

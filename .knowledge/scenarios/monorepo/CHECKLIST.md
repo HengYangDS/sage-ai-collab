@@ -4,6 +4,19 @@
 
 ---
 
+## Table of Contents
+
+- [Repository Setup](#repository-setup)
+- [Package Structure](#package-structure)
+- [Build System](#build-system)
+- [Dependency Management](#dependency-management)
+- [Code Sharing](#code-sharing)
+- [Testing](#testing)
+- [CI/CD](#cicd)
+- [Code Quality](#code-quality)
+- [Release Management](#release-management)
+- [Documentation](#documentation)
+
 ## Repository Setup
 
 - [ ] Monorepo tool chosen (Nx, Turborepo, Lerna, etc.)

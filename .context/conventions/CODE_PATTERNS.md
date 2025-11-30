@@ -1,4 +1,4 @@
-# SAGE Code Patterns
+﻿# SAGE Code Patterns
 
 > Project-specific code patterns and idioms for SAGE Knowledge Base
 

@@ -1,4 +1,4 @@
-# Loading Strategy
+﻿# Loading Strategy
 
 > Smart loading patterns for efficient context management
 
@@ -153,7 +153,7 @@ class LazyLoader:
 
 ### 8.1 Loading Order
 
-```
+```text
 1. Core (Always)        → Highest priority
 2. Context-matched      → Based on query
 3. Scenario preloads    → Based on scenario

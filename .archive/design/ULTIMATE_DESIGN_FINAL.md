@@ -1,4 +1,4 @@
-
+﻿
 # SAGE Knowledge Base - Design Document
 
 ## 🏆 Level 5 Expert Committee Consolidated Design
@@ -130,7 +130,7 @@ The following documents have been fully integrated into this final version and m
 > **Updated**: 2025-11-28 by Level 5 Expert Committee (Deep Integration Version)
 > **Architecture**: Three-layer separation with SAGE Protocol + DI Container + Multi-Service
 
-```
+```text
                          [Config File sage.yaml]
                                      │
                                      ▼
@@ -605,7 +605,7 @@ except Exception as e:
 
 **Development (console format):**
 
-```
+```text
 2025-11-28T14:30:00+08:00 [info     ] loading layer              layer=core request_id=req-123 tokens=500
 ```
 
@@ -1931,7 +1931,7 @@ project-root/
 
 #### 2.12.3 Knowledge Taxonomy
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    KNOWLEDGE TAXONOMY                            │
 ├─────────────────────────────────────────────────────────────────┤
@@ -2018,7 +2018,7 @@ Both systems work together:
 
 #### 2.12.6 Expert Committee Certification
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │         LEVEL 5 EXPERT COMMITTEE CERTIFICATION                   │
 │         AI COLLABORATION DIRECTORY STRUCTURE                     │
@@ -2300,7 +2300,7 @@ async def load_knowledge_safely(layers: list[str]) -> LoadResult:
 
 #### 2.13.1 Test Pyramid
 
-```
+```text
                     ╱╲
                    ╱  ╲
                   ╱ E2E╲           5% - End-to-end tests
@@ -3218,7 +3218,7 @@ class PluginRegistry:
 
 The event-driven architecture provides async decoupling between components:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                        EventBus                              │
 │  (Async pub/sub message broker with priority ordering)       │
@@ -3586,7 +3586,7 @@ class PluginAdapter:
 
 #### 5.5.1 Architecture Overview
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                   Memory Persistence System                  │
 ├─────────────────────────────────────────────────────────────┤
@@ -3759,7 +3759,7 @@ Progress: {self.session_state.progress_percentage:.0f}% complete
 
 #### 5.5.6 Storage Structure
 
-```
+```text
 ~/.local/share/sage/memory/          # platformdirs location
 ├── index.json                       # Memory index
 ├── sessions/
@@ -4335,7 +4335,7 @@ src/sage/core/memory/
 
 **Storage Location** (platformdirs):
 
-```
+```text
 ~/.local/share/sage/memory/    # Linux
 ~/Library/Application Support/sage/memory/    # macOS
 C:\Users\<user>\AppData\Local\sage\memory\    # Windows
@@ -4417,7 +4417,7 @@ C:\Users\<user>\AppData\Local\sage\memory\    # Windows
 
 #### 7.13.1 Deployment Architecture
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                    Production Deployment                         │
 ├─────────────────────────────────────────────────────────────────┤
@@ -5028,7 +5028,7 @@ Configuration Priority (highest to lowest):
 
 #### 8.7.8 Expert Committee Certification
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │       LEVEL 5 EXPERT COMMITTEE RE-EVALUATION                │
 │              MODERN DESIGN IMPROVEMENTS                     │
@@ -5143,7 +5143,7 @@ Configuration Priority (highest to lowest):
 
 #### 8.8.7 Expert Committee Certification
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │       LEVEL 5 EXPERT COMMITTEE EVALUATION                   │
 │    EVENT-DRIVEN PLUGIN & MEMORY PERSISTENCE ENHANCEMENT     │
@@ -5298,7 +5298,7 @@ Configuration Priority (highest to lowest):
 
 **Recommended Business Domain Layer**:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │                    Business Domain Layer                     │
 │  ┌─────────────┐ ┌─────────────┐ ┌─────────────────────────┐│
@@ -5498,7 +5498,7 @@ fallback:
 
 #### 8.10.8 Issue 7: Project Knowledge Lifecycle
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                 PROJECT KNOWLEDGE LIFECYCLE                      │
 │                                                                 │
@@ -5521,7 +5521,7 @@ fallback:
 
 #### 8.10.9 Issue 8: Content Knowledge Lifecycle
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │                 CONTENT (DISTRIBUTABLE) LIFECYCLE               │
 │                                                                 │
@@ -5656,7 +5656,7 @@ sage/
 
 #### 8.10.15 Expert Committee Certification
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │       LEVEL 5 EXPERT COMMITTEE FINAL CERTIFICATION              │
 │           DESIGN OPTIMIZATION DEEP ANALYSIS                      │
@@ -6080,7 +6080,7 @@ format:
 
 #### 8.11.8 Expert Committee Certification
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────────┐
 │       LEVEL 5 EXPERT COMMITTEE CERTIFICATION                     │
 │       COMPREHENSIVE MODERNIZATION ENHANCEMENT v3.1               │

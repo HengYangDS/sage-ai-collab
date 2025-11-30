@@ -1,4 +1,4 @@
-# Knowledge Standards Summary
+﻿# Knowledge Standards Summary
 
 > Session record: Documentation and Configuration Standards extracted from .knowledge/
 
@@ -82,7 +82,7 @@ This file stores key knowledge about documentation writing standards and configu
 
 ### 2.1 Layer Architecture
 
-```
+```text
 .knowledge/
 ├── core/           # Foundational principles (always load, ~500 tokens)
 ├── guidelines/     # Standards and conventions (by role/task, ~1200 tokens)

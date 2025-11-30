@@ -1,4 +1,4 @@
-# Document Optimization Workflow
+﻿# Document Optimization Workflow
 
 > Systematic workflow for batch document optimization and quality assurance
 
@@ -27,7 +27,7 @@
 4. Batch Apply Corrections
        ↓
 5. Verify Consistency
-```text
+```
 ### 1.2 Review Order
 
 | Phase | Focus              | Files                        |

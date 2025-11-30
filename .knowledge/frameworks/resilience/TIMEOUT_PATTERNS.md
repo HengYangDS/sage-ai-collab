@@ -1,4 +1,4 @@
-# Timeout Design Patterns
+﻿# Timeout Design Patterns
 
 > Universal timeout and resilience patterns for system design
 
@@ -41,7 +41,7 @@ async def with_timeout(coro, timeout_ms: int, fallback=None):
         )
     except asyncio.TimeoutError:
         return fallback
-```text
+```
 ### 2.2 Guidelines
 
 | Guideline              | Description                     |
@@ -84,7 +84,7 @@ stateDiagram-v2
     Open --> HalfOpen : timeout
     HalfOpen --> Closed : success
     HalfOpen --> Open : failure
-```text
+```
 ### 4.2 Configuration
 
 | Parameter         | Value  | Purpose           |
@@ -122,7 +122,7 @@ async def get_with_fallback(key: str) -> Result:
 
     # Return default
     return default_value(key)
-```text
+```
 ---
 
 ## 6. Bulkhead Pattern
@@ -153,7 +153,7 @@ async def get_with_fallback(key: str) -> Result:
 @timeout(ms=5000)
 async def resilient_call(params):
     return await external_service.call(params)
-```text
+```
 ---
 
 ## Related

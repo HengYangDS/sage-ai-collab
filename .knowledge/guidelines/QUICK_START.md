@@ -1,4 +1,4 @@
-# Quick Start Guide
+﻿# Quick Start Guide
 
 > Get productive in 3 minutes
 
@@ -64,7 +64,7 @@ Ask before every task:
 ## Verification
 
 [How to verify]
-```text
+```
 ---
 
 ## 5. Next Steps

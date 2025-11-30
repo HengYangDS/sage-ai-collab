@@ -1,4 +1,4 @@
-# SAGE Loading Configurations
+﻿# SAGE Loading Configurations
 
 > Knowledge Base loading strategies and layer configuration
 
@@ -59,7 +59,7 @@ loading:
 
 SAGE organizes knowledge into hierarchical layers:
 
-```
+```text
 ┌─────────────────────────────────────────────────────────┐
 │                     core (Priority 1)                   │
 │              Fundamental principles                     │

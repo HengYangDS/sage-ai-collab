@@ -1,4 +1,4 @@
-# MCP Service
+﻿# MCP Service
 
 > Model Context Protocol service for AI assistant integration
 

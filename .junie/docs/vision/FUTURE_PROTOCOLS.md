@@ -1,4 +1,4 @@
-
+﻿
 # Future Protocol Vision
 
 > Prepare architecture for future multi-agent collaboration (~30 min read)
@@ -57,7 +57,7 @@ The AI Agent ecosystem is rapidly evolving with three major protocol standards:
 
 ## 2. Protocol Ecosystem Diagram
 
-```
+```text
 +=======================================================================+
 |                   AI Agent Protocol Ecosystem                         |
 +=======================================================================+
@@ -220,7 +220,7 @@ For Junie, ACP is **lower priority** because:
 
 ### Current State (2024-2025)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ MCP: Production Ready                                       │
 │ ├── Junie integration: [OK] Complete                        │
@@ -231,7 +231,7 @@ For Junie, ACP is **lower priority** because:
 
 ### Near Future (2025-2026)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ MCP: Mature + A2A: Emerging                                 │
 │ ├── MCP: Additional servers, improved performance           │
@@ -242,7 +242,7 @@ For Junie, ACP is **lower priority** because:
 
 ### Future State (2026+)
 
-```
+```text
 ┌─────────────────────────────────────────────────────────────┐
 │ MCP + A2A: Production                                       │
 │ ├── Multi-agent collaboration enabled                       │

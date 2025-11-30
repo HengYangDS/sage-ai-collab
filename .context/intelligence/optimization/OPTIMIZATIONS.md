@@ -1,4 +1,4 @@
-# SAGE Project Optimizations
+﻿# SAGE Project Optimizations
 
 > SAGE-specific optimizations, shortcuts, and code patterns
 

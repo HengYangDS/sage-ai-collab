@@ -1,4 +1,4 @@
-# SAGE Project - AI Collaboration Guidelines
+﻿# SAGE Project - AI Collaboration Guidelines
 
 > Project-specific AI collaboration rules and quick reference for SAGE Knowledge Base
 

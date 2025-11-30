@@ -1,4 +1,4 @@
-# Data Persistence Patterns
+﻿# Data Persistence Patterns
 
 > Universal patterns for data lifecycle, retention, and cleanup
 
@@ -124,7 +124,7 @@ def cleanup(store: DataStore, policy: RetentionPolicy):
             count=store.count() - policy.max_entries,
             below_priority=policy.min_priority
         )
-```text
+```
 ---
 
 ## Related

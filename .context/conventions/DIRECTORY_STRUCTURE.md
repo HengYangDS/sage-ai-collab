@@ -1,4 +1,4 @@
-# Directory Structure
+﻿# Directory Structure
 
 > Canonical directory layout for SAGE Knowledge Base
 

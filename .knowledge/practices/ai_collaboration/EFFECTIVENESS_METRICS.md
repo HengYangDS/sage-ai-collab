@@ -1,4 +1,4 @@
-# AI Collaboration Effectiveness Metrics
+﻿# AI Collaboration Effectiveness Metrics
 
 > Measuring and improving human-AI collaboration quality
 
@@ -44,7 +44,7 @@
 - Tasks completed: [count]
 - Iterations needed: [count]
 - Blockers hit: [list]
-```text
+```
 ### Weekly Review
 
 | Question | Answer |

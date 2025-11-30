@@ -1,4 +1,4 @@
-# Code Style Guidelines
+﻿# Code Style Guidelines
 
 > Consistent, readable, maintainable code
 
@@ -56,7 +56,7 @@
 # 2. Constants
 # 3. Classes/Functions
 # 4. Main block (if applicable)
-```text
+```
 ### 3.2 Function Guidelines
 
 | Metric                | Target |
@@ -94,7 +94,7 @@ def function(param: str) -> bool:
     Raises:
         ValueError: When param is invalid.
     """
-```text
+```
 ---
 
 ## 5. Error Handling
@@ -112,7 +112,7 @@ def process(data: str) -> Result:
     if not data:
         raise ValueError("Data required")
     return Result(data.strip())
-```text
+```
 ---
 
 ## 6. Quality Checklist

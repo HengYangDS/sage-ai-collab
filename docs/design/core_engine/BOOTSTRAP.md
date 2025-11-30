@@ -1,4 +1,4 @@
-# Bootstrap
+﻿# Bootstrap
 
 > Application startup and initialization process
 
@@ -55,7 +55,7 @@ flowchart LR
 
 ### 4.1 Config Sources (Priority Order)
 
-```
+```text
 1. Command-line arguments    (highest)
 2. Environment variables
 3. User config (~/.sage/config.yaml)

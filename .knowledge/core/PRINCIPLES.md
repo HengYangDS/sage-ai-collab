@@ -1,4 +1,4 @@
-# Core Principles - 信达雅 · 术法道
+﻿# Core Principles - 信达雅 · 术法道
 
 > Foundational philosophy for AI collaboration
 
@@ -55,7 +55,7 @@ Three levels of mastery from technique to wisdom.
 
 ```text
 术 (Learn tools) → 法 (Apply patterns) → 道 (Develop wisdom)
-```text
+```
 ### 2.2 Balance
 
 - **术 without 法**: Mechanical, inflexible

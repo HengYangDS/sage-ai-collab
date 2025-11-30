@@ -1,4 +1,4 @@
-# Integration Patterns
+﻿# Integration Patterns
 
 > Patterns for integrating SAGE with AI tools, IDEs, and CI/CD systems
 
@@ -43,7 +43,7 @@ flowchart TB
     CLI --> Terminal["Terminal Tools"]
     API --> External["External Apps"]
     Plugin --> Custom["Custom Plugins"]
-```text
+```
 ---
 
 ## 2. AI Tool Integration
@@ -77,7 +77,7 @@ flowchart TB
     }
   }
 }
-```text
+```
 ### 2.2 Multi-Client Pattern
 
 ```python
@@ -95,7 +95,7 @@ async def get_knowledge(
     """Knowledge retrieval with session isolation."""
     session = get_or_create_session(session_id)
     return await session.load_knowledge(layer)
-```text
+```
 ### 2.3 Context Synchronization
 
 | Pattern    | Use Case          | Implementation                    |
@@ -125,7 +125,7 @@ class ContextSync:
         """Pull: Client requests full context."""
         self.last_sync = datetime.now()
         return await self.load_context()
-```text
+```
 ---
 
 ## 3. IDE Integration
@@ -146,7 +146,7 @@ class ContextSync:
 ## Autonomy Level
 
 Default: L4 (Medium-High)
-```text
+```
 **File Watcher Integration**:
 
 ```yaml
@@ -156,7 +156,7 @@ Default: L4 (Medium-High)
 <watch path=".knowledge/" />
 <on-change action="sage rebuild --incremental" />
 </component>
-```text
+```
 ### 3.2 VS Code Integration
 
 **Extension Settings** (`.vscode/settings.json`):
@@ -172,7 +172,7 @@ Default: L4 (Medium-High)
     "guidelines"
   ]
 }
-```text
+```
 **Tasks** (`.vscode/tasks.json`):
 
 ```json
@@ -200,7 +200,7 @@ Default: L4 (Medium-High)
     }
   ]
 }
-```text
+```
 ### 3.3 Editor-Agnostic Pattern
 
 ```python
@@ -222,7 +222,7 @@ class EditorBridge:
         """Hook for file save events."""
         if self._is_knowledge_file(file_path):
             await self.trigger_rebuild()
-```text
+```
 ---
 
 ## 4. CI/CD Integration
@@ -262,7 +262,7 @@ jobs:
 
       - name: Validate Content
         run: sage check --content
-```text
+```
 ### 4.2 GitLab CI
 
 ```yaml
@@ -290,7 +290,7 @@ knowledge-build:
   artifacts:
     paths:
       - dist/
-```text
+```
 ### 4.3 Pre-commit Hooks
 
 ```yaml
@@ -310,7 +310,7 @@ repos:
         entry: sage check --structure
         language: system
         pass_filenames: false
-```text
+```
 ### 4.4 Pipeline Patterns
 
 | Stage        | Action                        | On Failure   |
@@ -347,7 +347,7 @@ async def search(q: str, max_results: int = 10):
     """Search knowledge base."""
     results = await loader.search(q, max_results=max_results)
     return {"status": "success", "results": results}
-```text
+```
 ### 5.2 GraphQL Pattern
 
 ```python
@@ -372,7 +372,7 @@ class Query:
     async def search(self, query: str) -> list[KnowledgeNode]:
         loader = KnowledgeLoader()
         return await loader.search(query)
-```text
+```
 ### 5.3 Webhook Pattern
 
 ```python
@@ -392,7 +392,7 @@ class WebhookIntegration:
                 "changes"  : event.changes
             }
         )
-```text
+```
 ---
 
 ## 6. Plugin Integration
@@ -419,7 +419,7 @@ class IntegrationPlugin:
     async def on_search(self, query: str, results: list) -> list:
         """Hook for search results."""
         return results
-```text
+```
 ### 6.2 Plugin Communication
 
 ```mermaid
@@ -427,7 +427,7 @@ flowchart TB
     A["Plugin A"] -->|Event Bus| B["Plugin B"]
     A --> Core["Core"]
     B --> Core
-```text
+```
 **Event-Based Communication**:
 
 ```python
@@ -440,7 +440,7 @@ class AnalyticsPlugin:
     async def track_usage(self, event):
         # Track tool usage for analytics
         await self.analytics.track(event.tool_name, event.duration)
-```text
+```
 ---
 
 ## 7. Data Integration
@@ -469,7 +469,7 @@ await importer.import_space(
     target_path=".knowledge/imported/",
     transform=lambda doc: doc.to_sage_format()
 )
-```text
+```
 ### 7.2 Export Patterns
 
 ```python
@@ -481,7 +481,7 @@ exporter = Exporter(kb_path=".knowledge/")
 await exporter.to_docusaurus("dist/docusaurus/")
 await exporter.to_mkdocs("dist/mkdocs/")
 await exporter.to_json("dist/knowledge.json")
-```text
+```
 ### 7.3 Sync Patterns
 
 | Pattern     | Use Case               | Complexity |
@@ -525,7 +525,7 @@ class ResilientIntegration:
                     logger.error(f"Integration failed: {e}")
                     return self.fallback_response()
                 await asyncio.sleep(2 ** attempt)  # Exponential backoff
-```text
+```
 ### 8.3 Security Considerations
 
 | Aspect             | Recommendation                               |
@@ -564,7 +564,7 @@ SAGE_MCP_PORT=8080
 SAGE_API_KEY=your-api-key
 SAGE_WEBHOOK_SECRET=webhook-secret
 SAGE_EXTERNAL_URL=https://api.example.com
-```text
+```
 ---
 
 ## Related

@@ -1,4 +1,4 @@
-# Knowledge Organization Patterns
+﻿# Knowledge Organization Patterns
 
 > Hierarchical patterns for organizing AI-collaborative knowledge bases
 
@@ -27,7 +27,7 @@
 ├── references/     # Quick reference, glossary (on-demand)
 ├── scenarios/      # Context presets (specific workflows)
 └── templates/      # Ready-to-use templates (direct use)
-```text
+```
 ### 1.2 Layer Characteristics
 
 | Layer          | Depth            | Load Timing       | Token Budget |
@@ -118,7 +118,7 @@
 
 ```text
 [layer]/INDEX.md → [layer]/[topic].md → [layer]/[topic]/[detail].md
-```text
+```
 ### 3.2 Index File Pattern
 
 Each layer has an `INDEX.md` with:

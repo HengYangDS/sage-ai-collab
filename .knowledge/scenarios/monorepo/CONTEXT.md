@@ -1,4 +1,4 @@
-# Monorepo Scenario Context
+﻿# Monorepo Scenario Context
 
 > Pre-configured context for monorepo project management
 
@@ -38,7 +38,7 @@ focus: [ structure, dependencies, ci_cd, code_sharing ]
 
 autonomy_default: L3
 
-```text
+```
 ---
 
 ## 2. Relevant Knowledge
@@ -57,7 +57,7 @@ autonomy_default: L3
 
 ### 3.1 Common Monorepo Layout
 
-```text
+```
 monorepo/
 
 ├── apps/                    # Deployable applications
@@ -92,7 +92,7 @@ monorepo/
 
 └── nx.json                  # Nx config (if using Nx)
 
-```text
+```
 ### 3.2 Package Naming Convention
 
 | Type         | Pattern         | Example                   |
@@ -215,7 +215,7 @@ monorepo/
 
 }
 
-```text
+```
 ### 4.3 pnpm Workspace
 
 ```yaml
@@ -230,7 +230,7 @@ packages:
 
   - 'tools/*'
 
-```text
+```
 ### 4.4 Nx Configuration
 
 ```json
@@ -293,7 +293,7 @@ packages:
 
 }
 
-```text
+```
 ---
 
 ## 5. Dependency Management
@@ -318,7 +318,7 @@ packages:
 
 }
 
-```text
+```
 ### 5.2 Shared Configuration
 
 ```typescript
@@ -351,7 +351,7 @@ module.exports = {
 
 };
 
-```text
+```
 ### 5.3 TypeScript Project References
 
 ```json
@@ -386,7 +386,7 @@ module.exports = {
 
 }
 
-```text
+```
 ---
 
 ## 6. CI/CD Patterns
@@ -431,7 +431,7 @@ jobs:
 
       - run: pnpm nx affected -t lint test build
 
-```text
+```
 ### 6.2 Turborepo with Remote Cache
 
 ```yaml
@@ -470,7 +470,7 @@ jobs:
 
           TURBO_TEAM: ${{ vars.TURBO_TEAM }}
 
-```text
+```
 ### 6.3 Selective Deployment
 
 ```yaml
@@ -489,7 +489,7 @@ deploy-web:
 
     - run: pnpm --filter @acme/web deploy
 
-```text
+```
 ---
 
 ## 7. Common Tasks
@@ -552,7 +552,7 @@ pnpm init
 
 }
 
-```text
+```
 ### 7.2 Package Checklist
 
 | Item                             | Status |

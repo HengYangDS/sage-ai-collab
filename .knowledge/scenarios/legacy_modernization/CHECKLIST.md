@@ -4,6 +4,19 @@
 
 ---
 
+## Table of Contents
+
+- [Assessment](#assessment)
+- [Planning](#planning)
+- [Code Analysis](#code-analysis)
+- [Testing Foundation](#testing-foundation)
+- [Incremental Migration](#incremental-migration)
+- [Infrastructure](#infrastructure)
+- [Data Migration](#data-migration)
+- [Security](#security)
+- [Cutover](#cutover)
+- [Post-Migration](#post-migration)
+
 ## Assessment
 
 - [ ] Current system documented

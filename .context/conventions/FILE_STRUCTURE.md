@@ -1,4 +1,4 @@
-# SAGE File Structure Conventions
+﻿# SAGE File Structure Conventions
 
 > Project-specific file organization standards for SAGE Knowledge Base
 
@@ -168,7 +168,7 @@ project.
 
 When deciding where content belongs, apply these rules in order:
 
-```
+```text
 1. Is it SAGE-specific implementation/decision?
    YES → .context/ (ADRs, conventions, policies)
    NO  → Continue to step 2
@@ -437,7 +437,7 @@ docs/
 
 ### 6.2 Knowledge Content Structure
 
-```
+```text
 .knowledge/
 ├── core/                # Core principles
 │   ├── principles.md
@@ -461,7 +461,7 @@ docs/
 
 ### 6.3 Context Directory Structure
 
-```
+```text
 .context/
 ├── index.md             # Navigation index
 ├── policies/            # Project-specific policies
