@@ -95,4 +95,4 @@ Before any task, ask:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

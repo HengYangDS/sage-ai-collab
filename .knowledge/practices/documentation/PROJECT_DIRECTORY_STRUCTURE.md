@@ -8,10 +8,11 @@
 
 - [1. Overview](#1-overview)
 - [2. Directory Categories](#2-directory-categories)
-- [3. Hidden Directory Conventions](#3-hidden-directory-conventions)
-- [4. Visible Directory Conventions](#4-visible-directory-conventions)
-- [5. Placement Decision Tree](#5-placement-decision-tree)
-- [6. File Naming Conventions](#6-file-naming-conventions)
+- [3. Knowledge Directory Boundaries (MECE)](#3-knowledge-directory-boundaries-mece)
+- [4. Hidden Directory Conventions](#4-hidden-directory-conventions)
+- [5. Visible Directory Conventions](#5-visible-directory-conventions)
+- [6. Placement Decision Tree](#6-placement-decision-tree)
+- [7. File Conventions](#7-file-conventions)
 
 ---
 
@@ -72,9 +73,43 @@ project/
 
 ---
 
-## 3. Hidden Directory Conventions
+## 3. Knowledge Directory Boundaries (MECE)
 
-### 3.1 `.context/` — Project-Specific Knowledge
+The three knowledge directories follow strict MECE (Mutually Exclusive, Collectively Exhaustive) boundaries:
+
+| Directory      | Scope                | Content Criteria                                    | Example                          |
+|----------------|----------------------|-----------------------------------------------------|----------------------------------|
+| `.knowledge/`  | Universal/Generic    | Reusable across ANY project, NO project-specific references | Code style guides, design patterns |
+| `.context/`    | Project-Specific     | Only for THIS project, contains project names/paths | ADRs, project conventions        |
+| `.junie/`      | AI Tool Config       | JetBrains Junie configuration, follows tool conventions | guidelines.md, MCP config        |
+
+### 3.1 Boundary Rules
+
+| Rule | Description | Violation Example |
+|------|-------------|-------------------|
+| **No Brand in .knowledge/** | Generic knowledge must NOT contain project names | ❌ "SAGE CLI commands" in .knowledge/ |
+| **No Generic in .context/** | Project context must NOT duplicate universal knowledge | ❌ "Python style guide" in .context/ |
+| **Tool Convention in .junie/** | Follow Junie tool's expected file structure | ❌ UPPERCASE.md in .junie/ root |
+
+### 3.2 Content Placement Decision
+
+```
+Is this content reusable across ANY project?
+├─ YES → .knowledge/
+│   └─ Does it contain project-specific names/paths/commands?
+│       └─ YES → Remove or generalize before placing
+│
+└─ NO (Project-specific) → .context/
+    ├─ Architecture decision? → .context/decisions/
+    ├─ Coding convention? → .context/conventions/
+    └─ AI learned pattern? → .context/intelligence/
+```
+
+---
+
+## 4. Hidden Directory Conventions
+
+### 4.1 `.context/` — Project-Specific Knowledge
 
 **Purpose**: Store knowledge specific to this project only.
 
@@ -138,9 +173,9 @@ project/
 
 ---
 
-## 4. Visible Directory Conventions
+## 5. Visible Directory Conventions
 
-### 4.1 `.knowledge/` — Generic Knowledge
+### 5.1 `.knowledge/` — Generic Knowledge
 
 **Purpose**: Universal knowledge that helps AI collaboration, reusable across projects.
 
@@ -155,7 +190,7 @@ project/
 
 **When to use**: Knowledge that applies universally, not project-specific.
 
-### 4.2 `docs/` — User Documentation
+### 5.2 `docs/` — User Documentation
 
 **Purpose**: User-facing documentation for the project.
 
@@ -169,7 +204,7 @@ project/
 
 ---
 
-## 5. Placement Decision Tree
+## 6. Placement Decision Tree
 
 ```
 Is this content project-specific?
@@ -215,7 +250,9 @@ Is this an intermediate/generated file?
 
 ---
 
-## 6. File Naming Conventions
+## 7. File Conventions
+
+### 7.1 File Naming
 
 | Type           | Convention                  | Example                        |
 |----------------|-----------------------------|--------------------------------|
@@ -230,13 +267,30 @@ Is this an intermediate/generated file?
 
 **Rationale**: Uppercase naming provides clear visual distinction for documentation files.
 
-### 6.1 Naming Exceptions
+### 7.2 Naming Exceptions
 
 | Directory | Convention      | Example           | Rationale                                    |
 |-----------|-----------------|-------------------|----------------------------------------------|
 | `.junie/` | `lowercase.md`  | `guidelines.md`   | AI client config directory follows tool convention |
 
 **Note**: The `.junie/` directory is the JetBrains Junie AI client configuration directory. Its root `guidelines.md` file must use lowercase naming to comply with the Junie tool's expected file structure.
+
+### 7.3 Frontmatter Policy
+
+**Frontmatter metadata is NOT used in `.knowledge/` documents.**
+
+| Policy | Description |
+|--------|-------------|
+| **No Frontmatter** | Documents start directly with `# Title`, no YAML frontmatter |
+| **No Version Tags** | Version tracking via Git, not in-document metadata |
+| **No Token Counts** | Token estimates are not maintained in files |
+| **Content-First** | Document content speaks for itself |
+
+**Rationale**: 
+- Frontmatter adds maintenance overhead without clear benefit
+- Version control (Git) provides authoritative history
+- Token counts become stale and misleading
+- Simpler documents are easier to maintain
 
 ---
 

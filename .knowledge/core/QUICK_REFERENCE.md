@@ -114,4 +114,4 @@ Ask before every task:
 
 ---
 
-*Part of SAGE Knowledge Base*
+*AI Collaboration Knowledge Base*

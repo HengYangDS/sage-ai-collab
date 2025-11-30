@@ -231,6 +231,57 @@ alone.
 
 **Lesson**: Document session state and decisions. Future sessions can pick up where previous left off.
 
+### 5.4 Knowledge Directory Boundaries (MECE)
+
+**Context**: Three directories (`.knowledge/`, `.context/`, `.junie/`) for different knowledge types.
+
+**Challenge**: Content boundaries were not strictly enforced:
+1. Generic `.knowledge/` contained project-specific references (e.g., "SAGE CLI commands")
+2. Footers branded with project name ("Part of SAGE Knowledge Base")
+3. Unclear criteria for what belongs where
+
+**Solution**: Established strict MECE (Mutually Exclusive, Collectively Exhaustive) boundaries:
+
+| Directory | Scope | Content Criteria |
+|:----------|:------|:-----------------|
+| `.knowledge/` | Universal | Reusable across ANY project, NO project-specific references |
+| `.context/` | Project-Specific | Only for THIS project, contains project names/paths |
+| `.junie/` | Tool Config | JetBrains Junie configuration, follows tool conventions |
+
+**Lesson**:
+- **Define boundaries upfront** — Establish clear MECE criteria before adding content
+- **No brand in generic knowledge** — Universal knowledge must be project-agnostic
+- **Audit regularly** — Review content placement during major refactoring
+- **Generalize or relocate** — Content with project references either generalize or move to `.context/`
+
+### 5.5 Frontmatter Metadata Anti-Pattern
+
+**Context**: Added YAML frontmatter (version, tokens, last_updated) to all markdown files.
+
+**Challenge**: Frontmatter became maintenance burden:
+1. Token counts became stale immediately after edits
+2. Version numbers never updated consistently
+3. `last_updated` dates conflicted with Git history
+4. Added ~6 lines overhead to every file
+
+**Solution**: Removed all frontmatter from `.knowledge/` documents:
+1. Created `tools/remove_frontmatter.py` for batch removal
+2. Updated `DOCUMENTATION_STANDARDS.md` to prohibit frontmatter
+3. Added "Frontmatter Policy" section to `PROJECT_DIRECTORY_STRUCTURE.md`
+
+**Lesson**:
+- **Git is the source of truth** — Version control provides authoritative history
+- **Avoid redundant metadata** — Information that Git tracks shouldn't be duplicated
+- **Simpler is better** — Documents should start with content, not boilerplate
+- **Automate cleanup** — Batch scripts essential for removing patterns across many files
+
+| Metadata | Problem | Alternative |
+|:---------|:--------|:------------|
+| `version` | Never updated | Git tags/commits |
+| `last_updated` | Conflicts with Git | `git log` |
+| `tokens` | Stale after edits | Calculate on-demand |
+| `status` | Rarely accurate | Git branches |
+
 ---
 
 ## Applying Lessons
