@@ -1,4 +1,4 @@
-# Project Setup Templates
+﻿# Project Setup Templates
 
 > Ready-to-use templates for project initialization
 
@@ -248,7 +248,7 @@ echo "  kb get"
 
 - `.knowledge/scenarios/python_backend/CONTEXT.md` — Python backend context
 - `.knowledge/guidelines/PYTHON.md` — Python guidelines
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
+- `.knowledge/practices/engineering/design/PATTERNS.md` — Design patterns
 
 ---
 

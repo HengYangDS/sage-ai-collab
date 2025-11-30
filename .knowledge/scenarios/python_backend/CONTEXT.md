@@ -1,4 +1,4 @@
-# Python Backend Scenario Context
+﻿# Python Backend Scenario Context
 
 > Pre-configured context for Python backend development
 
@@ -48,7 +48,7 @@ autonomy_default: L2
 
 |---------------|------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/PATTERNS.md`            |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/design/PATTERNS.md`            |
 
 | **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/templates/PROJECT_SETUP.md` |
 
@@ -250,7 +250,7 @@ def get_settings() -> Settings:
 
 - `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
+- `.knowledge/practices/engineering/design/PATTERNS.md` — Design patterns
 
 - `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 

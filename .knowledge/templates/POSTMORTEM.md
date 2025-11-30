@@ -1,4 +1,4 @@
-# Incident Postmortem Template
+﻿# Incident Postmortem Template
 
 > **Purpose**: Document incidents, root causes, and preventive measures
 > **Use When**: After resolving any SEV1/SEV2 incident or significant outage
@@ -280,7 +280,7 @@
 ## Related
 
 - `.knowledge/templates/RUNBOOK.md` — Operational runbook template
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Resilience patterns
 
 ---

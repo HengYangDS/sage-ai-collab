@@ -1,4 +1,4 @@
-# DevOps Scenario Context
+﻿# DevOps Scenario Context
 
 > Pre-configured context for CI/CD, infrastructure, and operations
 
@@ -48,9 +48,9 @@ autonomy_default: L2
 
 |---------------|-------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` · `.knowledge/templates/RUNBOOK.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/practices/engineering/design/ERROR_HANDLING.md` · `.knowledge/templates/RUNBOOK.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md`          |
+| **On-Demand** | `.knowledge/practices/engineering/operations/LOGGING.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md`          |
 
 ---
 
@@ -680,7 +680,7 @@ groups:
 
 - `.knowledge/templates/POSTMORTEM.md` — Incident postmortem template
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling
 
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Resilience patterns
 

@@ -1,4 +1,4 @@
-# Legacy Modernization Scenario Context
+﻿# Legacy Modernization Scenario Context
 
 > Pre-configured context for modernizing legacy systems
 
@@ -44,9 +44,9 @@ autonomy_default: L2
 
 |---------------|---------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/methodology/INCREMENTAL_IMPROVEMENT.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/TESTING_STRATEGY.md` · `.knowledge/practices/engineering/CODE_REVIEW.md`                    |
+| **On-Demand** | `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` · `.knowledge/practices/engineering/quality/CODE_REVIEW.md`                    |
 
 ---
 
@@ -434,9 +434,9 @@ metrics:
 
 - `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 
-- `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` — Incremental approach
+- `.knowledge/practices/engineering/methodology/INCREMENTAL_IMPROVEMENT.md` — Incremental approach
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing practices
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing practices
 
 - `.knowledge/frameworks/patterns/DECISION.md` — Decision framework
 

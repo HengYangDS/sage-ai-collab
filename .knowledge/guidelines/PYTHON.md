@@ -1,4 +1,4 @@
-# Python Guidelines
+﻿# Python Guidelines
 
 > Python coding standards, type hints, and best practices
 
@@ -148,10 +148,10 @@
 
 ## Related
 
-- `.knowledge/practices/engineering/PYTHON_PATTERNS.md` — Implementation patterns and code examples
+- `.knowledge/practices/engineering/languages/PYTHON_PATTERNS.md` — Implementation patterns and code examples
 - `.knowledge/guidelines/CODE_STYLE.md` — General code style standards
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

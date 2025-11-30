@@ -1,4 +1,4 @@
-# Security Checklist
+﻿# Security Checklist
 
 > Comprehensive security review checklist for development, deployment, and operations
 
@@ -249,7 +249,7 @@ Detect → Assess → Contain → Eradicate → Recover → Learn
 
 ## Related
 
-- `.knowledge/practices/engineering/SECURITY_PATTERNS.md` — Implementation patterns and code
+- `.knowledge/practices/engineering/security/SECURITY_PATTERNS.md` — Implementation patterns and code
 - `.knowledge/frameworks/security/AUTHENTICATION.md` — Authentication patterns
 - `.knowledge/frameworks/security/AUTHORIZATION.md` — Authorization patterns
 - `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Secrets management

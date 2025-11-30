@@ -1,4 +1,4 @@
-# TypeScript Guidelines
+﻿# TypeScript Guidelines
 
 > TypeScript and JavaScript development standards
 
@@ -163,9 +163,9 @@
 
 ## Related
 
-- `.knowledge/practices/engineering/TYPESCRIPT_PATTERNS.md` — Type patterns, React patterns, and implementations
+- `.knowledge/practices/engineering/languages/TYPESCRIPT_PATTERNS.md` — Type patterns, React patterns, and implementations
 - `.knowledge/guidelines/CODE_STYLE.md` — General code style
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing practices
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing practices
 - `.knowledge/scenarios/typescript_frontend/CONTEXT.md` — Frontend scenario
 
 ---

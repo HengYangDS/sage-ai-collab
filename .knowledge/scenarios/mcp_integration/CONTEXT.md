@@ -1,4 +1,4 @@
-# MCP Integration Scenario Context
+﻿# MCP Integration Scenario Context
 
 > Pre-configured context for Model Context Protocol integration development
 
@@ -46,9 +46,9 @@ autonomy_default: L3
 
 |---------------|-------------------------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/MCP_QUICK_REF.md` · `.knowledge/practices/engineering/API_DESIGN.md`                  |
+| **Auto-Load** | `core/PRINCIPLES.md` · `docs/api/MCP_QUICK_REF.md` · `.knowledge/practices/engineering/design/API_DESIGN.md`                  |
 
-| **On-Demand** | `docs/api/MCP.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
+| **On-Demand** | `docs/api/MCP.md` · `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` · `.knowledge/practices/engineering/design/ERROR_HANDLING.md` |
 
 ---
 
@@ -569,11 +569,11 @@ mcp:
 
 - `docs/api/MCP.md` — MCP API documentation
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling
 
 ---
 

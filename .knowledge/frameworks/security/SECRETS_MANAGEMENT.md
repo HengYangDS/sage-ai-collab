@@ -1,4 +1,4 @@
-# Secrets Management Framework
+﻿# Secrets Management Framework
 
 > Conceptual framework for secure handling of sensitive data and credentials
 
@@ -138,7 +138,7 @@ Generate → Store → Use → Rotate → Revoke
 
 ## Related
 
-- `.knowledge/practices/engineering/SECRETS_IMPLEMENTATION.md` — Implementation patterns and code
+- `.knowledge/practices/engineering/security/SECRETS_IMPLEMENTATION.md` — Implementation patterns and code
 - `.knowledge/guidelines/SECURITY.md` — Security guidelines
 - `.knowledge/frameworks/security/AUTHENTICATION.md` — Authentication patterns
 

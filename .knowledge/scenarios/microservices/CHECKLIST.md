@@ -1,4 +1,4 @@
-# Microservices Checklist
+﻿# Microservices Checklist
 
 > Task checklist for microservices architecture design and implementation
 
@@ -147,7 +147,7 @@
 
 - `.knowledge/scenarios/microservices/CONTEXT.md` — Microservices context
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 
 - `.knowledge/frameworks/patterns/INTEGRATION.md` — Integration patterns
 

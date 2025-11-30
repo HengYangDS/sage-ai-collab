@@ -1,4 +1,4 @@
-# Plugin Development Checklist
+﻿# Plugin Development Checklist
 
 > Task checklist for developing plugins and extensions
 
@@ -160,9 +160,9 @@
 
 - `.knowledge/scenarios/plugin_development/CONTEXT.md` — Plugin development context
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

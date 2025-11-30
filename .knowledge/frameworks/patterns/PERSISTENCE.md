@@ -1,4 +1,4 @@
-# Data Persistence Patterns
+﻿# Data Persistence Patterns
 
 > Universal patterns for data lifecycle, retention, and cleanup
 
@@ -130,7 +130,7 @@ def cleanup(store: DataStore, policy: RetentionPolicy):
 ## Related
 
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout handling
-- `.knowledge/practices/engineering/PATTERNS.md` — Engineering patterns
+- `.knowledge/practices/engineering/design/PATTERNS.md` — Engineering patterns
 
 ---
 

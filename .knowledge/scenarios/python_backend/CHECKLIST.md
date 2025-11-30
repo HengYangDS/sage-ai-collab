@@ -1,4 +1,4 @@
-# Python Backend Checklist
+﻿# Python Backend Checklist
 
 > Task checklist for Python backend development
 
@@ -110,7 +110,7 @@
 
 - `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

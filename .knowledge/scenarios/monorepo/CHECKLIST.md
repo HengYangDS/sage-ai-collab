@@ -1,4 +1,4 @@
-# Monorepo Checklist
+﻿# Monorepo Checklist
 
 > Task checklist for monorepo setup and management
 
@@ -147,9 +147,9 @@
 
 - `.knowledge/scenarios/monorepo/CONTEXT.md` — Monorepo context
 
-- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Git workflow practices
+- `.knowledge/practices/engineering/workflow/GIT_WORKFLOW.md` — Git workflow practices
 
-- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
+- `.knowledge/practices/engineering/operations/CI_CD.md` — CI/CD practices
 
 ---
 

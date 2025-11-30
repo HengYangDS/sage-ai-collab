@@ -1,4 +1,4 @@
-# Operational Runbook Template
+﻿# Operational Runbook Template
 
 > **Purpose**: Document operational procedures for system maintenance and incident response
 > **Use When**: Creating standard operating procedures, on-call guides, or maintenance documentation
@@ -285,8 +285,8 @@ Always include:
 ## Related
 
 - `.knowledge/templates/POSTMORTEM.md` — Incident postmortem template
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
-- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/operations/LOGGING.md` — Logging practices
 
 ---
 

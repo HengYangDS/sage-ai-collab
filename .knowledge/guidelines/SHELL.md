@@ -1,4 +1,4 @@
-# Shell Script Guidelines
+﻿# Shell Script Guidelines
 
 > Principles, standards, and quick reference for Bash scripting
 
@@ -146,16 +146,16 @@ result=`command`
 
 For detailed implementation patterns, see:
 
-> `.knowledge/practices/engineering/SHELL_PATTERNS.md`
+> `.knowledge/practices/engineering/languages/SHELL_PATTERNS.md`
 
 ---
 
 ## Related
 
 - `.knowledge/templates/SHELL_SCRIPT.md` — Standard script template
-- `.knowledge/practices/engineering/SHELL_PATTERNS.md` — Common patterns
+- `.knowledge/practices/engineering/languages/SHELL_PATTERNS.md` — Common patterns
 - `.knowledge/guidelines/CODE_STYLE.md` — General code style
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

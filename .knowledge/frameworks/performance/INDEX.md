@@ -1,4 +1,4 @@
-# Performance Framework
+﻿# Performance Framework
 
 > Optimization patterns and best practices for high-performance systems
 
@@ -37,7 +37,7 @@ This framework provides performance optimization guidelines for:
 
 | Document                                                                                  | Purpose                 | When to Use               |
 |-------------------------------------------------------------------------------------------|-------------------------|---------------------------|
-| [Profiling Guide](../../practices/engineering/PROFILING_GUIDE.md)                         | Detailed profiling how-to | Bottleneck identification |
+| [Profiling Guide](../../practices/engineering/optimization/PROFILING_GUIDE.md)                         | Detailed profiling how-to | Bottleneck identification |
 
 ---
 
@@ -130,7 +130,7 @@ flowchart LR
 
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout strategies
 - `.context/policies/TIMEOUT_HIERARCHY.md` — the system timeout config
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/practices/engineering/optimization/BATCH_OPTIMIZATION.md` — Batch processing
 - `tools/timeout_manager.py` — Performance testing tool
 
 ---

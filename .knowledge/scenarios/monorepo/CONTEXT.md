@@ -1,4 +1,4 @@
-# Monorepo Scenario Context
+﻿# Monorepo Scenario Context
 
 > Pre-configured context for monorepo project management
 
@@ -46,7 +46,7 @@ autonomy_default: L3
 
 |---------------|------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/PATTERNS.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/design/PATTERNS.md` |
 
 | **On-Demand** | `.knowledge/practices/documentation/PROJECT_DIRECTORY_STRUCTURE.md` · `.knowledge/guidelines/CODE_STYLE.md`    |
 

@@ -1,4 +1,4 @@
-# Microservices Scenario Context
+﻿# Microservices Scenario Context
 
 > Pre-configured context for microservices architecture development
 
@@ -46,9 +46,9 @@ autonomy_default: L3
 
 |---------------|--------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/API_DESIGN.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/design/API_DESIGN.md` |
 
-| **On-Demand** | `.knowledge/guidelines/SECURITY.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md`                       |
+| **On-Demand** | `.knowledge/guidelines/SECURITY.md` · `.knowledge/practices/engineering/design/ERROR_HANDLING.md`                       |
 
 ---
 
@@ -437,7 +437,7 @@ Order Service          Payment Service       Inventory Service
 
 - `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 
 - `.knowledge/guidelines/SECURITY.md` — Security guidelines
 

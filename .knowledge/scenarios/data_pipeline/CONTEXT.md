@@ -1,4 +1,4 @@
-# Data Pipeline Scenario Context
+﻿# Data Pipeline Scenario Context
 
 > Pre-configured context for data processing and ETL workflows
 
@@ -48,9 +48,9 @@ autonomy_default: L2
 
 |---------------|-------------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/ERROR_HANDLING.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/PYTHON.md` · `.knowledge/practices/engineering/design/ERROR_HANDLING.md` |
 
-| **On-Demand** | `.knowledge/practices/engineering/LOGGING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`          |
+| **On-Demand** | `.knowledge/practices/engineering/operations/LOGGING.md` · `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md`          |
 
 ---
 
@@ -562,9 +562,9 @@ validator = (
 
 - `.knowledge/guidelines/PYTHON.md` — Python guidelines
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling
 
-- `.knowledge/practices/engineering/LOGGING.md` — Logging practices
+- `.knowledge/practices/engineering/operations/LOGGING.md` — Logging practices
 
 - `.knowledge/frameworks/resilience/TIMEOUT_PATTERNS.md` — Timeout patterns
 

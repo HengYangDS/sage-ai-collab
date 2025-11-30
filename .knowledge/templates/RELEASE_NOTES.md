@@ -1,4 +1,4 @@
-# Release Notes Template
+﻿# Release Notes Template
 
 > **Purpose**: Template for documenting software releases
 > **Use When**: Publishing a new version of software or documentation
@@ -316,7 +316,7 @@ performance:
 ## Related
 
 - `.knowledge/templates/ADR.md` — Architecture Decision Record
-- `.knowledge/practices/engineering/GIT_WORKFLOW.md` — Release process
+- `.knowledge/practices/engineering/workflow/GIT_WORKFLOW.md` — Release process
 - `CHANGELOG.md` — Project changelog
 
 ---

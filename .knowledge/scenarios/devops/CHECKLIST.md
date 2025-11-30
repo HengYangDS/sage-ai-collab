@@ -1,4 +1,4 @@
-# DevOps Checklist
+﻿# DevOps Checklist
 
 > Task checklist for CI/CD and infrastructure management
 
@@ -160,9 +160,9 @@
 
 - `.knowledge/scenarios/devops/CONTEXT.md` — DevOps context
 
-- `.knowledge/practices/engineering/CI_CD.md` — CI/CD practices
+- `.knowledge/practices/engineering/operations/CI_CD.md` — CI/CD practices
 
-- `.knowledge/practices/engineering/MONITORING.md` — Monitoring practices
+- `.knowledge/practices/engineering/operations/MONITORING.md` — Monitoring practices
 
 ---
 

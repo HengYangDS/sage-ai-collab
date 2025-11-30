@@ -1,4 +1,4 @@
-# Data Pipeline Checklist
+﻿# Data Pipeline Checklist
 
 > Task checklist for ETL and data processing workflows
 
@@ -143,9 +143,9 @@
 
 - `.knowledge/scenarios/data_pipeline/CONTEXT.md` — Data pipeline context
 
-- `.knowledge/practices/engineering/MONITORING.md` — Monitoring practices
+- `.knowledge/practices/engineering/operations/MONITORING.md` — Monitoring practices
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

@@ -1,4 +1,4 @@
-# API Specification Template
+﻿# API Specification Template
 
 > **Purpose**: Document API endpoints, request/response schemas, and behaviors
 > **Use When**: Designing new APIs or documenting existing endpoints
@@ -257,7 +257,7 @@ Rate limit headers:
 
 ## Related
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 - `.knowledge/guidelines/ENGINEERING.md` — Engineering standards
 - `.knowledge/frameworks/patterns/PERSISTENCE.md` — Data patterns
 

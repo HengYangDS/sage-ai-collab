@@ -1,4 +1,4 @@
-# Shell Script Template
+﻿# Shell Script Template
 
 > Standard Bash script template with best practices
 
@@ -182,14 +182,14 @@ main "$@"
 | Retry logic | Add `retry()` function |
 | Progress | Add `spinner()` function |
 
-> See `.knowledge/practices/engineering/SHELL_PATTERNS.md` for implementations.
+> See `.knowledge/practices/engineering/languages/SHELL_PATTERNS.md` for implementations.
 
 ---
 
 ## Related
 
 - `.knowledge/guidelines/SHELL.md` — Shell script guidelines
-- `.knowledge/practices/engineering/SHELL_PATTERNS.md` — Common patterns
+- `.knowledge/practices/engineering/languages/SHELL_PATTERNS.md` — Common patterns
 
 ---
 

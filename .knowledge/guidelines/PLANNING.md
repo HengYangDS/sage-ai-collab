@@ -1,4 +1,4 @@
-# Planning and Design Guidelines
+﻿# Planning and Design Guidelines
 
 > Architecture and design principles for sustainable systems
 
@@ -105,7 +105,7 @@
 
 - `.knowledge/frameworks/design/AXIOMS.md` — Design axioms and principles
 - `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 - `.knowledge/frameworks/patterns/DECISION.md` — Decision quality framework
 
 ---

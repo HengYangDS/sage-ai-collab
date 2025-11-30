@@ -1,4 +1,4 @@
-# Security Framework
+﻿# Security Framework
 
 > Comprehensive security patterns and best practices for software development
 
@@ -102,8 +102,8 @@ flowchart TB
 
 ## Related
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Secure error handling
-- `.knowledge/practices/engineering/LOGGING.md` — Security logging
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Secure error handling
+- `.knowledge/practices/engineering/operations/LOGGING.md` — Security logging
 - `config/core/security.yaml` — Security configuration
 - `.context/decisions/ADR_0001_ARCHITECTURE.md` — Security architecture decisions
 

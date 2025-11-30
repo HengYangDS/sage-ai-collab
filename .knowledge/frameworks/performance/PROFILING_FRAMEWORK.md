@@ -1,4 +1,4 @@
-# Profiling Framework
+﻿# Profiling Framework
 
 > Conceptual framework for performance measurement and optimization
 
@@ -103,7 +103,7 @@ Define Metrics → Establish Baseline → Profile Under Load → Identify Bottle
 
 ## Related
 
-- `.knowledge/practices/engineering/PROFILING_GUIDE.md` — Detailed profiling implementation guide
+- `.knowledge/practices/engineering/optimization/PROFILING_GUIDE.md` — Detailed profiling implementation guide
 - `.knowledge/frameworks/performance/OPTIMIZATION_STRATEGIES.md` — Optimization strategies
 - `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching patterns
 

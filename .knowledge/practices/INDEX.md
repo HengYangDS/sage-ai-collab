@@ -55,49 +55,90 @@
 
 ### 1.4 Engineering
 
-| File                                     | Purpose                        |
-|------------------------------------------|--------------------------------|
-| `engineering/INDEX.md`                   | Engineering practices index    |
-| `engineering/API_DESIGN.md`              | API design patterns            |
-| `engineering/BATCH_OPTIMIZATION.md`      | Batch processing               |
-| `engineering/CI_CD.md`                   | CI/CD configuration            |
-| `engineering/CODE_REVIEW.md`             | Code review practices          |
-| `engineering/COMMON_PITFALLS.md`         | Common mistakes to avoid       |
-| `engineering/CONCURRENCY.md`             | Concurrency patterns           |
-| `engineering/DATABASE.md`                | Database best practices        |
-| `engineering/DEPENDENCY_MANAGEMENT.md`   | Dependency version control     |
-| `engineering/ERROR_HANDLING.md`          | Error handling patterns        |
-| `engineering/FEATURE_FLAGS.md`           | Feature flag patterns          |
-| `engineering/GIT_WORKFLOW.md`            | Git branching and commits      |
-| `engineering/INCREMENTAL_IMPROVEMENT.md` | Incremental changes            |
-| `engineering/INTEGRATION_TESTING.md`     | Integration testing            |
-| `engineering/KNOWLEDGE_GRAPH.md`         | Knowledge graph patterns       |
-| `engineering/LOGGING.md`                 | Logging practices              |
-| `engineering/MECE.md`                    | MECE principle application     |
-| `engineering/MONITORING.md`              | Monitoring and observability   |
-| `engineering/PATTERNS.md`                | Engineering patterns           |
-| `engineering/PERFORMANCE.md`             | Performance optimization       |
-| `engineering/PROFILING_GUIDE.md`         | Performance profiling guide    |
-| `engineering/PYTHON_PATTERNS.md`         | Python implementation patterns |
-| `engineering/SECRETS_IMPLEMENTATION.md`  | Secrets management code        |
-| `engineering/SECURITY_PATTERNS.md`       | Security implementation code   |
-| `engineering/TESTING_STRATEGY.md`        | Testing strategies             |
-| `engineering/TROUBLESHOOTING.md`         | Troubleshooting guides         |
-| `engineering/UNIT_TESTING_PATTERNS.md`   | Unit testing patterns          |
-| `engineering/YAML_CONVENTIONS.md`        | YAML configuration standards   |
+Engineering practices organized into 8 subdirectories:
+
+#### Design (5 files)
+
+| File                                    | Purpose                   |
+|-----------------------------------------|---------------------------|
+| `engineering/design/API_DESIGN.md`      | API design patterns       |
+| `engineering/design/CONCURRENCY.md`     | Concurrency patterns      |
+| `engineering/design/DATABASE.md`        | Database best practices   |
+| `engineering/design/ERROR_HANDLING.md`  | Error handling patterns   |
+| `engineering/design/PATTERNS.md`        | Engineering patterns      |
+
+#### Quality (4 files)
+
+| File                                          | Purpose                |
+|-----------------------------------------------|------------------------|
+| `engineering/quality/CODE_REVIEW.md`          | Code review practices  |
+| `engineering/quality/INTEGRATION_TESTING.md`  | Integration testing    |
+| `engineering/quality/TESTING_STRATEGY.md`     | Testing strategies     |
+| `engineering/quality/UNIT_TESTING_PATTERNS.md`| Unit testing patterns  |
+
+#### Operations (4 files)
+
+| File                                       | Purpose                      |
+|--------------------------------------------|------------------------------|
+| `engineering/operations/CI_CD.md`          | CI/CD configuration          |
+| `engineering/operations/LOGGING.md`        | Logging practices            |
+| `engineering/operations/MONITORING.md`     | Monitoring and observability |
+| `engineering/operations/TROUBLESHOOTING.md`| Troubleshooting guides       |
+
+#### Optimization (3 files)
+
+| File                                            | Purpose                     |
+|-------------------------------------------------|-----------------------------|
+| `engineering/optimization/BATCH_OPTIMIZATION.md`| Batch processing            |
+| `engineering/optimization/PERFORMANCE.md`       | Performance optimization    |
+| `engineering/optimization/PROFILING_GUIDE.md`   | Performance profiling guide |
+
+#### Workflow (3 files)
+
+| File                                            | Purpose                    |
+|-------------------------------------------------|----------------------------|
+| `engineering/workflow/DEPENDENCY_MANAGEMENT.md` | Dependency version control |
+| `engineering/workflow/FEATURE_FLAGS.md`         | Feature flag patterns      |
+| `engineering/workflow/GIT_WORKFLOW.md`          | Git branching and commits  |
+
+#### Security (2 files)
+
+| File                                             | Purpose                     |
+|--------------------------------------------------|-----------------------------|
+| `engineering/security/SECRETS_IMPLEMENTATION.md` | Secrets management code     |
+| `engineering/security/SECURITY_PATTERNS.md`      | Security implementation code|
+
+#### Languages (5 files)
+
+| File                                        | Purpose                        |
+|---------------------------------------------|--------------------------------|
+| `engineering/languages/PYTHON_PATTERNS.md`  | Python implementation patterns |
+| `engineering/languages/SHELL_PATTERNS.md`   | Shell script patterns          |
+| `engineering/languages/SQL_PATTERNS.md`     | SQL patterns                   |
+| `engineering/languages/TYPESCRIPT_PATTERNS.md`| TypeScript patterns          |
+| `engineering/languages/YAML_CONVENTIONS.md` | YAML configuration standards   |
+
+#### Methodology (4 files)
+
+| File                                             | Purpose                    |
+|--------------------------------------------------|----------------------------|
+| `engineering/methodology/COMMON_PITFALLS.md`     | Common mistakes to avoid   |
+| `engineering/methodology/INCREMENTAL_IMPROVEMENT.md`| Incremental changes     |
+| `engineering/methodology/KNOWLEDGE_GRAPH.md`     | Knowledge graph patterns   |
+| `engineering/methodology/MECE.md`                | MECE principle application |
 
 ---
 
 ## 2. By Use Case
 
-| Need             | Practice                                   |
-|------------------|--------------------------------------------|
-| AI interaction   | `ai_collaboration/WORKFLOW.md`             |
-| Token efficiency | `ai_collaboration/TOKEN_OPTIMIZATION.md`   |
-| Code quality     | `engineering/CODE_REVIEW.md`               |
-| Error handling   | `engineering/ERROR_HANDLING.md`            |
-| Testing          | `engineering/TESTING_STRATEGY.md`          |
-| Documentation    | `documentation/DOCUMENTATION_STANDARDS.md` |
+| Need             | Practice                                       |
+|------------------|------------------------------------------------|
+| AI interaction   | `ai_collaboration/WORKFLOW.md`                 |
+| Token efficiency | `ai_collaboration/TOKEN_OPTIMIZATION.md`       |
+| Code quality     | `engineering/quality/CODE_REVIEW.md`           |
+| Error handling   | `engineering/design/ERROR_HANDLING.md`         |
+| Testing          | `engineering/quality/TESTING_STRATEGY.md`      |
+| Documentation    | `documentation/DOCUMENTATION_STANDARDS.md`     |
 
 ---
 

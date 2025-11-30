@@ -1,4 +1,4 @@
-# Performance Quick Reference
+﻿# Performance Quick Reference
 
 > Essential performance checks and commands for DevOps workflows
 
@@ -88,7 +88,7 @@ async def read_files(paths):
 
 ## Related
 
-- `.knowledge/practices/engineering/PERFORMANCE.md` — Full performance guide
+- `.knowledge/practices/engineering/optimization/PERFORMANCE.md` — Full performance guide
 - `.knowledge/frameworks/performance/INDEX.md` — Performance framework
 - `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
 - `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Profiling guide

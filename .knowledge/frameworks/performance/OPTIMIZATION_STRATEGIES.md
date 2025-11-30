@@ -1,4 +1,4 @@
-# Optimization Strategies
+﻿# Optimization Strategies
 
 > Systematic approaches to improving system performance
 
@@ -522,7 +522,7 @@ class DatabaseRouter:
 
 - `.knowledge/frameworks/performance/CACHING_PATTERNS.md` — Caching strategies
 - `.knowledge/frameworks/performance/PROFILING_FRAMEWORK.md` — Performance measurement
-- `.knowledge/practices/engineering/BATCH_OPTIMIZATION.md` — Batch processing
+- `.knowledge/practices/engineering/optimization/BATCH_OPTIMIZATION.md` — Batch processing
 
 ---
 

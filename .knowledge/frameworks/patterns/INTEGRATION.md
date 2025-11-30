@@ -1,4 +1,4 @@
-# Integration Patterns
+﻿# Integration Patterns
 
 > Patterns for integrating SAGE with AI tools, IDEs, and CI/CD systems
 
@@ -570,7 +570,7 @@ SAGE_EXTERNAL_URL=https://api.example.com
 ## Related
 
 - `.knowledge/frameworks/patterns/COLLABORATION.md` — Collaboration patterns
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design guidelines
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design guidelines
 - `.context/decisions/ADR_0008_PLUGIN_SYSTEM.md` — Plugin architecture
 - `docs/api/MCP.md` — MCP API reference
 

@@ -1,4 +1,4 @@
-# SQL Guidelines
+﻿# SQL Guidelines
 
 > SQL and database conventions and best practices
 
@@ -112,7 +112,7 @@
 
 ## Related
 
-- `.knowledge/practices/engineering/SQL_PATTERNS.md` — Query patterns, schema design, and implementations
+- `.knowledge/practices/engineering/languages/SQL_PATTERNS.md` — Query patterns, schema design, and implementations
 - `.knowledge/guidelines/ENGINEERING.md` — Engineering practices
 - `.knowledge/guidelines/SECURITY.md` — Security guidelines
 

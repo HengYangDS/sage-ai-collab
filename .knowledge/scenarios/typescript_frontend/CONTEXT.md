@@ -1,4 +1,4 @@
-# TypeScript Frontend Scenario Context
+﻿# TypeScript Frontend Scenario Context
 
 > Pre-configured context for TypeScript frontend development (React/Vue)
 
@@ -48,9 +48,9 @@ autonomy_default: L3
 
 |---------------|-----------------------------------------------------------------------------------------|
 
-| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/CODE_STYLE.md` · `.knowledge/practices/engineering/PATTERNS.md` |
+| **Auto-Load** | `core/PRINCIPLES.md` · `.knowledge/guidelines/CODE_STYLE.md` · `.knowledge/practices/engineering/design/PATTERNS.md` |
 
-| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/TESTING_STRATEGY.md`               |
+| **On-Demand** | `.knowledge/guidelines/ENGINEERING.md` · `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md`               |
 
 ---
 
@@ -444,9 +444,9 @@ describe('useFetch', () => {
 
 - `.knowledge/guidelines/CODE_STYLE.md` — Code style guidelines
 
-- `.knowledge/practices/engineering/PATTERNS.md` — Design patterns
+- `.knowledge/practices/engineering/design/PATTERNS.md` — Design patterns
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 - `.knowledge/frameworks/autonomy/LEVELS.md` — Autonomy framework
 

@@ -1,4 +1,4 @@
-# TypeScript Frontend Checklist
+﻿# TypeScript Frontend Checklist
 
 > Task checklist for TypeScript frontend development
 
@@ -127,7 +127,7 @@
 
 - `.knowledge/guidelines/TYPESCRIPT.md` — TypeScript guidelines
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

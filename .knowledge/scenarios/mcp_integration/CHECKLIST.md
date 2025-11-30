@@ -1,4 +1,4 @@
-# MCP Integration Checklist
+﻿# MCP Integration Checklist
 
 > Task checklist for Model Context Protocol (MCP) server and client integration
 
@@ -147,9 +147,9 @@
 
 - `.knowledge/scenarios/mcp_integration/CONTEXT.md` — MCP integration context
 
-- `.knowledge/practices/engineering/API_DESIGN.md` — API design patterns
+- `.knowledge/practices/engineering/design/API_DESIGN.md` — API design patterns
 
-- `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
+- `.knowledge/practices/engineering/design/ERROR_HANDLING.md` — Error handling patterns
 
 ---
 

@@ -1,4 +1,4 @@
-# Legacy Modernization Checklist
+﻿# Legacy Modernization Checklist
 
 > Task checklist for modernizing legacy systems and codebases
 
@@ -147,9 +147,9 @@
 
 - `.knowledge/scenarios/legacy_modernization/CONTEXT.md` — Legacy modernization context
 
-- `.knowledge/practices/engineering/INCREMENTAL_IMPROVEMENT.md` — Incremental improvement
+- `.knowledge/practices/engineering/methodology/INCREMENTAL_IMPROVEMENT.md` — Incremental improvement
 
-- `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
+- `.knowledge/practices/engineering/quality/TESTING_STRATEGY.md` — Testing strategies
 
 ---
 

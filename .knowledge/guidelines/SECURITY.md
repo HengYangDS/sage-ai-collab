@@ -1,4 +1,4 @@
-# Security Guidelines
+﻿# Security Guidelines
 
 > Security principles and standards for knowledge base development
 
@@ -175,7 +175,7 @@
 
 ## Related
 
-- `.knowledge/practices/engineering/SECURITY_PATTERNS.md` — Implementation patterns and code examples
+- `.knowledge/practices/engineering/security/SECURITY_PATTERNS.md` — Implementation patterns and code examples
 - `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Secrets management framework
 - `.knowledge/frameworks/security/SECURITY_CHECKLIST.md` — Comprehensive security checklist
 - `.knowledge/frameworks/security/AUTHENTICATION.md` — Authentication patterns
