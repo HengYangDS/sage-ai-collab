@@ -1,210 +1,157 @@
-# Python-Specific Guidelines
+# Python Guidelines
 
-> Python best practices, type hints, decorators, patterns
+> Python coding standards, type hints, and best practices
 
 ---
 
 ## Table of Contents
 
 - [1. Type Hints](#1-type-hints)
-- [2. Decorators](#2-decorators)
-- [3. Context Managers](#3-context-managers)
-- [4. Async Patterns](#4-async-patterns)
-- [5. Data Classes](#5-data-classes)
-- [6. Common Patterns](#6-common-patterns)
+- [2. Code Organization](#2-code-organization)
+- [3. Naming Conventions](#3-naming-conventions)
+- [4. Documentation](#4-documentation)
+- [5. Best Practices](#5-best-practices)
+- [6. Quality Checklist](#6-quality-checklist)
 
 ---
 
 ## 1. Type Hints
 
-### 1.1 Basic Types
+### Requirements
 
-```python
-from typing import Optional, List, Dict, Callable
+| Rule                     | Description                    |
+|--------------------------|--------------------------------|
+| All public functions     | Must have type hints           |
+| Optional for nullable    | Use `Optional[T]` not `T | None` |
+| Use TypeVar for generics | `T = TypeVar("T")`             |
+| Return type required     | Always specify return type     |
 
-def process(name: str, count: int = 1) -> List[str]:
-    return [name] * count
+### Type Hint Examples
 
-def find_user(user_id: int) -> Optional[User]:
-    return db.get(user_id)
-```
-
-### 1.2 Complex Types
-
-```python
-from typing import TypeVar, Generic, Protocol
-
-T = TypeVar("T")
-
-class Repository(Generic[T], Protocol):
-    def get(self, id: str) -> Optional[T]: ...
-    def save(self, entity: T) -> T: ...
-```
-
-### 1.3 Type Hint Rules
-
-| Rule                     | Example                    |
-|--------------------------|----------------------------|
-| All public functions     | `def func(x: int) -> str:` |
-| Optional for nullable    | `Optional[str]` not `str   | None` |
-| Use TypeVar for generics | `T = TypeVar("T")`         |
+| Type               | Usage                          |
+|--------------------|--------------------------------|
+| `str`, `int`, etc. | Basic types                    |
+| `Optional[T]`      | Nullable values                |
+| `List[T]`          | List of items                  |
+| `Dict[K, V]`       | Dictionary                     |
+| `Callable[[A], R]` | Function type                  |
+| `TypeVar("T")`     | Generic type parameter         |
 
 ---
 
-## 2. Decorators
+## 2. Code Organization
 
-### 2.1 Common Decorators
+### File Structure
 
-```python
-from functools import wraps
-import logging
+| Order | Content                    |
+|-------|----------------------------|
+| 1     | Imports (stdlib → third-party → local) |
+| 2     | Constants                  |
+| 3     | Type definitions           |
+| 4     | Classes/Functions          |
+| 5     | Main block (if applicable) |
 
-def log_calls(func: Callable) -> Callable:
-    @wraps(func)
-    def wrapper(*args, **kwargs):
-        logging.info(f"Calling {func.__name__}")
-        return func(*args, **kwargs)
-    return wrapper
+### Import Order
 
-@log_calls
-def process(data: str) -> str:
-    return data.upper()
-```
-
-### 2.2 Class Decorators
-
-| Decorator       | Use For                  |
-|-----------------|--------------------------|
-| `@dataclass`    | Data containers          |
-| `@property`     | Computed attributes      |
-| `@classmethod`  | Alternative constructors |
-| `@staticmethod` | Utility functions        |
+| Priority | Type          | Example                |
+|----------|---------------|------------------------|
+| 1        | Standard lib  | `import os`            |
+| 2        | Third-party   | `import requests`      |
+| 3        | Local         | `from .utils import x` |
 
 ---
 
-## 3. Context Managers
+## 3. Naming Conventions
 
-```python
-from contextlib import contextmanager
-
-@contextmanager
-def timer(name: str):
-    start = time.time()
-    try:
-        yield
-    finally:
-        print(f"{name}: {time.time() - start:.2f}s")
-
-# Usage
-with timer("process"):
-    do_work()
-```
+| Element       | Convention  | Example              |
+|---------------|-------------|----------------------|
+| Variables     | snake_case  | `user_count`         |
+| Constants     | UPPER_SNAKE | `MAX_RETRIES`        |
+| Functions     | snake_case  | `get_user()`         |
+| Classes       | PascalCase  | `UserService`        |
+| Private       | _prefix     | `_internal_state`    |
+| Type vars     | Single cap  | `T`, `K`, `V`        |
+| Protocols     | Suffix-able | `Comparable`, `Iterable` |
 
 ---
 
-## 4. Async Patterns
+## 4. Documentation
 
-### 4.1 Basic Async
+### Docstring Format (Google Style)
 
-```python
-import asyncio
+| Section   | Purpose                |
+|-----------|------------------------|
+| Summary   | Brief description      |
+| Args      | Parameter descriptions |
+| Returns   | Return value           |
+| Raises    | Exceptions raised      |
+| Examples  | Usage examples         |
 
-async def fetch_data(url: str) -> dict:
-    async with aiohttp.ClientSession() as session:
-        async with session.get(url) as response:
-            return await response.json()
+### When to Document
 
-async def fetch_all(urls: List[str]) -> List[dict]:
-    return await asyncio.gather(*[fetch_data(u) for u in urls])
-```
-
-### 4.2 Async Guidelines
-
-| Pattern           | Use For              |
-|-------------------|----------------------|
-| `async/await`     | I/O-bound operations |
-| `asyncio.gather`  | Concurrent execution |
-| `asyncio.timeout` | Timeout protection   |
+| Document                  | Don't Document           |
+|---------------------------|--------------------------|
+| Public API                | Internal helpers         |
+| Complex algorithms        | Obvious operations       |
+| Non-obvious behavior      | Self-explanatory code    |
+| Workarounds/hacks         | Simple getters/setters   |
 
 ---
 
-## 5. Data Classes
+## 5. Best Practices
 
-```python
-from dataclasses import dataclass, field
-from typing import List
+### DO's and DON'Ts
 
-@dataclass
-class User:
-    name: str
-    email: str
-    roles: List[str] = field(default_factory=list)
-    
-    def __post_init__(self):
-        self.email = self.email.lower()
+| ✅ DO                      | ❌ DON'T                    |
+|---------------------------|----------------------------|
+| Use type hints            | Use dynamic typing blindly |
+| Use dataclasses           | Manual `__init__` for data |
+| Use context managers      | Manual resource cleanup    |
+| Use pathlib               | String path manipulation   |
+| Use f-strings             | % or .format()             |
+| Use `is None`             | `== None`                  |
 
-@dataclass(frozen=True)
-class Config:
-    host: str
-    port: int = 8080
-```
+### Function Guidelines
 
----
+| Metric                | Target      |
+|-----------------------|-------------|
+| Lines per function    | < 50        |
+| Parameters            | ≤ 5         |
+| Nesting depth         | ≤ 3         |
+| Cyclomatic complexity | ≤ 10        |
 
-## 6. Common Patterns
+### Common Patterns to Use
 
-### 6.1 Factory Pattern
-
-```python
-class HandlerFactory:
-    _handlers: Dict[str, Type[Handler]] = {}
-    
-    @classmethod
-    def register(cls, name: str):
-        def decorator(handler_cls):
-            cls._handlers[name] = handler_cls
-            return handler_cls
-        return decorator
-    
-    @classmethod
-    def create(cls, name: str) -> Handler:
-        return cls._handlers[name]()
-```
-
-### 6.2 Repository Pattern
-
-```python
-class UserRepository:
-    def __init__(self, session: Session):
-        self._session = session
-    
-    def get(self, id: str) -> Optional[User]:
-        return self._session.query(User).get(id)
-    
-    def save(self, user: User) -> User:
-        self._session.add(user)
-        self._session.commit()
-        return user
-```
+| Pattern          | Use Case                  |
+|------------------|---------------------------|
+| `@dataclass`     | Data containers           |
+| `@property`      | Computed attributes       |
+| `@classmethod`   | Alternative constructors  |
+| `@staticmethod`  | Utility functions         |
+| `contextmanager` | Resource management       |
+| `async/await`    | I/O-bound operations      |
 
 ---
 
-## 7. Quality Checklist
+## 6. Quality Checklist
 
-- [ ] Type hints on public functions
+- [ ] Type hints on all public functions
 - [ ] Docstrings on public API
 - [ ] No mutable default arguments
 - [ ] Context managers for resources
 - [ ] Async for I/O-bound operations
+- [ ] No bare `except:` clauses
+- [ ] Specific exception types used
+- [ ] No magic numbers (use constants)
 
 ---
 
 ## Related
 
+- `.knowledge/practices/engineering/PYTHON_PATTERNS.md` — Implementation patterns and code examples
 - `.knowledge/guidelines/CODE_STYLE.md` — General code style standards
 - `.knowledge/practices/engineering/ERROR_HANDLING.md` — Error handling patterns
 - `.knowledge/practices/engineering/TESTING_STRATEGY.md` — Testing strategies
-- `.knowledge/scenarios/python_backend/CONTEXT.md` — Python backend scenario
 
 ---
 

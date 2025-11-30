@@ -1,9 +1,3 @@
----
-version: "1.0"
-last_updated: "2025-11-30"
-status: published
-tokens: ~500
----
 # SAGE Naming Conventions
 
 > Project-specific naming standards for SAGE Knowledge Base
@@ -196,11 +190,18 @@ class TimeoutOccurredEvent:
 
 ### 5.2 Documentation Files
 
-| Type       | Pattern                            | Example                    |
-|:-----------|:-----------------------------------|:---------------------------|
-| Markdown   | `kebab-case.md` or `snake_case.md` | `timeout-hierarchy.md`     |
-| ADR        | `ADR-NNNN-title.md`                | `ADR-0001-architecture.md` |
-| Design doc | `NN-title.md`                      | `01-architecture.md`       |
+| Type       | Pattern              | Example                 | Forbidden        |
+|:-----------|:---------------------|:------------------------|:-----------------|
+| Markdown   | `UPPER_SNAKE_CASE.md`| `TIMEOUT_HIERARCHY.md`  | ❌ numeric prefix |
+| ADR        | `ADR_NNNN_TOPIC.md`  | `ADR_0001_ARCHITECTURE.md` | ❌ hyphens     |
+| Index      | `INDEX.md`           | `INDEX.md`              | ❌ lowercase     |
+| Root docs  | `README.md`, etc.    | `CHANGELOG.md`          | —                |
+
+**Naming Rules:**
+- ✅ Use `UPPER_SNAKE_CASE` for all Markdown files
+- ✅ Use lowercase `.md` extension (not `.MD`)
+- ❌ No numeric prefixes (e.g., `01-`, `02-`)
+- ❌ No kebab-case (e.g., `timeout-hierarchy.md`)
 
 ### 5.3 Directory Structure
 
@@ -278,8 +279,9 @@ format.
 
 - `.junie/guidelines.md` — General coding guidelines
 - `.knowledge/practices/engineering/` — Engineering practices
-- `docs/design/01-architecture.md` — Architecture patterns
+- `docs/design/architecture/INDEX.md` — Architecture patterns
+- `.context/conventions/DOC_TEMPLATE.md` — Document template
 
 ---
 
-*Part of SAGE Knowledge Base - Project Conventions*
+*Part of SAGE Knowledge Base*

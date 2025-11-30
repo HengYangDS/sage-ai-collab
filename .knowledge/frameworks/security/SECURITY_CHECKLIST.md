@@ -1,17 +1,18 @@
-﻿# Security Checklist
+# Security Checklist
 
-> Comprehensive security review guide for development, deployment, and audit
+> Comprehensive security review checklist for development, deployment, and operations
 
 ---
 
 ## Table of Contents
 
 - [1. Overview](#1-overview)
-- [2. Development](#2-development)
-- [3. Code Review](#3-code-review)
-- [4. Deployment](#4-deployment)
-- [5. Operations](#5-operations)
+- [2. Development Checklist](#2-development-checklist)
+- [3. Code Review Checklist](#3-code-review-checklist)
+- [4. Deployment Checklist](#4-deployment-checklist)
+- [5. Operations Checklist](#5-operations-checklist)
 - [6. Incident Response](#6-incident-response)
+- [7. Quick Reference](#7-quick-reference)
 
 ---
 
@@ -38,7 +39,7 @@
 
 ---
 
-## 2. Development
+## 2. Development Checklist
 
 ### Input Validation
 
@@ -49,40 +50,12 @@
 - [ ] 🟠 Reject unexpected fields in API requests
 - [ ] 🟡 Custom error messages don't leak information
 
-```python
-# Good: Explicit validation
-from pydantic import BaseModel, Field, validator
-
-class UserInput(BaseModel):
-    username: str = Field(..., min_length=3, max_length=50, regex="^[a-zA-Z0-9_]+$")
-    email: str = Field(..., max_length=255)
-    age: int = Field(..., ge=0, le=150)
-    
-    @validator('email')
-    def validate_email(cls, v):
-        if '@' not in v:
-            raise ValueError('Invalid email')
-        return v.lower()
-```
-
 ### SQL Injection Prevention
 
 - [ ] 🔴 Parameterized queries used exclusively
 - [ ] 🔴 No string concatenation in SQL
 - [ ] 🟠 ORM used correctly
 - [ ] 🟠 Stored procedures parameterized
-
-```python
-# Bad: SQL injection vulnerability
-query = f"SELECT * FROM users WHERE name = '{user_input}'"
-
-# Good: Parameterized query
-query = "SELECT * FROM users WHERE name = %s"
-cursor.execute(query, (user_input,))
-
-# Good: ORM with proper filtering
-User.objects.filter(name=user_input)
-```
 
 ### XSS Prevention
 
@@ -91,19 +64,6 @@ User.objects.filter(name=user_input)
 - [ ] 🟠 Input sanitization for rich text
 - [ ] 🟠 Template auto-escaping enabled
 - [ ] 🟡 DOM manipulation uses safe APIs
-
-```python
-# HTML encoding
-from markupsafe import escape
-safe_output = escape(user_input)
-
-# Content-Security-Policy
-response.headers["Content-Security-Policy"] = (
-    "default-src 'self'; "
-    "script-src 'self'; "
-    "style-src 'self' 'unsafe-inline'"
-)
-```
 
 ### Authentication
 
@@ -135,39 +95,18 @@ response.headers["Content-Security-Policy"] = (
 
 ---
 
-## 3. Code Review
+## 3. Code Review Checklist
 
-### Security-Focused Review
+### Security Focus Areas
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                  Code Review Security Focus                 │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1. Authentication Changes                                  │
-│     □ Password handling correct?                            │
-│     □ Session management secure?                            │
-│     □ Token validation proper?                              │
-│                                                             │
-│  2. Authorization Changes                                   │
-│     □ Access control enforced?                              │
-│     □ Resource ownership checked?                           │
-│     □ No privilege escalation?                              │
-│                                                             │
-│  3. Data Handling                                           │
-│     □ Input validated?                                      │
-│     □ Output encoded?                                       │
-│     □ Sensitive data protected?                             │
-│                                                             │
-│  4. Dependencies                                            │
-│     □ New dependencies reviewed?                            │
-│     □ Known vulnerabilities checked?                        │
-│     □ Minimal permissions granted?                          │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+| Area                    | Check                              |
+|-------------------------|------------------------------------|
+| Authentication changes  | Password handling, session mgmt    |
+| Authorization changes   | Access control, ownership check    |
+| Data handling           | Input validation, output encoding  |
+| Dependencies            | New deps reviewed, vulnerabilities |
 
-### Review Checklist
+### Review Items
 
 - [ ] 🔴 No hardcoded credentials
 - [ ] 🔴 No sensitive data in logs
@@ -180,37 +119,9 @@ response.headers["Content-Security-Policy"] = (
 - [ ] 🟡 Comments don't contain sensitive info
 - [ ] 🟡 Debug code removed
 
-### Automated Checks
-
-```yaml
-# .github/workflows/security.yml
-security-scan:
-  runs-on: ubuntu-latest
-  steps:
-    - uses: actions/checkout@v4
-    
-    # Static analysis
-    - name: Run Bandit
-      run: bandit -r src/ -ll
-    
-    # Dependency scanning
-    - name: Check dependencies
-      run: pip-audit
-    
-    # Secret scanning
-    - name: Scan for secrets
-      uses: trufflesecurity/trufflehog@main
-      with:
-        path: ./
-    
-    # SAST
-    - name: CodeQL Analysis
-      uses: github/codeql-action/analyze@v2
-```
-
 ---
 
-## 4. Deployment
+## 4. Deployment Checklist
 
 ### Pre-Deployment
 
@@ -232,30 +143,6 @@ security-scan:
 - [ ] 🟠 DDoS protection configured
 - [ ] 🟠 WAF rules applied
 
-### Security Headers
-
-```python
-# Required security headers
-SECURITY_HEADERS = {
-    # Prevent XSS
-    "X-Content-Type-Options": "nosniff",
-    "X-Frame-Options": "DENY",
-    "X-XSS-Protection": "1; mode=block",
-    
-    # HTTPS enforcement
-    "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
-    
-    # Content Security Policy
-    "Content-Security-Policy": "default-src 'self'; script-src 'self'",
-    
-    # Referrer policy
-    "Referrer-Policy": "strict-origin-when-cross-origin",
-    
-    # Permissions policy
-    "Permissions-Policy": "geolocation=(), microphone=(), camera=()"
-}
-```
-
 ### Container Security
 
 - [ ] 🔴 Base image from trusted source
@@ -266,29 +153,9 @@ SECURITY_HEADERS = {
 - [ ] 🟠 Resource limits set
 - [ ] 🟡 Security context defined
 
-```dockerfile
-# Secure Dockerfile example
-FROM python:3.12-slim AS base
-
-# Create non-root user
-RUN useradd --create-home --shell /bin/bash app
-USER app
-WORKDIR /home/app
-
-# Copy only necessary files
-COPY --chown=app:app requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-COPY --chown=app:app src/ ./src/
-
-# Run as non-root
-USER app
-CMD ["python", "-m", "sage"]
-```
-
 ---
 
-## 5. Operations
+## 5. Operations Checklist
 
 ### Monitoring
 
@@ -309,33 +176,6 @@ CMD ["python", "-m", "sage"]
 - [ ] 🟠 Log retention policy defined
 - [ ] 🟡 Log integrity protected
 
-```python
-# Secure logging pattern
-import structlog
-
-logger = structlog.get_logger()
-
-def log_security_event(
-    event_type: str,
-    user_id: str,
-    resource: str,
-    action: str,
-    result: str,
-    **extra
-):
-    """Log security event without sensitive data."""
-    logger.info(
-        "security_event",
-        event_type=event_type,
-        user_id=user_id,  # Not the full user object
-        resource=resource,
-        action=action,
-        result=result,
-        timestamp=datetime.utcnow().isoformat(),
-        **extra
-    )
-```
-
 ### Regular Tasks
 
 | Task               | Frequency | Owner    |
@@ -347,114 +187,36 @@ def log_security_event(
 | Penetration test   | Annually  | External |
 | Security training  | Annually  | All      |
 
-### Weekly Security Tasks
-
-- [ ] Review security alerts
-- [ ] Check dependency vulnerabilities
-- [ ] Review failed login attempts
-- [ ] Check certificate expiration
-- [ ] Review access logs for anomalies
-
-### Monthly Security Tasks
-
-- [ ] Review user access rights
-- [ ] Check for unused accounts
-- [ ] Review API key usage
-- [ ] Update security documentation
-- [ ] Review firewall rules
-
 ---
 
 ## 6. Incident Response
 
 ### Incident Classification
 
-| Severity | Definition    | Response Time | Examples                                 |
-|----------|---------------|---------------|------------------------------------------|
-| P1       | Active breach | Immediate     | Data exfiltration, system compromise     |
-| P2       | High risk     | 1 hour        | Credential leak, vulnerability exploit   |
-| P3       | Medium risk   | 4 hours       | Failed attacks, suspicious activity      |
-| P4       | Low risk      | 24 hours      | Policy violation, minor misconfiguration |
+| Severity | Definition    | Response Time | Examples                             |
+|----------|---------------|---------------|--------------------------------------|
+| P1       | Active breach | Immediate     | Data exfiltration, system compromise |
+| P2       | High risk     | 1 hour        | Credential leak, vulnerability       |
+| P3       | Medium risk   | 4 hours       | Failed attacks, suspicious activity  |
+| P4       | Low risk      | 24 hours      | Policy violation, misconfiguration   |
 
-### Response Procedure
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                   Incident Response Flow                    │
-├─────────────────────────────────────────────────────────────┤
-│                                                             │
-│  1. DETECT                                                  │
-│     ├── Alert triggered                                     │
-│     ├── Report received                                     │
-│     └── Anomaly identified                                  │
-│              │                                              │
-│              ▼                                              │
-│  2. ASSESS                                                  │
-│     ├── Classify severity                                   │
-│     ├── Identify scope                                      │
-│     └── Notify stakeholders                                 │
-│              │                                              │
-│              ▼                                              │
-│  3. CONTAIN                                                 │
-│     ├── Isolate affected systems                           │
-│     ├── Block attack vectors                               │
-│     └── Preserve evidence                                   │
-│              │                                              │
-│              ▼                                              │
-│  4. ERADICATE                                               │
-│     ├── Remove threat                                       │
-│     ├── Patch vulnerabilities                              │
-│     └── Reset compromised credentials                       │
-│              │                                              │
-│              ▼                                              │
-│  5. RECOVER                                                 │
-│     ├── Restore from clean backup                          │
-│     ├── Verify system integrity                            │
-│     └── Monitor for recurrence                             │
-│              │                                              │
-│              ▼                                              │
-│  6. LEARN                                                   │
-│     ├── Document incident                                   │
-│     ├── Conduct post-mortem                                │
-│     └── Implement improvements                             │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
-
-### Emergency Contacts
-
-| Role          | Responsibility         | Contact   |
-|---------------|------------------------|-----------|
-| Security Lead | Incident coordination  | [On-call] |
-| Platform Lead | System access          | [On-call] |
-| Legal         | Compliance/disclosure  | [Contact] |
-| PR            | External communication | [Contact] |
-
-### Immediate Actions
+### Response Flow
 
 ```
-□ Credential Compromise
-  1. Revoke affected credentials immediately
-  2. Force password reset for affected users
-  3. Review access logs for unauthorized activity
-  4. Notify affected users
-
-□ Data Breach
-  1. Identify scope of exposed data
-  2. Preserve logs and evidence
-  3. Notify legal team
-  4. Prepare disclosure if required
-
-□ System Compromise
-  1. Isolate affected systems
-  2. Capture memory/disk images
-  3. Block attacker access
-  4. Restore from known-good backup
+Detect → Assess → Contain → Eradicate → Recover → Learn
 ```
+
+### Immediate Actions by Type
+
+| Incident Type        | Actions                                    |
+|----------------------|--------------------------------------------|
+| Credential Compromise | Revoke, reset, audit, notify              |
+| Data Breach          | Scope, preserve, legal, disclose          |
+| System Compromise    | Isolate, image, block, restore            |
 
 ---
 
-## Quick Reference Card
+## 7. Quick Reference
 
 ### Critical Controls (Must Have)
 
@@ -488,11 +250,11 @@ def log_security_event(
 
 ## Related
 
-- `.knowledge/frameworks/security/authentication.md` — Identity verification
-- `.knowledge/frameworks/security/authorization.md` — Access control
-- `.knowledge/frameworks/security/secrets_management.md` — Credential handling
-- `.knowledge/practices/engineering/code_review.md` — Review practices
+- `.knowledge/practices/engineering/SECURITY_PATTERNS.md` — Implementation patterns and code
+- `.knowledge/frameworks/security/AUTHENTICATION.md` — Authentication patterns
+- `.knowledge/frameworks/security/AUTHORIZATION.md` — Authorization patterns
+- `.knowledge/frameworks/security/SECRETS_MANAGEMENT.md` — Secrets management
 
 ---
 
-*Part of AI Collaboration Knowledge Base - Security Framework*
+*AI Collaboration Knowledge Base*
