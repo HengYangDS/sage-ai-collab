@@ -46,11 +46,6 @@ Apply 信达雅 (Xin-Da-Ya) philosophy to create effective diagrams.
 | **Consistency** | Node types match their semantic meaning |
 | **Traceability** | Diagram matches source documentation |
 
-**Anti-patterns**:
-- ❌ Omitting error paths or edge cases
-- ❌ Misleading arrow directions
-- ❌ Using wrong node shapes (e.g., decision diamond for a process)
-
 ### 2.2 达 (Clarity) — Clear Communication
 
 | Checkpoint | Requirement |
@@ -60,11 +55,6 @@ Apply 信达雅 (Xin-Da-Ya) philosophy to create effective diagrams.
 | **Flow** | Single, clear direction (TD or LR) |
 | **Density** | Max 15 nodes, max 2 nesting levels |
 
-**Anti-patterns**:
-- ❌ Cryptic abbreviations without context
-- ❌ Crossing lines that confuse flow
-- ❌ Mixing multiple directions in one diagram
-
 ### 2.3 雅 (Elegance) — Refined Simplicity
 
 | Checkpoint | Requirement |
@@ -73,11 +63,6 @@ Apply 信达雅 (Xin-Da-Ya) philosophy to create effective diagrams.
 | **Balance** | Visual symmetry where possible |
 | **Consistency** | Uniform naming and styling |
 | **Whitespace** | Adequate spacing for readability |
-
-**Anti-patterns**:
-- ❌ Excessive styling or colors
-- ❌ Duplicate information in labels
-- ❌ Inconsistent node ID patterns
 
 ### 2.4 Design Checklist
 
@@ -125,25 +110,6 @@ Mermaid supports 21 diagram types, organized by recommended usage frequency.
 | Kanban | `kanban` | Task boards, workflow status | Rare |
 | Packet | `packet-beta` | Network protocols, packet structure | Rare |
 | Radar | `radar-beta` | Multi-dimensional comparison | Rare |
-
-### 3.2 Selection Guide
-
-| Scenario | Recommended Type |
-|----------|------------------|
-| Bootstrap/startup process | Flowchart (LR with subgraphs) |
-| API request/response | Sequence diagram |
-| Domain model | Class diagram |
-| Object lifecycle | State diagram |
-| Database design | ER diagram |
-| User experience flow | User Journey |
-| Version/release history | Timeline |
-| Software architecture | C4 diagram |
-| Project roadmap | Gantt chart |
-| Data distribution | Pie chart |
-| Priority/risk matrix | Quadrant chart |
-| Metrics over time | XY Chart |
-| System modules | Block diagram |
-| Cloud infrastructure | Architecture diagram |
 
 ---
 
@@ -405,21 +371,11 @@ journey
 |---------|--------|-------------|
 | Title | `title Text` | Journey title |
 | Section | `section Name` | Group of tasks |
-| Task | `Task name: score: actors` | Individual task |
-
-#### Score Scale
-
-| Score | Meaning |
-|-------|---------|
-| 1 | Very negative |
-| 3 | Neutral |
-| 5 | Very positive |
+| Task | `Task name: score: actors` | Score: 1 (negative) to 5 (positive) |
 
 ### 5.5 Timeline Diagram
 
 > **Priority**: Common — For historical events and version history
-
-#### Basic Syntax
 
 ```mermaid
 timeline
@@ -430,62 +386,6 @@ timeline
            : Major update
     2024-12 : v3.0 Planned
 ```
-
-#### Elements
-
-| Element | Description |
-|---------|-------------|
-| `title` | Timeline title |
-| Date | Time period (flexible format) |
-| Events | Multiple events per date supported |
-
-### 5.6 C4 Diagram
-
-> **Priority**: Common — For software architecture (C4 model)
-
-#### Context Diagram
-
-```mermaid
-C4Context
-    title System Context Diagram
-    Person(user, "User", "A user of the system")
-    System(system, "System", "The main system")
-    System_Ext(external, "External System", "External dependency")
-    
-    Rel(user, system, "Uses")
-    Rel(system, external, "Calls")
-```
-
-#### Container Diagram
-
-```mermaid
-C4Container
-    title Container Diagram
-    Person(user, "User")
-    
-    Container_Boundary(system, "System") {
-        Container(web, "Web App", "React")
-        Container(api, "API", "Python")
-        ContainerDb(db, "Database", "PostgreSQL")
-    }
-    
-    Rel(user, web, "Uses")
-    Rel(web, api, "Calls")
-    Rel(api, db, "Reads/Writes")
-```
-
-#### C4 Elements
-
-| Element | Syntax | Use |
-|---------|--------|-----|
-| Person | `Person(id, name, desc)` | User/actor |
-| System | `System(id, name, desc)` | Internal system |
-| System_Ext | `System_Ext(id, name, desc)` | External system |
-| Container | `Container(id, name, tech)` | Application component |
-| ContainerDb | `ContainerDb(id, name, tech)` | Database |
-| Rel | `Rel(from, to, desc)` | Relationship |
-
----
 
 ## 6. Occasional Diagrams
 
@@ -502,76 +402,20 @@ gantt
         Task C :2024-02-15, 25d
 ```
 
-### 6.2 Pie Chart
-
-```mermaid
-pie title Distribution
-    "Category A" : 40
-    "Category B" : 30
-    "Category C" : 30
-```
-
-### 6.3 Quadrant Chart
-
-```mermaid
-quadrantChart
-    title Priority Matrix
-    x-axis Low Effort --> High Effort
-    y-axis Low Impact --> High Impact
-    quadrant-1 Do First
-    quadrant-2 Schedule
-    quadrant-3 Delegate
-    quadrant-4 Eliminate
-    Task A: [0.8, 0.9]
-    Task B: [0.3, 0.7]
-    Task C: [0.6, 0.3]
-```
-
-### 6.4 XY Chart
+### 6.2 XY Chart
 
 ```mermaid
 xychart-beta
-    title "Sales Revenue"
+    title "Monthly Sales"
     x-axis [Jan, Feb, Mar, Apr, May]
-    y-axis "Revenue (in $)" 0 --> 5000
-    bar [1000, 2000, 1500, 3000, 4500]
-    line [1000, 1800, 2200, 2800, 3500]
+    y-axis "Revenue (K)" 0 --> 100
+    bar [30, 45, 60, 55, 70]
+    line [25, 40, 55, 50, 65]
 ```
 
-### 6.5 Block Diagram
+### 6.3 Other Occasional Types
 
-```mermaid
-block-beta
-    columns 3
-    
-    block:input
-        A["Input"]
-    end
-    
-    block:process
-        B["Process"]
-    end
-    
-    block:output
-        C["Output"]
-    end
-    
-    A --> B --> C
-```
-
-### 6.6 Architecture Diagram
-
-```mermaid
-architecture-beta
-    group cloud(cloud)[Cloud]
-    
-    service api(server)[API] in cloud
-    service db(database)[Database] in cloud
-    service cache(disk)[Cache] in cloud
-    
-    api:R --> L:db
-    api:B --> T:cache
-```
+For Pie, Quadrant, Block, and Architecture diagrams, see [Section 3.1 Complete Type Reference](#31-complete-type-reference) and [Mermaid Official Documentation](https://mermaid.js.org/intro/).
 
 ---
 
@@ -581,86 +425,21 @@ architecture-beta
 
 ```mermaid
 mindmap
-    root((Central Topic))
-        Branch A
-            Leaf 1
-            Leaf 2
-        Branch B
-            Leaf 3
+    root((Project))
+        Planning
+            Requirements
+            Timeline
+        Development
+            Frontend
+            Backend
+        Testing
+            Unit Tests
+            Integration
 ```
 
-### 7.2 Git Graph
+### 7.2 Other Rare Types
 
-```mermaid
-gitGraph
-    commit
-    branch feature
-    checkout feature
-    commit
-    checkout main
-    merge feature
-```
-
-### 7.3 Requirement Diagram
-
-```mermaid
-requirementDiagram
-    requirement test_req {
-        id: 1
-        text: The system shall do X
-        risk: high
-        verifymethod: test
-    }
-    
-    element test_entity {
-        type: simulation
-    }
-    
-    test_entity - satisfies -> test_req
-```
-
-### 7.4 Sankey Diagram
-
-```mermaid
-sankey-beta
-    Source A,Target X,100
-    Source A,Target Y,50
-    Source B,Target Y,75
-    Source B,Target Z,25
-```
-
-### 7.5 Kanban Board
-
-```mermaid
-kanban
-    column1[To Do]
-        task1[Task 1]
-        task2[Task 2]
-    column2[In Progress]
-        task3[Task 3]
-    column3[Done]
-        task4[Task 4]
-```
-
-### 7.6 Packet Diagram
-
-```mermaid
-packet-beta
-    0-15: "Source Port"
-    16-31: "Destination Port"
-    32-63: "Sequence Number"
-    64-95: "Acknowledgment Number"
-```
-
-### 7.7 Radar Chart
-
-```mermaid
-radar-beta
-    title Skills Assessment
-    axis Performance, Quality, Speed, Reliability, Scalability
-    curve a[Team A]: 4, 3, 5, 4, 3
-    curve b[Team B]: 3, 4, 4, 5, 4
-```
+For Git Graph, Requirement, Radar, Sankey, Kanban, and Packet diagrams, see [Section 3.1 Complete Type Reference](#31-complete-type-reference) and [Mermaid Official Documentation](https://mermaid.js.org/intro/).
 
 ---
 
@@ -730,14 +509,18 @@ When diagram is too complex:
 | Shows raw code | Check IDE Markdown Extensions settings |
 | Rendering issues | Use simplest syntax, avoid complex styling |
 | Inconsistent display | Test on target platform |
+| Dark mode issues | Use `%%{init: {'theme': 'neutral'}}%%` at start |
 | Beta feature not working | Check Mermaid version compatibility |
 
 ---
 
 ## Related
 
+- `.knowledge/practices/documentation/INDEX.md` — Documentation practices index
+- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards (SSOT)
+- `.knowledge/practices/documentation/TABLE_STANDARDS.md` — Table standards (SSOT)
+- `.knowledge/practices/documentation/CODE_BLOCK_STANDARDS.md` — Code block standards (SSOT)
 - `.knowledge/guidelines/DOCUMENTATION.md` — Documentation guidelines
-- `.knowledge/practices/documentation/DOCUMENTATION_STANDARDS.md` — Documentation standards
 - `docs/design/core_engine/BOOTSTRAP.md` — Example: Flowchart usage
 
 ---
